@@ -165,15 +165,15 @@ h3 {
 }
 
 .hero {
-  min-height: 15vh;
+  min-height: 11vh;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 430px);
   gap: 22px;
   align-items: start;
   justify-items: center;
   text-align: center;
-  padding-bottom: 12px;
-  padding-top: 8px;
+  padding-bottom: 6px;
+  padding-top: 6px;
   border-bottom: 0;
   width: 100%;
   margin: 0 auto;
@@ -335,6 +335,12 @@ h3 {
   box-shadow: none;
 }
 
+.toolbar,
+.tiles {
+  position: relative;
+  z-index: 1;
+}
+
 .toolbar > * {
   min-width: 0;
 }
@@ -363,6 +369,28 @@ textarea {
 .toolbar,
 .tiles {
   width: 100%;
+}
+
+.atlas-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 40px;
+}
+
+.atlas-path {
+  position: absolute;
+  inset: 0 0 auto;
+  width: 100%;
+  height: min(86vw, 1180px);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.atlas-path-text {
+  fill: #f4efe4;
+  font-family: "Apple Garamond", "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 26px;
 }
 
 .bibliography-button {
@@ -850,7 +878,7 @@ tbody tr:nth-child(odd) td {
 
 .article-section.intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
+  grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr);
   gap: 22px;
 }
 
@@ -877,11 +905,11 @@ tbody tr:nth-child(odd) td {
 
 .structure-panel {
   width: 100%;
-  min-height: 150px;
+  min-height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 0 0;
+  padding: 0;
 }
 
 .structure-button {
@@ -893,8 +921,8 @@ tbody tr:nth-child(odd) td {
 }
 
 .structure-panel img {
-  width: min(100%, 240px);
-  max-height: 220px;
+  width: min(100%, 360px);
+  max-height: 340px;
   object-fit: contain;
   display: block;
 }
@@ -911,6 +939,7 @@ tbody tr:nth-child(odd) td {
   background: linear-gradient(135deg, rgba(12, 19, 27, 0.95), rgba(0, 0, 0, 0.95));
   border-radius: 6px;
   padding: 12px;
+  margin-top: 18px;
 }
 
 .identity-panel h3 {
@@ -1191,6 +1220,14 @@ tbody tr:nth-child(odd) td {
     width: min(100% - 20px, 1200px);
   }
 
+  .atlas-frame {
+    padding-top: 0;
+  }
+
+  .atlas-path {
+    display: none;
+  }
+
   .hero,
   .article-section.intro {
     grid-template-columns: 1fr;
@@ -1228,5 +1265,9 @@ tbody tr:nth-child(odd) td {
 
   .bibliography-button {
     width: 100%;
+  }
+
+  .atlas-path-text {
+    font-size: 22px;
   }
 }

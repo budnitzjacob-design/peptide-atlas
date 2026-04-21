@@ -966,6 +966,7 @@ function detail(p) {
             <p><span class="label-mono">MECHANISM:</span> ${esc(p.tile.mechanismSummary)}</p>
             <p><span class="label-mono">LOCALIZATION:</span> ${esc(p.tile.localization)}</p>
             <p><span class="label-mono">CLINICAL CONTEXT:</span> ${esc(p.tile.clinicalUses.join(" "))}</p>
+            ${chemicalIdentityPanel(p)}
           </div>
           <aside>
             ${structurePanel(p)}
@@ -975,7 +976,6 @@ function detail(p) {
               <span class="status-pill">dosing: ${esc(p.tile.dosing.context.replaceAll("_", " "))}</span>
               <span class="status-pill">${esc(moderationLabel(p.moderation.status))}</span>
             </div>
-            ${chemicalIdentityPanel(p)}
           </aside>
         </section>
         ${signalingSection(p)}
@@ -1096,6 +1096,20 @@ function hero() {
   </section>`;
 }
 
+function atlasFrameOpen() {
+  return `<section class="atlas-frame">
+    <svg class="atlas-path" viewBox="0 0 1400 1180" preserveAspectRatio="none" aria-hidden="true">
+      <path id="atlas-curve" d="M 78 1040 C 52 828 54 386 172 236 C 244 146 404 126 596 126 L 1118 126 C 1294 126 1358 228 1358 402 L 1358 1010" />
+      <text class="atlas-path-text">
+        <textPath href="#atlas-curve" startOffset="1%">peptocopia: a biological signaling atlas for peptides commonly used off-label or for enhancement</textPath>
+      </text>
+    </svg>`;
+}
+
+function atlasFrameClose() {
+  return `</section>`;
+}
+
 function toolbar(categories) {
   return `<section class="toolbar">
     <input data-search data-focus-key="search" value="${esc(state.query)}" placeholder="Search names, genes, proteins, effects, cytokines">
@@ -1143,8 +1157,11 @@ function render() {
   const categories = ["All", ...new Set(DATA.peptides.map((p) => p.category))];
   const peptides = filteredPeptides();
   refreshCitationRegistry();
-  app.innerHTML = `${lineFeature()}${hero()}${toolbar(categories)}
+  app.innerHTML = `${lineFeature()}${hero()}
+    ${atlasFrameOpen()}
+    ${toolbar(categories)}
     <section class="tiles">${peptides.map(tile).join("")}</section>
+    ${atlasFrameClose()}
     ${detail(state.selected)}
     ${structureModal()}
     ${relatedPanel()}

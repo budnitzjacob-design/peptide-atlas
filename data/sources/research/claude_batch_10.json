@@ -1,0 +1,1381 @@
+{
+  "batch_id": "batch-10",
+  "generated_at": "2026-04-21",
+  "batch_notes": "Cleanup-and-gap pass over peptides previously populated in batch-01 (SS-31, MOTS-c, BPC-157, GHK-Cu) and batch-08 (Dihexa). Goals for this pass: (1) fill identity calculations left approximate or null in earlier batches; (2) add cytokine/interleukin rows that were missing or thin; (3) rewrite cascades to show true upstream→downstream flow rather than summary bullet lists; (4) surface contradictions and low-confidence claims explicitly with '?' symbols and safetyRisks entries; (5) tighten human vs. animal evidence separation. When merging into the site, batch-10 entries for these five peptides should be treated as the current-truth version and should supersede the corresponding batch-01 / batch-08 entries.",
+  "peptides": [
+    {
+      "id": "ss-31",
+      "names": {
+        "primary": "Elamipretide",
+        "aliases": ["SS-31", "MTP-131", "Bendavia", "Szeto-Schiller 31"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C32H49N9O5",
+        "molecularWeight": 639.79,
+        "cas": "736992-21-5",
+        "sequenceOneLetter": "r-Dmt-K-F-NH2",
+        "sequenceThreeLetter": "D-Arg-Dmt-Lys-Phe-NH2",
+        "length": 4,
+        "modifications": [
+          "D-arginine at position 1 (protease resistance)",
+          "2',6'-dimethyl-L-tyrosine (Dmt) at position 2 — non-proteinogenic; critical for mitochondrial partitioning",
+          "L-lysine at position 3 — contributes to polycationic targeting",
+          "L-phenylalanine at position 4",
+          "C-terminal primary amide",
+          "Net charge +3 at physiologic pH; amphipathic aromatic-cationic motif underlies inner mitochondrial membrane accumulation"
+        ],
+        "structureClass": "Aromatic-cationic tetrapeptide (Szeto-Schiller class); targets inner mitochondrial membrane without a classical mitochondrial targeting sequence"
+      },
+      "classification": {
+        "peptideClass": "Mitochondria-targeted aromatic-cationic peptide",
+        "mechanismFamily": "Cardiolipin-binding / inner-mitochondrial-membrane stabilizer",
+        "regulatoryStatus": "investigational"
+      },
+      "tile": {
+        "mechanismSummary": "Partitions 1000–5000× into the inner mitochondrial membrane via its aromatic-cationic motif, binds cardiolipin, and stabilizes ETC supercomplex architecture — reducing electron leak, mitochondrial ROS, and cristae disorganization in dysfunctional mitochondria.",
+        "localization": "Inner mitochondrial membrane, cardiolipin-rich domains",
+        "clinicalUses": [
+          "Primary mitochondrial myopathy — MMPOWER-3 Phase 3 did not meet primary endpoints",
+          "Barth syndrome — TAZPOWER mixed with subsequent open-label improvements; FDA review trajectory has been contested and should be re-verified",
+          "Leber hereditary optic neuropathy (investigational)",
+          "Age-related macular degeneration / geographic atrophy (investigational)"
+        ],
+        "sideEffects": [
+          "Injection-site reactions (dominant AE across trials — frequently >30% of participants)",
+          "Headache",
+          "Nausea",
+          "Rare hypersensitivity"
+        ],
+        "dosing": {
+          "quick": "Investigational only. Trial-era adult dosing has been 40 mg subcutaneous once daily in Barth syndrome and primary mitochondrial myopathy. Not an approved product; not a validated dose outside trial settings.",
+          "adminRoute": "Subcutaneous injection (also IV in some studies; ophthalmic formulation studied for AMD)",
+          "publicDisplayAllowed": true,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [
+          "Cardiolipin — direct phospholipid binding target (not a protein, but the canonical molecular partner)",
+          "Cytochrome c — cardiolipin-bound pool; interaction with cardiolipin-elamipretide complex reduces cytochrome c peroxidase activity",
+          "ETC complex I (NADH:ubiquinone oxidoreductase)",
+          "ETC complex III (cytochrome bc1)",
+          "ETC complex IV (cytochrome c oxidase)",
+          "Supercomplex I+III2+IV (respirasome) — assembly preserved under elamipretide",
+          "ATP synthase (complex V) — output preserved indirectly via supercomplex stabilization",
+          "OPA1 — inner membrane dynamin involved in cristae morphology; not a direct binding partner but downstream of membrane lipid organization"
+        ],
+        "receptors": [],
+        "channelsTransporters": [
+          "Mitochondrial permeability transition pore (MPTP) — opening probability reduced indirectly via preserved cristae organization and reduced matrix Ca2+ overload (indirect, not direct binding)"
+        ],
+        "cytokinesInterleukins": [
+          {
+            "name": "IL-6",
+            "effect": "Reduced in some ischemia and heart-failure rodent models; indirect via mitochondrial ROS reduction rather than direct cytokine modulation",
+            "context": "Preclinical; mechanism is downstream of reduced ROS-driven NF-κB activity",
+            "symbols": ["A", "?"],
+            "citationIds": ["ss31-cit-szeto-2014"]
+          },
+          {
+            "name": "TNF-α",
+            "effect": "Reduced in rodent ischemia-reperfusion; indirect via ROS/NF-κB dampening",
+            "context": "Preclinical; no human cytokine endpoint data at this level of specificity",
+            "symbols": ["A", "?"],
+            "citationIds": ["ss31-cit-szeto-2014"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "Primary mechanism — cardiolipin stabilization",
+            "steps": [
+              "Elamipretide crosses outer mitochondrial membrane (passive, charge-independent)",
+              "Polycationic motif drives electrostatic accumulation against the inner-membrane potential (ΔΨm)",
+              "Partitioning 1000–5000× into the IMM inner leaflet cardiolipin domains",
+              "Binding to cardiolipin (non-receptor, lipid-peptide interaction)",
+              "Stabilization of cardiolipin-cytochrome c interaction",
+              "Preservation of ETC supercomplex (I+III2+IV) architecture",
+              "Reduction in electron leak from ETC complexes I and III",
+              "Reduction in mitochondrial superoxide and H2O2 output",
+              "Preservation of cristae curvature and ATP synthase organization",
+              "Net: restored oxidative phosphorylation efficiency in dysfunctional mitochondria"
+            ],
+            "symbols": ["C", "A", "H"],
+            "claimRef": "ss31-claim-mechanism"
+          },
+          {
+            "category": "Secondary mechanism — apoptosis modulation",
+            "steps": [
+              "Cardiolipin binding reduces cytochrome c peroxidase activity",
+              "Reduced cardiolipin peroxidation preserves cytochrome c retention at the IMM",
+              "Reduced apoptotic cytochrome c release into cytosol",
+              "Reduced caspase-9 activation in injury models",
+              "This pathway is well-supported in cell and rodent ischemia data; not directly measured in human trials"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "ss31-claim-apoptosis"
+          },
+          {
+            "category": "Contested translation — clinical endpoint linkage",
+            "steps": [
+              "Mechanism produces robust in vitro and rodent benefit",
+              "Short-term human biomarkers (e.g., 6-minute walk test improvements in early trials) support clinical relevance",
+              "Pivotal MMPOWER-3 in primary mitochondrial myopathy did not meet 6MWT or symptom primary endpoints",
+              "TAZPOWER in Barth syndrome was negative in randomized phase but positive in open-label extension — a pattern that is not consistent with high placebo effect and suggests either real delayed benefit or selection bias in OLE",
+              "Translation from mechanism to reliable clinical endpoint benefit in humans is genuinely contested"
+            ],
+            "symbols": ["?", "H", "N"],
+            "claimRef": "ss31-claim-translation"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Human evidence is substantial but the results are heterogeneous. Acute-dose tolerability and PK have been established in multiple Phase 1 and Phase 2 studies. MMPOWER-3 (NCT03323749) in primary mitochondrial myopathy did not meet its primary efficacy endpoints on 6-minute walk test distance or the PMM Symptom Assessment Total Fatigue score. TAZPOWER (NCT03098797) in Barth syndrome was negative in its randomized phase but reported functional improvements during open-label extension. Stealth Biotherapeutics pursued Barth syndrome approval on the basis of natural-history-controlled OLE data; FDA review has involved multiple cycles including a Complete Response Letter and advisory committee activity, and the current regulatory status should be verified against the most recent FDA communications before the site goes live. ReCLAIM and related ophthalmic studies have explored geographic atrophy with modest functional signals.",
+        "animalEvidence": "Consistent across cardiac ischemia-reperfusion, heart failure, renal ischemia, sarcopenia, age-related mitochondrial decline, and neurodegeneration models. Elamipretide restores cristae structure, reduces mitochondrial ROS, and improves ATP production in aged or injured tissues. Independent replication by unaffiliated laboratories is good for the core mechanism claims.",
+        "mechanismDetail": "Elamipretide is an aromatic-cationic tetrapeptide that accumulates 1000–5000× in the inner mitochondrial membrane via an electrostatic and hydrophobic mechanism, without a classical mitochondrial targeting sequence. Its canonical molecular partner is cardiolipin — not a protein receptor but the signature phospholipid of the inner mitochondrial membrane. Cardiolipin binding stabilizes cytochrome c-cardiolipin interactions (reducing peroxidase activity and apoptotic release), preserves the assembly of electron transport chain supercomplexes (I+III2+IV), and supports cristae curvature. Downstream effects include reduced electron leak, reduced mitochondrial ROS, improved oxidative phosphorylation efficiency, and preserved ATP output. Elamipretide does not scavenge ROS in a stoichiometric antioxidant sense — its effect is architectural (maintaining the membrane organization that prevents ROS generation), not catalytic. The translation gap from this well-supported mechanism to reliable human clinical endpoint benefit is the central unresolved question.",
+        "safetyDetail": "Human safety data are reasonably well characterized for subcutaneous use in adults with mitochondrial disease over months to years. Injection-site reactions are the dominant adverse event (frequently >30% of participants, occasionally causing discontinuation). Systemic AEs reported include headache, nausea, dizziness. No clear hepatotoxicity or cardiac safety signal has emerged. Long-term safety beyond several years is not established. Safety in healthy non-diseased adults is not established — no placebo-controlled healthy-volunteer long-term dosing data exist.",
+        "safetyRisks": [
+          {
+            "system": "Local / injection site",
+            "label": "Injection-site reactions",
+            "color": "yellow",
+            "helpSummary": "Reversible on site rotation.",
+            "harmSummary": "Frequent (often >30% of participants); occasional discontinuation.",
+            "citationIds": ["ss31-cit-tazpower", "ss31-cit-mmpower3"]
+          },
+          {
+            "system": "Evidence translation",
+            "label": "Pivotal trial did not meet primary endpoints",
+            "color": "yellow",
+            "helpSummary": "Mechanism strong, clinical translation contested.",
+            "harmSummary": "MMPOWER-3 was negative on its primary efficacy endpoints. Mechanistic plausibility does not equal demonstrated clinical benefit for primary mitochondrial myopathy.",
+            "citationIds": ["ss31-cit-mmpower3"]
+          },
+          {
+            "system": "Regulatory",
+            "label": "Not FDA-approved; Barth syndrome trajectory in flux",
+            "color": "red",
+            "helpSummary": "Investigational only.",
+            "harmSummary": "No approved product. Barth syndrome review has involved a Complete Response Letter and ongoing activity; re-verify status against current FDA communications before publication.",
+            "citationIds": ["ss31-cit-fda-orphan"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Enhancement claims in healthy adults (anti-aging, athletic mitochondrial support) are not supported by controlled human evidence. All positive human readouts are in diseased populations with baseline mitochondrial dysfunction.",
+          "caveat": "Do not infer healthy-adult benefit from Barth syndrome, PMM, or aged-rodent data. The architectural (non-stoichiometric) mechanism means the ceiling of benefit is bounded by the degree of pre-existing mitochondrial dysfunction — there may be little to 'fix' in healthy adults.",
+          "citationIds": ["ss31-cit-szeto-2014", "ss31-cit-mmpower3"]
+        },
+        "missingEvidence": [
+          "Placebo-controlled human trials in healthy adults",
+          "Long-term (>5 year) safety data",
+          "Pharmacokinetics and biomarker response in non-diseased populations",
+          "Independent mechanistic replication of specific ETC supercomplex stabilization claim in human tissue"
+        ],
+        "anecdotalUse": [
+          "Gray-market use for 'mitochondrial anti-aging' — unsupported by controlled human data",
+          "Compounded injectable use marketed to athletes — no clinical trial support and regulatory status unclear"
+        ]
+      },
+      "claims": [
+        {
+          "id": "ss31-claim-mechanism",
+          "field": "biology.cascades",
+          "value": "Elamipretide binds cardiolipin on the inner mitochondrial membrane and stabilizes ETC supercomplex (I+III2+IV) assembly, reducing electron leak and mitochondrial ROS in dysfunctional mitochondria.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "cell-free assays, cell culture, rodent ischemia and aging models",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.85,
+          "citationIds": ["ss31-cit-szeto-2014", "ss31-cit-birk-2013"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "ss31-claim-apoptosis",
+          "field": "biology.cascades",
+          "value": "Cardiolipin binding reduces cytochrome c peroxidase activity and attenuates mitochondrial apoptotic release in injury models.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "cell culture and rodent ischemia models",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.75,
+          "citationIds": ["ss31-cit-birk-2013", "ss31-cit-szeto-2014"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "ss31-claim-translation",
+          "field": "biology.cascades",
+          "value": "Translation from well-supported mechanism to reliable clinical endpoint benefit in humans is genuinely contested — the pivotal MMPOWER-3 trial was negative while TAZPOWER showed open-label-phase improvements that are mechanistically plausible but methodologically weaker.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "primary mitochondrial myopathy and Barth syndrome patients",
+          "route": "SC 40 mg daily",
+          "sampleSize": null,
+          "duration": "weeks to months",
+          "symbols": ["?", "H", "N"],
+          "confidence": 0.7,
+          "citationIds": ["ss31-cit-mmpower3", "ss31-cit-tazpower"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "ss31-claim-regulatory",
+          "field": "classification.regulatoryStatus",
+          "value": "Not FDA-approved as of knowledge cutoff; Barth syndrome review has been active and re-verification is required before publication.",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "?"],
+          "confidence": 0.7,
+          "citationIds": ["ss31-cit-fda-orphan"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "ss31-cit-szeto-2014",
+          "sourceType": "review",
+          "title": "First-in-class cardiolipin-protective compound as a therapeutic agent to restore mitochondrial bioenergetics",
+          "authors": ["Szeto HH"],
+          "year": 2014,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24506331/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["ss31-claim-mechanism", "ss31-claim-apoptosis"],
+          "notes": "Br J Pharmacol 171(8):2029-50. Co-inventor review; treat as interested-party summary for therapeutic framing, but authoritative for mechanism."
+        },
+        {
+          "id": "ss31-cit-birk-2013",
+          "sourceType": "primary",
+          "title": "The mitochondrial-targeted compound SS-31 re-energizes ischemic mitochondria by interacting with cardiolipin",
+          "authors": ["Birk AV", "Liu S", "Soong Y", "Mills W", "Singh P", "Warren JD", "Seshan SV", "Pardee JD", "Szeto HH"],
+          "year": 2013,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23687356/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["ss31-claim-mechanism", "ss31-claim-apoptosis"],
+          "notes": "J Am Soc Nephrol 24(8):1250-61. Cardiolipin binding and supercomplex rescue in ischemic mitochondria."
+        },
+        {
+          "id": "ss31-cit-mmpower3",
+          "sourceType": "primary",
+          "title": "MMPOWER-3 Trial: subcutaneous elamipretide for primary mitochondrial myopathy (NCT03323749)",
+          "authors": ["Karaa A", "et al."],
+          "year": 2020,
+          "url": "https://clinicaltrials.gov/study/NCT03323749",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["ss31-claim-translation"],
+          "notes": "Pivotal Phase 3; did not meet primary endpoints."
+        },
+        {
+          "id": "ss31-cit-tazpower",
+          "sourceType": "primary",
+          "title": "Randomized, double-blind, placebo-controlled trial of elamipretide in Barth syndrome (TAZPOWER)",
+          "authors": ["Reid Thompson W", "et al."],
+          "year": 2021,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33496032/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["ss31-claim-translation"],
+          "notes": "J Inherit Metab Dis. Small n; randomized phase negative, open-label extension improvements used in regulatory filings."
+        },
+        {
+          "id": "ss31-cit-fda-orphan",
+          "sourceType": "regulatory",
+          "title": "FDA orphan drug and review activity for elamipretide",
+          "authors": [],
+          "year": null,
+          "url": "https://www.accessdata.fda.gov/scripts/opdlisting/oopd/",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["ss31-claim-regulatory"],
+          "notes": "Regulatory trajectory for Barth syndrome has evolved across multiple cycles; re-verify against current FDA communications before publication."
+        }
+      ]
+    },
+    {
+      "id": "mots-c",
+      "names": {
+        "primary": "MOTS-c",
+        "aliases": ["Mitochondrial ORF of the 12S rRNA-c", "MOTSc"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C101H156N30O23S2",
+        "molecularWeight": 2174.53,
+        "cas": "1627580-64-6",
+        "sequenceOneLetter": "MRWQEMGYIFYPRKLR",
+        "sequenceThreeLetter": "Met-Arg-Trp-Gln-Glu-Met-Gly-Tyr-Ile-Phe-Tyr-Pro-Arg-Lys-Leu-Arg",
+        "length": 16,
+        "modifications": [
+          "No post-translational modifications described for the canonical MOTS-c peptide",
+          "Encoded within the mitochondrial 12S rRNA gene (MT-RNR1) via an alternative open reading frame",
+          "Translation occurs in mitochondria; peptide is then exported to cytosol and, under stress, to nucleus"
+        ],
+        "structureClass": "Mitochondrial-derived peptide (MDP); small ORF product encoded within MT-RNR1"
+      },
+      "classification": {
+        "peptideClass": "Mitochondrial-derived peptide",
+        "mechanismFamily": "AMPK pathway activator / metabolic stress signaling peptide",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "A 16-residue peptide encoded within the mitochondrial 12S rRNA that activates AMPK signaling and, under metabolic stress, translocates to the nucleus to regulate antioxidant and metabolic gene expression. Exerts metformin-like effects on glucose and lipid metabolism in rodents. No canonical receptor has been identified.",
+        "localization": "Mitochondria (origin) → cytosol → nucleus (under stress); plasma concentration declines with age",
+        "clinicalUses": [],
+        "sideEffects": [
+          "Human safety is not characterized — no published human dosing trials of exogenous MOTS-c"
+        ],
+        "dosing": {
+          "quick": "No human dosing regimen exists. Rodent studies typically use 0.1–5 mg/kg intraperitoneal or subcutaneous. Do not extrapolate to human use.",
+          "adminRoute": "Intraperitoneal or subcutaneous in rodent studies; no validated human route",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["MT-RNR1 (12S rRNA gene; contains the MOTS-c ORF)"],
+        "proteins": [
+          "AMPK — principal downstream kinase activated (not a direct binding target; activation is indirect via folate/methionine cycle interference and AICAR accumulation)",
+          "ACC (acetyl-CoA carboxylase) — phosphorylated downstream of AMPK; inhibition of lipogenesis",
+          "TFEB — nuclear translocation partner under stress (reported)",
+          "NRF2 — oxidative stress response; MOTS-c-nuclear translocation is proposed to engage this axis",
+          "ATF1 — nuclear target under glucose restriction (reported)",
+          "FOXO3 — potentially modulated downstream of AMPK"
+        ],
+        "receptors": [
+          "No canonical cell-surface receptor has been identified for exogenous MOTS-c — this is an important mechanistic gap that affects interpretation of all gray-market dosing claims"
+        ],
+        "channelsTransporters": [
+          "GLUT4 — membrane translocation increased in skeletal muscle in rodent studies (indirect via AMPK)"
+        ],
+        "cytokinesInterleukins": [
+          {
+            "name": "IL-6",
+            "effect": "Reduced in rodent diet-induced obesity and aging models",
+            "context": "Preclinical; indirect via AMPK-mediated NF-κB suppression",
+            "symbols": ["A"],
+            "citationIds": ["motsc-cit-lee-2015"]
+          },
+          {
+            "name": "TNF-α",
+            "effect": "Reduced in some rodent metabolic inflammation models",
+            "context": "Preclinical; indirect via AMPK/NF-κB axis",
+            "symbols": ["A"],
+            "citationIds": ["motsc-cit-lee-2015"]
+          },
+          {
+            "name": "IL-10",
+            "effect": "Modulated in inflammation models; direction is context-dependent",
+            "context": "Preclinical; mechanism unclear",
+            "symbols": ["A", "?"],
+            "citationIds": ["motsc-cit-lee-2015"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "Primary mechanism — AMPK activation",
+            "steps": [
+              "MOTS-c is translated from the 12S rRNA ORF within mitochondria",
+              "Exported to cytosol (transport mechanism not fully defined)",
+              "Interferes with folate-methionine one-carbon cycle intermediates",
+              "AICAR (5-aminoimidazole-4-carboxamide ribonucleotide) accumulates",
+              "AMPK activation (AICAR is a classical AMPK activator; this mechanism parallels metformin's proposed AMPK engagement)",
+              "AMPK phosphorylates ACC → inhibits lipogenesis",
+              "AMPK promotes fatty acid oxidation and GLUT4 translocation in skeletal muscle",
+              "Net metabolic phenotype in rodents: improved insulin sensitivity, reduced diet-induced obesity"
+            ],
+            "symbols": ["C", "A", "?"],
+            "claimRef": "motsc-claim-ampk"
+          },
+          {
+            "category": "Secondary mechanism — stress-responsive nuclear translocation",
+            "steps": [
+              "Metabolic stress (glucose restriction, oxidative stress, exercise)",
+              "MOTS-c accumulates in nucleus",
+              "Engages stress-responsive transcription factors (NRF2-related, ATF1)",
+              "Regulates antioxidant and metabolic gene expression",
+              "Contributes to adaptive mitochondrial-nuclear communication — the MOTS-c retrograde signaling hypothesis"
+            ],
+            "symbols": ["C"],
+            "claimRef": "motsc-claim-nuclear"
+          },
+          {
+            "category": "Unresolved — receptor / binding partner",
+            "steps": [
+              "No cell-surface receptor identified for exogenous MOTS-c",
+              "Endogenous peptide's transport across mitochondrial, plasma, and nuclear membranes is not mechanistically defined",
+              "Exogenous subcutaneous administration assumes cellular uptake and intracellular availability that have not been demonstrated at therapeutic concentrations in humans",
+              "This gap is a methodological obstacle to translating endogenous MOTS-c biology into exogenous dosing claims"
+            ],
+            "symbols": ["?", "N"],
+            "claimRef": "motsc-claim-receptor-gap"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Observational human studies have measured endogenous circulating MOTS-c and reported inverse associations with obesity, insulin resistance, and some aging markers; circulating MOTS-c declines with age. These are correlative and cannot support exogenous dosing efficacy claims. There are no published randomized controlled trials of exogenous administered MOTS-c in humans as of the knowledge cutoff. The absence of any human efficacy data is the single most important fact about MOTS-c for a peptide reference site.",
+        "animalEvidence": "In rodents, MOTS-c administration improves insulin sensitivity, protects against diet-induced obesity, enhances exercise capacity, and reduces age-related metabolic decline. Effects are attributed to AMPK activation and mitochondrial adaptation. Evidence is reasonably consistent but much of it originates from the original discovering group and close collaborators; independent replication is still accumulating.",
+        "mechanismDetail": "MOTS-c is one of several mitochondrial-derived peptides translated from small ORFs in mitochondrial RNA (others include humanin and the SHLPs). Its proposed dominant mechanism is indirect activation of AMPK via interference with folate-methionine one-carbon metabolism and AICAR accumulation — the same general axis that metformin is thought to engage. Under metabolic stress MOTS-c translocates to the nucleus and engages stress-responsive transcription, in particular through NRF2-related antioxidant gene expression. The important mechanistic caveat is that no canonical cell-surface receptor has been identified for exogenous MOTS-c, and the mechanism by which subcutaneously administered MOTS-c would reproduce the effects of the endogenous peptide (which is translated and acts intracellularly) is not established.",
+        "safetyDetail": "No human safety data. Rodent studies at doses up to several mg/kg have not reported major toxicity, but long-term safety, immunogenicity, and off-target effects in humans are unknown. AMPK activation has tissue-specific and dose-dependent effects that are not fully characterized at therapeutic doses in humans — an AMPK activator could plausibly have both beneficial and problematic effects depending on tissue context (e.g., beneficial in metabolic tissues, potentially problematic in cardiac or regenerative contexts).",
+        "safetyRisks": [
+          {
+            "system": "Systemic / unknown",
+            "label": "No human safety characterization",
+            "color": "red",
+            "helpSummary": "Endogenous peptide with broad metabolic effects.",
+            "harmSummary": "Exogenous dosing in humans is untested at any duration. AMPK activation has tissue-specific effects not validated at therapeutic doses in humans.",
+            "citationIds": ["motsc-cit-lee-2015", "motsc-cit-kim-2018"]
+          },
+          {
+            "system": "Mechanism",
+            "label": "No identified receptor for exogenous peptide",
+            "color": "yellow",
+            "helpSummary": "Endogenous biology ≠ exogenous pharmacology.",
+            "harmSummary": "The mechanistic bridge from 'circulating MOTS-c correlates with metabolic health' to 'injecting MOTS-c produces metabolic benefit' has not been established at the molecular level.",
+            "citationIds": ["motsc-cit-kim-2018"]
+          },
+          {
+            "system": "Product quality",
+            "label": "Gray-market supply chain",
+            "color": "red",
+            "helpSummary": "No pharmaceutical-grade source.",
+            "harmSummary": "Research-grade or online material lacks identity, purity, and sterility assurance.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Enhancement claims for weight loss, longevity, and athletic performance in healthy humans are not supported by human trial evidence. Rodent and correlational human data are suggestive but not dispositive. The absence of a defined receptor is a specific mechanistic problem for exogenous dosing claims.",
+          "caveat": "Correlation of endogenous circulating MOTS-c with metabolic health does not imply that exogenous administration will reproduce those effects in humans, particularly given the unresolved receptor / uptake biology.",
+          "citationIds": ["motsc-cit-lee-2015"]
+        },
+        "missingEvidence": [
+          "Any randomized controlled human trial of administered MOTS-c",
+          "Identified cell-surface receptor or primary binding partner for exogenous peptide",
+          "Pharmacokinetics and bioavailability in humans",
+          "Long-term preclinical safety / carcinogenicity",
+          "Independent (non-Lee-group) replication of key rodent metabolic findings"
+        ],
+        "anecdotalUse": [
+          "Gray-market use as a 'mitochondrial biogenesis' or 'metabolic longevity' injectable — no human clinical evidence supports this use"
+        ]
+      },
+      "claims": [
+        {
+          "id": "motsc-claim-ampk",
+          "field": "biology.cascades",
+          "value": "MOTS-c activates AMPK indirectly via folate/methionine cycle interference and AICAR accumulation, improving insulin sensitivity in rodent diet-induced obesity models.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "high-fat-diet C57BL/6 mice",
+          "route": "intraperitoneal",
+          "sampleSize": null,
+          "duration": "weeks",
+          "symbols": ["A", "C"],
+          "confidence": 0.75,
+          "citationIds": ["motsc-cit-lee-2015"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "motsc-claim-nuclear",
+          "field": "biology.cascades",
+          "value": "Under metabolic stress MOTS-c translocates to the nucleus and engages stress-responsive transcription (NRF2 axis, ATF1).",
+          "species": "mixed",
+          "context": "cell",
+          "population": "cultured mammalian cells and mouse tissues",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.7,
+          "citationIds": ["motsc-cit-kim-2018"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "motsc-claim-receptor-gap",
+          "field": "biology.receptors",
+          "value": "No canonical cell-surface receptor has been identified for exogenous MOTS-c; this is a specific mechanistic gap that affects interpretation of subcutaneous dosing claims.",
+          "species": "mixed",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "N"],
+          "confidence": 0.85,
+          "citationIds": ["motsc-cit-kim-2018"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "motsc-claim-human",
+          "field": "expanded.humanEvidence",
+          "value": "No randomized controlled trials of administered MOTS-c in humans have been published.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "H"],
+          "confidence": 0.9,
+          "citationIds": ["motsc-cit-kumagai-review"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "motsc-cit-lee-2015",
+          "sourceType": "primary",
+          "title": "The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance",
+          "authors": ["Lee C", "Zeng J", "Drew BG", "Sallam T", "Martin-Montalvo A", "Wan J", "Kim SJ", "Mehta H", "Hevener AL", "de Cabo R", "Cohen P"],
+          "year": 2015,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25738459/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["motsc-claim-ampk"],
+          "notes": "Cell Metabolism 21(3):443-454. Discovery and primary characterization."
+        },
+        {
+          "id": "motsc-cit-kim-2018",
+          "sourceType": "primary",
+          "title": "The mitochondrial-derived peptide MOTS-c translocates to the nucleus to regulate nuclear gene expression in response to metabolic stress",
+          "authors": ["Kim KH", "Son JM", "Benayoun BA", "Lee C"],
+          "year": 2018,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29514079/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["motsc-claim-nuclear", "motsc-claim-receptor-gap"],
+          "notes": "Cell Metabolism 28(3):516-524. Nuclear translocation and transcriptional role."
+        },
+        {
+          "id": "motsc-cit-kumagai-review",
+          "sourceType": "review",
+          "title": "MOTS-c in health and disease: reviews of evidence and open questions",
+          "authors": ["Kumagai H", "Coelho AR", "Wan J", "Mehta HH", "Yen K", "Huang A", "Zempo H", "Fuku N", "Cohen P"],
+          "year": 2023,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37288496/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["motsc-claim-human"],
+          "notes": "Representative review; title/year should be verified against PubMed before publication."
+        }
+      ]
+    },
+    {
+      "id": "bpc-157",
+      "names": {
+        "primary": "BPC-157",
+        "aliases": ["Body Protection Compound-157", "Pentadecapeptide BPC-157", "PL 14736", "PL-10"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C62H98N16O22",
+        "molecularWeight": 1419.53,
+        "cas": "137525-51-0",
+        "sequenceOneLetter": "GEPPPGKPADDAGLV",
+        "sequenceThreeLetter": "Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val",
+        "length": 15,
+        "modifications": [
+          "Synthetic; corresponds to a 15-aa fragment originally described from a region of human gastric juice protein",
+          "Free N- and C-termini in the canonical preparation",
+          "Stable across pH range tested in gastric juice conditions"
+        ],
+        "structureClass": "Pentadecapeptide (synthetic gastric juice-derived fragment)"
+      },
+      "classification": {
+        "peptideClass": "Gastric juice-derived synthetic peptide (cytoprotective / pro-angiogenic candidate)",
+        "mechanismFamily": "NO pathway and VEGFR2-associated pro-angiogenic signaling (proposed, not conclusively established)",
+        "regulatoryStatus": "not_approved"
+      },
+      "tile": {
+        "mechanismSummary": "A 15-amino-acid synthetic peptide promoted as a broad tissue-healing agent. Proposed mechanisms invoke the NO-NOS system, VEGFR2-mediated angiogenesis, and growth hormone receptor upregulation in fibroblasts. Mechanism claims are drawn almost entirely from rodent studies by a single research lineage; independent replication and receptor-binding data are limited.",
+        "localization": "Systemic in preclinical studies; reported tissue effects in gut, tendon, ligament, muscle, and CNS models",
+        "clinicalUses": [],
+        "sideEffects": [
+          "Human adverse event profile is poorly characterized — no adequately powered human trials",
+          "FDA has flagged compounding safety and identity concerns"
+        ],
+        "dosing": {
+          "quick": "No approved human dose. Rodent studies commonly use 10 µg/kg IP or PO. Gray-market subcutaneous protocols of 250–500 µg daily are not supported by published human trial data.",
+          "adminRoute": "Intraperitoneal, subcutaneous, or oral in rodent studies; no validated human route or dose",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [
+          "VEGFR2 (KDR) — proposed interaction in pro-angiogenic effects; binding data weak",
+          "eNOS (NOS3) — upregulated in several rodent models; mechanism is transcriptional rather than direct binding",
+          "nNOS (NOS1) — modulated in CNS models",
+          "Growth hormone receptor — upregulation reported in tendon fibroblasts; not a direct binding target",
+          "EGR-1 (early growth response 1) — induction reported",
+          "FAK, paxillin — cytoskeletal signaling reported downstream",
+          "5-HT (serotonin) system — interactions reported in CNS models",
+          "Dopamine system — interactions reported in CNS models"
+        ],
+        "receptors": [
+          "No canonical receptor has been identified with published high-quality binding data",
+          "All proposed receptor interactions (VEGFR2, GHR) are inferred from downstream pathway modulation and pharmacological blockade, not direct binding"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "TNF-α",
+            "effect": "Reduced in rodent colitis and inflammation models",
+            "context": "Preclinical only",
+            "symbols": ["A"],
+            "citationIds": ["bpc157-cit-sikiric-review-2018"]
+          },
+          {
+            "name": "IL-6",
+            "effect": "Reduced in rodent inflammation models",
+            "context": "Preclinical only",
+            "symbols": ["A"],
+            "citationIds": ["bpc157-cit-sikiric-review-2018"]
+          },
+          {
+            "name": "IL-1β",
+            "effect": "Reduced in rodent colitis models",
+            "context": "Preclinical only",
+            "symbols": ["A"],
+            "citationIds": ["bpc157-cit-sikiric-review-2018"]
+          },
+          {
+            "name": "IL-10",
+            "effect": "Increased in some rodent inflammation models",
+            "context": "Preclinical; direction is context-dependent",
+            "symbols": ["A", "?"],
+            "citationIds": ["bpc157-cit-sikiric-review-2018"]
+          },
+          {
+            "name": "VEGF",
+            "effect": "Increased in rodent tendon and vascular models",
+            "context": "Preclinical; central to the angiogenic story",
+            "symbols": ["A", "C"],
+            "citationIds": ["bpc157-cit-chang-2011"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "Proposed angiogenic / healing cascade (rodent)",
+            "steps": [
+              "BPC-157 administration (local or systemic)",
+              "Upregulation of VEGF expression in injured tissue",
+              "Proposed VEGFR2 signaling activation (direct binding not established)",
+              "Increased eNOS expression and NO bioavailability",
+              "Enhanced endothelial cell migration and granulation tissue formation",
+              "Faster closure of experimental wounds and soft-tissue repair in rodents"
+            ],
+            "symbols": ["A", "?"],
+            "claimRef": "bpc157-claim-angio"
+          },
+          {
+            "category": "Proposed GH/fibroblast axis (rodent tendon)",
+            "steps": [
+              "BPC-157 exposure to tenocytes / fibroblasts",
+              "Upregulation of growth hormone receptor expression",
+              "Enhanced responsiveness to circulating GH",
+              "Increased collagen synthesis and tenocyte migration",
+              "Improved tendon healing in rodent models",
+              "This axis is inferred from downstream changes rather than direct binding experiments"
+            ],
+            "symbols": ["A", "C", "?"],
+            "claimRef": "bpc157-claim-gh"
+          },
+          {
+            "category": "Contradictions and evidence-quality flags",
+            "steps": [
+              "Rodent effects are reported across an unusually wide range of tissues and injury types",
+              "Nearly all positive findings originate from a single laboratory lineage (Sikiric group) or close collaborators",
+              "Independent replication by unaffiliated groups is limited — the Chang 2011 paper is one of the few exceptions and its scope is narrower than the broader claims",
+              "The pattern of 'broadly effective with no failed indications' is not consistent with how most pharmacological agents behave and is a methodological red flag",
+              "Angiogenesis mechanism invoked for healing is also a shared feature of tumor growth — the promotional literature does not adequately address oncological risk"
+            ],
+            "symbols": ["?", "N"],
+            "claimRef": "bpc157-claim-evidence-flag"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "There are no adequately powered, well-published randomized controlled trials of BPC-157 in humans as of the knowledge cutoff. Early clinical activity exists for a related formulation (PL 14736) in inflammatory bowel disease from the early 2000s, but no Phase 3 human data support the contemporary gray-market musculoskeletal and gastrointestinal uses. Human safety data are sparse. The FDA's 503A compounding review has flagged identity and safety concerns. WADA has prohibited BPC-157 since January 2022.",
+        "animalEvidence": "Extensive rodent literature across gut ulcer, colitis, tendon, ligament, muscle, bone, skin, vascular, and CNS injury models. Effects are broad and unusually consistent — a pattern that can reflect a genuinely pleiotropic agent but that is also consistent with publication bias, lab-specific methodology, or an overly inclusive model panel. The single-lineage nature of most of this literature is a substantial methodological caveat that should be surfaced to readers.",
+        "mechanismDetail": "Proposed mechanisms center on the NO-NOS system, VEGFR2-driven angiogenesis, and upregulation of growth hormone receptor signaling in fibroblasts and tenocytes. BPC-157 does not have a confirmed canonical receptor with published high-quality binding data; proposed receptor interactions are inferred from downstream pathway changes and pharmacological blockade experiments. The absence of direct binding studies is a mechanistic gap that the site should acknowledge even when describing the rodent efficacy literature.",
+        "safetyDetail": "In rodents, BPC-157 appears to have a wide therapeutic index and no notable toxicity at tested doses. Human safety evidence is limited to small early studies of related formulations. Long-term human safety, immunogenicity, and oncological risk are unknown. The pro-angiogenic mechanism invoked for healing is a theoretical oncological concern that the promotional literature does not address. FDA 503A compounding concerns and WADA prohibition are concrete regulatory signals.",
+        "safetyRisks": [
+          {
+            "system": "Regulatory",
+            "label": "Not approved; flagged for 503A compounding safety",
+            "color": "red",
+            "helpSummary": "No pharmaceutical-grade approved product.",
+            "harmSummary": "FDA has identified BPC-157 as a substance with insufficient safety information for 503A compounding use. WADA prohibits at all times.",
+            "citationIds": ["bpc157-cit-fda-503a", "bpc157-cit-wada-list"]
+          },
+          {
+            "system": "Product quality",
+            "label": "Gray-market identity and purity",
+            "color": "red",
+            "helpSummary": "Mail-order supply is unregulated.",
+            "harmSummary": "No guarantee of peptide identity, purity, sterility, or endotoxin control.",
+            "citationIds": []
+          },
+          {
+            "system": "Oncology (theoretical)",
+            "label": "Pro-angiogenic mechanism — tumor concern",
+            "color": "yellow",
+            "helpSummary": "Angiogenesis is shared between wound healing and tumor biology.",
+            "harmSummary": "No human data on chronic systemic dosing in occult malignancy. Promotional literature does not address this.",
+            "citationIds": ["bpc157-cit-sikiric-review-2018"]
+          },
+          {
+            "system": "Evidence quality",
+            "label": "Single-lineage dominance of primary literature",
+            "color": "yellow",
+            "helpSummary": "Most rodent efficacy data come from one research lineage.",
+            "harmSummary": "The breadth and consistency of reported effects across disparate injury models is a methodological red flag that warrants independent replication by unaffiliated groups.",
+            "citationIds": ["bpc157-cit-sikiric-review-2018"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Popular claims for accelerated tendon, ligament, muscle, and gut healing in humans are not supported by adequate human RCT evidence.",
+          "caveat": "Rodent wound-healing improvement — especially from a single research lineage — is not evidence of human efficacy. The 'broadly effective with no failed indications' pattern is itself suspicious.",
+          "citationIds": ["bpc157-cit-sikiric-review-2018"]
+        },
+        "missingEvidence": [
+          "Adequately powered randomized controlled human trials for any indication",
+          "Independent replication by unaffiliated laboratories of key rodent findings",
+          "Published high-quality receptor binding data for any proposed target",
+          "Long-term human safety and oncology surveillance data"
+        ],
+        "anecdotalUse": [
+          "Tendon and ligament injury recovery",
+          "Gastrointestinal symptom management (leaky gut, IBD-like symptoms)",
+          "Post-surgical recovery and exercise-related soft-tissue injury"
+        ]
+      },
+      "claims": [
+        {
+          "id": "bpc157-claim-angio",
+          "field": "biology.cascades",
+          "value": "BPC-157 promotes angiogenesis and tissue repair in rodent injury models via NO and VEGF upregulation; direct VEGFR2 binding has not been established with high-quality data.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "rats, mice in tendon/muscle/gut injury models",
+          "route": "IP, SC, oral",
+          "sampleSize": null,
+          "duration": "days to weeks",
+          "symbols": ["A", "?"],
+          "confidence": 0.55,
+          "citationIds": ["bpc157-cit-sikiric-review-2018", "bpc157-cit-chang-2011"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "bpc157-claim-gh",
+          "field": "biology.cascades",
+          "value": "BPC-157 upregulates growth hormone receptor expression in rodent tenocytes and fibroblasts; mechanism is inferred from downstream changes rather than direct binding.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "rat tendon models, fibroblast cultures",
+          "route": null,
+          "sampleSize": null,
+          "duration": "days",
+          "symbols": ["A", "C", "?"],
+          "confidence": 0.5,
+          "citationIds": ["bpc157-cit-chang-2011"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "bpc157-claim-evidence-flag",
+          "field": "expanded.animalEvidence",
+          "value": "The breadth, consistency, and single-lineage origin of rodent efficacy reports for BPC-157 is a methodological red flag that warrants independent replication by unaffiliated groups.",
+          "species": "animal",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "N"],
+          "confidence": 0.8,
+          "citationIds": ["bpc157-cit-sikiric-review-2018"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "bpc157-claim-no-human-rct",
+          "field": "expanded.humanEvidence",
+          "value": "No adequately powered published randomized human trials support modern BPC-157 use in musculoskeletal or gastrointestinal indications.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "H"],
+          "confidence": 0.9,
+          "citationIds": ["bpc157-cit-fda-503a"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "bpc157-claim-regulatory",
+          "field": "classification.regulatoryStatus",
+          "value": "BPC-157 is not FDA-approved; FDA has flagged it for 503A compounding safety concerns, and WADA has prohibited it since January 2022.",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "N"],
+          "confidence": 0.9,
+          "citationIds": ["bpc157-cit-fda-503a", "bpc157-cit-wada-list"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "bpc157-cit-sikiric-review-2018",
+          "sourceType": "review",
+          "title": "Brain-gut axis and pentadecapeptide BPC 157: theoretical and practical implications",
+          "authors": ["Sikiric P", "Seiwerth S", "Rucman R", "et al."],
+          "year": 2018,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29305073/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["bpc157-claim-angio", "bpc157-claim-evidence-flag"],
+          "notes": "Representative review by the group that has produced most BPC-157 literature; treat as interested-party summary."
+        },
+        {
+          "id": "bpc157-cit-chang-2011",
+          "sourceType": "primary",
+          "title": "The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration",
+          "authors": ["Chang CH", "Tsai WC", "Lin MS", "Hsu YH", "Pang JH"],
+          "year": 2011,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21127294/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["bpc157-claim-angio", "bpc157-claim-gh"],
+          "notes": "J Appl Physiol. Independent (non-Sikiric) in vitro and rat tendon cell study; useful because it is from an unaffiliated group."
+        },
+        {
+          "id": "bpc157-cit-fda-503a",
+          "sourceType": "regulatory",
+          "title": "FDA 503A bulk drug substances review — BPC-157 not accepted for inclusion; safety concerns described",
+          "authors": [],
+          "year": 2023,
+          "url": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-nominated-use-compounding-under-section-503a-federal-food-drug-and-cosmetic-act",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["bpc157-claim-no-human-rct", "bpc157-claim-regulatory"],
+          "notes": "FDA has expressed safety and identity concerns about BPC-157 for compounding. Re-verify current 503A category status before publication."
+        },
+        {
+          "id": "bpc157-cit-wada-list",
+          "sourceType": "regulatory",
+          "title": "WADA Prohibited List — BPC-157 (S0 Non-Approved Substances since 2022)",
+          "authors": [],
+          "year": 2022,
+          "url": "https://www.wada-ama.org/en/prohibited-list",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["bpc157-claim-regulatory"],
+          "notes": "BPC-157 prohibited at all times since January 1, 2022."
+        }
+      ]
+    },
+    {
+      "id": "ghk-cu",
+      "names": {
+        "primary": "GHK-Cu",
+        "aliases": ["Copper tripeptide-1", "Glycyl-L-histidyl-L-lysine:copper(II)", "GHK copper", "Prezatide copper acetate"],
+        "tradeNames": ["Iamin (historical topical)", "widely used as 'copper peptide' in cosmetic products"]
+      },
+      "identity": {
+        "formula": "C14H24N6O4 (free GHK peptide, apo form); C14H22CuN6O4 (1:1 Cu(II) complex, with one peptide proton displaced on copper coordination)",
+        "molecularWeight": 402.9,
+        "cas": "49557-75-7",
+        "sequenceOneLetter": "GHK",
+        "sequenceThreeLetter": "Gly-His-Lys",
+        "length": 3,
+        "modifications": [
+          "Free GHK peptide molecular weight: 340.38 Da (C14H24N6O4) — this is the apo-peptide without copper",
+          "GHK-Cu 1:1 Cu(II) complex molecular weight: 402.9 Da — biologically active form",
+          "Copper coordination: N-terminal glycine amino group, histidine imidazole N, and a deprotonated backbone amide nitrogen",
+          "The copper-bound form is the pharmacologically active species; apo-GHK has weaker biological activity"
+        ],
+        "structureClass": "Copper-binding tripeptide"
+      },
+      "classification": {
+        "peptideClass": "Copper-binding endogenous tripeptide",
+        "mechanismFamily": "Copper delivery / extracellular matrix remodeling / transcriptional modulator",
+        "regulatoryStatus": "non_us_approved"
+      },
+      "tile": {
+        "mechanismSummary": "An endogenous tripeptide that binds Cu(II) with high affinity and modulates extracellular matrix remodeling, antioxidant response, and angiogenesis in skin. Widely used as a cosmetic ingredient; limited small clinical trials support topical skin benefits. Systemic therapeutic claims are poorly supported.",
+        "localization": "Extracellular and intracellular in skin and connective tissue; human plasma levels decline with age (~200 ng/mL in youth to ~80 ng/mL by age 60)",
+        "clinicalUses": [
+          "Cosmetic topical use for skin aging and wound support (widespread ingredient use)",
+          "Investigational topical use for wound healing"
+        ],
+        "sideEffects": [
+          "Topical: generally well tolerated; occasional contact dermatitis",
+          "Injectable use is not a standard clinical practice and is not well characterized in humans"
+        ],
+        "dosing": {
+          "quick": "Topical cosmetic use at ~0.05–0.2% is typical in published skin studies. No validated systemic dose. Injectable gray-market use is not supported by controlled human trial data.",
+          "adminRoute": "Topical (cosmetic, wound-care); injectable in unregulated gray-market use; IV historically in early wound-healing research",
+          "publicDisplayAllowed": true,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [
+          "Collagen (type I and III) — synthesis stimulated in dermal fibroblasts",
+          "Elastin — synthesis stimulated in some models",
+          "Decorin — induced",
+          "Fibronectin — induced",
+          "MMP-2 — context-dependent modulation (not simple inhibition)",
+          "TGF-β1 — modulated in skin models",
+          "VEGF — increased in wound-healing and vascular models",
+          "SOD1 (Cu,Zn-SOD) — activity supported via copper delivery",
+          "Lysyl oxidase (LOX) — copper-dependent enzyme supported by GHK-mediated copper delivery",
+          "Cytochrome c oxidase — copper-dependent; indirectly supported"
+        ],
+        "receptors": [
+          "No classical receptor — GHK-Cu works primarily as a copper carrier and transcriptional modulator via intracellular mechanisms"
+        ],
+        "channelsTransporters": [
+          "CTR1 (SLC31A1) — cellular copper uptake transporter; receives copper from GHK",
+          "ATP7A / ATP7B — copper efflux / loading; downstream of cellular copper handling"
+        ],
+        "cytokinesInterleukins": [
+          {
+            "name": "TGF-β1",
+            "effect": "Modulated (often increased) in dermal fibroblast models",
+            "context": "Cell and small human skin studies; central to collagen synthesis signaling",
+            "symbols": ["C", "H"],
+            "citationIds": ["ghkcu-cit-pickart-2018"]
+          },
+          {
+            "name": "TNF-α",
+            "effect": "Reduced in some inflammation / wound models",
+            "context": "Preclinical, limited human",
+            "symbols": ["A", "C"],
+            "citationIds": ["ghkcu-cit-pickart-2018"]
+          },
+          {
+            "name": "IL-6",
+            "effect": "Reduced in some skin inflammation models",
+            "context": "Preclinical",
+            "symbols": ["C", "A"],
+            "citationIds": ["ghkcu-cit-pickart-2018"]
+          },
+          {
+            "name": "VEGF",
+            "effect": "Increased in wound-healing and vascular models",
+            "context": "Preclinical and limited human; central to wound-healing story",
+            "symbols": ["C", "A"],
+            "citationIds": ["ghkcu-cit-pickart-2018"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "Primary mechanism — copper delivery",
+            "steps": [
+              "GHK-Cu penetrates stratum corneum (topical) or reaches dermal fibroblasts (systemic)",
+              "Copper transferred to cellular copper handling machinery (including CTR1-mediated uptake)",
+              "Cu(II) delivered to copper-dependent enzymes: lysyl oxidase (for collagen cross-linking), Cu,Zn-SOD (antioxidant), cytochrome c oxidase (mitochondrial)",
+              "Net effect: supports copper-dependent processes in skin and connective tissue"
+            ],
+            "symbols": ["C", "A", "H"],
+            "claimRef": "ghkcu-claim-copper-shuttle"
+          },
+          {
+            "category": "Secondary mechanism — ECM remodeling",
+            "steps": [
+              "Topical GHK-Cu exposure of dermal fibroblasts",
+              "Upregulation of collagen I/III, elastin, decorin, fibronectin synthesis",
+              "Modulation of MMP-2 activity (context-dependent)",
+              "TGF-β1 modulation contributes to collagen synthesis signaling",
+              "Observable human endpoints: improved skin firmness, density, fine wrinkle reduction in small topical trials"
+            ],
+            "symbols": ["C", "H"],
+            "claimRef": "ghkcu-claim-skin"
+          },
+          {
+            "category": "Contested mechanism — broad transcriptomic effects",
+            "steps": [
+              "GHK exposure of cultured cells (Pickart-group microarray studies)",
+              "Reported modulation of hundreds to thousands of genes spanning tissue remodeling, antioxidant defense, and DNA repair",
+              "This breadth of transcriptional effect is striking and has not been robustly independently replicated",
+              "The magnitude of the transcriptomic claim exceeds what the primary copper-delivery mechanism would predict and warrants skepticism until replicated"
+            ],
+            "symbols": ["C", "?"],
+            "claimRef": "ghkcu-claim-transcriptional"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Small controlled and open-label human studies — primarily in cosmetics and wound-care — support topical GHK-Cu effects on skin firmness, fine wrinkles, photodamage markers, and wound healing. Studies are generally small (n=20-100), often industry-sponsored, and use varied formulations. There are no large randomized trials of systemic (injected) GHK-Cu in humans for any indication; the robust human evidence is confined to topical cosmetic-scale endpoints. Historical FDA pharmaceutical approvals exist for prezatide copper acetate (early 1990s) for wound applications, but these have not translated to current marketed products.",
+        "animalEvidence": "Rodent studies support roles in wound healing, hair follicle stimulation, and tissue repair. Gene expression studies in cell lines document broad transcriptional effects consistent with wound-repair programs, though much of this work originates from the Pickart lineage.",
+        "mechanismDetail": "GHK is an endogenous tripeptide present in human plasma at nanomolar concentrations, declining with age (from ~200 ng/mL in youth to ~80 ng/mL by age 60). It binds Cu(II) with high affinity via N-terminal amino group, histidine imidazole, and a deprotonated backbone amide — acting as a copper shuttle between plasma proteins (notably albumin) and cells. Once copper is delivered, it supports copper-dependent enzymes including lysyl oxidase (critical for collagen cross-linking), Cu,Zn-SOD (antioxidant defense), and cytochrome c oxidase (mitochondrial respiration). The ECM-remodeling effect in dermal fibroblasts (upregulation of collagen I/III, elastin, decorin, fibronectin; modulation of MMP-2) is the best-supported part of the mechanism. The broad transcriptomic effects reported in microarray studies are striking but primarily single-source and exceed what the copper-delivery mechanism alone would predict.",
+        "safetyDetail": "Topical GHK-Cu has a strong cosmetic-scale safety record over decades as a cosmetic ingredient. Contact dermatitis is uncommon. Systemic or injected use is not standard and lacks modern controlled safety data. Copper overload is theoretically possible with chronic high-dose injection, particularly in individuals with Wilson disease or copper-handling disorders.",
+        "safetyRisks": [
+          {
+            "system": "Dermatologic",
+            "label": "Contact dermatitis",
+            "color": "green",
+            "helpSummary": "Uncommon at cosmetic concentrations.",
+            "harmSummary": "Occasional local irritation or allergic contact dermatitis to topical products.",
+            "citationIds": ["ghkcu-cit-pickart-2018"]
+          },
+          {
+            "system": "Systemic (injectable use)",
+            "label": "Copper overload (theoretical)",
+            "color": "yellow",
+            "helpSummary": "Copper-related hepatic/neurologic risk in susceptible individuals.",
+            "harmSummary": "Contraindicated in Wilson disease or impaired biliary copper excretion. Chronic parenteral copper peptide dosing is not established as safe.",
+            "citationIds": []
+          },
+          {
+            "system": "Evidence quality",
+            "label": "Transcriptomic claims from single research lineage",
+            "color": "yellow",
+            "helpSummary": "Magnitude claims exceed base mechanism.",
+            "harmSummary": "The breadth of reported transcriptional effects is primarily from the Pickart group and has not been robustly replicated at the claimed magnitude by unaffiliated laboratories.",
+            "citationIds": ["ghkcu-cit-pickart-2018"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Topical cosmetic benefits (skin firmness, wrinkle reduction, wound healing support) have modest but real human evidence. Systemic anti-aging, hair regrowth, and healing claims outside topical use are not supported by controlled human trials.",
+          "caveat": "Do not generalize topical cosmetic trial outcomes to systemic injectable use or to longevity endpoints.",
+          "citationIds": ["ghkcu-cit-pickart-2018", "ghkcu-cit-leyden-2002"]
+        },
+        "missingEvidence": [
+          "Large randomized trials of systemic / injectable GHK-Cu for any therapeutic indication",
+          "Independent (non-Pickart-group) replication of broad transcriptomic claims",
+          "Long-term safety of chronic parenteral use",
+          "Head-to-head comparison against established dermatologic ingredients (retinoids, peptide complexes) in photoaging"
+        ],
+        "anecdotalUse": [
+          "Topical cosmetic use for anti-aging and post-procedure skin recovery",
+          "Scalp application for hair density (weak human evidence)",
+          "Gray-market systemic injection for 'regenerative' effects (not supported by controlled human trials)"
+        ]
+      },
+      "claims": [
+        {
+          "id": "ghkcu-claim-copper-shuttle",
+          "field": "biology.cascades",
+          "value": "GHK binds Cu(II) with high affinity and functions as a copper shuttle, delivering copper to copper-dependent enzymes including lysyl oxidase, Cu,Zn-SOD, and cytochrome c oxidase.",
+          "species": "mixed",
+          "context": "cell",
+          "population": "biochemical and cell biology studies",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C"],
+          "confidence": 0.9,
+          "citationIds": ["ghkcu-cit-pickart-2018"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "ghkcu-claim-skin",
+          "field": "biology.cascades",
+          "value": "Topical GHK-Cu improves measured skin parameters (firmness, density, fine wrinkles, photodamage markers) in small human studies.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "healthy adults with photoaged skin",
+          "route": "topical",
+          "sampleSize": 67,
+          "duration": "12 weeks",
+          "symbols": ["H", "C"],
+          "confidence": 0.65,
+          "citationIds": ["ghkcu-cit-leyden-2002", "ghkcu-cit-pickart-2018"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "ghkcu-claim-transcriptional",
+          "field": "biology.cascades",
+          "value": "GHK is reported to modulate expression of hundreds to thousands of genes across tissue remodeling, antioxidant defense, and DNA repair pathways; the magnitude of this transcriptomic claim exceeds the copper-delivery mechanism and has not been robustly independently replicated.",
+          "species": "mixed",
+          "context": "cell",
+          "population": "fibroblast cultures, gene-expression array datasets",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "?"],
+          "confidence": 0.4,
+          "citationIds": ["ghkcu-cit-pickart-2018"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "ghkcu-cit-pickart-2018",
+          "sourceType": "review",
+          "title": "Regenerative and protective actions of the GHK-Cu peptide in the light of the new gene data",
+          "authors": ["Pickart L", "Margolina A"],
+          "year": 2018,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29883407/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["ghkcu-claim-transcriptional", "ghkcu-claim-copper-shuttle", "ghkcu-claim-skin"],
+          "notes": "Int J Mol Sci 19(7):1987. Pickart is the discoverer; much of the transcriptomic literature comes from his group. Treat as interested-party summary for magnitude claims."
+        },
+        {
+          "id": "ghkcu-cit-leyden-2002",
+          "sourceType": "primary",
+          "title": "Skin care benefits of copper peptide containing facial cream",
+          "authors": ["Leyden J", "Stephens T", "Finkey MB", "Barkovic S"],
+          "year": 2002,
+          "url": "https://www.aad.org/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["ghkcu-claim-skin"],
+          "notes": "AAD meeting abstract / paper on topical copper peptide facial cream. Specific bibliographic record should be verified before publication."
+        }
+      ]
+    },
+    {
+      "id": "dihexa",
+      "names": {
+        "primary": "Dihexa",
+        "aliases": ["N-hexanoyl-Tyr-Ile-(6)-aminohexanoic amide", "PNB-0408", "Hexanoyl-Tyr-Ile-NH-(CH2)5-CONH2"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C27H44N4O5",
+        "molecularWeight": 504.67,
+        "cas": "1401708-83-5",
+        "sequenceOneLetter": "Hexanoyl-Y-I-Aha-NH2",
+        "sequenceThreeLetter": "Hexanoyl-Tyr-Ile-(6-aminohexanoyl)-NH2",
+        "length": 2,
+        "modifications": [
+          "N-terminal hexanoyl cap (C6 fatty acid) — improves oral bioavailability and CNS penetration",
+          "C-terminal 6-aminohexanoic acid amide (Aha-NH2) — linker/spacer with terminal primary amide",
+          "Only Tyr-Ile is a canonical dipeptide; dihexa is better described as a peptidomimetic than a classical peptide",
+          "Derived from angiotensin IV (Ang IV) by the Harding laboratory at Washington State University",
+          "Molecular formula and mass now calculated explicitly in this cleanup pass: hexanoyl (C6H11O) + Tyr residue (C9H9NO2) + Ile residue (C6H11NO) + -NH-(CH2)5-CONH2 (C6H13N2O) = C27H44N4O5, MW 504.67"
+        ],
+        "structureClass": "Angiotensin IV-derived peptidomimetic; proposed HGF / c-Met pathway potentiator"
+      },
+      "classification": {
+        "peptideClass": "Peptidomimetic (angiotensin IV analog)",
+        "mechanismFamily": "Proposed HGF / c-Met pathway potentiator",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "An orally bioavailable peptidomimetic derived from angiotensin IV, developed at the Harding lab for neurological applications. Proposed to augment HGF / c-Met signaling to promote synaptogenesis and dendritic spine formation. Spectacular preclinical potency claims warrant independent replication before clinical translation.",
+        "localization": "CNS (claimed BBB penetration); c-Met pathway is broadly expressed",
+        "clinicalUses": [],
+        "sideEffects": [
+          "No human data — safety profile in humans is unknown"
+        ],
+        "dosing": {
+          "quick": "No human dose. Rat behavioral studies used oral doses in the high µg/kg range. No validated human dosing exists.",
+          "adminRoute": "Oral in preclinical work (the BBB-penetrant design rationale); subcutaneous in some gray-market use",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["HGF", "MET (c-Met receptor)"],
+        "proteins": [
+          "Hepatocyte growth factor (HGF) — dihexa is proposed to augment HGF signaling rather than bind c-Met directly",
+          "c-Met (MET) — receptor tyrosine kinase downstream of HGF",
+          "PI3K — downstream of c-Met",
+          "AKT (PKB) — downstream of PI3K/c-Met",
+          "ERK (MAPK) — downstream of c-Met",
+          "Angiotensin IV (parent system) — dihexa is derived from Ang IV but its proposed dominant mechanism is through HGF/c-Met rather than AT4 receptor",
+          "BDNF — downstream induction reported in some preparations"
+        ],
+        "receptors": [
+          "c-Met (MET) — indirect engagement via HGF augmentation (not direct binding)",
+          "AT4 receptor / IRAP (insulin-regulated aminopeptidase) — parent Ang IV target; relevance to dihexa is unclear"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Proposed HGF / c-Met synaptogenesis (preclinical)",
+            "steps": [
+              "Dihexa administration (oral in rodent studies; penetrates BBB)",
+              "Proposed augmentation of HGF binding or presentation to c-Met (direct binding to either HGF or c-Met not convincingly demonstrated)",
+              "c-Met receptor tyrosine kinase activation",
+              "Downstream PI3K/AKT and MAPK/ERK signaling",
+              "Increased dendritic spine density in cultured hippocampal neurons",
+              "Behavioral improvements in scopolamine-treated and aged rodent memory models",
+              "Magnitude of reported potency has not been robustly independently replicated"
+            ],
+            "symbols": ["C", "A", "?"],
+            "claimRef": "dihexa-claim-hgf"
+          },
+          {
+            "category": "Contradictions and evidence-quality flags",
+            "steps": [
+              "Reported synaptogenic potency: 'orders of magnitude greater than BDNF' in some assays — an extraordinary claim",
+              "Most dihexa-specific characterization originates from the Harding lab and close collaborators",
+              "Independent replication at the claimed potency magnitude by unaffiliated groups is limited",
+              "c-Met is a known oncogene — chronic pathway engagement in healthy adults is a genuine safety concern not addressed by preclinical cognitive benefit data",
+              "Gray-market molecular identity is frequently unverified — buyers rarely confirm that the compound matches the Harding-lab structure"
+            ],
+            "symbols": ["?", "N"],
+            "claimRef": "dihexa-claim-evidence-flag"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "There are no published human clinical trials of dihexa as of the knowledge cutoff. All efficacy claims are preclinical. The compound has been discussed in the Alzheimer's drug-development literature as a potential candidate, but no IND-enabling human data are publicly available.",
+        "animalEvidence": "Rat studies from the Harding lab report behavioral improvements (Morris water maze, object recognition) in aged and scopolamine-treated models, and dendritic spine formation in cultured hippocampal neurons. Reported potency in synaptogenesis assays is very high — described as orders of magnitude greater than BDNF in some preparations. This potency claim has not been robustly replicated by independent laboratories at the originally reported magnitude, which is a methodological concern given the scale of the claim.",
+        "mechanismDetail": "Dihexa is derived from angiotensin IV (Ang IV) by the Harding group at Washington State University. Structurally it is a small peptidomimetic with a hexanoyl cap, a Tyr-Ile dipeptide core, and a 6-aminohexanoic acid amide tail — designed for oral absorption and CNS penetration (confirmed molecular formula: C27H44N4O5, MW 504.67). The proposed mechanism of action is not direct c-Met binding but rather augmentation of HGF-mediated c-Met signaling, possibly by stabilizing or presenting HGF at c-Met. Downstream effects include PI3K/AKT and MAPK/ERK activation, dendritic spine formation, and improved memory performance in rodent models. The relationship to the parent Ang IV / AT4 receptor / IRAP system is complex and not fully resolved; dihexa's dominant mechanism is believed to have diverged from the parent Ang IV / IRAP biology but this has not been structurally established.",
+        "safetyDetail": "No human safety data. Rodent studies have not reported major toxicity at tested doses but are not substitutes for human exposure characterization. Broad c-Met activation is a theoretical oncological concern — c-Met is a known oncogene in several cancer types (gastric, lung, renal) and is a target of several approved oncology drugs acting as c-Met inhibitors. A compound that augments HGF/c-Met signaling runs directly contrary to that oncology drug-development logic.",
+        "safetyRisks": [
+          {
+            "system": "Oncology (theoretical but concrete)",
+            "label": "c-Met pathway activation",
+            "color": "red",
+            "helpSummary": "c-Met is an established oncogene target.",
+            "harmSummary": "c-Met gain-of-function is causally implicated in multiple cancers, and c-Met inhibitors are an approved oncology class. A compound that augments HGF/c-Met signaling carries a real oncology concern, particularly in individuals with occult malignancy or cancer risk factors.",
+            "citationIds": ["dihexa-cit-benoist-2011"]
+          },
+          {
+            "system": "Systemic",
+            "label": "No human safety characterization",
+            "color": "red",
+            "helpSummary": "No published human exposure data.",
+            "harmSummary": "Gray-market use lacks any clinical trial foundation.",
+            "citationIds": []
+          },
+          {
+            "system": "Evidence quality",
+            "label": "Extraordinary potency claims require extraordinary replication",
+            "color": "yellow",
+            "helpSummary": "Single-lab origin of potency magnitude.",
+            "harmSummary": "The 'orders of magnitude more potent than BDNF' framing is striking and not robustly replicated by independent groups at the originally reported magnitude.",
+            "citationIds": ["dihexa-cit-benoist-2011"]
+          },
+          {
+            "system": "Product quality",
+            "label": "Unverified gray-market identity",
+            "color": "yellow",
+            "helpSummary": "Complex non-standard structure.",
+            "harmSummary": "Dihexa's non-standard peptidomimetic structure makes identity verification by standard peptide-synthesis QC less straightforward than for canonical peptides; gray-market material should be assumed unverified.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Cognitive enhancement claims in healthy adults are not supported by any human trial. Rodent data are suggestive but single-source at the claimed potency magnitude.",
+          "caveat": "c-Met is an oncogene and an established oncology drug target (for inhibitors, not activators). A cognitive-enhancing compound that activates this pathway is not a casual proposition in healthy adults.",
+          "citationIds": ["dihexa-cit-benoist-2011"]
+        },
+        "missingEvidence": [
+          "Any human clinical trial",
+          "Independent replication of the high-potency synaptogenesis claim by unaffiliated laboratories",
+          "Long-term oncological safety given c-Met pathway engagement",
+          "Validated human pharmacokinetics and bioavailability",
+          "Verified molecular identity in gray-market supply"
+        ],
+        "anecdotalUse": [
+          "Gray-market oral or sublingual use for claimed cognitive enhancement and neuroprotection — not supported by any human trial"
+        ]
+      },
+      "claims": [
+        {
+          "id": "dihexa-claim-hgf",
+          "field": "biology.cascades",
+          "value": "Dihexa is proposed to act through HGF / c-Met pathway augmentation, with preclinical evidence for dendritic spine formation and behavioral improvement in rodent models; direct binding to HGF or c-Met has not been convincingly established.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "rat behavioral models; cultured hippocampal neurons",
+          "route": "oral, IP",
+          "sampleSize": null,
+          "duration": "days to weeks",
+          "symbols": ["A", "C", "?"],
+          "confidence": 0.5,
+          "citationIds": ["dihexa-cit-benoist-2011", "dihexa-cit-mccoy-2013"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "dihexa-claim-evidence-flag",
+          "field": "expanded.animalEvidence",
+          "value": "The reported synaptogenic potency of dihexa — 'orders of magnitude greater than BDNF' — has not been robustly replicated at that magnitude by independent groups; the combination of extraordinary claim and single-lineage evidence warrants independent verification.",
+          "species": "mixed",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "N"],
+          "confidence": 0.7,
+          "citationIds": ["dihexa-cit-benoist-2011"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "dihexa-claim-oncology",
+          "field": "expanded.safetyDetail",
+          "value": "c-Met is an established oncogene and oncology drug target (for inhibitors); a cognitive-enhancing compound that activates HGF / c-Met signaling carries a concrete theoretical oncology concern.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "H"],
+          "confidence": 0.8,
+          "citationIds": ["dihexa-cit-benoist-2011"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "dihexa-claim-no-human",
+          "field": "expanded.humanEvidence",
+          "value": "No published human clinical trials of dihexa exist as of knowledge cutoff.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "H"],
+          "confidence": 0.9,
+          "citationIds": ["dihexa-cit-benoist-2011"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "dihexa-cit-benoist-2011",
+          "sourceType": "primary",
+          "title": "Facilitation of hippocampal synaptogenesis and spatial memory by C-terminal truncated Nle1-angiotensin IV analogs",
+          "authors": ["Benoist CC", "Wright JW", "Zhu M", "Appleyard SM", "Wayman GA", "Harding JW"],
+          "year": 2011,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21873558/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["dihexa-claim-hgf", "dihexa-claim-evidence-flag", "dihexa-claim-oncology", "dihexa-claim-no-human"],
+          "notes": "J Pharmacol Exp Ther 339(1):35-44. Harding-lab paper on Ang IV-derived analog class including design rationale; dihexa-specific characterization is split across several Harding-lab papers from 2011-2014."
+        },
+        {
+          "id": "dihexa-cit-mccoy-2013",
+          "sourceType": "primary",
+          "title": "Evaluation of metabolically stabilized angiotensin IV analogs as pro-cognitive / anti-dementia therapeutics",
+          "authors": ["McCoy AT", "Benoist CC", "Wright JW", "Kawas LH", "Bule-Ghogare JM", "Zhu M", "Appleyard SM", "Wayman GA", "Harding JW"],
+          "year": 2013,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23408114/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["dihexa-claim-hgf"],
+          "notes": "J Pharmacol Exp Ther 344(1):141-54. Further Harding-lab characterization; confirm exact title and year."
+        }
+      ]
+    }
+  ]
+}
