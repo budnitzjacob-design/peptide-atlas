@@ -522,7 +522,7 @@ textarea:focus {
 
 .category-label {
   color: var(--type-color, var(--steel));
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .name-display {
@@ -538,7 +538,7 @@ textarea:focus {
 
 .tile .name-display {
   font-size: clamp(1.78rem, 3vw, 2.34rem);
-  margin: 2px 0 8px;
+  margin: 4px 0 12px;
 }
 
 .name-lower {
@@ -550,8 +550,8 @@ textarea:focus {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 2px;
-  margin-bottom: 8px;
+  margin-top: 4px;
+  margin-bottom: 10px;
 }
 
 .mini-tag {
