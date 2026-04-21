@@ -33,5 +33,5 @@ createServer((req, res) => {
   });
   createReadStream(filePath).pipe(res);
 }).listen(port, "0.0.0.0", () => {
-  console.log(`Peptide Atlas listening on ${port}`);
+  console.log(`Peptocopeia listening on ${port}`);
 });

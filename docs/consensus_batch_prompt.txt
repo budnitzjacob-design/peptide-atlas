@@ -1,0 +1,25 @@
+Peptocopeia Consensus batch prompt
+Last updated: 2026-04-21
+
+Use this as one Consensus query per batch of 6-9 peptides. After Consensus returns results, export the result set as CSV or RIS if available. If Consensus gives a chat-style answer, copy the answer plus the visible citation list.
+
+Prompt to paste into Consensus:
+
+For the following peptides: SS-31/elamipretide, MOTS-c, BPC-157, TB-500/thymosin beta-4 fragment, GHK-Cu, tesamorelin, semaglutide, tirzepatide, retatrutide.
+
+Find peer-reviewed evidence and regulatory/clinical-trial sources relevant to:
+1. mechanism of action, protein/receptor signaling, genes/proteins, channels/transporters, cytokines/interleukins, and pathway arrows;
+2. human clinical evidence including trial phase, population, disease/non-disease context, age range if stated, sample size, route, dose/protocol, duration, endpoints, and adverse events;
+3. animal/preclinical evidence with species/model, n if stated, protocol, endpoints, and results;
+4. peer-reviewed case reports if any;
+5. medical/clinical uses separately from non-clinical enhancement/common-use claims;
+6. pharmacokinetics/pharmacodynamics and dosing context, clearly labeled as FDA label, clinical trial, observational, preclinical, or anecdotal/common use.
+
+Be extremely literal. Do not infer benefits from mechanistic or animal findings. Do not generalize from diseased populations to healthy humans. For every study, include title, year, DOI/PMID if available, URL, study type, population/species, n, protocol, most notable results, adverse events, and a one-sentence limitation. Flag whether evidence is human, animal, cell, review, regulatory, or anecdotal.
+
+Preferred output table columns:
+peptide | evidence_type | study_title | year | doi | pmid | url | study_type | population_or_model | disease_context | n | age_or_species_details | route | dose_or_protocol | duration | endpoints | notable_results_literal | adverse_events_literal | limitations | mechanism_targets | genes | proteins | receptors | channels_transporters | cytokines_interleukins | clinical_use_context | enhancement_or_common_use_context | confidence | retrieved_date
+
+If too many results appear, prioritize: FDA/regulatory labels first, phase 2/3 human trials second, randomized human trials third, peer-reviewed case reports fourth, animal studies fifth, mechanistic cell studies sixth, reviews only as background.
+
+After exporting, preserve the Consensus export filename and retrieval date. Do not rewrite citations manually unless export is unavailable.

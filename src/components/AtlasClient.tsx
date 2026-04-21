@@ -46,6 +46,7 @@ function CitationMarker({ citation, index }: { citation: PeptideRecord["citation
         <strong>{citation.title}</strong>
         <span>{citation.authors.join(", ")} {citation.year ? `(${citation.year})` : ""}</span>
         <span>{citation.notes}</span>
+        <span>Retrieved {citation.accessedAt}</span>
       </span>
     </span>
   );
@@ -125,7 +126,7 @@ export function AtlasClient({ initialPeptides, sourceRegistry }: Props) {
       <section className="hero">
         <div>
           <p className="eyebrow">production scaffold / model-checkable data</p>
-          <h1>Peptide Atlas</h1>
+          <h1 className="brand-title">Peptocopeia</h1>
           <p className="lede">
             Source-backed peptide reference for biologists and physicians, with public vendor context, contextual dosing labels, hover citations, moderator review, and future agent reasoning.
           </p>
@@ -174,7 +175,22 @@ export function AtlasClient({ initialPeptides, sourceRegistry }: Props) {
 
       <section className="tiles">
         {peptides.map((peptide) => (
-          <article className="tile" key={peptide.id}>
+          <article
+            className="tile"
+            key={peptide.id}
+            role="button"
+            tabIndex={0}
+            onClick={(event) => {
+              if ((event.target as HTMLElement).closest("button,a,input,select,textarea,.citation")) return;
+              setSelected(peptide);
+              setTag(null);
+            }}
+            onKeyDown={(event) => {
+              if (event.key !== "Enter") return;
+              setSelected(peptide);
+              setTag(null);
+            }}
+          >
             <header>
               <div>
                 <p className="eyebrow">{peptide.category}</p>
@@ -202,7 +218,7 @@ export function AtlasClient({ initialPeptides, sourceRegistry }: Props) {
             <section className="chips">
               {peptide.biology.proteins.slice(0, 5).map((protein) => <BiologyTag type="protein" value={protein} key={protein} />)}
             </section>
-            <button className="expand" type="button" onClick={() => { setSelected(peptide); setTag(null); }}>Expand article</button>
+            <p className="click-hint">Click tile for full article, citations, signaling, studies, and vendor tables.</p>
           </article>
         ))}
       </section>

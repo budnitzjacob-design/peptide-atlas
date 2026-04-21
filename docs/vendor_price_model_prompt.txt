@@ -1,0 +1,110 @@
+Peptocopeia vendor, price, COA, and satisfaction data prompt
+Last updated: 2026-04-21
+
+Goal
+Compile vendor/manufacturer/price/lab-result rows for rapid import into Peptocopeia. Use public pages only unless the user explicitly provides logged-in exports. Keep all citations and snapshots.
+
+Primary sources to inspect
+- Finnrick public pages: https://www.finnrick.com/, /products, /products/{peptide}, vendor/product detail pages, methodology, certificate verification pages.
+- PeptideTracker public pages: https://www.peptidetracker.com/dashboard, /peptidedex, /vendors, /peptide/{slug}, /vendors/{slug}. The dashboard is a client-rendered app; inspect bundled JS/network calls and public Supabase REST responses only where access is allowed.
+- Vendor product pages and COA pages linked by Finnrick, PeptideTracker, Peptide Partners, or user-provided sources.
+
+Rules
+1. Do not treat vendor marketing as efficacy or safety evidence.
+2. Store prices as observations with date retrieved, currency, quantity, concentration if stated, and source URL.
+3. Store Finnrick-style lab/rating data separately from vendor claims.
+4. Preserve COA URLs, lab names, batch IDs, test dates, purity, quantity/assay, sterility, endotoxin, heavy metals, and any fail/flag language exactly.
+5. Satisfaction/review data must be labeled as user review, sentiment, rating, complaint, or anecdotal. Never combine it with clinical evidence.
+6. If a site blocks scraping, state that and output the URLs/manual fields needed.
+7. Capture a source_snapshot object for every row: page title, source URL, date retrieved, visible source notes, and whether data was public, logged-in export, or manually copied.
+
+Return one JSON object with this exact shape:
+
+{
+  "retrieved_date": "YYYY-MM-DD",
+  "source_run_id": "vendor-price-YYYY-MM-DD-batch-N",
+  "peptides": [
+    {
+      "peptide_id": "lowercase-kebab-slug",
+      "peptide_name": "Display name",
+      "vendor_observations": [
+        {
+          "vendor": "Vendor name",
+          "vendor_slug": "vendor-name",
+          "manufacturer": "Manufacturer if distinct or null",
+          "product_name": "Product display name",
+          "product_url": "https://...",
+          "source_platform": "finnrick | peptidetracker | vendor_site | peptide_partners | other",
+          "vial_size": "10 mg",
+          "quantity": "single vial | kit | bulk | unknown",
+          "price": {
+            "raw": "$79.99",
+            "currency": "USD",
+            "amount": 79.99,
+            "unit_basis": "per 10 mg vial",
+            "price_per_mg": 7.999,
+            "sale_or_coupon_context": "none | sale | coupon | affiliate | unknown"
+          },
+          "availability": "in_stock | out_of_stock | preorder | unknown",
+          "shipping_region": "US | international | unknown",
+          "lab_results": [
+            {
+              "batch_id": "string or null",
+              "test_date": "YYYY-MM-DD or null",
+              "lab": "Lab name or null",
+              "coa_url": "https://... or null",
+              "purity": "99.2% or null",
+              "quantity_assay": "label claim / measured amount or null",
+              "endotoxin": "pass | fail | conforms | does_not_conform | unknown | null",
+              "heavy_metals": "pass | fail | conforms | does_not_conform | unknown | null",
+              "sterility": "pass | fail | unknown | null",
+              "other_tests": "free text",
+              "flags": ["mislabeled", "underfilled", "contamination", "none"]
+            }
+          ],
+          "ratings": {
+            "finnrick_grade": "A | B | C | D | E | null",
+            "finnrick_score": "number or null",
+            "finnrick_test_count": "number or null",
+            "peptidetracker_rating": "number or null",
+            "review_count": "number or null",
+            "satisfaction_summary": "short literal summary or null",
+            "sentiment_score": "number or null",
+            "complaints": ["late shipping", "COA unavailable"]
+          },
+          "source_snapshot": {
+            "title": "Page title",
+            "url": "https://...",
+            "retrieved_date": "YYYY-MM-DD",
+            "access": "public | logged_in_export | manual_copy",
+            "notes": "What was visible and any uncertainty"
+          }
+        }
+      ]
+    }
+  ],
+  "source_citations": [
+    {
+      "id": "src-vendor-001",
+      "title": "Page title",
+      "url": "https://...",
+      "retrieved_date": "YYYY-MM-DD",
+      "source_type": "finnrick | peptidetracker | vendor_site | lab_coa | other",
+      "notes": "Why this source was used"
+    }
+  ],
+  "blocked_or_manual_steps": [
+    {
+      "site": "site name",
+      "url": "https://...",
+      "reason": "login required | blocked | dynamic app | no public data",
+      "manual_fields_needed": ["field names"]
+    }
+  ]
+}
+
+Validation before returning
+- Every vendor_observation must have peptide_id, vendor, product_name, source_platform, source_snapshot.url, and source_snapshot.retrieved_date.
+- Every price must include raw text and currency if visible.
+- If a numeric field is inferred from visible text, include the visible text in raw and note the inference.
+- Do not invent unavailable COA, lab, price, or review data.

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Peptide Atlas",
-  description: "Source-verified peptide reference with citation review and moderator workflow."
+  title: "Peptocopeia",
+  description: "Source-backed peptide reference with citation review, vendor context, and moderator workflow."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

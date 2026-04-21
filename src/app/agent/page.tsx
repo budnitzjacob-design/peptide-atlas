@@ -9,7 +9,7 @@ export default function AgentPage() {
           <h1>Reasoning Layer</h1>
           <p className="lede">
             The agent endpoint is intentionally disabled until source snapshots, citation IDs, and moderator verifications are wired into retrieval.
-            When enabled, it should answer only from Peptide Atlas data and cite every claim back to records.
+            When enabled, it should answer only from Peptocopeia data and cite every claim back to records.
           </p>
         </div>
         <Link href="/">Atlas grid</Link>

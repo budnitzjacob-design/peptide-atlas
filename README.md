@@ -1,4 +1,4 @@
-# Peptide Atlas
+# Peptocopeia
 
 Source-verifiable peptide reference with public vendor context, contextual dosing labels, hover citations, and moderator-ready claim review.
 
