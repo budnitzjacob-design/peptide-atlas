@@ -126,14 +126,14 @@ export function AtlasClient({ initialPeptides, sourceRegistry }: Props) {
       <section className="hero">
         <div>
           <p className="eyebrow">production scaffold / model-checkable data</p>
-          <h1 className="brand-title">Peptocopeia</h1>
+          <h1 className="brand-title">peptocopeia</h1>
           <p className="lede">
             Source-backed peptide reference for biologists and physicians, with public vendor context, contextual dosing labels, hover citations, moderator review, and future agent reasoning.
           </p>
           <div className="hero-actions">
             <a href="/admin">Mod queue</a>
             <a href="/agent">Agent plan</a>
-            <button type="button" onClick={() => setAgentOpen(true)}>Atlas agent</button>
+            <button type="button" onClick={() => setAgentOpen(true)}>atlas agent</button>
           </div>
         </div>
         <aside className="legend">

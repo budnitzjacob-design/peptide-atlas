@@ -32,8 +32,8 @@ writeFileSync(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Peptocopeia</title>
-  <meta name="description" content="Peptocopeia is a source-backed peptide reference with citation review, vendor metadata, and moderator verification workflows.">
+  <title>peptocopeia</title>
+  <meta name="description" content="peptocopeia is a source-backed peptide reference with citation review, vendor metadata, and moderator verification workflows.">
   <link rel="stylesheet" href="/styles.css?v=${appVersion}">
 </head>
 <body>

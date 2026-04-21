@@ -1,0 +1,4932 @@
+peptocopeia compiled data export
+generated_at: 2026-04-21T04:58:57.554Z
+peptide_count: 45
+source_registry_count: 3
+
+source_registry:
+- id: consensus-csv
+  name: Consensus CSV/RIS manual exports
+  status: active_manual_import
+  use: Paper discovery and citation candidate import until API access exists.
+- id: pubmed-fda
+  name: PubMed / FDA / ClinicalTrials
+  status: planned_primary_verification
+  use: Primary/regulatory verification for claims, dosing context, and safety.
+- id: moderator-review
+  name: Human moderator verification
+  status: schema_ready
+  use: Other models and human mods review each model-drafted claim before high-risk publication.
+
+====================================================================================================
+id: aod-9604
+primary_name: AOD-9604
+aliases: none
+trade_names: none
+category: Metabolic
+peptide_class: hGH fragment
+mechanism_family: lipolysis / beta-adrenergic metabolic signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: AOD-9604 is tracked as a hGH fragment; current mechanism text is a source-indexed draft centered on lipolysis / beta-adrenergic metabolic signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: lipolysis / beta-adrenergic metabolic signaling
+  symbols: R, ?
+  claim_ref: aod-9604-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: metabolic
+  steps: hGH fragment -> lipolysis / beta-adrenergic metabolic signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: aod-9604-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: aod-9604-mechanism-seed
+  field: tile.mechanismSummary
+  value: hGH fragment; lipolysis / beta-adrenergic metabolic signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: bpc-157
+primary_name: BPC-157
+aliases: none
+trade_names: none
+category: Recovery & Repair
+peptide_class: gastric pentadecapeptide
+mechanism_family: angiogenesis and tissue repair signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: BPC-157 is tracked as a gastric pentadecapeptide; current mechanism text is a source-indexed draft centered on angiogenesis and tissue repair signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: angiogenesis and tissue repair signaling
+  symbols: R, ?
+  claim_ref: bpc-157-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: recovery & repair
+  steps: gastric pentadecapeptide -> angiogenesis and tissue repair signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: bpc-157-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: BPC-157
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: bpc-157-mechanism-seed
+  field: tile.mechanismSummary
+  value: gastric pentadecapeptide; angiogenesis and tissue repair signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: cagrilintide
+primary_name: Cagrilintide
+aliases: none
+trade_names: none
+category: Metabolic
+peptide_class: amylin analog
+mechanism_family: amylin receptor appetite and satiety signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Cagrilintide is tracked as a amylin analog; current mechanism text is a source-indexed draft centered on amylin receptor appetite and satiety signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: amylin receptor appetite and satiety signaling
+  symbols: R, ?
+  claim_ref: cagrilintide-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: metabolic
+  steps: amylin analog -> amylin receptor appetite and satiety signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: cagrilintide-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: cagrilintide-mechanism-seed
+  field: tile.mechanismSummary
+  value: amylin analog; amylin receptor appetite and satiety signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: cerebrolysin
+primary_name: Cerebrolysin
+aliases: none
+trade_names: none
+category: Cognitive Enhancement
+peptide_class: neurotrophic peptide mixture
+mechanism_family: neurotrophic and neuronal survival signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Cerebrolysin is tracked as a neurotrophic peptide mixture; current mechanism text is a source-indexed draft centered on neurotrophic and neuronal survival signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: neurotrophic and neuronal survival signaling
+  symbols: R, ?
+  claim_ref: cerebrolysin-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: cognitive enhancement
+  steps: neurotrophic peptide mixture -> neurotrophic and neuronal survival signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: cerebrolysin-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: cerebrolysin-mechanism-seed
+  field: tile.mechanismSummary
+  value: neurotrophic peptide mixture; neurotrophic and neuronal survival signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: cjc-1295
+primary_name: CJC-1295
+aliases: none
+trade_names: none
+category: Growth Factors
+peptide_class: GHRH analog
+mechanism_family: pituitary GHRH receptor and GH/IGF-1 axis
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: CJC-1295 is tracked as a GHRH analog; current mechanism text is a source-indexed draft centered on pituitary GHRH receptor and GH/IGF-1 axis.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: pituitary GHRH receptor and GH/IGF-1 axis
+  symbols: R, ?
+  claim_ref: cjc-1295-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: growth factors
+  steps: GHRH analog -> pituitary GHRH receptor and GH/IGF-1 axis -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: cjc-1295-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: CJC-1295
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: cjc-1295-mechanism-seed
+  field: tile.mechanismSummary
+  value: GHRH analog; pituitary GHRH receptor and GH/IGF-1 axis
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: dihexa
+primary_name: Dihexa
+aliases: none
+trade_names: none
+category: Cognitive Enhancement
+peptide_class: angiotensin IV analog
+mechanism_family: HGF/c-Met synaptogenic signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Dihexa is tracked as a angiotensin IV analog; current mechanism text is a source-indexed draft centered on HGF/c-Met synaptogenic signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: HGF/c-Met synaptogenic signaling
+  symbols: R, ?
+  claim_ref: dihexa-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: cognitive enhancement
+  steps: angiotensin IV analog -> HGF/c-Met synaptogenic signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: dihexa-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: dihexa-mechanism-seed
+  field: tile.mechanismSummary
+  value: angiotensin IV analog; HGF/c-Met synaptogenic signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: dsip
+primary_name: DSIP
+aliases: none
+trade_names: none
+category: Sleep & Relaxation
+peptide_class: sleep-related neuropeptide
+mechanism_family: sleep and HPA-axis associated signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: DSIP is tracked as a sleep-related neuropeptide; current mechanism text is a source-indexed draft centered on sleep and HPA-axis associated signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: sleep and HPA-axis associated signaling
+  symbols: R, ?
+  claim_ref: dsip-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: sleep & relaxation
+  steps: sleep-related neuropeptide -> sleep and HPA-axis associated signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: dsip-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: dsip-mechanism-seed
+  field: tile.mechanismSummary
+  value: sleep-related neuropeptide; sleep and HPA-axis associated signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: epithalon
+primary_name: Epithalon
+aliases: none
+trade_names: none
+category: Anti-Aging
+peptide_class: pineal tetrapeptide
+mechanism_family: telomerase and gene-expression hypotheses
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Epithalon is tracked as a pineal tetrapeptide; current mechanism text is a source-indexed draft centered on telomerase and gene-expression hypotheses.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: telomerase and gene-expression hypotheses
+  symbols: R, ?
+  claim_ref: epithalon-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: anti-aging
+  steps: pineal tetrapeptide -> telomerase and gene-expression hypotheses -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: epithalon-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: epithalon-mechanism-seed
+  field: tile.mechanismSummary
+  value: pineal tetrapeptide; telomerase and gene-expression hypotheses
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: follistatin-344
+primary_name: Follistatin 344
+aliases: none
+trade_names: none
+category: Growth Factors
+peptide_class: activin/myostatin binding protein
+mechanism_family: myostatin/activin sequestration
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Follistatin 344 is tracked as a activin/myostatin binding protein; current mechanism text is a source-indexed draft centered on myostatin/activin sequestration.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: myostatin/activin sequestration
+  symbols: R, ?
+  claim_ref: follistatin-344-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: growth factors
+  steps: activin/myostatin binding protein -> myostatin/activin sequestration -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: follistatin-344-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: follistatin-344-mechanism-seed
+  field: tile.mechanismSummary
+  value: activin/myostatin binding protein; myostatin/activin sequestration
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: foxo4-dri
+primary_name: FOXO4-DRI
+aliases: none
+trade_names: none
+category: Anti-Aging
+peptide_class: D-retro-inverso senolytic peptide
+mechanism_family: FOXO4-p53 senescence signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: FOXO4-DRI is tracked as a D-retro-inverso senolytic peptide; current mechanism text is a source-indexed draft centered on FOXO4-p53 senescence signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: FOXO4-p53 senescence signaling
+  symbols: R, ?
+  claim_ref: foxo4-dri-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: anti-aging
+  steps: D-retro-inverso senolytic peptide -> FOXO4-p53 senescence signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: foxo4-dri-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: foxo4-dri-mechanism-seed
+  field: tile.mechanismSummary
+  value: D-retro-inverso senolytic peptide; FOXO4-p53 senescence signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: ghk-cu
+primary_name: GHK-Cu
+aliases: none
+trade_names: none
+category: Anti-Aging
+peptide_class: copper tripeptide
+mechanism_family: extracellular-matrix and wound remodeling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: GHK-Cu is tracked as a copper tripeptide; current mechanism text is a source-indexed draft centered on extracellular-matrix and wound remodeling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: extracellular-matrix and wound remodeling
+  symbols: R, ?
+  claim_ref: ghk-cu-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: anti-aging
+  steps: copper tripeptide -> extracellular-matrix and wound remodeling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: ghk-cu-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: GHK-Cu
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: ghk-cu-mechanism-seed
+  field: tile.mechanismSummary
+  value: copper tripeptide; extracellular-matrix and wound remodeling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: ghrp-2
+primary_name: GHRP-2
+aliases: none
+trade_names: none
+category: Growth Factors
+peptide_class: GH secretagogue
+mechanism_family: GHSR ghrelin receptor and GH pulse signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: GHRP-2 is tracked as a GH secretagogue; current mechanism text is a source-indexed draft centered on GHSR ghrelin receptor and GH pulse signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: GHSR ghrelin receptor and GH pulse signaling
+  symbols: R, ?
+  claim_ref: ghrp-2-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: growth factors
+  steps: GH secretagogue -> GHSR ghrelin receptor and GH pulse signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: ghrp-2-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: ghrp-2-mechanism-seed
+  field: tile.mechanismSummary
+  value: GH secretagogue; GHSR ghrelin receptor and GH pulse signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: ghrp-6
+primary_name: GHRP-6
+aliases: none
+trade_names: none
+category: Growth Factors
+peptide_class: GH secretagogue
+mechanism_family: GHSR ghrelin receptor and appetite/GH signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: GHRP-6 is tracked as a GH secretagogue; current mechanism text is a source-indexed draft centered on GHSR ghrelin receptor and appetite/GH signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: GHSR ghrelin receptor and appetite/GH signaling
+  symbols: R, ?
+  claim_ref: ghrp-6-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: growth factors
+  steps: GH secretagogue -> GHSR ghrelin receptor and appetite/GH signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: ghrp-6-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: ghrp-6-mechanism-seed
+  field: tile.mechanismSummary
+  value: GH secretagogue; GHSR ghrelin receptor and appetite/GH signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: hexarelin
+primary_name: Hexarelin
+aliases: none
+trade_names: none
+category: Growth Factors
+peptide_class: GH secretagogue
+mechanism_family: GHSR and CD36-associated cardiac signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Hexarelin is tracked as a GH secretagogue; current mechanism text is a source-indexed draft centered on GHSR and CD36-associated cardiac signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: GHSR and CD36-associated cardiac signaling
+  symbols: R, ?
+  claim_ref: hexarelin-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: growth factors
+  steps: GH secretagogue -> GHSR and CD36-associated cardiac signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: hexarelin-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: hexarelin-mechanism-seed
+  field: tile.mechanismSummary
+  value: GH secretagogue; GHSR and CD36-associated cardiac signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: humanin
+primary_name: Humanin
+aliases: none
+trade_names: none
+category: Mitochondrial
+peptide_class: mitochondrial-derived peptide
+mechanism_family: mitochondrial stress and neuroprotection signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Humanin is tracked as a mitochondrial-derived peptide; current mechanism text is a source-indexed draft centered on mitochondrial stress and neuroprotection signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: mitochondrial stress and neuroprotection signaling
+  symbols: R, ?
+  claim_ref: humanin-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: mitochondrial
+  steps: mitochondrial-derived peptide -> mitochondrial stress and neuroprotection signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: humanin-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: humanin-mechanism-seed
+  field: tile.mechanismSummary
+  value: mitochondrial-derived peptide; mitochondrial stress and neuroprotection signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: igf-1-lr3
+primary_name: IGF-1 LR3
+aliases: none
+trade_names: none
+category: Growth Factors
+peptide_class: IGF analog
+mechanism_family: IGF-1 receptor PI3K/Akt/mTOR signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: IGF-1 LR3 is tracked as a IGF analog; current mechanism text is a source-indexed draft centered on IGF-1 receptor PI3K/Akt/mTOR signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: IGF-1 receptor PI3K/Akt/mTOR signaling
+  symbols: R, ?
+  claim_ref: igf-1-lr3-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: growth factors
+  steps: IGF analog -> IGF-1 receptor PI3K/Akt/mTOR signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: igf-1-lr3-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: igf-1-lr3-mechanism-seed
+  field: tile.mechanismSummary
+  value: IGF analog; IGF-1 receptor PI3K/Akt/mTOR signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: ipamorelin
+primary_name: Ipamorelin
+aliases: none
+trade_names: none
+category: Growth Factors
+peptide_class: selective GH secretagogue
+mechanism_family: GHSR and pituitary GH pulse signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Ipamorelin is tracked as a selective GH secretagogue; current mechanism text is a source-indexed draft centered on GHSR and pituitary GH pulse signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: GHSR and pituitary GH pulse signaling
+  symbols: R, ?
+  claim_ref: ipamorelin-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: growth factors
+  steps: selective GH secretagogue -> GHSR and pituitary GH pulse signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: ipamorelin-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: Ipamorelin
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: ipamorelin-mechanism-seed
+  field: tile.mechanismSummary
+  value: selective GH secretagogue; GHSR and pituitary GH pulse signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: kisspeptin
+primary_name: Kisspeptin
+aliases: none
+trade_names: none
+category: Reproductive / Metabolic
+peptide_class: neuropeptide
+mechanism_family: KISS1R/GPR54 and GnRH release
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Kisspeptin is tracked as a neuropeptide; current mechanism text is a source-indexed draft centered on KISS1R/GPR54 and GnRH release.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: KISS1R/GPR54 and GnRH release
+  symbols: R, ?
+  claim_ref: kisspeptin-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: reproductive / metabolic
+  steps: neuropeptide -> KISS1R/GPR54 and GnRH release -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: kisspeptin-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: kisspeptin-mechanism-seed
+  field: tile.mechanismSummary
+  value: neuropeptide; KISS1R/GPR54 and GnRH release
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: kpv
+primary_name: KPV
+aliases: none
+trade_names: none
+category: Immune Support
+peptide_class: alpha-MSH tripeptide
+mechanism_family: melanocortin and NF-kB inflammatory signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: KPV is tracked as a alpha-MSH tripeptide; current mechanism text is a source-indexed draft centered on melanocortin and NF-kB inflammatory signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: melanocortin and NF-kB inflammatory signaling
+  symbols: R, ?
+  claim_ref: kpv-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: immune support
+  steps: alpha-MSH tripeptide -> melanocortin and NF-kB inflammatory signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: kpv-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: kpv-mechanism-seed
+  field: tile.mechanismSummary
+  value: alpha-MSH tripeptide; melanocortin and NF-kB inflammatory signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: liraglutide
+primary_name: Liraglutide
+aliases: Victoza | Saxenda
+trade_names: Victoza | Saxenda
+category: Metabolic
+peptide_class: GLP-1 receptor agonist
+mechanism_family: GLP-1 receptor incretin signaling
+evidence_tier: fda_phase3
+regulatory_status: fda_approved
+moderation_status: needs_review
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Liraglutide is an FDA-approved GLP-1 receptor agonist used in branded products for type 2 diabetes and weight-management contexts.
+localization: GLP-1 receptor signaling in pancreatic islets, gastrointestinal axis, and central appetite circuits.
+clinical_uses: FDA page describes Victoza as adjunct to diet and exercise for glycemic control in adults with type 2 diabetes.
+side_effects: Label-specific GI adverse events and thyroid C-cell warning context must be imported from current label. | Generic/brand availability can change and requires regulatory refresh.
+dosing_quick: FDA/label context only; exact product-specific dose wording must come from the current label.
+dosing_admin_route: Subcutaneous product-label context; not an enhancement protocol.
+dosing_public_display_allowed: true
+dosing_context: fda_label
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: glycemic control
+  symbols: Rx, H
+  claim_ref: liraglutide-fda-use
+- label: weight management context
+  symbols: Rx, H
+  claim_ref: liraglutide-weight-context
+- label: GLP-1 receptor activation
+  symbols: H, R
+  claim_ref: liraglutide-fda-use
+
+[biology]
+genes: GLP1R | INS | GCG | POMC
+proteins: GLP-1 receptor | insulin | glucagon | POMC
+receptors: GLP-1R
+channels_transporters: KATP channel physiology via glucose-stimulated insulin secretion
+cytokines_interleukins:
+- name: CRP
+  type: inflammatory_marker
+  effect: metabolic inflammation marker; source-specific extraction pending
+  context: human metabolic studies; needs field-level verification
+  symbols: H, ?
+  claim_ref: liraglutide-crp-pending
+cascades:
+- category: metabolic
+  steps: GLP-1R -> cAMP -> insulin/glucagon and appetite signaling -> glycemic and weight outcomes
+  symbols: Rx, H
+  claim_ref: liraglutide-fda-use
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: liraglutide-fda-use
+  field: tile.clinicalUses
+  value: Victoza is FDA-approved as adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes.
+  species: human
+  context: fda_label
+  population: none
+  route: none
+  symbols: Rx, H
+  confidence: 0.9
+  citation_ids: fda-liraglutide-victoza
+  needs_moderator_review: true
+
+[citations]
+- id: fda-liraglutide-victoza
+  source_type: fda_label
+  title: Liraglutide marketed as Victoza information
+  authors: U.S. Food and Drug Administration
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/liraglutide-marketed-victoza-information
+  accessed_at: 2026-04-21
+  quality: regulatory
+  supports_claim_ids: liraglutide-fda-use
+  notes: FDA page stating Victoza is approved as adjunct to diet and exercise for glycemic control in adults with type 2 diabetes.
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: ll-37
+primary_name: LL-37
+aliases: Cathelicidin LL-37 | hCAP18/LL-37
+trade_names: none
+category: Immune Support
+peptide_class: cathelicidin antimicrobial peptide
+mechanism_family: innate immunity, antimicrobial, and cytokine modulation
+evidence_tier: translational
+regulatory_status: research_only
+moderation_status: needs_review
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: LL-37 is a human cathelicidin antimicrobial peptide with immunomodulatory effects in epithelial, neutrophil, macrophage, and antigen-presenting-cell contexts.
+localization: Innate immune barriers, epithelial surfaces, neutrophils, macrophages, dendritic cells, and inflamed tissues.
+clinical_uses: Research-only antimicrobial and immune-modulating peptide context; no FDA-approved LL-37 therapeutic product identified.
+side_effects: Human enhancement use is not established; immune activation/suppression can be context-dependent. | Cancer/inflammation contexts are complex and require disease-specific evidence.
+dosing_quick: No FDA label or verified human-use dose context. Common-use reports, if shown, must be anecdotal and non-clinical.
+dosing_admin_route: Research/study context only; route/dose requires exact citation.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: antimicrobial host defense
+  symbols: C, A, R
+  claim_ref: ll37-host-defense
+- label: IFN-gamma response modulation
+  symbols: C
+  claim_ref: ll37-ifng-modulation
+- label: neutrophil cytokine release modulation
+  symbols: C
+  claim_ref: ll37-neutrophil-cytokines
+
+[biology]
+genes: CAMP | IFNG | IL1B | TNF | CXCL8
+proteins: LL-37 | IFN-gamma | IL-1beta | TNF | IL-8/CXCL8
+receptors: TLR-related innate immune pathways | formyl peptide receptor contexts require verification
+channels_transporters: none
+cytokines_interleukins:
+- name: IFN-gamma
+  type: cytokine
+  effect: LL-37 inhibited IFN-gamma responses in antigen-presenting-cell study context
+  context: human immune cells in vitro
+  symbols: C
+  claim_ref: ll37-ifng-modulation
+- name: IL-1beta
+  type: interleukin
+  effect: stimulus-dependent modulation; exact direction requires extraction
+  context: human neutrophil/cell contexts
+  symbols: C, ?
+  claim_ref: ll37-neutrophil-cytokines
+- name: TNF
+  type: cytokine
+  effect: stimulus-dependent modulation; exact direction requires extraction
+  context: human neutrophil/cell contexts
+  symbols: C, ?
+  claim_ref: ll37-neutrophil-cytokines
+- name: IL-8/CXCL8
+  type: chemokine
+  effect: host-defense/inflammatory response marker; exact direction requires extraction
+  context: human neutrophil/cell contexts
+  symbols: C, ?
+  claim_ref: ll37-neutrophil-cytokines
+cascades:
+- category: immune
+  steps: LL-37 -> microbial/cytokine stimulus -> APC/neutrophil cytokine response -> host-defense/inflammation modulation
+  symbols: C
+  claim_ref: ll37-neutrophil-cytokines
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: LL-37
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: ll37-ifng-modulation
+  field: biology.cytokinesInterleukins
+  value: LL-37 inhibited cellular responses to IFN-gamma in antigen-presenting-cell contexts.
+  species: cell
+  context: cell
+  population: none
+  route: none
+  symbols: C
+  confidence: 0.75
+  citation_ids: pmid-19812202
+  needs_moderator_review: true
+- id: ll37-neutrophil-cytokines
+  field: biology.cytokinesInterleukins
+  value: LL-37 modulates inflammatory and host-defense responses of human neutrophils.
+  species: cell
+  context: cell
+  population: none
+  route: none
+  symbols: C
+  confidence: 0.72
+  citation_ids: pmid-20140902
+  needs_moderator_review: true
+
+[citations]
+- id: pmid-19812202
+  source_type: pubmed
+  title: Human cathelicidin peptide LL-37 modulates the effects of IFN-gamma on APCs
+  authors: PubMed indexed authors
+  year: 2009
+  pmid: 19812202
+  doi: none
+  url: https://pubmed.ncbi.nlm.nih.gov/19812202/
+  accessed_at: 2026-04-21
+  quality: primary
+  supports_claim_ids: ll37-ifng-modulation
+  notes: Cellular immune study reporting LL-37 modulation of IFN-gamma responses in antigen-presenting cells.
+- id: pmid-20140902
+  source_type: pubmed
+  title: The antimicrobial peptide LL-37 modulates the inflammatory and host defense response of human neutrophils
+  authors: PubMed indexed authors
+  year: 2010
+  pmid: 20140902
+  doi: none
+  url: https://pubmed.ncbi.nlm.nih.gov/20140902/
+  accessed_at: 2026-04-21
+  quality: primary
+  supports_claim_ids: ll37-neutrophil-cytokines
+  notes: Human neutrophil in vitro study measuring cytokine release after microbial stimulation.
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: mazdutide
+primary_name: Mazdutide
+aliases: none
+trade_names: none
+category: Metabolic
+peptide_class: GLP-1/glucagon dual agonist
+mechanism_family: GLP-1 and glucagon receptor metabolic signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Mazdutide is tracked as a GLP-1/glucagon dual agonist; current mechanism text is a source-indexed draft centered on GLP-1 and glucagon receptor metabolic signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: GLP-1 and glucagon receptor metabolic signaling
+  symbols: R, ?
+  claim_ref: mazdutide-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: metabolic
+  steps: GLP-1/glucagon dual agonist -> GLP-1 and glucagon receptor metabolic signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: mazdutide-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: mazdutide-mechanism-seed
+  field: tile.mechanismSummary
+  value: GLP-1/glucagon dual agonist; GLP-1 and glucagon receptor metabolic signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: melanotan-ii
+primary_name: Melanotan II
+aliases: none
+trade_names: none
+category: Melanocortin / Metabolic
+peptide_class: melanocortin agonist
+mechanism_family: MC1R/MC3R/MC4R melanocortin signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Melanotan II is tracked as a melanocortin agonist; current mechanism text is a source-indexed draft centered on MC1R/MC3R/MC4R melanocortin signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: MC1R/MC3R/MC4R melanocortin signaling
+  symbols: R, ?
+  claim_ref: melanotan-ii-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: melanocortin / metabolic
+  steps: melanocortin agonist -> MC1R/MC3R/MC4R melanocortin signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: melanotan-ii-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: melanotan-ii-mechanism-seed
+  field: tile.mechanismSummary
+  value: melanocortin agonist; MC1R/MC3R/MC4R melanocortin signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: mots-c
+primary_name: MOTS-c
+aliases: none
+trade_names: none
+category: Mitochondrial
+peptide_class: mitochondrial-derived peptide
+mechanism_family: AMPK and metabolic stress signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: MOTS-c is tracked as a mitochondrial-derived peptide; current mechanism text is a source-indexed draft centered on AMPK and metabolic stress signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: AMPK and metabolic stress signaling
+  symbols: R, ?
+  claim_ref: mots-c-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: mitochondrial
+  steps: mitochondrial-derived peptide -> AMPK and metabolic stress signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: mots-c-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: mots-c-mechanism-seed
+  field: tile.mechanismSummary
+  value: mitochondrial-derived peptide; AMPK and metabolic stress signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: orforglipron
+primary_name: Orforglipron
+aliases: none
+trade_names: none
+category: Metabolic
+peptide_class: oral non-peptide GLP-1R agonist
+mechanism_family: GLP-1 receptor metabolic signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Orforglipron is tracked as a oral non-peptide GLP-1R agonist; current mechanism text is a source-indexed draft centered on GLP-1 receptor metabolic signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: GLP-1 receptor metabolic signaling
+  symbols: R, ?
+  claim_ref: orforglipron-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: metabolic
+  steps: oral non-peptide GLP-1R agonist -> GLP-1 receptor metabolic signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: orforglipron-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: orforglipron-mechanism-seed
+  field: tile.mechanismSummary
+  value: oral non-peptide GLP-1R agonist; GLP-1 receptor metabolic signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: oxytocin
+primary_name: Oxytocin
+aliases: none
+trade_names: none
+category: Cognitive Enhancement
+peptide_class: neuropeptide hormone
+mechanism_family: oxytocin receptor social/reproductive signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Oxytocin is tracked as a neuropeptide hormone; current mechanism text is a source-indexed draft centered on oxytocin receptor social/reproductive signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: oxytocin receptor social/reproductive signaling
+  symbols: R, ?
+  claim_ref: oxytocin-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: cognitive enhancement
+  steps: neuropeptide hormone -> oxytocin receptor social/reproductive signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: oxytocin-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: oxytocin-mechanism-seed
+  field: tile.mechanismSummary
+  value: neuropeptide hormone; oxytocin receptor social/reproductive signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: pinealon
+primary_name: Pinealon
+aliases: none
+trade_names: none
+category: Anti-Aging
+peptide_class: short peptide
+mechanism_family: neuroendocrine/aging hypotheses
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Pinealon is tracked as a short peptide; current mechanism text is a source-indexed draft centered on neuroendocrine/aging hypotheses.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: neuroendocrine/aging hypotheses
+  symbols: R, ?
+  claim_ref: pinealon-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: anti-aging
+  steps: short peptide -> neuroendocrine/aging hypotheses -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: pinealon-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: pinealon-mechanism-seed
+  field: tile.mechanismSummary
+  value: short peptide; neuroendocrine/aging hypotheses
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: pramlintide
+primary_name: Pramlintide
+aliases: none
+trade_names: none
+category: Metabolic
+peptide_class: amylin analog
+mechanism_family: amylin receptor satiety and gastric-emptying signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Pramlintide is tracked as a amylin analog; current mechanism text is a source-indexed draft centered on amylin receptor satiety and gastric-emptying signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: amylin receptor satiety and gastric-emptying signaling
+  symbols: R, ?
+  claim_ref: pramlintide-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: metabolic
+  steps: amylin analog -> amylin receptor satiety and gastric-emptying signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: pramlintide-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: pramlintide-mechanism-seed
+  field: tile.mechanismSummary
+  value: amylin analog; amylin receptor satiety and gastric-emptying signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: pt-141
+primary_name: PT-141
+aliases: none
+trade_names: none
+category: Melanocortin / Metabolic
+peptide_class: melanocortin agonist
+mechanism_family: central MC3R/MC4R signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: PT-141 is tracked as a melanocortin agonist; current mechanism text is a source-indexed draft centered on central MC3R/MC4R signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: central MC3R/MC4R signaling
+  symbols: R, ?
+  claim_ref: pt-141-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: melanocortin / metabolic
+  steps: melanocortin agonist -> central MC3R/MC4R signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: pt-141-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: PT-141
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: pt-141-mechanism-seed
+  field: tile.mechanismSummary
+  value: melanocortin agonist; central MC3R/MC4R signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: retatrutide
+primary_name: Retatrutide
+aliases: none
+trade_names: none
+category: Metabolic
+peptide_class: GLP-1/GIP/glucagon triple agonist
+mechanism_family: multi-incretin and glucagon receptor metabolic signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Retatrutide is tracked as a GLP-1/GIP/glucagon triple agonist; current mechanism text is a source-indexed draft centered on multi-incretin and glucagon receptor metabolic signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: multi-incretin and glucagon receptor metabolic signaling
+  symbols: R, ?
+  claim_ref: retatrutide-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: metabolic
+  steps: GLP-1/GIP/glucagon triple agonist -> multi-incretin and glucagon receptor metabolic signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: retatrutide-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: Retatrutide
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: retatrutide-mechanism-seed
+  field: tile.mechanismSummary
+  value: GLP-1/GIP/glucagon triple agonist; multi-incretin and glucagon receptor metabolic signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: selank
+primary_name: Selank
+aliases: none
+trade_names: none
+category: Cognitive Enhancement
+peptide_class: tuftsin analog
+mechanism_family: anxiolytic and neuroimmune signaling hypotheses
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Selank is tracked as a tuftsin analog; current mechanism text is a source-indexed draft centered on anxiolytic and neuroimmune signaling hypotheses.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: anxiolytic and neuroimmune signaling hypotheses
+  symbols: R, ?
+  claim_ref: selank-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: cognitive enhancement
+  steps: tuftsin analog -> anxiolytic and neuroimmune signaling hypotheses -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: selank-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: selank-mechanism-seed
+  field: tile.mechanismSummary
+  value: tuftsin analog; anxiolytic and neuroimmune signaling hypotheses
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: semaglutide
+primary_name: Semaglutide
+aliases: none
+trade_names: none
+category: Metabolic
+peptide_class: GLP-1 receptor agonist
+mechanism_family: GLP-1 receptor incretin signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Semaglutide is tracked as a GLP-1 receptor agonist; current mechanism text is a source-indexed draft centered on GLP-1 receptor incretin signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: GLP-1 receptor incretin signaling
+  symbols: R, ?
+  claim_ref: semaglutide-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: metabolic
+  steps: GLP-1 receptor agonist -> GLP-1 receptor incretin signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: semaglutide-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: Semaglutide
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: semaglutide-mechanism-seed
+  field: tile.mechanismSummary
+  value: GLP-1 receptor agonist; GLP-1 receptor incretin signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: semax
+primary_name: Semax
+aliases: none
+trade_names: none
+category: Cognitive Enhancement
+peptide_class: ACTH(4-10) analog
+mechanism_family: BDNF/trkB and neuroprotective signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Semax is tracked as a ACTH(4-10) analog; current mechanism text is a source-indexed draft centered on BDNF/trkB and neuroprotective signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: BDNF/trkB and neuroprotective signaling
+  symbols: R, ?
+  claim_ref: semax-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: cognitive enhancement
+  steps: ACTH(4-10) analog -> BDNF/trkB and neuroprotective signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: semax-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: semax-mechanism-seed
+  field: tile.mechanismSummary
+  value: ACTH(4-10) analog; BDNF/trkB and neuroprotective signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: sermorelin
+primary_name: Sermorelin
+aliases: GHRH(1-29) | Geref | Geref Diagnostic
+trade_names: Geref Diagnostic
+category: Growth Factors
+peptide_class: GHRH(1-29) analog
+mechanism_family: GHRH receptor and endogenous GH release
+evidence_tier: human_pk_pd
+regulatory_status: not_approved
+moderation_status: needs_review
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Sermorelin is a GHRH(1-29) analog that stimulates endogenous pituitary growth-hormone release; historical FDA product context needs careful current-status labeling.
+localization: Pituitary GHRH receptor and downstream GH/IGF-1 endocrine axis.
+clinical_uses: Historical diagnostic/therapeutic GH-axis context; current FDA availability/status needs official verification.
+side_effects: Current compounded/off-label use should not be treated as FDA-approved therapeutic use. | Adverse events require source-specific extraction.
+dosing_quick: Enhancement/common-use dose discussions are anecdotal/non-clinical unless tied to a cited study; do not display as advice.
+dosing_admin_route: Clinical-study route/dose extraction pending; public display should remain context-labeled.
+dosing_public_display_allowed: false
+dosing_context: anecdotal_common_use
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: GH stimulation
+  symbols: H, R
+  claim_ref: sermorelin-gh-axis
+- label: IGF-1 downstream axis
+  symbols: H, R, ?
+  claim_ref: sermorelin-gh-axis
+- label: enhancement/anti-aging claims
+  symbols: N, ?
+  claim_ref: sermorelin-anecdote
+
+[biology]
+genes: GHRHR | GH1 | IGF1
+proteins: GHRH receptor | growth hormone | IGF-1
+receptors: GHRHR
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: endocrine
+  steps: GHRHR -> pituitary GH release -> IGF-1 axis -> growth/metabolic endpoints
+  symbols: H, R
+  claim_ref: sermorelin-gh-axis
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: Common anti-aging/enhancement discussions exist online; these are not clinical evidence and must be labeled separately.
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: Sermorelin
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: sermorelin-gh-axis
+  field: tile.mechanismSummary
+  value: GHRH(1-29) analog that stimulates endogenous growth-hormone release.
+  species: human
+  context: review
+  population: none
+  route: none
+  symbols: H, R
+  confidence: 0.55
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+- id: sermorelin-anecdote
+  field: tile.dosing.quick
+  value: Enhancement/common-use dose discussions are anecdotal/non-clinical unless tied to a cited study.
+  species: unknown
+  context: anecdotal_common_use
+  population: none
+  route: none
+  symbols: N, ?
+  confidence: 0.25
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: snap-8
+primary_name: SNAP-8
+aliases: none
+trade_names: none
+category: Anti-Aging
+peptide_class: cosmetic SNARE-modulating peptide
+mechanism_family: SNARE complex mimicry in topical/cosmetic context
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: SNAP-8 is tracked as a cosmetic SNARE-modulating peptide; current mechanism text is a source-indexed draft centered on SNARE complex mimicry in topical/cosmetic context.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: SNARE complex mimicry in topical/cosmetic context
+  symbols: R, ?
+  claim_ref: snap-8-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: anti-aging
+  steps: cosmetic SNARE-modulating peptide -> SNARE complex mimicry in topical/cosmetic context -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: snap-8-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: snap-8-mechanism-seed
+  field: tile.mechanismSummary
+  value: cosmetic SNARE-modulating peptide; SNARE complex mimicry in topical/cosmetic context
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: ss-31
+primary_name: SS-31
+aliases: Elamipretide | MTP-131 | Bendavia
+trade_names: none
+category: Mitochondrial
+peptide_class: cardiolipin-targeting tetrapeptide
+mechanism_family: inner mitochondrial membrane and cardiolipin stabilization
+evidence_tier: human_phase2
+regulatory_status: investigational
+moderation_status: needs_review
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: SS-31/elamipretide is a mitochondria-targeted tetrapeptide that transiently localizes to the inner mitochondrial membrane and associates with cardiolipin.
+localization: Inner mitochondrial membrane and cardiolipin-rich mitochondrial compartments.
+clinical_uses: Investigational mitochondrial-disease and ophthalmology contexts; no broad FDA approval in current source set.
+side_effects: The attached Consensus export reports no increased safety concerns in one short PMM trial; this is not proof of broad safety. | Healthy-human enhancement evidence is not established in the current imported source set.
+dosing_quick: Clinical trial context: intravenous elamipretide dose-escalation arms were used for 5 days in PMM; not enhancement advice.
+dosing_admin_route: Trial route/dose context only; healthy enhancement dose remains unverified.
+dosing_public_display_allowed: true
+dosing_context: clinical_trial
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: exercise performance in primary mitochondrial myopathy trial
+  symbols: H
+  claim_ref: ss31-human-exercise
+- label: mitochondrial membrane/cardiolipin biology
+  symbols: H, A, C
+  claim_ref: ss31-human-exercise
+- label: enhancement in healthy humans
+  symbols: ?
+  claim_ref: ss31-enhancement-unknown
+
+[biology]
+genes: CYCS | TFAM | PPARGC1A | SOD2 | CRLS1
+proteins: cardiolipin | cytochrome c | TFAM | PGC-1alpha | SOD2
+receptors: cardiolipin binding context
+channels_transporters: mitochondrial permeability transition context requires verification
+cytokines_interleukins:
+- name: ROS
+  type: other
+  effect: mitochondrial oxidative-stress marker; trial/source-specific direction requires extraction
+  context: mitochondrial disease/preclinical contexts
+  symbols: H, A, C, ?
+  claim_ref: ss31-human-exercise
+cascades:
+- category: mitochondrial
+  steps: SS-31/elamipretide -> inner mitochondrial membrane/cardiolipin -> mitochondrial energetics -> 6-minute walk/exercise endpoints in PMM trial
+  symbols: H
+  claim_ref: ss31-human-exercise
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: Consensus CSV row describes a 36-participant randomized, double-blind, placebo-controlled dose-escalation trial in adults with genetically confirmed primary mitochondrial myopathy; the highest-dose group improved 6MWT distance in short-term treatment without increased safety concerns in that trial.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Short trial safety observations do not establish broad or healthy-human safety. Enhancement use in healthy physiology remains unverified and should be labeled unknown/anecdotal if encountered.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: Healthy-human enhancement claims are not supported by the imported Consensus CSV and should remain unknown unless new evidence is imported.
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: SS-31
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: ss31-human-exercise
+  field: expanded.humanEvidence
+  value: Elamipretide improved 6MWT/exercise performance after 5 days in adults with primary mitochondrial myopathy in the imported Consensus trial row.
+  species: human
+  context: clinical_trial
+  population: none
+  route: none
+  symbols: H
+  confidence: 0.78
+  citation_ids: consensus-ss31-karaa-2018
+  needs_moderator_review: true
+- id: ss31-enhancement-unknown
+  field: tile.enhancingEffects
+  value: Healthy-human enhancement evidence is not established in the current imported source set.
+  species: unknown
+  context: unknown
+  population: none
+  route: none
+  symbols: ?
+  confidence: 0.35
+  citation_ids: consensus-ss31-karaa-2018
+  needs_moderator_review: true
+
+[citations]
+- id: consensus-ss31-karaa-2018
+  source_type: consensus
+  title: Randomized dose-escalation trial of elamipretide in adults with primary mitochondrial myopathy
+  authors: A. Karaa | R. Haas | A. Goldstein | J. Vockley | W. Weaver | B. Cohen
+  year: 2018
+  pmid: none
+  doi: 10.1212/wnl.0000000000005255
+  url: https://consensus.app/papers/randomized-doseescalation-trial-of-elamipretide-in-karaa-haas/354ba5d3c1b35dbfb8dba59ad7d954ba/
+  accessed_at: 2026-04-21
+  quality: primary
+  supports_claim_ids: ss31-human-exercise
+  notes: Consensus CSV row: phase I/II multicenter randomized double-blind placebo-controlled trial in 36 adults with primary mitochondrial myopathy.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+- id: src-peptide-partners-certifications
+  source_type: peptide_partners
+  title: Peptide Partners independent certifications
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/independent-certifications/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor purity/endotoxin/heavy-metal/sterility/batch discovery only.
+
+====================================================================================================
+id: survodutide
+primary_name: Survodutide
+aliases: none
+trade_names: none
+category: Metabolic
+peptide_class: GLP-1/glucagon dual agonist
+mechanism_family: GLP-1 and glucagon receptor metabolic signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Survodutide is tracked as a GLP-1/glucagon dual agonist; current mechanism text is a source-indexed draft centered on GLP-1 and glucagon receptor metabolic signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: GLP-1 and glucagon receptor metabolic signaling
+  symbols: R, ?
+  claim_ref: survodutide-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: metabolic
+  steps: GLP-1/glucagon dual agonist -> GLP-1 and glucagon receptor metabolic signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: survodutide-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: survodutide-mechanism-seed
+  field: tile.mechanismSummary
+  value: GLP-1/glucagon dual agonist; GLP-1 and glucagon receptor metabolic signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: tb-500
+primary_name: TB-500
+aliases: none
+trade_names: none
+category: Recovery & Repair
+peptide_class: thymosin beta-4 related peptide
+mechanism_family: actin binding, cell migration, and repair signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: TB-500 is tracked as a thymosin beta-4 related peptide; current mechanism text is a source-indexed draft centered on actin binding, cell migration, and repair signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: actin binding, cell migration, and repair signaling
+  symbols: R, ?
+  claim_ref: tb-500-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: recovery & repair
+  steps: thymosin beta-4 related peptide -> actin binding, cell migration, and repair signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: tb-500-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: TB-500
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: tb-500-mechanism-seed
+  field: tile.mechanismSummary
+  value: thymosin beta-4 related peptide; actin binding, cell migration, and repair signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: tb4-frag
+primary_name: TB4-FRAG
+aliases: none
+trade_names: none
+category: Recovery & Repair
+peptide_class: thymosin beta-4 fragment
+mechanism_family: TGF-beta and anti-fibrotic remodeling hypotheses
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: TB4-FRAG is tracked as a thymosin beta-4 fragment; current mechanism text is a source-indexed draft centered on TGF-beta and anti-fibrotic remodeling hypotheses.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: TGF-beta and anti-fibrotic remodeling hypotheses
+  symbols: R, ?
+  claim_ref: tb4-frag-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: recovery & repair
+  steps: thymosin beta-4 fragment -> TGF-beta and anti-fibrotic remodeling hypotheses -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: tb4-frag-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: tb4-frag-mechanism-seed
+  field: tile.mechanismSummary
+  value: thymosin beta-4 fragment; TGF-beta and anti-fibrotic remodeling hypotheses
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: teduglutide
+primary_name: Teduglutide
+aliases: none
+trade_names: none
+category: Metabolic
+peptide_class: GLP-2 analog
+mechanism_family: GLP-2 receptor intestinal adaptation signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Teduglutide is tracked as a GLP-2 analog; current mechanism text is a source-indexed draft centered on GLP-2 receptor intestinal adaptation signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: GLP-2 receptor intestinal adaptation signaling
+  symbols: R, ?
+  claim_ref: teduglutide-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: metabolic
+  steps: GLP-2 analog -> GLP-2 receptor intestinal adaptation signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: teduglutide-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: teduglutide-mechanism-seed
+  field: tile.mechanismSummary
+  value: GLP-2 analog; GLP-2 receptor intestinal adaptation signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: tesamorelin
+primary_name: Tesamorelin
+aliases: Egrifta | Egrifta SV | Egrifta WR
+trade_names: Egrifta
+category: Metabolic
+peptide_class: GHRH analog
+mechanism_family: GHRH receptor, GH, IGF-1, and visceral adiposity signaling
+evidence_tier: fda_phase3
+regulatory_status: fda_approved
+moderation_status: needs_review
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Tesamorelin is a GHRH analog used in HIV-associated abdominal adiposity contexts and studied through GH/IGF-1 and visceral-fat endpoints.
+localization: Pituitary GHRH receptor with downstream hepatic IGF-1 and adipose/liver metabolic effects.
+clinical_uses: FDA-approved therapy context for abdominal fat accumulation in people with HIV; exact product label wording must be imported.
+side_effects: Glucose/IGF-1/neoplasm-risk context requires label extraction. | Benefits may cease after discontinuation according to review literature.
+dosing_quick: Clinical/FDA context: tesamorelin is studied/administered subcutaneously in HIV abdominal-fat trials; exact dose display must come from label or cited trial.
+dosing_admin_route: Subcutaneous label/trial context; not enhancement advice.
+dosing_public_display_allowed: true
+dosing_context: fda_label
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: visceral adipose tissue reduction
+  symbols: Rx, H
+  claim_ref: tesamorelin-human-use
+- label: GH/IGF-1 axis activation
+  symbols: H
+  claim_ref: tesamorelin-human-use
+- label: liver fat/body composition research
+  symbols: H
+  claim_ref: tesamorelin-human-use
+
+[biology]
+genes: GHRHR | GH1 | IGF1 | IGFBP3
+proteins: GHRH receptor | growth hormone | IGF-1 | IGFBP-3
+receptors: GHRHR
+channels_transporters: none
+cytokines_interleukins:
+- name: CRP
+  type: inflammatory_marker
+  effect: measured in metabolic trial contexts; direction requires extraction
+  context: human HIV/metabolic studies
+  symbols: H, ?
+  claim_ref: tesamorelin-crp-pending
+cascades:
+- category: endocrine
+  steps: GHRHR -> pituitary GH -> hepatic IGF-1 -> visceral adiposity/body composition
+  symbols: H
+  claim_ref: tesamorelin-human-use
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: Tesamorelin
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: tesamorelin-human-use
+  field: tile.clinicalUses
+  value: Tesamorelin is described in PubMed as the only FDA-approved therapy to treat abdominal fat accumulation in people with HIV.
+  species: human
+  context: clinical_trial
+  population: none
+  route: none
+  symbols: Rx, H
+  confidence: 0.82
+  citation_ids: pmid-38905488
+  needs_moderator_review: true
+
+[citations]
+- id: pmid-38905488
+  source_type: pubmed
+  title: Efficacy and safety of tesamorelin in people with HIV on integrase inhibitors
+  authors: PubMed indexed authors
+  year: 2024
+  pmid: 38905488
+  doi: none
+  url: https://pubmed.ncbi.nlm.nih.gov/38905488/
+  accessed_at: 2026-04-21
+  quality: primary
+  supports_claim_ids: tesamorelin-human-use
+  notes: Randomized clinical-trial analysis in people with HIV; notes FDA-approved therapy for abdominal fat accumulation in PWH.
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: thymosin-alpha-1
+primary_name: Thymosin Alpha-1
+aliases: Thymalfasin | Talpha1 | Zadaxin
+trade_names: Zadaxin
+category: Immune Support
+peptide_class: thymic immune peptide
+mechanism_family: TLR, interferon, and T-cell immune modulation
+evidence_tier: human_clinical_development
+regulatory_status: non_us_approved
+moderation_status: needs_review
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Thymosin alpha-1 is an immune-modulating thymic peptide studied in infection, inflammatory, hepatic, and adjunctive oncology contexts.
+localization: Immune-cell signaling networks including T-cell, dendritic-cell, toll-like receptor, and interferon-associated pathways.
+clinical_uses: International clinical-use and investigational immune-adjuvant contexts; US FDA status requires official regulatory verification.
+side_effects: Safety varies by disease context and co-therapies; import trial-level adverse events before strong claims.
+dosing_quick: Study/regional-label context only. Enhancement or wellness use is anecdotal/common-use unless tied to a cited study.
+dosing_admin_route: Usually discussed as injectable in clinical literature; exact route/dose must remain citation-specific.
+dosing_public_display_allowed: false
+dosing_context: clinical_trial
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: immune modulation
+  symbols: H, R
+  claim_ref: ta1-immune-modulation
+- label: infection/inflammation outcomes
+  symbols: H, R
+  claim_ref: ta1-immune-modulation
+- label: T-cell/interferon signaling
+  symbols: H, R, ?
+  claim_ref: ta1-cytokines
+
+[biology]
+genes: TLR9 | IFNA1 | IFNG | IL2 | TNF
+proteins: TLR9 | interferon-alpha | interferon-gamma | IL-2 | TNF
+receptors: TLR-related innate immune pathways
+channels_transporters: none
+cytokines_interleukins:
+- name: IFN-alpha
+  type: cytokine
+  effect: immune modulation context; direction requires claim-level extraction
+  context: human/review literature
+  symbols: H, R, ?
+  claim_ref: ta1-cytokines
+- name: IL-2
+  type: interleukin
+  effect: T-cell signaling context; direction requires claim-level extraction
+  context: human/review literature
+  symbols: H, R, ?
+  claim_ref: ta1-cytokines
+- name: TNF
+  type: cytokine
+  effect: inflammatory signaling context; direction requires claim-level extraction
+  context: human/review literature
+  symbols: H, R, ?
+  claim_ref: ta1-cytokines
+cascades:
+- category: immune
+  steps: thymic peptide signaling -> TLR/interferon/T-cell pathways -> cytokine immune modulation -> infection/inflammation outcomes
+  symbols: H, R
+  claim_ref: ta1-immune-modulation
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: Thymosin Alpha-1
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: ta1-immune-modulation
+  field: tile.mechanismSummary
+  value: Thymosin alpha 1 is described as an immunomodulatory agent in clinical practice.
+  species: human
+  context: review
+  population: none
+  route: none
+  symbols: H, R
+  confidence: 0.65
+  citation_ids: pmid-40599771
+  needs_moderator_review: true
+
+[citations]
+- id: pmid-40599771
+  source_type: pubmed
+  title: Thymosin alpha 1 alleviates inflammation and prevents infection in patients with severe acute pancreatitis through immune regulation
+  authors: PubMed indexed authors
+  year: 2025
+  pmid: 40599771
+  doi: none
+  url: https://pubmed.ncbi.nlm.nih.gov/40599771/
+  accessed_at: 2026-04-21
+  quality: review
+  supports_claim_ids: ta1-immune-modulation
+  notes: Systematic review/meta-analysis; useful for immune endpoints but requires field-level checking.
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: thymulin
+primary_name: Thymulin
+aliases: none
+trade_names: none
+category: Immune Support
+peptide_class: zinc-dependent thymic nonapeptide
+mechanism_family: T-cell differentiation and thymic endocrine signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Thymulin is tracked as a zinc-dependent thymic nonapeptide; current mechanism text is a source-indexed draft centered on T-cell differentiation and thymic endocrine signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: T-cell differentiation and thymic endocrine signaling
+  symbols: R, ?
+  claim_ref: thymulin-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: immune support
+  steps: zinc-dependent thymic nonapeptide -> T-cell differentiation and thymic endocrine signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: thymulin-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: thymulin-mechanism-seed
+  field: tile.mechanismSummary
+  value: zinc-dependent thymic nonapeptide; T-cell differentiation and thymic endocrine signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+
+====================================================================================================
+id: tirzepatide
+primary_name: Tirzepatide
+aliases: Mounjaro | Zepbound | LY3298176
+trade_names: Mounjaro | Zepbound
+category: Metabolic
+peptide_class: GLP-1/GIP dual agonist
+mechanism_family: GLP-1 and GIP incretin receptor signaling
+evidence_tier: fda_phase3
+regulatory_status: fda_approved
+moderation_status: needs_review
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: Tirzepatide is a dual GLP-1/GIP receptor agonist approved in branded products for type 2 diabetes and chronic weight management contexts.
+localization: Pancreatic islets, CNS appetite circuits, gastrointestinal axis, adipose and metabolic tissues expressing incretin receptors.
+clinical_uses: FDA-approved branded tirzepatide products include diabetes and chronic weight-management contexts; exact indication must be label-specific.
+side_effects: FDA-described class context includes gastrointestinal adverse effects; exact rates must be imported from label. | Compounded/non-branded products are not equivalent to FDA-reviewed products.
+dosing_quick: FDA context: Zepbound is administered subcutaneously once weekly with dose escalation to target maintenance doses described by FDA; this is label context, not advice.
+dosing_admin_route: Subcutaneous once-weekly label context; exact label schedule to be imported before detailed display.
+dosing_public_display_allowed: true
+dosing_context: fda_label
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: glycemic control
+  symbols: Rx, H
+  claim_ref: tirzepatide-fda-use
+- label: weight reduction
+  symbols: Rx, H
+  claim_ref: tirzepatide-fda-use
+- label: incretin receptor signaling
+  symbols: H, R
+  claim_ref: tirzepatide-mechanism
+
+[biology]
+genes: GLP1R | GIPR | INS | GCG
+proteins: GLP-1 receptor | GIP receptor | insulin | glucagon
+receptors: GLP-1R | GIPR
+channels_transporters: KATP channel physiology via glucose-stimulated insulin secretion
+cytokines_interleukins:
+- name: CRP
+  type: inflammatory_marker
+  effect: metabolic inflammation marker; peptide-specific source extraction pending
+  context: human metabolic studies; needs field-level verification
+  symbols: H, ?
+  claim_ref: tirzepatide-crp-pending
+cascades:
+- category: metabolic
+  steps: GLP-1R/GIPR -> cAMP signaling -> insulin/glucagon/appetite pathways -> glycemic and weight outcomes
+  symbols: Rx, H
+  claim_ref: tirzepatide-fda-use
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: FDA-recognized branded products provide strong human regulatory evidence; trial-level outcomes should be imported from labels and pivotal publications.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Display label-specific adverse events, contraindications, and boxed warnings only after label import. Common/nonclinical enhancement anecdotes must remain separate from label evidence.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: Common online enhancement/weight-loss discussion exists, but it should be labeled anecdotal/common-use unless tied to an approved indication or published study.
+
+[vendor_data]
+- vendor: Peptide Partners
+  product_name: Tirzepatide
+  product_url: https://peptide.partners/shop/
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: unknown
+  heavy_metals: unknown
+  sterility: unknown
+  lab: none
+  coa_url: https://peptide.partners/independent-certifications/
+  date: none
+  symbols: V
+
+[claims]
+- id: tirzepatide-fda-use
+  field: tile.clinicalUses
+  value: FDA-approved branded tirzepatide products include diabetes and chronic weight management contexts.
+  species: human
+  context: fda_label
+  population: none
+  route: none
+  symbols: Rx, H
+  confidence: 0.9
+  citation_ids: fda-zepbound-2023
+  needs_moderator_review: true
+- id: tirzepatide-mechanism
+  field: tile.mechanismSummary
+  value: dual GLP-1/GIP receptor agonist
+  species: human
+  context: review
+  population: none
+  route: none
+  symbols: H, R
+  confidence: 0.7
+  citation_ids: fda-zepbound-2023
+  needs_moderator_review: true
+
+[citations]
+- id: fda-zepbound-2023
+  source_type: fda_label
+  title: FDA Approves New Medication for Chronic Weight Management
+  authors: U.S. Food and Drug Administration
+  year: 2023
+  pmid: none
+  doi: none
+  url: https://www.fda.gov/news-events/press-announcements/fda-approves-new-medication-chronic-weight-management
+  accessed_at: 2026-04-21
+  quality: regulatory
+  supports_claim_ids: tirzepatide-fda-use
+  notes: Official FDA page describing Zepbound approval, once-weekly subcutaneous administration, and target maintenance dose range.
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.
+- id: src-peptide-partners-shop
+  source_type: peptide_partners
+  title: Peptide Partners shop
+  authors: Peptide Partners
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptide.partners/shop/
+  accessed_at: 2026-04-21
+  quality: vendor
+  supports_claim_ids: none
+  notes: Vendor product, vial-size, and cost discovery only; not used for efficacy or clinical safety.
+
+====================================================================================================
+id: vip
+primary_name: VIP
+aliases: none
+trade_names: none
+category: Immune Support
+peptide_class: vasoactive neuropeptide
+mechanism_family: VPAC receptor anti-inflammatory and vasodilatory signaling
+evidence_tier: secondary_only
+regulatory_status: unknown
+moderation_status: model_drafted
+moderation_reviewer: none
+moderation_stale_after: 2026-07-21
+moderation_writeup: none
+
+[identity]
+formula: unknown
+molecular_weight: unknown
+cas: unknown
+sequence_one_letter: unknown
+sequence_three_letter: unknown
+length: unknown
+modifications: none
+structure_class: unknown
+
+[tile]
+mechanism_summary: VIP is tracked as a vasoactive neuropeptide; current mechanism text is a source-indexed draft centered on VPAC receptor anti-inflammatory and vasodilatory signaling.
+localization: Localization requires primary-source extraction; current record is model-drafted and queued for review.
+clinical_uses: Clinical use context not yet verified for this record.
+side_effects: Safety/adverse-event fields require primary-source extraction and moderator review.
+dosing_quick: No dosing context verified yet. Do not use as guidance.
+dosing_admin_route: Pending source extraction. Enhancement/common-use reports, if added, must be marked anecdotal/common-use and non-clinical.
+dosing_public_display_allowed: false
+dosing_context: unknown
+cost_range: none
+cost_size: none
+cost_source: none
+cost_vendor_product_url: none
+enhancing_effects:
+- label: VPAC receptor anti-inflammatory and vasodilatory signaling
+  symbols: R, ?
+  claim_ref: vip-mechanism-seed
+
+[biology]
+genes: none
+proteins: none
+receptors: none
+channels_transporters: none
+cytokines_interleukins:
+- none
+cascades:
+- category: immune support
+  steps: vasoactive neuropeptide -> VPAC receptor anti-inflammatory and vasodilatory signaling -> field-level source extraction pending
+  symbols: R, ?
+  claim_ref: vip-mechanism-seed
+
+[expanded]
+discovery: Discovery/development history requires source extraction.
+human_evidence: No curated human evidence summary has been published from the source pipeline yet.
+animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
+mechanism_detail: Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.
+safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
+manufacturers: none
+missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins
+anecdotal_use: none
+
+[vendor_data]
+- none
+
+[claims]
+- id: vip-mechanism-seed
+  field: tile.mechanismSummary
+  value: vasoactive neuropeptide; VPAC receptor anti-inflammatory and vasodilatory signaling
+  species: mixed
+  context: review
+  population: none
+  route: none
+  symbols: R, ?
+  confidence: 0.45
+  citation_ids: src-peptpedia-browse
+  needs_moderator_review: true
+
+[citations]
+- id: src-peptpedia-browse
+  source_type: peptpedia
+  title: Peptpedia peptide browse index
+  authors: Peptpedia
+  year: 2026
+  pmid: none
+  doi: none
+  url: https://peptpedia.org/browse
+  accessed_at: 2026-04-21
+  quality: secondary
+  supports_claim_ids: none
+  notes: Secondary discovery/index source used for roster, class, and overview discovery only.

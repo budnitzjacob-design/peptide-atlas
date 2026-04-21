@@ -1,5 +1,5 @@
 const DATA = window.PEPTIDE_ATLAS_DATA;
-const BRAND = "Peptocopeia";
+const BRAND = "peptocopeia";
 const app = document.getElementById("app");
 
 let state = {
@@ -440,7 +440,7 @@ function hero() {
       <p class="eyebrow">production scaffold / model-checkable data</p>
       <h1 class="brand-title">${BRAND}</h1>
       <p class="lede">Source-backed peptide reference for biologists and physicians, with public vendor context, contextual dosing labels, hover citations, moderator review, and future agent reasoning.</p>
-      <div class="hero-actions"><button data-agent>Atlas agent</button></div>
+      <div class="hero-actions"><button data-agent>atlas agent</button></div>
       <div class="review-key">
         <span><i class="review-dot"></i>Yellow dot means model-drafted or pending human/mod verification.</span>
         <span><i class="review-dot ok"></i>Green dot means a moderator has verified the article or claim set.</span>

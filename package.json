@@ -9,6 +9,7 @@
     "start": "node server.mjs",
     "lint": "next lint",
     "validate:data": "tsx scripts/validate-data.ts",
+    "export:data": "tsx scripts/export-data-dump.ts",
     "import:consensus": "tsx scripts/import-consensus.ts",
     "prisma:generate": "prisma generate"
   },
