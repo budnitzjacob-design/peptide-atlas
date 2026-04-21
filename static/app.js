@@ -2,14 +2,15 @@ const DATA = window.PEPTIDE_ATLAS_DATA;
 const BRAND = "peptocopeia";
 const app = document.getElementById("app");
 
-let state = {
+const defaultState = {
   query: "",
   category: "All",
   sort: "evidence",
   selected: null,
-  tag: null,
-  agent: false
+  tag: null
 };
+
+let state = { ...defaultState };
 
 function esc(value) {
   return String(value ?? "")
@@ -82,8 +83,8 @@ function citationLink(citation, index) {
   </span>`;
 }
 
-function tag(type, value, sy = []) {
-  return `<button class="tag tag-${esc(type)}" data-tag-type="${esc(type)}" data-tag-value="${esc(value)}">
+function tag(type, value, sy = [], sourcePeptideId = "") {
+  return `<button class="tag tag-${esc(type)}" data-tag-type="${esc(type)}" data-tag-value="${esc(value)}" data-tag-source="${esc(sourcePeptideId)}">
     ${esc(value)}${sy.length ? ` ${symbols(sy)}` : ""}
   </button>`;
 }
@@ -133,20 +134,51 @@ function filteredPeptides() {
     });
 }
 
+function resetToGridState() {
+  state = { ...defaultState };
+}
+
+function syncHistory(view = "grid") {
+  if (typeof window === "undefined") return;
+  const nextState = view === "detail" && state.selected ? { view: "detail", peptideId: state.selected.id } : { view: "grid" };
+  if (history.state?.view === nextState.view && history.state?.peptideId === nextState.peptideId) return;
+  if (view === "detail") {
+    history.pushState(nextState, "", window.location.pathname);
+  } else {
+    history.replaceState(nextState, "", window.location.pathname);
+  }
+}
+
+function openDetail(peptideId) {
+  state.selected = DATA.peptides.find((p) => p.id === peptideId) || null;
+  state.tag = null;
+  syncHistory("detail");
+  render();
+}
+
+function closeToGrid() {
+  resetToGridState();
+  syncHistory("grid");
+  render();
+}
+
 function relatedPeptides() {
   if (!state.tag) return [];
   const target = norm(state.tag.value);
   return DATA.peptides
     .map((p) => {
+      if (state.tag.sourcePeptideId && p.id === state.tag.sourcePeptideId) return { p, matches: [] };
       const matches = [];
       if (state.tag.type === "effect") {
         p.tile.enhancingEffects.forEach((effect) => {
           const item = norm(effect.label);
           if (item.includes(target) || target.includes(item)) matches.push(effect.label);
         });
+        if (norm(p.tile.mechanismSummary).includes(target)) matches.push("mechanism overlap");
       }
       if (state.tag.type === "gene" && p.biology.genes.some((gene) => norm(gene) === target)) matches.push(state.tag.value);
       if (state.tag.type === "protein" && p.biology.proteins.some((protein) => norm(protein) === target)) matches.push(state.tag.value);
+      if (state.tag.type === "protein" && p.biology.receptors.some((receptor) => norm(receptor).includes(target))) matches.push(`receptor-linked: ${state.tag.value}`);
       if (state.tag.type === "cytokine" && p.biology.cytokinesInterleukins.some((item) => norm(item.name) === target)) matches.push(state.tag.value);
       if (state.tag.type === "channel" && p.biology.channelsTransporters.some((channel) => norm(channel).includes(target))) {
         matches.push(state.tag.value);
@@ -160,7 +192,7 @@ function tile(p) {
   const review = moderationLabel(p.moderation.status);
   const clinical = p.tile.clinicalUses[0] || "Clinical use context not yet verified.";
   const enhancement = p.expanded.anecdotalUse[0] || "No enhancement/common-use statement imported.";
-  return `<article class="tile" data-expand="${esc(p.id)}" tabindex="0" aria-label="Open ${esc(p.names.primary)} article">
+  return `<article class="tile" data-expand="${esc(p.id)}" data-peptide-id="${esc(p.id)}" tabindex="0" aria-label="Open ${esc(p.names.primary)} article">
     <header>
       <div>
         <p class="eyebrow">${esc(p.category)}</p>
@@ -182,8 +214,8 @@ function tile(p) {
       <div><dt>Dosing Context</dt><dd>${esc(p.tile.dosing.quick)} <span>${esc(p.tile.dosing.adminRoute)}</span></dd></div>
       <div><dt>Cost</dt><dd>${esc(p.tile.cost.range || "not imported")} <span>${esc(p.tile.cost.size || "")}</span></dd></div>
     </dl>
-    <section class="effects">${p.tile.enhancingEffects.slice(0, 4).map((effect) => tag("effect", effect.label, effect.symbols)).join("")}</section>
-    <section class="chips">${p.biology.proteins.slice(0, 5).map((protein) => tag("protein", protein)).join("")}</section>
+    <section class="effects">${p.tile.enhancingEffects.slice(0, 4).map((effect) => tag("effect", effect.label, effect.symbols, p.id)).join("")}</section>
+    <section class="chips">${p.biology.proteins.slice(0, 5).map((protein) => tag("protein", protein, [], p.id)).join("")}</section>
     <p class="click-hint">Click tile for full article, citations, signaling, studies, and vendor tables.</p>
   </article>`;
 }
@@ -234,7 +266,7 @@ function studyRows(p, speciesGroup) {
       const population = claim.population || (speciesGroup === "human" ? "Human population details pending extraction." : "Animal model details pending extraction.");
       const protocol = [claim.context.replaceAll("_", " "), claim.route].filter(Boolean).join("; ") || "Protocol pending extraction.";
       return `<tr>
-        <td><a href="${esc(citation.url)}" target="_blank" rel="noreferrer">${esc(citation.title)}</a><br><span class="muted">Retrieved ${esc(citation.accessedAt || "date pending")}</span></td>
+        <td><a class="study-link" href="${esc(citation.url)}" target="_blank" rel="noreferrer">${esc(citation.title)}</a><br><span class="muted">Retrieved ${esc(citation.accessedAt || "date pending")}</span></td>
         <td>${esc(population)}</td>
         <td>${esc("n pending extraction")}</td>
         <td>${esc(protocol)}</td>
@@ -267,10 +299,10 @@ function evidenceTables(p) {
   </section>`;
 }
 
-function relatedPanel() {
+function relatedPanel(mode = "detail") {
   if (!state.tag) return "";
   const rows = relatedPeptides();
-  return `<section class="related-panel">
+  return `<section class="related-panel ${mode === "global" ? "global-related" : ""}">
     <header>
       <div>
         <p class="eyebrow">Related peptides</p>
@@ -279,7 +311,7 @@ function relatedPanel() {
       <button class="icon" data-clear-related>x</button>
     </header>
     <table>
-      <thead><tr><th>Peptide</th><th>Evidence</th><th>Critical summary</th><th>Shared item</th></tr></thead>
+      <thead><tr><th>Peptide</th><th>Evidence</th><th>Brief mechanism</th><th>Key effects</th><th>Shared item</th></tr></thead>
       <tbody>${
         rows.length
           ? rows
@@ -288,11 +320,12 @@ function relatedPanel() {
                   <td><button class="inline-link" data-expand="${esc(item.p.id)}">${esc(item.p.names.primary)}</button></td>
                   <td>${esc(DATA.evidenceTierLabel[item.p.classification.evidenceTier])}</td>
                   <td>${esc(item.p.tile.mechanismSummary)}</td>
+                  <td>${esc(item.p.tile.enhancingEffects.slice(0, 3).map((effect) => effect.label).join(", ") || "none listed")}</td>
                   <td>${esc(item.matches.join(", "))}</td>
                 </tr>`
               )
               .join("")
-          : '<tr><td colspan="4">No related peptide rows in the current data.</td></tr>'
+          : '<tr><td colspan="5">No related peptide rows in the current data.</td></tr>'
       }</tbody>
     </table>
   </section>`;
@@ -301,7 +334,7 @@ function relatedPanel() {
 function detail(p) {
   if (!p) return "";
   return `<section class="detail-backdrop" data-close-detail>
-    <article class="detail" role="dialog" aria-modal="true" aria-label="${esc(p.names.primary)} detail">
+    <article class="detail" data-peptide-id="${esc(p.id)}" role="dialog" aria-modal="true" aria-label="${esc(p.names.primary)} detail">
       <div class="article-shell">
         <header class="article-head">
           <div>
@@ -351,12 +384,12 @@ function detail(p) {
         </section>
         <section class="article-section">
           <h3>Interactable Biology</h3>
-          <div class="tag-block"><h4>Effects</h4>${p.tile.enhancingEffects.map((effect) => tag("effect", effect.label, effect.symbols)).join("")}</div>
-          <div class="tag-block"><h4>Genes</h4>${p.biology.genes.map((gene) => tag("gene", gene)).join("") || '<span class="muted">Pending extraction</span>'}</div>
-          <div class="tag-block"><h4>Proteins</h4>${p.biology.proteins.map((protein) => tag("protein", protein)).join("") || '<span class="muted">Pending extraction</span>'}</div>
-          <div class="tag-block"><h4>Channels</h4>${p.biology.channelsTransporters.map((channel) => tag("channel", channel)).join("") || '<span class="muted">Pending extraction</span>'}</div>
+          <div class="tag-block"><h4>Effects</h4>${p.tile.enhancingEffects.map((effect) => tag("effect", effect.label, effect.symbols, p.id)).join("")}</div>
+          <div class="tag-block"><h4>Genes</h4>${p.biology.genes.map((gene) => tag("gene", gene, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div>
+          <div class="tag-block"><h4>Proteins</h4>${p.biology.proteins.map((protein) => tag("protein", protein, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div>
+          <div class="tag-block"><h4>Channels</h4>${p.biology.channelsTransporters.map((channel) => tag("channel", channel, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div>
         </section>
-        ${relatedPanel()}
+        ${relatedPanel("detail")}
         <section class="article-section">
           <h3>Cytokines, Interleukins, And Markers</h3>
           <table>
@@ -366,7 +399,7 @@ function detail(p) {
                 ? p.biology.cytokinesInterleukins
                     .map(
                       (item) => `<tr>
-                        <td>${tag("cytokine", item.name, item.symbols)}</td>
+                        <td>${tag("cytokine", item.name, item.symbols, p.id)}</td>
                         <td>${esc(item.effect)}</td>
                         <td>${esc(item.context)}</td>
                         <td>${symbols(item.symbols)}</td>
@@ -381,21 +414,22 @@ function detail(p) {
         <section class="article-section">
           <h3>Manufacturers, Vendor Data, And Cost</h3>
           <table>
-            <thead><tr><th>Vendor</th><th>Product</th><th>Cost</th><th>Lab / COA</th><th>Date</th></tr></thead>
+            <thead><tr><th>Vendor</th><th>Grade / score</th><th>Tests</th><th>Product</th><th>Lab / source</th><th>Notes</th></tr></thead>
             <tbody>${
               p.vendorData.length
                 ? p.vendorData
                     .map(
                       (v) => `<tr>
                         <td>${esc(v.vendor)}</td>
-                        <td>${esc(`${v.productName} ${v.vialSize || ""}`)}</td>
-                        <td>${esc(v.priceRange || "not imported")}</td>
-                        <td>${v.coaUrl ? `<a href="${esc(v.coaUrl)}" target="_blank" rel="noreferrer">COA / certification</a>` : esc(v.lab || "not imported")}</td>
-                        <td>${esc(v.date || "date pending")}</td>
+                        <td>${esc([v.ratingGrade, v.ratingScore != null ? `${v.ratingScore}/10` : null].filter(Boolean).join(" / ") || "not imported")}</td>
+                        <td>${esc(v.testCount != null ? `${v.testCount} tests; ${v.oldestTest || "date?"} to ${v.latestTest || "date?"}` : "not imported")}</td>
+                        <td>${v.productUrl ? `<a class="vendor-link" href="${esc(v.productUrl)}" target="_blank" rel="noreferrer">${esc(`${v.productName} ${v.vialSize || ""}`)}</a>` : esc(`${v.productName} ${v.vialSize || ""}`)}</td>
+                        <td>${v.coaUrl ? `<a class="vendor-link" href="${esc(v.coaUrl)}" target="_blank" rel="noreferrer">${esc(v.lab || v.sourcePlatform || "vendor source")}</a>` : esc(v.lab || v.sourcePlatform || "not imported")}</td>
+                        <td>${esc(v.notes || v.priceRange || "price and per-batch COA detail pending later passes")}</td>
                       </tr>`
                     )
                     .join("")
-                : '<tr><td colspan="5">No vendor rows imported.</td></tr>'
+                : '<tr><td colspan="6">No vendor rows imported.</td></tr>'
             }</tbody>
           </table>
         </section>
@@ -418,7 +452,7 @@ function detail(p) {
               .map(
                 (citation, index) => `<tr>
                   <td>${citationLink(citation, index)}</td>
-                  <td><a href="${esc(citation.url)}" target="_blank" rel="noreferrer">${esc(citation.title)}</a></td>
+                  <td><a class="table-link" href="${esc(citation.url)}" target="_blank" rel="noreferrer">${esc(citation.title)}</a></td>
                   <td>${esc(citation.quality)}</td>
                   <td>${esc(citation.accessedAt || "date pending")}</td>
                   <td>${esc(citation.notes)}</td>
@@ -433,14 +467,11 @@ function detail(p) {
 }
 
 function hero() {
-  const humanCount = DATA.peptides.filter((p) => p.classification.evidenceTier.includes("human") || p.classification.evidenceTier.includes("fda")).length;
-  const claimCount = DATA.peptides.reduce((sum, p) => sum + p.claims.length, 0);
   return `<section class="hero">
     <div>
       <p class="eyebrow">production scaffold / model-checkable data</p>
       <h1 class="brand-title">${BRAND}</h1>
       <p class="lede">Source-backed peptide reference for biologists and physicians, with public vendor context, contextual dosing labels, hover citations, moderator review, and future agent reasoning.</p>
-      <div class="hero-actions"><button data-agent>atlas agent</button></div>
       <div class="review-key">
         <span><i class="review-dot"></i>Yellow dot means model-drafted or pending human/mod verification.</span>
         <span><i class="review-dot ok"></i>Green dot means a moderator has verified the article or claim set.</span>
@@ -449,26 +480,6 @@ function hero() {
     <aside class="legend">
       ${Object.entries(DATA.evidenceLegend).map(([key, value]) => `<span><abbr>${esc(key)}</abbr>${esc(value)}</span>`).join("")}
     </aside>
-  </section>
-  <section class="source-strip">
-    <strong>${DATA.peptides.length}</strong><span>peptide records</span>
-    <strong>${humanCount}</strong><span>human/regulatory records</span>
-    <strong>${claimCount}</strong><span>claim objects</span>
-    <strong>${DATA.sourceRegistry.length}</strong><span>source workflows</span>
-  </section>`;
-}
-
-function pipeline() {
-  return `<section class="pipeline">
-    ${DATA.sourceRegistry
-      .map(
-        (source) => `<article>
-          <p class="eyebrow">${esc(source.status.replaceAll("_", " "))}</p>
-          <h2>${esc(source.name)}</h2>
-          <p>${esc(source.use)}</p>
-        </article>`
-      )
-      .join("")}
   </section>`;
 }
 
@@ -487,30 +498,14 @@ function toolbar(categories) {
   </section>`;
 }
 
-function agentPanel() {
-  if (!state.agent) return "";
-  return `<aside class="agent-panel">
-    <header>
-      <div>
-        <p class="eyebrow">Atlas agent / disabled</p>
-        <h3>Reason Over Data</h3>
-      </div>
-      <button class="icon" data-agent>x</button>
-    </header>
-    <p>The future agent will answer only from peptide records, citations, source snapshots, Consensus exports, vendor snapshots, and moderator verifications. It is wired as a UI affordance now; backend retrieval is intentionally disabled in this review build.</p>
-    <textarea placeholder="Future: compare mitochondrial peptides with human clinical evidence and safety limitations."></textarea>
-    <button disabled>Backend retrieval not enabled yet</button>
-  </aside>`;
-}
-
 function render() {
   const focus = captureFocus();
   const categories = ["All", ...new Set(DATA.peptides.map((p) => p.category))];
   const peptides = filteredPeptides();
-  app.innerHTML = `${hero()}${pipeline()}${toolbar(categories)}
+  app.innerHTML = `${hero()}${toolbar(categories)}
+    ${state.tag && !state.selected ? relatedPanel("global") : ""}
     <section class="tiles">${peptides.map(tile).join("")}</section>
-    ${detail(state.selected)}
-    ${agentPanel()}`;
+    ${detail(state.selected)}`;
   restoreFocus(focus);
 }
 
@@ -534,19 +529,16 @@ app.addEventListener("click", (event) => {
   const backdrop = target.closest("[data-close-detail]");
   const tagButton = target.closest("[data-tag-type]");
   const clearRelated = target.closest("[data-clear-related]");
-  const agentButton = target.closest("[data-agent]");
   const expandTarget = target.closest("[data-expand]");
   const interactive = target.closest("button, a, input, select, textarea, .citation");
 
   if (closeDetail || (backdrop && target === backdrop)) {
-    state.selected = null;
-    state.tag = null;
-    render();
+    closeToGrid();
     return;
   }
 
   if (tagButton) {
-    state.tag = { type: tagButton.dataset.tagType, value: tagButton.dataset.tagValue };
+    state.tag = { type: tagButton.dataset.tagType, value: tagButton.dataset.tagValue, sourcePeptideId: tagButton.dataset.tagSource || null };
     render();
     return;
   }
@@ -557,16 +549,14 @@ app.addEventListener("click", (event) => {
     return;
   }
 
-  if (agentButton) {
-    state.agent = !state.agent;
-    render();
+  if (expandTarget && expandTarget.tagName === "BUTTON") {
+    openDetail(expandTarget.dataset.expand);
     return;
   }
 
   if (expandTarget && !interactive) {
-    state.selected = DATA.peptides.find((p) => p.id === expandTarget.dataset.expand);
-    state.tag = null;
-    render();
+    openDetail(expandTarget.dataset.expand);
+    return;
   }
 });
 
@@ -574,15 +564,11 @@ app.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     const expandTarget = event.target.closest("[data-expand]");
     if (expandTarget) {
-      state.selected = DATA.peptides.find((p) => p.id === expandTarget.dataset.expand);
-      state.tag = null;
-      render();
+      openDetail(expandTarget.dataset.expand);
     }
   }
   if (event.key === "Escape" && state.selected) {
-    state.selected = null;
-    state.tag = null;
-    render();
+    closeToGrid();
   }
 });
 
@@ -591,4 +577,10 @@ document.addEventListener("pointermove", (event) => {
   document.documentElement.style.setProperty("--my", `${Math.round((event.clientY / window.innerHeight) * 100)}%`);
 });
 
+window.addEventListener("popstate", () => {
+  resetToGridState();
+  render();
+});
+
+syncHistory("grid");
 render();

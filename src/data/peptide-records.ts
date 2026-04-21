@@ -1,4 +1,5 @@
 import type { Citation, Claim, EvidenceSymbol, PeptideRecord } from "@/types/peptide";
+import vendorBatchRaw from "../../data/sources/vendors/peptocopeia_batch_1.json";
 
 const accessedAt = "2026-04-21";
 
@@ -50,6 +51,118 @@ const baseCitations: Record<string, Citation> = {
 };
 
 const source = (key: keyof typeof baseCitations) => baseCitations[key];
+
+const vendorBatch1 = vendorBatchRaw as {
+  retrieved_date: string;
+  source_run_id: string;
+  peptides: Array<{
+    peptide_id: string;
+    peptide_name: string;
+    finnrick_summary?: {
+      total_tests?: number;
+      vendor_count?: number;
+      first_test?: string;
+      last_test?: string;
+      purity_5_95_pct?: [number, number];
+      quantity_divergence_95pct?: string;
+      capture_note?: string;
+      note?: string;
+      note_top3?: string;
+      variant_note?: string;
+    };
+    vendor_observations: Array<{
+      vendor: string;
+      product_name: string;
+      product_url: string | null;
+      source_platform: string;
+      vial_size: string | null;
+      price: { raw?: string | null } | null;
+      quantity: string | null;
+      availability: string | null;
+      shipping_region: string | null;
+      lab_results?: Array<{
+        batch_id: string | null;
+        test_date: string | null;
+        lab: string | null;
+        coa_url: string | null;
+        purity: string | null;
+        quantity_assay: string | null;
+        endotoxin: "conforms" | "does_not_conform" | "unknown" | null;
+        heavy_metals: "conforms" | "does_not_conform" | "unknown" | null;
+        sterility: "pass" | "fail" | "unknown" | null;
+        other_tests: string | null;
+        flags: string[];
+      }>;
+      ratings?: {
+        finnrick_grade?: string | null;
+        finnrick_grade_text?: string | null;
+        finnrick_score?: number | null;
+        finnrick_score_min?: number | null;
+        finnrick_score_max?: number | null;
+        finnrick_test_count?: number | null;
+        finnrick_oldest_test?: string | null;
+        finnrick_latest_test?: string | null;
+      };
+      source_snapshot?: {
+        title?: string | null;
+        url?: string | null;
+        notes?: string | null;
+      };
+    }>;
+  }>;
+};
+
+function vendorNotes(peptideId: string) {
+  const batchPeptide = vendorBatch1.peptides.find((item) => item.peptide_id === peptideId);
+  if (!batchPeptide?.finnrick_summary) return [];
+  const summary = batchPeptide.finnrick_summary;
+  const purity = summary.purity_5_95_pct?.length === 2 ? `${summary.purity_5_95_pct[0]}%-${summary.purity_5_95_pct[1]}% purity 5th-95th percentile` : null;
+  return [
+    `Finnrick batch summary (${vendorBatch1.retrieved_date}): ${summary.vendor_count ?? "unknown"} vendors, ${summary.total_tests ?? "unknown"} tests, first test ${summary.first_test ?? "unknown"}, latest test ${summary.last_test ?? "unknown"}.`,
+    purity,
+    summary.quantity_divergence_95pct ? `Quantity divergence 95th percentile window: ${summary.quantity_divergence_95pct}.` : null,
+    summary.capture_note ?? null,
+    summary.note ?? null,
+    summary.note_top3 ?? null,
+    summary.variant_note ?? null
+  ].filter(Boolean) as string[];
+}
+
+function finnrickVendorRows(peptideId: string): PeptideRecord["vendorData"] {
+  const batchPeptide = vendorBatch1.peptides.find((item) => item.peptide_id === peptideId);
+  if (!batchPeptide) return [];
+  return batchPeptide.vendor_observations.map((entry) => {
+    const labSummary = entry.lab_results?.[0];
+    return {
+      vendor: entry.vendor,
+      productName: entry.product_name,
+      productUrl: entry.product_url,
+      vialSize: entry.vial_size,
+      priceRange: entry.price?.raw ?? null,
+      batchId: labSummary?.batch_id ?? null,
+      manufacturerId: null,
+      purity: labSummary?.purity ?? null,
+      endotoxin: labSummary?.endotoxin ?? null,
+      heavyMetals: labSummary?.heavy_metals ?? null,
+      sterility: labSummary?.sterility ?? null,
+      lab: labSummary?.lab ?? null,
+      coaUrl: labSummary?.coa_url ?? entry.product_url ?? null,
+      date: labSummary?.test_date ?? null,
+      symbols: ["V"],
+      sourcePlatform: entry.source_platform,
+      ratingGrade: entry.ratings?.finnrick_grade ?? null,
+      ratingText: entry.ratings?.finnrick_grade_text ?? null,
+      ratingScore: entry.ratings?.finnrick_score ?? null,
+      ratingScoreMin: entry.ratings?.finnrick_score_min ?? null,
+      ratingScoreMax: entry.ratings?.finnrick_score_max ?? null,
+      testCount: entry.ratings?.finnrick_test_count ?? null,
+      oldestTest: entry.ratings?.finnrick_oldest_test ?? null,
+      latestTest: entry.ratings?.finnrick_latest_test ?? null,
+      notes: [labSummary?.other_tests, entry.source_snapshot?.notes].filter(Boolean).join(" ") || null,
+      sourceTitle: entry.source_snapshot?.title ?? null
+    };
+  });
+}
 
 const catalog = [
   ["aod-9604", "AOD-9604", "Metabolic", "hGH fragment", "lipolysis / beta-adrenergic metabolic signaling"],
@@ -325,10 +438,15 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       receptors: ["GLP-1R", "GIPR"],
       channelsTransporters: ["KATP channel physiology via glucose-stimulated insulin secretion"],
       cytokinesInterleukins: [{ name: "CRP", type: "inflammatory_marker", effect: "metabolic inflammation marker; peptide-specific source extraction pending", context: "human metabolic studies; needs field-level verification", symbols: ["H", "?"], claimRef: "tirzepatide-crp-pending" }],
-      cascades: [{ category: "metabolic", steps: ["GLP-1R/GIPR", "cAMP signaling", "insulin/glucagon/appetite pathways", "glycemic and weight outcomes"], symbols: ["Rx", "H"], claimRef: "tirzepatide-fda-use" }]
+      cascades: [
+        { category: "pancreatic islet signaling", steps: ["Tirzepatide agonizes GLP-1R and GIPR", "Gs signaling increases cAMP", "PKA/EPAC increase glucose-dependent insulin secretion", "glucagon output decreases when glucose is elevated", "post-prandial glycemia decreases"], symbols: ["Rx", "H"], claimRef: "tirzepatide-fda-use" },
+        { category: "appetite and gastric-emptying signaling", steps: ["GLP-1R signaling increases in brainstem/hypothalamic satiety circuits", "meal-driven appetite signaling decreases", "gastric emptying slows early in treatment", "energy intake decreases", "body weight decreases in labeled trial contexts"], symbols: ["Rx", "H"], claimRef: "tirzepatide-fda-use" },
+        { category: "adipometabolic downstream effects", steps: ["chronic energy intake decreases", "visceral and total adiposity decrease", "insulin sensitivity can improve", "secondary inflammation markers may decrease", "marker-level direction still requires study-specific extraction"], symbols: ["H", "R", "?"], claimRef: "tirzepatide-mechanism" }
+      ]
     },
     expanded: {
       humanEvidence: "FDA-recognized branded products provide strong human regulatory evidence; trial-level outcomes should be imported from labels and pivotal publications.",
+      mechanismDetail: "Traceable draft cascade: tirzepatide activates GLP-1R and GIPR, increases cAMP-dependent signaling in islet cells, increases glucose-dependent insulin release, suppresses inappropriate glucagon signaling, decreases appetite signaling, and slows gastric emptying early in therapy. Weight and glycemic effects are downstream clinical outcomes rather than direct receptor-level events.",
       safetyDetail: "Display label-specific adverse events, contraindications, and boxed warnings only after label import. Common/nonclinical enhancement anecdotes must remain separate from label evidence.",
       anecdotalUse: ["Common online enhancement/weight-loss discussion exists, but it should be labeled anecdotal/common-use unless tied to an approved indication or published study."]
     },
@@ -365,11 +483,171 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       receptors: ["GLP-1R"],
       channelsTransporters: ["KATP channel physiology via glucose-stimulated insulin secretion"],
       cytokinesInterleukins: [{ name: "CRP", type: "inflammatory_marker", effect: "metabolic inflammation marker; source-specific extraction pending", context: "human metabolic studies; needs field-level verification", symbols: ["H", "?"], claimRef: "liraglutide-crp-pending" }],
-      cascades: [{ category: "metabolic", steps: ["GLP-1R", "cAMP", "insulin/glucagon and appetite signaling", "glycemic and weight outcomes"], symbols: ["Rx", "H"], claimRef: "liraglutide-fda-use" }]
+      cascades: [
+        { category: "islet incretin signaling", steps: ["Liraglutide agonizes GLP-1R", "Gs signaling increases cAMP", "glucose-dependent insulin release increases", "inappropriate glucagon signaling decreases", "glycemic control improves in labeled contexts"], symbols: ["Rx", "H"], claimRef: "liraglutide-fda-use" },
+        { category: "CNS and GI signaling", steps: ["GLP-1R signaling increases in satiety circuits", "appetite decreases", "gastric emptying slows", "meal size and energy intake decrease", "weight-loss effects can emerge in weight-management contexts"], symbols: ["Rx", "H"], claimRef: "liraglutide-fda-use" }
+      ]
+    },
+    expanded: {
+      mechanismDetail: "Traceable draft cascade: liraglutide activates GLP-1R, increases cAMP signaling, increases glucose-dependent insulin secretion, decreases glucagon signaling, and reduces appetite partly through central satiety pathways and delayed gastric emptying."
     },
     claims: [claim("liraglutide-fda-use", "tile.clinicalUses", "Victoza is FDA-approved as adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes.", ["Rx", "H"], ["fda-liraglutide-victoza"], "fda_label", "human", 0.9)],
     citations: [fdaLiraglutide, source("peptpedia")],
     moderation: { status: "needs_review" }
+  },
+  "semaglutide": {
+    names: { aliases: ["Ozempic", "Wegovy", "Rybelsus"], tradeNames: ["Ozempic", "Wegovy", "Rybelsus"] },
+    tile: {
+      mechanismSummary: "Semaglutide is a long-acting GLP-1 receptor agonist draft-linked to glucose-dependent insulin secretion, appetite suppression, and delayed gastric emptying.",
+      localization: "Pancreatic islets, hypothalamic/brainstem appetite circuits, gastrointestinal axis, and downstream adipometabolic tissues.",
+      enhancingEffects: [
+        { label: "GLP-1 receptor agonism", symbols: ["R", "?"], claimRef: "semaglutide-mechanism-draft" },
+        { label: "appetite reduction", symbols: ["R", "?"], claimRef: "semaglutide-mechanism-draft" },
+        { label: "glycemic control context", symbols: ["R", "?"], claimRef: "semaglutide-mechanism-draft" }
+      ],
+      clinicalUses: ["Human therapeutic contexts are well known, but exact label/trial wording should be tied to imported primary or regulatory citations before being treated as definitive."],
+      dosing: {
+        quick: "Clinical and labeled human-use context exists, but exact dose wording should be refreshed from current product labels or trials.",
+        adminRoute: "Subcutaneous and oral branded-product contexts exist; keep display citation-specific.",
+        publicDisplayAllowed: true,
+        context: "review"
+      }
+    },
+    biology: {
+      genes: ["GLP1R", "INS", "GCG", "POMC"],
+      proteins: ["GLP-1 receptor", "insulin", "glucagon", "POMC neuron signaling"],
+      receptors: ["GLP-1R"],
+      channelsTransporters: ["KATP-linked beta-cell stimulus-secretion physiology"],
+      cascades: [
+        { category: "islet incretin signaling", steps: ["Semaglutide agonizes GLP-1R", "Gs signaling increases cAMP", "PKA/EPAC activity increases", "glucose-dependent insulin secretion increases", "glucagon output decreases in hyperglycemic states"], symbols: ["R", "?"], claimRef: "semaglutide-mechanism-draft" },
+        { category: "satiety and GI signaling", steps: ["central GLP-1R signaling increases", "satiety signaling increases", "hunger-driven food intake decreases", "gastric emptying slows early in treatment", "weight-loss effects can follow in human therapeutic contexts"], symbols: ["R", "?"], claimRef: "semaglutide-mechanism-draft" }
+      ]
+    },
+    expanded: {
+      mechanismDetail: "Model-drafted but medically traceable cascade: semaglutide activates GLP-1R, increases cAMP signaling in islet cells, increases glucose-dependent insulin release, decreases inappropriate glucagon output, and reduces appetite through central satiety circuitry plus GI slowing. Replace with label/trial-cited wording once the incoming Consensus/primary batch lands.",
+      anecdotalUse: ["Common nonclinical discussion focuses on appetite suppression and body-composition goals, but this must remain separated from citation-backed therapeutic evidence."]
+    },
+    claims: [claim("semaglutide-mechanism-draft", "tile.mechanismSummary", "Long-acting GLP-1 receptor agonist with satiety, gastric-emptying, and glucose-dependent insulin-secretion effects.", ["R", "?"], [source("peptpedia").id], "review", "mixed", 0.5)]
+  },
+  "retatrutide": {
+    tile: {
+      mechanismSummary: "Retatrutide is a draft-tracked triple agonist spanning GLP-1R, GIPR, and glucagon receptor signaling with downstream appetite, glucose, and energy-expenditure implications.",
+      localization: "Pancreatic islets, CNS appetite circuits, liver, adipose tissue, and peripheral metabolic tissues influenced by incretin and glucagon signaling.",
+      enhancingEffects: [
+        { label: "triple incretin/glucagon signaling", symbols: ["R", "?"], claimRef: "retatrutide-mechanism-draft" },
+        { label: "appetite reduction", symbols: ["R", "?"], claimRef: "retatrutide-mechanism-draft" },
+        { label: "energy expenditure / lipolysis context", symbols: ["R", "?"], claimRef: "retatrutide-mechanism-draft" }
+      ]
+    },
+    biology: {
+      genes: ["GLP1R", "GIPR", "GCGR", "INS", "GCG"],
+      proteins: ["GLP-1 receptor", "GIP receptor", "glucagon receptor", "insulin", "glucagon"],
+      receptors: ["GLP-1R", "GIPR", "GCGR"],
+      channelsTransporters: ["beta-cell KATP-linked stimulus-secretion physiology"],
+      cascades: [
+        { category: "islet hormone signaling", steps: ["Retatrutide agonizes GLP-1R/GIPR/GCGR", "cAMP signaling increases across target tissues", "glucose-dependent insulin secretion increases", "glucagon physiology is rebalanced in a context-dependent way", "glycemic control effects emerge in human-development programs"], symbols: ["R", "?"], claimRef: "retatrutide-mechanism-draft" },
+        { category: "appetite and adipometabolic signaling", steps: ["GLP-1R central satiety signaling increases", "food intake decreases", "GCGR-associated energy expenditure and lipid mobilization may increase", "weight-loss effects can exceed dual-agonist expectations in early reports", "study-specific attribution still requires primary citation import"], symbols: ["R", "?"], claimRef: "retatrutide-mechanism-draft" }
+      ]
+    },
+    expanded: {
+      mechanismDetail: "Draft but traceable cascade: retatrutide combines GLP-1R, GIPR, and GCGR agonism, so it should be read as a multi-axis metabolic signal rather than a single receptor effect. Appetite suppression, insulinotropic signaling, and glucagon-linked energy handling may all contribute to observed body-weight and glycemic outcomes."
+    },
+    claims: [claim("retatrutide-mechanism-draft", "tile.mechanismSummary", "Triple GLP-1/GIP/glucagon receptor agonist with multi-axis metabolic signaling.", ["R", "?"], [source("peptpedia").id], "review", "mixed", 0.48)]
+  },
+  "cagrilintide": {
+    tile: {
+      mechanismSummary: "Cagrilintide is an amylin-analog draft linked to satiety signaling, reduced gastric-emptying drive, and lower caloric intake.",
+      localization: "Area postrema/nucleus tractus solitarius satiety circuits, pancreatic-amylin signaling space, and gastrointestinal control pathways.",
+      enhancingEffects: [
+        { label: "amylin receptor satiety signaling", symbols: ["R", "?"], claimRef: "cagrilintide-mechanism-draft" },
+        { label: "reduced caloric intake", symbols: ["R", "?"], claimRef: "cagrilintide-mechanism-draft" }
+      ]
+    },
+    biology: {
+      genes: ["CALCR", "RAMP1", "RAMP3"],
+      proteins: ["calcitonin receptor", "RAMP complexes", "amylin signaling"],
+      receptors: ["amylin receptor complex"],
+      channelsTransporters: [],
+      cascades: [
+        { category: "satiety signaling", steps: ["Cagrilintide activates amylin-receptor complexes", "post-meal satiety signaling increases", "gastric emptying slows", "meal size decreases", "weight-management effects may follow when paired with other therapies"], symbols: ["R", "?"], claimRef: "cagrilintide-mechanism-draft" }
+      ]
+    },
+    claims: [claim("cagrilintide-mechanism-draft", "tile.mechanismSummary", "Long-acting amylin analog that increases satiety signaling and reduces energy intake.", ["R", "?"], [source("peptpedia").id], "review", "mixed", 0.46)]
+  },
+  "bpc-157": {
+    tile: {
+      mechanismSummary: "BPC-157 is a model-drafted repair peptide record centered on endothelial migration, angiogenic signaling, and cytoskeletal/wound-healing pathways; human therapeutic evidence remains weak.",
+      localization: "Gastrointestinal mucosa, endothelium, fibroblast/wound-healing compartments, tendon/ligament injury models, and local repair microenvironments.",
+      enhancingEffects: [
+        { label: "angiogenic repair signaling", symbols: ["A", "R", "?"], claimRef: "bpc157-repair-draft" },
+        { label: "tendon/ligament healing claims", symbols: ["A", "R", "?"], claimRef: "bpc157-repair-draft" },
+        { label: "gut mucosal protection claims", symbols: ["A", "R", "?"], claimRef: "bpc157-repair-draft" }
+      ]
+    },
+    biology: {
+      genes: ["VEGFA", "KDR", "NOS3", "FAK", "ERK1/2"],
+      proteins: ["VEGF-A", "VEGFR2", "eNOS", "FAK", "ERK1/2"],
+      receptors: ["VEGFR2-related angiogenic signaling"],
+      channelsTransporters: ["NO-dependent vascular tone pathways"],
+      cascades: [
+        { category: "angiogenesis and migration", steps: ["BPC-157 exposure is reported to increase VEGF/VEGFR2-related signaling", "FAK/paxillin cytoskeletal signaling may increase", "endothelial migration and tube formation may increase", "microvascular repair may improve in preclinical injury models"], symbols: ["A", "R", "?"], claimRef: "bpc157-repair-draft" },
+        { category: "nitric-oxide and tissue-protection signaling", steps: ["eNOS/NO pathway modulation is reported", "microcirculatory support may increase", "mucosal or tendon-healing readouts may improve in animal models", "human efficacy remains unverified"], symbols: ["A", "R", "?"], claimRef: "bpc157-repair-draft" }
+      ]
+    },
+    expanded: {
+      mechanismDetail: "This is a model-drafted, preclinical-heavy cascade: reported repair biology centers on VEGF/VEGFR2, focal-adhesion/cytoskeletal signaling, and nitric-oxide-linked microvascular effects. It should not be read as established human efficacy until primary human evidence is imported."
+    },
+    claims: [claim("bpc157-repair-draft", "tile.mechanismSummary", "Preclinical repair peptide claims center on angiogenesis, endothelial migration, and tissue-protection signaling.", ["A", "R", "?"], [source("peptpedia").id], "review", "animal", 0.4)]
+  },
+  "ghk-cu": {
+    tile: {
+      mechanismSummary: "GHK-Cu is a copper-binding tripeptide draft-linked to extracellular-matrix remodeling, fibroblast signaling, antioxidant/stress pathways, and wound-healing biology.",
+      localization: "Dermis, extracellular matrix, fibroblasts, wound bed, hair follicle environment, and oxidative-stress response compartments.",
+      enhancingEffects: [
+        { label: "collagen / matrix remodeling", symbols: ["A", "R", "?"], claimRef: "ghkcu-matrix-draft" },
+        { label: "wound-healing signaling", symbols: ["A", "R", "?"], claimRef: "ghkcu-matrix-draft" },
+        { label: "cosmetic skin-quality claims", symbols: ["N", "R", "?"], claimRef: "ghkcu-matrix-draft" }
+      ]
+    },
+    biology: {
+      genes: ["COL1A1", "COL3A1", "MMP2", "TIMP1", "SOD1"],
+      proteins: ["collagen I", "collagen III", "MMP-2", "TIMP-1", "SOD1"],
+      receptors: [],
+      channelsTransporters: ["copper trafficking context"],
+      cascades: [
+        { category: "matrix remodeling", steps: ["GHK-Cu delivers copper into local peptide-signaling context", "fibroblast repair programs may increase", "collagen and extracellular-matrix synthesis can increase", "MMP/TIMP balance may shift toward remodeling control", "wound-healing or skin-quality readouts may improve"], symbols: ["A", "R", "?"], claimRef: "ghkcu-matrix-draft" },
+        { category: "oxidative-stress signaling", steps: ["cell-stress defense pathways may increase", "superoxide-handling genes may increase", "inflammatory tissue damage may decrease in local models", "human cosmetic or regenerative effects remain context-specific"], symbols: ["A", "R", "?"], claimRef: "ghkcu-matrix-draft" }
+      ]
+    },
+    expanded: {
+      mechanismDetail: "Draft cascade: GHK-Cu is usually framed as a matrix-remodeling and wound-healing signal rather than a receptor agonist. The critical biology is fibroblast/matrix gene regulation, collagen turnover, metalloproteinase balance, and local oxidative-stress handling."
+    },
+    claims: [claim("ghkcu-matrix-draft", "tile.mechanismSummary", "Copper tripeptide associated with matrix remodeling, fibroblast repair, and wound-healing biology.", ["A", "R", "?"], [source("peptpedia").id], "review", "animal", 0.43)]
+  },
+  "tb-500": {
+    tile: {
+      mechanismSummary: "TB-500 is a thymosin-beta-4-related draft record centered on actin dynamics, cell migration, angiogenesis, and repair/remodeling claims that remain mostly preclinical.",
+      localization: "Cytoskeletal/migratory repair compartments including endothelial cells, fibroblasts, muscle, tendon, and wound-healing tissues.",
+      enhancingEffects: [
+        { label: "cell migration and repair", symbols: ["A", "R", "?"], claimRef: "tb500-repair-draft" },
+        { label: "angiogenesis context", symbols: ["A", "R", "?"], claimRef: "tb500-repair-draft" },
+        { label: "sports-recovery anecdote", symbols: ["N", "?"], claimRef: "tb500-repair-draft" }
+      ]
+    },
+    biology: {
+      genes: ["ACTB", "VEGFA", "MMP2", "TGFB1"],
+      proteins: ["actin", "VEGF-A", "MMP-2", "TGF-beta"],
+      receptors: [],
+      channelsTransporters: [],
+      cascades: [
+        { category: "actin and migration signaling", steps: ["TB-500/thymosin-beta-4-related signaling is proposed to sequester G-actin", "cell migration capacity may increase", "repair-cell trafficking into injury sites may increase", "tendon/muscle/wound healing readouts may improve in preclinical models"], symbols: ["A", "R", "?"], claimRef: "tb500-repair-draft" },
+        { category: "vascular and remodeling signaling", steps: ["angiogenic signaling may increase", "matrix remodeling may increase", "fibrosis-related signaling may decrease in some models", "human efficacy remains unverified and anecdotal use must remain separate"], symbols: ["A", "R", "?"], claimRef: "tb500-repair-draft" }
+      ]
+    },
+    expanded: {
+      mechanismDetail: "Draft cascade: TB-500 is best read as a cytoskeletal and migratory-repair hypothesis, not as a clinically verified human regenerative drug. The recurring biology is actin handling, endothelial/fibroblast migration, angiogenesis, and matrix remodeling."
+    },
+    claims: [claim("tb500-repair-draft", "tile.mechanismSummary", "Thymosin-beta-4-related repair claims center on actin dynamics, cell migration, and angiogenesis in preclinical models.", ["A", "R", "?"], [source("peptpedia").id], "review", "animal", 0.41)]
   },
   "tesamorelin": {
     names: { aliases: ["Egrifta", "Egrifta SV", "Egrifta WR"], tradeNames: ["Egrifta"] },
@@ -397,7 +675,10 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       receptors: ["GHRHR"],
       channelsTransporters: [],
       cytokinesInterleukins: [{ name: "CRP", type: "inflammatory_marker", effect: "measured in metabolic trial contexts; direction requires extraction", context: "human HIV/metabolic studies", symbols: ["H", "?"], claimRef: "tesamorelin-crp-pending" }],
-      cascades: [{ category: "endocrine", steps: ["GHRHR", "pituitary GH", "hepatic IGF-1", "visceral adiposity/body composition"], symbols: ["H"], claimRef: "tesamorelin-human-use" }]
+      cascades: [
+        { category: "GH axis signaling", steps: ["Tesamorelin agonizes GHRHR", "pituitary GH secretion increases", "hepatic IGF-1 production increases", "lipolytic tone can increase", "visceral adipose tissue decreases in cited HIV trial contexts"], symbols: ["H"], claimRef: "tesamorelin-human-use" },
+        { category: "body-composition and liver-fat signaling", steps: ["GH/IGF-1 axis changes nutrient partitioning", "visceral adiposity decreases more than subcutaneous depots in target populations", "hepatic fat/body-composition endpoints may improve", "disease-context limitations remain essential"], symbols: ["H", "R"], claimRef: "tesamorelin-human-use" }
+      ]
     },
     claims: [claim("tesamorelin-human-use", "tile.clinicalUses", "Tesamorelin is described in PubMed as the only FDA-approved therapy to treat abdominal fat accumulation in people with HIV.", ["Rx", "H"], ["pmid-38905488"], "clinical_trial", "human", 0.82)],
     citations: [tesamorelinPubMed, source("peptpedia"), source("peptidePartnersShop")],
@@ -465,9 +746,14 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       receptors: ["GHRHR"],
       channelsTransporters: [],
       cytokinesInterleukins: [],
-      cascades: [{ category: "endocrine", steps: ["GHRHR", "pituitary GH release", "IGF-1 axis", "growth/metabolic endpoints"], symbols: ["H", "R"], claimRef: "sermorelin-gh-axis" }]
+      cascades: [
+        { category: "GH axis signaling", steps: ["Sermorelin agonizes GHRHR", "pituitary GH pulse release increases", "hepatic IGF-1 signaling increases downstream", "growth/metabolic endpoints can change in clinical or investigational contexts"], symbols: ["H", "R"], claimRef: "sermorelin-gh-axis" }
+      ]
     },
-    expanded: { anecdotalUse: ["Common anti-aging/enhancement discussions exist online; these are not clinical evidence and must be labeled separately."] },
+    expanded: {
+      mechanismDetail: "Traceable draft cascade: sermorelin acts upstream of GH release at the GHRH receptor rather than acting as GH itself. Downstream IGF-1 and metabolic/body-composition effects are secondary endocrine consequences and must remain citation-specific.",
+      anecdotalUse: ["Common anti-aging/enhancement discussions exist online; these are not clinical evidence and must be labeled separately."]
+    },
     claims: [
       claim("sermorelin-gh-axis", "tile.mechanismSummary", "GHRH(1-29) analog that stimulates endogenous growth-hormone release.", ["H", "R"], [source("peptpedia").id], "review", "human", 0.55),
       claim("sermorelin-anecdote", "tile.dosing.quick", "Enhancement/common-use dose discussions are anecdotal/non-clinical unless tied to a cited study.", ["N", "?"], [source("peptpedia").id], "anecdotal_common_use", "unknown", 0.25)
@@ -541,10 +827,14 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       receptors: ["cardiolipin binding context"],
       channelsTransporters: ["mitochondrial permeability transition context requires verification"],
       cytokinesInterleukins: [{ name: "ROS", type: "other", effect: "mitochondrial oxidative-stress marker; trial/source-specific direction requires extraction", context: "mitochondrial disease/preclinical contexts", symbols: ["H", "A", "C", "?"], claimRef: "ss31-human-exercise" }],
-      cascades: [{ category: "mitochondrial", steps: ["SS-31/elamipretide", "inner mitochondrial membrane/cardiolipin", "mitochondrial energetics", "6-minute walk/exercise endpoints in PMM trial"], symbols: ["H"], claimRef: "ss31-human-exercise" }]
+      cascades: [
+        { category: "mitochondrial membrane signaling", steps: ["SS-31 localizes to inner mitochondrial membrane", "cardiolipin association is proposed to stabilize cristae-associated bioenergetics", "electron-transport efficiency may increase", "ROS leak may decrease", "ATP-generating efficiency may improve"], symbols: ["H", "A", "C"], claimRef: "ss31-human-exercise" },
+        { category: "clinical functional signaling", steps: ["mitochondrial energetic stress may decrease", "skeletal-muscle fatigue burden may decrease", "short-duration exercise performance may improve", "6-minute walk distance improved in one imported PMM trial row", "healthy-human enhancement remains unverified"], symbols: ["H"], claimRef: "ss31-human-exercise" }
+      ]
     },
     expanded: {
       humanEvidence: "Consensus CSV row describes a 36-participant randomized, double-blind, placebo-controlled dose-escalation trial in adults with genetically confirmed primary mitochondrial myopathy; the highest-dose group improved 6MWT distance in short-term treatment without increased safety concerns in that trial.",
+      mechanismDetail: "Traceable draft cascade: SS-31 is framed as a cardiolipin-associated mitochondrial peptide, with downstream claims centered on improved electron-transport-chain organization, decreased oxidative stress, and improved cellular energetics. Clinical functional improvement should be treated as a downstream trial observation, not as direct proof of general enhancement.",
       safetyDetail: "Short trial safety observations do not establish broad or healthy-human safety. Enhancement use in healthy physiology remains unverified and should be labeled unknown/anecdotal if encountered.",
       anecdotalUse: ["Healthy-human enhancement claims are not supported by the imported Consensus CSV and should remain unknown unless new evidence is imported."]
     },
@@ -562,7 +852,22 @@ const vendorIds = new Set(["bpc-157", "tb-500", "ipamorelin", "cjc-1295", "semag
 export const peptideRecords: PeptideRecord[] = catalog.map((row) => {
   const base = baseRecord(row);
   const patched = mergeRecord(base, curated[base.id] ?? {});
-  if (vendorIds.has(patched.id) && patched.vendorData.length === 0) {
+  const finnrickRows = finnrickVendorRows(patched.id);
+  if (finnrickRows.length) {
+    patched.vendorData = finnrickRows;
+    const noteLines = vendorNotes(patched.id);
+    if (noteLines.length) {
+      patched.expanded.missingEvidence = [...new Set([...patched.expanded.missingEvidence, "price data", "vendor website / availability", "per-sample COA detail"])];
+      patched.expanded.manufacturers = [
+        ...patched.expanded.manufacturers,
+        {
+          name: "Finnrick vendor summary batch",
+          type: "public vendor-quality aggregation",
+          notes: noteLines.join(" ")
+        }
+      ];
+    }
+  } else if (vendorIds.has(patched.id) && patched.vendorData.length === 0) {
     patched.vendorData = [{
       vendor: "Peptide Partners",
       productName: patched.names.primary,

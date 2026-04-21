@@ -149,6 +149,17 @@ export interface PeptideRecord {
     coaUrl: string | null;
     date: string | null;
     symbols: EvidenceSymbol[];
+    sourcePlatform?: string | null;
+    ratingGrade?: string | null;
+    ratingText?: string | null;
+    ratingScore?: number | null;
+    ratingScoreMin?: number | null;
+    ratingScoreMax?: number | null;
+    testCount?: number | null;
+    oldestTest?: string | null;
+    latestTest?: string | null;
+    notes?: string | null;
+    sourceTitle?: string | null;
   }>;
   claims: Claim[];
   citations: Citation[];

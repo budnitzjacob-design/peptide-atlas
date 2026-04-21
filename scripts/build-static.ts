@@ -9,6 +9,7 @@ copyFileSync(
   "public/fonts/PixelSpaceFreePersonalUseR-zrppw.ttf",
   `${staticDir}/fonts/PixelSpaceFreePersonalUseR-zrppw.ttf`
 );
+copyFileSync("public/favicon.png", `${staticDir}/favicon.png`);
 copyFileSync("static-src/styles.css", `${staticDir}/styles.css`);
 copyFileSync("static-src/app.js", `${staticDir}/app.js`);
 
@@ -34,6 +35,7 @@ writeFileSync(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>peptocopeia</title>
   <meta name="description" content="peptocopeia is a source-backed peptide reference with citation review, vendor metadata, and moderator verification workflows.">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="/styles.css?v=${appVersion}">
 </head>
 <body>
