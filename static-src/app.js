@@ -17,6 +17,8 @@ const defaultState = {
 let state = { ...defaultState };
 const wikiCache = new Map();
 const wikiPending = new Set();
+let citationRegistry = { citations: [], index: new Map() };
+let pendingDetailScrollTop = null;
 const RANDOM_ORDER = new Map(
   [...DATA.peptides.map((peptide) => peptide.id)]
     .sort(() => Math.random() - 0.5)
@@ -36,15 +38,20 @@ const CATEGORY_COLORS = {
   "Reproductive / Metabolic": "#f9a8d4"
 };
 
-const GLOBAL_CITATIONS = [];
-const GLOBAL_CITATION_INDEX = new Map();
-for (const peptide of DATA.peptides) {
-  for (const citation of peptide.citations) {
-    if (!GLOBAL_CITATION_INDEX.has(citation.id)) {
-      GLOBAL_CITATION_INDEX.set(citation.id, GLOBAL_CITATIONS.length + 1);
-      GLOBAL_CITATIONS.push(citation);
+refreshCitationRegistry();
+
+function refreshCitationRegistry() {
+  const citations = [];
+  const index = new Map();
+  for (const peptide of DATA.peptides) {
+    for (const citation of peptide.citations) {
+      if (!index.has(citation.id)) {
+        index.set(citation.id, citations.length + 1);
+        citations.push(citation);
+      }
     }
   }
+  citationRegistry = { citations, index };
 }
 
 function esc(value) {
@@ -151,7 +158,7 @@ function moderationLabel(status) {
 }
 
 function citationNumber(citation) {
-  return GLOBAL_CITATION_INDEX.get(citation.id) || "?";
+  return citationRegistry.index.get(citation.id) || "?";
 }
 
 function citationLink(citation) {
@@ -267,6 +274,7 @@ function syncHistory(view = "grid") {
 function openDetail(peptideId) {
   state.selected = DATA.peptides.find((p) => p.id === peptideId) || null;
   state.tag = null;
+  pendingDetailScrollTop = 0;
   syncHistory("detail");
   render();
 }
@@ -280,27 +288,69 @@ function closeToGrid() {
 function relatedPeptides() {
   if (!state.tag) return [];
   const target = norm(state.tag.value);
-  return DATA.peptides
+  const aliasTarget = norm(infoQueryForTag(state.tag));
+  const targets = [...new Set([target, aliasTarget].filter(Boolean))];
+  const tokens = [...new Set(targets.flatMap((value) => value.split(" ").filter((token) => token.length > 2)))];
+  const rows = DATA.peptides
     .map((p) => {
-      if (state.tag.sourcePeptideId && p.id === state.tag.sourcePeptideId) return { p, matches: [] };
       const matches = [];
+      const blob = peptideTextBlob(p);
       if (state.tag.type === "effect") {
         p.tile.enhancingEffects.forEach((effect) => {
           const item = norm(effect.label);
-          if (item.includes(target) || target.includes(item)) matches.push(effect.label);
+          if (targets.some((value) => item.includes(value) || value.includes(item))) addMatch(matches, effect.label);
         });
-        if (norm(p.tile.mechanismSummary).includes(target)) matches.push("mechanism overlap");
+        if (targets.some((value) => blob.includes(value))) addMatch(matches, "mechanism overlap");
+        if (p.biology.cascades.some((chain) => targets.some((value) => norm(chain.category).includes(value)))) addMatch(matches, "pathway category overlap");
       }
-      if (state.tag.type === "gene" && p.biology.genes.some((gene) => norm(gene) === target)) matches.push(state.tag.value);
-      if (state.tag.type === "protein" && p.biology.proteins.some((protein) => norm(protein) === target)) matches.push(state.tag.value);
-      if (state.tag.type === "protein" && p.biology.receptors.some((receptor) => norm(receptor).includes(target))) matches.push(`receptor-linked: ${state.tag.value}`);
-      if (state.tag.type === "cytokine" && p.biology.cytokinesInterleukins.some((item) => norm(item.name) === target)) matches.push(state.tag.value);
-      if (state.tag.type === "channel" && p.biology.channelsTransporters.some((channel) => norm(channel).includes(target))) {
-        matches.push(state.tag.value);
+      if (
+        state.tag.type === "gene" &&
+        p.biology.genes.some((gene) => targets.some((value) => norm(gene) === value || norm(gene).includes(value) || value.includes(norm(gene))))
+      ) {
+        addMatch(matches, state.tag.value);
       }
+      if (
+        state.tag.type === "protein" &&
+        p.biology.proteins.some((protein) => targets.some((value) => norm(protein) === value || norm(protein).includes(value) || value.includes(norm(protein))))
+      ) {
+        addMatch(matches, state.tag.value);
+      }
+      if (
+        state.tag.type === "protein" &&
+        p.biology.receptors.some((receptor) => targets.some((value) => norm(receptor).includes(value) || value.includes(norm(receptor))))
+      ) {
+        addMatch(matches, `receptor-linked: ${state.tag.value}`);
+      }
+      if (
+        state.tag.type === "cytokine" &&
+        p.biology.cytokinesInterleukins.some((item) => targets.some((value) => norm(item.name) === value || norm(item.name).includes(value)))
+      ) {
+        addMatch(matches, state.tag.value);
+      }
+      if (
+        state.tag.type === "channel" &&
+        p.biology.channelsTransporters.some((channel) => targets.some((value) => norm(channel).includes(value) || value.includes(norm(channel))))
+      ) {
+        addMatch(matches, state.tag.value);
+      }
+      if (["gene", "protein", "cytokine", "channel"].includes(state.tag.type) && targets.some((value) => blob.includes(value))) {
+        addMatch(matches, "pathway mention");
+      }
+      if (!matches.length && tokens.some((token) => token.length > 3 && blob.includes(token))) addMatch(matches, "text overlap");
       return { p, matches };
     })
-    .filter((item) => item.matches.length);
+    .filter((item) => item.matches.length || item.p.id === state.tag.sourcePeptideId)
+    .sort((a, b) => {
+      const aSource = a.p.id === state.tag.sourcePeptideId ? -1 : 0;
+      const bSource = b.p.id === state.tag.sourcePeptideId ? -1 : 0;
+      return aSource - bSource || b.matches.length - a.matches.length || a.p.names.primary.localeCompare(b.p.names.primary);
+    });
+
+  if (state.tag.sourcePeptideId && !rows.some((item) => item.p.id === state.tag.sourcePeptideId)) {
+    const peptide = sourcePeptide();
+    if (peptide) rows.unshift({ p: peptide, matches: ["source context"] });
+  }
+  return rows;
 }
 
 function infoQueryForTag(tagState) {
@@ -338,6 +388,34 @@ function infoQueryForTag(tagState) {
     "COX-2": "PTGS2"
   };
   return aliases[value] || value;
+}
+
+function peptideTextBlob(p) {
+  return norm(
+    [
+      p.tile.mechanismSummary,
+      p.tile.localization,
+      p.expanded.mechanismDetail,
+      p.expanded.humanEvidence,
+      p.expanded.animalEvidence,
+      ...p.tile.clinicalUses,
+      ...p.tile.sideEffects,
+      ...p.biology.genes,
+      ...p.biology.proteins,
+      ...p.biology.receptors,
+      ...p.biology.channelsTransporters,
+      ...p.biology.cascades.flatMap((chain) => [chain.category, ...(chain.steps || [])]),
+      ...p.biology.cytokinesInterleukins.map((item) => `${item.name} ${item.effect} ${item.context}`)
+    ].join(" ")
+  );
+}
+
+function sourcePeptide() {
+  return state.tag?.sourcePeptideId ? DATA.peptides.find((p) => p.id === state.tag.sourcePeptideId) || null : null;
+}
+
+function addMatch(matches, label) {
+  if (label && !matches.includes(label)) matches.push(label);
 }
 
 async function fetchWikiSummary(tagState) {
@@ -628,7 +706,7 @@ function bibliographyDrawer() {
       </header>
       <table>
         <thead><tr><th>Ref</th><th>Source</th><th>Type</th><th>Retrieved</th></tr></thead>
-        <tbody>${GLOBAL_CITATIONS.map(
+        <tbody>${citationRegistry.citations.map(
           (citation) => `<tr>
             <td>[${citationNumber(citation)}]</td>
             <td><a class="table-link" href="${esc(citation.url)}" target="_blank" rel="noreferrer">${esc(citation.title)}</a><br><span class="muted">${esc((citation.authors || []).join(", "))}</span></td>
@@ -684,15 +762,14 @@ function relatedPanel() {
   const loading = wikiPending.has(cacheKey);
   return `<section class="related-backdrop" data-close-related-modal>
     <aside class="related-modal" aria-label="${esc(state.tag.value)} overview">
-    <header>
+    <header class="modal-head">
       <div>
         <p class="eyebrow">${esc(state.tag.type)} overview</p>
         <h3>${esc(state.tag.value)}</h3>
       </div>
-      <button class="icon" data-clear-related aria-label="Close related overview">x</button>
+      <button class="icon modal-close" data-clear-related aria-label="Close related overview">x</button>
     </header>
     <section class="related-summary">
-      <h4>Brief overview</h4>
       <p>${
         wiki
           ? `${esc(wiki.extract)} ${wiki.url ? `<a class="table-link" href="${esc(wiki.url)}" target="_blank" rel="noreferrer">Wikipedia</a>` : ""}`
@@ -718,7 +795,7 @@ function relatedPanel() {
                 </tr>`
               )
               .join("")
-          : '<tr><td colspan="5">No related peptide rows in the current data.</td></tr>'
+          : ""
       }</tbody>
     </table>
     </section>
@@ -895,8 +972,10 @@ function toolbar(categories) {
 
 function render() {
   const focus = captureFocus();
+  const liveDetailScroll = state.selected ? app.querySelector(".detail")?.scrollTop ?? null : null;
   const categories = ["All", ...new Set(DATA.peptides.map((p) => p.category))];
   const peptides = filteredPeptides();
+  refreshCitationRegistry();
   app.innerHTML = `${hero()}${toolbar(categories)}
     <section class="tiles">${peptides.map(tile).join("")}</section>
     ${detail(state.selected)}
@@ -904,6 +983,12 @@ function render() {
     ${keyModal()}
     ${bibliographyDrawer()}`;
   restoreFocus(focus);
+  if (state.selected) {
+    const detailElement = app.querySelector(".detail");
+    const scrollTop = pendingDetailScrollTop ?? liveDetailScroll;
+    if (detailElement && typeof scrollTop === "number") detailElement.scrollTop = scrollTop;
+  }
+  pendingDetailScrollTop = null;
 }
 
 app.addEventListener("input", (event) => {
@@ -967,6 +1052,7 @@ app.addEventListener("click", (event) => {
   }
 
   if (tagButton) {
+    pendingDetailScrollTop = app.querySelector(".detail")?.scrollTop ?? 0;
     state.tag = { type: tagButton.dataset.tagType, value: tagButton.dataset.tagValue, sourcePeptideId: tagButton.dataset.tagSource || null };
     fetchWikiSummary(state.tag);
     render();
@@ -974,6 +1060,7 @@ app.addEventListener("click", (event) => {
   }
 
   if (clearRelated || (relatedBackdrop && target === relatedBackdrop)) {
+    pendingDetailScrollTop = app.querySelector(".detail")?.scrollTop ?? pendingDetailScrollTop ?? 0;
     state.tag = null;
     render();
     return;
@@ -1017,11 +1104,6 @@ app.addEventListener("keydown", (event) => {
       render();
     }
   }
-});
-
-document.addEventListener("pointermove", (event) => {
-  document.documentElement.style.setProperty("--mx", `${Math.round((event.clientX / window.innerWidth) * 100)}%`);
-  document.documentElement.style.setProperty("--my", `${Math.round((event.clientY / window.innerHeight) * 100)}%`);
 });
 
 window.addEventListener("popstate", () => {
