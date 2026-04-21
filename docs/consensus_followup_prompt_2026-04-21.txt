@@ -1,0 +1,78 @@
+Consensus follow-up prompt for Peptocopeia
+Last updated: 2026-04-21
+
+Important:
+- I need actual paper/result rows, not just a share page or the Consensus home shell.
+- After running this prompt, export the results as CSV or RIS if available.
+- If export is unavailable, copy the full answer plus the visible cited paper list with links.
+
+Prompt to paste into Consensus:
+
+For the peptide(s) below, return only peer-reviewed studies, official regulator pages, or registered clinical-trial sources. Do not summarize vaguely. Output a structured evidence table that is literal and non-extrapolative.
+
+Target peptide batch:
+SS-31 / elamipretide
+MOTS-c
+BPC-157
+TB-500 / thymosin beta-4 fragment
+GHK-Cu
+tesamorelin
+semaglutide
+tirzepatide
+retatrutide
+
+For each included source, extract these fields exactly when available:
+- peptide
+- evidence_type: human | animal | cell | review | regulatory | case_report | anecdotal
+- study_title
+- year
+- doi
+- pmid
+- url
+- study_type
+- population_or_model
+- disease_context
+- n
+- age_or_species_details
+- route
+- dose_or_protocol
+- duration
+- endpoints
+- notable_results_literal
+- adverse_events_literal
+- limitations
+- mechanism_targets
+- genes
+- proteins
+- receptors
+- channels_transporters
+- cytokines_interleukins
+- clinical_use_context
+- enhancement_or_common_use_context
+- confidence
+
+Rules:
+1. Do not infer healthy-human enhancement from diseased-population trials.
+2. Do not infer clinical benefit from mechanistic or animal findings.
+3. Separate human studies from animal studies from reviews.
+4. Include case reports only if peer reviewed, and label them case_report.
+5. If a field is absent, leave it blank rather than guessing.
+6. Include adverse events exactly as reported.
+7. Be matter-of-fact and conservative.
+8. Prefer FDA/regulatory pages, phase 2/3 trials, randomized controlled trials, then other human studies, then animal studies, then mechanistic cell studies, then reviews.
+
+At the end, add a short “missing evidence still needed” list for each peptide, limited to:
+- PK/PD missing
+- dose context missing
+- human adverse-event detail missing
+- cytokine/interleukin detail missing
+- receptor/target detail missing
+- no human trial found
+
+After the answer is generated, I need one of these:
+- export CSV, or
+- export RIS, or
+- copy/paste the full answer with all visible linked citations.
+
+If Consensus starts returning a generic search page instead of results, rerun with a single peptide first, for example:
+"SS-31 / elamipretide mechanism, human trials, adverse events, PK/PD, cytokines, receptors, dose protocol"
