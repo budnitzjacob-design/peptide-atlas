@@ -1,0 +1,318 @@
+Peptocopeia Claude Batch Prompts
+Generated: 2026-04-21
+
+Use one batch prompt per Claude turn.
+Goal: produce structured, citation-backed JSON that can be merged into the Peptocopeia site with minimal cleanup.
+
+General instructions for every batch
+
+Return only valid JSON. No markdown. No prose before or after the JSON.
+
+You are helping populate a peptide reference site for biologists and physicians. Be conservative, literal, and citation-driven.
+
+Do not infer healthy-human enhancement from diseased-population trials.
+Do not infer clinical efficacy from cell, animal, or review evidence.
+Do not invent missing fields. Use null, [], or "" where appropriate.
+Prefer primary sources first:
+1. FDA / EMA / regulator pages
+2. drug labels / prescribing information
+3. peer-reviewed human trials
+4. registered clinical trials
+5. peer-reviewed animal studies
+6. peer-reviewed cell studies
+7. reviews only when they add mechanism framing or source discovery
+
+Citation handling rules
+- Every factual claim should map to one or more citation IDs.
+- Every citation object must be unique within the batch.
+- Include accessedAt as YYYY-MM-DD using the date you retrieved the source.
+- Use DOI / PMID / official URL when available in notes or title context, but always include url.
+- If a source is a review, mark quality as "secondary".
+- If a source is a regulator page or label, mark quality as "regulatory".
+- If a source is a vendor page, mark quality as "vendor".
+- If a source is a primary peer-reviewed paper, mark quality as "primary".
+
+Required JSON shape
+{
+  "batch_id": "batch-01",
+  "generated_at": "2026-04-21",
+  "peptides": [
+    {
+      "id": "site-slug-here",
+      "names": {
+        "primary": "",
+        "aliases": [],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": null,
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": null,
+        "modifications": [],
+        "structureClass": null
+      },
+      "classification": {
+        "peptideClass": "",
+        "mechanismFamily": "",
+        "regulatoryStatus": "unknown"
+      },
+      "tile": {
+        "mechanismSummary": "",
+        "localization": "",
+        "clinicalUses": [],
+        "sideEffects": [],
+        "dosing": {
+          "quick": "",
+          "adminRoute": "",
+          "publicDisplayAllowed": false,
+          "context": "unknown"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [],
+        "receptors": [],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "",
+            "effect": "",
+            "context": "",
+            "symbols": [],
+            "citationIds": []
+          }
+        ],
+        "cascades": [
+          {
+            "category": "",
+            "steps": [],
+            "symbols": [],
+            "claimRef": ""
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "",
+        "animalEvidence": "",
+        "mechanismDetail": "",
+        "safetyDetail": "",
+        "safetyRisks": [
+          {
+            "system": "",
+            "label": "",
+            "color": "",
+            "helpSummary": "",
+            "harmSummary": "",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "",
+          "caveat": "",
+          "citationIds": []
+        },
+        "missingEvidence": [],
+        "anecdotalUse": []
+      },
+      "claims": [
+        {
+          "id": "",
+          "field": "",
+          "value": "",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": [],
+          "confidence": 0.0,
+          "citationIds": [],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "",
+          "sourceType": "",
+          "title": "",
+          "authors": [],
+          "year": null,
+          "url": "",
+          "accessedAt": "2026-04-21",
+          "quality": "",
+          "supportsClaimIds": [],
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}
+
+Field guidance
+- regulatoryStatus must be one of: fda_approved, non_us_approved, investigational, research_only, not_approved, unknown
+- species should be one of: human, animal, mixed
+- context should be one of: fda_label, regulatory, clinical_trial, observational, preclinical, cell, review, anecdotal_common_use, vendor
+- symbols can use existing site values: Rx, H, A, C, R, V, ?, N
+- mechanismSummary should be 1-2 sentences max
+- mechanismDetail should be compact but reference-grade and trace actual pathway directionality
+- cascades should prefer real nodes over vague summaries
+- safetyDetail should distinguish absence of evidence from evidence of absence
+- dosing.quick must include context like "FDA-approved obesity dose..." or "preclinical rodent dosing only..."
+
+Batch 01
+
+Populate these peptides:
+- SS-31
+- MOTS-c
+- BPC-157
+- TB-500
+- GHK-Cu
+
+Focus especially on:
+- mechanism specificity
+- receptor / protein / cytokine details
+- human vs animal evidence separation
+- sequence, formula, aliases
+- enhancement caveats
+
+Batch 02
+
+Populate these peptides:
+- Tesamorelin
+- Semaglutide
+- Tirzepatide
+- Retatrutide
+- Liraglutide
+
+Focus especially on:
+- regulatory / label-backed use
+- trade names
+- dosing context
+- human adverse events
+- receptor agonism cascades
+
+Batch 03
+
+Populate these peptides:
+- Pramlintide
+- Mazdutide
+- Survodutide
+- Orforglipron
+- Cagrilintide
+
+Focus especially on:
+- incretin / amylin / glucagon pathway distinctions
+- obesity / diabetes trial evidence
+- route and dose
+- trade names if any
+
+Batch 04
+
+Populate these peptides:
+- Ipamorelin
+- GHRP-2
+- GHRP-6
+- Hexarelin
+- Sermorelin
+
+Focus especially on:
+- GHSR / GHRH receptor biology
+- GH / IGF-1 axis
+- human endocrine evidence if any
+- enhancement/common-use separation
+
+Batch 05
+
+Populate these peptides:
+- CJC-1295
+- IGF-1 LR3
+- Follistatin 344
+- Kisspeptin
+- Oxytocin
+
+Focus especially on:
+- endocrine and reproductive signaling
+- receptor and downstream pathway detail
+- human trial and safety context
+
+Batch 06
+
+Populate these peptides:
+- Thymosin Alpha-1
+- Thymulin
+- VIP
+- LL-37
+- KPV
+
+Focus especially on:
+- immune signaling
+- TLR / cytokine / interleukin detail
+- human vs preclinical support
+
+Batch 07
+
+Populate these peptides:
+- Humanin
+- Cerebrolysin
+- Semax
+- Selank
+- Pinealon
+
+Focus especially on:
+- neuroprotective / neurotrophic pathways
+- human evidence vs regional/non-US use context
+- receptors, proteins, cytokines, and caveats
+
+Batch 08
+
+Populate these peptides:
+- DSIP
+- Epithalon
+- FOXO4-DRI
+- Dihexa
+- SNAP-8
+
+Focus especially on:
+- whether evidence is mostly mechanistic, cosmetic, or speculative
+- strong caution around not overstating evidence
+- sequence / identity extraction
+
+Batch 09
+
+Populate these peptides:
+- PT-141
+- Melanotan II
+- Teduglutide
+- AOD-9604
+- TB4-FRAG
+
+Focus especially on:
+- melanocortin / GLP-2 / fragment biology
+- trade names / labels where they exist
+- route, dosing, safety
+
+Batch 10
+
+Populate these peptides:
+- Dihexa
+- GHK-Cu
+- MOTS-c
+- BPC-157
+- SS-31
+
+This is a cleanup-and-gap batch, not a first-pass batch.
+Use it only after the earlier batches are done.
+Goal:
+- fill identity gaps
+- fill sequence/formula gaps
+- add missing cytokine/interleukin rows
+- tighten pathway cascades to true upstream -> downstream logic
+- improve human/animal evidence summaries without adding speculation
+- identify contradictions or low-confidence claims with "?" symbols and explicit caution
+
+Final rule for every batch
+If evidence is weak or missing, say so plainly in the JSON fields rather than filling them with confident-sounding fluff.

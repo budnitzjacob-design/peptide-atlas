@@ -522,6 +522,7 @@ textarea:focus {
 
 .category-label {
   color: var(--type-color, var(--steel));
+  margin-bottom: 8px;
 }
 
 .name-display {
@@ -535,6 +536,11 @@ textarea:focus {
   color: #f4efe4;
 }
 
+.tile .name-display {
+  font-size: clamp(1.78rem, 3vw, 2.34rem);
+  margin: 2px 0 8px;
+}
+
 .name-lower {
   font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   text-transform: none;
@@ -544,7 +550,8 @@ textarea:focus {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 10px;
+  margin-top: 2px;
+  margin-bottom: 8px;
 }
 
 .mini-tag {
