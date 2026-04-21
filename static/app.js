@@ -1,5 +1,5 @@
 const DATA = window.PEPTIDE_ATLAS_DATA;
-const BRAND = "peptocopeia";
+const BRAND = "pepto•copeia";
 const app = document.getElementById("app");
 
 const defaultState = {
@@ -466,11 +466,6 @@ function tile(p) {
         review
       )}"></button>
     </header>
-    <div class="tile-status">
-      <span class="evidence-badge ${evidenceClass(p.classification.evidenceTier)}" title="${esc(evidenceTierTitle(p.classification.evidenceTier))}">${esc(DATA.evidenceTierLabel[p.classification.evidenceTier])}</span>
-      <span title="${esc(regulatoryLabel(p.classification.regulatoryStatus))}">${esc(p.classification.regulatoryStatus.replaceAll("_", " "))}</span>
-      <span title="${esc(review)}">${esc(review)}</span>
-    </div>
     <p class="mechanism">${esc(p.tile.mechanismSummary)} ${p.citations.slice(0, 2).map(citationLink).join("")}</p>
     <dl class="quick">
       <div><dt>Medical / Clinical</dt><dd>${esc(clinical)}</dd></div>
