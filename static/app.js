@@ -1,5 +1,5 @@
 const DATA = window.PEPTIDE_ATLAS_DATA;
-const BRAND = "pepto•copeia";
+const BRAND = "peptocopeia";
 const app = document.getElementById("app");
 
 const defaultState = {
@@ -11,6 +11,7 @@ const defaultState = {
   keySymbol: null,
   studyFilter: "all",
   bibliographyOpen: false,
+  lineFeature: true,
   brandAlt: false
 };
 
@@ -961,8 +962,19 @@ function toolbar(categories) {
       <option value="animal" ${state.studyFilter === "animal" ? "selected" : ""}>Animal only</option>
       <option value="both" ${state.studyFilter === "both" ? "selected" : ""}>Human + animal</option>
     </select>
+    <button class="bibliography-button ${state.lineFeature ? "active" : ""}" data-toggle-line aria-pressed="${state.lineFeature ? "true" : "false"}" aria-label="Toggle line feature">
+      ${state.lineFeature ? "Line On" : "Line Off"}
+    </button>
     <button class="bibliography-button" data-open-bibliography aria-label="Open bibliography">[n]</button>
   </section>`;
+}
+
+function lineFeature() {
+  if (!state.lineFeature) return "";
+  return `<div class="line-feature" aria-hidden="true">
+    <div class="line-vertical"></div>
+    <div class="line-horizontal"></div>
+  </div>`;
 }
 
 function render() {
@@ -971,7 +983,7 @@ function render() {
   const categories = ["All", ...new Set(DATA.peptides.map((p) => p.category))];
   const peptides = filteredPeptides();
   refreshCitationRegistry();
-  app.innerHTML = `${hero()}${toolbar(categories)}
+  app.innerHTML = `${lineFeature()}${hero()}${toolbar(categories)}
     <section class="tiles">${peptides.map(tile).join("")}</section>
     ${detail(state.selected)}
     ${relatedPanel()}
@@ -1010,6 +1022,7 @@ app.addEventListener("click", (event) => {
   const expandTarget = target.closest("[data-expand]");
   const bibliographyBackdrop = target.closest("[data-close-bibliography]");
   const bibliographyButton = target.closest("[data-open-bibliography]");
+  const toggleLine = target.closest("[data-toggle-line]");
   const bibliographyClose = target.closest("[data-close-bibliography-button]");
   const keyOpen = target.closest("[data-open-key]");
   const keyBackdrop = target.closest("[data-close-key-modal]");
@@ -1030,6 +1043,12 @@ app.addEventListener("click", (event) => {
 
   if (bibliographyButton) {
     state.bibliographyOpen = true;
+    render();
+    return;
+  }
+
+  if (toggleLine) {
+    state.lineFeature = !state.lineFeature;
     render();
     return;
   }
@@ -1104,6 +1123,11 @@ app.addEventListener("keydown", (event) => {
 window.addEventListener("popstate", () => {
   resetToGridState();
   render();
+});
+
+window.addEventListener("pointermove", (event) => {
+  document.documentElement.style.setProperty("--line-x", `${event.clientX}px`);
+  document.documentElement.style.setProperty("--line-y", `${event.clientY}px`);
 });
 
 syncHistory("grid");

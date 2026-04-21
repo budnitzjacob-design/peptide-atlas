@@ -15,6 +15,8 @@
   --amber: #fbbf24;
   --red: #f87171;
   --content-width: min(1200px, calc(100% - 28px));
+  --line-x: 50vw;
+  --line-y: 38vh;
   --accent-gradient: linear-gradient(120deg, var(--cyan), var(--blue) 46%, var(--violet));
 }
 
@@ -56,36 +58,12 @@
 
 html {
   min-height: 100%;
-  background:
-    radial-gradient(circle at 16% 18%, rgba(33, 79, 145, 0.16), transparent 26rem),
-    radial-gradient(circle at 82% 14%, rgba(88, 117, 168, 0.1), transparent 30rem),
-    radial-gradient(circle at 52% 84%, rgba(25, 51, 88, 0.12), transparent 28rem),
-    linear-gradient(132deg, #010204 0%, #07111e 32%, #020307 66%, #0b1520 100%);
+  background: #000;
   background-attachment: fixed;
 }
 
 html::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.018) 21%, rgba(255, 255, 255, 0.028) 26%, transparent 34%),
-    linear-gradient(295deg, transparent 0%, rgba(92, 133, 190, 0.038) 42%, transparent 58%),
-    radial-gradient(circle at 32% 42%, rgba(255, 255, 255, 0.02), transparent 32%);
-  opacity: 0.8;
-  animation: backgroundDrift 26s ease-in-out infinite alternate;
-}
-
-@keyframes backgroundDrift {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.72;
-  }
-  100% {
-    transform: translate3d(-1.2%, 1.1%, 0) scale(1.04);
-    opacity: 0.88;
-  }
+  display: none;
 }
 
 body {
@@ -347,7 +325,7 @@ h3 {
   top: 0;
   z-index: 4;
   display: grid;
-  grid-template-columns: minmax(0, 2.5fr) repeat(3, minmax(0, 1fr)) auto;
+  grid-template-columns: minmax(0, 2.5fr) repeat(3, minmax(0, 1fr)) auto auto;
   align-items: stretch;
   gap: 10px;
   padding: 12px 0;
@@ -402,6 +380,11 @@ textarea {
   color: #e7e0d3;
 }
 
+.bibliography-button.active {
+  border-color: rgba(255, 255, 255, 0.56);
+  color: #ffffff;
+}
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -421,6 +404,37 @@ textarea:focus {
 .toolbar input,
 .bibliography-button {
   font-size: 12px;
+}
+
+.line-feature {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.line-vertical {
+  position: absolute;
+  top: 0;
+  left: var(--line-x);
+  width: 1px;
+  height: 100vh;
+  background: #ffffff;
+  mix-blend-mode: difference;
+  opacity: 0.92;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.14);
+}
+
+.line-horizontal {
+  position: absolute;
+  top: var(--line-y);
+  left: calc(var(--line-x) - 5vw);
+  width: 10vw;
+  height: 1px;
+  background: #ffffff;
+  mix-blend-mode: difference;
+  opacity: 0.96;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.16);
 }
 
 .tiles {
@@ -1082,7 +1096,7 @@ tbody tr:nth-child(odd) td {
 
 @media (max-width: 1120px) and (min-width: 821px) {
   .toolbar {
-    grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr)) auto;
   }
 
   .bibliography-button {
