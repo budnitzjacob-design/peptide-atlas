@@ -1,0 +1,1333 @@
+{
+  "batch_id": "batch-07",
+  "generated_at": "2026-04-21",
+  "peptides": [
+    {
+      "id": "humanin",
+      "names": {
+        "primary": "Humanin",
+        "aliases": ["HN", "HN peptide", "Humanin peptide", "MT-RNR2-derived peptide"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C111H174N38O26S",
+        "molecularWeight": 2687.1,
+        "cas": "330936-69-1",
+        "sequenceOneLetter": "MAPRGFSCLLLLTSEIDLPVKRRA",
+        "sequenceThreeLetter": "Met-Ala-Pro-Arg-Gly-Phe-Ser-Cys-Leu-Leu-Leu-Leu-Thr-Ser-Glu-Ile-Asp-Leu-Pro-Val-Lys-Arg-Arg-Ala",
+        "length": 24,
+        "modifications": [
+          "endogenously translated from a short open reading frame within the mitochondrial 16S rRNA (MT-RNR2) gene",
+          "synthetic analogs include [Gly14]-Humanin (HNG, S14G-Humanin) with ~1000-fold increased cytoprotective potency",
+          "humanin analogues with D-amino acids or cyclic variants explored preclinically"
+        ],
+        "structureClass": "mitochondrial-derived peptide (MDP); founding member of the MDP family"
+      },
+      "classification": {
+        "peptideClass": "mitochondrial-derived peptide (MDP)",
+        "mechanismFamily": "multi-receptor cytoprotective/anti-apoptotic peptide",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "Endogenous 24-residue peptide encoded within the mitochondrial 16S rRNA gene; acts as an autocrine/paracrine cytoprotective factor that binds a trimeric cell-surface receptor (CNTFR/WSX-1/gp130), antagonizes pro-apoptotic BAX, and modulates IGF-1 and FPR-family signaling.",
+        "localization": "plasma membrane (surface receptor binding), cytosol, and circulating plasma; expressed across many tissues with notably high expression in brain and heart",
+        "clinicalUses": [],
+        "sideEffects": [
+          "no human adverse event profile is established",
+          "endogenous humanin is generally well-tolerated in short-term preclinical administration",
+          "safety of exogenous synthetic humanin or HNG in humans has not been formally characterized"
+        ],
+        "dosing": {
+          "quick": "Not FDA-approved and no standard human dose exists. Preclinical work uses IV, IP, ICV, or intranasal routes in rodents at microgram to low-milligram scales; human dose equivalence is speculative.",
+          "adminRoute": "preclinical: IV, IP, ICV, intranasal (rodent)",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["MT-RNR2", "CNTFR", "IL6ST", "WSX1/IL27RA", "BAX", "IGFBP3", "FPR2", "FPR1"],
+        "proteins": [
+          "CNTFR (ciliary neurotrophic factor receptor)",
+          "WSX-1 (IL27RA)",
+          "gp130 (IL6ST)",
+          "BAX (pro-apoptotic Bcl-2 family)",
+          "IGFBP-3 (insulin-like growth factor binding protein 3)",
+          "STAT3",
+          "ERK1/2",
+          "AKT"
+        ],
+        "receptors": [
+          "trimeric CNTFR/WSX-1/gp130 complex (JAK2/STAT3 signaling)",
+          "formyl peptide receptor 2 (FPR2/FPRL1)",
+          "formyl peptide receptor 1 (FPR1)",
+          "intracellular BAX (direct binding, not classical receptor)"
+        ],
+        "channelsTransporters": [
+          "indirect effects on mitochondrial permeability transition via BAX antagonism (reduced cytochrome c release)"
+        ],
+        "cytokinesInterleukins": [
+          {
+            "name": "IL-6 family signaling",
+            "effect": "engages gp130-dependent JAK2/STAT3 cascade as part of the CNTFR/WSX-1/gp130 receptor complex",
+            "context": "cell and rodent studies of neuronal/cardiomyocyte cytoprotection",
+            "symbols": ["A", "C"],
+            "citationIds": ["hn-mdpi-2023", "hn-pmc-pd-2023"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "cytoprotective/anti-apoptotic",
+            "steps": [
+              "extracellular humanin binds trimeric CNTFR/WSX-1/gp130 on the plasma membrane",
+              "activation of JAK2 -> STAT3 phosphorylation -> anti-apoptotic gene expression",
+              "parallel activation of ERK1/2 and PI3K/AKT (mitochondrial biogenesis, survival)",
+              "intracellular humanin binds BAX at the mitochondrial outer membrane, blocking Bax insertion and cytochrome c release",
+              "binding to IGFBP-3 modulates IGF-1 bioavailability and apoptotic signaling",
+              "engagement of FPR2 competes with amyloid-beta binding at the same receptor in some models"
+            ],
+            "symbols": ["A", "C", "?"],
+            "claimRef": "hn-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Circulating humanin has been measured in human plasma and CSF, and levels decline with age and vary in disease states (Alzheimer's disease, diabetes, stroke, cardiovascular disease) in observational studies. Humanin is being evaluated as a biomarker in Parkinson's disease and related conditions. Formal randomized clinical trials of exogenous humanin or humanin analogs as therapy are limited or absent as of April 2026; most therapeutic data are preclinical.",
+        "animalEvidence": "Intranasal humanin produced neuroprotection and behavioral recovery in a mouse model of Parkinson's disease (Kim et al., 2023) and induced mitochondrial biogenesis. Systemic or central administration of humanin or the more potent [Gly14] analog (HNG) protects against amyloid-beta toxicity in multiple Alzheimer's disease rodent models, reduces infarct size in cardiac ischemia-reperfusion, improves insulin sensitivity via central STAT3 activation, and attenuates age-related myocardial fibrosis. Effects are reproducible across multiple laboratories for the core cytoprotective phenotype, though optimal dosing, route, and analog selection vary.",
+        "mechanismDetail": "Humanin is translated from a 75-bp open reading frame embedded within the mitochondrial 16S ribosomal RNA gene (MT-RNR2), making it the founding member of the mitochondrial-derived peptide (MDP) family. Secreted humanin acts as a cytoprotective signaling molecule through multiple convergent mechanisms: (1) binding to a trimeric cell-surface receptor composed of CNTFR, WSX-1, and gp130, activating JAK2/STAT3 signaling that drives anti-apoptotic gene expression; (2) engaging formyl peptide receptors (particularly FPR2/FPRL1), where it can competitively antagonize amyloid-beta; (3) direct intracellular binding to BAX, preventing mitochondrial membrane permeabilization and cytochrome c release; and (4) binding IGFBP-3, modulating IGF-1 bioavailability and apoptotic regulation. The S14G substitution yields the HNG analog with approximately 1000-fold greater cytoprotective potency in vitro.",
+        "safetyDetail": "Humanin is an endogenous peptide present in circulation at physiological concentrations. Short-term preclinical dosing at pharmacologic levels has not produced overt toxicity across the published literature, but a formal human safety profile does not exist. Theoretical concerns include potential effects on cancer biology (humanin has been investigated both as a protective and as a tumor-permissive factor in different cancer contexts), immune modulation via FPR engagement, and unknown long-term effects of sustained supraphysiologic exposure. Claims about anti-aging or cognitive enhancement in humans are speculative and not supported by trial-level evidence.",
+        "safetyRisks": [
+          {
+            "system": "regulatory",
+            "label": "No approved human use; research compound only",
+            "color": "red",
+            "helpSummary": "Not FDA- or EMA-approved; no pharmaceutical-grade product exists.",
+            "harmSummary": "Any human use is outside regulated manufacturing and clinical oversight; identity and purity of vendor material cannot be verified.",
+            "citationIds": ["hn-mdpi-2023", "hn-peptideinsight-2026"]
+          },
+          {
+            "system": "oncologic",
+            "label": "Unclear role in cancer biology",
+            "color": "amber",
+            "helpSummary": "Humanin has been reported as both protective and permissive in different cancer models.",
+            "harmSummary": "Long-term exposure to exogenous humanin/HNG in patients with active or dormant malignancy has not been characterized.",
+            "citationIds": ["hn-pubmed-2018"]
+          },
+          {
+            "system": "human-evidence",
+            "label": "No controlled human trials of exogenous humanin as therapy",
+            "color": "amber",
+            "helpSummary": "Human data are largely observational (biomarker studies).",
+            "harmSummary": "Efficacy and safety in humans are not established.",
+            "citationIds": ["hn-mdpi-2023"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Preclinical data consistently support cytoprotective, anti-apoptotic, and metabolic-improving effects of humanin and analogs across neurodegenerative, cardiovascular, and metabolic models. Translational human therapeutic use has not been established.",
+          "caveat": "All human 'anti-aging' or cognitive-enhancement claims for humanin are extrapolations from animal and cell work. There is no validated human dose, route, formulation, or analog choice. The absence of clinical trials is not evidence of safety.",
+          "citationIds": ["hn-mdpi-2023", "hn-pubmed-2018"]
+        },
+        "missingEvidence": [
+          "Phase 1 human safety and pharmacokinetics data for exogenous humanin or HNG",
+          "randomized clinical trials in any indication",
+          "long-term exposure and cancer-relevant safety data",
+          "consensus on optimal analog (native humanin vs HNG vs others) and route"
+        ],
+        "anecdotalUse": [
+          "off-label/grey-market use of synthetic humanin and HNG by consumer biohacker groups despite absence of clinical data"
+        ]
+      },
+      "claims": [
+        {
+          "id": "hn-mech-01",
+          "field": "mechanism",
+          "value": "Binds trimeric CNTFR/WSX-1/gp130 receptor (JAK2/STAT3), FPR2, IGFBP-3; directly antagonizes BAX to block mitochondrial apoptosis",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": null,
+          "route": "cell and rodent models",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "C"],
+          "confidence": 0.85,
+          "citationIds": ["hn-mdpi-2023", "hn-peptideinsight-2026"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "hn-origin-01",
+          "field": "identity",
+          "value": "24-residue peptide encoded within a short ORF of the mitochondrial MT-RNR2 (16S rRNA) gene; founding mitochondrial-derived peptide",
+          "species": "human",
+          "context": "preclinical",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "C"],
+          "confidence": 0.95,
+          "citationIds": ["hn-mdpi-2023"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "hn-regulatory-01",
+          "field": "regulatoryStatus",
+          "value": "Not FDA- or EMA-approved; no clinical indication; available only as research material",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "R", "N"],
+          "confidence": 0.97,
+          "citationIds": ["hn-peptideinsight-2026"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "hn-pd-01",
+          "field": "preclinicalEfficacy",
+          "value": "Intranasal humanin produced neuroprotection and behavioral recovery in a mouse PD model (Kim et al., 2023), with evidence for PI3K/AKT-mediated mitochondrial biogenesis",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "mouse PD model",
+          "route": "intranasal",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.8,
+          "citationIds": ["hn-pmc-pd-2023"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "hn-human-trials-01",
+          "field": "humanEvidence",
+          "value": "No randomized clinical trials of exogenous humanin as therapy identified as of April 2026; human data are largely observational biomarker studies",
+          "species": "human",
+          "context": "observational",
+          "population": "varies (AD, PD, CVD, T2D cohorts)",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.85,
+          "citationIds": ["hn-mdpi-2023", "hn-pmc-pd-2023"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "hn-mdpi-2023",
+          "sourceType": "review",
+          "title": "Neuroprotective Action of Humanin and Humanin Analogues: Research Findings and Perspectives",
+          "authors": [],
+          "year": 2023,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10740898/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["hn-mech-01", "hn-origin-01", "hn-human-trials-01"],
+          "notes": "Peer-reviewed review covering mechanisms (CNTFR/WSX-1/gp130, BAX, IGFBP-3) and neurodegenerative-disease preclinical data."
+        },
+        {
+          "id": "hn-pmc-pd-2023",
+          "sourceType": "primary_study",
+          "title": "Intranasal delivery of mitochondrial protein humanin rescues cell death and promotes mitochondrial function in Parkinson's disease",
+          "authors": [],
+          "year": 2023,
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10283052/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["hn-pd-01", "hn-human-trials-01"],
+          "notes": "Intranasal humanin in mouse PD models; describes ERK1/2, STAT3, and PI3K/AKT mechanisms and plasma biomarker observations."
+        },
+        {
+          "id": "hn-pubmed-2018",
+          "sourceType": "review",
+          "title": "Mitochondrial-derived peptide humanin as therapeutic target in cancer and degenerative diseases",
+          "authors": [],
+          "year": 2018,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30582721/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["hn-mech-01"],
+          "notes": "Review covering humanin in cancer biology — relevant to the unclear oncologic risk profile."
+        },
+        {
+          "id": "hn-peptideinsight-2026",
+          "sourceType": "secondary_article",
+          "title": "Humanin: Research Evidence and Safety Profile",
+          "authors": [],
+          "year": 2026,
+          "url": "https://peptideinsight.com/en/peptides/humanin",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["hn-mech-01", "hn-regulatory-01"],
+          "notes": "Summary of receptor biology (CNTFR/WSX-1/gp130, FPR2) and research-only regulatory status."
+        }
+      ]
+    },
+    {
+      "id": "cerebrolysin",
+      "names": {
+        "primary": "Cerebrolysin",
+        "aliases": ["FPF-1070", "porcine brain peptide hydrolysate"],
+        "tradeNames": ["Cerebrolysin"]
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": null,
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": null,
+        "modifications": [
+          "not a single peptide: enzymatic hydrolysate of purified porcine brain tissue",
+          "standardized preparation is approximately 85% free amino acids and 15% low-molecular-weight peptides (nominally <10 kDa)",
+          "manufacturer (Ever Pharma) describes neurotrophic peptide activity resembling BDNF, GDNF, NGF, CNTF, but analytical work identifies hundreds of distinct peptide species that do not map cleanly to known trophic factors"
+        ],
+        "structureClass": "complex biological mixture (peptide hydrolysate of porcine brain); not a single-molecule drug"
+      },
+      "classification": {
+        "peptideClass": "porcine brain-derived peptide/amino-acid hydrolysate",
+        "mechanismFamily": "proposed neurotrophic/neuroprotective mixture",
+        "regulatoryStatus": "non_us_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Enzymatic hydrolysate of porcine brain tissue administered intravenously; proposed to mimic endogenous neurotrophic signaling and support neuroprotection, neuroplasticity, and neurogenesis. Because the product is a mixture rather than a defined molecule, a single mechanism is not established.",
+        "localization": "systemic IV administration; neurotrophic-like effects reported in brain tissue in preclinical models",
+        "clinicalUses": [
+          "used in >50 countries (notably Austria, Germany, Russia, China, Eastern Europe) for acute ischemic stroke, traumatic brain injury, vascular dementia, and Alzheimer's disease",
+          "European Academy of Neurology and European Federation of Neurorehabilitation Societies 2021 guidelines recommend Cerebrolysin 30 mL/day IV for >=10 days as a pharmacological adjunct to early motor rehabilitation after stroke",
+          "not FDA-approved for any indication in the United States"
+        ],
+        "sideEffects": [
+          "nausea, dizziness, headache, sweating",
+          "injection site reactions",
+          "hypersensitivity",
+          "not recommended in epilepsy, kidney disease, or hypersensitivity to constituents",
+          "2023 Cochrane stroke review reported a statistically significant increase in non-fatal serious adverse events (RR ~2.39, 95% CI 1.10-5.23; 3 trials, 1,335 participants)"
+        ],
+        "dosing": {
+          "quick": "Non-US regulatory use: commonly 10-30 mL IV daily, diluted, for 10-21 days; dementia and stroke protocols vary. Not FDA-approved. No legal US pharmacy pathway exists.",
+          "adminRoute": "intravenous (typically via slow infusion; some protocols use IM for small doses)",
+          "publicDisplayAllowed": true,
+          "context": "regulatory"
+        }
+      },
+      "biology": {
+        "genes": ["BDNF", "NGF", "GDNF", "CNTF", "APP", "BCL2"],
+        "proteins": [
+          "neurotrophic factor-like activity (mimicry, not confirmed identity)",
+          "endogenous BDNF, GDNF, NGF, CNTF are named as reference molecules for the proposed activity",
+          "calpain (inhibition reported preclinically)"
+        ],
+        "receptors": [
+          "no single defined receptor: a mixture-effect with multiple hypothesized targets including TrkB-like signaling",
+          "proposed downstream: PI3K/AKT, MAPK/ERK, CREB"
+        ],
+        "channelsTransporters": [
+          "preclinical reports of reduced calcium dysregulation and calpain activity in ischemic models"
+        ],
+        "cytokinesInterleukins": [
+          {
+            "name": "neuroinflammatory cytokines (nonspecific)",
+            "effect": "preclinical stroke/TBI models describe reduced neuroinflammation; specific interleukin effects are not consistently characterized",
+            "context": "rodent ischemia and TBI models",
+            "symbols": ["A", "?"],
+            "citationIds": ["cerebro-sciencedirect-2025"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "proposed neurotrophic/neuroprotective",
+            "steps": [
+              "IV administration delivers a mixture of free amino acids and short peptides that is claimed to cross the blood-brain barrier to some extent",
+              "proposed mimicry of endogenous neurotrophic factor signaling activates PI3K/AKT and MAPK/ERK survival pathways",
+              "reported suppression of calpain activation, reduced excitotoxic and apoptotic signaling",
+              "preclinical evidence of enhanced neurogenesis, synaptic remodeling, and BBB stabilization",
+              "exact molecular cascade is not definitively characterized because the input is a mixture"
+            ],
+            "symbols": ["A", "?"],
+            "claimRef": "cerebro-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Multiple industry-sponsored randomized trials and meta-analyses in mild-to-moderate Alzheimer's disease have reported benefits on cognitive (ADAS-cog+, MMSE) and global (CIBIC+) measures, typically using 30 mL/day IV regimens. The 2015 Gauthier meta-analysis of 6 RCTs reported benefit on cognition and global change at 4 and 6 months with safety comparable to placebo. Independent appraisals are more cautious: the Cochrane review in vascular dementia (updated 2019) rated evidence as 'very low quality' despite a pooled beneficial SMD of 0.36 (95% CI 0.13-0.58), and a 2023 Cochrane update in acute ischemic stroke reported no clear benefit on mortality or disability and flagged an increase in non-fatal serious adverse events. European neurology guidelines (EAN/EFNR 2021 and German Society of Neurorehabilitation 2020) nonetheless recommend Cerebrolysin as an adjunct to early post-stroke rehabilitation.",
+        "animalEvidence": "Preclinical work from manufacturer-associated and academic groups reports neuroprotection in ischemia models, reduced amyloid-beta production in transgenic Alzheimer's models, tauopathy mitigation, and improvements in behavior and mitochondrial structure. Effects are replicated in multiple rodent systems but, as with human data, interpretation is complicated by the product being a mixture and by the concentration of early work within sponsor-affiliated groups.",
+        "mechanismDetail": "Cerebrolysin is not a single peptide but a standardized enzymatic hydrolysate of porcine brain tissue, approximately 85% free amino acids and 15% low-molecular-weight peptides (<10 kDa). The manufacturer describes the active fraction as neurotrophic factor-like, with proposed activity resembling BDNF, GDNF, NGF, and CNTF. Analytical work cited in the 2023 Cochrane update identified hundreds of distinct peptides in the preparation that do not map cleanly onto known trophic factors, meaning the product should be understood as a biological mixture rather than a defined drug. Proposed downstream pathways include PI3K/AKT and MAPK/ERK activation, calpain inhibition, reduced calcium dysregulation, suppression of neuroinflammation, and support for neurogenesis and synaptic remodeling in models of stroke, TBI, and neurodegeneration.",
+        "safetyDetail": "Cerebrolysin has a larger human safety dataset than most research peptides in this batch due to decades of regulatory use in multiple countries. In most industry-sponsored trials, adverse events were comparable between Cerebrolysin and placebo. The notable exception is the 2023 Cochrane stroke update reporting a statistically significant increase in non-fatal serious adverse events in pooled analyses. Product labeling outside the US advises against use in epilepsy and kidney disease and in patients with hypersensitivity. Products labeled 'Cerebrolysin' sold through US online vendors or grey-market importers are not FDA-regulated; sterility, authenticity, and concentration cannot be assumed.",
+        "safetyRisks": [
+          {
+            "system": "regulatory",
+            "label": "Not FDA-approved; unregulated supply in the US",
+            "color": "red",
+            "helpSummary": "Approved in >50 countries but not in the US; US importation for personal use carries legal and quality risk.",
+            "harmSummary": "Unregulated grey-market product cannot be verified for identity, purity, or sterility; IV route amplifies contamination risk.",
+            "citationIds": ["cerebro-wikipedia-2026", "cerebro-addf-2016"]
+          },
+          {
+            "system": "safety-signal",
+            "label": "Possible increase in non-fatal serious adverse events (stroke pooled analyses)",
+            "color": "amber",
+            "helpSummary": "2023 Cochrane stroke review pooled 3 trials (n=1,335).",
+            "harmSummary": "Relative risk ~2.39 (95% CI 1.10-5.23); signal is moderate-quality but not definitive.",
+            "citationIds": ["cerebro-superpower-2026"]
+          },
+          {
+            "system": "neurologic",
+            "label": "Contraindicated in epilepsy",
+            "color": "amber",
+            "helpSummary": "Manufacturer label excludes epilepsy and severe renal impairment.",
+            "harmSummary": "Reported risk of seizure-like events in susceptible patients.",
+            "citationIds": ["cerebro-wikipedia-2026"]
+          },
+          {
+            "system": "immune",
+            "label": "Porcine protein origin; hypersensitivity risk",
+            "color": "amber",
+            "helpSummary": "Product is derived from pig brain tissue.",
+            "harmSummary": "Allergic and hypersensitivity reactions are possible and listed in non-US prescribing information.",
+            "citationIds": ["cerebro-wikipedia-2026", "cerebro-addf-2016"]
+          },
+          {
+            "system": "evidence-quality",
+            "label": "Evidence base is heavily industry-sponsored",
+            "color": "amber",
+            "helpSummary": "Cochrane rated vascular dementia evidence as 'very low quality'; stroke evidence is mixed.",
+            "harmSummary": "Effect sizes may be smaller than clinically meaningful; independent replication limited.",
+            "citationIds": ["cochrane-vd-2019", "cerebro-superpower-2026"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Regulatory-approved uses outside the US focus on stroke, TBI, vascular dementia, and Alzheimer's disease. No credible evidence supports use in healthy adults for cognitive enhancement or anti-aging.",
+          "caveat": "Best understood as a biological mixture with modest, uncertain clinical effect in neurorehabilitation contexts, not as a reliable cognitive enhancer. Independent high-quality evidence remains limited; Cochrane conclusions and industry-sponsored meta-analyses diverge.",
+          "citationIds": ["cochrane-vd-2019", "cerebro-superpower-2026", "cerebro-sciencedirect-2025"]
+        },
+        "missingEvidence": [
+          "FDA-grade large-scale RCT in any indication",
+          "defined characterization of which peptide components carry which effects",
+          "independent replication of the manufacturer-sponsored efficacy signals",
+          "long-term outcomes beyond trial durations",
+          "data in healthy adults"
+        ],
+        "anecdotalUse": [
+          "off-label use for general 'brain health' and cognitive enhancement outside approved regions",
+          "post-concussion and post-TBI rehabilitation off-label use in some clinics"
+        ]
+      },
+      "claims": [
+        {
+          "id": "cerebro-identity-01",
+          "field": "identity",
+          "value": "Not a single peptide; enzymatic hydrolysate of porcine brain tissue, approximately 85% free amino acids and 15% low-MW peptides (<10 kDa)",
+          "species": "mixed",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["R", "?"],
+          "confidence": 0.95,
+          "citationIds": ["cerebro-wikipedia-2026", "cerebro-addf-2016"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cerebro-regulatory-01",
+          "field": "regulatoryStatus",
+          "value": "Approved in >50 countries (Austria/EU, Russia, China, Eastern Europe) for stroke, TBI, vascular dementia, and Alzheimer's disease; not FDA-approved in the US",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": "IV",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.95,
+          "citationIds": ["cerebro-superpower-2026", "cerebro-addf-2016"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cerebro-cochrane-vd-01",
+          "field": "cochraneVascularDementia",
+          "value": "Pooled MMSE/ADAS-cog+ benefit SMD 0.36 (95% CI 0.13-0.58) in vascular dementia trials, rated very-low-quality evidence",
+          "species": "human",
+          "context": "review",
+          "population": "adults with vascular dementia",
+          "route": "IV",
+          "sampleSize": 420,
+          "duration": "15 days to 3 years",
+          "symbols": ["H", "?"],
+          "confidence": 0.9,
+          "citationIds": ["cochrane-vd-2019"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cerebro-cochrane-stroke-01",
+          "field": "cochraneStroke",
+          "value": "2023 Cochrane stroke update: no clear benefit on death or disability; pooled RR ~2.39 (95% CI 1.10-5.23) for non-fatal serious adverse events (3 trials, n=1,335)",
+          "species": "human",
+          "context": "review",
+          "population": "adults with acute ischemic stroke",
+          "route": "IV",
+          "sampleSize": 1335,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.9,
+          "citationIds": ["cerebro-superpower-2026"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "cerebro-mech-01",
+          "field": "mechanism",
+          "value": "Proposed neurotrophic-mimetic activity of a mixture; preclinical support for PI3K/AKT, MAPK/ERK activation and calpain inhibition; single defined mechanism is not established",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": null,
+          "route": "IV",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "?"],
+          "confidence": 0.75,
+          "citationIds": ["cerebro-sciencedirect-2025", "cerebro-wikipedia-2026"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cerebro-dose-01",
+          "field": "dosing",
+          "value": "Typical non-US regimens: 10-30 mL/day IV, diluted, for 10-21 days in stroke, TBI, and dementia; EAN/EFNR 2021 guideline recommends 30 mL/day IV for >=10 days post-stroke",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": "IV",
+          "sampleSize": null,
+          "duration": "10-21 days typical",
+          "symbols": ["Rx", "R"],
+          "confidence": 0.9,
+          "citationIds": ["cerebro-pmc-realworld-2025"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "cerebro-wikipedia-2026",
+          "sourceType": "secondary_article",
+          "title": "Cerebrolysin (Wikipedia)",
+          "authors": [],
+          "year": 2026,
+          "url": "https://en.wikipedia.org/wiki/Cerebrolysin",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cerebro-identity-01", "cerebro-mech-01"],
+          "notes": "Secondary source summarizing product composition, non-US regulatory use, and contraindications."
+        },
+        {
+          "id": "cerebro-addf-2016",
+          "sourceType": "secondary_article",
+          "title": "Cerebrolysin and Your Brain (Alzheimer's Drug Discovery Foundation Cognitive Vitality report)",
+          "authors": ["ADDF Cognitive Vitality"],
+          "year": 2016,
+          "url": "https://www.alzdiscovery.org/uploads/cognitive_vitality_media/addf-cerebrolysin-full-report.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cerebro-identity-01", "cerebro-regulatory-01"],
+          "notes": "Independent nonprofit review; notes non-US approval and ambiguous evidence in stroke."
+        },
+        {
+          "id": "cochrane-vd-2019",
+          "sourceType": "review",
+          "title": "Cerebrolysin for vascular dementia (Cochrane systematic review, 2019 update)",
+          "authors": ["Chen N", "Yang M", "Guo J", "et al."],
+          "year": 2019,
+          "url": "https://www.cochrane.org/CD008900/DEMENTIA_cerebrolysin-vascular-dementia",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cerebro-cochrane-vd-01"],
+          "notes": "Cochrane rated evidence 'very low quality'; industry-funded trials; effect may be too small to be clinically meaningful."
+        },
+        {
+          "id": "cerebro-superpower-2026",
+          "sourceType": "secondary_article",
+          "title": "Cerebrolysin guide summarizing Cochrane 2023 stroke update and sponsor-evidence divergence",
+          "authors": [],
+          "year": 2026,
+          "url": "https://superpower.com/guides/cerebrolysin",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cerebro-cochrane-stroke-01", "cerebro-regulatory-01"],
+          "notes": "Paraphrases 2023 Cochrane update non-fatal SAE signal and industry-vs-independent evidence divergence."
+        },
+        {
+          "id": "cerebro-sciencedirect-2025",
+          "sourceType": "review",
+          "title": "The possible role of cerebrolysin in the management of vascular dementia: Leveraging concepts",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.sciencedirect.com/science/article/pii/S0306452225000508",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cerebro-mech-01"],
+          "notes": "Mechanistic review of neurotrophic-mimetic effects, BBB stabilization, neurogenesis support."
+        },
+        {
+          "id": "cerebro-pmc-realworld-2025",
+          "sourceType": "primary_study",
+          "title": "Evaluating the Effect of Cerebrolysin as an Adjuvant to Standard Therapy in Patients with Acute Ischemic Stroke: A Prospective Observational Study",
+          "authors": [],
+          "year": 2025,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12472081/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cerebro-dose-01"],
+          "notes": "Cites EAN/EFNR 2021 guideline recommending 30 mL/day IV for >=10 days post-stroke; observational design, not RCT."
+        }
+      ]
+    },
+    {
+      "id": "semax",
+      "names": {
+        "primary": "Semax",
+        "aliases": ["ACTH(4-10)Pro-Gly-Pro", "Met-Glu-His-Phe-Pro-Gly-Pro"],
+        "tradeNames": ["Semax 0.1%", "Semax 1%"]
+      },
+      "identity": {
+        "formula": "C37H51N11O10S",
+        "molecularWeight": 813.93,
+        "cas": "80714-61-0",
+        "sequenceOneLetter": "MEHFPGP",
+        "sequenceThreeLetter": "Met-Glu-His-Phe-Pro-Gly-Pro",
+        "length": 7,
+        "modifications": [
+          "ACTH(4-10) fragment (Met-Glu-His-Phe) extended with a C-terminal Pro-Gly-Pro tripeptide to confer enzymatic stability and prolong CNS activity",
+          "engineered to retain CNS activity while removing the N-terminal residues required for ACTH adrenal (MC2R) receptor activity; does not stimulate cortisol"
+        ],
+        "structureClass": "heptapeptide; ACTH(4-10) analog"
+      },
+      "classification": {
+        "peptideClass": "ACTH(4-10) fragment analog",
+        "mechanismFamily": "neurotrophin (BDNF/NGF) upregulator; proposed melanocortin receptor modulator",
+        "regulatoryStatus": "non_us_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Heptapeptide synthetic analog of the ACTH(4-10) fragment with a C-terminal Pro-Gly-Pro extension; rapidly upregulates BDNF and NGF expression and TrkB signaling in the hippocampus and cortex, modulates dopaminergic and serotonergic signaling, and has been studied as a nootropic and neuroprotective agent.",
+        "localization": "delivered intranasally; uptake via olfactory pathway to CNS; effects documented in hippocampus, frontal cortex, and striatum in rodent models",
+        "clinicalUses": [
+          "Russian Federation: prescription medicine (nasal drops) indicated for cognitive disorders, ischemic stroke recovery, transient ischemic attack, and optic nerve atrophy",
+          "on the Russian List of Vital and Essential Drugs (since approximately 2011)",
+          "not FDA-approved in the United States; not registered by EMA"
+        ],
+        "sideEffects": [
+          "mild nasal mucosal irritation (most common reported adverse effect with intranasal dosing)",
+          "headache has been reported with higher doses",
+          "Russian clinical data describe safety comparable to placebo; long-term safety outside Russia is not firmly established"
+        ],
+        "dosing": {
+          "quick": "Russian prescribing use: 0.1% nasal drops for cognitive/stroke indications; higher-strength 1% formulation for acute neurologic indications. Not FDA-approved. Not authorized for US prescription or compounding.",
+          "adminRoute": "intranasal (nasal drops or spray)",
+          "publicDisplayAllowed": true,
+          "context": "regulatory"
+        }
+      },
+      "biology": {
+        "genes": ["BDNF", "NGF", "NTF3", "NTRK2", "NTRK1", "POMC", "MC4R", "MC3R"],
+        "proteins": [
+          "BDNF (brain-derived neurotrophic factor)",
+          "NGF (nerve growth factor)",
+          "NT-3 (neurotrophin-3)",
+          "TrkB (NTRK2)",
+          "TrkA (NTRK1)",
+          "melanocortin receptors (proposed modulation; not rigorously confirmed)",
+          "enkephalin-degrading enzymes (in vitro inhibition reported)"
+        ],
+        "receptors": [
+          "proposed interaction with melanocortin receptors (MC3R/MC4R) — uncertain; not adrenal MC2R",
+          "indirect activation of Trk receptor signaling via neurotrophin upregulation",
+          "proposed (uncertain) interaction with enkephalinase enzymes in vitro"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "neuroinflammatory cytokines (nonspecific)",
+            "effect": "preclinical stroke models describe reduced neuroinflammation associated with Semax treatment; specific interleukin effects are not well characterized",
+            "context": "rodent ischemia models",
+            "symbols": ["A", "?"],
+            "citationIds": ["semax-scirp-2013", "semax-wikipedia-2026"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "neurotrophic/cognitive",
+            "steps": [
+              "intranasal Semax reaches CNS via olfactory and trigeminal pathways",
+              "rapid upregulation of BDNF and NGF mRNA and protein in hippocampus and frontal cortex (within 30-60 minutes in rodent models)",
+              "increased TrkB/TrkA receptor signaling -> PI3K/AKT and MAPK/ERK activation -> pro-survival and pro-plasticity gene expression",
+              "modulation of dopamine turnover in striatum and prefrontal cortex, and serotonin metabolism across multiple regions",
+              "in ischemia models: reduced infarct volume, Bcl-2 upregulation, reduced neuroinflammation"
+            ],
+            "symbols": ["A", "H", "?"],
+            "claimRef": "semax-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Russian clinical data (most in Russian-language journals) report benefits of intranasal Semax in ischemic stroke recovery, transient ischemic attack, cognitive impairment in chronic cerebrovascular insufficiency, and optic nerve atrophy. Sample sizes are typically small-to-moderate, many studies are open-label or use blinding procedures that are not rigorous by Western standards, and independent high-quality Western replication is limited. The strongest regulatory signal is the Russian Health Ministry registration and inclusion on the Russian List of Vital and Essential Drugs; this is not a substitute for FDA-grade evidence.",
+        "animalEvidence": "Semax rapidly upregulates BDNF and NGF mRNA and protein in the hippocampus and frontal cortex, increases TrkB/TrkA expression, modulates monoaminergic neurotransmission, and produces antidepressant-like, anxiolytic-like, and pro-cognitive effects in rodent behavioral tests. In rodent cerebral ischemia models, Semax reduces infarct volume, upregulates anti-apoptotic Bcl-2 family members, and suppresses neuroinflammatory markers. The animal data are reproducible across the Russian research group and some international groups.",
+        "mechanismDetail": "Semax is a synthetic heptapeptide (Met-Glu-His-Phe-Pro-Gly-Pro) derived from the ACTH(4-10) fragment with a C-terminal Pro-Gly-Pro extension for stability. The ACTH N-terminal residues required for adrenal MC2R activation are absent, so Semax does not stimulate cortisol release. The best-characterized molecular effect is rapid upregulation of BDNF and NGF expression in hippocampus and cortex, with corresponding TrkB/TrkA signaling, PI3K/AKT and MAPK/ERK activation, and pro-plasticity gene expression. Proposed direct interactions with melanocortin receptors (MC3R/MC4R) are hypothesized but not rigorously established, and in vitro enkephalinase inhibition has been reported with unclear clinical significance. The effective peptide also releases an active C-terminal Pro-Gly-Pro fragment that may contribute to its activity.",
+        "safetyDetail": "Within Russian clinical use, Semax is described as well-tolerated at approved doses, with mild transient nasal mucosal irritation the most common complaint. Formal Western-style long-term safety, drug interaction, pregnancy, pediatric, and oncologic-risk characterization is lacking. Grey-market vendor product sold to US consumers does not reflect pharmaceutical-grade Russian material; identity, purity, sterility, and dose accuracy cannot be assumed. There is no legal US pharmacy pathway at present; compounding status is subject to ongoing policy discussion and should not be assumed to be permitted.",
+        "safetyRisks": [
+          {
+            "system": "regulatory",
+            "label": "Not FDA-approved; not authorized for US prescription",
+            "color": "red",
+            "helpSummary": "Approved only in Russia and a small number of allied countries.",
+            "harmSummary": "US supply is grey-market; quality and identity cannot be verified.",
+            "citationIds": ["semax-wikipedia-2026"]
+          },
+          {
+            "system": "local/mucosal",
+            "label": "Nasal mucosal irritation",
+            "color": "yellow",
+            "helpSummary": "Most commonly reported adverse effect of intranasal dosing.",
+            "harmSummary": "Usually mild and transient.",
+            "citationIds": ["semax-wikipedia-2026"]
+          },
+          {
+            "system": "evidence-quality",
+            "label": "Evidence base is predominantly Russian-language and often methodologically limited",
+            "color": "amber",
+            "helpSummary": "Sample sizes small; open-label designs common; independent Western replication limited.",
+            "harmSummary": "Magnitude and durability of reported cognitive/neurologic benefits are uncertain outside Russian trial populations.",
+            "citationIds": ["semax-scirp-2013"]
+          },
+          {
+            "system": "long-term safety",
+            "label": "Long-term safety outside Russia is not established",
+            "color": "amber",
+            "helpSummary": "Decades of Russian clinical use; limited Western pharmacovigilance data.",
+            "harmSummary": "Drug interactions, pregnancy, pediatric, and oncologic-risk data are sparse.",
+            "citationIds": ["semax-wikipedia-2026"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Semax is positioned in Russia as a prescription nootropic and neuroprotective agent. Preclinical BDNF/NGF upregulation and pro-cognitive behavioral signals are consistent. Extrapolation to cognitive enhancement in healthy adults is speculative and not supported by Western-grade trials.",
+          "caveat": "Public discussion often presents Semax's benefits as established; the underlying Western-validated evidence is narrower than that language implies. Grey-market sourcing is a substantial safety concern independent of the peptide's intrinsic activity.",
+          "citationIds": ["semax-wikipedia-2026", "semax-scirp-2013"]
+        },
+        "missingEvidence": [
+          "Phase 3-quality RCTs under Western regulatory standards",
+          "long-term safety data in non-Russian populations",
+          "pediatric and pregnancy safety data",
+          "head-to-head comparison with approved nootropic/antidepressant agents"
+        ],
+        "anecdotalUse": [
+          "widespread use among nootropic and biohacker communities via online vendors",
+          "off-label clinical use for ADHD, depression, stroke recovery, and brain fog in regions where the drug is unregulated"
+        ]
+      },
+      "claims": [
+        {
+          "id": "semax-identity-01",
+          "field": "identity",
+          "value": "Met-Glu-His-Phe-Pro-Gly-Pro (MEHFPGP); heptapeptide; C37H51N11O10S; MW 813.93; CAS 80714-61-0",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.98,
+          "citationIds": ["semax-wikipedia-2026", "semax-scirp-2013"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "semax-regulatory-01",
+          "field": "regulatoryStatus",
+          "value": "Russian Federation prescription drug (nasal drops); on Russian List of Vital and Essential Drugs; not FDA- or EMA-approved",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": "intranasal",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.95,
+          "citationIds": ["semax-wikipedia-2026"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "semax-mech-01",
+          "field": "mechanism",
+          "value": "Rapidly upregulates BDNF and NGF expression and TrkB/TrkA signaling in hippocampus and cortex; modulates dopamine and serotonin; lacks ACTH adrenal (MC2R) activity",
+          "species": "animal",
+          "context": "preclinical",
+          "population": null,
+          "route": "intranasal or IP in rodent models",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.85,
+          "citationIds": ["semax-scirp-2013", "semax-wikipedia-2026"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "semax-indications-01",
+          "field": "indications",
+          "value": "In Russia, indicated for cognitive disorders, ischemic stroke recovery, transient ischemic attack, and optic nerve atrophy",
+          "species": "human",
+          "context": "regulatory",
+          "population": "varies by Russian indication",
+          "route": "intranasal",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R", "H"],
+          "confidence": 0.9,
+          "citationIds": ["semax-wikipedia-2026"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "semax-evidence-quality-01",
+          "field": "evidenceQuality",
+          "value": "Western-grade Phase 3 RCTs are absent; most efficacy data are Russian-language, small-sample, or open-label",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.9,
+          "citationIds": ["semax-scirp-2013", "semax-wikipedia-2026"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "semax-wikipedia-2026",
+          "sourceType": "secondary_article",
+          "title": "Semax (Wikipedia)",
+          "authors": [],
+          "year": 2026,
+          "url": "https://en.wikipedia.org/wiki/Semax",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["semax-identity-01", "semax-regulatory-01", "semax-mech-01", "semax-indications-01"],
+          "notes": "Provides identity, regulatory status (Russian List of Vital and Essential Drugs), mechanism summary, and uncertainty on melanocortin receptor interaction."
+        },
+        {
+          "id": "semax-scirp-2013",
+          "sourceType": "review",
+          "title": "A New Generation of Drugs: Synthetic Peptides Based on Natural Regulatory Peptides (covering Semax and Selank)",
+          "authors": ["Kolomin T", "et al."],
+          "year": 2013,
+          "url": "https://file.scirp.org/pdf/NM_2013120914223729.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["semax-mech-01", "semax-evidence-quality-01"],
+          "notes": "Review by Russian research group describing Semax and Selank development, rodent neurotrophin data, and Russian regulatory history."
+        }
+      ]
+    },
+    {
+      "id": "selank",
+      "names": {
+        "primary": "Selank",
+        "aliases": ["TP-7", "tuftsin-Pro-Gly-Pro analog", "Thr-Lys-Pro-Arg-Pro-Gly-Pro"],
+        "tradeNames": ["Selank 0.15%"]
+      },
+      "identity": {
+        "formula": "C33H57N11O9",
+        "molecularWeight": 751.88,
+        "cas": "129954-34-3",
+        "sequenceOneLetter": "TKPRPGP",
+        "sequenceThreeLetter": "Thr-Lys-Pro-Arg-Pro-Gly-Pro",
+        "length": 7,
+        "modifications": [
+          "built on the endogenous immunomodulatory tetrapeptide tuftsin (Thr-Lys-Pro-Arg) derived from the Fc region of IgG",
+          "extended with a C-terminal Pro-Gly-Pro tripeptide to improve enzymatic stability and add CNS-active anxiolytic pharmacology"
+        ],
+        "structureClass": "heptapeptide; tuftsin analog"
+      },
+      "classification": {
+        "peptideClass": "tuftsin-derived heptapeptide",
+        "mechanismFamily": "anxiolytic with GABA-A positive allosteric modulation and serotonergic effects",
+        "regulatoryStatus": "non_us_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Heptapeptide analog of the endogenous tetrapeptide tuftsin, engineered with a C-terminal Pro-Gly-Pro extension; produces anxiolytic effects via positive modulation of GABA-A receptors, modulates serotonergic metabolism, upregulates BDNF in regions distinct from Semax, and retains tuftsin-like immunomodulatory activity.",
+        "localization": "delivered intranasally; CNS effects localized to limbic and cortical regions associated with anxiety regulation; peripheral immune-modulatory effects reported",
+        "clinicalUses": [
+          "Russian Federation: approved 2009 as a prescription anxiolytic/nootropic (nasal drops) for generalized anxiety disorder, adjustment disorders, and stress-related conditions",
+          "not FDA-approved in the United States; not registered by EMA"
+        ],
+        "sideEffects": [
+          "mild nasal mucosal irritation (most common with intranasal dosing)",
+          "rare headache reports",
+          "Russian clinical data describe safety comparable to placebo and contrast Selank favorably with benzodiazepines for absence of sedation, motor impairment, amnesia, tolerance, and withdrawal at therapeutic doses",
+          "long-term safety outside Russian clinical use is not firmly established"
+        ],
+        "dosing": {
+          "quick": "Russian prescribing use: 0.15% nasal drops for anxiety indications. Not FDA-approved. Not authorized for US prescription or compounding.",
+          "adminRoute": "intranasal (nasal drops or spray)",
+          "publicDisplayAllowed": true,
+          "context": "regulatory"
+        }
+      },
+      "biology": {
+        "genes": ["GABRA1", "GABRA2", "GABRB2", "GABRG2", "HTR1A", "HTR2A", "BDNF", "IL6"],
+        "proteins": [
+          "GABA-A receptor subunits (positive allosteric modulation at a site distinct from the benzodiazepine site)",
+          "serotonin receptors (modulation via changes in serotonergic metabolism and gene expression)",
+          "BDNF (upregulation in limbic regions)",
+          "tuftsin-related immune targets (macrophage/neutrophil modulation)",
+          "enkephalin-degrading enzymes (in vitro inhibition reported)"
+        ],
+        "receptors": [
+          "GABA-A receptor complex (positive allosteric modulator; not a direct agonist)",
+          "indirect effects on 5-HT1A/5-HT2A signaling",
+          "tuftsin-like binding at macrophage/neutrophil receptors (FcγR-related, immune)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "IL-6",
+            "effect": "Selank modulates IL-6 expression and may attenuate stress- and inflammation-linked anxiety signaling",
+            "context": "rodent stress and anxiety models",
+            "symbols": ["A"],
+            "citationIds": ["selank-peptides-fyi-2026"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "anxiolytic/neuromodulatory",
+            "steps": [
+              "intranasal Selank reaches CNS via olfactory/trigeminal pathways",
+              "positive allosteric modulation of GABA-A receptors enhances responsiveness to endogenous GABA (anxiolysis without sedation)",
+              "modulation of serotonergic transmission (altered 5-HT and 5-HIAA in hippocampus and cortex in rodent models)",
+              "upregulation of BDNF in limbic regions and altered neurotransmitter-related gene expression",
+              "peripheral immunomodulation via tuftsin-family mechanisms (macrophage/neutrophil activity, IL-6 modulation)"
+            ],
+            "symbols": ["A", "H", "?"],
+            "claimRef": "selank-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Russian clinical data (most in Russian-language journals) describe Selank as effective for generalized anxiety disorder and adjustment disorders, with a favorable comparison to benzodiazepines in terms of sedation, motor impairment, tolerance, and withdrawal. Sample sizes are typically small-to-moderate, blinding is variable, and Western independent replication is limited. The strongest regulatory signal is the Russian Health Ministry 2009 registration.",
+        "animalEvidence": "In BALB/c mice with high anxiety baseline, Selank doses of 200-3000 mcg/kg produce significant anxiolysis comparable to low-dose benzodiazepines without hypnosedation or myorelaxation. Rodent studies document changes in noradrenaline, dopamine, serotonin, and their metabolites in anxiety-relevant brain regions (hypothalamus, hippocampus, frontal cortex). Selank upregulates BDNF in limbic areas, modulates IL-6, and inhibits enkephalin-degrading enzymes in vitro. Cross-species work in elderly monkeys supports a consistent, direction-stable anxiolytic and cognitive-supportive effect.",
+        "mechanismDetail": "Selank (Thr-Lys-Pro-Arg-Pro-Gly-Pro) is built on the endogenous immunomodulatory tetrapeptide tuftsin (Thr-Lys-Pro-Arg), a fragment of the Fc region of IgG, extended by a C-terminal Pro-Gly-Pro to improve metabolic stability. This structural modification appears to add CNS-active anxiolytic pharmacology beyond tuftsin's immunomodulatory activity. The primary CNS mechanism is positive allosteric modulation of GABA-A receptor function, distinct from benzodiazepine binding, producing anxiolysis without the sedation, tolerance, and withdrawal characteristic of GABA-A direct agonists. Secondary mechanisms include modulation of serotonergic metabolism, BDNF upregulation in limbic regions, inhibition of enkephalin-degrading enzymes (in vitro), and IL-6 modulation. The peptide retains peripheral immunomodulatory activity through tuftsin-related targets.",
+        "safetyDetail": "Within Russian clinical use since 2009, Selank is described as well-tolerated at approved doses, with mild transient nasal mucosal irritation as the most common complaint. Russian trial data emphasize the absence of sedation, motor impairment, amnesia, tolerance, and withdrawal that characterize benzodiazepine use. Western-style long-term pharmacovigilance, drug interaction, pregnancy, pediatric, and oncologic-risk characterization is limited. Grey-market vendor product in the US is not pharmaceutical-grade and identity/purity cannot be verified. There is no legal US pharmacy pathway at present.",
+        "safetyRisks": [
+          {
+            "system": "regulatory",
+            "label": "Not FDA-approved; not authorized for US prescription",
+            "color": "red",
+            "helpSummary": "Approved only in Russia (and a few allied jurisdictions).",
+            "harmSummary": "US supply is grey-market; quality and identity cannot be verified.",
+            "citationIds": ["selank-scirp-2013"]
+          },
+          {
+            "system": "local/mucosal",
+            "label": "Nasal mucosal irritation",
+            "color": "yellow",
+            "helpSummary": "Most commonly reported adverse effect of intranasal dosing.",
+            "harmSummary": "Usually mild and transient.",
+            "citationIds": ["selank-peptides-fyi-2026"]
+          },
+          {
+            "system": "evidence-quality",
+            "label": "Evidence base is predominantly Russian-language and methodologically limited",
+            "color": "amber",
+            "helpSummary": "Sample sizes small; open-label designs common; Western independent replication limited.",
+            "harmSummary": "Magnitude and durability of reported anxiolytic benefit is uncertain outside Russian trial populations.",
+            "citationIds": ["selank-scirp-2013"]
+          },
+          {
+            "system": "long-term safety",
+            "label": "Long-term safety outside Russia is not established",
+            "color": "amber",
+            "helpSummary": "Decades of Russian clinical use; limited Western pharmacovigilance data.",
+            "harmSummary": "Drug interactions, pregnancy, pediatric, and oncologic-risk data are sparse.",
+            "citationIds": ["selank-scirp-2013"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Russian clinical and rodent data support anxiolytic efficacy comparable to low-dose benzodiazepines without sedation, motor impairment, or withdrawal. Positioning as a 'non-addictive anxiolytic' has driven consumer interest.",
+          "caveat": "Direct head-to-head comparisons with benzodiazepines under Western RCT standards are lacking. Claims about long-term anxiolytic durability, depression, and PTSD uses exceed the underlying evidence. Self-treatment of anxiety with grey-market Selank is not a safe substitute for evaluated psychiatric care.",
+          "citationIds": ["selank-scirp-2013", "selank-peptides-fyi-2026"]
+        },
+        "missingEvidence": [
+          "Phase 3-quality RCTs under Western regulatory standards",
+          "head-to-head trials vs benzodiazepines and SSRIs",
+          "pregnancy, pediatric, and drug-interaction safety data",
+          "long-term outcome data in depression/PTSD off-label indications"
+        ],
+        "anecdotalUse": [
+          "widespread use among nootropic and biohacker communities via online vendors",
+          "off-label use for generalized anxiety, social anxiety, and PTSD in regions where the drug is unregulated"
+        ]
+      },
+      "claims": [
+        {
+          "id": "selank-identity-01",
+          "field": "identity",
+          "value": "Thr-Lys-Pro-Arg-Pro-Gly-Pro (TKPRPGP); heptapeptide; C33H57N11O9; MW 751.88; CAS 129954-34-3",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.97,
+          "citationIds": ["selank-peptides-fyi-2026", "selank-scirp-2013"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "selank-regulatory-01",
+          "field": "regulatoryStatus",
+          "value": "Russian Federation prescription drug (nasal drops, 0.15%), registered 2009 as anxiolytic/nootropic; not FDA- or EMA-approved",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": "intranasal",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.95,
+          "citationIds": ["selank-scirp-2013"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "selank-mech-01",
+          "field": "mechanism",
+          "value": "Tuftsin-based heptapeptide; positive allosteric modulator of GABA-A (anxiolytic without sedation); modulates serotonergic signaling; retains tuftsin-like immunomodulation and IL-6 modulation",
+          "species": "animal",
+          "context": "preclinical",
+          "population": null,
+          "route": "intranasal or IP in rodent models",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.85,
+          "citationIds": ["selank-peptides-fyi-2026", "selank-scirp-2013"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "selank-animal-anxiolysis-01",
+          "field": "preclinicalEfficacy",
+          "value": "In BALB/c mice, Selank 200-3000 mcg/kg produced anxiolysis comparable to low-dose benzodiazepines without sedation, amnesia, or withdrawal",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "high-anxiety BALB/c mice",
+          "route": "IP",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.85,
+          "citationIds": ["selank-scirp-2013"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "selank-evidence-quality-01",
+          "field": "evidenceQuality",
+          "value": "Western-grade Phase 3 RCTs are absent; most efficacy data are Russian-language, small-sample, or open-label",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.9,
+          "citationIds": ["selank-scirp-2013", "selank-peptides-fyi-2026"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "selank-scirp-2013",
+          "sourceType": "review",
+          "title": "A New Generation of Drugs: Synthetic Peptides Based on Natural Regulatory Peptides (covering Semax and Selank)",
+          "authors": ["Kolomin T", "et al."],
+          "year": 2013,
+          "url": "https://file.scirp.org/pdf/NM_2013120914223729.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": [
+            "selank-identity-01",
+            "selank-regulatory-01",
+            "selank-mech-01",
+            "selank-animal-anxiolysis-01",
+            "selank-evidence-quality-01"
+          ],
+          "notes": "Review by Russian research group describing Selank's tuftsin origin, rodent anxiolytic data, and 2009 Russian registration."
+        },
+        {
+          "id": "selank-peptides-fyi-2026",
+          "sourceType": "secondary_article",
+          "title": "Selank and Semax: Nootropic Peptides From Russian Research Programs",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.peptides.fyi/selank-semax-nootropic-peptides-russian-research/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["selank-identity-01", "selank-mech-01"],
+          "notes": "Summary of tuftsin-analog structure, GABA-A and IL-6 mechanisms, and Russian research lineage."
+        }
+      ]
+    },
+    {
+      "id": "pinealon",
+      "names": {
+        "primary": "Pinealon",
+        "aliases": ["EDR peptide", "Glu-Asp-Arg", "Cytogen tripeptide (pineal/cortical series)"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C15H26N6O8",
+        "molecularWeight": 418.4,
+        "cas": "868046-17-3",
+        "sequenceOneLetter": "EDR",
+        "sequenceThreeLetter": "Glu-Asp-Arg",
+        "length": 3,
+        "modifications": [
+          "linear unmodified tripeptide",
+          "developed by the Khavinson group as a 'short peptide bioregulator' within the Cytogen series"
+        ],
+        "structureClass": "tripeptide; Khavinson 'peptide bioregulator' class"
+      },
+      "classification": {
+        "peptideClass": "short peptide 'bioregulator' (Khavinson framework)",
+        "mechanismFamily": "proposed tissue-specific gene regulation / neuroprotection; mechanism not independently validated",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "Synthetic tripeptide (Glu-Asp-Arg) developed by the Khavinson group at the St. Petersburg Institute of Bioregulation and Gerontology. The group proposes direct peptide-DNA interaction at gene promoters to produce tissue-specific gene-expression changes (notably neuroprotective). This mechanism has not been independently replicated by laboratories outside the Khavinson corpus and should be treated as hypothesis-generating, not established.",
+        "localization": "proposed neuronal targets in cortex and hippocampus (based on Khavinson group reports); no validated binding site or receptor identified",
+        "clinicalUses": [
+          "no FDA or EMA approval",
+          "not registered as a pharmaceutical in any jurisdiction; sold as a research compound and as a non-pharmaceutical 'peptide bioregulator' through a small number of Russia-linked commercial channels"
+        ],
+        "sideEffects": [
+          "no formal human adverse-event dataset",
+          "Khavinson group reports describe good tolerability in small open-label series; this is not equivalent to Western pharmacovigilance"
+        ],
+        "dosing": {
+          "quick": "Not FDA-approved; no validated human dose. Khavinson-affiliated literature and vendor materials describe milligram-scale oral or IM/SC protocols, but these lack independent validation. Not authorized for US prescription or compounding.",
+          "adminRoute": "proposed oral or SC/IM (vendor-derived; no validated human route)",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [
+          "proposed effects on antioxidant enzymes (SOD2, catalase) in neurons (Khavinson group reports)",
+          "proposed modulation of MAPK/ERK and CREB pathways (vendor/Khavinson-affiliated literature)"
+        ],
+        "receptors": [],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "proposed neuroprotection (not independently validated)",
+            "steps": [
+              "Khavinson framework proposes direct peptide-DNA binding at gene promoter regions",
+              "proposed upregulation of antioxidant enzymes (SOD2, catalase) and modulation of MAPK/ERK and CREB signaling",
+              "reported in cell and rodent models by the Khavinson group to reduce oxidative damage and improve neuronal viability",
+              "direct molecular and structural evidence for peptide-DNA binding by a tripeptide at the scale required for regulatory gene expression has not been established"
+            ],
+            "symbols": ["A", "C", "?"],
+            "claimRef": "pinealon-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "No independently validated human clinical trials of Pinealon in any indication. Claims of neuroprotective or cognitive benefit in humans derive from the Khavinson research lineage and vendor materials, not from Western randomized trials.",
+        "animalEvidence": "Khavinson et al. (2011, Rejuvenation Research) reported that Pinealon reduced free-radical levels and improved viability in cultured neuronal cells under oxidative stress. Grigoriev et al. (2012, Advances in Gerontology) described smaller infarct volumes and better maze performance in rats treated with Pinealon after cerebral ischemia-reperfusion injury. Across the Khavinson 'peptide bioregulator' class as a whole, rodent lifespan extension has been reported by the originating group but not robustly replicated by independent laboratories.",
+        "mechanismDetail": "The Khavinson framework proposes that ultra-short peptides (2-4 amino acids) enter cells and bind directly to DNA at promoter-region sequences, producing tissue-specific gene-expression changes. For Pinealon (Glu-Asp-Arg), the proposed targets are neuronal antioxidant defense genes (SOD2, catalase) and survival-related signaling (MAPK/ERK, CREB). Independent structural biology does not support specific high-affinity sequence-selective DNA recognition by a tripeptide at concentrations achievable in vivo; the biophysical plausibility of the framework remains contested. Alternative explanations (nonspecific antioxidant effects, trace contaminants in preparations, batch-to-batch variability, and publication bias within a single group) have not been ruled out.",
+        "safetyDetail": "There is no formal Western-standard safety dataset for Pinealon. Khavinson group reports describe good tolerability, but independent pharmacovigilance is absent. Grey-market vendor product cannot be verified for identity, purity, or sterility. Users should treat all 'bioregulator' claims with substantial skepticism until independent replication appears, particularly extraordinary claims such as lifespan extension, telomerase activation (made for related peptides such as Epitalon), or direct gene-promoter binding.",
+        "safetyRisks": [
+          {
+            "system": "regulatory",
+            "label": "Not approved anywhere as a pharmaceutical; research-only",
+            "color": "red",
+            "helpSummary": "No FDA, EMA, or Russian pharmaceutical registration; no validated human use.",
+            "harmSummary": "Use in humans is off-label self-experimentation with an uncharacterized compound.",
+            "citationIds": ["pinealon-peptidefox-2026", "pinealon-peptidedeck-2026"]
+          },
+          {
+            "system": "evidence-quality",
+            "label": "Single-group research lineage with no independent replication",
+            "color": "red",
+            "helpSummary": "Core efficacy and mechanism claims originate almost entirely from the Khavinson group.",
+            "harmSummary": "Key biophysical claim (direct peptide-DNA gene regulation by a tripeptide) is not supported by independent structural or biochemical work.",
+            "citationIds": ["pinealon-peptidefox-2026", "epitalon-ppw-2026"]
+          },
+          {
+            "system": "product-quality",
+            "label": "Grey-market supply; identity and purity unverifiable",
+            "color": "red",
+            "helpSummary": "Sold through vendors without pharmaceutical-grade quality controls.",
+            "harmSummary": "Sterility, identity, and dose accuracy cannot be assumed; contamination risk is real.",
+            "citationIds": ["pinealon-peptidefox-2026"]
+          },
+          {
+            "system": "human-evidence",
+            "label": "No independent human clinical trials",
+            "color": "amber",
+            "helpSummary": "No randomized trials under Western regulatory standards.",
+            "harmSummary": "Claims of cognitive or longevity benefit in humans are extrapolations, not evidence.",
+            "citationIds": ["pinealon-peptidefox-2026"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Within the Khavinson literature, Pinealon is reported to reduce oxidative neuronal damage and improve ischemia outcomes in rodents. None of this has been translated into validated human therapeutic use.",
+          "caveat": "Pinealon should be treated as a speculative research compound. Consumer-facing claims of neuroprotection, cognitive support, or anti-aging benefit in humans are not supported by independent data. The entire 'short peptide bioregulator' framework rests on a proposed peptide-DNA binding mechanism that is biophysically contested and has not been validated outside the originating group.",
+          "citationIds": ["pinealon-peptidefox-2026", "epitalon-ppw-2026"]
+        },
+        "missingEvidence": [
+          "any independent (non-Khavinson) replication of Pinealon efficacy or mechanism",
+          "validated human pharmacokinetics, safety, or efficacy data",
+          "direct biophysical evidence of peptide-DNA sequence-selective binding",
+          "characterized receptor or protein target (alternative to the DNA-binding hypothesis)"
+        ],
+        "anecdotalUse": [
+          "purchase via Russia-linked 'peptide bioregulator' vendors and Western nootropic communities",
+          "self-experimental oral or injectable use without medical supervision"
+        ]
+      },
+      "claims": [
+        {
+          "id": "pinealon-identity-01",
+          "field": "identity",
+          "value": "Glu-Asp-Arg (EDR); tripeptide; C15H26N6O8; MW 418.4; CAS 868046-17-3",
+          "species": "human",
+          "context": "vendor",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["V", "?"],
+          "confidence": 0.85,
+          "citationIds": ["pinealon-peptidefox-2026", "pinealon-certapeptides-2026"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "pinealon-regulatory-01",
+          "field": "regulatoryStatus",
+          "value": "Not approved as a pharmaceutical in any jurisdiction; sold as a research compound and non-pharmaceutical 'bioregulator'",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "?", "R"],
+          "confidence": 0.95,
+          "citationIds": ["pinealon-peptidefox-2026", "pinealon-peptidedeck-2026"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "pinealon-mech-01",
+          "field": "mechanism",
+          "value": "Khavinson framework proposes direct peptide-DNA promoter binding producing tissue-specific gene regulation (neuroprotective); biophysically contested and not independently replicated",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "C", "?"],
+          "confidence": 0.4,
+          "citationIds": ["pinealon-peptidefox-2026", "epitalon-ppw-2026"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "pinealon-khavinson-preclinical-01",
+          "field": "preclinicalEfficacy",
+          "value": "Khavinson et al. (2011, Rejuvenation Research) and Grigoriev et al. (2012, Advances in Gerontology) report reduced oxidative damage in cultured neurons and smaller infarct volumes in rat cerebral ischemia-reperfusion; not independently replicated",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "cell and rat ischemia models",
+          "route": "variable (IP/SC in vivo)",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "C", "?"],
+          "confidence": 0.5,
+          "citationIds": ["pinealon-certapeptides-2026"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "pinealon-human-evidence-01",
+          "field": "humanEvidence",
+          "value": "No independent human clinical trials; no FDA/EMA regulatory basis for any therapeutic claim",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "?"],
+          "confidence": 0.95,
+          "citationIds": ["pinealon-peptidefox-2026", "pinealon-peptidedeck-2026"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "pinealon-peptidefox-2026",
+          "sourceType": "secondary_article",
+          "title": "Pinealon: Neuroprotection and Cognitive Support",
+          "authors": [],
+          "year": 2026,
+          "url": "https://peptidefox.com/content/pinealon",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": [
+            "pinealon-identity-01",
+            "pinealon-regulatory-01",
+            "pinealon-mech-01",
+            "pinealon-human-evidence-01"
+          ],
+          "notes": "Explicitly flags absence of independent Western validation and recommends clear-eyed skepticism."
+        },
+        {
+          "id": "pinealon-peptidedeck-2026",
+          "sourceType": "secondary_article",
+          "title": "Bioregulator Peptides for Aging: Epitalon, Thymalin, Pinealon and Vilon Guide (2026)",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.peptidedeck.com/blog/bioregulator-peptides-aging-guide",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["pinealon-regulatory-01", "pinealon-human-evidence-01"],
+          "notes": "Describes Khavinson bioregulators as unscheduled research compounds; none FDA-approved."
+        },
+        {
+          "id": "pinealon-certapeptides-2026",
+          "sourceType": "secondary_article",
+          "title": "Bioregulator Peptides: The Complete Guide to Khavinson Peptides and Organ-Specific Research",
+          "authors": [],
+          "year": 2026,
+          "url": "https://certapeptides.com/blog/bioregulator-peptides-the-complete-guide-to-khavinson-peptides-and-organ-specific-research",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["pinealon-identity-01", "pinealon-khavinson-preclinical-01"],
+          "notes": "Summarizes Khavinson 2011 cultured-neuron study and Grigoriev 2012 rat ischemia study; acknowledges single-institution concentration of evidence."
+        },
+        {
+          "id": "epitalon-ppw-2026",
+          "sourceType": "secondary_article",
+          "title": "Epitalon Research Studies and Evidence (Peptide Protocol Wiki)",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.peptideprotocolwiki.com/peptides/epitalon/research",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["pinealon-mech-01"],
+          "notes": "Independent critical appraisal of the Khavinson 'bioregulator' research lineage; relevant to Pinealon's mechanism plausibility by family resemblance."
+        }
+      ]
+    }
+  ]
+}

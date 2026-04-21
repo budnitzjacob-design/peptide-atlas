@@ -5,6 +5,8 @@ import claudeBatch01Raw from "../../data/sources/research/claude_batch_01.json";
 import claudeBatch02Raw from "../../data/sources/research/claude_batch_02.json";
 import claudeBatch03Raw from "../../data/sources/research/claude_batch_03.json";
 import claudeBatch04Raw from "../../data/sources/research/claude_batch_04.json";
+import claudeBatch06Raw from "../../data/sources/research/claude_batch_06.json";
+import claudeBatch07Raw from "../../data/sources/research/claude_batch_07.json";
 
 const accessedAt = "2026-04-21";
 
@@ -138,7 +140,7 @@ type ResearchBatch = {
   peptides: Array<DeepPartial<PeptideRecord> & { id: string }>;
 };
 
-const researchBatches = [claudeBatch01Raw, claudeBatch02Raw, claudeBatch03Raw, claudeBatch04Raw] as ResearchBatch[];
+const researchBatches = [claudeBatch01Raw, claudeBatch02Raw, claudeBatch03Raw, claudeBatch04Raw, claudeBatch06Raw, claudeBatch07Raw] as ResearchBatch[];
 
 const researchOverrides: Record<string, DeepPartial<PeptideRecord>> = Object.fromEntries(
   researchBatches.flatMap((batch) =>

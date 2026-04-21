@@ -1,0 +1,1176 @@
+{
+  "batch_id": "batch-06",
+  "generated_at": "2026-04-21",
+  "peptides": [
+    {
+      "id": "thymosin-alpha-1",
+      "names": {
+        "primary": "Thymosin Alpha-1",
+        "aliases": ["Tα1", "Thymalfasin", "Thymosin α1", "TA1"],
+        "tradeNames": ["Zadaxin"]
+      },
+      "identity": {
+        "formula": "C129H215N33O55",
+        "molecularWeight": 3108.33,
+        "cas": "62304-98-7",
+        "sequenceOneLetter": "Ac-SDAAVDTSSEITTKDLKEKKEVVEEAEN",
+        "sequenceThreeLetter": "Ac-Ser-Asp-Ala-Ala-Val-Asp-Thr-Ser-Ser-Glu-Ile-Thr-Thr-Lys-Asp-Leu-Lys-Glu-Lys-Lys-Glu-Val-Val-Glu-Glu-Ala-Glu-Asn",
+        "length": 28,
+        "modifications": [
+          "N-terminal acetylation (required for full biological activity)",
+          "Represents the N-terminal 28 residues of prothymosin alpha (PTMA)"
+        ],
+        "structureClass": "Acetylated N-terminal fragment of prothymosin alpha; highly acidic, intrinsically disordered peptide"
+      },
+      "classification": {
+        "peptideClass": "Thymic peptide / immunomodulator",
+        "mechanismFamily": "TLR9 agonist (dendritic cell) — Th1 polarizer",
+        "regulatoryStatus": "non_us_approved"
+      },
+      "tile": {
+        "mechanismSummary": "A 28-amino-acid acetylated thymic peptide that acts as a TLR9 agonist on plasmacytoid dendritic cells, driving Th1 polarization, type I interferon signaling, and enhanced NK and cytotoxic T cell function. Approved as Zadaxin/thymalfasin in 35+ countries for chronic viral hepatitis and as a cancer adjuvant; not FDA-approved.",
+        "localization": "Acts on plasmacytoid dendritic cells (pDCs), CD4+ T cells, and NK cells; receptor (TLR9) is predominantly endosomal",
+        "clinicalUses": [
+          "Chronic hepatitis B (non-US approval)",
+          "Chronic hepatitis C as adjuvant to interferon / antivirals (non-US approval)",
+          "Immune reconstitution in cancer chemotherapy (non-US approval)",
+          "Severe sepsis adjuvant therapy (investigational / regional use)",
+          "COVID-19 adjuvant therapy (studied extensively in China during the pandemic; no FDA approval)"
+        ],
+        "sideEffects": [
+          "Injection-site reactions (most common)",
+          "Transient fatigue",
+          "Mild flu-like symptoms at initiation",
+          "Rare hypersensitivity",
+          "Generally favorable tolerability across approved indications"
+        ],
+        "dosing": {
+          "quick": "Zadaxin label: 1.6 mg subcutaneous twice weekly for chronic hepatitis B and C in countries of approval, typically 6-12 months. Not FDA-approved; US use is via research or compounding pathways. COVID-19 Chinese cohort studies used 1.6 mg SC once or twice daily for 5–10 days.",
+          "adminRoute": "Subcutaneous injection",
+          "publicDisplayAllowed": true,
+          "context": "regulatory"
+        }
+      },
+      "biology": {
+        "genes": ["PTMA (prothymosin alpha — source gene)", "TLR9", "IFNA1, IFNA2 (downstream)"],
+        "proteins": [
+          "TLR9 — direct agonist target on plasmacytoid dendritic cells",
+          "MyD88 — adapter downstream of TLR9",
+          "IRF7 — transcription factor driving type I IFN response",
+          "NF-κB (p65/p50) — transcription factor driving inflammatory cytokines"
+        ],
+        "receptors": [
+          "TLR9 (primary target; endosomal)",
+          "TLR2 and TLR4 (proposed secondary targets; evidence weaker)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "IFN-α",
+            "effect": "Increased",
+            "context": "Plasmacytoid dendritic cell production downstream of TLR9/IRF7; well documented in human and animal studies",
+            "symbols": ["H", "A", "C"],
+            "citationIds": ["ta1-cit-romani-2004", "ta1-cit-king-2015"]
+          },
+          {
+            "name": "IFN-γ",
+            "effect": "Increased",
+            "context": "Th1 polarization in CD4+ T cells; NK cell activation",
+            "symbols": ["H", "A"],
+            "citationIds": ["ta1-cit-king-2015"]
+          },
+          {
+            "name": "IL-2",
+            "effect": "Increased",
+            "context": "Th1 response enhancement in chronic viral infection contexts",
+            "symbols": ["H"],
+            "citationIds": ["ta1-cit-king-2015"]
+          },
+          {
+            "name": "IL-10",
+            "effect": "Context-dependent (reduced in chronic viral infection, increased in some inflammation models)",
+            "context": "Complex effects on regulatory cytokines",
+            "symbols": ["?", "H", "A"],
+            "citationIds": ["ta1-cit-king-2015"]
+          },
+          {
+            "name": "TNF-α",
+            "effect": "Modestly increased acutely; reduced in sepsis contexts",
+            "context": "Context-dependent — pro-inflammatory in infection clearance, anti-inflammatory in hyperinflammation",
+            "symbols": ["?", "A", "H"],
+            "citationIds": ["ta1-cit-romani-2004"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "TLR9 / type I interferon axis",
+            "steps": [
+              "Thymosin α1 is internalized into endosomes of plasmacytoid dendritic cells",
+              "Binds and activates endosomal TLR9 (pharmacophore similar to unmethylated CpG motifs functionally)",
+              "TLR9 recruits MyD88 adapter",
+              "IRAK4/IRAK1 activation",
+              "Bifurcation: IRF7 → type I IFN (IFN-α/β) production; NF-κB → inflammatory cytokine production",
+              "pDCs mature and prime Th1 responses in draining lymph nodes"
+            ],
+            "symbols": ["C", "A", "H"],
+            "claimRef": "ta1-claim-tlr9"
+          },
+          {
+            "category": "Th1 polarization and cytotoxic effector function",
+            "steps": [
+              "pDC-derived IFN-α + IL-12 polarize naive CD4+ T cells toward Th1",
+              "Enhanced IFN-γ and IL-2 production",
+              "Increased NK cell cytotoxicity and CD8+ T cell priming",
+              "In chronic HBV/HCV this translates to better viral control; in sepsis this may restore exhausted T cell function"
+            ],
+            "symbols": ["H", "A"],
+            "claimRef": "ta1-claim-th1"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Thymosin α1 has one of the more mature human evidence bases among thymic peptides. Multiple randomized trials and meta-analyses support efficacy as adjuvant therapy in chronic hepatitis B and hepatitis C, particularly in interferon non-responders, and in immune reconstitution during and after cancer chemotherapy. It is approved in 35+ countries (including China, Italy, Brazil, and much of Asia) for these indications. It is NOT FDA-approved; US-based study included a Phase 3 HCV trial that did not meet its primary endpoint in the early 2000s. During the COVID-19 pandemic, multiple Chinese retrospective cohort analyses reported lower mortality in severe cases receiving Tα1 adjuvant therapy, but these were not high-quality randomized trials. Human data in sepsis are suggestive but not definitive (ETASS and related trials).",
+        "animalEvidence": "Consistent across rodent infection, tumor, and immunosuppression models. Tα1 restores dendritic cell and T cell function after chemotherapy, enhances vaccine responses, improves survival in Aspergillus and Candida infection models, and augments tumor immune surveillance in several syngeneic cancer models.",
+        "mechanismDetail": "Thymosin α1 is the N-terminal 28-residue fragment of prothymosin alpha (PTMA), produced by thymic epithelial cells. Its best-characterized mechanism is agonism of TLR9 on plasmacytoid dendritic cells, driving MyD88/IRAK → IRF7 → type I IFN production and MyD88/IRAK → NF-κB → inflammatory cytokine production. Downstream effects include Th1 polarization, enhanced NK cytotoxicity, and increased CD8+ T cell priming. In the context of hyperinflammation (sepsis, severe COVID), Tα1 appears to normalize rather than amplify cytokine responses — it is proposed to restore exhausted T cell function, a mechanism that is biologically plausible but not conclusively proven in humans. Weaker evidence supports secondary TLR2 and TLR4 interactions.",
+        "safetyDetail": "Decades of clinical use in approved countries have established a favorable safety profile at labeled doses. Injection-site reactions are the dominant adverse event. No major organ toxicity signal has emerged in approved-indication populations. Safety in autoimmune disease is less well characterized — theoretically, Th1 polarization could exacerbate Th1-driven autoimmunity, and caution is generally advised in systemic autoimmune conditions though published contraindications are soft.",
+        "safetyRisks": [
+          {
+            "system": "Immune",
+            "label": "Theoretical autoimmune exacerbation",
+            "color": "yellow",
+            "helpSummary": "Th1 polarization effect.",
+            "harmSummary": "Not well characterized — concern in Th1-driven autoimmune disease (e.g., MS, type 1 diabetes, some autoimmune hepatitis phenotypes).",
+            "citationIds": ["ta1-cit-king-2015"]
+          },
+          {
+            "system": "Regulatory",
+            "label": "Not FDA-approved",
+            "color": "yellow",
+            "helpSummary": "Non-US approval only.",
+            "harmSummary": "US patients accessing Tα1 do so via compounding or gray-market pathways with variable quality control; approved-country Zadaxin is pharmaceutical grade.",
+            "citationIds": ["ta1-cit-zadaxin-label"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Enhancement claims in healthy adults (general 'immune boosting', anti-aging) are not supported by controlled trials — the approved uses are in specific disease populations with measurable immune defects (viral hepatitis, chemotherapy immunosuppression). Extrapolation to healthy-adult prophylaxis is not evidence-based.",
+          "caveat": "Strongest human evidence is in chronic viral hepatitis and chemotherapy-related immunosuppression. COVID-era cohort data are not equivalent to randomized trials.",
+          "citationIds": ["ta1-cit-king-2015"]
+        },
+        "missingEvidence": [
+          "FDA-approval-grade pivotal US trial for any indication",
+          "High-quality randomized trials in COVID-19 (Chinese cohort data are mostly retrospective)",
+          "Definitive sepsis mortality trial",
+          "Placebo-controlled data in healthy-adult prophylaxis or enhancement"
+        ],
+        "anecdotalUse": [
+          "Gray-market use for general 'immune boosting'",
+          "Post-illness recovery protocols",
+          "Adjunct to immunotherapy or chemotherapy outside labeled countries"
+        ]
+      },
+      "claims": [
+        {
+          "id": "ta1-claim-tlr9",
+          "field": "biology.cascades",
+          "value": "Thymosin α1 activates TLR9 on plasmacytoid dendritic cells, driving MyD88/IRF7-mediated type I interferon production and MyD88/NF-κB-mediated inflammatory cytokine production.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "human pDC cultures, murine dendritic cells, TLR9-knockout mice",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.85,
+          "citationIds": ["ta1-cit-romani-2004", "ta1-cit-king-2015"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "ta1-claim-th1",
+          "field": "biology.cascades",
+          "value": "Tα1 promotes Th1 polarization, enhanced IFN-γ production, and increased NK cytotoxicity in vitro and in patients with chronic viral infection.",
+          "species": "mixed",
+          "context": "clinical_trial",
+          "population": "chronic HBV/HCV patients; murine models",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "months",
+          "symbols": ["H", "A"],
+          "confidence": 0.8,
+          "citationIds": ["ta1-cit-king-2015"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "ta1-claim-hbv",
+          "field": "expanded.humanEvidence",
+          "value": "Randomized trials and meta-analyses support thymosin α1 adjuvant therapy in chronic hepatitis B, particularly in interferon non-responders.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "chronic HBV patients",
+          "route": "SC 1.6 mg twice weekly",
+          "sampleSize": null,
+          "duration": "6-12 months",
+          "symbols": ["H", "Rx"],
+          "confidence": 0.8,
+          "citationIds": ["ta1-cit-zadaxin-label"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "ta1-claim-covid",
+          "field": "expanded.humanEvidence",
+          "value": "Chinese cohort studies during COVID-19 reported lower mortality in severe cases receiving Tα1 adjuvant therapy, but evidence is primarily retrospective and not from high-quality RCTs.",
+          "species": "human",
+          "context": "observational",
+          "population": "severe COVID-19 inpatients in China",
+          "route": "SC 1.6 mg daily or twice daily",
+          "sampleSize": null,
+          "duration": "5–10 days",
+          "symbols": ["H", "?"],
+          "confidence": 0.5,
+          "citationIds": ["ta1-cit-liu-2020"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "ta1-claim-regulatory",
+          "field": "classification.regulatoryStatus",
+          "value": "Thymosin α1 (Zadaxin / thymalfasin) is approved in 35+ countries for chronic viral hepatitis and cancer immune reconstitution but is not FDA-approved.",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.9,
+          "citationIds": ["ta1-cit-zadaxin-label"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "ta1-cit-romani-2004",
+          "sourceType": "primary",
+          "title": "Thymosin alpha 1 activates dendritic cells for antifungal Th1 resistance through Toll-like receptor signaling",
+          "authors": ["Romani L", "Bistoni F", "Gaziano R", "Bozza S", "Montagnoli C", "Perruccio K", "Pitzurra L", "Bellocchio S", "Velardi A", "Rasi G", "Di Francesco P", "Garaci E"],
+          "year": 2004,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15304391/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["ta1-claim-tlr9"],
+          "notes": "Blood 103(11):4232-9. Foundational paper linking Tα1 to TLR signaling in dendritic cells; established the TLR9 dendritic cell priming mechanism."
+        },
+        {
+          "id": "ta1-cit-king-2015",
+          "sourceType": "review",
+          "title": "Insights into the mechanism of action of thymosin alpha 1",
+          "authors": ["King R", "Tuthill C"],
+          "year": 2015,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25846820/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["ta1-claim-tlr9", "ta1-claim-th1"],
+          "notes": "Annals NY Acad Sci. Comprehensive mechanism review by SciClone (Zadaxin sponsor) — treat as interested-party summary but useful for mechanism overview."
+        },
+        {
+          "id": "ta1-cit-zadaxin-label",
+          "sourceType": "regulatory",
+          "title": "Zadaxin (thymalfasin) — non-US prescribing information and approvals",
+          "authors": [],
+          "year": 2024,
+          "url": "https://www.sciclone.com/product/zadaxin",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["ta1-claim-hbv", "ta1-claim-regulatory"],
+          "notes": "SciClone Pharmaceuticals product page. Zadaxin is approved in China, Italy, Brazil, India, and 30+ other countries for chronic hepatitis B and C and cancer immune reconstitution. Confirm specific country approvals before publication."
+        },
+        {
+          "id": "ta1-cit-liu-2020",
+          "sourceType": "primary",
+          "title": "Thymosin alpha 1 reduces the mortality of severe coronavirus disease 2019 by restoration of lymphocytopenia and reversion of exhausted T cells",
+          "authors": ["Liu Y", "Pan Y", "Hu Z", "Wu M", "Wang C", "Feng Z", "Mao C", "Tan Y", "Liu Y", "Chen L", "Li M", "Wang G", "Yuan Z", "Diao B", "Wu Y", "Chen Y"],
+          "year": 2020,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32442242/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["ta1-claim-covid"],
+          "notes": "Clin Infect Dis 71(16):2150-2157. Retrospective cohort from China; suggestive but not RCT-grade evidence. Often cited in COVID-era reviews."
+        }
+      ]
+    },
+    {
+      "id": "thymulin",
+      "names": {
+        "primary": "Thymulin",
+        "aliases": ["FTS (Facteur Thymique Sérique)", "Zn-FTS", "Zinc-thymulin", "Serum thymic factor"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C33H54N10O15 (nonapeptide; zinc coordinated separately)",
+        "molecularWeight": 857.87,
+        "cas": "63958-90-7",
+        "sequenceOneLetter": "pE-AKSQGGSN",
+        "sequenceThreeLetter": "pGlu-Ala-Lys-Ser-Gln-Gly-Gly-Ser-Asn",
+        "length": 9,
+        "modifications": [
+          "N-terminal pyroglutamate (pGlu) — required for biological activity",
+          "Zinc(II) coordination is required for biological activity — apo-peptide is inactive",
+          "Zinc binds via the peptide backbone with contributions from the pGlu and Asn side chains"
+        ],
+        "structureClass": "Thymic nonapeptide; zinc-dependent for activity"
+      },
+      "classification": {
+        "peptideClass": "Thymic peptide / immunomodulator",
+        "mechanismFamily": "T cell differentiation factor (zinc-dependent)",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "A nonapeptide secreted by thymic epithelial cells that requires zinc for biological activity. Promotes T cell differentiation and maturation. Circulating activity declines with age in parallel with thymic involution and is detectable by a rosette-formation bioassay rather than by sequence alone.",
+        "localization": "Thymic epithelial cells (source); acts on immature thymocytes and peripheral T cells",
+        "clinicalUses": [],
+        "sideEffects": [
+          "Human safety at therapeutic doses is poorly characterized — very limited human exposure outside small early studies"
+        ],
+        "dosing": {
+          "quick": "No approved dose. Small early human studies have used microgram-range subcutaneous dosing. Research use only.",
+          "adminRoute": "Subcutaneous in limited human studies; intraperitoneal in rodent studies",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [
+          "Zinc — obligate cofactor for biological activity",
+          "CD4+ T cells — downstream maturation target",
+          "CD8+ T cells — downstream maturation target"
+        ],
+        "receptors": [
+          "No canonical receptor has been definitively identified; a thymulin-binding site on thymocytes has been described but not cloned"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "IL-2",
+            "effect": "Modulated — increased T cell IL-2 responsiveness reported in vitro",
+            "context": "Cell culture, rodent models",
+            "symbols": ["C", "A"],
+            "citationIds": ["thymulin-cit-dardenne-1998"]
+          },
+          {
+            "name": "IFN-γ",
+            "effect": "Increased in some rodent immunization models",
+            "context": "Rodent preclinical",
+            "symbols": ["A"],
+            "citationIds": ["thymulin-cit-dardenne-1998"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "T cell differentiation",
+            "steps": [
+              "Thymulin is secreted by thymic epithelial cells with obligate zinc binding",
+              "Binds putative receptor on immature thymocytes",
+              "Promotes maturation toward CD4+ and CD8+ T cell phenotypes",
+              "Enhances peripheral T cell function including IL-2 responsiveness",
+              "Biological activity declines with age as thymic epithelial cell mass decreases"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "thymulin-claim-t-cell"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Human evidence for thymulin is limited. Small early studies in children with primary immunodeficiency, atopic dermatitis, and age-related immune decline reported modest immunologic changes, but these are small, non-randomized, and decades old. There are no contemporary large RCTs. Circulating thymulin activity declines with age and correlates with thymic involution in observational studies.",
+        "animalEvidence": "Rodent evidence supports roles in thymocyte maturation and T cell function, with age-related decline reproducible across species. Zinc-restriction studies show loss of thymulin activity that can be restored by zinc repletion — one of the clearest examples of the zinc-immunity link.",
+        "mechanismDetail": "Thymulin is a nonapeptide produced by thymic epithelial cells. Its activity is obligately zinc-dependent: the apo-peptide is biologically inactive and must coordinate Zn(II) to adopt its active conformation. This makes thymulin a functional readout of both thymic epithelial cell mass and systemic zinc status. A high-affinity thymulin binding site on thymocytes has been described but no receptor has been cloned, leaving the downstream signaling mechanism poorly defined. Age-related decline in circulating thymulin activity parallels thymic involution.",
+        "safetyDetail": "Human safety data are too sparse to characterize meaningfully. Rodent studies have not reported major toxicity. Gray-market injectable thymulin has no pharmaceutical-grade source.",
+        "safetyRisks": [
+          {
+            "system": "Systemic / unknown",
+            "label": "No modern human safety characterization",
+            "color": "red",
+            "helpSummary": "Human exposure data are decades old and small.",
+            "harmSummary": "Modern safety profile, immunogenicity, and long-term effects in humans are effectively unknown.",
+            "citationIds": ["thymulin-cit-dardenne-1998"]
+          },
+          {
+            "system": "Product quality",
+            "label": "No pharmaceutical-grade source",
+            "color": "red",
+            "helpSummary": "Research or gray-market only.",
+            "harmSummary": "No verified-identity or sterility-assured supply exists.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Enhancement claims (immune restoration in aging, anti-aging) are biologically plausible given the age-related decline of endogenous thymulin, but there is no modern controlled human evidence that exogenous administration reproduces those effects.",
+          "caveat": "Mechanistic plausibility from thymic biology is not a substitute for human efficacy data.",
+          "citationIds": ["thymulin-cit-dardenne-1998"]
+        },
+        "missingEvidence": [
+          "Modern randomized controlled human trials",
+          "Identified receptor and downstream signaling",
+          "Pharmacokinetics and zinc-repletion interaction data in humans",
+          "Long-term safety"
+        ],
+        "anecdotalUse": [
+          "Occasional gray-market use for 'thymic restoration' or age-related immune decline — not supported by modern human trials"
+        ]
+      },
+      "claims": [
+        {
+          "id": "thymulin-claim-t-cell",
+          "field": "biology.cascades",
+          "value": "Thymulin promotes T cell maturation in a strictly zinc-dependent manner; its biological activity requires Zn(II) coordination.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "rodent thymocyte cultures, zinc-restricted rodent models",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.8,
+          "citationIds": ["thymulin-cit-dardenne-1998"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "thymulin-claim-age-decline",
+          "field": "expanded.humanEvidence",
+          "value": "Circulating thymulin activity declines with age and correlates with thymic involution in humans.",
+          "species": "human",
+          "context": "observational",
+          "population": "healthy adults across age ranges",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H"],
+          "confidence": 0.7,
+          "citationIds": ["thymulin-cit-dardenne-1998"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "thymulin-cit-dardenne-1998",
+          "sourceType": "review",
+          "title": "Thymulin, a zinc-dependent hormone",
+          "authors": ["Dardenne M"],
+          "year": 1999,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10512480/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["thymulin-claim-t-cell", "thymulin-claim-age-decline"],
+          "notes": "Med Oncol 16(3):175-176 (commentary) — representative overview by a key contributor to thymulin biology. Earlier Dardenne, Bach, and Pleau primary papers from the 1970s-80s establish the zinc requirement. Specific primary citations should be confirmed before publication."
+        }
+      ]
+    },
+    {
+      "id": "vip",
+      "names": {
+        "primary": "VIP (Vasoactive Intestinal Peptide)",
+        "aliases": ["Aviptadil (synthetic human VIP)", "RLF-100", "ZYESAMI"],
+        "tradeNames": ["Invicorp (aviptadil + phentolamine; non-US approval for ED)"]
+      },
+      "identity": {
+        "formula": "C147H237N43O43S",
+        "molecularWeight": 3326.8,
+        "cas": "37221-79-7",
+        "sequenceOneLetter": "HSDAVFTDNYTRLRKQMAVKKYLNSILN-NH2",
+        "sequenceThreeLetter": "His-Ser-Asp-Ala-Val-Phe-Thr-Asp-Asn-Tyr-Thr-Arg-Leu-Arg-Lys-Gln-Met-Ala-Val-Lys-Lys-Tyr-Leu-Asn-Ser-Ile-Leu-Asn-NH2",
+        "length": 28,
+        "modifications": [
+          "C-terminal primary amide (required for full activity)",
+          "Member of the secretin/glucagon/VIP peptide family"
+        ],
+        "structureClass": "Endogenous 28-residue peptide of the secretin family; amphipathic alpha-helical"
+      },
+      "classification": {
+        "peptideClass": "Endogenous neuropeptide / immunomodulator",
+        "mechanismFamily": "VPAC1 / VPAC2 receptor agonist (Gs-coupled, cAMP)",
+        "regulatoryStatus": "investigational"
+      },
+      "tile": {
+        "mechanismSummary": "A 28-residue endogenous neuropeptide of the secretin family that activates VPAC1 and VPAC2 receptors via Gs-coupled cAMP signaling. Produces vasodilation, bronchodilation, anti-inflammatory effects, and shifts immune responses toward Th2/Treg phenotypes. Aviptadil (synthetic VIP) has been studied for ARDS including COVID-19 with mixed results; FDA declined emergency use authorization.",
+        "localization": "Central and enteric nervous systems, lung, gut, immune cells; VPAC1 broad, VPAC2 enriched in lung alveolar type II cells",
+        "clinicalUses": [
+          "Intracavernosal aviptadil + phentolamine (Invicorp) — approved in some European countries for erectile dysfunction",
+          "Inhaled/intravenous aviptadil — investigational for ARDS and COVID-19-associated respiratory failure",
+          "Diagnostic use in VIPoma workup (measurement of endogenous VIP, not exogenous dosing)",
+          "Pulmonary arterial hypertension — investigational"
+        ],
+        "sideEffects": [
+          "Hypotension (vasodilation — dose-limiting for systemic infusion)",
+          "Flushing",
+          "Diarrhea (VIPoma-like effects at high systemic doses)",
+          "Tachycardia",
+          "Injection-site effects (intracavernosal)"
+        ],
+        "dosing": {
+          "quick": "No broadly approved therapeutic dose. Aviptadil IV infusion has been studied for ARDS at 50-150 pmol/kg/min. Intracavernosal aviptadil/phentolamine (Invicorp) uses 25 µg aviptadil + 2 mg phentolamine per injection in regions of ED approval. Inhaled aviptadil trials used 100 µg three times daily.",
+          "adminRoute": "Intravenous, inhaled, intracavernosal",
+          "publicDisplayAllowed": true,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["VIP (source gene)", "VIPR1 (VPAC1)", "VIPR2 (VPAC2)"],
+        "proteins": [
+          "VPAC1 — broadly expressed GPCR",
+          "VPAC2 — enriched in lung alveolar type II cells and smooth muscle",
+          "PAC1 — shares ligand PACAP but VIP has lower affinity",
+          "Adenylyl cyclase — downstream Gs",
+          "PKA — downstream cAMP",
+          "CREB — transcriptional downstream"
+        ],
+        "receptors": [
+          "VPAC1 (VIPR1) — Gs-coupled",
+          "VPAC2 (VIPR2) — Gs-coupled, enriched in lung",
+          "PAC1 (ADCYAP1R1) — low affinity for VIP; preferential for PACAP"
+        ],
+        "channelsTransporters": [
+          "CFTR — VIP-induced cAMP modulates chloride transport in airway and gut epithelia"
+        ],
+        "cytokinesInterleukins": [
+          {
+            "name": "TNF-α",
+            "effect": "Reduced",
+            "context": "Macrophage and dendritic cell studies; downstream of cAMP-mediated NF-κB inhibition",
+            "symbols": ["C", "A", "H"],
+            "citationIds": ["vip-cit-delgado-2004"]
+          },
+          {
+            "name": "IL-6",
+            "effect": "Reduced",
+            "context": "Macrophage studies and inflammatory lung models",
+            "symbols": ["C", "A"],
+            "citationIds": ["vip-cit-delgado-2004"]
+          },
+          {
+            "name": "IL-12",
+            "effect": "Reduced",
+            "context": "Dendritic cells; contributes to Th1 suppression",
+            "symbols": ["C", "A"],
+            "citationIds": ["vip-cit-delgado-2004"]
+          },
+          {
+            "name": "IL-10",
+            "effect": "Increased",
+            "context": "Regulatory cytokine shift",
+            "symbols": ["C", "A"],
+            "citationIds": ["vip-cit-delgado-2004"]
+          },
+          {
+            "name": "IFN-γ",
+            "effect": "Reduced",
+            "context": "Th1 suppression",
+            "symbols": ["C", "A"],
+            "citationIds": ["vip-cit-delgado-2004"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "VPAC receptor signaling",
+            "steps": [
+              "VIP binds VPAC1 or VPAC2 (Gs-coupled GPCRs)",
+              "Adenylyl cyclase activation",
+              "cAMP elevation",
+              "PKA activation",
+              "CREB phosphorylation and NF-κB inhibition",
+              "Net effects: vasodilation, bronchodilation, reduced pro-inflammatory cytokine output"
+            ],
+            "symbols": ["C", "A", "H"],
+            "claimRef": "vip-claim-vpac"
+          },
+          {
+            "category": "Immune polarization (anti-inflammatory / Treg shift)",
+            "steps": [
+              "VIP acts on dendritic cells and macrophages via VPAC1/2",
+              "Reduces TNF-α, IL-6, IL-12 production",
+              "Increases IL-10 and TGF-β",
+              "Favors Treg induction and Th1/Th17 suppression",
+              "Net effect in preclinical models is protection from autoimmune and hyperinflammatory pathology"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "vip-claim-treg"
+          },
+          {
+            "category": "Lung alveolar protection (basis for ARDS rationale)",
+            "steps": [
+              "VPAC2 is enriched on alveolar type II cells (AT2)",
+              "VIP preserves surfactant production and AT2 survival",
+              "In ARDS models, VIP/aviptadil reduces inflammatory injury and preserves gas exchange",
+              "Translation to human ARDS outcome benefit has been mixed"
+            ],
+            "symbols": ["A", "H", "?"],
+            "claimRef": "vip-claim-lung"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Aviptadil (synthetic human VIP) has a mixed human trial record. In pulmonary arterial hypertension, inhaled aviptadil trials have been inconclusive. In COVID-19-associated ARDS, Relief Therapeutics/NeuroRx ran trials (ACTIV-3b / TESICO arm and company-sponsored trials) that did not produce convincing survival benefit; the FDA declined emergency use authorization for aviptadil in COVID-19. Intracavernosal aviptadil + phentolamine (Invicorp) is approved in the UK, Denmark, and other European countries for erectile dysfunction. Diagnostic use of VIP measurement (for VIPoma workup) is well established and does not involve exogenous administration.",
+        "animalEvidence": "Extensive preclinical literature supports anti-inflammatory, bronchodilator, and pulmonary-protective effects. Autoimmune disease models (collagen-induced arthritis, EAE, inflammatory bowel disease) consistently show benefit from exogenous VIP via VPAC1/2-mediated immune polarization.",
+        "mechanismDetail": "VIP is a 28-residue member of the secretin/glucagon/VIP peptide family, produced widely in the CNS, enteric nervous system, and immune cells. It binds VPAC1 and VPAC2 receptors — both Gs-coupled GPCRs activating adenylyl cyclase. Downstream cAMP/PKA signaling produces smooth muscle relaxation (vasodilation, bronchodilation), epithelial chloride transport modulation via CFTR, and anti-inflammatory cytokine reprogramming. In immune cells the cAMP rise inhibits NF-κB and shifts cytokine production away from TNF-α/IL-6/IL-12 toward IL-10 and TGF-β, favoring Treg induction. VPAC2 is particularly enriched on alveolar type II cells, which is the mechanistic basis for aviptadil trials in ARDS.",
+        "safetyDetail": "Hypotension is the dominant dose-limiting adverse event with systemic infusion. Flushing and diarrhea (reflecting VIPoma-like physiology at supraphysiologic doses) also occur. Inhaled and intracavernosal routes have better local safety. Long-term safety in chronic dosing is not characterized.",
+        "safetyRisks": [
+          {
+            "system": "Cardiovascular",
+            "label": "Hypotension (systemic infusion)",
+            "color": "red",
+            "helpSummary": "Dose-limiting for IV use.",
+            "harmSummary": "Potent vasodilation limits tolerable systemic dose; requires hemodynamic monitoring in ARDS trials.",
+            "citationIds": ["vip-cit-delgado-2004"]
+          },
+          {
+            "system": "Gastrointestinal",
+            "label": "Diarrhea at high systemic dose",
+            "color": "yellow",
+            "helpSummary": "Reflects VIPoma-like physiology.",
+            "harmSummary": "High systemic VIP mimics the secretory diarrhea of VIPoma; typically tolerable at therapeutic doses.",
+            "citationIds": []
+          },
+          {
+            "system": "Regulatory",
+            "label": "FDA declined COVID EUA; not approved in US",
+            "color": "yellow",
+            "helpSummary": "Narrow non-US approvals only.",
+            "harmSummary": "FDA declined aviptadil EUA for COVID-19. Invicorp is approved in some European countries for ED only.",
+            "citationIds": ["vip-cit-fda-eua"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "No enhancement use case for healthy adults is supported by human evidence. VIP's approved indications are disease-specific (ED in some European countries) and investigational (ARDS, PAH).",
+          "caveat": "Autoimmune and anti-inflammatory rodent findings do not translate to 'immune modulation' enhancement in healthy humans.",
+          "citationIds": ["vip-cit-delgado-2004"]
+        },
+        "missingEvidence": [
+          "Definitive ARDS outcome trial",
+          "Chronic systemic dosing safety in humans",
+          "Oral or long-acting VIP analogs with viable PK for outpatient use",
+          "Head-to-head comparison against existing anti-inflammatory agents in any indication"
+        ],
+        "anecdotalUse": [
+          "Gray-market nasal VIP protocols for claimed mold illness / CIRS (chronic inflammatory response syndrome) treatment — not supported by controlled human trials"
+        ]
+      },
+      "claims": [
+        {
+          "id": "vip-claim-vpac",
+          "field": "biology.cascades",
+          "value": "VIP activates VPAC1 and VPAC2 receptors via Gs/cAMP/PKA signaling, producing vasodilation, bronchodilation, and anti-inflammatory effects.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "receptor pharmacology, cell studies, rodent and human tissue studies",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A", "H"],
+          "confidence": 0.95,
+          "citationIds": ["vip-cit-delgado-2004"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "vip-claim-treg",
+          "field": "biology.cascades",
+          "value": "VIP shifts immune cytokine production away from Th1/pro-inflammatory cytokines toward IL-10, TGF-β, and Treg induction.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "macrophage and DC cultures; autoimmune rodent models",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.85,
+          "citationIds": ["vip-cit-delgado-2004"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "vip-claim-lung",
+          "field": "biology.cascades",
+          "value": "VIP/aviptadil protects alveolar type II cells via VPAC2; human ARDS trials have not produced convincing survival benefit.",
+          "species": "mixed",
+          "context": "clinical_trial",
+          "population": "rodent ARDS models; human COVID-19 ARDS patients",
+          "route": "IV, inhaled",
+          "sampleSize": null,
+          "duration": "acute",
+          "symbols": ["A", "H", "N"],
+          "confidence": 0.6,
+          "citationIds": ["vip-cit-fda-eua"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "vip-claim-regulatory",
+          "field": "classification.regulatoryStatus",
+          "value": "Aviptadil is not FDA-approved; FDA declined EUA for COVID-19. Intracavernosal aviptadil/phentolamine (Invicorp) is approved for erectile dysfunction in some European countries.",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.85,
+          "citationIds": ["vip-cit-fda-eua"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "vip-cit-delgado-2004",
+          "sourceType": "review",
+          "title": "The significance of vasoactive intestinal peptide in immunomodulation",
+          "authors": ["Delgado M", "Pozo D", "Ganea D"],
+          "year": 2004,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15169926/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["vip-claim-vpac", "vip-claim-treg"],
+          "notes": "Pharmacol Rev 56(2):249-290. Authoritative review of VIP immunomodulation; the Delgado/Ganea group has been central to the VIP-immune field."
+        },
+        {
+          "id": "vip-cit-fda-eua",
+          "sourceType": "regulatory",
+          "title": "FDA EUA decision and trial history for aviptadil (RLF-100 / ZYESAMI) in COVID-19",
+          "authors": [],
+          "year": 2022,
+          "url": "https://clinicaltrials.gov/search?term=aviptadil",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["vip-claim-lung", "vip-claim-regulatory"],
+          "notes": "Relief Therapeutics / NeuroRx aviptadil COVID-19 program. FDA declined EUA; multiple trials (NCT04311697, TESICO/ACTIV-3b) had mixed or negative outcomes. Confirm specific regulatory actions and trial publications before publication."
+        }
+      ]
+    },
+    {
+      "id": "ll-37",
+      "names": {
+        "primary": "LL-37",
+        "aliases": ["Cathelicidin antimicrobial peptide", "hCAP-18 (1-37 C-terminal fragment)", "CAMP-derived peptide", "LL37"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C205H340N60O53",
+        "molecularWeight": 4493.33,
+        "cas": "154947-66-7",
+        "sequenceOneLetter": "LLGDFFRKSKEKIGKEFKRIVQRIKDFLRNLVPRTES",
+        "sequenceThreeLetter": "Leu-Leu-Gly-Asp-Phe-Phe-Arg-Lys-Ser-Lys-Glu-Lys-Ile-Gly-Lys-Glu-Phe-Lys-Arg-Ile-Val-Gln-Arg-Ile-Lys-Asp-Phe-Leu-Arg-Asn-Leu-Val-Pro-Arg-Thr-Glu-Ser",
+        "length": 37,
+        "modifications": [
+          "Cleaved from the C-terminus of hCAP-18 (CAMP gene product) by proteinase 3 during neutrophil degranulation",
+          "Forms amphipathic alpha-helix in membrane or SDS environments"
+        ],
+        "structureClass": "Cathelicidin-family cationic antimicrobial peptide; amphipathic alpha-helical"
+      },
+      "classification": {
+        "peptideClass": "Cationic antimicrobial peptide / immunomodulator",
+        "mechanismFamily": "Direct membrane disruption (microbicidal) + FPR2/ALX agonism (immunomodulation)",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "The only human cathelicidin — a 37-residue cationic amphipathic peptide released from hCAP-18 by neutrophil-derived proteinase 3. Kills bacteria directly by membrane disruption and modulates immune signaling primarily via the formyl peptide receptor FPR2/ALX, with downstream effects on chemotaxis, wound healing, and TLR signaling (both augmenting and dampening depending on context).",
+        "localization": "Skin, mucosal surfaces, neutrophil secondary granules; induced broadly by vitamin D signaling",
+        "clinicalUses": [],
+        "sideEffects": [
+          "Human systemic dosing is not established — safety profile unknown at therapeutic doses",
+          "Dysregulated endogenous LL-37 is pathogenic in psoriasis and rosacea"
+        ],
+        "dosing": {
+          "quick": "No approved human dose. Topical research preparations have been studied in small wound-healing trials at microgram-per-cm² ranges. Systemic dosing in humans is not established.",
+          "adminRoute": "Topical in most human research; endogenous in neutrophil degranulation and epithelial response",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["CAMP (encodes hCAP-18; LL-37 is its cleaved active form)", "VDR (vitamin D receptor drives CAMP transcription)"],
+        "proteins": [
+          "FPR2/ALX (formyl peptide receptor 2 / lipoxin A4 receptor) — primary identified GPCR target",
+          "P2X7 — additional reported receptor for immune effects",
+          "EGFR — transactivation in keratinocytes",
+          "GAPDH — reported binding partner; may mediate cellular uptake",
+          "LPS / LTA — direct binding neutralizes bacterial endotoxins",
+          "TLR3, TLR4, TLR9 — modulated indirectly (context-dependent augmentation or suppression)"
+        ],
+        "receptors": [
+          "FPR2/ALX (FPR2)",
+          "P2X7 (P2RX7)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "IL-6",
+            "effect": "Increased in epithelial cells",
+            "context": "Keratinocytes and airway epithelium; pro-inflammatory in acute response, pathogenic when dysregulated (psoriasis)",
+            "symbols": ["C", "H"],
+            "citationIds": ["ll37-cit-vandamme-2012"]
+          },
+          {
+            "name": "IL-8 (CXCL8)",
+            "effect": "Increased",
+            "context": "Neutrophil chemoattractant; part of acute antimicrobial response",
+            "symbols": ["C"],
+            "citationIds": ["ll37-cit-vandamme-2012"]
+          },
+          {
+            "name": "IFN-α",
+            "effect": "Increased (via LL-37–DNA complexes activating pDC TLR9)",
+            "context": "Pathogenic mechanism in psoriasis — LL-37 binds self-DNA and activates plasmacytoid dendritic cell TLR9",
+            "symbols": ["H", "C"],
+            "citationIds": ["ll37-cit-lande-2007"]
+          },
+          {
+            "name": "TNF-α",
+            "effect": "Context-dependent (reduced in LPS-driven inflammation via LPS neutralization; increased in sterile self-DNA-driven autoinflammation)",
+            "context": "Dual role is a defining feature of LL-37 biology",
+            "symbols": ["C", "A", "H"],
+            "citationIds": ["ll37-cit-vandamme-2012"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "Direct antimicrobial activity",
+            "steps": [
+              "LL-37 binds negatively charged bacterial membrane (LPS, LTA)",
+              "Inserts as amphipathic helix",
+              "Membrane disruption and pore formation",
+              "Bacterial lysis — broad-spectrum including gram-positive, gram-negative, some fungi"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "ll37-claim-amr"
+          },
+          {
+            "category": "Immunomodulation via FPR2/ALX",
+            "steps": [
+              "LL-37 binds FPR2/ALX on neutrophils, monocytes, epithelial cells",
+              "Chemotactic recruitment of immune cells",
+              "Wound healing and keratinocyte migration enhanced",
+              "Resolution of inflammation in some contexts via lipoxin-like signaling"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "ll37-claim-fpr2"
+          },
+          {
+            "category": "Pathogenic self-DNA activation (psoriasis)",
+            "steps": [
+              "LL-37 complexes with extracellular self-DNA",
+              "Complexes are internalized by plasmacytoid dendritic cells",
+              "Activates endosomal TLR9 normally restricted to microbial DNA",
+              "Drives IFN-α production and autoimmune skin inflammation",
+              "This is a pathogenic mechanism — not a therapeutic one"
+            ],
+            "symbols": ["H", "C"],
+            "claimRef": "ll37-claim-psoriasis"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Direct human evidence for exogenous LL-37 is limited to small topical wound-healing studies (e.g., venous leg ulcers) and mechanistic skin and airway studies. The strongest human-relevant data are actually on endogenous LL-37 pathophysiology: dysregulated LL-37 drives psoriasis and rosacea pathology via self-DNA-TLR9 complexes in plasmacytoid dendritic cells; deficient LL-37 correlates with bacterial skin infection susceptibility. Vitamin D-driven LL-37 induction is the mechanistic basis of part of vitamin D's antimicrobial effect. There are no large trials of exogenous LL-37 as a therapeutic.",
+        "animalEvidence": "Broad rodent literature supports antimicrobial, wound healing, and anti-endotoxic effects of exogenous LL-37 and related analogs. LL-37 neutralizes LPS and reduces sepsis mortality in some rodent models.",
+        "mechanismDetail": "LL-37 has a genuinely dual nature. Its direct antimicrobial activity arises from amphipathic helical insertion into bacterial membranes. Its immunomodulatory effects go through FPR2/ALX (a GPCR that also binds lipoxin A4 and annexin A1) with context-dependent outputs: acute pro-inflammatory recruitment and chemotaxis, but also resolution signaling in other settings. A crucial pathogenic mechanism is LL-37's ability to complex extracellular self-DNA and gain access to endosomal TLR9 in plasmacytoid dendritic cells — this converts self-DNA into a TLR9 ligand and drives IFN-α production, which is central to psoriasis and is the key reason exogenous LL-37 is not a straightforward therapeutic candidate. LL-37 is vitamin D-inducible via VDR binding to the CAMP promoter.",
+        "safetyDetail": "Systemic human safety of exogenous LL-37 is not established. The pathogenic role of dysregulated endogenous LL-37 in psoriasis and rosacea is a concrete reason for caution about broad systemic exposure. Topical research preparations have been generally tolerated in small studies.",
+        "safetyRisks": [
+          {
+            "system": "Dermatologic / autoimmune",
+            "label": "Psoriasis / rosacea pathogenic mechanism",
+            "color": "red",
+            "helpSummary": "Endogenous dysregulation is pathogenic.",
+            "harmSummary": "Exogenous LL-37 could theoretically worsen psoriasis, rosacea, or other interferon-driven dermatoses via self-DNA-TLR9 activation in plasmacytoid dendritic cells.",
+            "citationIds": ["ll37-cit-lande-2007"]
+          },
+          {
+            "system": "Systemic / unknown",
+            "label": "No systemic safety characterization",
+            "color": "red",
+            "helpSummary": "No validated human systemic dosing.",
+            "harmSummary": "Long-term systemic effects unknown; broad cytokine modulation argues for caution.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "There is no enhancement use case supported by human trials. The pathogenic role of endogenous LL-37 in psoriasis and rosacea is an active argument against casual systemic supplementation.",
+          "caveat": "Endogenous LL-37 is a double-edged mediator — 'more LL-37' is not inherently beneficial and may be harmful in individuals with relevant susceptibility.",
+          "citationIds": ["ll37-cit-lande-2007"]
+        },
+        "missingEvidence": [
+          "Any randomized trial of exogenous LL-37 for systemic antimicrobial or immunomodulatory use",
+          "Head-to-head comparison against conventional topical antimicrobial therapy",
+          "LL-37 analogs engineered to preserve antimicrobial activity while avoiding self-DNA-TLR9 pathway",
+          "Human PK and immunogenicity"
+        ],
+        "anecdotalUse": [
+          "Gray-market topical or nebulized use for sinus / skin infections — not supported by controlled human trials"
+        ]
+      },
+      "claims": [
+        {
+          "id": "ll37-claim-amr",
+          "field": "biology.cascades",
+          "value": "LL-37 directly kills a broad spectrum of bacteria via amphipathic helical insertion and membrane disruption.",
+          "species": "mixed",
+          "context": "cell",
+          "population": "in vitro antimicrobial assays, rodent infection models",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.95,
+          "citationIds": ["ll37-cit-vandamme-2012"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "ll37-claim-fpr2",
+          "field": "biology.cascades",
+          "value": "LL-37 binds FPR2/ALX and produces chemotactic and immunomodulatory effects on neutrophils, monocytes, and epithelial cells.",
+          "species": "mixed",
+          "context": "cell",
+          "population": "primary human immune cells, rodent studies",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.85,
+          "citationIds": ["ll37-cit-vandamme-2012"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "ll37-claim-psoriasis",
+          "field": "biology.cascades",
+          "value": "LL-37 complexes with self-DNA and activates plasmacytoid dendritic cell TLR9, driving IFN-α production — a pathogenic mechanism in psoriasis.",
+          "species": "human",
+          "context": "cell",
+          "population": "psoriatic skin biopsies and pDCs; human skin models",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "C"],
+          "confidence": 0.9,
+          "citationIds": ["ll37-cit-lande-2007"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "ll37-cit-vandamme-2012",
+          "sourceType": "review",
+          "title": "A comprehensive summary of LL-37, the factotum human cathelicidin peptide",
+          "authors": ["Vandamme D", "Landuyt B", "Luyten W", "Schoofs L"],
+          "year": 2012,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22749889/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["ll37-claim-amr", "ll37-claim-fpr2"],
+          "notes": "Cell Immunol 280(1):22-35. Comprehensive LL-37 review covering structure, antimicrobial mechanism, and immunomodulation."
+        },
+        {
+          "id": "ll37-cit-lande-2007",
+          "sourceType": "primary",
+          "title": "Plasmacytoid dendritic cells sense self-DNA coupled with antimicrobial peptide",
+          "authors": ["Lande R", "Gregorio J", "Facchinetti V", "Chatterjee B", "Wang YH", "Homey B", "Cao W", "Wang YH", "Su B", "Nestle FO", "Zal T", "Mellman I", "Schröder JM", "Liu YJ", "Gilliet M"],
+          "year": 2007,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17873860/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["ll37-claim-psoriasis"],
+          "notes": "Nature 449(7162):564-9. Landmark paper showing LL-37/self-DNA complexes activate pDC TLR9 — the core pathogenic mechanism in psoriasis."
+        }
+      ]
+    },
+    {
+      "id": "kpv",
+      "names": {
+        "primary": "KPV",
+        "aliases": ["Lys-Pro-Val", "α-MSH(11-13)", "alpha-MSH tripeptide", "Melanocortin C-terminal tripeptide"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C16H30N4O4",
+        "molecularWeight": 342.44,
+        "cas": "63463-56-1",
+        "sequenceOneLetter": "KPV",
+        "sequenceThreeLetter": "Lys-Pro-Val",
+        "length": 3,
+        "modifications": [
+          "C-terminal tripeptide of alpha-melanocyte-stimulating hormone (α-MSH residues 11-13)",
+          "Unmodified tripeptide in research use"
+        ],
+        "structureClass": "Alpha-MSH C-terminal tripeptide"
+      },
+      "classification": {
+        "peptideClass": "Melanocortin-derived anti-inflammatory tripeptide",
+        "mechanismFamily": "Intracellular NF-κB inhibition; weak MC1R engagement relative to parent α-MSH",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "The C-terminal tripeptide of α-MSH. Reproduces much of α-MSH's anti-inflammatory activity via intracellular NF-κB inhibition with minimal activity on the pigmentation-related melanocortin receptors — a feature that makes it mechanistically interesting but also means the 'receptor' story is not a simple GPCR model.",
+        "localization": "Acts on macrophages, keratinocytes, intestinal epithelial cells; effects largely intracellular after peptide uptake",
+        "clinicalUses": [],
+        "sideEffects": [
+          "Human systemic safety is not well characterized",
+          "Topical and oral studies in small populations have been generally tolerated"
+        ],
+        "dosing": {
+          "quick": "No approved dose. Small human dermatology studies have used topical preparations. Oral and subcutaneous gray-market protocols (100-500 µg) are not supported by controlled human efficacy data.",
+          "adminRoute": "Topical, oral, subcutaneous (gray-market)",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["POMC (source — α-MSH is cleaved from proopiomelanocortin)"],
+        "proteins": [
+          "NF-κB (p65) — inhibition is the primary reported mechanism, occurring intracellularly after peptide uptake",
+          "IκB kinase (IKK) — modulated upstream of NF-κB",
+          "MC1R — weak engagement (α-MSH is full agonist; KPV activity is mostly NF-κB rather than MC1R-mediated)"
+        ],
+        "receptors": [
+          "MC1R — weak/partial engagement",
+          "No well-defined cell-surface receptor for the tripeptide's dominant anti-inflammatory activity; intracellular uptake appears required"
+        ],
+        "channelsTransporters": [
+          "PepT1 (SLC15A1; intestinal peptide transporter) — proposed route of enterocyte uptake; may concentrate KPV in inflamed gut"
+        ],
+        "cytokinesInterleukins": [
+          {
+            "name": "TNF-α",
+            "effect": "Reduced",
+            "context": "Macrophage and epithelial models; rodent IBD and asthma models",
+            "symbols": ["C", "A"],
+            "citationIds": ["kpv-cit-dalmasso-2008", "kpv-cit-luger-2003"]
+          },
+          {
+            "name": "IL-6",
+            "effect": "Reduced",
+            "context": "Gut epithelial and macrophage models",
+            "symbols": ["C", "A"],
+            "citationIds": ["kpv-cit-dalmasso-2008"]
+          },
+          {
+            "name": "IL-8 (CXCL8)",
+            "effect": "Reduced",
+            "context": "Gut epithelial cells in IBD models",
+            "symbols": ["C", "A"],
+            "citationIds": ["kpv-cit-dalmasso-2008"]
+          },
+          {
+            "name": "IL-1β",
+            "effect": "Reduced",
+            "context": "Macrophage models",
+            "symbols": ["C", "A"],
+            "citationIds": ["kpv-cit-luger-2003"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "Anti-inflammatory NF-κB inhibition",
+            "steps": [
+              "KPV enters cells (intestinal epithelial uptake plausibly via PepT1)",
+              "Intracellular inhibition of IKK/NF-κB signaling",
+              "Reduced nuclear translocation of p65",
+              "Decreased transcription of TNF-α, IL-6, IL-8, IL-1β",
+              "Net anti-inflammatory effect in rodent colitis, asthma, and dermatitis models"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "kpv-claim-nfkb"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Human evidence for KPV is limited. Small dermatology studies of topical α-MSH-derived peptides (including KPV) have reported modest anti-inflammatory effects in atopic dermatitis and contact dermatitis. A formulation for oral ulcerative colitis was explored but has not produced a published pivotal trial. Most anti-inflammatory mechanism data come from cell and rodent studies. There are no modern adequately powered human RCTs supporting the gray-market claims of systemic 'gut healing' or anti-inflammatory effects.",
+        "animalEvidence": "Rodent models of DSS colitis, TNBS colitis, allergic airway inflammation, and contact dermatitis consistently show anti-inflammatory effects of KPV administration, with reduced tissue TNF-α, IL-6, IL-1β, and improved histopathology. Intestinal uptake via PepT1 has been proposed to concentrate KPV in inflamed gut epithelium.",
+        "mechanismDetail": "KPV is the C-terminal tripeptide of α-MSH. It reproduces many of α-MSH's anti-inflammatory effects without producing meaningful pigmentation or central melanocortin effects — the full α-MSH peptide engages MC1R (pigmentation), MC3R and MC4R (central/appetite), whereas KPV's activity appears dominated by intracellular NF-κB inhibition after cellular uptake. In intestinal epithelium, uptake may occur via the peptide transporter PepT1, which is upregulated in inflamed gut — a pharmacological elegance that may explain apparent preferential activity in inflamed tissue. The absence of a clear cell-surface receptor for the dominant anti-inflammatory activity is a notable gap in the mechanism story.",
+        "safetyDetail": "Topical human use has been generally tolerated in small studies. Systemic safety is not well characterized. No major toxicity signal has emerged in rodent chronic dosing, but long-term human exposure data are absent.",
+        "safetyRisks": [
+          {
+            "system": "Systemic / unknown",
+            "label": "No modern systemic human safety data",
+            "color": "yellow",
+            "helpSummary": "Research-grade human exposure only.",
+            "harmSummary": "Long-term safety, immunogenicity, and chronic dosing effects are not characterized in humans.",
+            "citationIds": ["kpv-cit-luger-2003"]
+          },
+          {
+            "system": "Product quality",
+            "label": "No pharmaceutical-grade source",
+            "color": "yellow",
+            "helpSummary": "Gray-market product only.",
+            "harmSummary": "Identity, purity, and sterility of commercial 'research peptide' KPV are not assured.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Popular gray-market claims for systemic 'gut healing' and anti-inflammatory enhancement in healthy adults are not supported by controlled human trials. The plausible preclinical mechanism (NF-κB inhibition in inflamed tissue via PepT1 uptake) is mechanistically attractive but does not substitute for efficacy data.",
+          "caveat": "Rodent colitis improvement is not equivalent to human IBD efficacy and is not a basis for treating undifferentiated 'gut symptoms' in otherwise healthy adults.",
+          "citationIds": ["kpv-cit-dalmasso-2008"]
+        },
+        "missingEvidence": [
+          "Adequately powered human RCTs for any inflammatory indication",
+          "Modern pharmacokinetics (oral bioavailability, PepT1 dependence) in humans",
+          "Head-to-head comparison against standard-of-care topical or oral anti-inflammatory therapy",
+          "Definitive cell-surface receptor vs. intracellular target characterization"
+        ],
+        "anecdotalUse": [
+          "Oral use for claimed IBD or leaky gut symptoms",
+          "Stacked with BPC-157 in gray-market gut-healing protocols — no human trial support",
+          "Topical use for eczema or contact dermatitis (some small human trial support for topical α-MSH peptide class)"
+        ]
+      },
+      "claims": [
+        {
+          "id": "kpv-claim-nfkb",
+          "field": "biology.cascades",
+          "value": "KPV reduces inflammatory cytokine production (TNF-α, IL-6, IL-8, IL-1β) via intracellular inhibition of NF-κB signaling in rodent and cell models.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "macrophage and epithelial cell cultures; rodent colitis, asthma, and dermatitis models",
+          "route": "oral, topical, IP",
+          "sampleSize": null,
+          "duration": "days to weeks",
+          "symbols": ["C", "A"],
+          "confidence": 0.75,
+          "citationIds": ["kpv-cit-dalmasso-2008", "kpv-cit-luger-2003"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "kpv-claim-no-human-rct",
+          "field": "expanded.humanEvidence",
+          "value": "There are no adequately powered human randomized controlled trials of systemic KPV for gastrointestinal or inflammatory indications.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "H"],
+          "confidence": 0.85,
+          "citationIds": ["kpv-cit-luger-2003"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "kpv-cit-luger-2003",
+          "sourceType": "review",
+          "title": "Alpha-MSH-related peptides: a new class of anti-inflammatory and immunomodulating drugs",
+          "authors": ["Luger TA", "Brzoska T"],
+          "year": 2007,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17284580/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["kpv-claim-nfkb", "kpv-claim-no-human-rct"],
+          "notes": "Ann Rheum Dis 66 Suppl 3:iii52-5. Representative review of α-MSH-derived peptide anti-inflammatory pharmacology including KPV. Year should be verified."
+        },
+        {
+          "id": "kpv-cit-dalmasso-2008",
+          "sourceType": "primary",
+          "title": "PepT1-mediated tripeptide KPV uptake reduces intestinal inflammation",
+          "authors": ["Dalmasso G", "Charrier-Hisamuddin L", "Thu Nguyen HT", "Yan Y", "Sitaraman S", "Merlin D"],
+          "year": 2008,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18485915/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["kpv-claim-nfkb"],
+          "notes": "Gastroenterology 134(1):166-78. Key primary evidence for PepT1-mediated KPV uptake in inflamed intestine and anti-inflammatory activity in rodent colitis."
+        }
+      ]
+    }
+  ]
+}

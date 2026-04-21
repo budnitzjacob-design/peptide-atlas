@@ -8,6 +8,7 @@ const defaultState = {
   sort: "random",
   selected: null,
   tag: null,
+  structureZoom: null,
   keySymbol: null,
   studyFilter: "all",
   bibliographyOpen: false,
@@ -20,10 +21,27 @@ const wikiCache = new Map();
 const wikiPending = new Set();
 let citationRegistry = { citations: [], index: new Map() };
 let pendingDetailScrollTop = null;
+function tileSizeScore(peptide) {
+  return (
+    peptide.names.primary.length * 2 +
+    (peptide.tile.mechanismSummary || "").length +
+    (peptide.tile.clinicalUses[0] || "").length +
+    ((peptide.expanded.anecdotalUse[0] || "").length * 0.8) +
+    ((peptide.tile.sideEffects[0] || "").length * 0.8) +
+    peptide.tile.enhancingEffects.slice(0, 4).reduce((total, effect) => total + (effect.label || "").length, 0) * 0.35 +
+    peptide.biology.proteins.slice(0, 5).reduce((total, item) => total + (item || "").length, 0) * 0.15
+  );
+}
+
 const RANDOM_ORDER = new Map(
-  [...DATA.peptides.map((peptide) => peptide.id)]
-    .sort(() => Math.random() - 0.5)
-    .map((id, index) => [id, index])
+  [...DATA.peptides]
+    .map((peptide) => ({
+      id: peptide.id,
+      bucket: Math.floor(tileSizeScore(peptide) / 80),
+      rand: Math.random()
+    }))
+    .sort((a, b) => a.bucket - b.bucket || a.rand - b.rand)
+    .map((item, index) => [item.id, index])
 );
 
 const CATEGORY_COLORS = {
@@ -807,6 +825,24 @@ function bibliographyDrawer() {
   </section>`;
 }
 
+function structureModal() {
+  if (!state.structureZoom) return "";
+  return `<section class="image-backdrop" data-close-structure-modal>
+    <aside class="image-modal" aria-label="${esc(state.structureZoom.name)} structure image">
+      <header class="modal-head">
+        <div>
+          <p class="eyebrow">structure</p>
+          <h3>${esc(state.structureZoom.name)}</h3>
+        </div>
+        <button class="icon modal-close" data-close-structure-button aria-label="Close structure image">x</button>
+      </header>
+      <div class="image-modal-frame">
+        <img src="/structures/${esc(state.structureZoom.id)}.png" alt="${esc(state.structureZoom.name)} enlarged structure">
+      </div>
+    </aside>
+  </section>`;
+}
+
 function keyModal() {
   if (!state.keySymbol) return "";
   const reviewMode = state.keySymbol === "review";
@@ -893,8 +929,23 @@ function relatedPanel() {
 
 function structurePanel(p) {
   return `<div class="structure-panel">
-    <img src="/structures/${esc(p.id)}.png" alt="${esc(p.names.primary)} structure" loading="lazy" onerror="this.parentElement.remove()">
+    <button class="structure-button" type="button" data-open-structure="${esc(p.id)}" aria-label="Enlarge ${esc(p.names.primary)} structure">
+      <img src="/structures/${esc(p.id)}.png" alt="${esc(p.names.primary)} structure" loading="lazy" onerror="this.parentElement.remove()">
+    </button>
   </div>`;
+}
+
+function chemicalIdentityPanel(p) {
+  return `<section class="identity-panel">
+    <h3>Chemical Identity</h3>
+    <dl class="identity-grid">
+      <dt>Chemical names / aliases</dt><dd>${esc(p.names.aliases.join(" / ") || "No alternate chemical names imported.")}</dd>
+      <dt>Trade names</dt><dd>${esc(p.names.tradeNames.join(" / ") || "No trade names imported.")}</dd>
+      <dt>Formula</dt><dd>${esc(p.identity.formula || "Formula pending extraction.")}</dd>
+      <dt>One-letter sequence</dt><dd>${esc(p.identity.sequenceOneLetter || "Sequence pending extraction.")}</dd>
+      <dt>Three-letter sequence</dt><dd>${esc(p.identity.sequenceThreeLetter || "Sequence pending extraction.")}</dd>
+    </dl>
+  </section>`;
 }
 
 function detail(p) {
@@ -918,23 +969,14 @@ function detail(p) {
           </div>
           <aside>
             ${structurePanel(p)}
-            <span class="evidence-badge ${evidenceClass(p.classification.evidenceTier)}">${esc(DATA.evidenceTierLabel[p.classification.evidenceTier])}</span>
-            <span class="status-pill">${esc(p.classification.regulatoryStatus.replaceAll("_", " "))}</span>
-            <span class="status-pill">dosing: ${esc(p.tile.dosing.context.replaceAll("_", " "))}</span>
-            <span class="status-pill">${esc(moderationLabel(p.moderation.status))}</span>
+            <div class="status-pill-row">
+              <span class="evidence-badge ${evidenceClass(p.classification.evidenceTier)}">${esc(DATA.evidenceTierLabel[p.classification.evidenceTier])}</span>
+              <span class="status-pill">${esc(p.classification.regulatoryStatus.replaceAll("_", " "))}</span>
+              <span class="status-pill">dosing: ${esc(p.tile.dosing.context.replaceAll("_", " "))}</span>
+              <span class="status-pill">${esc(moderationLabel(p.moderation.status))}</span>
+            </div>
+            ${chemicalIdentityPanel(p)}
           </aside>
-        </section>
-        <section class="article-section">
-          <h3>Chemical Identity</h3>
-          <table>
-            <tbody>
-              <tr><th>Chemical names / aliases</th><td>${esc(p.names.aliases.join(" / ") || "No alternate chemical names imported.")}</td></tr>
-              <tr><th>Trade names</th><td>${esc(p.names.tradeNames.join(" / ") || "No trade names imported.")}</td></tr>
-              <tr><th>Formula</th><td>${esc(p.identity.formula || "Formula pending extraction.")}</td></tr>
-              <tr><th>One-letter sequence</th><td>${esc(p.identity.sequenceOneLetter || "Sequence pending extraction.")}</td></tr>
-              <tr><th>Three-letter sequence</th><td>${esc(p.identity.sequenceThreeLetter || "Sequence pending extraction.")}</td></tr>
-            </tbody>
-          </table>
         </section>
         ${signalingSection(p)}
         <section class="article-section">
@@ -1050,7 +1092,6 @@ function hero() {
   return `<section class="hero">
     <div>
       <h1 class="brand-title">${BRAND}</h1>
-      <p class="brand-subtitle">peptide atlas &amp; signaling</p>
     </div>
   </section>`;
 }
@@ -1105,6 +1146,7 @@ function render() {
   app.innerHTML = `${lineFeature()}${hero()}${toolbar(categories)}
     <section class="tiles">${peptides.map(tile).join("")}</section>
     ${detail(state.selected)}
+    ${structureModal()}
     ${relatedPanel()}
     ${keyModal()}
     ${bibliographyDrawer()}`;
@@ -1143,6 +1185,9 @@ app.addEventListener("click", (event) => {
   const bibliographyButton = target.closest("[data-open-bibliography]");
   const toggleLine = target.closest("[data-toggle-line]");
   const bibliographyClose = target.closest("[data-close-bibliography-button]");
+  const openStructure = target.closest("[data-open-structure]");
+  const closeStructure = target.closest("[data-close-structure-button]");
+  const structureBackdrop = target.closest("[data-close-structure-modal]");
   const keyOpen = target.closest("[data-open-key]");
   const keyBackdrop = target.closest("[data-close-key-modal]");
   const keyClose = target.closest("[data-close-key-button]");
@@ -1174,6 +1219,23 @@ app.addEventListener("click", (event) => {
 
   if (bibliographyClose || (bibliographyBackdrop && target === bibliographyBackdrop)) {
     state.bibliographyOpen = false;
+    render();
+    return;
+  }
+
+  if (openStructure) {
+    pendingDetailScrollTop = app.querySelector(".detail")?.scrollTop ?? pendingDetailScrollTop ?? 0;
+    const peptide = DATA.peptides.find((item) => item.id === openStructure.dataset.openStructure);
+    if (peptide) {
+      state.structureZoom = { id: peptide.id, name: peptide.names.primary };
+      render();
+    }
+    return;
+  }
+
+  if (closeStructure || (structureBackdrop && target === structureBackdrop)) {
+    pendingDetailScrollTop = app.querySelector(".detail")?.scrollTop ?? pendingDetailScrollTop ?? 0;
+    state.structureZoom = null;
     render();
     return;
   }
