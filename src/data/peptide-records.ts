@@ -668,14 +668,14 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       channelsTransporters: ["KATP channel physiology via glucose-stimulated insulin secretion"],
       cytokinesInterleukins: [{ name: "CRP", type: "inflammatory_marker", effect: "metabolic inflammation marker; peptide-specific source extraction pending", context: "human metabolic studies; needs field-level verification", symbols: ["H", "?"], claimRef: "tirzepatide-crp-pending" }],
       cascades: [
-        { category: "pancreatic islet signaling", steps: ["Tirzepatide agonizes GLP-1R and GIPR", "Gs signaling increases cAMP", "PKA/EPAC increase glucose-dependent insulin secretion", "glucagon output decreases when glucose is elevated", "post-prandial glycemia decreases"], symbols: ["Rx", "H"], claimRef: "tirzepatide-fda-use" },
-        { category: "appetite and gastric-emptying signaling", steps: ["GLP-1R signaling increases in brainstem/hypothalamic satiety circuits", "meal-driven appetite signaling decreases", "gastric emptying slows early in treatment", "energy intake decreases", "body weight decreases in labeled trial contexts"], symbols: ["Rx", "H"], claimRef: "tirzepatide-fda-use" },
-        { category: "adipometabolic downstream effects", steps: ["chronic energy intake decreases", "visceral and total adiposity decrease", "insulin sensitivity can improve", "secondary inflammation markers may decrease", "marker-level direction still requires study-specific extraction"], symbols: ["H", "R", "?"], claimRef: "tirzepatide-mechanism" }
+        { category: "pancreatic islet signaling", steps: ["Tirzepatide binds GLP-1R and GIPR on beta-cell signaling networks", "Gs -> adenylyl cyclase -> cAMP signaling increases", "PKA and EPAC2 activation amplifies glucose-dependent insulin-granule exocytosis", "alpha-cell glucagon secretion is restrained when glucose is elevated", "post-prandial glucose excursions and HbA1c fall in labeled clinical contexts"], symbols: ["Rx", "H"], claimRef: "tirzepatide-fda-use" },
+        { category: "appetite and gastric-emptying signaling", steps: ["GLP-1R signaling increases in area postrema, NTS, and hypothalamic satiety circuits", "meal salience and hunger drive decrease", "gastric emptying slows most strongly early in treatment", "meal size and total energy intake decrease", "body weight falls in approved and trial populations"], symbols: ["Rx", "H"], claimRef: "tirzepatide-fda-use" },
+        { category: "adipometabolic downstream effects", steps: ["sustained caloric intake reduction lowers total and visceral adiposity", "hepatic insulin sensitivity and peripheral glucose disposal can improve", "lipids, blood pressure, and inflammatory markers may improve secondarily", "marker-level direction remains study-specific rather than universal"], symbols: ["H", "R", "?"], claimRef: "tirzepatide-mechanism" }
       ]
     },
     expanded: {
       humanEvidence: "FDA-recognized branded products provide strong human regulatory evidence; trial-level outcomes should be imported from labels and pivotal publications.",
-      mechanismDetail: "Traceable draft cascade: tirzepatide activates GLP-1R and GIPR, increases cAMP-dependent signaling in islet cells, increases glucose-dependent insulin release, suppresses inappropriate glucagon signaling, decreases appetite signaling, and slows gastric emptying early in therapy. Weight and glycemic effects are downstream clinical outcomes rather than direct receptor-level events.",
+      mechanismDetail: "Mechanistically, tirzepatide is best understood as a dual incretin agonist rather than a generic weight-loss drug: GLP-1R/GIPR engagement drives cAMP, PKA, and EPAC signaling in islet cells, increasing glucose-dependent insulin secretion while limiting inappropriate glucagon release. In parallel, central GLP-1-linked satiety signaling and early gastric-emptying delay reduce caloric intake; body-weight and glycemic changes are downstream integrated physiological outcomes.",
       safetyDetail: "Display label-specific adverse events, contraindications, and boxed warnings only after label import. Common/nonclinical enhancement anecdotes must remain separate from label evidence.",
       safetyRisks: [
         {
@@ -774,12 +774,12 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       receptors: ["GLP-1R"],
       channelsTransporters: ["KATP-linked beta-cell stimulus-secretion physiology"],
       cascades: [
-        { category: "islet incretin signaling", steps: ["Semaglutide agonizes GLP-1R", "Gs signaling increases cAMP", "PKA/EPAC activity increases", "glucose-dependent insulin secretion increases", "glucagon output decreases in hyperglycemic states"], symbols: ["R", "?"], claimRef: "semaglutide-mechanism-draft" },
-        { category: "satiety and GI signaling", steps: ["central GLP-1R signaling increases", "satiety signaling increases", "hunger-driven food intake decreases", "gastric emptying slows early in treatment", "weight-loss effects can follow in human therapeutic contexts"], symbols: ["R", "?"], claimRef: "semaglutide-mechanism-draft" }
+        { category: "islet incretin signaling", steps: ["Semaglutide binds GLP-1R on beta-cell signaling machinery", "Gs -> adenylyl cyclase -> cAMP increases", "PKA / EPAC2 signaling amplifies glucose-dependent insulin exocytosis", "alpha-cell glucagon output falls under hyperglycemic conditions", "fasting and post-prandial glycemia improve in therapeutic settings"], symbols: ["R", "?"], claimRef: "semaglutide-mechanism-draft" },
+        { category: "satiety and GI signaling", steps: ["central GLP-1R signaling increases in appetite-regulating brainstem and hypothalamic circuits", "satiety increases and food-reward drive falls", "gastric emptying slows especially early in treatment", "meal size and total caloric intake decrease", "weight-loss effects follow in human therapeutic contexts"], symbols: ["R", "?"], claimRef: "semaglutide-mechanism-draft" }
       ]
     },
     expanded: {
-      mechanismDetail: "Model-drafted but medically traceable cascade: semaglutide activates GLP-1R, increases cAMP signaling in islet cells, increases glucose-dependent insulin release, decreases inappropriate glucagon output, and reduces appetite through central satiety circuitry plus GI slowing. Replace with label/trial-cited wording once the incoming Consensus/primary batch lands.",
+      mechanismDetail: "Mechanistically, semaglutide fits the classic GLP-1 receptor cascade: receptor binding increases cAMP in islet cells, strengthens glucose-dependent insulin secretion, dampens glucagon output in hyperglycemia, and engages central satiety pathways while slowing gastric emptying. The clinical weight-loss phenotype is a downstream systems effect of reduced intake plus improved metabolic control, not a separate receptor pathway.",
       safetyRisks: [
         {
           system: "gastrointestinal",
@@ -817,12 +817,12 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       receptors: ["GLP-1R", "GIPR", "GCGR"],
       channelsTransporters: ["beta-cell KATP-linked stimulus-secretion physiology"],
       cascades: [
-        { category: "islet hormone signaling", steps: ["Retatrutide agonizes GLP-1R/GIPR/GCGR", "cAMP signaling increases across target tissues", "glucose-dependent insulin secretion increases", "glucagon physiology is rebalanced in a context-dependent way", "glycemic control effects emerge in human-development programs"], symbols: ["R", "?"], claimRef: "retatrutide-mechanism-draft" },
-        { category: "appetite and adipometabolic signaling", steps: ["GLP-1R central satiety signaling increases", "food intake decreases", "GCGR-associated energy expenditure and lipid mobilization may increase", "weight-loss effects can exceed dual-agonist expectations in early reports", "study-specific attribution still requires primary citation import"], symbols: ["R", "?"], claimRef: "retatrutide-mechanism-draft" }
+        { category: "tri-agonist metabolic signaling", steps: ["Retatrutide binds GLP-1R, GIPR, and GCGR across islet, CNS, hepatic, and adipometabolic tissues", "cAMP signaling increases in multiple receptor compartments", "glucose-dependent insulin secretion rises while glucagon biology is shifted by combined incretin and glucagon-receptor tone", "hepatic glucose and lipid handling changes in a context-dependent way", "glycemic control improves in development programs"], symbols: ["R", "?"], claimRef: "retatrutide-mechanism-draft" },
+        { category: "appetite, expenditure, and adiposity signaling", steps: ["central GLP-1-linked satiety signaling increases", "food intake decreases", "glucagon-receptor signaling may increase energy expenditure and lipolytic flux", "body weight and adiposity can fall more than with dual-agonist programs", "specific component attribution still requires trial-level mechanistic parsing"], symbols: ["R", "?"], claimRef: "retatrutide-mechanism-draft" }
       ]
     },
     expanded: {
-      mechanismDetail: "Draft but traceable cascade: retatrutide combines GLP-1R, GIPR, and GCGR agonism, so it should be read as a multi-axis metabolic signal rather than a single receptor effect. Appetite suppression, insulinotropic signaling, and glucagon-linked energy handling may all contribute to observed body-weight and glycemic outcomes.",
+      mechanismDetail: "Retatrutide should be read as a distributed metabolic program: GLP-1R and GIPR signaling support incretin-mediated glycemic control, while GCGR engagement adds a distinct hepatic and energy-expenditure axis. The resulting phenotype is a composite of lower intake, altered nutrient partitioning, and glucagon-linked energy handling rather than a simple appetite-only mechanism.",
       safetyRisks: [
         {
           system: "gastrointestinal",
@@ -888,15 +888,15 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       channelsTransporters: [],
       cytokinesInterleukins: [],
       cascades: [
-        { category: "metabolic stress signaling", steps: ["MOTS-c is encoded within mitochondrial 12S rRNA", "folate-cycle / de novo purine synthesis signaling is inhibited in primary preclinical work", "AMPK activation increases", "skeletal-muscle glucose and fatty-acid handling shift", "obesity / insulin-resistance phenotypes improve in mice"], symbols: ["A", "C"], claimRef: "motsc-ampk-folate" },
-        { category: "adiponectin-mitochondrial biogenesis axis", steps: ["adiponectin/APPL1 signaling increases", "SIRT1 activity increases", "PGC-1alpha-associated mitochondrial biogenesis signaling increases", "MOTS-c production/secretion in skeletal muscle increases", "insulin-resistance phenotypes improve in mice"], symbols: ["A", "C"], claimRef: "motsc-appl1-axis" },
-        { category: "direct muscle target and redox signaling", steps: ["MOTS-c directly binds CK2 in primary 2024 muscle work", "muscle CK2 activity increases", "muscle glucose uptake and atrophy resistance improve in mice", "Nrf2/ARE signaling can increase in oxidative-stress models", "NF-kB inflammatory signaling can decrease in cell studies"], symbols: ["A", "C"], claimRef: "motsc-ck2-target" }
+        { category: "metabolic stress signaling", steps: ["MOTS-c is encoded within the mitochondrial 12S rRNA region", "folate-cycle / de novo purine synthesis stress is induced in primary work", "AICAR-like metabolic stress signaling accumulates", "AMPK activation increases", "skeletal-muscle glucose disposal and fatty-acid handling shift toward improved metabolic homeostasis"], symbols: ["A", "C"], claimRef: "motsc-ampk-folate" },
+        { category: "adiponectin-mitochondrial biogenesis axis", steps: ["adiponectin receptor signaling engages APPL1", "SIRT1 activity increases", "PGC-1alpha-linked mitochondrial biogenesis programs increase", "MOTS-c expression / secretion in skeletal muscle increases", "insulin-resistance phenotypes improve in mouse and myotube systems"], symbols: ["A", "C"], claimRef: "motsc-appl1-axis" },
+        { category: "direct muscle target and redox signaling", steps: ["MOTS-c directly binds CK2 in primary 2024 skeletal-muscle work", "CK2 kinase activity increases", "myofiber glucose uptake and resistance to disuse-atrophy programs improve", "Nrf2/ARE antioxidant-response genes can increase", "NF-kB inflammatory signaling can decrease under oxidative stress"], symbols: ["A", "C"], claimRef: "motsc-ck2-target" }
       ]
     },
     expanded: {
       humanEvidence: "No peer-reviewed human interventional trial demonstrating efficacy or safety is imported here. The current usable record is preclinical and mechanistic.",
       animalEvidence: "Primary mouse studies report improved insulin-resistance, obesity, adipose dysfunction, and muscle-function endpoints under experimental conditions, with no basis to infer healthy-human enhancement.",
-      mechanismDetail: "The strongest mechanistic chain now imported is: mitochondrial-encoded MOTS-c -> folate-cycle / purine-stress sensing -> AMPK activation -> downstream metabolic adaptation, with later preclinical papers adding APPL1-SIRT1-PGC-1alpha regulation and direct CK2 engagement in skeletal muscle. Oxidative-stress models also report Nrf2/ARE activation and NF-kB suppression.",
+      mechanismDetail: "The currently strongest MOTS-c pathway is: mitochondrial-encoded peptide generation -> folate/purine metabolic stress sensing -> AMPK activation -> downstream metabolic adaptation in muscle. Later primary papers add an adiponectin-APPL1-SIRT1-PGC-1alpha axis and direct CK2 binding in skeletal muscle, while oxidative-stress models show Nrf2/ARE activation with relative NF-kB suppression.",
       safetyDetail: "Human safety evidence is missing. The site should present MOTS-c as a preclinical metabolic-signaling peptide rather than a verified human therapy or enhancement tool.",
       safetyRisks: [
         {
@@ -954,15 +954,15 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       channelsTransporters: ["NO-dependent vascular tone signaling"],
       cytokinesInterleukins: [],
       cascades: [
-        { category: "angiogenesis and endothelial migration", steps: ["BPC-157 increased VEGF-A expression in primary alkali-burn work", "ERK1/2 phosphorylation increased with c-Fos / c-Jun / Egr-1 downstream signaling", "HUVEC proliferation, migration, and tube formation increased", "granulation / re-epithelialization / collagen deposition improved in rats"], symbols: ["A", "C"], claimRef: "bpc157-vegf-erk" },
-        { category: "microvascular and nitric-oxide signaling", steps: ["BPC-157 preserved eNOS-linked nitric-oxide signaling in preclinical injury work", "VEGF-A / VEGFR1 / AKT / p38-MAPK signaling was modulated in gastric-injury models", "microcirculatory support and mucosal protection improved in rats", "human efficacy remains unverified"], symbols: ["A"], claimRef: "bpc157-no-vegfr1" },
-        { category: "musculoskeletal repair signaling", steps: ["tendon / muscle-healing models showed modulated angiogenesis", "VEGF/CD34/factor VIII markers changed with healing", "myotendinous-junction studies reported eNOS and COX-2 mRNA effects with oxidative-stress counteraction", "results remain preclinical rather than verified human regenerative medicine"], symbols: ["A"], claimRef: "bpc157-eNOS-cox2" }
+        { category: "angiogenesis and endothelial migration", steps: ["BPC-157 increases VEGF-A expression in primary alkali-burn work", "ERK1/2 phosphorylation rises with downstream c-Fos / c-Jun / Egr-1 transcriptional signaling", "HUVEC proliferation, migration, and tube formation increase", "granulation tissue, re-epithelialization, and collagen deposition improve in rats"], symbols: ["A", "C"], claimRef: "bpc157-vegf-erk" },
+        { category: "microvascular and nitric-oxide signaling", steps: ["BPC-157 preserves eNOS-linked nitric-oxide biology in injury models", "VEGF-A / VEGFR1 / AKT / p38-MAPK signaling is modulated in gastric injury", "microcirculatory integrity and mucosal resistance improve", "translation to human efficacy remains unverified"], symbols: ["A"], claimRef: "bpc157-no-vegfr1" },
+        { category: "musculoskeletal repair signaling", steps: ["tendon and muscle-healing models show altered angiogenesis-marker expression", "VEGF / CD34 / factor VIII-associated repair signals change with healing", "myotendinous-junction injury models show eNOS and COX-2 mRNA effects with oxidative-stress counteraction", "the signal remains preclinical rather than clinically validated human regenerative medicine"], symbols: ["A"], claimRef: "bpc157-eNOS-cox2" }
       ]
     },
     expanded: {
       humanEvidence: "Peer-reviewed controlled human efficacy evidence is still not imported here. The record remains preclinical-heavy.",
       animalEvidence: "Primary rat and cell studies support wound-healing, angiogenesis, gastric-mucosal protection, and tendon/myotendinous repair readouts under experimental conditions.",
-      mechanismDetail: "The mechanistic chain is now less hand-wavy: BPC-157 primary papers report VEGF-A upregulation, ERK1/2-c-Fos-c-Jun-Egr-1 signaling, VEGFR1/AKT/p38-MAPK-linked gastric protection, and eNOS/COX-2-related nitric-oxide biology in injury models. None of that establishes human clinical efficacy.",
+      mechanismDetail: "The mechanistic chain now shown is: BPC-157 -> VEGF-linked endothelial signaling -> ERK1/2 and immediate-early transcription factors -> angiogenesis / migration / repair. Separate injury models add VEGFR1/AKT/p38-MAPK and eNOS/COX-2 nitric-oxide-system effects. That is a real preclinical pathway story, but still not a validated human therapeutic cascade.",
       safetyDetail: "The main present limitation is absence of strong human safety and efficacy evidence, not evidence of proven safety. Preclinical benefit claims should not be translated into human repair or enhancement claims without human trials.",
       safetyRisks: [
         {
@@ -1031,14 +1031,14 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
         { name: "TNF-alpha", type: "cytokine", effect: "decreased in bleomycin pulmonary-fibrosis mouse model", context: "mouse lung fibrosis", symbols: ["A"], claimRef: "ghkcu-nrf2-smad" }
       ],
       cascades: [
-        { category: "epithelial / matrix repair", steps: ["Copper-GHK increases keratinocyte integrin expression", "p63-positive reparative epithelial phenotype increases", "adhesion / migration competence may increase", "matrix-remodeling and wound-closure programs may improve locally"], symbols: ["C"], claimRef: "ghkcu-integrin-epithelium" },
-        { category: "anti-fibrotic inflammatory signaling", steps: ["GHK-Cu decreases TNF-alpha and IL-6 in bleomycin fibrosis model", "NF-kB signaling decreases", "Nrf2 antioxidant signaling increases", "TGF-beta1 / Smad2/3 signaling decreases", "MMP-9 / TIMP-1 balance partially normalizes as fibrosis and EMT decrease"], symbols: ["A"], claimRef: "ghkcu-nrf2-smad" }
+        { category: "epithelial / matrix repair", steps: ["Copper-GHK increases keratinocyte integrin expression", "p63-positive reparative epithelial phenotype increases", "adhesion and migration competence increase", "matrix-remodeling / wound-closure programs become more repair-biased locally"], symbols: ["C"], claimRef: "ghkcu-integrin-epithelium" },
+        { category: "anti-fibrotic inflammatory signaling", steps: ["GHK-Cu lowers TNF-alpha and IL-6 in bleomycin fibrosis models", "NF-kB inflammatory signaling decreases", "Nrf2 antioxidant-response signaling increases", "TGF-beta1 / Smad2/3 profibrotic signaling decreases", "MMP-9 / TIMP-1 balance partially normalizes as EMT and fibrosis decline"], symbols: ["A"], claimRef: "ghkcu-nrf2-smad" }
       ]
     },
     expanded: {
       humanEvidence: "No robust peer-reviewed human therapeutic trial is imported here; the usable evidence base is preclinical and topical/cosmetic-adjacent.",
       animalEvidence: "Primary animal work supports anti-inflammatory and anti-fibrotic lung effects, while cell studies support reparative epithelial phenotypes.",
-      mechanismDetail: "The strongest currently imported GHK-Cu chain is: copper-GHK -> reparative epithelial / matrix signaling plus anti-inflammatory anti-fibrotic signaling. Specific primary findings include increased keratinocyte integrin/p63 expression and, in pulmonary-fibrosis mice, lower TNF-alpha and IL-6 with effects on Nrf2, NF-kB, TGF-beta1/Smad2/3, and MMP-9/TIMP-1.",
+      mechanismDetail: "The strongest imported GHK-Cu chain is: copper-bound tripeptide signaling -> reparative epithelial / matrix bias plus anti-inflammatory anti-fibrotic signaling. Specific primary findings include increased keratinocyte integrin/p63 expression and, in pulmonary-fibrosis mice, lower TNF-alpha and IL-6 with effects on Nrf2, NF-kB, TGF-beta1/Smad2/3, and MMP-9/TIMP-1 balance.",
       safetyDetail: "Human systemic safety and efficacy remain unclear. The current record should be read as preclinical wound/fibrosis biology, not as established human regenerative medicine.",
       safetyRisks: [
         {
@@ -1102,15 +1102,15 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       channelsTransporters: [],
       cytokinesInterleukins: [{ name: "IL-8", type: "chemokine", effect: "decreased via reduced NF-kB activation in thymosin beta-4 cell study", context: "TNF-alpha-stimulated epithelial-cell system", symbols: ["C"], claimRef: "tb500-tb4-nfkb-il8" }],
       cascades: [
-        { category: "actin and matrix remodeling", steps: ["thymosin beta-4 binds/sequesters G-actin", "cell migration competence increases", "MMP-1 / MMP-2 / MMP-9 expression increases in wound-repair cells", "extracellular-matrix remodeling accelerates", "repair readouts improve in preclinical systems"], symbols: ["A", "C"], claimRef: "tb500-tb4-mmp-remodeling" },
-        { category: "angiogenesis signaling", steps: ["thymosin beta-4 increases endothelial migration and proliferation", "VEGF / AKT signaling increases in diabetic-wound models", "vascularization increases", "re-epithelialization and wound organization improve", "direct human TB-500 efficacy remains unverified"], symbols: ["A", "C"], claimRef: "tb500-tb4-vegf-akt" },
-        { category: "inflammatory modulation", steps: ["TNF-alpha signaling activates NF-kB in cell models", "thymosin beta-4 reduces RelA/p65 nuclear activity", "IL-8 transcription decreases", "inflammatory sensitization decreases", "fragment-to-human extrapolation remains limited"], symbols: ["C"], claimRef: "tb500-tb4-nfkb-il8" }
+        { category: "actin and matrix remodeling", steps: ["thymosin beta-4 binds and sequesters G-actin monomers", "motile-cell cytoskeletal reorganization increases", "MMP-1 / MMP-2 / MMP-9 expression increases in wound-repair cells", "extracellular-matrix remodeling and cell migration accelerate", "repair readouts improve in preclinical systems"], symbols: ["A", "C"], claimRef: "tb500-tb4-mmp-remodeling" },
+        { category: "angiogenesis signaling", steps: ["thymosin beta-4 increases endothelial migration and proliferation", "VEGF / AKT pathway signaling increases in diabetic-wound models", "vascularization and perfusion increase", "re-epithelialization and wound architecture improve", "direct human TB-500 efficacy remains unverified"], symbols: ["A", "C"], claimRef: "tb500-tb4-vegf-akt" },
+        { category: "inflammatory modulation", steps: ["TNF-alpha drives NF-kB RelA/p65 activation in cell models", "thymosin beta-4 reduces RelA/p65 nuclear signaling", "IL-8 transcription decreases", "inflammatory sensitization decreases", "fragment-to-human extrapolation remains limited"], symbols: ["C"], claimRef: "tb500-tb4-nfkb-il8" }
       ]
     },
     expanded: {
       humanEvidence: "No direct peer-reviewed human TB-500 efficacy trial is imported here.",
       animalEvidence: "The usable mechanistic base is thymosin beta-4 preclinical literature on wound healing, angiogenesis, MMP remodeling, and inflammatory signaling.",
-      mechanismDetail: "The honest way to present TB-500 is: direct evidence is sparse, but thymosin beta-4 primary literature consistently shows actin handling, migration, MMP remodeling, VEGF/AKT-linked angiogenesis, and NF-kB/IL-8 inflammatory modulation. Those data are mechanistically relevant but not equivalent to direct human TB-500 validation.",
+      mechanismDetail: "The honest way to present TB-500 is: direct evidence is sparse, but thymosin beta-4 primary literature consistently shows G-actin sequestration, migration/MMP remodeling, VEGF/AKT-linked angiogenesis, and NF-kB/IL-8 inflammatory modulation. Those pathways are mechanistically relevant to TB-500 discussions but still are not equivalent to direct human TB-500 validation.",
       safetyDetail: "Human TB-500 safety and efficacy remain poorly defined in the imported record. Public sports-recovery use should be kept in anecdotal/nonclinical territory.",
       safetyRisks: [
         {
@@ -1167,8 +1167,8 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       channelsTransporters: [],
       cytokinesInterleukins: [{ name: "CRP", type: "inflammatory_marker", effect: "measured in metabolic trial contexts; direction requires extraction", context: "human HIV/metabolic studies", symbols: ["H", "?"], claimRef: "tesamorelin-crp-pending" }],
       cascades: [
-        { category: "GH axis signaling", steps: ["Tesamorelin agonizes GHRHR", "pituitary GH secretion increases", "hepatic IGF-1 production increases", "lipolytic tone can increase", "visceral adipose tissue decreases in cited HIV trial contexts"], symbols: ["H"], claimRef: "tesamorelin-human-use" },
-        { category: "body-composition and liver-fat signaling", steps: ["GH/IGF-1 axis changes nutrient partitioning", "visceral adiposity decreases more than subcutaneous depots in target populations", "hepatic fat/body-composition endpoints may improve", "disease-context limitations remain essential"], symbols: ["H", "R"], claimRef: "tesamorelin-human-use" }
+        { category: "GH axis signaling", steps: ["Tesamorelin binds pituitary GHRHR", "somatotroph GH pulse secretion increases", "hepatic IGF-1 and IGFBP-3 production rise downstream", "lipolysis and nutrient repartitioning increase in susceptible depots", "visceral adipose tissue decreases in cited HIV trial contexts"], symbols: ["H"], claimRef: "tesamorelin-human-use" },
+        { category: "body-composition and liver-fat signaling", steps: ["GH / IGF-1 axis shifts adipose and hepatic substrate handling", "visceral fat falls more than many subcutaneous depots in target populations", "hepatic fat and body-composition endpoints may improve", "benefit remains disease-context specific rather than generic enhancement"], symbols: ["H", "R"], claimRef: "tesamorelin-human-use" }
       ]
     },
     expanded: {
@@ -1338,14 +1338,14 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       channelsTransporters: ["adenine nucleotide translocator", "mitochondrial permeability-transition context requires verification"],
       cytokinesInterleukins: [{ name: "ROS", type: "other", effect: "mitochondrial oxidative-stress marker; trial/source-specific direction requires extraction", context: "mitochondrial disease/preclinical contexts", symbols: ["H", "A", "C", "?"], claimRef: "ss31-human-exercise" }],
       cascades: [
-        { category: "mitochondrial membrane signaling", steps: ["SS-31 localizes to inner mitochondrial membrane", "cardiolipin-associated membrane surface electrostatics are modulated", "cristae / electron-transport organization may stabilize", "ROS leak may decrease", "ATP-generating efficiency may improve"], symbols: ["H", "A", "C"], claimRef: "ss31-cardiolipin-mechanism" },
-        { category: "ADP transport and energetics", steps: ["aged mitochondria show impaired ADP sensitivity", "SS-31 increases ANT-linked ADP uptake in mechanistic work", "oxidative phosphorylation responsiveness improves", "force / energetic efficiency may improve in aged-animal systems", "human enhancement remains unverified"], symbols: ["A", "C"], claimRef: "ss31-ant-adp" },
-        { category: "clinical functional signaling", steps: ["mitochondrial energetic stress may decrease", "skeletal-muscle fatigue burden may decrease", "short-duration exercise performance may improve", "6-minute walk distance improved in one imported PMM trial row", "healthy-human enhancement remains unverified"], symbols: ["H"], claimRef: "ss31-human-exercise" }
+        { category: "mitochondrial membrane signaling", steps: ["SS-31 partitions into the inner mitochondrial membrane", "cardiolipin-associated membrane surface electrostatics are modulated", "cristae architecture and respiratory-supercomplex organization may stabilize", "cytochrome-c peroxidase / ROS leak stress may decrease", "ATP-generating efficiency may improve"], symbols: ["H", "A", "C"], claimRef: "ss31-cardiolipin-mechanism" },
+        { category: "ADP transport and energetics", steps: ["aged mitochondria show impaired ADP sensitivity", "SS-31 increases ANT-linked ADP uptake in mechanistic work", "ADP delivery to ATP synthase improves", "oxidative-phosphorylation responsiveness rises", "force / energetic efficiency may improve in aged-animal systems"], symbols: ["A", "C"], claimRef: "ss31-ant-adp" },
+        { category: "clinical functional signaling", steps: ["mitochondrial energetic stress burden may decrease", "skeletal-muscle fatigue burden may decrease", "short-duration exercise performance may improve in mitochondrial disease", "6-minute-walk distance improved in one imported PMM randomized trial", "healthy-human enhancement remains unverified"], symbols: ["H"], claimRef: "ss31-human-exercise" }
       ]
     },
     expanded: {
       humanEvidence: "A 36-participant randomized PMM trial is imported and supports short-duration exercise-performance improvement without increased safety concerns in that study; additional short human elamipretide studies in AMD and heart failure remain indication-specific and do not establish broad healthy-human benefit.",
-      mechanismDetail: "The mechanism chain is now more specific: SS-31 interacts with cardiolipin-containing inner-membrane surfaces, modulates membrane electrostatics, and in mechanistic aging studies improves ANT-linked ADP sensitivity. Those bioenergetic effects sit upstream of any clinical observation such as 6MWT changes in mitochondrial myopathy.",
+      mechanismDetail: "The SS-31 pathway now shown is: inner-membrane partitioning -> cardiolipin-linked membrane/electrostatic stabilization -> improved cristae respiratory organization -> improved ANT-mediated ADP handling -> improved oxidative phosphorylation efficiency. Clinical findings such as 6MWT change in mitochondrial myopathy sit downstream of that mitochondrial-bioenergetic cascade.",
       safetyDetail: "Short human studies are directionally reassuring but still limited. Injection-site reactions were common in some subcutaneous programs, and absence of broad severe toxicity in short trials is not the same thing as proven healthy-human safety or enhancement utility.",
       safetyRisks: [
         {

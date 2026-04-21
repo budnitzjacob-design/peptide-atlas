@@ -10,7 +10,9 @@ const defaultState = {
   tag: null,
   humanOnly: false,
   animalOnly: false,
-  bibliographyOpen: false
+  bibliographyOpen: false,
+  legendOpen: true,
+  brandAlt: false
 };
 
 let state = { ...defaultState };
@@ -82,10 +84,30 @@ function symbols(items = []) {
 
 function symbolGlyph(symbol) {
   const glyphs = {
-    H: "&#9786;",
-    A: "&#128062;"
+    H: '<span class="glyph-face">&#9786;</span>',
+    A: '<svg class="paw-glyph" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="8" r="2.1"></circle><circle cx="12" cy="6.4" r="2.1"></circle><circle cx="17" cy="8" r="2.1"></circle><circle cx="6.2" cy="13.1" r="1.9"></circle><path d="M12 11.4c-3.25 0-5.8 2.32-5.8 5 0 1.52 1.18 2.6 2.82 2.6 1.02 0 1.85-.37 2.49-.82.43-.29.76-.53 1.01-.53s.58.24 1.01.53c.64.45 1.47.82 2.49.82 1.64 0 2.82-1.08 2.82-2.6 0-2.68-2.55-5-5.84-5z"></path></svg>'
   };
   return glyphs[symbol] || esc(symbol);
+}
+
+function regulatoryLabel(status) {
+  const labels = {
+    fda_approved: "FDA-approved or FDA-recognized product context.",
+    non_us_approved: "Approval/use context exists outside the United States.",
+    investigational: "Investigational or in clinical development.",
+    research_only: "Research-only context; not established for clinical use.",
+    not_approved: "Not approved for clinical use in the current imported record.",
+    unknown: "Regulatory status not fully extracted yet."
+  };
+  return labels[status] || status.replaceAll("_", " ");
+}
+
+function evidenceTierTitle(tier) {
+  return `${DATA.evidenceTierLabel[tier] || tier}: current imported evidence strength summary.`;
+}
+
+function formatPeptideName(name) {
+  return esc(name).replace(/-([a-z]+)/g, '-<span class="name-lower">$1</span>');
 }
 
 function categoryColor(category) {
@@ -201,7 +223,7 @@ function filteredPeptides() {
 }
 
 function resetToGridState() {
-  state = { ...defaultState };
+  state = { ...defaultState, legendOpen: state.legendOpen, brandAlt: state.brandAlt };
 }
 
 function syncHistory(view = "grid") {
@@ -258,28 +280,27 @@ function tile(p) {
   const review = moderationLabel(p.moderation.status);
   const clinical = p.tile.clinicalUses[0] || "Clinical use context not yet verified.";
   const enhancement = p.expanded.anecdotalUse[0] || "No enhancement/common-use statement imported.";
+  const risk = p.tile.sideEffects[0] || p.expanded.safetyDetail || "Key risk context pending extraction.";
   const classColor = categoryColor(p.category);
   return `<article class="tile" style="--type-color:${esc(classColor)}" data-expand="${esc(p.id)}" data-peptide-id="${esc(p.id)}" tabindex="0" aria-label="Open ${esc(p.names.primary)} article">
     <header>
       <div>
         <p class="eyebrow category-label">${esc(p.category)}</p>
-        <h2>${esc(p.names.primary)}</h2>
+        <h2 class="name-display">${formatPeptideName(p.names.primary)}</h2>
         <p class="aliases"><span class="type-pill">${esc(p.classification.peptideClass)}</span> ${esc(p.names.aliases.join(" / "))}</p>
       </div>
       <span class="verify ${p.moderation.status === "verified" ? "ok" : "pending"}" title="${esc(review)}"></span>
     </header>
     <div class="tile-status">
-      <span class="evidence-badge ${evidenceClass(p.classification.evidenceTier)}">${esc(DATA.evidenceTierLabel[p.classification.evidenceTier])}</span>
-      <span>${esc(p.classification.regulatoryStatus.replaceAll("_", " "))}</span>
-      <span>${esc(review)}</span>
+      <span class="evidence-badge ${evidenceClass(p.classification.evidenceTier)}" title="${esc(evidenceTierTitle(p.classification.evidenceTier))}">${esc(DATA.evidenceTierLabel[p.classification.evidenceTier])}</span>
+      <span title="${esc(regulatoryLabel(p.classification.regulatoryStatus))}">${esc(p.classification.regulatoryStatus.replaceAll("_", " "))}</span>
+      <span title="${esc(review)}">${esc(review)}</span>
     </div>
     <p class="mechanism">${esc(p.tile.mechanismSummary)} ${p.citations.slice(0, 2).map(citationLink).join("")}</p>
     <dl class="quick">
-      <div><dt>Localization</dt><dd>${esc(p.tile.localization)}</dd></div>
       <div><dt>Medical / Clinical</dt><dd>${esc(clinical)}</dd></div>
       <div><dt>Enhancement / Common Use</dt><dd>${esc(enhancement)}</dd></div>
-      <div><dt>Dosing Context</dt><dd>${esc(p.tile.dosing.quick)} <span>${esc(p.tile.dosing.adminRoute)}</span></dd></div>
-      <div><dt>Cost</dt><dd>${esc(p.tile.cost.range || "not imported")} <span>${esc(p.tile.cost.size || "")}</span></dd></div>
+      <div><dt>Key Risks</dt><dd>${esc(risk)}</dd></div>
     </dl>
     <section class="effects">${p.tile.enhancingEffects.slice(0, 4).map((effect) => tag("effect", effect.label, effect.symbols, p.id)).join("")}</section>
     <section class="chips">${p.biology.proteins.slice(0, 5).map((protein) => tag("protein", protein, [], p.id)).join("")}</section>
@@ -292,7 +313,8 @@ function signalingSection(p) {
     ? p.biology.cascades
     : [{ category: "mechanism", steps: [p.classification.peptideClass, p.classification.mechanismFamily, "clinical effect requires extraction"], symbols: ["?"] }];
   return `<section class="article-section">
-    <h3>Protein Signaling + Arrow Mechanisms</h3>
+    <h3>Physiological Pathways</h3>
+    <p class="section-note">${esc(p.expanded.mechanismDetail)}</p>
     <div class="signal-grid">
       ${chains
         .map(
@@ -300,7 +322,10 @@ function signalingSection(p) {
             <p class="eyebrow">${esc(chain.category)} ${symbols(chain.symbols)}</p>
             <div class="signal-chain">
               ${chain.steps
-                .map((step, index) => `${index ? '<span class="signal-arrow">-></span>' : ""}<span class="signal-node">${esc(step)}</span>`)
+                .map(
+                  (step, index) =>
+                    `${index ? '<span class="signal-arrow">-></span>' : ""}<span class="signal-node"><i class="signal-step-index">${index + 1}</i><span>${esc(step)}</span></span>`
+                )
                 .join("")}
             </div>
           </div>`
@@ -475,16 +500,16 @@ function detail(p) {
         <header class="article-head">
           <div>
             <p class="eyebrow">${esc(p.category)} / ${esc(moderationLabel(p.moderation.status))}</p>
-            <h2>${esc(p.names.primary)}</h2>
+            <h2 class="name-display">${formatPeptideName(p.names.primary)}</h2>
             <p>${esc(p.names.aliases.join(" / ") || p.classification.peptideClass)}</p>
           </div>
           <button class="icon" data-close aria-label="Close article">x</button>
         </header>
         <section class="article-section intro">
           <div>
-            <p><strong>Mechanism.</strong> ${esc(p.tile.mechanismSummary)}</p>
-            <p><strong>Localization.</strong> ${esc(p.tile.localization)}</p>
-            <p><strong>Clinical context.</strong> ${esc(p.tile.clinicalUses.join(" "))}</p>
+            <p><strong>Mechanism:</strong> ${esc(p.tile.mechanismSummary)}</p>
+            <p><strong>Localization:</strong> ${esc(p.tile.localization)}</p>
+            <p><strong>Clinical context:</strong> ${esc(p.tile.clinicalUses.join(" "))}</p>
           </div>
           <aside>
             <span class="evidence-badge ${evidenceClass(p.classification.evidenceTier)}">${esc(DATA.evidenceTierLabel[p.classification.evidenceTier])}</span>
@@ -607,16 +632,16 @@ function detail(p) {
 function hero() {
   return `<section class="hero">
     <div>
-      <p class="eyebrow">production scaffold / model-checkable data</p>
-      <h1 class="brand-title">${BRAND}</h1>
-      <p class="lede">Source-backed peptide reference for biologists and physicians, with public vendor context, contextual dosing labels, hover citations, moderator review, and future agent reasoning.</p>
-      <div class="review-key">
+      <h1 class="brand-title ${state.brandAlt ? "alt" : ""}" data-toggle-brand>${BRAND}</h1>
+      <p class="lede">peptide signaling & mechanism reference for biologists & physicians</p>
+    </div>
+    <aside class="legend ${state.legendOpen ? "open" : "collapsed"}">
+      <button class="legend-toggle" data-toggle-legend aria-label="${state.legendOpen ? "Collapse key" : "Expand key"}">${state.legendOpen ? "-" : "+"}</button>
+      ${state.legendOpen ? `<div class="legend-body">
+        ${Object.entries(DATA.evidenceLegend).map(([key, value]) => `<span><abbr>${symbolGlyph(key)}</abbr>${esc(value)}</span>`).join("")}
         <span><i class="review-dot"></i>Yellow dot means model-drafted or pending human/mod verification.</span>
         <span><i class="review-dot ok"></i>Green dot means a moderator has verified the article or claim set.</span>
-      </div>
-    </div>
-    <aside class="legend">
-      ${Object.entries(DATA.evidenceLegend).map(([key, value]) => `<span><abbr>${symbolGlyph(key)}</abbr>${esc(value)}</span>`).join("")}
+      </div>` : ""}
     </aside>
   </section>`;
 }
@@ -633,7 +658,6 @@ function toolbar(categories) {
       <option value="category" ${state.sort === "category" ? "selected" : ""}>Category</option>
       <option value="review" ${state.sort === "review" ? "selected" : ""}>Needs review</option>
     </select>
-    <button class="bibliography-button" data-open-bibliography aria-label="Open bibliography"><span class="book-icon">&#128214;</span><span>[et al.]</span></button>
     <label class="toggle">
       <input type="checkbox" data-human-filter ${state.humanOnly ? "checked" : ""}>
       <span>Human studies</span>
@@ -642,6 +666,7 @@ function toolbar(categories) {
       <input type="checkbox" data-animal-filter ${state.animalOnly ? "checked" : ""}>
       <span>Animal studies</span>
     </label>
+    <button class="bibliography-button" data-open-bibliography aria-label="Open bibliography">[n]</button>
   </section>`;
 }
 
@@ -683,10 +708,24 @@ app.addEventListener("click", (event) => {
   const bibliographyBackdrop = target.closest("[data-close-bibliography]");
   const bibliographyButton = target.closest("[data-open-bibliography]");
   const bibliographyClose = target.closest("[data-close-bibliography-button]");
+  const legendToggle = target.closest("[data-toggle-legend]");
+  const brandToggle = target.closest("[data-toggle-brand]");
   const interactive = target.closest("button, a, input, select, textarea, .citation");
 
   if (closeDetail || (backdrop && target === backdrop)) {
     closeToGrid();
+    return;
+  }
+
+  if (legendToggle) {
+    state.legendOpen = !state.legendOpen;
+    render();
+    return;
+  }
+
+  if (brandToggle) {
+    state.brandAlt = !state.brandAlt;
+    render();
     return;
   }
 

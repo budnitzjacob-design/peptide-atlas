@@ -9,6 +9,8 @@ copyFileSync(
   "public/fonts/PixelSpaceFreePersonalUseR-zrppw.ttf",
   `${staticDir}/fonts/PixelSpaceFreePersonalUseR-zrppw.ttf`
 );
+copyFileSync("public/fonts/wheaton-capitals.otf", `${staticDir}/fonts/wheaton-capitals.otf`);
+copyFileSync("public/fonts/golden-girdle.otf", `${staticDir}/fonts/golden-girdle.otf`);
 copyFileSync("public/favicon.png", `${staticDir}/favicon.png`);
 copyFileSync("static-src/styles.css", `${staticDir}/styles.css`);
 copyFileSync("static-src/app.js", `${staticDir}/app.js`);

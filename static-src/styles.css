@@ -31,6 +31,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Wheaton Capitals";
+  src: url("/fonts/wheaton-capitals.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Golden Girdle";
+  src: url("/fonts/golden-girdle.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   min-height: 100%;
   background:
@@ -43,7 +59,7 @@ body {
   margin: 0;
   min-height: 100%;
   color: var(--ink);
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-family: "Apple Garamond", "Cormorant Garamond", "EB Garamond", "Baskerville Old Face", Georgia, serif;
   line-height: 1.5;
   background: linear-gradient(115deg, rgba(255, 255, 255, 0.035), transparent 17%, rgba(124, 149, 173, 0.045) 38%, transparent 63%);
   background-attachment: fixed;
@@ -54,6 +70,7 @@ input,
 select,
 textarea {
   font: inherit;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 button,
@@ -90,7 +107,7 @@ h4 {
 
 h2,
 h3 {
-  font-family: "Cormorant Garamond", "EB Garamond", "Iowan Old Style", Palatino, Georgia, serif;
+  font-family: "Wheaton Capitals", "Apple Garamond", "Cormorant Garamond", Georgia, serif;
 }
 
 h3,
@@ -121,6 +138,13 @@ h4 {
     0 6px 0 rgba(21, 26, 33, 0.78),
     0 18px 55px rgba(50, 75, 125, 0.42);
   animation: chromeShift 12s ease-in-out infinite alternate;
+  cursor: pointer;
+}
+
+.brand-title.alt {
+  font-family: "Golden Girdle", "Pixel Space", Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0;
 }
 
 .brand-title::before {
@@ -188,6 +212,7 @@ h3 {
   background-clip: text;
   text-transform: uppercase;
   font-size: 11px;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .lede {
@@ -210,6 +235,11 @@ h3 {
   gap: 8px;
 }
 
+.hero {
+  position: relative;
+  grid-template-columns: 1fr;
+}
+
 .hero-actions {
   margin-top: 18px;
 }
@@ -225,9 +255,32 @@ h3 {
 }
 
 .legend {
-  padding: 14px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(360px, calc(100% - 24px));
+  padding: 10px;
   display: grid;
   gap: 9px;
+  justify-items: end;
+}
+
+.legend.collapsed {
+  width: 52px;
+}
+
+.legend-body {
+  width: 100%;
+  display: grid;
+  gap: 9px;
+}
+
+.legend-toggle {
+  min-height: 30px;
+  min-width: 30px;
+  padding: 0;
+  border-radius: 999px;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .legend span,
@@ -256,6 +309,17 @@ abbr {
   font-weight: 800;
   font-size: 10px;
   background: #030304;
+}
+
+.glyph-face {
+  line-height: 1;
+}
+
+.paw-glyph {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+  display: block;
 }
 
 .review-dot {
@@ -364,12 +428,8 @@ textarea {
 .bibliography-button {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
   padding-inline: 12px;
-}
-
-.book-icon {
-  font-size: 14px;
 }
 
 .toggle {
@@ -414,6 +474,7 @@ textarea:focus {
   flex-direction: column;
   gap: 14px;
   cursor: pointer;
+  border-color: color-mix(in srgb, var(--type-color, #1e232b) 26%, #1e232b);
   transition: border-color 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease;
 }
 
@@ -489,6 +550,20 @@ textarea:focus {
 .type-pill {
   display: inline-block;
   margin-right: 8px;
+  padding: 2px 8px;
+  border: 1px solid color-mix(in srgb, var(--type-color, var(--steel)) 35%, var(--line));
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.name-display {
+  font-family: "Wheaton Capitals", "Apple Garamond", "Cormorant Garamond", Georgia, serif;
+}
+
+.name-lower {
+  font-family: "Apple Garamond", "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  text-transform: none;
 }
 
 .click-hint {
@@ -519,6 +594,7 @@ textarea:focus {
   padding: 4px 8px;
   color: var(--muted);
   font-size: 11px;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .evidence-badge.high {
@@ -563,6 +639,7 @@ dt {
   text-transform: uppercase;
   font-size: 10px;
   margin-bottom: 3px;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 dd {
@@ -659,6 +736,7 @@ th {
   text-transform: uppercase;
   font-size: 10px;
   background: #0b0e13;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 tbody tr:nth-child(odd) td {
@@ -779,10 +857,28 @@ tbody tr:nth-child(odd) td {
 .signal-node {
   border: 1px solid #3b5066;
   background: #050607;
-  border-radius: 99px;
-  padding: 6px 9px;
+  border-radius: 18px;
+  padding: 7px 10px;
   color: #e8eef8;
   font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: min(100%, 360px);
+}
+
+.signal-step-index {
+  min-width: 22px;
+  min-height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  color: var(--cyan);
+  border: 1px solid rgba(135, 232, 255, 0.4);
+  background: rgba(135, 232, 255, 0.08);
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .signal-arrow {
