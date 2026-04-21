@@ -1,0 +1,844 @@
+{
+  "batch_id": "batch-08",
+  "generated_at": "2026-04-21",
+  "peptides": [
+    {
+      "id": "dsip",
+      "names": {
+        "primary": "DSIP",
+        "aliases": ["Delta Sleep-Inducing Peptide", "Delta sleep peptide"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C35H48N10O15",
+        "molecularWeight": 848.81,
+        "cas": "62568-57-4",
+        "sequenceOneLetter": "WAGGDASGE",
+        "sequenceThreeLetter": "Trp-Ala-Gly-Gly-Asp-Ala-Ser-Gly-Glu",
+        "length": 9,
+        "modifications": [
+          "No post-translational modifications in the originally reported peptide",
+          "Free N-terminus and C-terminal carboxylate"
+        ],
+        "structureClass": "Nonapeptide; originally isolated from rabbit cerebral venous blood during electrically induced sleep"
+      },
+      "classification": {
+        "peptideClass": "Endogenous-family neuropeptide (originally identified as sleep-associated)",
+        "mechanismFamily": "No established receptor or signaling mechanism",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "A nonapeptide identified in 1977 from rabbit cerebral venous blood during induced sleep. Despite its name, the evidence that exogenous DSIP induces or regulates sleep in humans is weak and inconsistent. No receptor has been identified and the molecular mechanism remains essentially unknown after decades of work.",
+        "localization": "Originally isolated from cerebral venous blood; widely distributed in CNS and peripheral tissues but no defined receptor localization",
+        "clinicalUses": [],
+        "sideEffects": [
+          "Human safety characterization is limited to small studies from the 1980s — modern safety data are essentially absent",
+          "Generally well tolerated at studied doses but long-term and chronic-use data do not exist"
+        ],
+        "dosing": {
+          "quick": "No approved dose. Historical human studies used 25–100 µg/kg IV. Gray-market subcutaneous dosing protocols are not supported by modern controlled human trial data.",
+          "adminRoute": "Intravenous in early human studies; subcutaneous and intranasal in gray-market use",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [],
+        "receptors": [],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Proposed mechanism (poorly characterized)",
+            "steps": [
+              "DSIP crosses blood-brain barrier (proposed, with small BBB penetration data in rodents)",
+              "No defined receptor — proposed targets (NMDA modulation, opioid receptor interaction, GABAergic effects) are all weakly supported",
+              "Reported antioxidant and stress-reducing effects in rodent models lack clear pathway definition",
+              "Sleep-EEG effects in rabbits and humans have been reported inconsistently across studies"
+            ],
+            "symbols": ["?", "A", "C"],
+            "claimRef": "dsip-claim-mechanism"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Human evidence consists of small studies from the late 1970s and 1980s, largely from European groups following Monnier's original work. Results on objective sleep endpoints (polysomnography) were mixed and often did not separate clearly from placebo. Some studies reported subjective improvements in sleep quality and reductions in stress or pain perception, but sample sizes were small, blinding was inconsistent, and modern meta-analytic confirmation does not exist. There is no contemporary RCT literature establishing DSIP as a sleep or stress therapeutic in humans.",
+        "animalEvidence": "Rodent and rabbit studies report EEG delta-wave enhancement, possible stress-axis dampening, and antioxidant effects. Evidence is broad but mechanistically diffuse — rodent effects have not converged on a single pathway in forty-plus years of study.",
+        "mechanismDetail": "DSIP was isolated by Monnier and colleagues in 1977 from cerebral venous blood of rabbits during electrically induced sleep. The peptide's name reflected its association with delta sleep in the original experiments. Despite extensive subsequent work, no high-affinity receptor has been cloned, no consistent signaling cascade has been established, and the biologically relevant in vivo concentration is not well defined. Proposed mechanisms — NMDA modulation, opioid system interaction, antioxidant effects, HPA axis dampening — each have supportive but small studies that have not been consolidated into a coherent pharmacology. The honest summary is that DSIP's mechanism is essentially unknown despite the peptide being sequenced almost fifty years ago.",
+        "safetyDetail": "Human safety data are limited to small studies from the 1980s showing short-term tolerability at IV doses in the 25–100 µg/kg range. Modern safety data, chronic-dosing data, and long-term surveillance do not exist. Gray-market DSIP has no pharmaceutical-grade manufacturer.",
+        "safetyRisks": [
+          {
+            "system": "Systemic / unknown",
+            "label": "No modern safety characterization",
+            "color": "yellow",
+            "helpSummary": "Safety data are decades old and small.",
+            "harmSummary": "Modern profile, immunogenicity, and chronic-use effects in humans are effectively unknown.",
+            "citationIds": ["dsip-cit-schneider-2001"]
+          },
+          {
+            "system": "Product quality",
+            "label": "Gray-market supply only",
+            "color": "yellow",
+            "helpSummary": "No pharmaceutical-grade source.",
+            "harmSummary": "Identity, purity, and sterility are not assured in research-peptide supply.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Sleep enhancement claims in healthy adults are not supported by modern controlled trials. Even the original 'delta sleep-inducing' framing is weaker than the name suggests — modern sleep researchers do not consider DSIP a validated sleep therapeutic.",
+          "caveat": "The peptide's name is a historical artifact, not evidence of sleep-specific efficacy. Mechanism is unknown; forty years of work has not produced a receptor.",
+          "citationIds": ["dsip-cit-schneider-2001"]
+        },
+        "missingEvidence": [
+          "Any modern adequately powered randomized controlled human sleep trial",
+          "Identified receptor and signaling cascade",
+          "Validated polysomnography endpoints showing separation from placebo",
+          "Chronic-use safety data"
+        ],
+        "anecdotalUse": [
+          "Gray-market subcutaneous or intranasal use for claimed sleep, stress, and pain benefits — not supported by modern controlled trials"
+        ]
+      },
+      "claims": [
+        {
+          "id": "dsip-claim-mechanism",
+          "field": "biology.cascades",
+          "value": "No high-affinity receptor or defined signaling cascade has been established for DSIP despite nearly five decades of investigation.",
+          "species": "mixed",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "N"],
+          "confidence": 0.8,
+          "citationIds": ["dsip-cit-schneider-2001"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "dsip-claim-sleep",
+          "field": "expanded.humanEvidence",
+          "value": "Human sleep trials from the 1980s produced mixed and inconsistent results; DSIP is not established as a sleep therapeutic in modern sleep medicine.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "insomnia and healthy sleep study participants",
+          "route": "IV",
+          "sampleSize": null,
+          "duration": "acute to days",
+          "symbols": ["H", "N"],
+          "confidence": 0.7,
+          "citationIds": ["dsip-cit-schneider-2001"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "dsip-cit-schneider-2001",
+          "sourceType": "review",
+          "title": "Delta sleep-inducing peptide — an overview",
+          "authors": ["Graf MV", "Schoenenberger GA"],
+          "year": 1986,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3539085/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["dsip-claim-mechanism", "dsip-claim-sleep"],
+          "notes": "Representative older review summarizing 1980s DSIP work. Reviewer should confirm exact citation — several overlapping DSIP reviews exist from the Schoenenberger group; none from recent decades establish a receptor or modern clinical utility."
+        }
+      ]
+    },
+    {
+      "id": "epithalon",
+      "names": {
+        "primary": "Epithalon",
+        "aliases": ["Epitalon", "Epithalone", "AEDG peptide"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C14H22N4O9",
+        "molecularWeight": 390.35,
+        "cas": "307297-39-8",
+        "sequenceOneLetter": "AEDG",
+        "sequenceThreeLetter": "Ala-Glu-Asp-Gly",
+        "length": 4,
+        "modifications": [
+          "No canonical post-translational modifications",
+          "Free N- and C-termini"
+        ],
+        "structureClass": "Synthetic tetrapeptide; derived by the Khavinson group from extracts of bovine pineal gland as a purported active fragment"
+      },
+      "classification": {
+        "peptideClass": "Synthetic tetrapeptide (claimed 'pineal gland peptide')",
+        "mechanismFamily": "Claimed telomerase activator / gene expression modulator — mechanism is poorly substantiated outside a single research lineage",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "A synthetic AEDG tetrapeptide promoted as a telomerase activator and life-extension agent. Essentially all mechanistic, animal, and human claims come from a single research lineage (the Khavinson group, St. Petersburg), with minimal independent replication in Western peer-reviewed journals. Treat claims with strong skepticism.",
+        "localization": "Not defined; no receptor or molecular target identified",
+        "clinicalUses": [],
+        "sideEffects": [
+          "Human safety data are limited to Khavinson-group publications",
+          "No modern Western controlled-trial characterization"
+        ],
+        "dosing": {
+          "quick": "No approved dose anywhere. Russian research publications describe 5–10 mg subcutaneous courses over 10–20 days. Gray-market protocols vary widely and are not supported by independently verified human trial data.",
+          "adminRoute": "Subcutaneous (Russian research publications); intranasal and oral gray-market variants exist",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [
+          "Telomerase / TERT — claimed transcriptional activation (evidence limited to Khavinson-group publications)"
+        ],
+        "receptors": [],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Claimed telomerase activation (unreplicated)",
+            "steps": [
+              "Epithalon is proposed to enter cells",
+              "Claimed direct or indirect activation of TERT transcription",
+              "Claimed extension of telomere length in cultured human cells",
+              "Claimed life-extension effects in rodents",
+              "None of these steps has been independently replicated in high-quality Western peer-reviewed work"
+            ],
+            "symbols": ["?", "C", "A"],
+            "claimRef": "epi-claim-telomerase"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Human evidence is almost entirely from the Khavinson research group in St. Petersburg. Reported endpoints include lifespan in elderly Russian cohort studies, sleep quality, and various biomarker changes. These studies generally have methodological weaknesses: limited blinding, non-standard endpoints, small samples, and publication primarily in Russian-language venues or low-impact journals. There is no contemporary independent Western RCT of Epithalon for any endpoint.",
+        "animalEvidence": "Rodent studies from the Khavinson group report lifespan extension, reduced spontaneous tumor incidence, and various organ-specific benefits. Independent replication by unaffiliated laboratories is minimal. The claimed magnitude of effects (e.g., substantial lifespan extension from a short tetrapeptide course) is extraordinary and not matched by the quality of evidence.",
+        "mechanismDetail": "The proposed mechanism is direct or indirect activation of telomerase (TERT) transcription, with downstream telomere lengthening and senescence reversal. Evidence for this mechanism comes almost entirely from Khavinson-group papers, many of which are in Russian-language journals. Telomerase activation is a strong claim that, if real at the magnitude proposed, would have substantial oncological implications — and the absence of convincing independent confirmation is scientifically significant. No receptor for Epithalon has been identified. The honest mechanistic assessment is that Epithalon's pharmacology outside Khavinson-group publications is essentially undefined.",
+        "safetyDetail": "Safety data are limited to the same source lineage that produces the efficacy claims, making independent assessment difficult. No modern controlled safety trial in a Western regulatory context exists. If the telomerase-activation mechanism were real, it would raise oncological concerns given the role of telomerase in tumor biology — the absence of this concern in the promotional literature is itself notable.",
+        "safetyRisks": [
+          {
+            "system": "Oncology (theoretical)",
+            "label": "Telomerase activation concern",
+            "color": "red",
+            "helpSummary": "If the mechanism claim were real.",
+            "harmSummary": "Telomerase reactivation is a common feature of cancer biology. The promotional literature for Epithalon does not adequately address this; either the mechanism claim is wrong (likely, given replication failures) or the safety concern is being underplayed.",
+            "citationIds": ["epi-cit-khavinson-2003"]
+          },
+          {
+            "system": "Evidence quality",
+            "label": "Single-lineage evidence base",
+            "color": "red",
+            "helpSummary": "No independent Western replication.",
+            "harmSummary": "Essentially all claims come from one research lineage. Extraordinary claims (life extension from a short tetrapeptide course) require extraordinary — and independent — evidence.",
+            "citationIds": ["epi-cit-khavinson-2003"]
+          },
+          {
+            "system": "Product quality",
+            "label": "Gray-market supply",
+            "color": "red",
+            "helpSummary": "No pharmaceutical-grade product exists.",
+            "harmSummary": "Identity, purity, and sterility are not assured.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Life-extension and anti-aging claims for Epithalon are not supported by independent human evidence. The existing evidence base is methodologically weak and comes from a single research lineage.",
+          "caveat": "A tetrapeptide that durably activates telomerase after a short course would be extraordinary. Extraordinary claims require independent, high-quality replication that does not exist for Epithalon.",
+          "citationIds": ["epi-cit-khavinson-2003"]
+        },
+        "missingEvidence": [
+          "Independent Western replication of any claimed effect",
+          "High-quality RCT in any human endpoint",
+          "Identification of molecular target and mechanism",
+          "Modern pharmacokinetic characterization",
+          "Oncological safety surveillance given the claimed mechanism"
+        ],
+        "anecdotalUse": [
+          "Gray-market subcutaneous courses for claimed life extension and 'telomere restoration' — not supported by independent human evidence"
+        ]
+      },
+      "claims": [
+        {
+          "id": "epi-claim-telomerase",
+          "field": "biology.cascades",
+          "value": "Telomerase activation by Epithalon is claimed by a single research lineage and has not been independently replicated in high-quality Western peer-reviewed work.",
+          "species": "mixed",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "N", "C"],
+          "confidence": 0.3,
+          "citationIds": ["epi-cit-khavinson-2003"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "epi-claim-human",
+          "field": "expanded.humanEvidence",
+          "value": "Human evidence for Epithalon comes essentially from a single research group, is methodologically weak, and has not been independently replicated in the modern RCT literature.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "N", "?"],
+          "confidence": 0.85,
+          "citationIds": ["epi-cit-khavinson-2003"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "epi-cit-khavinson-2003",
+          "sourceType": "primary",
+          "title": "Peptide epitalon activates chromatin at the old age",
+          "authors": ["Khavinson VK", "Bondarev IE", "Butyugov AA"],
+          "year": 2003,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/14523538/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["epi-claim-telomerase", "epi-claim-human"],
+          "notes": "Bull Exp Biol Med 136(6):600-3. Representative Khavinson-group Epithalon paper. Reviewer should note that essentially all Epithalon primary literature traces to the same research lineage; this is a significant evidence-quality concern that should be surfaced in the site's display."
+        }
+      ]
+    },
+    {
+      "id": "foxo4-dri",
+      "names": {
+        "primary": "FOXO4-DRI",
+        "aliases": ["FOXO4 D-Retro-Inverso peptide", "FOXO4-p53 disrupting peptide", "Proxofim (informal research name)"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": null,
+        "sequenceOneLetter": "LTLRKEPASEIAQSILEAY (L-parent sequence; DRI peptide is reversed and all-D)",
+        "sequenceThreeLetter": "Leu-Thr-Leu-Arg-Lys-Glu-Pro-Ala-Ser-Glu-Ile-Ala-Gln-Ser-Ile-Leu-Glu-Ala-Tyr (L-parent; DRI peptide reverses this and uses D-amino acids)",
+        "length": 19,
+        "modifications": [
+          "D-retro-inverso (DRI) modification: the amino acid sequence is reversed AND all amino acids are in D-configuration. This preserves side chain topology while increasing protease resistance.",
+          "Typically synthesized with a cell-penetrating peptide (CPP) such as polyarginine or TAT attached N-terminally to enable cellular uptake in research preparations",
+          "Exact sequence used in Baar et al. 2017 should be verified against the paper's supplementary methods before publication — the parent L-sequence is derived from the FOXO4 forkhead DNA-binding region implicated in p53 binding"
+        ],
+        "structureClass": "D-retro-inverso peptide designed to disrupt FOXO4–p53 protein-protein interaction in senescent cells"
+      },
+      "classification": {
+        "peptideClass": "Protein-protein interaction disruptor (research tool)",
+        "mechanismFamily": "FOXO4–p53 interface inhibitor (senolytic)",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "A D-retro-inverso peptide designed to disrupt the FOXO4–p53 interaction that holds p53 sequestered in the nucleus of senescent cells. Blocking this interaction releases p53 to drive apoptosis selectively in senescent cells. It is a research tool from a single primary paper (Baar et al., Cell 2017) with no human trial data.",
+        "localization": "Intracellular; requires cell-penetrating peptide conjugation for uptake in research use",
+        "clinicalUses": [],
+        "sideEffects": [
+          "No human safety data",
+          "Senolytic activity in mice included transient fur darkening and hair loss at some doses"
+        ],
+        "dosing": {
+          "quick": "No human dose exists. Mouse studies in the original paper used ~5 mg/kg IP three times weekly. Gray-market human dosing is not supported by any published clinical trial.",
+          "adminRoute": "Intraperitoneal in original mouse studies; no validated human route",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["FOXO4", "TP53"],
+        "proteins": [
+          "FOXO4 — target protein; peptide mimics the surface that FOXO4 uses to bind p53",
+          "p53 (TP53) — downstream effector; released from FOXO4 sequestration in senescent cells",
+          "PUMA, BAX — downstream apoptosis effectors of released p53"
+        ],
+        "receptors": [],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Senolytic mechanism",
+            "steps": [
+              "In senescent cells, FOXO4 is upregulated and binds p53, sequestering it in the nucleus and blocking apoptotic function",
+              "FOXO4-DRI enters the cell (via CPP conjugation in research preparations) and competitively disrupts the FOXO4–p53 interface",
+              "Free p53 becomes available to drive transcription of apoptosis effectors (PUMA, BAX)",
+              "Senescent cells undergo apoptosis preferentially because non-senescent cells do not depend on FOXO4 sequestration of p53",
+              "In aged mice, treatment reduced senescent cell burden and improved fitness, fur density, and renal function endpoints"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "foxo4-claim-senolytic"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "There are no published human trials of FOXO4-DRI. All efficacy claims derive from the original Baar et al. 2017 Cell paper and subsequent mechanistic follow-up in cell and mouse models. The peptide is a research tool, not a clinical product.",
+        "animalEvidence": "The Baar et al. 2017 paper reported selective senescent cell killing in cultured human and mouse cells, reduction of senescent cell burden in aged and doxorubicin-treated mice, and improvements in fitness, fur density, and renal function. These results have been partially followed up in the literature but are the basis for the entire senolytic framing of FOXO4-DRI.",
+        "mechanismDetail": "FOXO4-DRI is a designed peptide intended to disrupt the protein-protein interaction between FOXO4 and p53 that is selectively important in senescent cells. In senescent cells, upregulated FOXO4 binds p53 and holds it in the nucleus in a configuration that blocks its normal apoptotic function — this contributes to the persistent viability of senescent cells. FOXO4-DRI mimics the FOXO4 surface that binds p53; by occupying p53, it competitively disrupts the FOXO4–p53 interaction. Released p53 drives apoptotic transcription, killing the senescent cell. Non-senescent cells do not depend on this mechanism for survival, giving the peptide its proposed selectivity. The D-retro-inverso design (sequence reversed, all amino acids in D-configuration) preserves side-chain topology while dramatically increasing protease resistance and half-life — a standard approach for therapeutic peptide mimetics.",
+        "safetyDetail": "No human safety data. In the original mouse work, the dominant observable effect was intended senolytic activity, with transient fur darkening at some doses. Long-term effects, off-target senolytic toxicity (e.g., in post-mitotic neurons or essential senescent-but-functional cells), and immunogenicity of the CPP-conjugated peptide in humans are unknown.",
+        "safetyRisks": [
+          {
+            "system": "Systemic",
+            "label": "No human safety data",
+            "color": "red",
+            "helpSummary": "Research tool only.",
+            "harmSummary": "Long-term effects of senescent cell clearance via this mechanism are not known in humans. Senescent cells have some homeostatic functions (wound healing, tumor suppression in certain contexts) that senolytic therapy could disrupt.",
+            "citationIds": ["foxo4-cit-baar-2017"]
+          },
+          {
+            "system": "Product quality",
+            "label": "Research-grade peptide only",
+            "color": "red",
+            "helpSummary": "No pharmaceutical-grade supply.",
+            "harmSummary": "Gray-market supply with CPP conjugation is heterogeneous; identity and purity are not assured, and CPP design varies by supplier.",
+            "citationIds": []
+          },
+          {
+            "system": "Oncology (theoretical)",
+            "label": "Broad p53 pathway activation",
+            "color": "yellow",
+            "helpSummary": "Senolytic mechanism depends on p53.",
+            "harmSummary": "In individuals with mutant p53 or altered senescence biology, the mechanism may not work as intended and could be unpredictable.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Anti-aging / healthspan claims in humans are not supported by any controlled human trial. FOXO4-DRI is a mechanistically interesting research tool, not a validated therapeutic.",
+          "caveat": "The mouse data from Baar et al. 2017 are promising but single-source and preclinical. Translation to human use would require formal drug development, which has not occurred.",
+          "citationIds": ["foxo4-cit-baar-2017"]
+        },
+        "missingEvidence": [
+          "Any human clinical trial",
+          "Independent replication of the original mouse senolytic findings by unaffiliated groups",
+          "Definition of optimal human dose, route, and safety margin",
+          "Long-term consequences of senescent cell clearance in humans",
+          "Verified exact sequence and CPP conjugation scheme for any gray-market preparation"
+        ],
+        "anecdotalUse": [
+          "Gray-market injectable use for claimed 'senolytic' anti-aging effects — not supported by any human trial and relies on unverified peptide identity"
+        ]
+      },
+      "claims": [
+        {
+          "id": "foxo4-claim-senolytic",
+          "field": "biology.cascades",
+          "value": "FOXO4-DRI disrupts FOXO4–p53 interaction in senescent cells, releasing p53 to drive senescent cell apoptosis; demonstrated in cell culture and in aged and chemotherapy-treated mice.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "cultured human and mouse senescent cells; aged and doxorubicin-treated mice",
+          "route": "IP (mouse)",
+          "sampleSize": null,
+          "duration": "weeks (mouse)",
+          "symbols": ["C", "A"],
+          "confidence": 0.7,
+          "citationIds": ["foxo4-cit-baar-2017"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "foxo4-claim-no-human",
+          "field": "expanded.humanEvidence",
+          "value": "No published human clinical trials of FOXO4-DRI exist.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "H"],
+          "confidence": 0.95,
+          "citationIds": ["foxo4-cit-baar-2017"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "foxo4-claim-sequence",
+          "field": "identity.sequenceOneLetter",
+          "value": "The exact FOXO4-derived parent sequence used in the D-retro-inverso peptide should be verified against Baar et al. 2017 supplementary methods before publication.",
+          "species": "mixed",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?"],
+          "confidence": 0.6,
+          "citationIds": ["foxo4-cit-baar-2017"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "foxo4-cit-baar-2017",
+          "sourceType": "primary",
+          "title": "Targeted apoptosis of senescent cells restores tissue homeostasis in response to chemotoxicity and aging",
+          "authors": ["Baar MP", "Brandt RMC", "Putavet DA", "Klein JDD", "Derks KWJ", "Bourgeois BRM", "Stryeck S", "Rijksen Y", "van Willigenburg H", "Feijtel DA", "van der Pluijm I", "Essers J", "van Cappellen WA", "van IJcken WF", "Houtsmuller AB", "Pothof J", "de Bruin RWF", "Madl T", "Hoeijmakers JHJ", "Campisi J", "de Keizer PLJ"],
+          "year": 2017,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28340339/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["foxo4-claim-senolytic", "foxo4-claim-no-human", "foxo4-claim-sequence"],
+          "notes": "Cell 169(1):132-147.e16. The single primary paper that establishes FOXO4-DRI. Reviewer should pull the supplementary methods to confirm exact peptide sequence and CPP conjugation design before publication."
+        }
+      ]
+    },
+    {
+      "id": "dihexa",
+      "names": {
+        "primary": "Dihexa",
+        "aliases": ["N-hexanoyl-Tyr-Ile-(6)-aminohexanoic amide", "PNB-0408", "Hexanoic-Tyr-Ile-NH-(CH2)5-CONH2"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C27H44N4O5",
+        "molecularWeight": 504.67,
+        "cas": "1401708-83-5",
+        "sequenceOneLetter": "Hexanoyl-Y-I-Aha-NH2",
+        "sequenceThreeLetter": "Hexanoyl-Tyr-Ile-(6-aminohexanoyl)-NH2",
+        "length": 2,
+        "modifications": [
+          "N-terminal hexanoyl (C6 fatty acid) cap — improves oral bioavailability and CNS penetration",
+          "C-terminal 6-aminohexanoic acid amide — linker/spacer",
+          "Only Tyr-Ile is a canonical dipeptide; dihexa is more accurately described as a peptidomimetic than a classical peptide",
+          "Derived from angiotensin IV (Ang IV) by the Harding laboratory at Washington State University"
+        ],
+        "structureClass": "Angiotensin IV-derived peptidomimetic; proposed HGF/c-Met activator",
+        "sequenceOneLetter_note": "The reviewer should verify molecular formula and weight — dihexa's non-standard terminal modifications make these susceptible to small errors; confirm against the Harding lab papers before publication."
+      },
+      "classification": {
+        "peptideClass": "Peptidomimetic (angiotensin IV analog)",
+        "mechanismFamily": "Proposed HGF / c-Met pathway potentiator",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "An orally bioavailable peptidomimetic derived from angiotensin IV, developed at the Harding lab for neurological applications. Proposed to act through the HGF / c-Met pathway to promote synaptogenesis and dendritic spine formation. Spectacular potency claims in preclinical synaptogenesis assays warrant independent replication before clinical translation.",
+        "localization": "CNS (claimed BBB penetration); c-Met pathway is broadly expressed",
+        "clinicalUses": [],
+        "sideEffects": [
+          "No human data — safety profile in humans is unknown"
+        ],
+        "dosing": {
+          "quick": "No human dose. Rat behavioral studies used oral doses in the high µg/kg range. No validated human dosing exists.",
+          "adminRoute": "Oral in preclinical work (the BBB-penetrant design rationale); subcutaneous in some gray-market use",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["HGF", "MET (c-Met receptor)"],
+        "proteins": [
+          "Hepatocyte growth factor (HGF) — dihexa is proposed to augment HGF signaling rather than bind c-Met directly",
+          "c-Met (MET) — receptor tyrosine kinase downstream of HGF",
+          "PI3K, AKT, ERK — downstream of c-Met activation",
+          "Angiotensin IV (parent system) — dihexa is derived from Ang IV but its proposed dominant mechanism is through HGF/c-Met rather than AT4 receptor"
+        ],
+        "receptors": [
+          "c-Met (MET) — indirect engagement via HGF augmentation",
+          "AT4 receptor / IRAP (insulin-regulated aminopeptidase) — parent Ang IV target; relevance to dihexa is unclear"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Proposed HGF / c-Met synaptogenesis",
+            "steps": [
+              "Dihexa is proposed to augment HGF binding or presentation to c-Met",
+              "c-Met receptor tyrosine kinase activation",
+              "Downstream PI3K/AKT and MAPK/ERK signaling",
+              "Increased dendritic spine density and synaptogenesis in cultured hippocampal neurons",
+              "Behavioral improvements in aged and amyloid-pathology rodent models",
+              "Independent replication at the reported potency magnitude is limited"
+            ],
+            "symbols": ["C", "A", "?"],
+            "claimRef": "dihexa-claim-hgf"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "There are no published human trials of dihexa. All efficacy claims are preclinical. The compound has been discussed in the Alzheimer's drug-development literature as a potential candidate, but no IND-enabling human data are publicly available as of the knowledge cutoff.",
+        "animalEvidence": "Rat studies from the Harding lab at Washington State University report behavioral improvements (Morris water maze, object recognition) in aged and scopolamine-treated models, and dendritic spine formation in cultured hippocampal neurons. Claimed potency in synaptogenesis assays is very high — reported as orders of magnitude more potent than BDNF in some preparations. This potency claim has not been robustly replicated by independent laboratories at the originally reported magnitude, which is a methodological concern given the extraordinary scale of the claim.",
+        "mechanismDetail": "Dihexa is derived from angiotensin IV (Ang IV) by the Harding group at Washington State University. Structurally it is a small peptidomimetic with a hexanoyl cap, a Tyr-Ile dipeptide core, and a 6-aminohexanoic acid amide tail — designed for oral absorption and CNS penetration. The proposed mechanism of action is not direct c-Met binding but rather augmentation of HGF-mediated c-Met signaling, possibly by stabilizing or presenting HGF at c-Met. Downstream effects include PI3K/AKT and MAPK/ERK activation, dendritic spine formation, and improved memory performance in rodent models. The relationship to the parent Ang IV / AT4 receptor / IRAP system is complex and not fully resolved.",
+        "safetyDetail": "No human safety data. Rodent studies have not reported major toxicity at tested doses but are not substitutes for human exposure characterization. Broad c-Met activation is a theoretical oncological concern — c-Met is a known oncogene in several cancer types.",
+        "safetyRisks": [
+          {
+            "system": "Oncology (theoretical)",
+            "label": "c-Met pathway activation",
+            "color": "red",
+            "helpSummary": "c-Met is a known oncogene.",
+            "harmSummary": "c-Met gain-of-function is causally implicated in multiple cancers. A compound that augments HGF/c-Met signaling carries a real theoretical oncology concern, particularly in individuals with occult malignancy or cancer risk factors.",
+            "citationIds": ["dihexa-cit-benoist-2011"]
+          },
+          {
+            "system": "Systemic",
+            "label": "No human safety characterization",
+            "color": "red",
+            "helpSummary": "No published human exposure data.",
+            "harmSummary": "Gray-market use lacks any clinical trial foundation.",
+            "citationIds": []
+          },
+          {
+            "system": "Evidence quality",
+            "label": "Extraordinary potency claims require extraordinary replication",
+            "color": "yellow",
+            "helpSummary": "Single-lab origin of potency magnitude.",
+            "harmSummary": "The 'orders of magnitude more potent than BDNF' framing is striking and not robustly replicated by independent groups at the originally reported magnitude.",
+            "citationIds": ["dihexa-cit-benoist-2011"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Cognitive enhancement claims in healthy adults are not supported by any human trial. Rodent data are suggestive but single-source at the claimed potency magnitude.",
+          "caveat": "c-Met is an oncogene. A cognitive-enhancing compound that activates this pathway is not a casual proposition in healthy adults.",
+          "citationIds": ["dihexa-cit-benoist-2011"]
+        },
+        "missingEvidence": [
+          "Any human clinical trial",
+          "Independent replication of the high-potency synaptogenesis claim by unaffiliated laboratories",
+          "Long-term oncological safety given c-Met pathway engagement",
+          "Validated human pharmacokinetics and bioavailability",
+          "Verified molecular formula and identity in gray-market supply"
+        ],
+        "anecdotalUse": [
+          "Gray-market oral or sublingual use for claimed cognitive enhancement and neuroprotection — not supported by any human trial"
+        ]
+      },
+      "claims": [
+        {
+          "id": "dihexa-claim-hgf",
+          "field": "biology.cascades",
+          "value": "Dihexa is proposed to act through HGF / c-Met pathway augmentation, with preclinical evidence for dendritic spine formation and behavioral improvement in rodent models.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "rat behavioral models; cultured hippocampal neurons",
+          "route": "oral, IP",
+          "sampleSize": null,
+          "duration": "days to weeks",
+          "symbols": ["A", "C", "?"],
+          "confidence": 0.5,
+          "citationIds": ["dihexa-cit-benoist-2011", "dihexa-cit-mccoy-2013"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "dihexa-claim-potency",
+          "field": "expanded.animalEvidence",
+          "value": "The reported synaptogenic potency of dihexa — described as orders of magnitude greater than BDNF — has not been robustly replicated at that magnitude by independent groups.",
+          "species": "mixed",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?"],
+          "confidence": 0.6,
+          "citationIds": ["dihexa-cit-benoist-2011"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "dihexa-claim-no-human",
+          "field": "expanded.humanEvidence",
+          "value": "No published human clinical trials of dihexa exist.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "H"],
+          "confidence": 0.9,
+          "citationIds": ["dihexa-cit-benoist-2011"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "dihexa-cit-benoist-2011",
+          "sourceType": "primary",
+          "title": "Facilitation of hippocampal synaptogenesis and spatial memory by C-terminal truncated Nle1-angiotensin IV analogs",
+          "authors": ["Benoist CC", "Wright JW", "Zhu M", "Appleyard SM", "Wayman GA", "Harding JW"],
+          "year": 2011,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21873558/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["dihexa-claim-hgf", "dihexa-claim-potency", "dihexa-claim-no-human"],
+          "notes": "J Pharmacol Exp Ther 339(1):35-44. Representative primary paper from the Harding lab on Ang IV-derived analogs including the design rationale for dihexa. Confirm whether this specific paper covers dihexa itself or the class; the dihexa-specific characterization is split across several Harding-lab papers from 2011-2014."
+        },
+        {
+          "id": "dihexa-cit-mccoy-2013",
+          "sourceType": "primary",
+          "title": "Evaluation of metabolically stabilized angiotensin IV analogs as pro-cognitive / anti-dementia therapeutics",
+          "authors": ["McCoy AT", "Benoist CC", "Wright JW", "Kawas LH", "Bule-Ghogare JM", "Zhu M", "Appleyard SM", "Wayman GA", "Harding JW"],
+          "year": 2013,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23408114/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["dihexa-claim-hgf"],
+          "notes": "J Pharmacol Exp Ther 344(1):141-54. Further Harding-lab characterization; title and year should be verified."
+        }
+      ]
+    },
+    {
+      "id": "snap-8",
+      "names": {
+        "primary": "SNAP-8",
+        "aliases": ["Acetyl octapeptide-3", "Acetyl glutamyl octapeptide-3"],
+        "tradeNames": ["SNAP-8 (Lipotec branded ingredient)"]
+      },
+      "identity": {
+        "formula": "C46H80N14O16S",
+        "molecularWeight": 1109.29,
+        "cas": "868844-74-0",
+        "sequenceOneLetter": "Ac-EEMQRRAD-NH2",
+        "sequenceThreeLetter": "Ac-Glu-Glu-Met-Gln-Arg-Arg-Ala-Asp-NH2",
+        "length": 8,
+        "modifications": [
+          "N-terminal acetylation",
+          "C-terminal primary amide",
+          "Extended analog of Argireline (acetyl hexapeptide-8; Ac-EEMQRR-NH2) with a C-terminal Ala-Asp addition"
+        ],
+        "structureClass": "Synthetic acetyl-octapeptide; SNARE complex-targeting cosmetic peptide"
+      },
+      "classification": {
+        "peptideClass": "Cosmetic peptide (topical)",
+        "mechanismFamily": "Claimed SNARE-complex competitor (SNAP-25 N-terminal mimicry) — 'topical botulinum-mimic' marketing framing",
+        "regulatoryStatus": "not_approved"
+      },
+      "tile": {
+        "mechanismSummary": "A synthetic octapeptide marketed as a topical 'botulinum-like' cosmetic ingredient. The claimed mechanism is competitive disruption of the SNARE complex by mimicking the N-terminus of SNAP-25, reducing neurotransmitter release at cutaneous nerve endings. Legal status is as a cosmetic ingredient, not an approved drug; efficacy evidence is primarily industry-sponsored small cosmetic studies.",
+        "localization": "Topical skin application; claimed activity at cutaneous nerve terminals",
+        "clinicalUses": [
+          "Cosmetic ingredient in topical anti-wrinkle formulations — not a drug indication"
+        ],
+        "sideEffects": [
+          "Topical use is generally well tolerated",
+          "Rare local irritation or contact dermatitis"
+        ],
+        "dosing": {
+          "quick": "Cosmetic topical use only. Typical formulation concentration is 3–10% of the SNAP-8 solution (itself a low-percent peptide in carrier) in finished products. No drug dosing exists.",
+          "adminRoute": "Topical (cosmetic)",
+          "publicDisplayAllowed": true,
+          "context": "vendor"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [
+          "SNAP-25 — claimed molecular target (mimicry of N-terminal residues to interfere with SNARE complex assembly)",
+          "Syntaxin-1, VAMP — SNARE complex components (indirect)"
+        ],
+        "receptors": [],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Claimed SNARE competition (topical)",
+            "steps": [
+              "SNAP-8 is applied topically and is claimed to penetrate to cutaneous nerve endings",
+              "Peptide mimics the N-terminal SNAP-25 sequence involved in SNARE complex formation",
+              "Competitive disruption of SNARE assembly is claimed to reduce neurotransmitter (particularly acetylcholine) release at the neuromuscular junction of facial mimetic muscles",
+              "Reduced muscle contraction is claimed to reduce expression-line wrinkles",
+              "The functional translation from topical application through skin to motor nerve terminals is mechanistically weak — most evidence that supports clinical effect is from industry-sponsored cosmetic studies with subjective wrinkle endpoints"
+            ],
+            "symbols": ["C", "V", "?"],
+            "claimRef": "snap8-claim-snare"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Human evidence for SNAP-8 is dominated by small, industry-sponsored cosmetic studies with short durations (typically 4–12 weeks), subjective wrinkle-depth or smoothness endpoints, and limited blinding. Reported effect sizes are modest and overlap with placebo cosmetic bases in several studies. There are no large independent RCTs comparing SNAP-8 topical formulations against active cosmetic comparators. SNAP-8 is not a drug; it is regulated as a cosmetic ingredient, which requires safety substantiation but not efficacy proof equivalent to a drug.",
+        "animalEvidence": "Limited. The underlying SNARE mimicry mechanism is derived from work on Argireline and related peptides. Cell-based SNARE assembly assays support mechanistic plausibility at concentrations above what topical application is likely to deliver to motor nerve terminals.",
+        "mechanismDetail": "SNAP-8 is an extended analog of Argireline (acetyl hexapeptide-8; Ac-EEMQRR-NH2), with a C-terminal Ala-Asp addition. The marketing mechanism is competitive disruption of SNARE complex formation — the peptide is claimed to mimic the N-terminal region of SNAP-25, interfering with the assembly of SNAP-25, syntaxin-1, and VAMP into the membrane fusion machinery that mediates neurotransmitter release. This is the same machinery that botulinum toxin proteolytically disrupts, and the 'topical botulinum-mimic' framing is a direct marketing appeal to that mechanism. The weak point of the story is pharmacological: for topical SNAP-8 to produce meaningful SNARE disruption at motor nerve terminals, it must penetrate stratum corneum, traverse dermis, and concentrate at neuromuscular junctions deeper in facial muscle — the transport math is not encouraging. A direct skin-level effect on cutaneous nerve endings and keratinocyte communication is more plausible but less dramatic than the 'facial muscle relaxation' framing suggests.",
+        "safetyDetail": "Topical cosmetic use has a favorable safety profile in the available studies. Contact dermatitis is uncommon. SNAP-8 has been in cosmetic use for well over a decade without a significant safety signal at typical formulation concentrations. Injectable use is not a standard cosmetic practice and has no safety characterization.",
+        "safetyRisks": [
+          {
+            "system": "Dermatologic",
+            "label": "Local irritation / contact dermatitis",
+            "color": "green",
+            "helpSummary": "Uncommon.",
+            "harmSummary": "Occasional at typical cosmetic concentrations; generally well tolerated.",
+            "citationIds": ["snap8-cit-lipotec"]
+          },
+          {
+            "system": "Evidence quality",
+            "label": "Industry-sponsored efficacy literature",
+            "color": "yellow",
+            "helpSummary": "Cosmetic-scale evidence.",
+            "harmSummary": "Existing efficacy literature is predominantly industry-sponsored with subjective endpoints and short durations; independent replication against active comparators is limited.",
+            "citationIds": ["snap8-cit-lipotec"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Topical cosmetic wrinkle reduction is the sole reasonably documented use case, and the evidence base is modest and industry-sponsored. The 'topical botulinum' framing overstates what topical application is likely to achieve mechanistically.",
+          "caveat": "Cosmetic ingredient status is not equivalent to a drug approval, and cosmetic endpoint trials are not equivalent to drug efficacy trials.",
+          "citationIds": ["snap8-cit-lipotec"]
+        },
+        "missingEvidence": [
+          "Independent head-to-head comparison against active cosmetic comparators",
+          "Objective instrumental wrinkle-depth measurement (not subjective assessments)",
+          "Evidence that topical SNAP-8 reaches concentrations at motor nerve terminals sufficient for SNARE competition",
+          "Long-duration (>6 month) controlled data"
+        ],
+        "anecdotalUse": [
+          "Widespread inclusion in cosmetic anti-aging formulations, often alongside Argireline and other peptides",
+          "Marketing framing as a 'topical botulinum alternative' — the mechanism rationale is plausible in cell assays but the topical pharmacology is modest"
+        ]
+      },
+      "claims": [
+        {
+          "id": "snap8-claim-snare",
+          "field": "biology.cascades",
+          "value": "SNAP-8 is claimed to disrupt SNARE complex assembly via SNAP-25 N-terminal mimicry; cell assay support exists, but topical penetration to motor nerve terminals at effective concentrations is not well established.",
+          "species": "mixed",
+          "context": "vendor",
+          "population": "cell-based SNARE assays; cosmetic topical studies",
+          "route": "topical",
+          "sampleSize": null,
+          "duration": "weeks",
+          "symbols": ["C", "V", "?"],
+          "confidence": 0.5,
+          "citationIds": ["snap8-cit-lipotec"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "snap8-claim-cosmetic",
+          "field": "expanded.humanEvidence",
+          "value": "Human efficacy evidence for SNAP-8 is predominantly from small, industry-sponsored cosmetic studies with subjective endpoints; no adequately powered independent RCTs against active comparators have been published.",
+          "species": "human",
+          "context": "vendor",
+          "population": "cosmetic study participants",
+          "route": "topical",
+          "sampleSize": null,
+          "duration": "4-12 weeks",
+          "symbols": ["H", "V"],
+          "confidence": 0.7,
+          "citationIds": ["snap8-cit-lipotec"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "snap8-claim-regulatory",
+          "field": "classification.regulatoryStatus",
+          "value": "SNAP-8 is not an approved drug. It is a registered cosmetic ingredient (INCI: Acetyl Octapeptide-3) and is legally sold in topical cosmetic formulations globally under cosmetic regulations.",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["V", "N"],
+          "confidence": 0.9,
+          "citationIds": ["snap8-cit-lipotec"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "snap8-cit-lipotec",
+          "sourceType": "vendor",
+          "title": "SNAP-8 peptide solution — Lipotec / Lubrizol product monograph",
+          "authors": [],
+          "year": 2024,
+          "url": "https://www.lipotec.com/en/products/snap-8-peptide-solution/",
+          "accessedAt": "2026-04-21",
+          "quality": "vendor",
+          "supportsClaimIds": ["snap8-claim-snare", "snap8-claim-cosmetic", "snap8-claim-regulatory"],
+          "notes": "Lipotec (Lubrizol) supplier product monograph for SNAP-8. As vendor source, use only for identity and formulation details — not as evidence for efficacy claims. Exact URL should be verified before publication."
+        }
+      ]
+    }
+  ]
+}

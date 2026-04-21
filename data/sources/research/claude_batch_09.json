@@ -1,0 +1,1516 @@
+{
+  "batch_id": "batch-09",
+  "generated_at": "2026-04-21",
+  "peptides": [
+    {
+      "id": "pt-141",
+      "names": {
+        "primary": "Bremelanotide",
+        "aliases": ["PT-141", "PT141", "bremelanotide acetate", "Ac-Nle-cyclo(Asp-His-D-Phe-Arg-Trp-Lys)-OH"],
+        "tradeNames": ["Vyleesi"]
+      },
+      "identity": {
+        "formula": "C50H68N14O10",
+        "molecularWeight": 1025.2,
+        "cas": "189691-06-3",
+        "sequenceOneLetter": "Ac-Nle-cyclo(D-H-dF-R-W-K)-OH",
+        "sequenceThreeLetter": "Ac-Nle-cyclo(Asp-His-D-Phe-Arg-Trp-Lys)-OH",
+        "length": 7,
+        "modifications": [
+          "N-terminal acetylation",
+          "N-terminal norleucine (Nle) substitution for Met of native alpha-MSH",
+          "side-chain-to-side-chain lactam cyclization between Asp and Lys (positions 2 and 7 of the cycle)",
+          "D-phenylalanine (D-Phe) substitution at position 4 of the cycle",
+          "free carboxylic acid C-terminus (distinguishes bremelanotide from Melanotan II, which is C-terminally amidated)",
+          "formulated as the acetate salt"
+        ],
+        "structureClass": "synthetic cyclic heptapeptide analog of alpha-MSH"
+      },
+      "classification": {
+        "peptideClass": "alpha-MSH analog",
+        "mechanismFamily": "non-selective melanocortin receptor agonist (MC1R, MC3R, MC4R, MC5R); therapeutic effect driven primarily by central MC4R",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Cyclic heptapeptide melanocortin receptor agonist with highest relevant activity at MC1R and MC4R at therapeutic doses. Central MC4R activation in hypothalamic and limbic circuits enhances sexual desire; MC1R engagement in melanocytes drives hyperpigmentation seen as a side effect.",
+        "localization": "central nervous system (hypothalamus, limbic regions; MC4R) and skin melanocytes (MC1R) after subcutaneous absorption; drug does not distribute extensively to peripheral tissues",
+        "clinicalUses": [
+          "FDA-approved June 2019 for premenopausal women with acquired, generalized hypoactive sexual desire disorder (HSDD) that is not due to coexisting medical/psychiatric conditions, relationship problems, or effects of a medication or substance",
+          "not indicated for postmenopausal women, men, or for enhancement of sexual performance"
+        ],
+        "sideEffects": [
+          "nausea (most common; reported in roughly 40% of Phase 3 participants)",
+          "flushing",
+          "injection site reactions",
+          "headache",
+          "vomiting",
+          "transient increase in blood pressure and transient decrease in heart rate (usually resolving within 12 hours post-dose)",
+          "focal hyperpigmentation (face, gums, breasts) with repeated dosing, more common in darker baseline skin types",
+          "hypersensitivity reactions"
+        ],
+        "dosing": {
+          "quick": "FDA-approved: 1.75 mg subcutaneously via single-dose autoinjector to the abdomen or thigh, at least 45 minutes before anticipated sexual activity; no more than 1 dose per 24 hours; more than 8 doses per month is not recommended.",
+          "adminRoute": "subcutaneous (prefilled single-dose autoinjector)",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["MC1R", "MC3R", "MC4R", "MC5R", "POMC"],
+        "proteins": [
+          "melanocortin 1 receptor (MC1R; melanocytes, skin pigmentation)",
+          "melanocortin 3 receptor (MC3R; hypothalamic energy balance)",
+          "melanocortin 4 receptor (MC4R; central appetite and sexual function circuits)",
+          "melanocortin 5 receptor (MC5R; peripheral exocrine glands)"
+        ],
+        "receptors": [
+          "MC4R (class A GPCR, Gs-coupled) — primary therapeutic target",
+          "MC1R (class A GPCR, Gs-coupled) — drives hyperpigmentation side effect",
+          "MC3R, MC5R — additional agonism with less clearly characterized clinical contribution"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "central sexual-desire signaling",
+            "steps": [
+              "SC-absorbed bremelanotide crosses the blood-brain barrier to reach hypothalamic and limbic MC4R-expressing neurons",
+              "MC4R Gs activation -> adenylate cyclase -> cAMP -> PKA",
+              "downstream dopamine release in mesolimbic reward and motivation circuitry is proposed to contribute to increased sexual desire and arousal",
+              "MC1R engagement on cutaneous melanocytes activates tyrosinase and increases eumelanin synthesis, producing focal hyperpigmentation with repeated dosing",
+              "transient cardiovascular effects (BP rise, HR fall) occur after each dose and typically resolve within 12 hours"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "pt141-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Two identical Phase 3, randomized, double-blind, placebo-controlled RECONNECT trials (NCT02333071 and NCT02338960) in over 1,200 premenopausal women with acquired, generalized HSDD of at least 6 months' duration supported the FDA approval. Statistically significant improvements in sexual desire and reduction in associated distress were demonstrated versus placebo. Bremelanotide has not been approved for postmenopausal women or for men, and no Phase 3 program in male erectile dysfunction was completed.",
+        "animalEvidence": "Receptor binding studies confirmed highest affinity at MC1R and MC4R at therapeutic doses. Bremelanotide showed no meaningful affinity for opioid, GABA, dopamine, serotonin, NMDA receptors, or the dopamine transporter, and a dedicated human abuse potential study versus phentermine and placebo supported no amphetamine-like abuse potential. Reproductive toxicology in pregnant dogs showed fetal harm at exposures greater than or equal to approximately 16 times the maximum human AUC; mouse developmental studies showed effects at exposures of approximately 125 times the maximum human AUC. No effect on fertility was demonstrated in male or female mice at the doses tested.",
+        "mechanismDetail": "Bremelanotide is a synthetic cyclic heptapeptide analog of alpha-MSH engineered to provide selectivity for melanocortin receptors with resistance to rapid proteolytic degradation. The Nle substitution and Asp-Lys lactam cyclization stabilize the beta-turn conformation that is needed for MC4R binding, while the D-Phe substitution is key for agonist activity. Centrally, MC4R activation in hypothalamic and limbic circuits (particularly the medial preoptic area and paraventricular nucleus) is associated with downstream dopamine release in reward pathways and with behavioral increases in sexual desire and arousal. Peripherally, MC1R activation on melanocytes produces focal skin and gum hyperpigmentation in a subset of users. Cardiovascular effects are thought to reflect transient sympathetic activation, mediated at least in part by central melanocortin signaling, and are self-limited.",
+        "safetyDetail": "FDA label contraindicates use in patients with uncontrolled hypertension or known cardiovascular disease. Transient increase in blood pressure and decrease in heart rate occur with each dose and usually resolve within 12 hours; clinicians should assess cardiovascular risk before initiation and periodically during treatment, and ensure blood pressure is well controlled. Focal hyperpigmentation of the face, gums, and breasts has been reported, may not be fully reversible after discontinuation, and is more common in patients with darker baseline skin. Animal reproductive studies showed fetal harm, so women of reproductive potential should use effective contraception during treatment and discontinue if pregnancy is suspected. A dedicated human abuse potential study did not show amphetamine-like activity, and no REMS was required for approval.",
+        "safetyRisks": [
+          {
+            "system": "cardiovascular",
+            "label": "Transient increase in BP / decrease in HR with each dose",
+            "color": "amber",
+            "helpSummary": "Effect typically resolves within 12 hours after dosing.",
+            "harmSummary": "Contraindicated in uncontrolled hypertension and known cardiovascular disease; assess CV risk before starting and periodically during treatment.",
+            "citationIds": ["vyleesi-label-2019"]
+          },
+          {
+            "system": "gastrointestinal",
+            "label": "Nausea (high-frequency)",
+            "color": "amber",
+            "helpSummary": "Most common adverse reaction in Phase 3.",
+            "harmSummary": "Reported in roughly 40% of treated participants; often mild-to-moderate and transient.",
+            "citationIds": ["vyleesi-label-2019", "palatin-pr-2019"]
+          },
+          {
+            "system": "dermatologic",
+            "label": "Focal hyperpigmentation (face, gums, breasts)",
+            "color": "amber",
+            "helpSummary": "Mediated by MC1R activation on melanocytes.",
+            "harmSummary": "May occur with repeated dosing and may not fully reverse after discontinuation; more common in patients with darker baseline skin.",
+            "citationIds": ["vyleesi-label-2019"]
+          },
+          {
+            "system": "reproductive",
+            "label": "Potential fetal harm (animal data)",
+            "color": "red",
+            "helpSummary": "Fetal harm observed at 16x and 125x human AUC in dogs and mice respectively.",
+            "harmSummary": "Women of reproductive potential should use effective contraception and discontinue if pregnancy is suspected.",
+            "citationIds": ["vyleesi-label-2019"]
+          },
+          {
+            "system": "dosing-misuse",
+            "label": "Risk of overdosing beyond labeled frequency",
+            "color": "amber",
+            "helpSummary": "Label explicitly limits dosing frequency.",
+            "harmSummary": "More than 1 dose/24h or >8 doses/month is not recommended; misuse may amplify BP and GI effects.",
+            "citationIds": ["vyleesi-label-2019"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "One of only two FDA-approved drugs for female sexual dysfunction. Evidence supporting the approved indication is stronger than for most peptides discussed in consumer contexts.",
+          "caveat": "Off-label use in postmenopausal women, in men, or as a general libido enhancer is not FDA-sanctioned. Repeated use carries a dermatologic signal (hyperpigmentation) that is underappreciated in lay discussion, and the cardiovascular contraindication deserves weight in older or comorbid populations.",
+          "citationIds": ["vyleesi-label-2019", "palatin-pr-2019"]
+        },
+        "missingEvidence": [
+          "Phase 3 data in postmenopausal women and in men",
+          "long-term safety of repeated dosing beyond trial durations",
+          "objective long-term dermatologic outcomes of recurrent MC1R activation",
+          "head-to-head trials versus flibanserin"
+        ],
+        "anecdotalUse": [
+          "off-label use in men for desire-side sexual dysfunction or PDE5-inhibitor-resistant ED",
+          "off-label use in patients with SSRI-induced sexual side effects or neurogenic sexual dysfunction",
+          "grey-market 'PT-141' research-peptide use outside the approved prescription channel"
+        ]
+      },
+      "claims": [
+        {
+          "id": "pt141-mech-01",
+          "field": "mechanism",
+          "value": "Non-selective melanocortin receptor agonist; therapeutic effect on sexual desire attributed to central MC4R activation; MC1R drives hyperpigmentation",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.9,
+          "citationIds": ["vyleesi-label-2019", "fda-bremelanotide-reviews"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "pt141-indication-01",
+          "field": "regulatoryIndication",
+          "value": "FDA-approved June 2019 for acquired, generalized HSDD in premenopausal women",
+          "species": "human",
+          "context": "fda_label",
+          "population": "premenopausal women with acquired, generalized HSDD",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R", "H"],
+          "confidence": 0.98,
+          "citationIds": ["vyleesi-label-2019", "palatin-pr-2019"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "pt141-dose-01",
+          "field": "dosing",
+          "value": "1.75 mg SC via autoinjector (abdomen or thigh) as needed, at least 45 minutes before anticipated sexual activity; max 1 dose/24h, max 8 doses/month",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.98,
+          "citationIds": ["vyleesi-label-2019"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "pt141-bp-warning-01",
+          "field": "labelWarning",
+          "value": "Transient increase in BP and decrease in HR after each dose, usually resolving within 12 hours; contraindicated in uncontrolled HTN or known CVD",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R", "H"],
+          "confidence": 0.97,
+          "citationIds": ["vyleesi-label-2019"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "pt141-identity-01",
+          "field": "identity",
+          "value": "Cyclic heptapeptide Ac-Nle-cyclo(Asp-His-D-Phe-Arg-Trp-Lys)-OH; C50H68N14O10 (free base); MW 1025.2",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.98,
+          "citationIds": ["vyleesi-label-2019"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "vyleesi-label-2019",
+          "sourceType": "drug_label",
+          "title": "VYLEESI (bremelanotide injection) full prescribing information",
+          "authors": ["AMAG Pharmaceuticals / Palatin Technologies"],
+          "year": 2019,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/210557s000lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["pt141-mech-01", "pt141-indication-01", "pt141-dose-01", "pt141-bp-warning-01", "pt141-identity-01"],
+          "notes": "FDA full prescribing information; source of receptor affinity, Phase 3 results, dosing, contraindications, and structural data."
+        },
+        {
+          "id": "palatin-pr-2019",
+          "sourceType": "company_press_release",
+          "title": "FDA Approves New Drug Application for Vyleesi (bremelanotide injection)",
+          "authors": ["Palatin Technologies"],
+          "year": 2019,
+          "url": "https://palatin.com/press_releases/fda-approves-new-drug-application-for-vyleesi-bremelanotide-injection-2/",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["pt141-indication-01"],
+          "notes": "Sponsor press release confirming June 2019 FDA approval and adverse event summary."
+        },
+        {
+          "id": "fda-bremelanotide-reviews",
+          "sourceType": "regulator_review",
+          "title": "FDA CDER NDA 210557 Bremelanotide review documents",
+          "authors": ["U.S. Food and Drug Administration"],
+          "year": 2019,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2019/210557Orig1s000OtherR.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["pt141-mech-01"],
+          "notes": "FDA review notes that at therapeutic doses, binding of MC1R and MC4R is most relevant; no abuse liability signal versus phentermine/placebo."
+        }
+      ]
+    },
+    {
+      "id": "melanotan-ii",
+      "names": {
+        "primary": "Melanotan II",
+        "aliases": ["MT-II", "MT2", "Melanotan 2", "Ac-Nle-cyclo(Asp-His-D-Phe-Arg-Trp-Lys)-NH2"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C50H69N15O9",
+        "molecularWeight": 1024.18,
+        "cas": "121062-08-6",
+        "sequenceOneLetter": "Ac-Nle-cyclo(D-H-dF-R-W-K)-NH2",
+        "sequenceThreeLetter": "Ac-Nle-cyclo(Asp-His-D-Phe-Arg-Trp-Lys)-NH2",
+        "length": 7,
+        "modifications": [
+          "N-terminal acetylation",
+          "N-terminal norleucine (Nle) substitution",
+          "side-chain-to-side-chain lactam cyclization (Asp-Lys)",
+          "D-phenylalanine (D-Phe) substitution",
+          "C-terminal primary amide (-NH2) — distinguishes MT-II from bremelanotide (which has a free carboxylic acid -OH)"
+        ],
+        "structureClass": "synthetic cyclic heptapeptide analog of alpha-MSH; closely related to bremelanotide (PT-141) but C-terminally amidated"
+      },
+      "classification": {
+        "peptideClass": "alpha-MSH analog",
+        "mechanismFamily": "non-selective melanocortin receptor agonist (MC1R, MC3R, MC4R, MC5R)",
+        "regulatoryStatus": "not_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Non-selective cyclic heptapeptide agonist of melanocortin receptors. MC1R activation on melanocytes increases eumelanin synthesis and produces chemical tanning; MC3R/MC4R activation produces appetite suppression and sexual arousal effects; MC5R activation contributes to peripheral effects including stretching/yawning complexes.",
+        "localization": "skin melanocytes, hypothalamus, limbic and autonomic CNS regions, exocrine glands",
+        "clinicalUses": [],
+        "sideEffects": [
+          "nausea and vomiting",
+          "facial flushing",
+          "darkening of existing moles, eruption of new nevi, atypical melanocytic nevi",
+          "melanonychia (nail discoloration)",
+          "spontaneous painful erections (priapism) in men, sometimes requiring emergent intervention",
+          "rhabdomyolysis (case reports, typically at higher doses)",
+          "renal infarction (isolated case reports)",
+          "posterior reversible encephalopathy syndrome (isolated case report)",
+          "stretching/yawning complexes, appetite loss, fatigue",
+          "case reports of melanoma diagnosed during or after Melanotan use"
+        ],
+        "dosing": {
+          "quick": "Not approved anywhere. No validated medical dose. Unregulated vendor product is outside regulated manufacturing and not authorized for human use.",
+          "adminRoute": "subcutaneous injection (illicit); nasal spray (unregulated formulations sold online)",
+          "publicDisplayAllowed": false,
+          "context": "unknown"
+        }
+      },
+      "biology": {
+        "genes": ["MC1R", "MC3R", "MC4R", "MC5R", "POMC", "TYR", "TYRP1", "DCT"],
+        "proteins": [
+          "MC1R (melanocyte pigmentation)",
+          "MC3R (hypothalamic energy balance)",
+          "MC4R (central appetite and sexual function circuits)",
+          "MC5R (peripheral exocrine glands; stretching/yawning reflex circuits)",
+          "tyrosinase and melanogenesis enzymes"
+        ],
+        "receptors": [
+          "MC1R (class A GPCR, Gs-coupled) — tanning",
+          "MC3R (class A GPCR, Gs-coupled)",
+          "MC4R (class A GPCR, Gs-coupled) — sexual arousal and appetite effects",
+          "MC5R (class A GPCR, Gs-coupled) — peripheral autonomic/exocrine effects"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "pigmentation",
+            "steps": [
+              "MT-II binds MC1R on cutaneous melanocytes",
+              "Gs -> adenylate cyclase -> cAMP -> PKA -> MITF transcription factor induction",
+              "upregulation of tyrosinase, TYRP1, and DCT -> increased eumelanin synthesis",
+              "melanin transfer to keratinocytes produces visible skin darkening; repeated stimulation may drive proliferation of melanocytes and changes in existing nevi"
+            ],
+            "symbols": ["A", "H", "?"],
+            "claimRef": "mt2-mech-01"
+          },
+          {
+            "category": "central neuroendocrine",
+            "steps": [
+              "central MC4R activation produces sexual arousal (spontaneous erections, increased libido) and appetite suppression",
+              "MC5R engagement contributes to stretching and yawning reflex patterns",
+              "sympathomimetic effects contribute to case reports of rhabdomyolysis and renal infarction"
+            ],
+            "symbols": ["A", "H", "?"],
+            "claimRef": "mt2-mech-02"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "No completed pivotal human clinical trial has supported an approval for Melanotan II. Pilot Phase 1 work (Dorr and colleagues, 1996) and academic work on alpha-MSH analog tanning established the pharmacologic effect, but development was halted. Published human evidence otherwise consists largely of case reports and case series describing dermatologic changes (new and atypical nevi, melanonychia, melanoma cases), priapism, rhabdomyolysis with acute kidney injury, renal infarction, and a case report of posterior reversible encephalopathy syndrome. MT-II was the structural progenitor of bremelanotide (PT-141): early investigators noticed unexpected pro-sexual effects during MT-II tanning studies, which led to refinement of a related molecule (free-acid C-terminus) specifically for sexual dysfunction.",
+        "animalEvidence": "Animal pharmacology supports MT-II as a potent non-selective melanocortin agonist with activity at MC1R, MC3R, MC4R, and MC5R. Rodent studies show increased melanogenesis, reduced food intake, altered sexual behavior, and sympathetic activation consistent with melanocortin agonism. Genotoxicity and long-term carcinogenicity data have not been generated to the standard of a regulated drug.",
+        "mechanismDetail": "Melanotan II is a cyclic heptapeptide alpha-MSH analog with the same core scaffold as bremelanotide but a C-terminal primary amide instead of a free carboxylic acid. The amide terminus increases activity and stability at MC4R and MC5R and broadens the receptor profile relative to bremelanotide. At MC1R on melanocytes, Gs/cAMP/PKA signaling drives MITF-mediated transcriptional upregulation of tyrosinase, TYRP1, and DCT, accelerating eumelanin synthesis. Centrally, MC4R activation drives sexual arousal and appetite suppression; MC5R engagement is implicated in the characteristic stretching/yawning complex. Hyperpigmentation of existing pigmented lesions reflects direct stimulation of melanocytic activity and, with repeated exposure, may be accompanied by changes in nevus morphology that complicate dermatologic surveillance.",
+        "safetyDetail": "Multiple national regulators (FDA, MHRA, TGA) have issued consumer safety warnings against Melanotan II. Documented harms include: dermatologic changes (new nevi, atypical melanocytic nevi, darkening of existing moles) well-documented in multiple case series; case reports of melanoma during or shortly after MT-II use — causation is not established but the signal is consistent enough to be cited by regulators; serious systemic events including rhabdomyolysis, renal infarction, priapism requiring emergency urologic intervention, and a case report of posterior reversible encephalopathy syndrome; additionally, unregulated vendor product has variable actual content (one underground-market analysis reported vials labeled 10 mg containing 4.32-8.84 mg) so any dose estimate is unreliable. Nasal spray formulations sold as 'nasal tanning spray' bypass intended parenteral pharmacokinetics and absorb rapidly via mucosa, amplifying unpredictability.",
+        "safetyRisks": [
+          {
+            "system": "regulatory",
+            "label": "Not approved anywhere; consumer safety warnings from FDA, MHRA, TGA",
+            "color": "red",
+            "helpSummary": "All major regulators have warned against use; development was halted on safety grounds.",
+            "harmSummary": "Not a legal medicine anywhere; unregulated manufacture means identity and purity cannot be verified.",
+            "citationIds": ["mt2-unsw-2023", "mt2-dermnet-2024", "mt2-cleveland-2022"]
+          },
+          {
+            "system": "oncologic",
+            "label": "Melanocytic nevus changes and case reports of melanoma",
+            "color": "red",
+            "helpSummary": "Multiple case reports; causation unproven but signal consistent.",
+            "harmSummary": "Personal or family history of melanoma or atypical mole syndrome should be treated as an absolute contraindication; dermatologic surveillance is complicated by drug-induced nevus changes.",
+            "citationIds": ["mt2-dermnet-2024", "mt2-pubmed-melanoma-2014", "mt2-webmd-2025"]
+          },
+          {
+            "system": "urologic",
+            "label": "Priapism (ischemic) in men",
+            "color": "red",
+            "helpSummary": "Painful prolonged erection — a urologic emergency.",
+            "harmSummary": "Case reports describe failure of first-line cavernosal aspiration and phenylephrine, with surgical penoscrotal decompression required; untreated priapism can cause permanent erectile dysfunction.",
+            "citationIds": ["mt2-cleveland-2022", "mt2-webmd-2025"]
+          },
+          {
+            "system": "musculoskeletal/renal",
+            "label": "Rhabdomyolysis and renal infarction",
+            "color": "red",
+            "helpSummary": "Sympathomimetic-spectrum systemic toxicity.",
+            "harmSummary": "Case reports include renal dysfunction and renal infarction; can be life-threatening.",
+            "citationIds": ["mt2-rhabdo-2012"]
+          },
+          {
+            "system": "neurologic",
+            "label": "Posterior reversible encephalopathy syndrome (case report)",
+            "color": "amber",
+            "helpSummary": "Single published case linking MT-II to PRES.",
+            "harmSummary": "Acute encephalopathy with characteristic imaging findings; additional case reports would be needed to establish frequency.",
+            "citationIds": ["mt2-webmd-2025"]
+          },
+          {
+            "system": "product-quality",
+            "label": "Unregulated supply; variable actual content and purity",
+            "color": "red",
+            "helpSummary": "Underground market samples have shown 4.32-8.84 mg in vials labeled 10 mg.",
+            "harmSummary": "Identity, dose, and sterility cannot be verified; intranasal formulations bypass controlled absorption.",
+            "citationIds": ["mt2-cleveland-2022"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "MT-II is pharmacologically effective as a chemical tanning agent and produces genuine sexual arousal effects via the same mechanism that later supported bremelanotide's approval. From a harm-reduction standpoint, these effects are not in dispute.",
+          "caveat": "MT-II's safety profile is substantially worse than any approved melanocortin agonist. The combination of case-report melanoma signal, documented priapism, rhabdomyolysis, and renal infarction, plus unregulated supply, puts it in a different risk category from PT-141/Vyleesi or afamelanotide (Scenesse). There is no legitimate medical indication for Melanotan II.",
+          "citationIds": ["mt2-unsw-2023", "mt2-dermnet-2024", "mt2-webmd-2025"]
+        },
+        "missingEvidence": [
+          "any completed Phase 3 trial in humans",
+          "quantified long-term melanoma risk",
+          "controlled safety data at vendor-recommended dosing protocols",
+          "reliable pharmacokinetic data for the nasal-spray route"
+        ],
+        "anecdotalUse": [
+          "widespread illicit use for chemical tanning, particularly in fair-skinned individuals",
+          "secondary use for appetite suppression and sexual arousal",
+          "TikTok- and Instagram-driven popularity of 'nasal tanning spray' products containing MT-II despite regulator warnings"
+        ]
+      },
+      "claims": [
+        {
+          "id": "mt2-regulatory-01",
+          "field": "regulatoryStatus",
+          "value": "Not approved by any major regulator (FDA, EMA, MHRA, TGA); development was halted on safety grounds",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "R", "?"],
+          "confidence": 0.97,
+          "citationIds": ["mt2-unsw-2023", "mt2-dermnet-2024"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "mt2-mech-01",
+          "field": "mechanism",
+          "value": "MC1R agonism on melanocytes drives melanogenesis via cAMP/PKA/MITF and upregulation of tyrosinase/TYRP1/DCT",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": null,
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.9,
+          "citationIds": ["mt2-dermnet-2024"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "mt2-mech-02",
+          "field": "mechanism",
+          "value": "MC3R/MC4R/MC5R agonism drives central sexual arousal, appetite suppression, and stretching/yawning/sympathomimetic effects",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": null,
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.85,
+          "citationIds": ["mt2-unsw-2023", "mt2-webmd-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "mt2-nevus-signal-01",
+          "field": "adverseEvent",
+          "value": "Multiple case reports and case series of new/atypical/darkening nevi and melanoma diagnosed during or shortly after MT-II use; causation unproven but signal consistent",
+          "species": "human",
+          "context": "observational",
+          "population": "illicit MT-II users",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.85,
+          "citationIds": ["mt2-pubmed-melanoma-2014", "mt2-dermnet-2024", "mt2-webmd-2025"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "mt2-priapism-01",
+          "field": "adverseEvent",
+          "value": "Case reports of ischemic priapism after MT-II injection, with some cases refractory to first-line therapy and requiring surgical penoscrotal decompression",
+          "species": "human",
+          "context": "observational",
+          "population": "male MT-II users",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H"],
+          "confidence": 0.9,
+          "citationIds": ["mt2-cleveland-2022", "mt2-webmd-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "mt2-rhabdo-01",
+          "field": "adverseEvent",
+          "value": "Published case of systemic sympathomimetic toxicity with rhabdomyolysis and renal dysfunction following MT-II injection",
+          "species": "human",
+          "context": "observational",
+          "population": "single-case adult user",
+          "route": "SC",
+          "sampleSize": 1,
+          "duration": null,
+          "symbols": ["H"],
+          "confidence": 0.85,
+          "citationIds": ["mt2-rhabdo-2012"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "mt2-identity-01",
+          "field": "identity",
+          "value": "Cyclic heptapeptide Ac-Nle-cyclo(Asp-His-D-Phe-Arg-Trp-Lys)-NH2; C50H69N15O9; MW ~1024.18; CAS 121062-08-6",
+          "species": "human",
+          "context": "vendor",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["V"],
+          "confidence": 0.9,
+          "citationIds": ["mt2-dermnet-2024"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "mt2-dermnet-2024",
+          "sourceType": "secondary_article",
+          "title": "Melanotan II (DermNet NZ)",
+          "authors": ["DermNet NZ editorial"],
+          "year": 2024,
+          "url": "https://dermnetnz.org/topics/melanotan-ii",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["mt2-regulatory-01", "mt2-mech-01", "mt2-nevus-signal-01", "mt2-identity-01"],
+          "notes": "Peer-reviewed dermatology reference summarizing mechanism, adverse events, and regulatory warnings."
+        },
+        {
+          "id": "mt2-unsw-2023",
+          "sourceType": "secondary_article",
+          "title": "What is Melanotan-II — the drug that the TGA urges consumers to avoid?",
+          "authors": ["UNSW Medicine & Health"],
+          "year": 2023,
+          "url": "https://www.unsw.edu.au/newsroom/news/2023/01/what-is-melanotan-ii---the-drug-that-the-tga-urges-consumers-to-",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["mt2-regulatory-01", "mt2-mech-02"],
+          "notes": "Academic/public-health summary of regulator warnings and documented neurologic/systemic risks."
+        },
+        {
+          "id": "mt2-cleveland-2022",
+          "sourceType": "secondary_article",
+          "title": "Why You Should Never Use Nasal Tanning Spray (Cleveland Clinic)",
+          "authors": ["Allison Vidimos, RPh, MD"],
+          "year": 2022,
+          "url": "https://health.clevelandclinic.org/nasal-tanning-spray",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["mt2-regulatory-01", "mt2-priapism-01"],
+          "notes": "Cleveland Clinic article citing rhabdomyolysis, renal infarction, priapism and variable vendor content (4.32-8.84 mg in vials labeled 10 mg)."
+        },
+        {
+          "id": "mt2-pubmed-melanoma-2014",
+          "sourceType": "primary_study",
+          "title": "Melanoma associated with the use of melanotan-II",
+          "authors": ["Hjuler KF", "Lorentzen HF"],
+          "year": 2014,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24355990/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["mt2-nevus-signal-01"],
+          "notes": "Case report linking MT-II use to melanoma diagnosis."
+        },
+        {
+          "id": "mt2-rhabdo-2012",
+          "sourceType": "primary_study",
+          "title": "Melanotan II injection resulting in systemic toxicity and rhabdomyolysis",
+          "authors": [],
+          "year": 2012,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23121206/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["mt2-rhabdo-01"],
+          "notes": "Case report of systemic toxicity including sympathomimetic symptoms, rhabdomyolysis, and renal dysfunction."
+        },
+        {
+          "id": "mt2-webmd-2025",
+          "sourceType": "secondary_article",
+          "title": "Melanotan: Uses, Side Effects, Warnings (WebMD monograph)",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.webmd.com/vitamins/ai/ingredientmono-884/melanotan",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["mt2-priapism-01", "mt2-nevus-signal-01", "mt2-mech-02"],
+          "notes": "Aggregated monograph citing primary case reports of priapism, eruptive nevi, melanoma association, and posterior reversible encephalopathy syndrome."
+        }
+      ]
+    },
+    {
+      "id": "teduglutide",
+      "names": {
+        "primary": "Teduglutide",
+        "aliases": ["teduglutide [rDNA origin]", "ALX-0600", "Gly2-GLP-2"],
+        "tradeNames": ["Gattex (US)", "Revestive (EU)"]
+      },
+      "identity": {
+        "formula": "C164H252N44O55S",
+        "molecularWeight": 3752.0,
+        "cas": "197922-42-2",
+        "sequenceOneLetter": "HGDGSFSDEMNTILDNLAARDFINWLIQTKITD",
+        "sequenceThreeLetter": "His-Gly-Asp-Gly-Ser-Phe-Ser-Asp-Glu-Met-Asn-Thr-Ile-Leu-Asp-Asn-Leu-Ala-Ala-Arg-Asp-Phe-Ile-Asn-Trp-Leu-Ile-Gln-Thr-Lys-Ile-Thr-Asp",
+        "length": 33,
+        "modifications": [
+          "Ala2 -> Gly2 substitution of native human GLP-2 confers resistance to DPP-4 cleavage and extends half-life",
+          "produced via recombinant DNA technology in a modified Escherichia coli strain"
+        ],
+        "structureClass": "recombinant GLP-2 analog (Gly2-GLP-2)"
+      },
+      "classification": {
+        "peptideClass": "GLP-2 analog",
+        "mechanismFamily": "glucagon-like peptide-2 receptor agonist (class B GPCR, Gs-coupled)",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Recombinant 33-residue analog of endogenous human GLP-2 with a Gly2 substitution for DPP-4 resistance. Binds GLP-2 receptors on enteroendocrine cells, subepithelial myofibroblasts, and enteric neurons, promoting release of local mediators (IGF-1, nitric oxide, keratinocyte growth factor) that drive mucosal growth and increase intestinal and portal blood flow while reducing gastric acid secretion.",
+        "localization": "small intestine (GLP-2 receptor on enteroendocrine cells, subepithelial myofibroblasts, enteric neurons of submucosal and myenteric plexus); enteric microvasculature",
+        "clinicalUses": [
+          "FDA-approved 2012 for adults with Short Bowel Syndrome (SBS) dependent on parenteral support",
+          "pediatric indication extended May 2019 to patients aged 1 year and older with SBS dependent on parenteral support",
+          "marketed as Gattex in the US (Takeda) and Revestive in the EU"
+        ],
+        "sideEffects": [
+          "abdominal pain",
+          "nausea",
+          "injection site reactions",
+          "headache",
+          "abdominal distension",
+          "vomiting",
+          "fluid overload / peripheral edema / congestive heart failure risk",
+          "intestinal obstruction / stomal obstruction",
+          "cholecystitis, cholelithiasis, biliary tract disease",
+          "pancreatitis",
+          "colorectal polyps (acceleration of neoplastic growth)"
+        ],
+        "dosing": {
+          "quick": "FDA-approved: 0.05 mg/kg SC once daily (0.025 mg/kg daily in moderate-severe renal impairment or ESRD with eGFR <60 mL/min/1.73 m2). Reconstitute lyophilized powder and use within 3 hours; discard any unused reconstituted drug.",
+          "adminRoute": "subcutaneous (reconstituted from lyophilized powder)",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["GLP2R", "IGF1", "NOS3", "KGF/FGF7"],
+        "proteins": [
+          "GLP-2 receptor (GLP2R; class B GPCR)",
+          "insulin-like growth factor 1 (IGF-1) — local mediator",
+          "nitric oxide (NO; via endothelial NOS) — vasodilatory mediator",
+          "keratinocyte growth factor (KGF / FGF7) — mucosal growth mediator",
+          "endogenous glucagon-like peptide-2 (from L-cells of distal intestine)"
+        ],
+        "receptors": ["GLP-2R on intestinal enteroendocrine subpopulations, subepithelial myofibroblasts, and enteric neurons of the submucosal and myenteric plexus"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "intestinal adaptation",
+            "steps": [
+              "SC teduglutide reaches systemic circulation (~88% bioavailability) and binds intestinal GLP-2R",
+              "Gs -> adenylate cyclase -> cAMP -> PKA",
+              "local release of IGF-1, NO, and KGF/FGF7",
+              "increased villus height, crypt depth, and mucosal surface area",
+              "increased intestinal and portal blood flow; delayed gastric emptying and reduced gastric acid secretion",
+              "net effect: improved nutrient/fluid absorption and reduced dependence on parenteral support in SBS"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "teduglutide-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "The adult SBS approval (December 21, 2012) was based on randomized, placebo-controlled trials demonstrating reduced parenteral support (PS) volume requirements with 0.05 mg/kg/day SC teduglutide. The pediatric indication extension (May 17, 2019) was supported by a 24-week study and a 12-week study (total 41 pediatric patients aged 1 year and older) in which adverse reactions were similar to adults; a 6-month pediatric program reported that 18 of 26 children aged 1-17 reduced weekly PS volume by >=20% and 10 of 26 achieved at least 1 day off PS per week. Anti-teduglutide antibodies develop in roughly 3% at month 3, 17% at month 6, 24% at month 12, 33% at month 24, and 48% at month 30 of therapy; 83% of tested antibodies were cross-reactive with native GLP-2, but antibody formation has not been associated with reduced short-term (up to ~1.5 years) efficacy, safety, or PK changes.",
+        "animalEvidence": "Preclinical work established GLP-2R distribution and function, supporting the mucosal-trophic mechanism. Rat studies identified small bowel neoplasia, forming the basis of the labeled warning for acceleration of neoplastic growth and requirement for pre- and on-treatment endoscopic surveillance.",
+        "mechanismDetail": "Teduglutide is a 33-amino-acid recombinant analog of endogenous human GLP-2 produced in E. coli, with an Ala2 -> Gly2 substitution that confers resistance to DPP-4-mediated cleavage at the N-terminus and extends the functional half-life compared to native GLP-2 (mean terminal t1/2 ~2 hours in healthy subjects and ~1.3 hours in SBS patients). SC bioavailability is approximately 88%; plasma clearance is similar to GFR, consistent with primarily renal elimination. Binding to GLP-2R on enteroendocrine cells, subepithelial myofibroblasts, and enteric neurons produces downstream release of IGF-1, nitric oxide, and KGF/FGF7, which collectively increase villus height and crypt depth, enhance mucosal surface area, increase intestinal and portal blood flow, and reduce gastric emptying and acid secretion. In SBS, these effects translate to improved fluid and nutrient absorption and reduced PS requirement.",
+        "safetyDetail": "The Gattex label carries warnings for: (1) acceleration of neoplastic growth — a colonoscopy of the entire colon with polyp removal is required within 6 months before starting treatment in adults; colonoscopy/sigmoidoscopy is recommended after 1 year and at least every 5 years thereafter; for children, fecal occult blood testing is performed at baseline and annually, with colonoscopy/sigmoidoscopy after 1 year and every 5 years thereafter; if colorectal cancer is diagnosed, discontinue; (2) intestinal or stomal obstruction — temporarily discontinue pending evaluation; (3) biliary and pancreatic disease — baseline bilirubin, alkaline phosphatase, lipase, and amylase are required; (4) fluid overload — particularly in patients with cardiovascular disease or heart failure; (5) increased absorption of concomitantly administered oral medications — caution with narrow-therapeutic-index drugs. Rat studies showed small bowel neoplasia; clinical monitoring for small bowel neoplasia is advised. Immunogenicity is common and rises over time but has not been associated with clinically relevant safety or efficacy findings in trial durations to date.",
+        "safetyRisks": [
+          {
+            "system": "oncologic",
+            "label": "Acceleration of neoplastic growth (colorectal polyps, small bowel neoplasia in rats)",
+            "color": "red",
+            "helpSummary": "Mandatory pre- and on-treatment endoscopic surveillance is required by the label.",
+            "harmSummary": "If colorectal cancer is diagnosed, discontinue; benign neoplasms should be removed.",
+            "citationIds": ["gattex-label-2024", "takeda-gattex-peds-2019"]
+          },
+          {
+            "system": "gastrointestinal",
+            "label": "Intestinal or stomal obstruction",
+            "color": "amber",
+            "helpSummary": "Temporarily discontinue pending clinical evaluation if obstruction develops.",
+            "harmSummary": "Risk particularly in patients with pre-existing strictures or stomas.",
+            "citationIds": ["gattex-label-2024"]
+          },
+          {
+            "system": "hepatobiliary/pancreatic",
+            "label": "Biliary tract and pancreatic disease",
+            "color": "amber",
+            "helpSummary": "Baseline bilirubin, ALP, lipase, and amylase are required.",
+            "harmSummary": "Cholecystitis, cholelithiasis, and pancreatitis have been reported; monitor periodically.",
+            "citationIds": ["gattex-label-2024"]
+          },
+          {
+            "system": "cardiovascular/renal",
+            "label": "Fluid overload",
+            "color": "amber",
+            "helpSummary": "Enhanced intestinal fluid absorption can provoke edema or CHF exacerbation.",
+            "harmSummary": "Particular caution in patients with CVD or congestive heart failure; requires PS volume adjustment.",
+            "citationIds": ["gattex-label-2024"]
+          },
+          {
+            "system": "drug-interaction",
+            "label": "Increased absorption of concomitant oral medications",
+            "color": "amber",
+            "helpSummary": "Pharmacodynamic rather than metabolic interaction.",
+            "harmSummary": "Caution with narrow-therapeutic-index drugs; dose adjustment may be required (e.g., benzodiazepines, carbamazepine).",
+            "citationIds": ["gattex-label-2024", "medscape-gattex"]
+          },
+          {
+            "system": "immunogenicity",
+            "label": "Anti-teduglutide antibodies develop in up to ~48% by month 30",
+            "color": "yellow",
+            "helpSummary": "Cross-reactive with native GLP-2 in most antibody-positive patients.",
+            "harmSummary": "No association with reduced efficacy, PK changes, or safety in trial periods up to ~1.5 years; long-term impact unknown.",
+            "citationIds": ["gattex-label-2024"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Established standard-of-care therapy in adults and pediatric patients (>=1 year) with PS-dependent SBS. Evidence base is regulatory-grade for the approved indication. Off-label use in other intestinal/enteropathy indications has been explored but is not FDA-sanctioned.",
+          "caveat": "Teduglutide is not a lifestyle or enhancement peptide. Long-term neoplastic risk, immunogenicity over multi-year courses, and the operational burden of endoscopic surveillance are ongoing real-world considerations.",
+          "citationIds": ["gattex-label-2024", "aetna-teduglutide"]
+        },
+        "missingEvidence": [
+          "long-term (multi-decade) colorectal and small-bowel cancer risk in humans",
+          "efficacy and safety in infants under 1 year",
+          "long-term immunogenicity impact beyond ~30 months",
+          "validated off-label indications (Crohn's disease, enterocutaneous fistula, radiation enteritis)"
+        ],
+        "anecdotalUse": [
+          "limited off-label exploration in low-output enterocutaneous fistula and radiation/chemotherapy-induced enteritis (small pilot trials)"
+        ]
+      },
+      "claims": [
+        {
+          "id": "teduglutide-mech-01",
+          "field": "mechanism",
+          "value": "Gly2 GLP-2 analog; binds intestinal GLP-2R on enteroendocrine cells, subepithelial myofibroblasts, and enteric neurons; local release of IGF-1, NO, and KGF drives mucosal growth and increased intestinal/portal blood flow",
+          "species": "human",
+          "context": "fda_label",
+          "population": "SBS adults and pediatric patients",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.97,
+          "citationIds": ["gattex-label-2024", "aetna-teduglutide"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "teduglutide-indication-01",
+          "field": "regulatoryIndication",
+          "value": "FDA-approved December 21, 2012 for adults with SBS dependent on parenteral support; pediatric indication extended May 17, 2019 to patients aged 1 year and older",
+          "species": "human",
+          "context": "fda_label",
+          "population": "adults and pediatric patients (>=1 year) with PS-dependent SBS",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R", "H"],
+          "confidence": 0.98,
+          "citationIds": ["gattex-label-2024", "takeda-gattex-peds-2019", "aetna-teduglutide"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "teduglutide-dose-01",
+          "field": "dosing",
+          "value": "0.05 mg/kg SC once daily (0.025 mg/kg/day in moderate-severe renal impairment or ESRD, eGFR <60 mL/min/1.73 m2); reconstitute and use within 3 hours",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.98,
+          "citationIds": ["gattex-label-2024", "takeda-gattex-peds-2019"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "teduglutide-peds-01",
+          "field": "pediatricEfficacy",
+          "value": "In a 6-month pediatric program, 18 of 26 children aged 1-17 reduced weekly PS volume by >=20% and 10 of 26 achieved at least 1 day off PS per week",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "pediatric SBS patients aged 1-17 dependent on parenteral support",
+          "route": "SC",
+          "sampleSize": 26,
+          "duration": "6 months",
+          "symbols": ["Rx", "H"],
+          "confidence": 0.9,
+          "citationIds": ["takeda-gattex-peds-2019", "gattex-site"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "teduglutide-antibody-01",
+          "field": "immunogenicity",
+          "value": "Anti-teduglutide antibodies: ~3% at month 3, 17% at month 6, 24% at month 12, 33% at month 24, 48% at month 30; 83% cross-reactive with native GLP-2; no impact on short-term (up to ~1.5 years) efficacy or safety",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adult SBS patients in registration and extension studies",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "up to 30 months",
+          "symbols": ["Rx", "H", "?"],
+          "confidence": 0.95,
+          "citationIds": ["gattex-label-2024"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "teduglutide-identity-01",
+          "field": "identity",
+          "value": "33-amino-acid recombinant GLP-2 analog with Gly2 substitution; MW 3752 Da; produced in E. coli; CAS 197922-42-2",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.98,
+          "citationIds": ["gattex-label-2024"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "gattex-label-2024",
+          "sourceType": "drug_label",
+          "title": "GATTEX (teduglutide) for injection, for subcutaneous use, full prescribing information (2024 revision)",
+          "authors": ["Takeda Pharmaceuticals America"],
+          "year": 2024,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/203441s022lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": [
+            "teduglutide-mech-01",
+            "teduglutide-indication-01",
+            "teduglutide-dose-01",
+            "teduglutide-antibody-01",
+            "teduglutide-identity-01"
+          ],
+          "notes": "Current FDA full prescribing information; source of 33-AA sequence, MW 3752 Da, GLP-2R mechanism, 0.05 mg/kg/day dosing, boxed warnings, and immunogenicity data."
+        },
+        {
+          "id": "takeda-gattex-peds-2019",
+          "sourceType": "company_press_release",
+          "title": "U.S. FDA Approves GATTEX for Children 1 Year of Age and Older With Short Bowel Syndrome",
+          "authors": ["Takeda"],
+          "year": 2019,
+          "url": "https://www.takeda.com/en-us/newsroom/news-releases/2019/u.s.-fda-approves-gattex-teduglutide-for-children-1-year-of-age-and-older-with-short-bowel-syndrome-sbs",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["teduglutide-indication-01", "teduglutide-peds-01", "teduglutide-dose-01"],
+          "notes": "Sponsor announcement of May 17, 2019 pediatric indication extension and renal-impairment dosing."
+        },
+        {
+          "id": "gattex-site",
+          "sourceType": "sponsor_portal",
+          "title": "GATTEX official product site (Takeda)",
+          "authors": ["Takeda"],
+          "year": 2024,
+          "url": "https://www.gattex.com/",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["teduglutide-peds-01"],
+          "notes": "Sponsor portal summarizing pediatric 6-month efficacy and >10 years of commercial availability."
+        },
+        {
+          "id": "aetna-teduglutide",
+          "sourceType": "secondary_article",
+          "title": "Teduglutide (Gattex) Medical Clinical Policy Bulletin",
+          "authors": ["Aetna"],
+          "year": 2024,
+          "url": "https://www.aetna.com/cpb/medical/data/800_899/0849.html",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["teduglutide-mech-01", "teduglutide-indication-01"],
+          "notes": "Payer clinical policy summary; cites GLP-2R downstream mediators (IGF-1, NO, KGF) and approval history."
+        },
+        {
+          "id": "medscape-gattex",
+          "sourceType": "secondary_article",
+          "title": "Gattex (teduglutide) dosing, indications, interactions, adverse effects (Medscape monograph)",
+          "authors": [],
+          "year": 2024,
+          "url": "https://reference.medscape.com/drug/gattex-teduglutide-999798",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["teduglutide-indication-01"],
+          "notes": "Clinical reference aggregator summarizing pediatric/adult indications and drug-absorption interaction guidance."
+        }
+      ]
+    },
+    {
+      "id": "aod-9604",
+      "names": {
+        "primary": "AOD-9604",
+        "aliases": ["AOD9604", "Advanced Obesity Drug 9604", "Tyr-hGH(177-191)", "modified hGH(176-191) with N-terminal tyrosine"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C78H123N23O23S2",
+        "molecularWeight": 1817.12,
+        "cas": "221231-10-3",
+        "sequenceOneLetter": "YLRIVQCRSVEGSCGF",
+        "sequenceThreeLetter": "Tyr-Leu-Arg-Ile-Val-Gln-Cys-Arg-Ser-Val-Glu-Gly-Ser-Cys-Gly-Phe",
+        "length": 16,
+        "modifications": [
+          "engineered from the C-terminal fragment of human growth hormone (hGH amino acids 176-191 / 177-191 depending on numbering convention)",
+          "added N-terminal tyrosine for stability and potency",
+          "intramolecular disulfide bond between the two cysteine residues (Cys7 and Cys14 in the AOD-9604 sequence, corresponding to Cys182 and Cys189 of native hGH)"
+        ],
+        "structureClass": "lipolytic hGH C-terminal peptide analog (hexadecapeptide with intramolecular disulfide)"
+      },
+      "classification": {
+        "peptideClass": "hGH C-terminal fragment analog",
+        "mechanismFamily": "proposed receptor-independent lipolytic peptide; does not bind the hGH receptor and does not raise IGF-1",
+        "regulatoryStatus": "not_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Synthetic 16-residue peptide engineered from the C-terminal lipolytic domain of human growth hormone. Preclinical work shows stimulation of lipolysis and inhibition of lipogenesis in adipose tissue without activating the GH receptor, without raising IGF-1, and without glucose-metabolism disruption. The human clinical signal for weight loss did not replicate at pivotal Phase 2b scale.",
+        "localization": "adipose tissue (primary proposed target); no significant hGH receptor engagement; does not affect IGF-1, insulin, thyroid hormones, cortisol, testosterone, or estrogen",
+        "clinicalUses": [],
+        "sideEffects": [
+          "generally well-tolerated in six randomized, double-blind, placebo-controlled trials totaling >900 participants",
+          "no clinically significant changes in glucose or IGF-1",
+          "long-term safety beyond trial durations is not established",
+          "unregulated vendor product safety is independent of the clinical-grade AOD-9604 tested in trials"
+        ],
+        "dosing": {
+          "quick": "Not FDA-approved. Trial doses were 0.25, 0.5, and 1 mg/day (oral and subcutaneous tested). Not authorized for prescription or compounding; listed by FDA as a bulk drug substance that may present safety risks.",
+          "adminRoute": "subcutaneous and oral tested in trials; oral bioavailability for this fragment class is low",
+          "publicDisplayAllowed": false,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["GH1", "GHR", "ADRB3"],
+        "proteins": [
+          "not the hGH receptor (AOD-9604 does not bind or activate GHR)",
+          "hormone-sensitive lipase (proposed downstream target)",
+          "beta-3 adrenergic receptor (ADRB3) — expression upregulated in some models, but AOD-9604 lipolytic effects are not directly mediated through ADRB3"
+        ],
+        "receptors": [
+          "no defined high-affinity receptor; mechanism described as 'receptor-independent'",
+          "beta-3 adrenergic receptor relevance is expression-level, not direct binding"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "proposed lipolytic (receptor-independent)",
+            "steps": [
+              "AOD-9604 engages unidentified adipocyte targets without activating the hGH receptor",
+              "upregulates beta-3 adrenergic receptor expression (effect, not binding)",
+              "activates hormone-sensitive lipase; stimulates beta-oxidation of fatty acids",
+              "suppresses lipogenic enzyme activity; reduces new fat storage",
+              "does not raise IGF-1, does not induce insulin resistance, does not alter thyroid/cortisol/sex hormones"
+            ],
+            "symbols": ["A", "C", "?"],
+            "claimRef": "aod9604-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Six randomized, double-blind, placebo-controlled human trials totaling more than 900 participants were completed by Metabolic Pharmaceuticals (Australia). Shorter trials (e.g., 12-week, ~300 participants) showed statistically significant weight reduction at 1 mg/day versus placebo (approximately 2.6 kg vs 0.8 kg). A longer 24-week Phase 2b trial in 536 participants did not meet its primary endpoint, and weight-loss signals largely disappeared when intensive diet-and-exercise protocols were incorporated. Development as a pharmaceutical obesity drug was formally discontinued in 2007. Safety and tolerability were acceptable in those trials with no clinically significant changes in glucose or IGF-1.",
+        "animalEvidence": "Animal studies in obese (ob/ob) mice and Zucker rats showed AOD-9604 reduced body weight gain, increased fat oxidation, stimulated lipolysis (measured by plasma glycerol), and did not induce hyperglycemia or reduce insulin secretion. Unlike full-length hGH, AOD-9604 did not compete for or activate the hGH receptor and did not induce cell proliferation. These findings are consistent across multiple Heffernan-group publications.",
+        "mechanismDetail": "AOD-9604 is a synthetic 16-residue peptide corresponding to the C-terminal lipolytic domain of human growth hormone (residues 176-191 or 177-191 depending on numbering convention), with an N-terminal tyrosine added for stability and a disulfide bond between the two cysteine residues. It was engineered to isolate hGH's lipolytic activity from its somatogenic, IGF-1-inducing, and glucose-disturbing actions. The precise molecular target remains unresolved: AOD-9604 does not bind the hGH receptor, and although it upregulates beta-3 adrenergic receptor expression in adipose tissue, its lipolytic effects are not directly mediated through ADRB3. Downstream effects include activation of hormone-sensitive lipase, enhanced fatty acid oxidation, and suppression of lipogenesis. Importantly, the mechanism that worked robustly in rodent obesity models did not translate into pharmaceutically useful human weight loss at the scale of a pivotal trial.",
+        "safetyDetail": "Clinical trial program with >900 participants showed generally good short-term tolerability and no clinically significant changes in IGF-1 or glucose. Long-term safety beyond trial durations is not established. Following Phase 2b failure, the compound has been listed by the FDA as a bulk drug substance that may present safety risks and is not approved for any medical use. WADA's prohibited list explicitly references growth hormone fragments including AOD-9604 / hGH 176-191. Grey-market vendor product cannot be verified for identity or purity, and independent manufacturing quality for research peptides varies widely.",
+        "safetyRisks": [
+          {
+            "system": "regulatory",
+            "label": "Not FDA-approved; listed as a bulk drug substance that may present safety risks",
+            "color": "red",
+            "helpSummary": "Development was formally discontinued in 2007 after Phase 2b failure.",
+            "harmSummary": "Grey-market supply cannot be verified; not a legitimate medical product anywhere.",
+            "citationIds": ["peptideinsider-aod-2026", "peptidegarden-aod-2026", "honestpeptide-aod-2026"]
+          },
+          {
+            "system": "sport-doping",
+            "label": "WADA prohibited substance",
+            "color": "amber",
+            "helpSummary": "Growth hormone fragments including AOD-9604/hGH 176-191 are on the WADA prohibited list.",
+            "harmSummary": "Any athlete using AOD-9604 is at risk of a positive test and sanction regardless of intent.",
+            "citationIds": ["meto-aod-2026"]
+          },
+          {
+            "system": "evidence-quality",
+            "label": "Pivotal Phase 2b failure despite encouraging rodent and early short-term human data",
+            "color": "amber",
+            "helpSummary": "Larger 24-week trial in 536 participants did not meet primary endpoint.",
+            "harmSummary": "Consumer marketing often cites earlier, smaller trials without noting the pivotal failure.",
+            "citationIds": ["peptideinsider-aod-2026", "peptidegarden-aod-2026", "emiratitimes-aod-2025"]
+          },
+          {
+            "system": "long-term",
+            "label": "Long-term safety not established",
+            "color": "amber",
+            "helpSummary": "Trial exposure was months, not years; long-term data are absent.",
+            "harmSummary": "Repeated grey-market use over years has no supporting safety data.",
+            "citationIds": ["honestpeptide-aod-2026"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Rodent and mechanistic data support AOD-9604 as a selective lipolytic peptide without the endocrine side effects of full hGH. Short-term human tolerability data are reassuring for the tested doses.",
+          "caveat": "The honest read of the human evidence is that AOD-9604 failed the pivotal trial it needed to become an approved weight-loss drug. It is not in the efficacy universe of GLP-1 or GLP-1/GIP medications and should not be marketed as equivalent. Grey-market product additionally introduces identity and purity uncertainty.",
+          "citationIds": ["peptideinsider-aod-2026", "peptidegarden-aod-2026", "meto-aod-2026"]
+        },
+        "missingEvidence": [
+          "identified high-affinity molecular target",
+          "independent validation of the early positive 12-week human weight-loss signal at larger scale",
+          "long-term (multi-year) safety, particularly on fat distribution and cardiometabolic markers",
+          "pharmacokinetics and bioavailability of current vendor formulations (including oral products)"
+        ],
+        "anecdotalUse": [
+          "consumer use for purported fat loss, often marketed through online peptide vendors",
+          "off-label clinical use in some 'peptide therapy' clinics despite lack of FDA approval",
+          "athletic/doping use (formally prohibited by WADA)"
+        ]
+      },
+      "claims": [
+        {
+          "id": "aod9604-mech-01",
+          "field": "mechanism",
+          "value": "Receptor-independent lipolytic peptide that does not bind the hGH receptor and does not raise IGF-1; proposed downstream lipolytic effects are not mediated directly through ADRB3 despite observed ADRB3 expression changes",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "obese (ob/ob) mice and Zucker rats",
+          "route": "SC or oral in animal models",
+          "sampleSize": null,
+          "duration": "14-28 days typical",
+          "symbols": ["A"],
+          "confidence": 0.85,
+          "citationIds": ["heffernan-2001", "peptidegarden-aod-2026"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "aod9604-regulatory-01",
+          "field": "regulatoryStatus",
+          "value": "Not approved by any major regulator; Phase 2b failed in 2007 and development discontinued; FDA has listed AOD-9604 as a bulk drug substance that may present safety risks",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "R", "?"],
+          "confidence": 0.95,
+          "citationIds": ["peptideinsider-aod-2026", "peptidegarden-aod-2026", "honestpeptide-aod-2026"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "aod9604-phase2b-01",
+          "field": "pivotalTrialFailure",
+          "value": "24-week Phase 2b trial in 536 participants did not meet its primary weight-loss endpoint; earlier 12-week trial (~300 participants) had shown 2.6 kg vs 0.8 kg placebo at 1 mg/day",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adults with obesity",
+          "route": "oral",
+          "sampleSize": 536,
+          "duration": "24 weeks",
+          "symbols": ["H"],
+          "confidence": 0.9,
+          "citationIds": ["peptidegarden-aod-2026", "emiratitimes-aod-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "aod9604-wada-01",
+          "field": "sportDoping",
+          "value": "WADA prohibited list references growth hormone fragments including AOD-9604 / hGH 176-191",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["R"],
+          "confidence": 0.9,
+          "citationIds": ["meto-aod-2026"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "aod9604-identity-01",
+          "field": "identity",
+          "value": "16-residue peptide YLRIVQCRSVEGSCGF (Tyr-hGH 177-191 with intramolecular Cys-Cys disulfide); C78H123N23O23S2; MW ~1817 Da; CAS 221231-10-3",
+          "species": "human",
+          "context": "vendor",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["V", "?"],
+          "confidence": 0.85,
+          "citationIds": ["peptidegarden-aod-2026", "honestpeptide-aod-2026"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "heffernan-2001",
+          "sourceType": "primary_study",
+          "title": "Increase of fat oxidation and weight loss in obese mice caused by chronic treatment with human growth hormone or a modified C-terminal fragment (AOD9604)",
+          "authors": ["Heffernan MA", "Summers RJ", "Thorburn A", "et al."],
+          "year": 2001,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11673763/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["aod9604-mech-01"],
+          "notes": "Rodent work establishing receptor-independent lipolysis and absence of hGH-receptor engagement."
+        },
+        {
+          "id": "peptideinsider-aod-2026",
+          "sourceType": "secondary_article",
+          "title": "AOD-9604 for Fat Loss: Does the Research Actually Support It?",
+          "authors": [],
+          "year": 2026,
+          "url": "https://peptidesinsider.com/blog/aod-9604-fat-loss-research",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["aod9604-regulatory-01", "aod9604-phase2b-01"],
+          "notes": "Critical review noting Phase 2b primary endpoint failure and discontinuation of development."
+        },
+        {
+          "id": "peptidegarden-aod-2026",
+          "sourceType": "secondary_article",
+          "title": "AOD-9604: Evidence, Safety, and What the Research Actually Shows",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.peptidegarden.com/peptides/aod-9604",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["aod9604-regulatory-01", "aod9604-phase2b-01", "aod9604-identity-01", "aod9604-mech-01"],
+          "notes": "Independent review documenting the six-trial program, disulfide bond structure, and ADRB3 expression vs direct-mediation distinction."
+        },
+        {
+          "id": "honestpeptide-aod-2026",
+          "sourceType": "secondary_article",
+          "title": "What Is AOD-9604?",
+          "authors": [],
+          "year": 2026,
+          "url": "https://honestpeptide.com/research/what-is-aod-9604",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["aod9604-regulatory-01", "aod9604-identity-01"],
+          "notes": "Notes FDA listing of AOD-9604 as a bulk drug substance that may present safety risks; outlines distinction from unmodified hGH Frag 176-191."
+        },
+        {
+          "id": "emiratitimes-aod-2025",
+          "sourceType": "secondary_article",
+          "title": "AOD-9604: Lessons from a discontinued peptide drug candidate",
+          "authors": [],
+          "year": 2025,
+          "url": "https://emiratitimes.com/lessons-from-a-discontinued-aod-9604-research-peptide/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["aod9604-phase2b-01"],
+          "notes": "Describes Phase 2a (n=300, 12 weeks, 2.6 kg vs 0.8 kg) and Phase 2b (n=536, 24 weeks) with termination in 2007."
+        },
+        {
+          "id": "meto-aod-2026",
+          "sourceType": "secondary_article",
+          "title": "AOD-9604: The Fat Loss Peptide You'll Soon Be Able to Get Again",
+          "authors": [],
+          "year": 2026,
+          "url": "https://meto.co/blog/aod-9604-fat-loss-peptide",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["aod9604-wada-01"],
+          "notes": "Cites WADA prohibited list reference to growth hormone fragments including AOD-9604 / hGH 176-191."
+        }
+      ]
+    },
+    {
+      "id": "tb4-frag",
+      "names": {
+        "primary": "Ac-SDKP",
+        "aliases": [
+          "TB4-Frag",
+          "Thymosin beta-4 N-terminal tetrapeptide (1-4)",
+          "N-acetyl-Seryl-Aspartyl-Lysyl-Proline",
+          "Goralatide",
+          "Seraspenide"
+        ],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C20H33N5O9",
+        "molecularWeight": 487.51,
+        "cas": "120081-14-3",
+        "sequenceOneLetter": "Ac-SDKP",
+        "sequenceThreeLetter": "Ac-Ser-Asp-Lys-Pro",
+        "length": 4,
+        "modifications": [
+          "N-terminal acetylation",
+          "endogenously generated from thymosin beta-4 by two-step hydrolysis involving meprin-alpha (cleavage of the N-terminal 1-4 segment) and prolyl oligopeptidase (release of the free Ac-SDKP tetrapeptide)",
+          "degraded in vivo by the N-terminal catalytic site of angiotensin-converting enzyme (ACE); plasma levels rise approximately 5-fold with ACE inhibitor therapy"
+        ],
+        "structureClass": "endogenous tetrapeptide derivative of thymosin beta-4; pharmacologically distinct from TB-500 (Ac-LKKTETQ, the central actin-binding heptapeptide)"
+      },
+      "classification": {
+        "peptideClass": "thymosin beta-4-derived tetrapeptide (distinct from TB-500)",
+        "mechanismFamily": "endogenous hematopoietic stem cell quiescence regulator with anti-inflammatory, anti-fibrotic, and pro-angiogenic activity",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "Endogenous tetrapeptide cleaved from the N-terminus of thymosin beta-4. Selectively inhibits proliferation of primitive hematopoietic stem cells (maintaining G0/G1 quiescence), exhibits anti-inflammatory and anti-fibrotic activity across heart, kidney, lung, and liver models, and induces angiogenesis. In vivo activity is strongly coupled to the renin-angiotensin system because ACE is the principal degradative enzyme.",
+        "localization": "plasma (detectable endogenously), bone marrow, heart, kidney, liver, and lung interstitium; crosses the blood-brain barrier in rodent studies",
+        "clinicalUses": [],
+        "sideEffects": [
+          "as an endogenous peptide, short-term exogenous administration in small clinical studies (hematopoietic protection indications) was well-tolerated",
+          "long-term human safety for chronic exogenous dosing is not established",
+          "unregulated vendor product is outside pharmaceutical manufacturing"
+        ],
+        "dosing": {
+          "quick": "Not FDA- or EMA-approved for any indication. Historical clinical investigation (Seraspenide/Goralatide, Ipsen) explored IV infusion protocols in myelosuppression prevention; development did not lead to approval. Not authorized for prescription or compounding.",
+          "adminRoute": "IV (historical clinical trials); IP/SC in animal models; some vendors market oral preparations, but oral bioavailability is limited and unvalidated",
+          "publicDisplayAllowed": false,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["TMSB4X", "ACE", "MEP1A", "PREP", "ATR1", "NFKB1"],
+        "proteins": [
+          "thymosin beta-4 (TMSB4X gene product; precursor)",
+          "meprin-alpha (MEP1A; releases N-terminal 1-4 fragment from Tbeta4)",
+          "prolyl oligopeptidase (POP / PREP; completes the cleavage to generate free Ac-SDKP)",
+          "angiotensin-converting enzyme (ACE; principal Ac-SDKP-degrading enzyme)"
+        ],
+        "receptors": [
+          "no high-affinity Ac-SDKP-specific receptor has been conclusively identified",
+          "downstream effects implicate AT1R-opposing signaling (counter-regulation of angiotensin II-driven fibrosis and inflammation)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "TNF-alpha, IL-1beta, IL-6",
+            "effect": "Ac-SDKP suppresses pro-inflammatory cytokine expression in rodent organ-injury models, consistent with its anti-inflammatory profile",
+            "context": "rodent cardiac, renal, and hepatic injury/fibrosis models",
+            "symbols": ["A"],
+            "citationIds": ["tb4frag-mdpi-2022", "tb4frag-sciencedirect-2018"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "hematopoietic/renin-angiotensin",
+            "steps": [
+              "endogenous thymosin beta-4 is cleaved by meprin-alpha and prolyl oligopeptidase to release Ac-SDKP",
+              "Ac-SDKP inhibits entry of primitive hematopoietic stem cells into S phase, holding them in G0/G1 quiescence",
+              "parallel anti-fibrotic and anti-inflammatory activity in heart, kidney, lung, and liver models opposes angiotensin II-driven fibrogenesis",
+              "Ac-SDKP is degraded by the N-terminal catalytic site of ACE",
+              "ACE inhibitor therapy raises plasma Ac-SDKP approximately 5-fold, implying that some of the pleiotropic tissue-protective effects of ACE inhibitors may be mediated by endogenous Ac-SDKP accumulation"
+            ],
+            "symbols": ["H", "A", "?"],
+            "claimRef": "tb4frag-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Historical clinical development as Seraspenide/Goralatide (Ipsen) focused on protection of hematopoietic stem cells during chemotherapy and radiotherapy. A pharmacokinetics study in healthy volunteers and patients (Ezan et al., Drug Metab Dispos, 1994) characterized exposure. The clinical program did not lead to an approved product, and no FDA or EMA approval exists. Indirect human evidence is stronger: because ACE is the primary Ac-SDKP-degrading enzyme, ACE inhibitor therapy approximately quintuples plasma Ac-SDKP, and a portion of the anti-fibrotic effect of ACE inhibitors in cardiac, renal, and vascular disease may be attributable to endogenous Ac-SDKP accumulation.",
+        "animalEvidence": "Extensive rodent and cell evidence across multiple independent laboratories: selective inhibition of hematopoietic stem cell proliferation (Lenfant 1989, Masse 1998 in doxorubicin-induced myelotoxicity, Watanabe in sublethal irradiation); pro-angiogenic activity (Liu et al., Blood 2003); anti-fibrotic activity in bile duct ligation liver fibrosis, unilateral ureteral obstruction and remnant-kidney renal fibrosis, cardiac fibrosis in hypertension and infarction models, and pulmonary fibrosis models. Ac-SDKP suppresses TNF-alpha, IL-1beta, IL-6, and NF-kB signaling and reduces ECM deposition in these models.",
+        "mechanismDetail": "Ac-SDKP is an endogenous N-acetylated tetrapeptide generated from thymosin beta-4 by a two-step enzymatic hydrolysis involving meprin-alpha (which releases the N-terminal 1-4 segment) and prolyl oligopeptidase (which cleaves off the free tetrapeptide). Its principal functions are: (1) maintenance of primitive hematopoietic stem cells in G0/G1 quiescence — historically the basis for the Seraspenide/Goralatide program protecting bone marrow during chemotherapy; (2) anti-inflammatory activity via suppression of pro-inflammatory cytokines and NF-kB; (3) anti-fibrotic activity across multiple organs, thought to oppose angiotensin II-driven fibroblast proliferation and extracellular matrix deposition; (4) pro-angiogenic effects mediated by promoting endothelial cell differentiation from primitive precursors. A defined high-affinity Ac-SDKP receptor has not been conclusively identified. ACE degrades Ac-SDKP at its N-terminal catalytic site; ACE inhibition produces an approximately 5-fold elevation in plasma Ac-SDKP, and this pharmacology has been proposed as a partial explanation for the tissue-protective effects of ACE inhibitors beyond angiotensin II suppression. TB4-Frag/Ac-SDKP is pharmacologically distinct from TB-500 (Ac-LKKTETQ), the central actin-binding heptapeptide of thymosin beta-4 that is the subject of separate research and sport-doping interest.",
+        "safetyDetail": "No approved human product exists. Historical clinical use as Seraspenide/Goralatide in myelosuppression-protection indications was limited in scope and duration, and tolerability was acceptable at tested doses. Long-term chronic safety data in humans are not available. Theoretical concerns include effects on wound healing, tumor microenvironments (anti-apoptotic and pro-angiogenic effects could plausibly favor tumor stroma), and unpredictable interactions with ACE inhibitor therapy (which already elevates endogenous Ac-SDKP). Grey-market vendor product cannot be verified for identity or purity; the compound is commonly mislabeled or conflated with TB-500.",
+        "safetyRisks": [
+          {
+            "system": "regulatory",
+            "label": "Not approved anywhere; former clinical program (Seraspenide/Goralatide) did not lead to market authorization",
+            "color": "red",
+            "helpSummary": "No FDA, EMA, or other major regulator has approved Ac-SDKP for any indication.",
+            "harmSummary": "Any human use is off-label research; grey-market supply is outside regulated manufacturing.",
+            "citationIds": ["tb4frag-wikipedia-2025", "tb4frag-ezan-1994"]
+          },
+          {
+            "system": "nomenclature",
+            "label": "Confusion with TB-500 (Ac-LKKTETQ)",
+            "color": "amber",
+            "helpSummary": "Vendors apply 'TB4-Frag' inconsistently; Ac-SDKP and Ac-LKKTETQ are pharmacologically different.",
+            "harmSummary": "Users may receive the wrong fragment entirely; mechanism, target biology, and (in research contexts) doping-agent detection differ.",
+            "citationIds": ["tb4frag-wikipedia-2025", "tb4frag-peptidesciences-2026"]
+          },
+          {
+            "system": "oncologic/theoretical",
+            "label": "Pro-angiogenic and anti-apoptotic profile warrants caution in malignancy",
+            "color": "amber",
+            "helpSummary": "Mechanism could theoretically support tumor stroma; no strong human evidence either way.",
+            "harmSummary": "Use in patients with active or dormant malignancy is not characterized for safety.",
+            "citationIds": ["tb4frag-mdpi-2022", "tb4frag-sciencedirect-2018"]
+          },
+          {
+            "system": "drug-interaction",
+            "label": "ACE inhibitor therapy raises endogenous Ac-SDKP ~5-fold",
+            "color": "amber",
+            "helpSummary": "Combining exogenous Ac-SDKP with ACEi amplifies exposure by an uncharacterized amount.",
+            "harmSummary": "No validated human-dose interaction studies exist for this combination.",
+            "citationIds": ["tb4frag-mdpi-2022"]
+          },
+          {
+            "system": "product-quality",
+            "label": "Grey-market 'TB4-Frag' products vary in actual content and may be mislabeled",
+            "color": "red",
+            "helpSummary": "Some vendors sell Ac-SDKP under TB4-Frag; others sell TB-500 (Ac-LKKTETQ) under the same name.",
+            "harmSummary": "Certificate of Analysis should explicitly confirm the Ac-Ser-Asp-Lys-Pro sequence before any research use.",
+            "citationIds": ["tb4frag-peptidesciences-2026"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Endogenous Ac-SDKP has a clearly characterized biological role in hematopoietic regulation, anti-fibrosis, and anti-inflammation. The strongest indirect human evidence comes from ACE inhibitor therapy, where elevated endogenous Ac-SDKP is hypothesized to contribute to tissue-protective effects.",
+          "caveat": "There is no validated human exogenous dose, route, or indication. Claims of chronic fibrosis reversal, anti-aging benefit, or systemic regenerative effect in humans extrapolate heavily from rodent models and from the endogenous-peptide pharmacology of ACE inhibitors.",
+          "citationIds": ["tb4frag-wikipedia-2025", "tb4frag-mdpi-2022", "tb4frag-sciencedirect-2018"]
+        },
+        "missingEvidence": [
+          "any current FDA or EMA-approved human indication",
+          "defined high-affinity Ac-SDKP receptor",
+          "randomized human trials in fibrotic diseases (cardiac, renal, hepatic, pulmonary)",
+          "pharmacokinetics of vendor 'TB4-Frag' formulations (oral bioavailability in particular)",
+          "long-term oncologic safety given pro-angiogenic and anti-apoptotic activity"
+        ],
+        "anecdotalUse": [
+          "consumer use for purported anti-fibrotic, tissue-regenerative, or anti-aging effects",
+          "confusion with TB-500 (Ac-LKKTETQ) in vendor marketing and consumer forums"
+        ]
+      },
+      "claims": [
+        {
+          "id": "tb4frag-identity-01",
+          "field": "identity",
+          "value": "Ac-Ser-Asp-Lys-Pro (Ac-SDKP); tetrapeptide; C20H33N5O9; MW 487.51; CAS 120081-14-3; pharmacologically distinct from TB-500 (Ac-LKKTETQ)",
+          "species": "human",
+          "context": "preclinical",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "C"],
+          "confidence": 0.95,
+          "citationIds": ["tb4frag-wikipedia-2025", "tb4frag-peptidesciences-2026"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tb4frag-regulatory-01",
+          "field": "regulatoryStatus",
+          "value": "Not approved by any major regulator; Seraspenide/Goralatide program (Ipsen) for hematopoietic protection during chemo/radiotherapy did not lead to approval",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "R", "?"],
+          "confidence": 0.95,
+          "citationIds": ["tb4frag-wikipedia-2025", "tb4frag-ezan-1994"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tb4frag-mech-01",
+          "field": "mechanism",
+          "value": "Endogenous N-terminal tetrapeptide of thymosin beta-4 (released by meprin-alpha + prolyl oligopeptidase); inhibits hematopoietic stem cell S-phase entry; anti-inflammatory, anti-fibrotic, pro-angiogenic; degraded by ACE N-terminal catalytic site",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": null,
+          "route": "IV, SC, IP in models",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "C"],
+          "confidence": 0.9,
+          "citationIds": ["tb4frag-mdpi-2022", "tb4frag-sciencedirect-2018", "tb4frag-wikipedia-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tb4frag-ace-interaction-01",
+          "field": "pharmacology",
+          "value": "Plasma Ac-SDKP rises approximately 5-fold with ACE inhibitor therapy; proposed to contribute to the anti-fibrotic effects of ACE inhibitors beyond angiotensin II suppression",
+          "species": "human",
+          "context": "observational",
+          "population": "patients on ACE inhibitor therapy",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.85,
+          "citationIds": ["tb4frag-mdpi-2022", "tb4frag-sciencedirect-2018"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tb4frag-seraspenide-history-01",
+          "field": "historicalClinical",
+          "value": "Investigated clinically as Seraspenide/Goralatide (Ipsen) for protection of hematopoietic stem cells during chemotherapy and radiotherapy; tolerability acceptable in pilot studies; program did not yield an approved product",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "healthy volunteers and cancer patients",
+          "route": "IV",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.85,
+          "citationIds": ["tb4frag-ezan-1994", "tb4frag-wikipedia-2025"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "tb4frag-distinct-from-tb500-01",
+          "field": "nomenclature",
+          "value": "'TB4-Frag' commonly refers to Ac-SDKP (N-terminal tetrapeptide, residues 1-4), which is chemically and pharmacologically distinct from TB-500 (Ac-LKKTETQ, N-acetylated residues 17-23 of thymosin beta-4); vendor labeling is inconsistent",
+          "species": "human",
+          "context": "vendor",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["V", "?"],
+          "confidence": 0.9,
+          "citationIds": ["tb4frag-wikipedia-2025", "tb4frag-peptidesciences-2026"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "tb4frag-wikipedia-2025",
+          "sourceType": "secondary_article",
+          "title": "Ac-SDKP (Wikipedia)",
+          "authors": [],
+          "year": 2025,
+          "url": "https://en.wikipedia.org/wiki/Ac-SDKP",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": [
+            "tb4frag-identity-01",
+            "tb4frag-regulatory-01",
+            "tb4frag-mech-01",
+            "tb4frag-seraspenide-history-01",
+            "tb4frag-distinct-from-tb500-01"
+          ],
+          "notes": "Summary of Ac-SDKP origin from thymosin beta-4 via prolyl oligopeptidase; brand names Seraspenide/Goralatide; anti-fibrotic and hematopoietic biology."
+        },
+        {
+          "id": "tb4frag-mdpi-2022",
+          "sourceType": "review",
+          "title": "The Role of Tbeta4-POP-Ac-SDKP Axis in Organ Fibrosis",
+          "authors": [],
+          "year": 2022,
+          "url": "https://www.mdpi.com/1422-0067/23/21/13282",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["tb4frag-mech-01", "tb4frag-ace-interaction-01"],
+          "notes": "Mechanistic review of the Tbeta4-POP-Ac-SDKP axis in hepatic, renal, cardiac, and pulmonary fibrosis; confirms ACE as principal degrading enzyme and ~5-fold rise with ACEi therapy."
+        },
+        {
+          "id": "tb4frag-sciencedirect-2018",
+          "sourceType": "review",
+          "title": "The anti-inflammatory peptide Ac-SDKP: Synthesis, role in ACE inhibition, and its therapeutic potential in hypertension and cardiovascular diseases",
+          "authors": [],
+          "year": 2018,
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S1043661818302238",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["tb4frag-mech-01", "tb4frag-ace-interaction-01"],
+          "notes": "Review of Ac-SDKP biology including Seraspenide/Goralatide historical use and ACE/renin-angiotensin interaction."
+        },
+        {
+          "id": "tb4frag-ezan-1994",
+          "sourceType": "primary_study",
+          "title": "Pharmacokinetics in healthy volunteers and patients of NAc-SDKP (seraspenide), a negative regulator of hematopoiesis",
+          "authors": ["Ezan E", "Carde P", "Le Kerneau J", "et al."],
+          "year": 1994,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7895599/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["tb4frag-regulatory-01", "tb4frag-seraspenide-history-01"],
+          "notes": "Human PK study in the Seraspenide/Goralatide clinical program."
+        },
+        {
+          "id": "tb4frag-peptidesciences-2026",
+          "sourceType": "vendor",
+          "title": "Thymosin Beta-4 vs TB-500 (peptide sciences reference)",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.peptidesciences.com/peptide-research/thymosin-beta-4-vs-tb-500",
+          "accessedAt": "2026-04-21",
+          "quality": "vendor",
+          "supportsClaimIds": ["tb4frag-identity-01", "tb4frag-distinct-from-tb500-01"],
+          "notes": "Clarifies that Ac-SDKP (N-terminal 1-4 fragment) originates from a different region of thymosin beta-4 than TB-500 (Ac-LKKTETQ, 17-23) and should not be described as a TB-500 derivative."
+        }
+      ]
+    }
+  ]
+}
