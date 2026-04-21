@@ -1,0 +1,10 @@
+.next
+node_modules
+.env
+.env.local
+.env.production
+dist
+coverage
+*.log
+*.tsbuildinfo
+data/sources/consensus/**/*.normalized.json
