@@ -7,10 +7,37 @@ const defaultState = {
   category: "All",
   sort: "evidence",
   selected: null,
-  tag: null
+  tag: null,
+  humanOnly: false,
+  animalOnly: false,
+  bibliographyOpen: false
 };
 
 let state = { ...defaultState };
+
+const CATEGORY_COLORS = {
+  Metabolic: "#7dd3fc",
+  "Growth Factors": "#c4b5fd",
+  "Recovery & Repair": "#fda4af",
+  "Anti-Aging": "#f9a8d4",
+  Mitochondrial: "#93c5fd",
+  "Immune Support": "#6ee7b7",
+  "Cognitive Enhancement": "#fcd34d",
+  "Sleep & Relaxation": "#a5b4fc",
+  "Melanocortin / Metabolic": "#fdba74",
+  "Reproductive / Metabolic": "#f9a8d4"
+};
+
+const GLOBAL_CITATIONS = [];
+const GLOBAL_CITATION_INDEX = new Map();
+for (const peptide of DATA.peptides) {
+  for (const citation of peptide.citations) {
+    if (!GLOBAL_CITATION_INDEX.has(citation.id)) {
+      GLOBAL_CITATION_INDEX.set(citation.id, GLOBAL_CITATIONS.length + 1);
+      GLOBAL_CITATIONS.push(citation);
+    }
+  }
+}
 
 function esc(value) {
   return String(value ?? "")
@@ -49,8 +76,20 @@ function restoreFocus(snapshot) {
 
 function symbols(items = []) {
   return `<span class="symbols">${items
-    .map((symbol) => `<abbr title="${esc(DATA.evidenceLegend[symbol] || "unmapped evidence symbol")}">${esc(symbol)}</abbr>`)
+    .map((symbol) => `<abbr title="${esc(DATA.evidenceLegend[symbol] || "unmapped evidence symbol")}">${symbolGlyph(symbol)}</abbr>`)
     .join("")}</span>`;
+}
+
+function symbolGlyph(symbol) {
+  const glyphs = {
+    H: "&#9786;",
+    A: "&#128062;"
+  };
+  return glyphs[symbol] || esc(symbol);
+}
+
+function categoryColor(category) {
+  return CATEGORY_COLORS[category] || "#9fb0c4";
 }
 
 function evidenceClass(tier) {
@@ -71,9 +110,14 @@ function moderationLabel(status) {
   return labels[status] || status.replaceAll("_", " ");
 }
 
-function citationLink(citation, index) {
+function citationNumber(citation) {
+  return GLOBAL_CITATION_INDEX.get(citation.id) || "?";
+}
+
+function citationLink(citation) {
+  const number = citationNumber(citation);
   return `<span class="citation" tabindex="0">
-    <a href="${esc(citation.url)}" target="_blank" rel="noreferrer">[${index + 1}]</a>
+    <a href="${esc(citation.url)}" target="_blank" rel="noreferrer">[${number}]</a>
     <span class="citation-popover">
       <strong>${esc(citation.title)}</strong>
       <span>${esc((citation.authors || []).join(", "))} ${esc(citation.year ? `(${citation.year})` : "")}</span>
@@ -81,6 +125,26 @@ function citationLink(citation, index) {
       <span>Retrieved ${esc(citation.accessedAt || "date pending")}</span>
     </span>
   </span>`;
+}
+
+function citationRefsByIds(peptide, ids = []) {
+  return ids
+    .map((id) => peptide.citations.find((citation) => citation.id === id))
+    .filter(Boolean)
+    .map((citation) => citationLink(citation))
+    .join("");
+}
+
+function hasHumanStudies(peptide) {
+  return (
+    peptide.classification.evidenceTier.includes("human") ||
+    peptide.classification.evidenceTier.includes("fda") ||
+    peptide.claims.some((claim) => claim.species === "human" && !["anecdotal_common_use", "vendor"].includes(claim.context))
+  );
+}
+
+function hasAnimalStudies(peptide) {
+  return peptide.claims.some((claim) => ["animal", "mixed"].includes(claim.species) && ["preclinical", "review", "cell", "clinical_trial"].includes(claim.context));
 }
 
 function tag(type, value, sy = [], sourcePeptideId = "") {
@@ -118,7 +182,9 @@ function filteredPeptides() {
     .filter((p) => {
       const matchesQuery = !state.query || searchable(p).includes(state.query.toLowerCase());
       const matchesCategory = state.category === "All" || p.category === state.category;
-      return matchesQuery && matchesCategory;
+      const matchesHuman = !state.humanOnly || hasHumanStudies(p);
+      const matchesAnimal = !state.animalOnly || hasAnimalStudies(p);
+      return matchesQuery && matchesCategory && matchesHuman && matchesAnimal;
     })
     .sort((a, b) => {
       if (state.sort === "name") return a.names.primary.localeCompare(b.names.primary);
@@ -192,12 +258,13 @@ function tile(p) {
   const review = moderationLabel(p.moderation.status);
   const clinical = p.tile.clinicalUses[0] || "Clinical use context not yet verified.";
   const enhancement = p.expanded.anecdotalUse[0] || "No enhancement/common-use statement imported.";
-  return `<article class="tile" data-expand="${esc(p.id)}" data-peptide-id="${esc(p.id)}" tabindex="0" aria-label="Open ${esc(p.names.primary)} article">
+  const classColor = categoryColor(p.category);
+  return `<article class="tile" style="--type-color:${esc(classColor)}" data-expand="${esc(p.id)}" data-peptide-id="${esc(p.id)}" tabindex="0" aria-label="Open ${esc(p.names.primary)} article">
     <header>
       <div>
-        <p class="eyebrow">${esc(p.category)}</p>
+        <p class="eyebrow category-label">${esc(p.category)}</p>
         <h2>${esc(p.names.primary)}</h2>
-        <p class="aliases">${esc(p.names.aliases.join(" / ") || p.classification.peptideClass)}</p>
+        <p class="aliases"><span class="type-pill">${esc(p.classification.peptideClass)}</span> ${esc(p.names.aliases.join(" / "))}</p>
       </div>
       <span class="verify ${p.moderation.status === "verified" ? "ok" : "pending"}" title="${esc(review)}"></span>
     </header>
@@ -264,11 +331,11 @@ function studyRows(p, speciesGroup) {
   return rows
     .map(({ claim, citation }) => {
       const population = claim.population || (speciesGroup === "human" ? "Human population details pending extraction." : "Animal model details pending extraction.");
-      const protocol = [claim.context.replaceAll("_", " "), claim.route].filter(Boolean).join("; ") || "Protocol pending extraction.";
+      const protocol = [claim.context.replaceAll("_", " "), claim.route, claim.duration].filter(Boolean).join("; ") || "Protocol pending extraction.";
       return `<tr>
         <td><a class="study-link" href="${esc(citation.url)}" target="_blank" rel="noreferrer">${esc(citation.title)}</a><br><span class="muted">Retrieved ${esc(citation.accessedAt || "date pending")}</span></td>
         <td>${esc(population)}</td>
-        <td>${esc("n pending extraction")}</td>
+        <td>${esc(claim.sampleSize || "n pending extraction")}</td>
         <td>${esc(protocol)}</td>
         <td>${esc(claim.value)} ${symbols(claim.symbols)}</td>
       </tr>`;
@@ -296,6 +363,75 @@ function evidenceTables(p) {
         p.expanded.anecdotalUse.length ? p.expanded.anecdotalUse.join(" ") : "No anecdotal/common-use statement imported."
       )}</td></tr></tbody>
     </table>
+  </section>`;
+}
+
+function safetyPanel(p) {
+  const rows = p.expanded.safetyRisks || [];
+  return `<section class="article-section">
+    <h3>Safety Risks</h3>
+    <p class="section-note">${esc(p.expanded.safetyDetail)}</p>
+    <table>
+      <thead><tr><th>Organ system</th><th>Potential help</th><th>Potential harm</th></tr></thead>
+      <tbody>${
+        rows.length
+          ? rows
+              .map(
+                (row) => `<tr>
+                  <td><span class="organ-pill" style="--organ-color:${esc(row.color)}"><span class="organ-dot"></span>${esc(row.label)}</span></td>
+                  <td>${esc(row.helpSummary || "No organ-specific benefit extracted.")} ${citationRefsByIds(p, row.citationIds)}</td>
+                  <td>${esc(row.harmSummary || "No organ-specific harm extracted.")} ${citationRefsByIds(p, row.citationIds)}</td>
+                </tr>`
+              )
+              .join("")
+          : '<tr><td colspan="3">Organ-specific safety curation is still pending for this peptide.</td></tr>'
+      }</tbody>
+    </table>
+  </section>`;
+}
+
+function enhancementPanel(p) {
+  const item = p.expanded.enhancementPotential;
+  return `<section class="article-section">
+    <h3>Enhancement Potential</h3>
+    <table>
+      <tbody>${
+        item
+          ? `<tr><th>Overview</th><td>${esc(item.summary)} ${citationRefsByIds(p, item.citationIds)}</td></tr>
+             <tr><th>Caveat</th><td>${esc(item.caveat)}</td></tr>`
+          : `<tr><th>Overview</th><td>${esc(
+              p.expanded.anecdotalUse.length
+                ? p.expanded.anecdotalUse.join(" ")
+                : "No enhancement-specific curation has been extracted yet."
+            )}</td></tr>`
+      }</tbody>
+    </table>
+  </section>`;
+}
+
+function bibliographyDrawer() {
+  if (!state.bibliographyOpen) return "";
+  return `<section class="bibliography-backdrop" data-close-bibliography>
+    <aside class="bibliography-drawer" aria-label="Bibliography">
+      <header>
+        <div>
+          <p class="eyebrow">Bibliography</p>
+          <h3>All References</h3>
+        </div>
+        <button class="icon" data-close-bibliography-button aria-label="Close bibliography">x</button>
+      </header>
+      <table>
+        <thead><tr><th>Ref</th><th>Source</th><th>Type</th><th>Retrieved</th></tr></thead>
+        <tbody>${GLOBAL_CITATIONS.map(
+          (citation) => `<tr>
+            <td>[${citationNumber(citation)}]</td>
+            <td><a class="table-link" href="${esc(citation.url)}" target="_blank" rel="noreferrer">${esc(citation.title)}</a><br><span class="muted">${esc((citation.authors || []).join(", "))}</span></td>
+            <td>${esc(citation.quality)}</td>
+            <td>${esc(citation.accessedAt || "date pending")}</td>
+          </tr>`
+        ).join("")}</tbody>
+      </table>
+    </aside>
   </section>`;
 }
 
@@ -371,6 +507,8 @@ function detail(p) {
             </tbody>
           </table>
         </section>
+        ${safetyPanel(p)}
+        ${enhancementPanel(p)}
         <section class="article-section">
           <h3>Evidence And Article Notes</h3>
           <table>
@@ -450,8 +588,8 @@ function detail(p) {
             <thead><tr><th>Ref</th><th>Source</th><th>Type</th><th>Date retrieved</th><th>Notes</th></tr></thead>
             <tbody>${p.citations
               .map(
-                (citation, index) => `<tr>
-                  <td>${citationLink(citation, index)}</td>
+                (citation) => `<tr>
+                  <td>${citationLink(citation)}</td>
                   <td><a class="table-link" href="${esc(citation.url)}" target="_blank" rel="noreferrer">${esc(citation.title)}</a></td>
                   <td>${esc(citation.quality)}</td>
                   <td>${esc(citation.accessedAt || "date pending")}</td>
@@ -478,7 +616,7 @@ function hero() {
       </div>
     </div>
     <aside class="legend">
-      ${Object.entries(DATA.evidenceLegend).map(([key, value]) => `<span><abbr>${esc(key)}</abbr>${esc(value)}</span>`).join("")}
+      ${Object.entries(DATA.evidenceLegend).map(([key, value]) => `<span><abbr>${symbolGlyph(key)}</abbr>${esc(value)}</span>`).join("")}
     </aside>
   </section>`;
 }
@@ -495,6 +633,15 @@ function toolbar(categories) {
       <option value="category" ${state.sort === "category" ? "selected" : ""}>Category</option>
       <option value="review" ${state.sort === "review" ? "selected" : ""}>Needs review</option>
     </select>
+    <button class="bibliography-button" data-open-bibliography aria-label="Open bibliography"><span class="book-icon">&#128214;</span><span>[et al.]</span></button>
+    <label class="toggle">
+      <input type="checkbox" data-human-filter ${state.humanOnly ? "checked" : ""}>
+      <span>Human studies</span>
+    </label>
+    <label class="toggle">
+      <input type="checkbox" data-animal-filter ${state.animalOnly ? "checked" : ""}>
+      <span>Animal studies</span>
+    </label>
   </section>`;
 }
 
@@ -505,7 +652,8 @@ function render() {
   app.innerHTML = `${hero()}${toolbar(categories)}
     ${state.tag && !state.selected ? relatedPanel("global") : ""}
     <section class="tiles">${peptides.map(tile).join("")}</section>
-    ${detail(state.selected)}`;
+    ${detail(state.selected)}
+    ${bibliographyDrawer()}`;
   restoreFocus(focus);
 }
 
@@ -519,6 +667,8 @@ app.addEventListener("input", (event) => {
 app.addEventListener("change", (event) => {
   if (event.target.matches("[data-category]")) state.category = event.target.value;
   if (event.target.matches("[data-sort]")) state.sort = event.target.value;
+  if (event.target.matches("[data-human-filter]")) state.humanOnly = event.target.checked;
+  if (event.target.matches("[data-animal-filter]")) state.animalOnly = event.target.checked;
   render();
 });
 
@@ -530,10 +680,25 @@ app.addEventListener("click", (event) => {
   const tagButton = target.closest("[data-tag-type]");
   const clearRelated = target.closest("[data-clear-related]");
   const expandTarget = target.closest("[data-expand]");
+  const bibliographyBackdrop = target.closest("[data-close-bibliography]");
+  const bibliographyButton = target.closest("[data-open-bibliography]");
+  const bibliographyClose = target.closest("[data-close-bibliography-button]");
   const interactive = target.closest("button, a, input, select, textarea, .citation");
 
   if (closeDetail || (backdrop && target === backdrop)) {
     closeToGrid();
+    return;
+  }
+
+  if (bibliographyButton) {
+    state.bibliographyOpen = true;
+    render();
+    return;
+  }
+
+  if (bibliographyClose || (bibliographyBackdrop && target === bibliographyBackdrop)) {
+    state.bibliographyOpen = false;
+    render();
     return;
   }
 
@@ -567,8 +732,15 @@ app.addEventListener("keydown", (event) => {
       openDetail(expandTarget.dataset.expand);
     }
   }
-  if (event.key === "Escape" && state.selected) {
-    closeToGrid();
+  if (event.key === "Escape") {
+    if (state.selected) {
+      closeToGrid();
+      return;
+    }
+    if (state.bibliographyOpen) {
+      state.bibliographyOpen = false;
+      render();
+    }
   }
 });
 

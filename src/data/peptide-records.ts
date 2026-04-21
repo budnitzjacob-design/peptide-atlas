@@ -212,13 +212,27 @@ const catalog = [
   ["vip", "VIP", "Immune Support", "vasoactive neuropeptide", "VPAC receptor anti-inflammatory and vasodilatory signaling"]
 ] as const;
 
-function claim(id: string, field: string, value: string, symbols: EvidenceSymbol[], citationIds: string[], context: Claim["context"] = "review", species: Claim["species"] = "mixed", confidence = 0.45): Claim {
+function claim(
+  id: string,
+  field: string,
+  value: string,
+  symbols: EvidenceSymbol[],
+  citationIds: string[],
+  context: Claim["context"] = "review",
+  species: Claim["species"] = "mixed",
+  confidence = 0.45,
+  meta: Partial<Pick<Claim, "population" | "route" | "sampleSize" | "duration">> = {}
+): Claim {
   return {
     id,
     field,
     value,
     species,
     context,
+    population: meta.population ?? null,
+    route: meta.route ?? null,
+    sampleSize: meta.sampleSize ?? null,
+    duration: meta.duration ?? null,
     symbols,
     confidence,
     citationIds,
@@ -282,6 +296,8 @@ function baseRecord(row: (typeof catalog)[number]): PeptideRecord {
       animalEvidence: "No curated animal evidence summary has been published from the source pipeline yet.",
       mechanismDetail: "Mechanism detail is a model-drafted seed and must be checked by another model and a human moderator.",
       safetyDetail: "Safety detail pending source extraction; do not infer safety from absence of listed adverse events.",
+      safetyRisks: [],
+      enhancementPotential: null,
       manufacturers: [],
       missingEvidence: ["primary citations", "regulatory status", "human outcomes", "safety/adverse events", "PK/PD", "cytokines/interleukins"],
       anecdotalUse: []
@@ -397,6 +413,191 @@ const ll37Neutrophil: Citation = {
   notes: "Human neutrophil in vitro study measuring cytokine release after microbial stimulation."
 };
 
+const motsCellMetab: Citation = {
+  id: "pmid-25738459",
+  sourceType: "pubmed",
+  title: "The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance",
+  authors: ["Changhan Lee", "Jennifer Zeng", "Brian G. Drew", "Pinchas Cohen"],
+  year: 2015,
+  pmid: "25738459",
+  url: "https://pubmed.ncbi.nlm.nih.gov/25738459/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["motsc-ampk-folate"],
+  notes: "Cell Metabolism primary paper: skeletal-muscle-targeted MOTS-c inhibited the folate cycle and de novo purine synthesis, activating AMPK and improving insulin resistance/obesity phenotypes in mice."
+};
+
+const motsAppl1: Citation = {
+  id: "pmid-32880686",
+  sourceType: "pubmed",
+  title: "Adiponectin treatment improves insulin resistance in mice by regulating the expression of the mitochondrial-derived peptide MOTS-c and its response to exercise via APPL1-SIRT1-PGC-1α",
+  authors: ["Qi Guo", "PubMed indexed authors"],
+  year: 2020,
+  pmid: "32880686",
+  url: "https://pubmed.ncbi.nlm.nih.gov/32880686/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["motsc-appl1-axis"],
+  notes: "Primary mouse/C2C12 study linking adiponectin signaling to MOTS-c production via APPL1-SIRT1-PGC-1alpha in skeletal muscle."
+};
+
+const motsCk2: Citation = {
+  id: "pmid-39559755",
+  sourceType: "pubmed",
+  title: "MOTS-c modulates skeletal muscle function by directly binding and activating CK2",
+  authors: ["Hiroshi Kumagai", "PubMed indexed authors"],
+  year: 2024,
+  pmid: "39559755",
+  doi: "10.1016/j.isci.2024.111212",
+  url: "https://pubmed.ncbi.nlm.nih.gov/39559755/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["motsc-ck2-target"],
+  notes: "Primary iScience paper identifying CK2 as a direct functional MOTS-c target in skeletal muscle, with muscle glucose-uptake and atrophy readouts in mice."
+};
+
+const motsNrf2: Citation = {
+  id: "pmid-34859377",
+  sourceType: "pubmed",
+  title: "The Mitochondrial-Derived Peptide MOTS-c Attenuates Oxidative Stress Injury and the Inflammatory Response of H9c2 Cells Through the Nrf2/ARE and NF-kB Pathways",
+  authors: ["PubMed indexed authors"],
+  year: 2021,
+  pmid: "34859377",
+  url: "https://pubmed.ncbi.nlm.nih.gov/34859377/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["motsc-nrf2-nfkb"],
+  notes: "Primary cell study reporting MOTS-c activation of Nrf2/ARE signaling with reduced NF-kB-p65 phosphorylation in oxidative-stress conditions."
+};
+
+const bpcBurn: Citation = {
+  id: "pmid-25995620",
+  sourceType: "pubmed",
+  title: "Body protective compound-157 enhances alkali-burn wound healing in vivo and promotes proliferation, migration, and angiogenesis in vitro",
+  authors: ["Tonglie Huang", "PubMed indexed authors"],
+  year: 2015,
+  pmid: "25995620",
+  doi: "10.2147/DDDT.S82030",
+  url: "https://pubmed.ncbi.nlm.nih.gov/25995620/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["bpc157-vegf-erk"],
+  notes: "Primary rat/HUVEC study reporting increased VEGF-A expression, endothelial migration/tube formation, and ERK1/2-c-Fos-c-Jun-Egr-1 signaling after BPC-157."
+};
+
+const bpcAngiogenesis: Citation = {
+  id: "pmid-20388964",
+  sourceType: "pubmed",
+  title: "Modulatory effect of gastric pentadecapeptide BPC 157 on angiogenesis in muscle and tendon healing",
+  authors: ["PubMed indexed authors"],
+  year: 2010,
+  pmid: "20388964",
+  url: "https://pubmed.ncbi.nlm.nih.gov/20388964/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["bpc157-tendon-angiogenesis"],
+  notes: "Primary rat healing paper describing modulated angiogenesis in muscle/tendon repair with VEGF, CD34, and factor VIII immunohistochemistry."
+};
+
+const bpcClopidogrel: Citation = {
+  id: "pmid-33376304",
+  sourceType: "pubmed",
+  title: "Clopidogrel-Induced Gastric Injury in Rats is Attenuated by Stable Gastric Pentadecapeptide BPC 157",
+  authors: ["PubMed indexed authors"],
+  year: 2020,
+  pmid: "33376304",
+  url: "https://pubmed.ncbi.nlm.nih.gov/33376304/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["bpc157-no-vegfr1"],
+  notes: "Primary rat gastric-injury study linking BPC-157 effects to VEGF-A/VEGFR1-AKT/p38-MAPK signaling, eNOS preservation, and reduced inflammation/apoptotic stress."
+};
+
+const bpcMyotendinous: Citation = {
+  id: "pmid-34829776",
+  sourceType: "pubmed",
+  title: "Stable Gastric Pentadecapeptide BPC 157 as a Therapy for the Disable Myotendinous Junctions in Rats",
+  authors: ["PubMed indexed authors"],
+  year: 2021,
+  pmid: "34829776",
+  url: "https://pubmed.ncbi.nlm.nih.gov/34829776/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["bpc157-eNOS-cox2"],
+  notes: "Primary rat myotendinous-junction study reporting counteraction of oxidative stress and nitric-oxide-system changes, including eNOS and COX-2 mRNA effects."
+};
+
+const ghkPulmonaryFibrosis: Citation = {
+  id: "pmid-31809714",
+  sourceType: "pubmed",
+  title: "Protective effects of GHK-Cu in bleomycin-induced pulmonary fibrosis via anti-oxidative stress and anti-inflammation pathways",
+  authors: ["PubMed indexed authors"],
+  year: 2019,
+  pmid: "31809714",
+  url: "https://pubmed.ncbi.nlm.nih.gov/31809714/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["ghkcu-nrf2-smad"],
+  notes: "Primary mouse pulmonary-fibrosis study reporting reduced TNF-alpha and IL-6, partial correction of MMP-9/TIMP-1 imbalance, and effects on Nrf2, NF-kB, and TGF-beta1/Smad2/3 pathways."
+};
+
+const ghkKeratinocyte: Citation = {
+  id: "pmid-19319546",
+  sourceType: "pubmed",
+  title: "Copper-GHK increases integrin expression and p63 positivity by keratinocytes",
+  authors: ["PubMed indexed authors"],
+  year: 2009,
+  pmid: "19319546",
+  url: "https://pubmed.ncbi.nlm.nih.gov/19319546/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["ghkcu-integrin-epithelium"],
+  notes: "Primary keratinocyte study describing increased integrin expression and a reparative epithelial phenotype in copper-GHK-treated cells."
+};
+
+const tb4Mmp: Citation = {
+  id: "pmid-16607611",
+  sourceType: "pubmed",
+  title: "Thymosin beta4 promotes matrix metalloproteinase expression during wound repair",
+  authors: ["PubMed indexed authors"],
+  year: 2006,
+  pmid: "16607611",
+  doi: "10.1002/jcp.20650",
+  url: "https://pubmed.ncbi.nlm.nih.gov/16607611/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["tb500-tb4-mmp-remodeling"],
+  notes: "Primary wound-repair study reporting increased MMP-1, MMP-2, and MMP-9 in keratinocytes, endothelial cells, fibroblasts, and monocytes after thymosin beta-4 exposure."
+};
+
+const tb4Inflammation: Citation = {
+  id: "pmid-21343177",
+  sourceType: "pubmed",
+  title: "Thymosin beta4 inhibits TNF-alpha-induced NF-kappaB activation, IL-8 expression, and the sensitizing effects by its partners PINCH-1 and ILK",
+  authors: ["PubMed indexed authors"],
+  year: 2011,
+  pmid: "21343177",
+  url: "https://pubmed.ncbi.nlm.nih.gov/21343177/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["tb500-tb4-nfkb-il8"],
+  notes: "Primary cell study reporting thymosin beta-4 inhibition of RelA/p65 NF-kB activation and downstream IL-8 transcription after TNF-alpha stimulation."
+};
+
+const tb4VegfAkt: Citation = {
+  id: "pmid-25204972",
+  sourceType: "pubmed",
+  title: "Controlled release of thymosin beta 4 using a collagen-chitosan sponge scaffold augments cutaneous wound healing and increases angiogenesis in diabetic rats with hindlimb ischemia",
+  authors: ["PubMed indexed authors"],
+  year: 2014,
+  pmid: "25204972",
+  url: "https://pubmed.ncbi.nlm.nih.gov/25204972/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["tb500-tb4-vegf-akt"],
+  notes: "Primary diabetic-rat/HUVEC study reporting improved wound healing, increased angiogenesis, downregulated inflammatory genes, and VEGF/AKT-pathway-linked endothelial migration."
+};
+
 const ss31Consensus: Citation = {
   id: "consensus-ss31-karaa-2018",
   sourceType: "consensus",
@@ -409,6 +610,34 @@ const ss31Consensus: Citation = {
   quality: "primary",
   supportsClaimIds: ["ss31-human-exercise"],
   notes: "Consensus CSV row: phase I/II multicenter randomized double-blind placebo-controlled trial in 36 adults with primary mitochondrial myopathy."
+};
+
+const ss31Membrane: Citation = {
+  id: "doi-10-1074-jbc-ra119-012094",
+  sourceType: "other",
+  title: "The mitochondria-targeted peptide SS-31 binds lipid bilayers and modulates surface electrostatics as a key component of its mechanism of action",
+  authors: ["W. Mitchell", "PubMed indexed authors"],
+  year: 2020,
+  doi: "10.1074/jbc.ra119.012094",
+  url: "https://doi.org/10.1074/JBC.RA119.012094",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["ss31-cardiolipin-mechanism"],
+  notes: "Mechanistic primary study showing SS-31 interaction with lipid bilayers and membrane surface electrostatics, supporting cardiolipin-linked membrane effects."
+};
+
+const ss31Ant: Citation = {
+  id: "doi-10-1007-s11357-023-00861-y",
+  sourceType: "other",
+  title: "The mitochondrially targeted peptide elamipretide (SS-31) improves ADP sensitivity in aged mitochondria by increasing uptake through the adenine nucleotide translocator (ANT)",
+  authors: ["Gavin Pharaoh", "PubMed indexed authors"],
+  year: 2023,
+  doi: "10.1007/s11357-023-00861-y",
+  url: "https://doi.org/10.1007/s11357-023-00861-y",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["ss31-ant-adp"],
+  notes: "Mechanistic study reporting improved ADP sensitivity in aged mitochondria with evidence implicating the adenine nucleotide translocator."
 };
 
 const curated: Record<string, DeepPartial<PeptideRecord>> = {
@@ -448,6 +677,31 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       humanEvidence: "FDA-recognized branded products provide strong human regulatory evidence; trial-level outcomes should be imported from labels and pivotal publications.",
       mechanismDetail: "Traceable draft cascade: tirzepatide activates GLP-1R and GIPR, increases cAMP-dependent signaling in islet cells, increases glucose-dependent insulin release, suppresses inappropriate glucagon signaling, decreases appetite signaling, and slows gastric emptying early in therapy. Weight and glycemic effects are downstream clinical outcomes rather than direct receptor-level events.",
       safetyDetail: "Display label-specific adverse events, contraindications, and boxed warnings only after label import. Common/nonclinical enhancement anecdotes must remain separate from label evidence.",
+      safetyRisks: [
+        {
+          system: "gastrointestinal",
+          label: "Gastrointestinal",
+          color: "#fb7185",
+          icon: "gut",
+          helpSummary: null,
+          harmSummary: "Regulatory and trial contexts consistently report gastrointestinal adverse effects as the dominant tolerability issue.",
+          citationIds: ["fda-zepbound-2023"]
+        },
+        {
+          system: "metabolic",
+          label: "Metabolic / endocrine",
+          color: "#6ee7b7",
+          icon: "hexagon",
+          helpSummary: "Approved-use contexts support glycemic control and weight-management benefits in indicated populations.",
+          harmSummary: null,
+          citationIds: ["fda-zepbound-2023"]
+        }
+      ],
+      enhancementPotential: {
+        summary: "Tirzepatide is clearly used by some healthy or less-diseased people for body-composition goals, but the strongest evidence base is still therapeutic/regulatory rather than enhancement-specific.",
+        caveat: "Keep approved disease/obesity evidence separate from off-label physique or performance culture.",
+        citationIds: ["fda-zepbound-2023"]
+      },
       anecdotalUse: ["Common online enhancement/weight-loss discussion exists, but it should be labeled anecdotal/common-use unless tied to an approved indication or published study."]
     },
     claims: [
@@ -497,6 +751,7 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
   },
   "semaglutide": {
     names: { aliases: ["Ozempic", "Wegovy", "Rybelsus"], tradeNames: ["Ozempic", "Wegovy", "Rybelsus"] },
+    classification: { evidenceTier: "fda_phase3", regulatoryStatus: "fda_approved" },
     tile: {
       mechanismSummary: "Semaglutide is a long-acting GLP-1 receptor agonist draft-linked to glucose-dependent insulin secretion, appetite suppression, and delayed gastric emptying.",
       localization: "Pancreatic islets, hypothalamic/brainstem appetite circuits, gastrointestinal axis, and downstream adipometabolic tissues.",
@@ -525,11 +780,28 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
     },
     expanded: {
       mechanismDetail: "Model-drafted but medically traceable cascade: semaglutide activates GLP-1R, increases cAMP signaling in islet cells, increases glucose-dependent insulin release, decreases inappropriate glucagon output, and reduces appetite through central satiety circuitry plus GI slowing. Replace with label/trial-cited wording once the incoming Consensus/primary batch lands.",
+      safetyRisks: [
+        {
+          system: "gastrointestinal",
+          label: "Gastrointestinal",
+          color: "#fb7185",
+          icon: "gut",
+          helpSummary: null,
+          harmSummary: "Human therapeutic programs consistently describe gastrointestinal adverse effects as the dominant class toxicity context.",
+          citationIds: ["src-peptpedia-browse"]
+        }
+      ],
+      enhancementPotential: {
+        summary: "Semaglutide is widely sought for appetite suppression and body-weight reduction, but that social use should not be confused with enhancement evidence in healthy physiology.",
+        caveat: "Replace with label- and trial-specific wording once the next regulatory batch is imported.",
+        citationIds: ["src-peptpedia-browse"]
+      },
       anecdotalUse: ["Common nonclinical discussion focuses on appetite suppression and body-composition goals, but this must remain separated from citation-backed therapeutic evidence."]
     },
     claims: [claim("semaglutide-mechanism-draft", "tile.mechanismSummary", "Long-acting GLP-1 receptor agonist with satiety, gastric-emptying, and glucose-dependent insulin-secretion effects.", ["R", "?"], [source("peptpedia").id], "review", "mixed", 0.5)]
   },
   "retatrutide": {
+    classification: { evidenceTier: "human_clinical_development", regulatoryStatus: "investigational" },
     tile: {
       mechanismSummary: "Retatrutide is a draft-tracked triple agonist spanning GLP-1R, GIPR, and glucagon receptor signaling with downstream appetite, glucose, and energy-expenditure implications.",
       localization: "Pancreatic islets, CNS appetite circuits, liver, adipose tissue, and peripheral metabolic tissues influenced by incretin and glucagon signaling.",
@@ -550,7 +822,23 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       ]
     },
     expanded: {
-      mechanismDetail: "Draft but traceable cascade: retatrutide combines GLP-1R, GIPR, and GCGR agonism, so it should be read as a multi-axis metabolic signal rather than a single receptor effect. Appetite suppression, insulinotropic signaling, and glucagon-linked energy handling may all contribute to observed body-weight and glycemic outcomes."
+      mechanismDetail: "Draft but traceable cascade: retatrutide combines GLP-1R, GIPR, and GCGR agonism, so it should be read as a multi-axis metabolic signal rather than a single receptor effect. Appetite suppression, insulinotropic signaling, and glucagon-linked energy handling may all contribute to observed body-weight and glycemic outcomes.",
+      safetyRisks: [
+        {
+          system: "gastrointestinal",
+          label: "Gastrointestinal",
+          color: "#fb7185",
+          icon: "gut",
+          helpSummary: null,
+          harmSummary: "Human-development summaries consistently flag gastrointestinal adverse effects as the main tolerability burden.",
+          citationIds: ["src-peptpedia-browse"]
+        }
+      ],
+      enhancementPotential: {
+        summary: "Because retatrutide has aggressive weight-loss signals in development, it will predictably attract enhancement/body-composition interest before formal approval.",
+        caveat: "Current framing should remain developmental, not healthy-human performance evidence.",
+        citationIds: ["src-peptpedia-browse"]
+      }
     },
     claims: [claim("retatrutide-mechanism-draft", "tile.mechanismSummary", "Triple GLP-1/GIP/glucagon receptor agonist with multi-axis metabolic signaling.", ["R", "?"], [source("peptpedia").id], "review", "mixed", 0.48)]
   },
@@ -574,80 +862,283 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
     },
     claims: [claim("cagrilintide-mechanism-draft", "tile.mechanismSummary", "Long-acting amylin analog that increases satiety signaling and reduces energy intake.", ["R", "?"], [source("peptpedia").id], "review", "mixed", 0.46)]
   },
-  "bpc-157": {
+  "mots-c": {
+    classification: { evidenceTier: "preclinical", regulatoryStatus: "not_approved" },
     tile: {
-      mechanismSummary: "BPC-157 is a model-drafted repair peptide record centered on endothelial migration, angiogenic signaling, and cytoskeletal/wound-healing pathways; human therapeutic evidence remains weak.",
-      localization: "Gastrointestinal mucosa, endothelium, fibroblast/wound-healing compartments, tendon/ligament injury models, and local repair microenvironments.",
+      mechanismSummary: "MOTS-c is a mitochondrial-derived peptide with primary preclinical evidence for AMPK-linked metabolic stress signaling, direct CK2 engagement in muscle, and antioxidant-response modulation.",
+      localization: "Skeletal muscle, adipose tissue, mitochondrial stress-response networks, and stress-responsive nuclear signaling contexts.",
       enhancingEffects: [
-        { label: "angiogenic repair signaling", symbols: ["A", "R", "?"], claimRef: "bpc157-repair-draft" },
-        { label: "tendon/ligament healing claims", symbols: ["A", "R", "?"], claimRef: "bpc157-repair-draft" },
-        { label: "gut mucosal protection claims", symbols: ["A", "R", "?"], claimRef: "bpc157-repair-draft" }
-      ]
+        { label: "metabolic homeostasis signaling", symbols: ["A", "C"], claimRef: "motsc-ampk-folate" },
+        { label: "exercise / muscle-performance discussion", symbols: ["A", "?"], claimRef: "motsc-ck2-target" },
+        { label: "healthy-human enhancement claims", symbols: ["N", "?"], claimRef: "motsc-enhancement-unknown" }
+      ],
+      sideEffects: ["No robust peer-reviewed human safety trial is imported for MOTS-c.", "Healthy-human enhancement use remains unverified and should not be treated as established physiology data."],
+      clinicalUses: ["No approved clinical use is verified in the current source set."],
+      dosing: {
+        quick: "Preclinical dosing exists in mice and cell systems, but no verified public human dosing context is imported.",
+        adminRoute: "Animal i.p. and cell-study contexts are not human-use guidance.",
+        publicDisplayAllowed: false,
+        context: "preclinical"
+      }
     },
     biology: {
-      genes: ["VEGFA", "KDR", "NOS3", "FAK", "ERK1/2"],
-      proteins: ["VEGF-A", "VEGFR2", "eNOS", "FAK", "ERK1/2"],
-      receptors: ["VEGFR2-related angiogenic signaling"],
-      channelsTransporters: ["NO-dependent vascular tone pathways"],
-      cascades: [
-        { category: "angiogenesis and migration", steps: ["BPC-157 exposure is reported to increase VEGF/VEGFR2-related signaling", "FAK/paxillin cytoskeletal signaling may increase", "endothelial migration and tube formation may increase", "microvascular repair may improve in preclinical injury models"], symbols: ["A", "R", "?"], claimRef: "bpc157-repair-draft" },
-        { category: "nitric-oxide and tissue-protection signaling", steps: ["eNOS/NO pathway modulation is reported", "microcirculatory support may increase", "mucosal or tendon-healing readouts may improve in animal models", "human efficacy remains unverified"], symbols: ["A", "R", "?"], claimRef: "bpc157-repair-draft" }
-      ]
-    },
-    expanded: {
-      mechanismDetail: "This is a model-drafted, preclinical-heavy cascade: reported repair biology centers on VEGF/VEGFR2, focal-adhesion/cytoskeletal signaling, and nitric-oxide-linked microvascular effects. It should not be read as established human efficacy until primary human evidence is imported."
-    },
-    claims: [claim("bpc157-repair-draft", "tile.mechanismSummary", "Preclinical repair peptide claims center on angiogenesis, endothelial migration, and tissue-protection signaling.", ["A", "R", "?"], [source("peptpedia").id], "review", "animal", 0.4)]
-  },
-  "ghk-cu": {
-    tile: {
-      mechanismSummary: "GHK-Cu is a copper-binding tripeptide draft-linked to extracellular-matrix remodeling, fibroblast signaling, antioxidant/stress pathways, and wound-healing biology.",
-      localization: "Dermis, extracellular matrix, fibroblasts, wound bed, hair follicle environment, and oxidative-stress response compartments.",
-      enhancingEffects: [
-        { label: "collagen / matrix remodeling", symbols: ["A", "R", "?"], claimRef: "ghkcu-matrix-draft" },
-        { label: "wound-healing signaling", symbols: ["A", "R", "?"], claimRef: "ghkcu-matrix-draft" },
-        { label: "cosmetic skin-quality claims", symbols: ["N", "R", "?"], claimRef: "ghkcu-matrix-draft" }
-      ]
-    },
-    biology: {
-      genes: ["COL1A1", "COL3A1", "MMP2", "TIMP1", "SOD1"],
-      proteins: ["collagen I", "collagen III", "MMP-2", "TIMP-1", "SOD1"],
-      receptors: [],
-      channelsTransporters: ["copper trafficking context"],
-      cascades: [
-        { category: "matrix remodeling", steps: ["GHK-Cu delivers copper into local peptide-signaling context", "fibroblast repair programs may increase", "collagen and extracellular-matrix synthesis can increase", "MMP/TIMP balance may shift toward remodeling control", "wound-healing or skin-quality readouts may improve"], symbols: ["A", "R", "?"], claimRef: "ghkcu-matrix-draft" },
-        { category: "oxidative-stress signaling", steps: ["cell-stress defense pathways may increase", "superoxide-handling genes may increase", "inflammatory tissue damage may decrease in local models", "human cosmetic or regenerative effects remain context-specific"], symbols: ["A", "R", "?"], claimRef: "ghkcu-matrix-draft" }
-      ]
-    },
-    expanded: {
-      mechanismDetail: "Draft cascade: GHK-Cu is usually framed as a matrix-remodeling and wound-healing signal rather than a receptor agonist. The critical biology is fibroblast/matrix gene regulation, collagen turnover, metalloproteinase balance, and local oxidative-stress handling."
-    },
-    claims: [claim("ghkcu-matrix-draft", "tile.mechanismSummary", "Copper tripeptide associated with matrix remodeling, fibroblast repair, and wound-healing biology.", ["A", "R", "?"], [source("peptpedia").id], "review", "animal", 0.43)]
-  },
-  "tb-500": {
-    tile: {
-      mechanismSummary: "TB-500 is a thymosin-beta-4-related draft record centered on actin dynamics, cell migration, angiogenesis, and repair/remodeling claims that remain mostly preclinical.",
-      localization: "Cytoskeletal/migratory repair compartments including endothelial cells, fibroblasts, muscle, tendon, and wound-healing tissues.",
-      enhancingEffects: [
-        { label: "cell migration and repair", symbols: ["A", "R", "?"], claimRef: "tb500-repair-draft" },
-        { label: "angiogenesis context", symbols: ["A", "R", "?"], claimRef: "tb500-repair-draft" },
-        { label: "sports-recovery anecdote", symbols: ["N", "?"], claimRef: "tb500-repair-draft" }
-      ]
-    },
-    biology: {
-      genes: ["ACTB", "VEGFA", "MMP2", "TGFB1"],
-      proteins: ["actin", "VEGF-A", "MMP-2", "TGF-beta"],
+      genes: ["MT-RNR1", "PRKAA1", "PRKAA2", "SIRT1", "PPARGC1A", "CSNK2A1", "NFE2L2", "HMOX1", "NQO1"],
+      proteins: ["MOTS-c", "AMPK", "SIRT1", "PGC-1alpha", "CK2", "Nrf2", "HO-1", "NQO1", "NF-kB p65"],
       receptors: [],
       channelsTransporters: [],
+      cytokinesInterleukins: [],
       cascades: [
-        { category: "actin and migration signaling", steps: ["TB-500/thymosin-beta-4-related signaling is proposed to sequester G-actin", "cell migration capacity may increase", "repair-cell trafficking into injury sites may increase", "tendon/muscle/wound healing readouts may improve in preclinical models"], symbols: ["A", "R", "?"], claimRef: "tb500-repair-draft" },
-        { category: "vascular and remodeling signaling", steps: ["angiogenic signaling may increase", "matrix remodeling may increase", "fibrosis-related signaling may decrease in some models", "human efficacy remains unverified and anecdotal use must remain separate"], symbols: ["A", "R", "?"], claimRef: "tb500-repair-draft" }
+        { category: "metabolic stress signaling", steps: ["MOTS-c is encoded within mitochondrial 12S rRNA", "folate-cycle / de novo purine synthesis signaling is inhibited in primary preclinical work", "AMPK activation increases", "skeletal-muscle glucose and fatty-acid handling shift", "obesity / insulin-resistance phenotypes improve in mice"], symbols: ["A", "C"], claimRef: "motsc-ampk-folate" },
+        { category: "adiponectin-mitochondrial biogenesis axis", steps: ["adiponectin/APPL1 signaling increases", "SIRT1 activity increases", "PGC-1alpha-associated mitochondrial biogenesis signaling increases", "MOTS-c production/secretion in skeletal muscle increases", "insulin-resistance phenotypes improve in mice"], symbols: ["A", "C"], claimRef: "motsc-appl1-axis" },
+        { category: "direct muscle target and redox signaling", steps: ["MOTS-c directly binds CK2 in primary 2024 muscle work", "muscle CK2 activity increases", "muscle glucose uptake and atrophy resistance improve in mice", "Nrf2/ARE signaling can increase in oxidative-stress models", "NF-kB inflammatory signaling can decrease in cell studies"], symbols: ["A", "C"], claimRef: "motsc-ck2-target" }
       ]
     },
     expanded: {
-      mechanismDetail: "Draft cascade: TB-500 is best read as a cytoskeletal and migratory-repair hypothesis, not as a clinically verified human regenerative drug. The recurring biology is actin handling, endothelial/fibroblast migration, angiogenesis, and matrix remodeling."
+      humanEvidence: "No peer-reviewed human interventional trial demonstrating efficacy or safety is imported here. The current usable record is preclinical and mechanistic.",
+      animalEvidence: "Primary mouse studies report improved insulin-resistance, obesity, adipose dysfunction, and muscle-function endpoints under experimental conditions, with no basis to infer healthy-human enhancement.",
+      mechanismDetail: "The strongest mechanistic chain now imported is: mitochondrial-encoded MOTS-c -> folate-cycle / purine-stress sensing -> AMPK activation -> downstream metabolic adaptation, with later preclinical papers adding APPL1-SIRT1-PGC-1alpha regulation and direct CK2 engagement in skeletal muscle. Oxidative-stress models also report Nrf2/ARE activation and NF-kB suppression.",
+      safetyDetail: "Human safety evidence is missing. The site should present MOTS-c as a preclinical metabolic-signaling peptide rather than a verified human therapy or enhancement tool.",
+      safetyRisks: [
+        {
+          system: "metabolic",
+          label: "Metabolic / endocrine",
+          color: "#6ee7b7",
+          icon: "hexagon",
+          helpSummary: "Mouse studies reported improved insulin resistance, adipose homeostasis, and muscle glucose handling under experimental conditions.",
+          harmSummary: null,
+          citationIds: ["pmid-25738459", "pmid-32880686", "pmid-39559755"]
+        }
+      ],
+      enhancementPotential: {
+        summary: "Online discussion frames MOTS-c as an exercise or metabolic enhancer, but the imported evidence for that framing is preclinical rather than healthy-human clinical.",
+        caveat: "Do not translate mouse/metabolic-stress findings into human enhancement claims without human trial data.",
+        citationIds: ["pmid-39559755", "pmid-25738459"]
+      },
+      anecdotalUse: ["Exercise-mimetic and metabolic-enhancement claims circulate publicly, but the current source base does not establish healthy-human efficacy."],
+      missingEvidence: ["human trials", "human adverse events", "public human PK/PD", "receptor-level human confirmation"]
     },
-    claims: [claim("tb500-repair-draft", "tile.mechanismSummary", "Thymosin-beta-4-related repair claims center on actin dynamics, cell migration, and angiogenesis in preclinical models.", ["A", "R", "?"], [source("peptpedia").id], "review", "animal", 0.41)]
+    claims: [
+      claim("motsc-ampk-folate", "tile.mechanismSummary", "Primary preclinical MOTS-c work linked the peptide to folate-cycle / purine-stress signaling and AMPK activation with improved metabolic homeostasis in mice.", ["A", "C"], ["pmid-25738459"], "preclinical", "mixed", 0.8),
+      claim("motsc-appl1-axis", "biology.proteins", "Adiponectin signaling regulated MOTS-c through an APPL1-SIRT1-PGC-1alpha axis in mouse and myotube systems.", ["A", "C"], ["pmid-32880686"], "preclinical", "mixed", 0.72),
+      claim("motsc-ck2-target", "biology.proteins", "Primary 2024 work identified CK2 as a direct MOTS-c binding target in skeletal muscle contexts.", ["A", "C"], ["pmid-39559755"], "preclinical", "mixed", 0.8),
+      claim("motsc-nrf2-nfkb", "biology.proteins", "Cell work reported MOTS-c activation of Nrf2/ARE signaling with suppression of NF-kB-p65 phosphorylation under oxidative stress.", ["C"], ["pmid-34859377"], "cell", "cell", 0.7),
+      claim("motsc-enhancement-unknown", "expanded.enhancementPotential", "Healthy-human enhancement remains unverified in the current imported record.", ["N", "?"], ["pmid-25738459"], "anecdotal_common_use", "unknown", 0.3)
+    ],
+    citations: [motsCellMetab, motsAppl1, motsCk2, motsNrf2, source("peptpedia")],
+    moderation: { status: "needs_review" }
+  },
+  "bpc-157": {
+    classification: { evidenceTier: "preclinical", regulatoryStatus: "not_approved" },
+    tile: {
+      mechanismSummary: "BPC-157 is a non-approved peptide with primary preclinical papers pointing to angiogenic, ERK/MAPK, nitric-oxide, and microvascular-repair signaling; robust human therapeutic evidence remains absent.",
+      localization: "Gastrointestinal mucosa, endothelium, fibroblast/wound-healing compartments, tendon/ligament injury models, and local repair microenvironments.",
+      enhancingEffects: [
+        { label: "angiogenic repair signaling", symbols: ["A"], claimRef: "bpc157-vegf-erk" },
+        { label: "tendon/ligament healing claims", symbols: ["A"], claimRef: "bpc157-tendon-angiogenesis" },
+        { label: "gut mucosal protection claims", symbols: ["A"], claimRef: "bpc157-no-vegfr1" },
+        { label: "sports-recovery / enhancement discussion", symbols: ["N", "?"], claimRef: "bpc157-enhancement-unknown" }
+      ],
+      sideEffects: ["No robust peer-reviewed controlled human safety trial is imported.", "Publicly sold BPC-157 products should not be treated as validated medical-grade equivalents."],
+      clinicalUses: ["No FDA-approved or well-supported peer-reviewed human therapeutic use is imported in this record."],
+      dosing: {
+        quick: "Human dosing is not established here; only animal and cell-system protocols are source-backed.",
+        adminRoute: "Topical, intraperitoneal, and local preclinical routes are not human-use advice.",
+        publicDisplayAllowed: false,
+        context: "preclinical"
+      }
+    },
+    biology: {
+      genes: ["VEGFA", "FLT1", "KDR", "NOS3", "PTGS2", "MAPK1", "MAPK3"],
+      proteins: ["VEGF-A", "VEGFR1", "VEGFR2", "eNOS", "COX-2", "ERK1/2", "c-Fos", "c-Jun", "Egr-1"],
+      receptors: ["VEGFR1", "VEGFR2"],
+      channelsTransporters: ["NO-dependent vascular tone signaling"],
+      cytokinesInterleukins: [],
+      cascades: [
+        { category: "angiogenesis and endothelial migration", steps: ["BPC-157 increased VEGF-A expression in primary alkali-burn work", "ERK1/2 phosphorylation increased with c-Fos / c-Jun / Egr-1 downstream signaling", "HUVEC proliferation, migration, and tube formation increased", "granulation / re-epithelialization / collagen deposition improved in rats"], symbols: ["A", "C"], claimRef: "bpc157-vegf-erk" },
+        { category: "microvascular and nitric-oxide signaling", steps: ["BPC-157 preserved eNOS-linked nitric-oxide signaling in preclinical injury work", "VEGF-A / VEGFR1 / AKT / p38-MAPK signaling was modulated in gastric-injury models", "microcirculatory support and mucosal protection improved in rats", "human efficacy remains unverified"], symbols: ["A"], claimRef: "bpc157-no-vegfr1" },
+        { category: "musculoskeletal repair signaling", steps: ["tendon / muscle-healing models showed modulated angiogenesis", "VEGF/CD34/factor VIII markers changed with healing", "myotendinous-junction studies reported eNOS and COX-2 mRNA effects with oxidative-stress counteraction", "results remain preclinical rather than verified human regenerative medicine"], symbols: ["A"], claimRef: "bpc157-eNOS-cox2" }
+      ]
+    },
+    expanded: {
+      humanEvidence: "Peer-reviewed controlled human efficacy evidence is still not imported here. The record remains preclinical-heavy.",
+      animalEvidence: "Primary rat and cell studies support wound-healing, angiogenesis, gastric-mucosal protection, and tendon/myotendinous repair readouts under experimental conditions.",
+      mechanismDetail: "The mechanistic chain is now less hand-wavy: BPC-157 primary papers report VEGF-A upregulation, ERK1/2-c-Fos-c-Jun-Egr-1 signaling, VEGFR1/AKT/p38-MAPK-linked gastric protection, and eNOS/COX-2-related nitric-oxide biology in injury models. None of that establishes human clinical efficacy.",
+      safetyDetail: "The main present limitation is absence of strong human safety and efficacy evidence, not evidence of proven safety. Preclinical benefit claims should not be translated into human repair or enhancement claims without human trials.",
+      safetyRisks: [
+        {
+          system: "gastrointestinal",
+          label: "Gastrointestinal",
+          color: "#4ade80",
+          icon: "capsule",
+          helpSummary: "Rat gastric-injury models reported mucosal protection with VEGF-A / VEGFR1 / AKT / p38-MAPK and eNOS-linked signaling changes.",
+          harmSummary: null,
+          citationIds: ["pmid-33376304"]
+        },
+        {
+          system: "musculoskeletal",
+          label: "Musculoskeletal",
+          color: "#c4b5fd",
+          icon: "joint",
+          helpSummary: "Rat tendon and myotendinous-junction studies reported improved repair readouts with angiogenic and nitric-oxide-system changes.",
+          harmSummary: null,
+          citationIds: ["pmid-20388964", "pmid-34829776"]
+        }
+      ],
+      enhancementPotential: {
+        summary: "BPC-157 is widely discussed as a recovery enhancer, but the support imported here is animal/cell injury biology rather than healthy-human performance data.",
+        caveat: "Keep enhancement discussion clearly separated from medical evidence; robust human trial data are missing.",
+        citationIds: ["pmid-25995620", "pmid-20388964"]
+      },
+      anecdotalUse: ["Sports-recovery, GI-protection, and soft-tissue-healing claims are common online, but strong human efficacy evidence is not established."],
+      missingEvidence: ["controlled human trials", "human adverse events", "human PK/PD", "regulatory approval"]
+    },
+    claims: [
+      claim("bpc157-vegf-erk", "tile.mechanismSummary", "Primary alkali-burn work linked BPC-157 to increased VEGF-A expression, endothelial migration/tube formation, and ERK1/2-c-Fos-c-Jun-Egr-1 signaling.", ["A", "C"], ["pmid-25995620"], "preclinical", "mixed", 0.8),
+      claim("bpc157-tendon-angiogenesis", "biology.proteins", "Muscle/tendon-healing work reported modulated angiogenesis markers during BPC-157-assisted repair.", ["A"], ["pmid-20388964"], "preclinical", "animal", 0.68),
+      claim("bpc157-no-vegfr1", "biology.proteins", "Rat gastric-injury work linked BPC-157 to VEGF-A / VEGFR1 / AKT / p38-MAPK signaling with eNOS-related protection.", ["A"], ["pmid-33376304"], "preclinical", "animal", 0.76),
+      claim("bpc157-eNOS-cox2", "biology.proteins", "Myotendinous-junction work reported BPC-157 effects on eNOS and COX-2 mRNA with oxidative-stress/NO-system changes.", ["A"], ["pmid-34829776"], "preclinical", "animal", 0.72),
+      claim("bpc157-enhancement-unknown", "expanded.enhancementPotential", "Healthy-human enhancement remains unverified in the imported source set.", ["N", "?"], ["pmid-25995620"], "anecdotal_common_use", "unknown", 0.3)
+    ],
+    citations: [bpcBurn, bpcAngiogenesis, bpcClopidogrel, bpcMyotendinous, source("peptpedia"), source("peptidePartnersShop")],
+    moderation: { status: "needs_review" }
+  },
+  "ghk-cu": {
+    classification: { evidenceTier: "preclinical", regulatoryStatus: "not_approved" },
+    tile: {
+      mechanismSummary: "GHK-Cu is a copper-binding tripeptide with primary preclinical support for matrix-remodeling, keratinocyte/fibroblast repair phenotypes, and anti-inflammatory anti-fibrotic signaling.",
+      localization: "Dermis, extracellular matrix, fibroblasts, wound bed, hair follicle environment, and oxidative-stress response compartments.",
+      enhancingEffects: [
+        { label: "collagen / matrix remodeling", symbols: ["A", "C"], claimRef: "ghkcu-integrin-epithelium" },
+        { label: "anti-fibrotic signaling", symbols: ["A"], claimRef: "ghkcu-nrf2-smad" },
+        { label: "cosmetic skin-quality claims", symbols: ["N", "?"], claimRef: "ghkcu-enhancement-unknown" }
+      ],
+      sideEffects: ["Human systemic safety evidence is not established in this record.", "Cosmetic/topical marketing language should not be read as human regenerative proof."],
+      clinicalUses: ["No approved human systemic therapeutic indication is verified in the current source set."],
+      dosing: {
+        quick: "Topical, animal, and local experimental contexts exist; no verified human systemic dosing context is imported here.",
+        adminRoute: "Preclinical and cosmetic-context routes are not clinical guidance.",
+        publicDisplayAllowed: false,
+        context: "preclinical"
+      }
+    },
+    biology: {
+      genes: ["ITGA6", "ITGB1", "TP63", "MMP9", "TIMP1", "NFE2L2", "NFKB1", "TGFB1", "IL6", "TNF"],
+      proteins: ["integrins", "p63", "MMP-9", "TIMP-1", "Nrf2", "NF-kB p65", "TGF-beta1", "Smad2/3", "IL-6", "TNF-alpha"],
+      receptors: [],
+      channelsTransporters: ["copper trafficking context"],
+      cytokinesInterleukins: [
+        { name: "IL-6", type: "interleukin", effect: "decreased in bleomycin pulmonary-fibrosis mouse model", context: "mouse lung fibrosis", symbols: ["A"], claimRef: "ghkcu-nrf2-smad" },
+        { name: "TNF-alpha", type: "cytokine", effect: "decreased in bleomycin pulmonary-fibrosis mouse model", context: "mouse lung fibrosis", symbols: ["A"], claimRef: "ghkcu-nrf2-smad" }
+      ],
+      cascades: [
+        { category: "epithelial / matrix repair", steps: ["Copper-GHK increases keratinocyte integrin expression", "p63-positive reparative epithelial phenotype increases", "adhesion / migration competence may increase", "matrix-remodeling and wound-closure programs may improve locally"], symbols: ["C"], claimRef: "ghkcu-integrin-epithelium" },
+        { category: "anti-fibrotic inflammatory signaling", steps: ["GHK-Cu decreases TNF-alpha and IL-6 in bleomycin fibrosis model", "NF-kB signaling decreases", "Nrf2 antioxidant signaling increases", "TGF-beta1 / Smad2/3 signaling decreases", "MMP-9 / TIMP-1 balance partially normalizes as fibrosis and EMT decrease"], symbols: ["A"], claimRef: "ghkcu-nrf2-smad" }
+      ]
+    },
+    expanded: {
+      humanEvidence: "No robust peer-reviewed human therapeutic trial is imported here; the usable evidence base is preclinical and topical/cosmetic-adjacent.",
+      animalEvidence: "Primary animal work supports anti-inflammatory and anti-fibrotic lung effects, while cell studies support reparative epithelial phenotypes.",
+      mechanismDetail: "The strongest currently imported GHK-Cu chain is: copper-GHK -> reparative epithelial / matrix signaling plus anti-inflammatory anti-fibrotic signaling. Specific primary findings include increased keratinocyte integrin/p63 expression and, in pulmonary-fibrosis mice, lower TNF-alpha and IL-6 with effects on Nrf2, NF-kB, TGF-beta1/Smad2/3, and MMP-9/TIMP-1.",
+      safetyDetail: "Human systemic safety and efficacy remain unclear. The current record should be read as preclinical wound/fibrosis biology, not as established human regenerative medicine.",
+      safetyRisks: [
+        {
+          system: "pulmonary",
+          label: "Pulmonary",
+          color: "#7dd3fc",
+          icon: "lung",
+          helpSummary: "Mouse pulmonary-fibrosis work reported less inflammation, collagen deposition, EMT signaling, and better cytokine profile.",
+          harmSummary: null,
+          citationIds: ["pmid-31809714"]
+        },
+        {
+          system: "dermatologic",
+          label: "Dermatologic",
+          color: "#f9a8d4",
+          icon: "skin",
+          helpSummary: "Keratinocyte work reported increased integrin expression and p63 positivity, consistent with a reparative epithelial phenotype.",
+          harmSummary: null,
+          citationIds: ["pmid-19319546"]
+        }
+      ],
+      enhancementPotential: {
+        summary: "GHK-Cu is often framed cosmetically for skin quality or hair support, but the imported support remains mechanistic/preclinical rather than strong human enhancement evidence.",
+        caveat: "Keep cosmetic/topical discussion distinct from claims of systemic regeneration.",
+        citationIds: ["pmid-19319546", "pmid-31809714"]
+      },
+      anecdotalUse: ["Cosmetic, skin-quality, and hair-focused claims are common, but strong human efficacy evidence is limited in the current import."],
+      missingEvidence: ["controlled human trials", "human adverse events", "human systemic PK/PD", "approved indication"]
+    },
+    claims: [
+      claim("ghkcu-integrin-epithelium", "biology.proteins", "Copper-GHK increased keratinocyte integrin expression and p63 positivity in a primary epithelial repair study.", ["C"], ["pmid-19319546"], "cell", "cell", 0.72),
+      claim("ghkcu-nrf2-smad", "biology.cytokinesInterleukins", "In bleomycin pulmonary fibrosis, GHK-Cu lowered TNF-alpha and IL-6 and modulated Nrf2 / NF-kB / TGF-beta1-Smad2/3 signaling.", ["A"], ["pmid-31809714"], "preclinical", "animal", 0.8),
+      claim("ghkcu-enhancement-unknown", "expanded.enhancementPotential", "Human enhancement/cosmetic efficacy remains incompletely established in the imported source set.", ["N", "?"], ["pmid-19319546"], "anecdotal_common_use", "unknown", 0.3)
+    ],
+    citations: [ghkPulmonaryFibrosis, ghkKeratinocyte, source("peptpedia"), source("peptidePartnersShop")],
+    moderation: { status: "needs_review" }
+  },
+  "tb-500": {
+    classification: { evidenceTier: "preclinical", regulatoryStatus: "not_approved" },
+    tile: {
+      mechanismSummary: "TB-500 is best treated as a thymosin-beta-4-related preclinical hypothesis: the sturdier source base is thymosin beta-4 literature on actin handling, MMP remodeling, angiogenesis, and inflammatory modulation rather than direct human TB-500 trials.",
+      localization: "Cytoskeletal/migratory repair compartments including endothelial cells, fibroblasts, muscle, tendon, and wound-healing tissues.",
+      enhancingEffects: [
+        { label: "cell migration and repair", symbols: ["A", "C"], claimRef: "tb500-tb4-mmp-remodeling" },
+        { label: "angiogenesis context", symbols: ["A", "C"], claimRef: "tb500-tb4-vegf-akt" },
+        { label: "sports-recovery anecdote", symbols: ["N", "?"], claimRef: "tb500-enhancement-unknown" }
+      ],
+      sideEffects: ["Direct human TB-500 safety data are not established here.", "Thymosin beta-4-related biology should not be overread as direct proof for TB-500 fragment use in people."],
+      clinicalUses: ["No verified approved human clinical use for TB-500 is imported in this record."],
+      dosing: {
+        quick: "Direct human TB-500 dosing is not verified here; imported evidence is preclinical and mostly thymosin beta-4-related.",
+        adminRoute: "Preclinical/experimental contexts only.",
+        publicDisplayAllowed: false,
+        context: "preclinical"
+      }
+    },
+    biology: {
+      genes: ["TMSB4X", "ACTB", "MMP1", "MMP2", "MMP9", "VEGFA", "AKT1", "RELA", "CXCL8", "TGFB1"],
+      proteins: ["thymosin beta-4", "G-actin", "MMP-1", "MMP-2", "MMP-9", "VEGF-A", "AKT", "NF-kB RelA/p65", "IL-8"],
+      receptors: [],
+      channelsTransporters: [],
+      cytokinesInterleukins: [{ name: "IL-8", type: "chemokine", effect: "decreased via reduced NF-kB activation in thymosin beta-4 cell study", context: "TNF-alpha-stimulated epithelial-cell system", symbols: ["C"], claimRef: "tb500-tb4-nfkb-il8" }],
+      cascades: [
+        { category: "actin and matrix remodeling", steps: ["thymosin beta-4 binds/sequesters G-actin", "cell migration competence increases", "MMP-1 / MMP-2 / MMP-9 expression increases in wound-repair cells", "extracellular-matrix remodeling accelerates", "repair readouts improve in preclinical systems"], symbols: ["A", "C"], claimRef: "tb500-tb4-mmp-remodeling" },
+        { category: "angiogenesis signaling", steps: ["thymosin beta-4 increases endothelial migration and proliferation", "VEGF / AKT signaling increases in diabetic-wound models", "vascularization increases", "re-epithelialization and wound organization improve", "direct human TB-500 efficacy remains unverified"], symbols: ["A", "C"], claimRef: "tb500-tb4-vegf-akt" },
+        { category: "inflammatory modulation", steps: ["TNF-alpha signaling activates NF-kB in cell models", "thymosin beta-4 reduces RelA/p65 nuclear activity", "IL-8 transcription decreases", "inflammatory sensitization decreases", "fragment-to-human extrapolation remains limited"], symbols: ["C"], claimRef: "tb500-tb4-nfkb-il8" }
+      ]
+    },
+    expanded: {
+      humanEvidence: "No direct peer-reviewed human TB-500 efficacy trial is imported here.",
+      animalEvidence: "The usable mechanistic base is thymosin beta-4 preclinical literature on wound healing, angiogenesis, MMP remodeling, and inflammatory signaling.",
+      mechanismDetail: "The honest way to present TB-500 is: direct evidence is sparse, but thymosin beta-4 primary literature consistently shows actin handling, migration, MMP remodeling, VEGF/AKT-linked angiogenesis, and NF-kB/IL-8 inflammatory modulation. Those data are mechanistically relevant but not equivalent to direct human TB-500 validation.",
+      safetyDetail: "Human TB-500 safety and efficacy remain poorly defined in the imported record. Public sports-recovery use should be kept in anecdotal/nonclinical territory.",
+      safetyRisks: [
+        {
+          system: "dermatologic",
+          label: "Dermatologic / wound",
+          color: "#f9a8d4",
+          icon: "skin",
+          helpSummary: "Thymosin beta-4 wound models reported faster re-epithelialization, higher vascularization, and greater matrix remodeling.",
+          harmSummary: null,
+          citationIds: ["pmid-16607611", "pmid-25204972"]
+        }
+      ],
+      enhancementPotential: {
+        summary: "TB-500 is heavily discussed for recovery and tissue repair, but the imported source base is preclinical and mostly thymosin beta-4-related rather than direct healthy-human evidence.",
+        caveat: "Present as mechanistic/preclinical context, not as validated sports medicine.",
+        citationIds: ["pmid-16607611", "pmid-25204972", "pmid-21343177"]
+      },
+      anecdotalUse: ["Sports-recovery and injury-healing claims are common in public discussion, but direct human evidence remains limited and uncertain."],
+      missingEvidence: ["direct human TB-500 trials", "human safety", "human PK/PD", "regulatory status confirmation"]
+    },
+    claims: [
+      claim("tb500-tb4-mmp-remodeling", "biology.proteins", "Primary thymosin beta-4 wound-repair work showed increased MMP-1, MMP-2, and MMP-9 expression across wound-healing cell types.", ["A", "C"], ["pmid-16607611"], "preclinical", "mixed", 0.79),
+      claim("tb500-tb4-vegf-akt", "biology.proteins", "Primary diabetic-wound work linked thymosin beta-4 to increased angiogenesis and VEGF/AKT signaling.", ["A", "C"], ["pmid-25204972"], "preclinical", "mixed", 0.76),
+      claim("tb500-tb4-nfkb-il8", "biology.cytokinesInterleukins", "Primary cell work showed thymosin beta-4 inhibition of TNF-alpha-driven NF-kB activation and IL-8 expression.", ["C"], ["pmid-21343177"], "cell", "cell", 0.75),
+      claim("tb500-enhancement-unknown", "expanded.enhancementPotential", "Healthy-human enhancement remains unverified in the imported TB-500/thymosin-beta-4-related record.", ["N", "?"], ["pmid-16607611"], "anecdotal_common_use", "unknown", 0.3)
+    ],
+    citations: [tb4Mmp, tb4Inflammation, tb4VegfAkt, source("peptpedia"), source("peptidePartnersShop")],
+    moderation: { status: "needs_review" }
   },
   "tesamorelin": {
     names: { aliases: ["Egrifta", "Egrifta SV", "Egrifta WR"], tradeNames: ["Egrifta"] },
@@ -679,6 +1170,25 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
         { category: "GH axis signaling", steps: ["Tesamorelin agonizes GHRHR", "pituitary GH secretion increases", "hepatic IGF-1 production increases", "lipolytic tone can increase", "visceral adipose tissue decreases in cited HIV trial contexts"], symbols: ["H"], claimRef: "tesamorelin-human-use" },
         { category: "body-composition and liver-fat signaling", steps: ["GH/IGF-1 axis changes nutrient partitioning", "visceral adiposity decreases more than subcutaneous depots in target populations", "hepatic fat/body-composition endpoints may improve", "disease-context limitations remain essential"], symbols: ["H", "R"], claimRef: "tesamorelin-human-use" }
       ]
+    },
+    expanded: {
+      safetyRisks: [
+        {
+          system: "metabolic",
+          label: "Metabolic / endocrine",
+          color: "#6ee7b7",
+          icon: "hexagon",
+          helpSummary: "Human HIV-associated adiposity studies support visceral-fat reduction in indicated populations.",
+          harmSummary: "Glucose and IGF-1 related risk context requires label- and trial-specific extraction before stronger claims.",
+          citationIds: ["pmid-38905488"]
+        }
+      ],
+      enhancementPotential: {
+        summary: "Tesamorelin clearly intersects with physique and body-composition interest because of its GH/IGF-1 axis effects, but the strongest imported evidence is still disease-context clinical use.",
+        caveat: "Do not collapse HIV-associated abdominal-fat evidence into generic healthy-human enhancement claims.",
+        citationIds: ["pmid-38905488"]
+      },
+      anecdotalUse: ["Body-composition and enhancement discussion exists publicly, but it must remain separated from FDA and HIV-associated clinical-use evidence."]
     },
     claims: [claim("tesamorelin-human-use", "tile.clinicalUses", "Tesamorelin is described in PubMed as the only FDA-approved therapy to treat abdominal fat accumulation in people with HIV.", ["Rx", "H"], ["pmid-38905488"], "clinical_trial", "human", 0.82)],
     citations: [tesamorelinPubMed, source("peptpedia"), source("peptidePartnersShop")],
@@ -822,27 +1332,55 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       }
     },
     biology: {
-      genes: ["CYCS", "TFAM", "PPARGC1A", "SOD2", "CRLS1"],
-      proteins: ["cardiolipin", "cytochrome c", "TFAM", "PGC-1alpha", "SOD2"],
+      genes: ["CYCS", "TFAM", "PPARGC1A", "SOD2", "CRLS1", "SLC25A4"],
+      proteins: ["cardiolipin", "cytochrome c", "TFAM", "PGC-1alpha", "SOD2", "ANT"],
       receptors: ["cardiolipin binding context"],
-      channelsTransporters: ["mitochondrial permeability transition context requires verification"],
+      channelsTransporters: ["adenine nucleotide translocator", "mitochondrial permeability-transition context requires verification"],
       cytokinesInterleukins: [{ name: "ROS", type: "other", effect: "mitochondrial oxidative-stress marker; trial/source-specific direction requires extraction", context: "mitochondrial disease/preclinical contexts", symbols: ["H", "A", "C", "?"], claimRef: "ss31-human-exercise" }],
       cascades: [
-        { category: "mitochondrial membrane signaling", steps: ["SS-31 localizes to inner mitochondrial membrane", "cardiolipin association is proposed to stabilize cristae-associated bioenergetics", "electron-transport efficiency may increase", "ROS leak may decrease", "ATP-generating efficiency may improve"], symbols: ["H", "A", "C"], claimRef: "ss31-human-exercise" },
+        { category: "mitochondrial membrane signaling", steps: ["SS-31 localizes to inner mitochondrial membrane", "cardiolipin-associated membrane surface electrostatics are modulated", "cristae / electron-transport organization may stabilize", "ROS leak may decrease", "ATP-generating efficiency may improve"], symbols: ["H", "A", "C"], claimRef: "ss31-cardiolipin-mechanism" },
+        { category: "ADP transport and energetics", steps: ["aged mitochondria show impaired ADP sensitivity", "SS-31 increases ANT-linked ADP uptake in mechanistic work", "oxidative phosphorylation responsiveness improves", "force / energetic efficiency may improve in aged-animal systems", "human enhancement remains unverified"], symbols: ["A", "C"], claimRef: "ss31-ant-adp" },
         { category: "clinical functional signaling", steps: ["mitochondrial energetic stress may decrease", "skeletal-muscle fatigue burden may decrease", "short-duration exercise performance may improve", "6-minute walk distance improved in one imported PMM trial row", "healthy-human enhancement remains unverified"], symbols: ["H"], claimRef: "ss31-human-exercise" }
       ]
     },
     expanded: {
-      humanEvidence: "Consensus CSV row describes a 36-participant randomized, double-blind, placebo-controlled dose-escalation trial in adults with genetically confirmed primary mitochondrial myopathy; the highest-dose group improved 6MWT distance in short-term treatment without increased safety concerns in that trial.",
-      mechanismDetail: "Traceable draft cascade: SS-31 is framed as a cardiolipin-associated mitochondrial peptide, with downstream claims centered on improved electron-transport-chain organization, decreased oxidative stress, and improved cellular energetics. Clinical functional improvement should be treated as a downstream trial observation, not as direct proof of general enhancement.",
-      safetyDetail: "Short trial safety observations do not establish broad or healthy-human safety. Enhancement use in healthy physiology remains unverified and should be labeled unknown/anecdotal if encountered.",
-      anecdotalUse: ["Healthy-human enhancement claims are not supported by the imported Consensus CSV and should remain unknown unless new evidence is imported."]
+      humanEvidence: "A 36-participant randomized PMM trial is imported and supports short-duration exercise-performance improvement without increased safety concerns in that study; additional short human elamipretide studies in AMD and heart failure remain indication-specific and do not establish broad healthy-human benefit.",
+      mechanismDetail: "The mechanism chain is now more specific: SS-31 interacts with cardiolipin-containing inner-membrane surfaces, modulates membrane electrostatics, and in mechanistic aging studies improves ANT-linked ADP sensitivity. Those bioenergetic effects sit upstream of any clinical observation such as 6MWT changes in mitochondrial myopathy.",
+      safetyDetail: "Short human studies are directionally reassuring but still limited. Injection-site reactions were common in some subcutaneous programs, and absence of broad severe toxicity in short trials is not the same thing as proven healthy-human safety or enhancement utility.",
+      safetyRisks: [
+        {
+          system: "musculoskeletal",
+          label: "Musculoskeletal / exercise",
+          color: "#c4b5fd",
+          icon: "muscle",
+          helpSummary: "Primary mitochondrial-myopathy trial reported short-duration 6MWT improvement in a disease population.",
+          harmSummary: null,
+          citationIds: ["consensus-ss31-karaa-2018"]
+        },
+        {
+          system: "dermatologic",
+          label: "Dermatologic / injection site",
+          color: "#f9a8d4",
+          icon: "skin",
+          helpSummary: null,
+          harmSummary: "Short human elamipretide programs reported mild to moderate injection-site reactions in subcutaneous use contexts.",
+          citationIds: ["consensus-ss31-karaa-2018"]
+        }
+      ],
+      enhancementPotential: {
+        summary: "SS-31 is often framed as a mitochondrial or endurance enhancer, but the imported human evidence is disease-context clinical development rather than healthy-human enhancement.",
+        caveat: "Animal and mechanistic bioenergetic data should not be translated into claims of improved normal human physiology without direct trials.",
+        citationIds: ["consensus-ss31-karaa-2018", "doi-10-1074-jbc-ra119-012094", "doi-10-1007-s11357-023-00861-y"]
+      },
+      anecdotalUse: ["Healthy-human mitochondrial/performance enhancement claims are discussed publicly, but the imported human evidence does not establish that use."]
     },
     claims: [
-      claim("ss31-human-exercise", "expanded.humanEvidence", "Elamipretide improved 6MWT/exercise performance after 5 days in adults with primary mitochondrial myopathy in the imported Consensus trial row.", ["H"], ["consensus-ss31-karaa-2018"], "clinical_trial", "human", 0.78),
+      claim("ss31-human-exercise", "expanded.humanEvidence", "Elamipretide improved 6MWT/exercise performance after 5 days in adults with primary mitochondrial myopathy in the imported randomized trial row.", ["H"], ["consensus-ss31-karaa-2018"], "clinical_trial", "human", 0.78, { population: "Adults with genetically confirmed primary mitochondrial myopathy", sampleSize: "n=36", route: "IV infusion", duration: "5 days" }),
+      claim("ss31-cardiolipin-mechanism", "biology.proteins", "Primary mechanistic work showed SS-31 binding to lipid bilayers and modulation of membrane surface electrostatics as part of its cardiolipin-linked mechanism.", ["C"], ["doi-10-1074-jbc-ra119-012094"], "cell", "cell", 0.74),
+      claim("ss31-ant-adp", "biology.channelsTransporters", "Primary mechanistic aging work linked SS-31 to improved ADP sensitivity through ANT-associated mitochondrial uptake.", ["A", "C"], ["doi-10-1007-s11357-023-00861-y"], "preclinical", "mixed", 0.72),
       claim("ss31-enhancement-unknown", "tile.enhancingEffects", "Healthy-human enhancement evidence is not established in the current imported source set.", ["?"], ["consensus-ss31-karaa-2018"], "unknown", "unknown", 0.35)
     ],
-    citations: [ss31Consensus, source("peptidePartnersShop"), source("peptidePartnersCerts")],
+    citations: [ss31Consensus, ss31Membrane, ss31Ant, source("peptidePartnersShop"), source("peptidePartnersCerts")],
     moderation: { status: "needs_review" }
   }
 };

@@ -54,6 +54,8 @@ export interface Claim {
   context: ClaimContext;
   population?: string | null;
   route?: string | null;
+  sampleSize?: string | null;
+  duration?: string | null;
   symbols: EvidenceSymbol[];
   confidence: number;
   citationIds: string[];
@@ -129,6 +131,20 @@ export interface PeptideRecord {
     animalEvidence: string;
     mechanismDetail: string;
     safetyDetail: string;
+    safetyRisks: Array<{
+      system: string;
+      label: string;
+      color: string;
+      icon: string;
+      helpSummary: string | null;
+      harmSummary: string | null;
+      citationIds: string[];
+    }>;
+    enhancementPotential: {
+      summary: string;
+      caveat: string;
+      citationIds: string[];
+    } | null;
     manufacturers: Array<{ name: string; type: string; notes: string }>;
     missingEvidence: string[];
     anecdotalUse: string[];
