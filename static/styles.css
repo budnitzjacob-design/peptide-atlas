@@ -124,7 +124,7 @@ a:hover {
 main {
   width: var(--content-width);
   margin: 0 auto;
-  padding: 14px 0 68px;
+  padding: 18px 0 68px;
 }
 
 .app-shell {
@@ -156,7 +156,7 @@ h4 {
   position: relative;
   display: inline-block;
   font-family: "Apple Garamond", "Cormorant Garamond", "EB Garamond", Georgia, serif;
-  font-size: clamp(58px, 8vw, 108px);
+  font-size: clamp(66px, 8.4vw, 116px);
   line-height: 0.9;
   font-style: italic;
   margin-top: 0;
@@ -189,15 +189,15 @@ h3 {
 }
 
 .hero {
-  min-height: 132px;
+  min-height: 164px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 22px;
   align-items: center;
   justify-items: center;
   text-align: center;
-  padding-bottom: 8px;
-  padding-top: 4px;
+  padding-bottom: 18px;
+  padding-top: 10px;
   border-bottom: 0;
   width: 100%;
   margin: 0 auto;
@@ -348,12 +348,12 @@ h3 {
   top: 0;
   z-index: 4;
   display: grid;
-  grid-template-columns: minmax(0, 2.5fr) repeat(3, minmax(0, 1fr)) auto auto;
+  grid-template-columns: minmax(0, 2.7fr) minmax(0, 1fr) minmax(0, 0.82fr) minmax(0, 0.82fr) auto auto auto;
   align-items: stretch;
   gap: 10px;
-  padding: 12px 0;
-  margin: 0 auto 10px;
-  background: transparent;
+  padding: 14px 0 16px;
+  margin: 0 auto 12px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.97) 0%, rgba(0, 0, 0, 0.92) 74%, rgba(0, 0, 0, 0) 100%);
   backdrop-filter: none;
   box-shadow: none;
 }
@@ -397,27 +397,25 @@ textarea {
 .atlas-frame {
   position: relative;
   width: 100%;
-  padding-top: 0;
+  padding-top: 4px;
 }
 
 .side-rail {
   position: fixed;
-  top: 156px;
+  top: 0;
   bottom: 0;
   width: 34px;
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.96) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.96) 100%);
 }
 
 .side-rail-left {
-  left: max(8px, calc((100vw - min(1200px, calc(100vw - 28px))) / 2 - 124px));
+  left: max(8px, calc((100vw - min(1200px, calc(100vw - 28px))) / 2 - 164px));
 }
 
 .side-rail-right {
-  right: max(8px, calc((100vw - min(1200px, calc(100vw - 28px))) / 2 - 124px));
+  right: max(8px, calc((100vw - min(1200px, calc(100vw - 28px))) / 2 - 164px));
 }
 
 .side-rail-track {
@@ -426,19 +424,20 @@ textarea {
   align-items: center;
   gap: 7px;
   font-family: "Lowres Pixel", "JetBrains Mono", ui-monospace, monospace;
-  color: rgba(244, 239, 228, 0.34);
+  color: rgba(255, 255, 255, 0.55);
   font-size: 18px;
   line-height: 1;
   letter-spacing: 0;
   user-select: none;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.08);
 }
 
 .side-rail-left .side-rail-track {
-  animation: rail-rise 40s linear infinite;
+  animation: rail-rise 58s linear infinite;
 }
 
 .side-rail-right .side-rail-track {
-  animation: rail-fall 40s linear infinite;
+  animation: rail-fall 58s linear infinite;
 }
 
 @keyframes rail-rise {
@@ -472,6 +471,13 @@ textarea {
     linear-gradient(135deg, rgba(8, 12, 18, 0.94), rgba(3, 5, 9, 0.96));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
   color: #e7e0d3;
+}
+
+.info-toggle {
+  min-width: 44px;
+  width: 44px;
+  padding-inline: 0;
+  font-size: 16px;
 }
 
 .bibliography-button.active {
@@ -535,7 +541,7 @@ textarea:focus {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 14px;
-  margin-top: 4px;
+  margin-top: 10px;
 }
 
 .tile {
@@ -1032,6 +1038,27 @@ tbody tr:nth-child(odd) td {
   align-items: flex-start;
 }
 
+.key-chip {
+  cursor: pointer;
+}
+
+button.status-pill,
+button.evidence-badge {
+  min-height: 0;
+  padding: 7px 11px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.identity-note,
+.identity-cites {
+  display: inline;
+}
+
+.identity-note {
+  color: #aeb9c8;
+}
+
 .identity-panel {
   border: 1px solid #273444;
   background: linear-gradient(135deg, rgba(12, 19, 27, 0.95), rgba(0, 0, 0, 0.95));
@@ -1415,7 +1442,7 @@ tbody tr:nth-child(odd) td {
 
 @media (max-width: 1120px) and (min-width: 821px) {
   .toolbar {
-    grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr)) auto;
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr) minmax(0, 0.8fr) minmax(0, 0.8fr) auto auto auto;
   }
 
   .bibliography-button {

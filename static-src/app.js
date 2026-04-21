@@ -2,7 +2,41 @@ const DATA = window.PEPTIDE_ATLAS_DATA;
 const BRAND = "peptocopeia";
 const app = document.getElementById("app");
 
-const defaultState = {
+function mobileViewport() {
+  return typeof window !== "undefined" && window.matchMedia("(max-width: 820px)").matches;
+}
+
+function makeDefaultState() {
+  const mobile = mobileViewport();
+  return {
+    query: "",
+    category: "All",
+    sort: "random",
+    selected: null,
+    tag: null,
+    structureZoom: null,
+    keySymbol: null,
+    studyFilter: "all",
+    bibliographyOpen: false,
+    lineFeature: !mobile,
+    scrollersOn: false,
+    brandAlt: false,
+    notice: ""
+  };
+}
+
+const defaultState = makeDefaultState();
+
+function gridOnlyRender() {
+  const tiles = app.querySelector(".tiles");
+  if (!tiles) {
+    render();
+    return;
+  }
+  tiles.innerHTML = filteredPeptides().map(tile).join("");
+}
+
+const baseState = {
   query: "",
   category: "All",
   sort: "random",
@@ -11,13 +45,9 @@ const defaultState = {
   structureZoom: null,
   keySymbol: null,
   studyFilter: "all",
-  bibliographyOpen: false,
-  lineFeature: true,
-  brandAlt: false,
-  notice: ""
+  bibliographyOpen: false
 };
-
-let state = { ...defaultState };
+let state = { ...baseState, ...defaultState };
 const tagSummaryCache = new Map();
 let citationRegistry = { citations: [], index: new Map() };
 let pendingDetailScrollTop = null;
@@ -138,6 +168,48 @@ function regulatoryLabel(status) {
     unknown: "Regulatory status not fully extracted yet."
   };
   return labels[status] || status.replaceAll("_", " ");
+}
+
+function dosingContextLabel(context) {
+  const labels = {
+    fda_label: "Dose displayed from an FDA-approved or regulator label context.",
+    clinical_trial: "Dose displayed from a clinical-trial context; it is descriptive, not a recommendation.",
+    observational: "Dose displayed from observational human use, not a controlled dosing standard.",
+    preclinical: "Dose displayed from animal or preclinical work and should not be read as human guidance.",
+    cell: "Dose displayed from cell or bench context only.",
+    review: "Dose displayed from a secondary synthesis rather than a primary trial protocol.",
+    vendor: "Dose displayed from a vendor context and should not be read as efficacy guidance.",
+    anecdotal_common_use: "Dose displayed from anecdotal/common-use context only and not as clinical evidence.",
+    unknown: "Dosing context has not been fully extracted yet."
+  };
+  return labels[context] || String(context || "").replaceAll("_", " ");
+}
+
+function evidenceTierExplanation(tier) {
+  const labels = {
+    fda_phase3: "Backed by an FDA label or late-phase human evidence in the imported record.",
+    human_phase3: "Anchored by phase 3 human trial evidence.",
+    human_phase2: "Anchored by phase 2 human trial evidence.",
+    human_clinical_development: "Human clinical evidence exists, but the current imported record is not phase-3-grade.",
+    human_pk_pd: "Human pharmacokinetic or pharmacodynamic evidence exists, but outcome evidence is narrower.",
+    human_topical_and_mechanistic: "Human mechanistic or topical evidence exists, but not broad systemic efficacy evidence.",
+    translational: "Mixed human-adjacent and preclinical evidence supports plausibility.",
+    preclinical: "Current support is mainly animal or cell evidence.",
+    secondary_only: "Current record is still leaning on review-level or secondary synthesis and needs more primary verification.",
+    conflict: "The imported evidence base contains meaningful conflict or unresolved inconsistency."
+  };
+  return labels[tier] || evidenceTierTitle(tier);
+}
+
+function moderationExplanation(status) {
+  const labels = {
+    verified: "A moderator has checked the imported evidence and signed off on the current record.",
+    conflict: "A moderator or model flagged a meaningful conflict that still needs resolution.",
+    model_drafted: "The record is model-drafted and still awaiting human or moderator verification.",
+    needs_review: "The record contains enough uncertainty or risk that moderator review is specifically requested.",
+    unreviewed: "The record has not yet been through a moderator verification pass."
+  };
+  return labels[status] || moderationLabel(status);
 }
 
 function evidenceTierTitle(tier) {
@@ -315,6 +387,46 @@ function citationRefsByIds(peptide, ids = []) {
     .join("");
 }
 
+function sectionCitationIds(peptide, section) {
+  const matchers = {
+    human: (claim) => claim.species === "human" || ["fda_label", "clinical_trial", "observational"].includes(claim.context),
+    animal: (claim) => ["animal", "mixed", "cell"].includes(claim.species) || ["preclinical", "cell", "review"].includes(claim.context),
+    mechanism: (claim) => /mechanism|biology|proteins|receptors|channels|classification/.test(`${claim.field || ""}`.toLowerCase())
+  };
+  const matcher = matchers[section];
+  return [...new Set((peptide.claims || []).filter(matcher).flatMap((claim) => claim.citationIds || []))].slice(0, 4);
+}
+
+function cleanNarrativeText(peptide, text, define = (value) => String(value || "")) {
+  const properties = peptide?.identity?.properties || {};
+  const halfLifeValue = properties?.halfLife?.value || null;
+  let output = define(String(text || ""));
+  output = output
+    .replace(/\(([A-Z][A-Za-z-]+(?:,?\s+[A-Z][A-Za-z-]+)*\s+et al\.,?\s*[^)]*)\)/g, "")
+    .replace(/\b[A-Z][A-Za-z-]+(?:,\s*[A-Z][A-Za-z-]+)?\s+et al\.?\s*\d{4}\b/g, "")
+    .replace(/\b[A-Z][A-Za-z-]+\s+\d{4}\b/g, "")
+    .replace(/\(\s*,\s*/g, "(")
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+\./g, ".")
+    .trim();
+
+  if (halfLifeValue && /half-life is short/i.test(output)) {
+    output = output.replace(/Half-life is short\.?/i, `Elimination half-life is ${halfLifeValue}.`);
+  }
+  if (halfLifeValue && /very short half-life/i.test(output)) {
+    output = output.replace(/very short half-life/i, `reported short half-life (${halfLifeValue})`);
+  }
+  return output.replace(/\s{2,}/g, " ").trim();
+}
+
+function identityValueWithCitations(peptide, property, fallbackText) {
+  if (!property || (!property.value && !property.note)) return esc(fallbackText);
+  const value = property.value ? esc(property.value) : "";
+  const note = property.note ? `<span class="identity-note">${esc(property.note)}</span>` : "";
+  const cites = property.citationIds?.length ? `<span class="identity-cites">${citationRefsByIds(peptide, property.citationIds)}</span>` : "";
+  return [value, note, cites].filter(Boolean).join(" ");
+}
+
 function hasHumanStudies(peptide) {
   return (
     peptide.classification.evidenceTier.includes("human") ||
@@ -399,6 +511,8 @@ function filteredPeptides() {
 function resetToGridState() {
   state = {
     ...defaultState,
+    lineFeature: state.lineFeature,
+    scrollersOn: state.scrollersOn,
     brandAlt: state.brandAlt,
     notice: state.notice
   };
@@ -733,7 +847,7 @@ function signalingSection(p, define = (text) => String(text || "")) {
   const summarySteps = chains[0]?.steps || [p.names.primary, p.classification.mechanismFamily, "effect context pending"];
   return `<section class="article-section">
     <h3>Physiological Pathways</h3>
-    <p class="section-note">${esc(define(p.expanded.mechanismDetail))}</p>
+    <p class="section-note">${esc(cleanNarrativeText(p, p.expanded.mechanismDetail, define))}</p>
     <div class="pathway-summary">
       <p class="eyebrow">summary mechanism ${symbols(chains[0]?.symbols || ["?"])}</p>
       <div class="signal-chain compact">
@@ -948,37 +1062,94 @@ function structureModal() {
   </section>`;
 }
 
+function keyModalContent(token) {
+  if (token === "review") {
+    return {
+      title: "Verification status",
+      body: `<div class="key-grid">
+        <div class="key-row"><span class="verify pending"></span><div><strong>Yellow dot</strong><p>Model-drafted or pending human/mod verification.</p></div></div>
+        <div class="key-row"><span class="verify ok"></span><div><strong>Green dot</strong><p>A moderator has verified the article or claim set.</p></div></div>
+      </div>`
+    };
+  }
+
+  if (DATA.evidenceLegend[token]) {
+    return {
+      title: "Evidence symbol",
+      body: `<div class="key-grid">
+        ${Object.entries(DATA.evidenceLegend)
+          .map(
+            ([key, value]) => `<button class="key-row ${key === token ? "active" : ""}" type="button" data-open-key="${esc(key)}">
+              <span class="key-icon"><span class="symbol-button inert">${symbolGlyph(key)}</span></span>
+              <div><p>${esc(value)}</p></div>
+            </button>`
+          )
+          .join("")}
+        <div class="key-row"><span class="verify pending"></span><div><strong>Yellow dot</strong><p>Model-drafted or pending human/mod verification.</p></div></div>
+        <div class="key-row"><span class="verify ok"></span><div><strong>Green dot</strong><p>A moderator has verified the article or claim set.</p></div></div>
+      </div>`
+    };
+  }
+
+  if (token.startsWith("tier:")) {
+    const tier = token.slice(5);
+    return {
+      title: DATA.evidenceTierLabel[tier] || "Evidence tier",
+      body: `<div class="key-grid"><div class="key-row active"><div><strong>${esc(DATA.evidenceTierLabel[tier] || tier)}</strong><p>${esc(
+        evidenceTierExplanation(tier)
+      )}</p></div></div></div>`
+    };
+  }
+
+  if (token.startsWith("regulatory:")) {
+    const status = token.slice(11);
+    return {
+      title: "Regulatory status",
+      body: `<div class="key-grid"><div class="key-row active"><div><strong>${esc(status.replaceAll("_", " "))}</strong><p>${esc(
+        regulatoryLabel(status)
+      )}</p></div></div></div>`
+    };
+  }
+
+  if (token.startsWith("dosing:")) {
+    const context = token.slice(7);
+    return {
+      title: "Dosing context",
+      body: `<div class="key-grid"><div class="key-row active"><div><strong>${esc(context.replaceAll("_", " "))}</strong><p>${esc(
+        dosingContextLabel(context)
+      )}</p></div></div></div>`
+    };
+  }
+
+  if (token.startsWith("moderation:")) {
+    const status = token.slice(11);
+    return {
+      title: "Moderator status",
+      body: `<div class="key-grid"><div class="key-row active"><div><strong>${esc(moderationLabel(status))}</strong><p>${esc(
+        moderationExplanation(status)
+      )}</p></div></div></div>`
+    };
+  }
+
+  return {
+    title: "Key",
+    body: `<div class="key-grid"><div class="key-row active"><div><p>No additional key text is available for this item yet.</p></div></div></div>`
+  };
+}
+
 function keyModal() {
   if (!state.keySymbol) return "";
-  const reviewMode = state.keySymbol === "review";
+  const content = keyModalContent(state.keySymbol);
   return `<section class="key-backdrop" data-close-key-modal>
     <aside class="key-modal" aria-label="Evidence key">
       <header>
         <div>
           <p class="eyebrow">key</p>
-          <h3>${reviewMode ? "Verification status" : "Evidence symbol"}</h3>
+          <h3>${esc(content.title)}</h3>
         </div>
         <button class="icon" data-close-key-button aria-label="Close key">x</button>
       </header>
-      ${
-        reviewMode
-          ? `<div class="key-grid">
-              <div class="key-row"><span class="verify pending"></span><div><strong>Yellow dot</strong><p>Model-drafted or pending human/mod verification.</p></div></div>
-              <div class="key-row"><span class="verify ok"></span><div><strong>Green dot</strong><p>A moderator has verified the article or claim set.</p></div></div>
-            </div>`
-          : `<div class="key-grid">
-              ${Object.entries(DATA.evidenceLegend)
-                .map(
-                  ([key, value]) => `<button class="key-row ${key === state.keySymbol ? "active" : ""}" type="button" data-open-key="${esc(key)}">
-                    <span class="key-icon"><span class="symbol-button inert">${symbolGlyph(key)}</span></span>
-                    <div><p>${esc(value)}</p></div>
-                  </button>`
-                )
-                .join("")}
-              <div class="key-row"><span class="verify pending"></span><div><strong>Yellow dot</strong><p>Model-drafted or pending human/mod verification.</p></div></div>
-              <div class="key-row"><span class="verify ok"></span><div><strong>Green dot</strong><p>A moderator has verified the article or claim set.</p></div></div>
-            </div>`
-      }
+      ${content.body}
     </aside>
   </section>`;
 }
@@ -1033,6 +1204,7 @@ function structurePanel(p) {
 }
 
 function chemicalIdentityPanel(p) {
+  const properties = p.identity?.properties || {};
   return `<section class="identity-panel">
     <h3>Chemical Identity</h3>
     <dl class="identity-grid">
@@ -1041,6 +1213,13 @@ function chemicalIdentityPanel(p) {
       <dt>Formula</dt><dd>${esc(p.identity.formula || "Formula pending extraction.")}</dd>
       <dt>One-letter sequence</dt><dd>${esc(p.identity.sequenceOneLetter || "Sequence pending extraction.")}</dd>
       <dt>Three-letter sequence</dt><dd>${esc(p.identity.sequenceThreeLetter || "Sequence pending extraction.")}</dd>
+      <dt>Half-life</dt><dd>${identityValueWithCitations(p, properties.halfLife, "Half-life pending extraction.")}</dd>
+      <dt>Administration / injection route</dt><dd>${identityValueWithCitations(p, properties.administration, "Administration route pending extraction.")}</dd>
+      <dt>pKa</dt><dd>${identityValueWithCitations(p, properties.pKa, "pKa data not standardized in the current record.")}</dd>
+      <dt>Polarity</dt><dd>${identityValueWithCitations(p, properties.polarity, "Polarity descriptor pending extraction.")}</dd>
+      <dt>Hydrophobicity</dt><dd>${identityValueWithCitations(p, properties.hydrophobicity, "Hydrophobicity descriptor pending extraction.")}</dd>
+      <dt>Lipophilicity</dt><dd>${identityValueWithCitations(p, properties.lipophilicity, "Lipophilicity descriptor pending extraction.")}</dd>
+      <dt>Water solubility</dt><dd>${identityValueWithCitations(p, properties.waterSolubility, "Water-compatibility estimate pending extraction.")}</dd>
     </dl>
   </section>`;
 }
@@ -1062,6 +1241,10 @@ function criticalEffectsPanel(p, define = (text) => String(text || "")) {
 function detail(p) {
   if (!p) return "";
   const define = createDefinitionExpander();
+  const humanText = cleanNarrativeText(p, p.expanded.humanEvidence, define);
+  const animalText = cleanNarrativeText(p, p.expanded.animalEvidence, define);
+  const mechanismText = cleanNarrativeText(p, p.expanded.mechanismDetail, define);
+  const safetyText = cleanNarrativeText(p, p.expanded.safetyDetail, define);
   return `<section class="detail-backdrop" data-close-detail>
     <article class="detail" data-peptide-id="${esc(p.id)}" role="dialog" aria-modal="true" aria-label="${esc(p.names.primary)} detail">
       <div class="article-shell">
@@ -1088,10 +1271,18 @@ function detail(p) {
           <aside>
             ${structurePanel(p)}
             <div class="status-pill-row">
-              <span class="evidence-badge ${evidenceClass(p.classification.evidenceTier)}">${esc(DATA.evidenceTierLabel[p.classification.evidenceTier])}</span>
-              <span class="status-pill">${esc(p.classification.regulatoryStatus.replaceAll("_", " "))}</span>
-              <span class="status-pill">dosing: ${esc(p.tile.dosing.context.replaceAll("_", " "))}</span>
-              <span class="status-pill">${esc(moderationLabel(p.moderation.status))}</span>
+              <button class="evidence-badge ${evidenceClass(p.classification.evidenceTier)} key-chip" type="button" data-open-key="tier:${esc(
+                p.classification.evidenceTier
+              )}">${esc(DATA.evidenceTierLabel[p.classification.evidenceTier])}</button>
+              <button class="status-pill key-chip" type="button" data-open-key="regulatory:${esc(p.classification.regulatoryStatus)}">${esc(
+                p.classification.regulatoryStatus.replaceAll("_", " ")
+              )}</button>
+              <button class="status-pill key-chip" type="button" data-open-key="dosing:${esc(p.tile.dosing.context)}">dosing: ${esc(
+                p.tile.dosing.context.replaceAll("_", " ")
+              )}</button>
+              <button class="status-pill key-chip" type="button" data-open-key="moderation:${esc(p.moderation.status)}">${esc(
+                moderationLabel(p.moderation.status)
+              )}</button>
             </div>
           </aside>
         </section>
@@ -1105,7 +1296,7 @@ function detail(p) {
                 define(p.expanded.anecdotalUse.length ? p.expanded.anecdotalUse.join(" ") : "No enhancement/common-use statement imported.")
               )}</td></tr>
               <tr><th>Dosing context</th><td>${esc(define(`${p.tile.dosing.quick} ${p.tile.dosing.adminRoute}`))}</td></tr>
-              <tr><th>Safety</th><td>${esc(define(`${p.expanded.safetyDetail} ${p.tile.sideEffects.join(" ")}`))}</td></tr>
+              <tr><th>Safety</th><td>${esc(define(`${safetyText} ${p.tile.sideEffects.join(" ")}`))}</td></tr>
             </tbody>
           </table>
         </section>
@@ -1115,9 +1306,9 @@ function detail(p) {
           <h3>Evidence And Article Notes</h3>
           <table>
             <tbody>
-              <tr><th>Human evidence</th><td>${esc(define(p.expanded.humanEvidence))}</td></tr>
-              <tr><th>Animal evidence</th><td>${esc(define(p.expanded.animalEvidence))}</td></tr>
-              <tr><th>Mechanism detail</th><td>${esc(define(p.expanded.mechanismDetail))}</td></tr>
+              <tr><th>Human evidence</th><td>${esc(humanText)} ${citationRefsByIds(p, sectionCitationIds(p, "human"))}</td></tr>
+              <tr><th>Animal evidence</th><td>${esc(animalText)} ${citationRefsByIds(p, sectionCitationIds(p, "animal"))}</td></tr>
+              <tr><th>Mechanism detail</th><td>${esc(mechanismText)} ${citationRefsByIds(p, sectionCitationIds(p, "mechanism"))}</td></tr>
               <tr><th>Missing evidence</th><td>${esc(define(p.expanded.missingEvidence.join("; ") || "No missing-evidence list yet."))}</td></tr>
             </tbody>
           </table>
@@ -1220,10 +1411,10 @@ function hero() {
 }
 
 function sideRail(direction) {
-  const glyphs = "PEPTOCOPEIA.COM.".split("");
+  const glyphs = "PEPTIDE SIGNALING ATLAS ".split("");
   const repeated = Array.from({ length: 4 }, () => glyphs)
     .flat()
-    .map((char) => `<span>${esc(char === "." ? "•" : char)}</span>`)
+    .map((char) => `<span>${esc(char === " " ? " " : char)}</span>`)
     .join("");
   return `<div class="side-rail side-rail-${esc(direction)}" aria-hidden="true">
     <div class="side-rail-track">${repeated}</div>
@@ -1232,8 +1423,7 @@ function sideRail(direction) {
 
 function atlasFrameOpen() {
   return `<section class="atlas-frame">
-    ${sideRail("left")}
-    ${sideRail("right")}`;
+    ${state.scrollersOn ? `${sideRail("left")}${sideRail("right")}` : ""}`;
 }
 
 function atlasFrameClose() {
@@ -1269,6 +1459,9 @@ function toolbar(categories) {
     <button class="bibliography-button ${state.lineFeature ? "active" : ""}" data-toggle-line aria-pressed="${state.lineFeature ? "true" : "false"}" aria-label="Toggle line feature">
       ${state.lineFeature ? "Line On" : "Line Off"}
     </button>
+    <button class="bibliography-button info-toggle ${state.scrollersOn ? "active" : ""}" data-toggle-scrollers aria-pressed="${
+      state.scrollersOn ? "true" : "false"
+    }" aria-label="Toggle side scrollers" title="Toggle side scrollers">i</button>
     <button class="bibliography-button" data-open-bibliography aria-label="Open bibliography">[n]</button>
   </section>`;
 }
@@ -1326,7 +1519,7 @@ function updateLineFeatureDom() {
 app.addEventListener("input", (event) => {
   if (event.target.matches("[data-search]")) {
     state.query = event.target.value;
-    render();
+    gridOnlyRender();
   }
 });
 
@@ -1348,6 +1541,7 @@ app.addEventListener("click", (event) => {
   const bibliographyBackdrop = target.closest("[data-close-bibliography]");
   const bibliographyButton = target.closest("[data-open-bibliography]");
   const toggleLine = target.closest("[data-toggle-line]");
+  const toggleScrollers = target.closest("[data-toggle-scrollers]");
   const bibliographyClose = target.closest("[data-close-bibliography-button]");
   const openStructure = target.closest("[data-open-structure]");
   const closeStructure = target.closest("[data-close-structure-button]");
@@ -1381,6 +1575,12 @@ app.addEventListener("click", (event) => {
   if (toggleLine) {
     state.lineFeature = !state.lineFeature;
     updateLineFeatureDom();
+    return;
+  }
+
+  if (toggleScrollers) {
+    state.scrollersOn = !state.scrollersOn;
+    render();
     return;
   }
 

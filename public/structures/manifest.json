@@ -51,6 +51,13 @@
       "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/219042/PNG?image_size=large"
     },
     {
+      "id": "follistatin-344",
+      "cid": null,
+      "query": "Follistatin 344",
+      "sourceUrl": "https://alphafold.ebi.ac.uk/entry/P19883",
+      "imageUrl": "https://cdn.rcsb.org/images/structures/af_afp19883f1_chain-A.jpeg"
+    },
+    {
       "id": "foxo4-dri",
       "cid": "167312269",
       "query": "FOXO4-DRI",
@@ -298,7 +305,6 @@
   ],
   "missing": [
     "cerebrolysin",
-    "follistatin-344",
     "igf-1-lr3"
   ]
 }
