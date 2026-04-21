@@ -147,6 +147,27 @@ function evidenceClass(tier) {
   return "early";
 }
 
+function tileEvidenceTags(p) {
+  const tags = [];
+  const tierLabel = DATA.evidenceTierLabel[p.classification.evidenceTier];
+  if (tierLabel) {
+    tags.push({ kind: `evidence-badge ${evidenceClass(p.classification.evidenceTier)}`, label: tierLabel });
+  }
+
+  const preferredSymbols = ["Rx", "H", "A", "C", "R"];
+  const seen = new Set();
+  for (const claim of p.claims) {
+    for (const symbol of claim.symbols || []) {
+      if (preferredSymbols.includes(symbol) && !seen.has(symbol)) {
+        seen.add(symbol);
+        tags.push({ kind: "mini-tag", label: DATA.evidenceLegend[symbol] || symbol });
+      }
+    }
+  }
+
+  return tags.slice(0, 2);
+}
+
 function moderationLabel(status) {
   const labels = {
     verified: "Verified by moderator",
@@ -457,11 +478,19 @@ function tile(p) {
   const enhancement = p.expanded.anecdotalUse[0] || "No enhancement/common-use statement imported.";
   const risk = p.tile.sideEffects[0] || p.expanded.safetyDetail || "Key risk context pending extraction.";
   const classColor = categoryColor(p.category);
+  const evidenceTags = tileEvidenceTags(p);
   return `<article class="tile" style="--type-color:${esc(classColor)};--type-rgb:${hexToRgb(classColor)}" data-expand="${esc(p.id)}" data-peptide-id="${esc(p.id)}" tabindex="0" aria-label="Open ${esc(p.names.primary)} article">
     <header>
       <div>
         <p class="eyebrow category-label">${esc(p.category)}</p>
         <h2 class="name-display">${formatPeptideName(p.names.primary)}</h2>
+        ${
+          evidenceTags.length
+            ? `<div class="tile-evidence-tags">${evidenceTags
+                .map((tag) => `<span class="${esc(tag.kind)}">${esc(tag.label)}</span>`)
+                .join("")}</div>`
+            : ""
+        }
       </div>
       <button class="verify ${p.moderation.status === "verified" ? "ok" : "pending"}" data-open-key="review" title="${esc(review)}" aria-label="${esc(
         review
@@ -825,6 +854,18 @@ function detail(p) {
             <span class="status-pill">${esc(moderationLabel(p.moderation.status))}</span>
           </aside>
         </section>
+        <section class="article-section">
+          <h3>Chemical Identity</h3>
+          <table>
+            <tbody>
+              <tr><th>Chemical names / aliases</th><td>${esc(p.names.aliases.join(" / ") || "No alternate chemical names imported.")}</td></tr>
+              <tr><th>Trade names</th><td>${esc(p.names.tradeNames.join(" / ") || "No trade names imported.")}</td></tr>
+              <tr><th>Formula</th><td>${esc(p.identity.formula || "Formula pending extraction.")}</td></tr>
+              <tr><th>One-letter sequence</th><td>${esc(p.identity.sequenceOneLetter || "Sequence pending extraction.")}</td></tr>
+              <tr><th>Three-letter sequence</th><td>${esc(p.identity.sequenceThreeLetter || "Sequence pending extraction.")}</td></tr>
+            </tbody>
+          </table>
+        </section>
         ${signalingSection(p)}
         <section class="article-section">
           <h3>Clinical And Enhancement Use</h3>
@@ -947,7 +988,14 @@ function toolbar(categories) {
   return `<section class="toolbar">
     <input data-search data-focus-key="search" value="${esc(state.query)}" placeholder="Search names, genes, proteins, effects, cytokines">
     <select data-category data-focus-key="category">
-      ${categories.map((category) => `<option ${category === state.category ? "selected" : ""}>${esc(category)}</option>`).join("")}
+      ${categories
+        .map(
+          (category) =>
+            `<option value="${esc(category)}" ${category === state.category ? "selected" : ""}>${esc(
+              category === "All" ? "All Peptides" : category
+            )}</option>`
+        )
+        .join("")}
     </select>
     <select data-sort data-focus-key="sort">
       <option value="random" ${state.sort === "random" ? "selected" : ""}>Randomized</option>
@@ -957,7 +1005,7 @@ function toolbar(categories) {
       <option value="review" ${state.sort === "review" ? "selected" : ""}>Needs review</option>
     </select>
     <select data-study-filter data-focus-key="study-filter">
-      <option value="all" ${state.studyFilter === "all" ? "selected" : ""}>All studies</option>
+      <option value="all" ${state.studyFilter === "all" ? "selected" : ""}>All Studies</option>
       <option value="human" ${state.studyFilter === "human" ? "selected" : ""}>Human only</option>
       <option value="animal" ${state.studyFilter === "animal" ? "selected" : ""}>Animal only</option>
       <option value="both" ${state.studyFilter === "both" ? "selected" : ""}>Human + animal</option>
