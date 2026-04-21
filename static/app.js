@@ -14,16 +14,13 @@ const defaultState = {
   bibliographyOpen: false,
   lineFeature: true,
   brandAlt: false,
-  brandIntro: true,
   notice: ""
 };
 
 let state = { ...defaultState };
-const wikiCache = new Map();
-const wikiPending = new Set();
+const tagSummaryCache = new Map();
 let citationRegistry = { citations: [], index: new Map() };
 let pendingDetailScrollTop = null;
-let brandIntroTimer = null;
 let noticeTimer = null;
 function tileSizeScore(peptide) {
   return (
@@ -227,6 +224,76 @@ function setNotice(message) {
   }, 1800);
 }
 
+function createDefinitionExpander() {
+  const seen = new Set();
+  const rules = [
+    ["GLP-1R", "glucagon-like peptide-1 receptor (GLP-1R)"],
+    ["GIPR", "glucose-dependent insulinotropic polypeptide receptor (GIPR)"],
+    ["GCGR", "glucagon receptor (GCGR)"],
+    ["GHRHR", "growth hormone-releasing hormone receptor (GHRHR)"],
+    ["GHSR-1a", "growth hormone secretagogue receptor 1a (GHSR-1a)"],
+    ["GHSR", "growth hormone secretagogue receptor (GHSR)"],
+    ["OXTR", "oxytocin receptor (OXTR)"],
+    ["MC4R", "melanocortin 4 receptor (MC4R)"],
+    ["MC3R", "melanocortin 3 receptor (MC3R)"],
+    ["BDNF", "brain-derived neurotrophic factor (BDNF)"],
+    ["NGF", "nerve growth factor (NGF)"],
+    ["TrkB", "tropomyosin receptor kinase B (TrkB)"],
+    ["CNTFR", "ciliary neurotrophic factor receptor (CNTFR)"],
+    ["STAT3", "signal transducer and activator of transcription 3 (STAT3)"],
+    ["BAX", "BCL2-associated X protein (BAX)"],
+    ["IGFBP-3", "insulin-like growth factor-binding protein 3 (IGFBP-3)"],
+    ["PI3K", "phosphoinositide 3-kinase (PI3K)"],
+    ["Akt", "protein kinase B (Akt)"],
+    ["MAPK", "mitogen-activated protein kinase (MAPK)"],
+    ["ERK", "extracellular signal-regulated kinase (ERK)"],
+    ["JNK", "c-Jun N-terminal kinase (JNK)"],
+    ["PKA", "protein kinase A (PKA)"],
+    ["CREB", "cAMP response element-binding protein (CREB)"],
+    ["cAMP", "cyclic adenosine monophosphate (cAMP)"],
+    ["IP3", "inositol 1,4,5-trisphosphate (IP3)"],
+    ["DAG", "diacylglycerol (DAG)"],
+    ["BBB", "blood-brain barrier (BBB)"],
+    ["CSF", "cerebrospinal fluid (CSF)"],
+    ["CNS", "central nervous system (CNS)"],
+    ["RCT", "randomized controlled trial (RCT)"],
+    ["T2D", "type 2 diabetes (T2D)"],
+    ["MASH", "metabolic dysfunction-associated steatohepatitis (MASH)"],
+    ["TBI", "traumatic brain injury (TBI)"],
+    ["ASD", "autism spectrum disorder (ASD)"],
+    ["IV", "intravenous (IV)"],
+    ["IM", "intramuscular (IM)"],
+    ["IP", "intraperitoneal (IP)"],
+    ["SC", "subcutaneous (SC)"],
+    ["GH", "growth hormone (GH)"],
+    ["IGF-1", "insulin-like growth factor 1 (IGF-1)"],
+    ["ACTH", "adrenocorticotropic hormone (ACTH)"],
+    ["PRL", "prolactin (PRL)"],
+    ["HPA", "hypothalamic-pituitary-adrenal (HPA)"],
+    ["FDA", "U.S. Food and Drug Administration (FDA)"],
+    ["EMA", "European Medicines Agency (EMA)"],
+    ["PMDA", "Pharmaceuticals and Medical Devices Agency of Japan (PMDA)"],
+    ["NMPA", "National Medical Products Administration of China (NMPA)"],
+    ["CVOT", "cardiovascular outcomes trial (CVOT)"],
+    ["tMCAO", "transient middle cerebral artery occlusion (tMCAO)"],
+    ["pMCAO", "permanent middle cerebral artery occlusion (pMCAO)"]
+  ];
+
+  return (text) => {
+    let output = String(text || "");
+    for (const [abbr, expanded] of rules) {
+      if (seen.has(abbr)) continue;
+      const escaped = abbr.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const regex = new RegExp(`(^|[^A-Za-z0-9-])(${escaped})(?=$|[^A-Za-z0-9-])`);
+      if (regex.test(output)) {
+        output = output.replace(regex, `$1${expanded}`);
+        seen.add(abbr);
+      }
+    }
+    return output;
+  };
+}
+
 function citationLink(citation) {
   const number = citationNumber(citation);
   return `<span class="citation" tabindex="0">
@@ -260,10 +327,10 @@ function hasAnimalStudies(peptide) {
   return peptide.claims.some((claim) => ["animal", "mixed"].includes(claim.species) && ["preclinical", "review", "cell", "clinical_trial"].includes(claim.context));
 }
 
-function tag(type, value, sy = [], sourcePeptideId = "") {
+function tag(type, value, sy = [], sourcePeptideId = "", label = value) {
   return `<span class="tag-cluster">
     <button class="tag tag-${esc(type)}" data-tag-type="${esc(type)}" data-tag-value="${esc(value)}" data-tag-source="${esc(sourcePeptideId)}">
-      ${esc(value)}
+      ${esc(label)}
     </button>
     ${sy.length ? symbols(sy) : ""}
   </span>`;
@@ -333,7 +400,6 @@ function resetToGridState() {
   state = {
     ...defaultState,
     brandAlt: state.brandAlt,
-    brandIntro: state.brandIntro,
     notice: state.notice
   };
 }
@@ -497,36 +563,30 @@ function addMatch(matches, label) {
   if (label && !matches.includes(label)) matches.push(label);
 }
 
-async function fetchWikiSummary(tagState) {
-  if (!tagState) return;
+function cachedTagSummary(tagState, rows) {
   const cacheKey = `${tagState.type}:${tagState.value}`;
-  if (wikiCache.has(cacheKey) || wikiPending.has(cacheKey)) return;
-  wikiPending.add(cacheKey);
-  render();
-  const query = infoQueryForTag(tagState);
-  try {
-    const searchRes = await fetch(
-      `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&origin=*`
-    );
-    const searchJson = await searchRes.json();
-    const title = searchJson?.query?.search?.[0]?.title || query;
-    const summaryRes = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`);
-    const summaryJson = await summaryRes.json();
-    wikiCache.set(cacheKey, {
-      title: summaryJson?.title || title,
-      extract: summaryJson?.extract || "Wikipedia summary unavailable for this term.",
-      url: summaryJson?.content_urls?.desktop?.page || `https://en.wikipedia.org/wiki/${encodeURIComponent(title.replaceAll(" ", "_"))}`
-    });
-  } catch {
-    wikiCache.set(cacheKey, {
-      title: query,
-      extract: "Wikipedia summary unavailable for this term.",
-      url: null
-    });
-  } finally {
-    wikiPending.delete(cacheKey);
-    render();
-  }
+  if (tagSummaryCache.has(cacheKey)) return tagSummaryCache.get(cacheKey);
+  const canonical = infoQueryForTag(tagState);
+  const lead = {
+    effect: `${tagState.value} is tracked here as a physiologic effect label rather than a single molecular target.`,
+    gene: `${canonical} is tracked here as a gene-level node in peptide signaling and evidence summaries.`,
+    protein: `${canonical} is tracked here as a protein or pathway node in the imported peptide data.`,
+    cytokine: `${canonical} is tracked here as an immune or signaling mediator whose level or activity changes in peptide studies.`,
+    channel: `${canonical} is tracked here as a channel or transporter node in the imported biology graph.`
+  }[tagState.type] || `${canonical} is tracked here as an imported biology term.`;
+  const peptides = rows.slice(0, 4).map((row) => row.p.names.primary);
+  const associations = rows
+    .slice(0, 3)
+    .map((row) => `${row.p.names.primary}: ${row.matches.slice(0, 2).join(", ") || "source context"}`)
+    .join("; ");
+  const summary = {
+    title: canonical,
+    extract: `${lead} Related peptides in the current atlas include ${peptides.length ? peptides.join(", ") : "the current source peptide only"}. ${
+      associations ? `Imported associations currently read as ${associations}.` : "More specific cross-peptide linkage is still being filled in as additional batches land."
+    }`
+  };
+  tagSummaryCache.set(cacheKey, summary);
+  return summary;
 }
 
 function tile(p) {
@@ -666,23 +726,23 @@ function extractPathwayRows(p, chain) {
   return rows;
 }
 
-function signalingSection(p) {
+function signalingSection(p, define = (text) => String(text || "")) {
   const chains = p.biology.cascades.length
     ? p.biology.cascades
     : [{ category: "mechanism", steps: [p.classification.peptideClass, p.classification.mechanismFamily, "clinical effect requires extraction"], symbols: ["?"] }];
   const summarySteps = chains[0]?.steps || [p.names.primary, p.classification.mechanismFamily, "effect context pending"];
   return `<section class="article-section">
     <h3>Physiological Pathways</h3>
-    <p class="section-note">${esc(p.expanded.mechanismDetail)}</p>
+    <p class="section-note">${esc(define(p.expanded.mechanismDetail))}</p>
     <div class="pathway-summary">
       <p class="eyebrow">summary mechanism ${symbols(chains[0]?.symbols || ["?"])}</p>
       <div class="signal-chain compact">
-        ${summarySteps
-          .map(
-            (step, index) =>
-              `${index ? '<span class="signal-arrow">-></span>' : ""}<span class="signal-node"><i class="signal-step-index">${index + 1}</i><span>${esc(step)}</span></span>`
-          )
-          .join("")}
+              ${summarySteps
+                .map(
+                  (step, index) =>
+                    `${index ? '<span class="signal-arrow">-></span>' : ""}<span class="signal-node"><i class="signal-step-index">${index + 1}</i><span>${esc(define(step))}</span></span>`
+                )
+                .join("")}
       </div>
     </div>
     <div class="signal-grid">
@@ -699,12 +759,12 @@ function signalingSection(p) {
               </div>
               <div class="pathway-cites">${claim ? citationRefsByIds(p, claim.citationIds) : ""}</div>
             </div>
-            <p class="pathway-description">${esc(description)}</p>
+            <p class="pathway-description">${esc(define(description))}</p>
             <div class="signal-chain">
               ${chain.steps
                 .map(
                   (step, index) =>
-                    `${index ? '<span class="signal-arrow">-></span>' : ""}<span class="signal-node"><i class="signal-step-index">${index + 1}</i><span>${esc(step)}</span></span>`
+                    `${index ? '<span class="signal-arrow">-></span>' : ""}<span class="signal-node"><i class="signal-step-index">${index + 1}</i><span>${esc(define(step))}</span></span>`
                 )
                 .join("")}
             </div>
@@ -714,8 +774,8 @@ function signalingSection(p) {
                 .map(
                   (step, index) => `<tr>
                     <td>${esc(stepRole(index, chain.steps.length))}</td>
-                    <td>${esc(step)}</td>
-                    <td>${esc(describeStep(chain, step, index, chain.steps.length))}</td>
+                    <td>${esc(define(step))}</td>
+                    <td>${esc(define(describeStep(chain, step, index, chain.steps.length)))}</td>
                   </tr>`
                 )
                 .join("")}</tbody>
@@ -725,9 +785,9 @@ function signalingSection(p) {
               <tbody>${extractPathwayRows(p, chain)
                 .map(
                   (row) => `<tr>
-                    <td>${esc(row.node)}</td>
+                    <td>${esc(define(row.node))}</td>
                     <td>${esc(row.direction)}</td>
-                    <td>${esc(row.downstream)}</td>
+                    <td>${esc(define(row.downstream))}</td>
                   </tr>`
                 )
                 .join("")}</tbody>
@@ -740,7 +800,7 @@ function signalingSection(p) {
   </section>`;
 }
 
-function studyRows(p, speciesGroup) {
+function studyRows(p, speciesGroup, define = (text) => String(text || "")) {
   const claimSpecies = speciesGroup === "human" ? ["human", "mixed"] : ["animal", "mixed"];
   const rows = [];
   p.claims
@@ -764,43 +824,43 @@ function studyRows(p, speciesGroup) {
       const protocol = [claim.context.replaceAll("_", " "), claim.route, claim.duration].filter(Boolean).join("; ") || "Protocol pending extraction.";
       return `<tr>
         <td><a class="study-link" href="${esc(citation.url)}" target="_blank" rel="noreferrer">${esc(citation.title)}</a><br><span class="muted">Retrieved ${esc(citation.accessedAt || "date pending")}</span></td>
-        <td>${esc(population)}</td>
+        <td>${esc(define(population))}</td>
         <td>${esc(claim.sampleSize || "n pending extraction")}</td>
-        <td>${esc(protocol)}</td>
-        <td>${esc(claim.value)} ${symbols(claim.symbols)}</td>
+        <td>${esc(define(protocol))}</td>
+        <td>${esc(define(claim.value))} ${symbols(claim.symbols)}</td>
       </tr>`;
     })
     .join("");
 }
 
-function evidenceTables(p) {
+function evidenceTables(p, define = (text) => String(text || "")) {
   return `<section class="article-section">
     <h3>Supporting Studies</h3>
     <h4>Human Studies</h4>
     <table>
       <thead><tr><th>Study</th><th>Population</th><th>n</th><th>Protocol</th><th>Notable results, stated narrowly</th></tr></thead>
-      <tbody>${studyRows(p, "human")}</tbody>
+      <tbody>${studyRows(p, "human", define)}</tbody>
     </table>
     <h4>Animal / Preclinical Studies</h4>
     <table>
       <thead><tr><th>Study</th><th>Population / model</th><th>n</th><th>Protocol</th><th>Notable results, stated narrowly</th></tr></thead>
-      <tbody>${studyRows(p, "animal")}</tbody>
+      <tbody>${studyRows(p, "animal", define)}</tbody>
     </table>
     <h4>Anecdotal / Common-Use Reports</h4>
     <table>
       <thead><tr><th>Claim type</th><th>Display rule</th><th>Current text</th></tr></thead>
       <tbody><tr><td>Non-peer-reviewed / common-use</td><td>Never displayed as efficacy or safety evidence.</td><td>${esc(
-        p.expanded.anecdotalUse.length ? p.expanded.anecdotalUse.join(" ") : "No anecdotal/common-use statement imported."
+        define(p.expanded.anecdotalUse.length ? p.expanded.anecdotalUse.join(" ") : "No anecdotal/common-use statement imported.")
       )}</td></tr></tbody>
     </table>
   </section>`;
 }
 
-function safetyPanel(p) {
+function safetyPanel(p, define = (text) => String(text || "")) {
   const rows = p.expanded.safetyRisks || [];
   return `<section class="article-section">
     <h3>Safety Risks</h3>
-    <p class="section-note">${esc(p.expanded.safetyDetail)}</p>
+    <p class="section-note">${esc(define(p.expanded.safetyDetail))}</p>
     <table>
       <thead><tr><th>Organ system</th><th>Potential help</th><th>Potential harm</th></tr></thead>
       <tbody>${
@@ -809,8 +869,8 @@ function safetyPanel(p) {
               .map(
                 (row) => `<tr>
                   <td><span class="organ-pill" style="--organ-color:${esc(row.color)}"><span class="organ-dot"></span>${esc(row.label)}</span></td>
-                  <td>${esc(row.helpSummary || "No organ-specific benefit extracted.")} ${citationRefsByIds(p, row.citationIds)}</td>
-                  <td>${esc(row.harmSummary || "No organ-specific harm extracted.")} ${citationRefsByIds(p, row.citationIds)}</td>
+                  <td>${esc(define(row.helpSummary || "No organ-specific benefit extracted."))} ${citationRefsByIds(p, row.citationIds)}</td>
+                  <td>${esc(define(row.harmSummary || "No organ-specific harm extracted."))} ${citationRefsByIds(p, row.citationIds)}</td>
                 </tr>`
               )
               .join("")
@@ -820,19 +880,19 @@ function safetyPanel(p) {
   </section>`;
 }
 
-function enhancementPanel(p) {
+function enhancementPanel(p, define = (text) => String(text || "")) {
   const item = p.expanded.enhancementPotential;
   return `<section class="article-section">
     <h3>Enhancement Potential</h3>
     <table>
       <tbody>${
         item
-          ? `<tr><th>Overview</th><td>${esc(item.summary)} ${citationRefsByIds(p, item.citationIds)}</td></tr>
-             <tr><th>Caveat</th><td>${esc(item.caveat)}</td></tr>`
+          ? `<tr><th>Overview</th><td>${esc(define(item.summary))} ${citationRefsByIds(p, item.citationIds)}</td></tr>
+             <tr><th>Caveat</th><td>${esc(define(item.caveat))}</td></tr>`
           : `<tr><th>Overview</th><td>${esc(
-              p.expanded.anecdotalUse.length
+              define(p.expanded.anecdotalUse.length
                 ? p.expanded.anecdotalUse.join(" ")
-                : "No enhancement-specific curation has been extracted yet."
+                : "No enhancement-specific curation has been extracted yet.")
             )}</td></tr>`
       }</tbody>
     </table>
@@ -926,9 +986,7 @@ function keyModal() {
 function relatedPanel() {
   if (!state.tag) return "";
   const rows = relatedPeptides();
-  const cacheKey = `${state.tag.type}:${state.tag.value}`;
-  const wiki = wikiCache.get(cacheKey);
-  const loading = wikiPending.has(cacheKey);
+  const summary = cachedTagSummary(state.tag, rows);
   return `<section class="related-backdrop" data-close-related-modal>
     <aside class="related-modal" aria-label="${esc(state.tag.value)} overview">
     <header class="modal-head">
@@ -939,13 +997,7 @@ function relatedPanel() {
       <button class="icon modal-close" data-clear-related aria-label="Close related overview">x</button>
     </header>
     <section class="related-summary">
-      <p>${
-        wiki
-          ? `${esc(wiki.extract)} ${wiki.url ? `<a class="table-link" href="${esc(wiki.url)}" target="_blank" rel="noreferrer">Wikipedia</a>` : ""}`
-          : loading
-            ? "Loading Wikipedia summary..."
-            : "Summary pending fetch."
-      }</p>
+      <p>${esc(summary.extract)}</p>
     </section>
     <section class="related-summary">
       <h4>Associated peptides</h4>
@@ -993,8 +1045,23 @@ function chemicalIdentityPanel(p) {
   </section>`;
 }
 
+function criticalEffectsPanel(p, define = (text) => String(text || "")) {
+  const effects = p.tile.enhancingEffects.slice(0, 4).map((effect) => effect.label);
+  const bullets = effects.length
+    ? effects
+    : [
+        p.tile.clinicalUses[0] || p.tile.mechanismSummary,
+        p.tile.sideEffects[0] || p.expanded.safetyDetail
+      ].filter(Boolean).slice(0, 3);
+  return `<section class="critical-effects-box">
+    <p class="eyebrow">Key Known Effects</p>
+    <ul>${bullets.map((item) => `<li>${esc(define(item))}</li>`).join("")}</ul>
+  </section>`;
+}
+
 function detail(p) {
   if (!p) return "";
+  const define = createDefinitionExpander();
   return `<section class="detail-backdrop" data-close-detail>
     <article class="detail" data-peptide-id="${esc(p.id)}" role="dialog" aria-modal="true" aria-label="${esc(p.names.primary)} detail">
       <div class="article-shell">
@@ -1012,9 +1079,10 @@ function detail(p) {
         </header>
         <section class="article-section intro">
           <div>
-            <p><span class="label-mono">MECHANISM:</span> ${esc(p.tile.mechanismSummary)}</p>
-            <p><span class="label-mono">LOCALIZATION:</span> ${esc(p.tile.localization)}</p>
-            <p><span class="label-mono">CLINICAL CONTEXT:</span> ${esc(p.tile.clinicalUses.join(" "))}</p>
+            <p><span class="label-mono">MECHANISM:</span> ${esc(define(p.tile.mechanismSummary))}</p>
+            <p><span class="label-mono">LOCALIZATION:</span> ${esc(define(p.tile.localization))}</p>
+            <p><span class="label-mono">CLINICAL CONTEXT:</span> ${esc(define(p.tile.clinicalUses.join(" ")))}</p>
+            ${criticalEffectsPanel(p, define)}
             ${chemicalIdentityPanel(p)}
           </div>
           <aside>
@@ -1027,40 +1095,40 @@ function detail(p) {
             </div>
           </aside>
         </section>
-        ${signalingSection(p)}
+        ${signalingSection(p, define)}
         <section class="article-section">
           <h3>Clinical And Enhancement Use</h3>
           <table>
             <tbody>
-              <tr><th>Medical / clinical use</th><td>${esc(p.tile.clinicalUses.join(" "))}</td></tr>
+              <tr><th>Medical / clinical use</th><td>${esc(define(p.tile.clinicalUses.join(" ")))}</td></tr>
               <tr><th>Enhancement / common-use context</th><td>${esc(
-                p.expanded.anecdotalUse.length ? p.expanded.anecdotalUse.join(" ") : "No enhancement/common-use statement imported."
+                define(p.expanded.anecdotalUse.length ? p.expanded.anecdotalUse.join(" ") : "No enhancement/common-use statement imported.")
               )}</td></tr>
-              <tr><th>Dosing context</th><td>${esc(`${p.tile.dosing.quick} ${p.tile.dosing.adminRoute}`)}</td></tr>
-              <tr><th>Safety</th><td>${esc(`${p.expanded.safetyDetail} ${p.tile.sideEffects.join(" ")}`)}</td></tr>
+              <tr><th>Dosing context</th><td>${esc(define(`${p.tile.dosing.quick} ${p.tile.dosing.adminRoute}`))}</td></tr>
+              <tr><th>Safety</th><td>${esc(define(`${p.expanded.safetyDetail} ${p.tile.sideEffects.join(" ")}`))}</td></tr>
             </tbody>
           </table>
         </section>
-        ${safetyPanel(p)}
-        ${enhancementPanel(p)}
+        ${safetyPanel(p, define)}
+        ${enhancementPanel(p, define)}
         <section class="article-section">
           <h3>Evidence And Article Notes</h3>
           <table>
             <tbody>
-              <tr><th>Human evidence</th><td>${esc(p.expanded.humanEvidence)}</td></tr>
-              <tr><th>Animal evidence</th><td>${esc(p.expanded.animalEvidence)}</td></tr>
-              <tr><th>Mechanism detail</th><td>${esc(p.expanded.mechanismDetail)}</td></tr>
-              <tr><th>Missing evidence</th><td>${esc(p.expanded.missingEvidence.join("; ") || "No missing-evidence list yet.")}</td></tr>
+              <tr><th>Human evidence</th><td>${esc(define(p.expanded.humanEvidence))}</td></tr>
+              <tr><th>Animal evidence</th><td>${esc(define(p.expanded.animalEvidence))}</td></tr>
+              <tr><th>Mechanism detail</th><td>${esc(define(p.expanded.mechanismDetail))}</td></tr>
+              <tr><th>Missing evidence</th><td>${esc(define(p.expanded.missingEvidence.join("; ") || "No missing-evidence list yet."))}</td></tr>
             </tbody>
           </table>
         </section>
         <section class="article-section">
           <h3>Interactable Biology</h3>
           <div class="tag-groups">
-            <div class="tag-block"><h4>Effects</h4><div class="tag-flow">${p.tile.enhancingEffects.map((effect) => tag("effect", effect.label, effect.symbols, p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div></div>
-            <div class="tag-block"><h4>Genes</h4><div class="tag-flow">${p.biology.genes.map((gene) => tag("gene", gene, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div></div>
-            <div class="tag-block"><h4>Proteins</h4><div class="tag-flow">${p.biology.proteins.map((protein) => tag("protein", protein, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div></div>
-            <div class="tag-block"><h4>Channels</h4><div class="tag-flow">${p.biology.channelsTransporters.map((channel) => tag("channel", channel, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div></div>
+            <div class="tag-block"><h4>Effects</h4><div class="tag-flow">${p.tile.enhancingEffects.map((effect) => tag("effect", effect.label, effect.symbols, p.id, define(effect.label))).join("") || '<span class="muted">Pending extraction</span>'}</div></div>
+            <div class="tag-block"><h4>Genes</h4><div class="tag-flow">${p.biology.genes.map((gene) => tag("gene", gene, [], p.id, define(gene))).join("") || '<span class="muted">Pending extraction</span>'}</div></div>
+            <div class="tag-block"><h4>Proteins</h4><div class="tag-flow">${p.biology.proteins.map((protein) => tag("protein", protein, [], p.id, define(protein))).join("") || '<span class="muted">Pending extraction</span>'}</div></div>
+            <div class="tag-block"><h4>Channels</h4><div class="tag-flow">${p.biology.channelsTransporters.map((channel) => tag("channel", channel, [], p.id, define(channel))).join("") || '<span class="muted">Pending extraction</span>'}</div></div>
           </div>
         </section>
         <section class="article-section">
@@ -1072,9 +1140,9 @@ function detail(p) {
                 ? p.biology.cytokinesInterleukins
                     .map(
                       (item) => `<tr>
-                        <td>${tag("cytokine", item.name, item.symbols, p.id)}</td>
-                        <td>${esc(item.effect)}</td>
-                        <td>${esc(item.context)}</td>
+                        <td>${tag("cytokine", item.name, item.symbols, p.id, define(item.name))}</td>
+                        <td>${esc(define(item.effect))}</td>
+                        <td>${esc(define(item.context))}</td>
                         <td>${symbols(item.symbols)}</td>
                       </tr>`
                     )
@@ -1083,7 +1151,7 @@ function detail(p) {
             }</tbody>
           </table>
         </section>
-        ${evidenceTables(p)}
+        ${evidenceTables(p, define)}
         <section class="article-section">
           <h3>Manufacturers, Vendor Data, And Cost</h3>
           <table>
@@ -1219,7 +1287,7 @@ function render() {
   const categories = ["All", ...new Set(DATA.peptides.map((p) => p.category))];
   const peptides = filteredPeptides();
   refreshCitationRegistry();
-  app.innerHTML = `<div class="app-shell ${state.brandIntro ? "intro-active" : ""}">
+  app.innerHTML = `<div class="app-shell">
     ${lineFeature()}${hero()}
     ${atlasFrameOpen()}
     ${toolbar(categories)}
@@ -1239,13 +1307,6 @@ function render() {
     if (detailElement && typeof scrollTop === "number") detailElement.scrollTop = scrollTop;
   }
   pendingDetailScrollTop = null;
-  if (state.brandIntro && !brandIntroTimer) {
-    brandIntroTimer = window.setTimeout(() => {
-      brandIntroTimer = null;
-      state.brandIntro = false;
-      render();
-    }, 2800);
-  }
 }
 
 function updateLineFeatureDom() {
@@ -1361,7 +1422,6 @@ app.addEventListener("click", (event) => {
   if (tagButton) {
     pendingDetailScrollTop = app.querySelector(".detail")?.scrollTop ?? 0;
     state.tag = { type: tagButton.dataset.tagType, value: tagButton.dataset.tagValue, sourcePeptideId: tagButton.dataset.tagSource || null };
-    fetchWikiSummary(state.tag);
     render();
     return;
   }

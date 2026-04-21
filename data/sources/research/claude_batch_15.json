@@ -1,0 +1,742 @@
+{
+  "batch_id": "batch-15",
+  "generated_at": "2026-04-21",
+  "batch_notes": "Gap-closure for four peptides marketed in anti-aging, senolytic, cosmetic, and inflammatory categories. Evidence quality varies sharply. Epithalon (Epitalon) human evidence is confined to Russian studies from the Khavinson / St. Petersburg Institute of Bioregulation and Gerontology, with limited independent replication; telomerase-activation claims in humans rest on a small 2003 study with methodological limitations. FOXO4-DRI is a senolytic proof-of-concept with strong mechanistic work by Baar et al. (2017) in rodents but zero human clinical data; any human use is experimental self-administration. SNAP-8 is a cosmetic/topical hexapeptide marketed as a Botox-mimetic SNARE-complex inhibitor — in vitro mechanism is plausible but controlled human efficacy data for wrinkle reduction are weak and largely manufacturer-supported. KPV (Lys-Pro-Val) is a C-terminal α-MSH tripeptide with genuine preclinical anti-inflammatory data in IBD and dermatitis models and some early-phase human dermatology work for atopic dermatitis, but is not FDA-approved and lacks pivotal trials. Human vs animal separation enforced; research-only framing applied where warranted.",
+  "peptides": [
+    {
+      "id": "epithalon",
+      "names": {
+        "primary": "Epithalon",
+        "aliases": ["Epitalon", "Epithalamin (precursor extract)", "AEDG tetrapeptide"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C14H22N4O9",
+        "molecularWeight": 390.35,
+        "cas": "307297-39-8",
+        "sequenceOneLetter": "AEDG",
+        "sequenceThreeLetter": "Ala-Glu-Asp-Gly",
+        "length": 4,
+        "modifications": ["Unmodified linear tetrapeptide", "Synthetic analog derived from epithalamin pineal extract"],
+        "structureClass": "linear tetrapeptide"
+      },
+      "classification": {
+        "peptideClass": "bioregulatory / short peptide",
+        "mechanismFamily": "proposed telomerase modulator and gene-expression regulator",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "Synthetic tetrapeptide (Ala-Glu-Asp-Gly) derived from epithalamin pineal extract; proposed to modulate gene expression, telomerase activity, and pineal melatonin regulation, though primary mechanistic evidence is limited and largely from a single research group.",
+        "localization": "Proposed pineal gland and systemic epigenetic/gene-expression effects (mechanism speculative)",
+        "clinicalUses": [
+          "None approved in major Western jurisdictions",
+          "Investigated in Russian geriatric and ophthalmologic studies (retinitis pigmentosa, age-related pathology)"
+        ],
+        "sideEffects": [
+          "No comprehensive modern safety database",
+          "Reported as well tolerated in short-term use in available small studies"
+        ],
+        "dosing": {
+          "quick": "Historical Russian study protocols: 5–10 mg IM daily for 10–20 days, sometimes repeated annually; no validated Western dose",
+          "adminRoute": "IM (historical research), SC (anecdotal)",
+          "publicDisplayAllowed": false,
+          "context": "unknown"
+        }
+      },
+      "biology": {
+        "genes": ["TERT (proposed)"],
+        "proteins": ["Telomerase (proposed upregulation)"],
+        "receptors": ["No validated receptor identified"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Proposed telomerase / gene-expression modulation",
+            "steps": [
+              "Epithalon reported to increase telomerase activity and telomere length in human somatic cell cultures",
+              "Proposed epigenetic / gene-expression modulation via direct DNA interaction (mechanism not confirmed at a rigorous structural level)",
+              "No identified receptor or canonical signaling cascade",
+              "Primary mechanistic evidence limited and largely from a single research group"
+            ],
+            "symbols": ["C", "?"],
+            "claimRef": "claim-epi-telomerase"
+          },
+          {
+            "category": "Proposed pineal / melatonin regulation",
+            "steps": [
+              "Historical studies report normalization of melatonin circadian rhythm in older adults",
+              "Mechanism of pineal modulation not established at the receptor or signaling level",
+              "Data sparse and not independently replicated at scale"
+            ],
+            "symbols": ["H", "?"],
+            "claimRef": "claim-epi-melatonin"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Human evidence for Epithalon is limited to studies from the Khavinson / St. Petersburg Institute of Bioregulation and Gerontology group and affiliated Russian institutions, primarily from the 1990s–2000s. Reported outcomes include improvement in melatonin rhythm in older adults, retinal function in retinitis pigmentosa, and survival in small geriatric cohorts. Methodological limitations include small sample sizes, single-center design, limited blinding in some protocols, and absence of independent replication. No Western regulator has approved Epithalon for any indication, and no modern RCT meeting contemporary standards has been published.",
+        "animalEvidence": "Rodent studies from the Khavinson group report extended lifespan, reduced spontaneous tumor incidence, and normalization of circadian rhythms. Cell-culture work reports telomerase activation and telomere lengthening in human somatic cells. Independent replication outside the originating group is limited.",
+        "mechanismDetail": "Epithalon is the AEDG tetrapeptide, a synthetic short peptide derived from the larger epithalamin pineal extract. The proposed mechanism — direct DNA interaction, epigenetic modulation, and telomerase activation — has been advanced primarily by Khavinson and colleagues but has not been corroborated by detailed structural or independent mechanistic studies. No specific receptor has been identified, and canonical signaling pathways have not been mapped. Categorically, Epithalon belongs to a class of 'short bioregulatory peptides' characterized primarily within the Russian research tradition, with limited uptake in Western mechanistic biology.",
+        "safetyDetail": "Short-term safety in available Russian studies is described as favorable, with no serious adverse events reported in published cohorts. However, the evidence base is insufficient to characterize long-term safety, oncologic safety (particularly relevant given telomerase-activation claims), or drug interactions. Research-grade product sold for self-administration carries standard risks of unregulated injectable peptides.",
+        "safetyRisks": [
+          {
+            "system": "Oncologic",
+            "label": "Theoretical risk from telomerase activation",
+            "color": "yellow",
+            "helpSummary": "Telomerase activation is a feature of most cancers.",
+            "harmSummary": "If Epithalon genuinely activates telomerase in human somatic cells, long-term systemic use carries theoretical tumor-promotion risk that has not been quantified.",
+            "citationIds": ["cit-epi-khavinson-2003"]
+          },
+          {
+            "system": "Mechanism / quality",
+            "label": "Poorly defined mechanism",
+            "color": "yellow",
+            "helpSummary": "No identified receptor; limited independent mechanistic replication.",
+            "harmSummary": "Absence of defined target makes off-target effects and drug interactions difficult to predict.",
+            "citationIds": ["cit-epi-khavinson-2003"]
+          },
+          {
+            "system": "Regulatory / quality",
+            "label": "Research-grade material risk",
+            "color": "red",
+            "helpSummary": "No pharmaceutical-grade Epithalon product is available outside limited Russian distribution.",
+            "harmSummary": "Self-administered product is research-grade with no guarantee of sterility, identity, or endotoxin limits.",
+            "citationIds": []
+          },
+          {
+            "system": "Evidence quality",
+            "label": "Single-group evidence base",
+            "color": "yellow",
+            "helpSummary": "Preliminary data exist from a single research tradition.",
+            "harmSummary": "Most human and animal data come from the originating Russian research group without independent replication.",
+            "citationIds": ["cit-epi-anisimov-2003"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Marketed aggressively for anti-aging and longevity applications. No modern controlled trial in healthy adults supports claims of life extension, telomere lengthening, or cognitive/physical enhancement.",
+          "caveat": "Claims of telomere lengthening, lifespan extension, and anti-aging benefit in humans rest on a narrow evidence base from a single research group, with significant methodological and replication concerns. Marketing vastly outpaces evidence.",
+          "citationIds": ["cit-epi-khavinson-2003", "cit-epi-anisimov-2003"]
+        },
+        "missingEvidence": [
+          "No identified receptor or validated mechanism",
+          "No modern large RCTs meeting contemporary standards",
+          "No independent replication of telomerase-activation claims",
+          "No long-term safety or oncologic follow-up data",
+          "No pharmaceutical-grade product available in Western jurisdictions"
+        ],
+        "anecdotalUse": [
+          "Self-administration at 5–10 mg SC daily in short courses for purported anti-aging benefit; unsupported by modern controlled data."
+        ]
+      },
+      "claims": [
+        {
+          "id": "claim-epi-telomerase",
+          "field": "biology.cascades.Proposed telomerase / gene-expression modulation",
+          "value": "Epithalon has been reported to increase telomerase activity and telomere length in human somatic cell cultures in studies from a single research group, with limited independent replication.",
+          "species": "mixed",
+          "context": "cell",
+          "population": "human somatic cell cultures",
+          "route": "in vitro",
+          "sampleSize": null,
+          "duration": "cell-culture passages",
+          "symbols": ["C", "?"],
+          "confidence": 0.4,
+          "citationIds": ["cit-epi-khavinson-2003"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-epi-melatonin",
+          "field": "biology.cascades.Proposed pineal / melatonin regulation",
+          "value": "Epithalon has been reported to normalize melatonin circadian rhythm in older adults in small Russian studies; mechanism is undefined.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "older adults",
+          "route": "IM",
+          "sampleSize": null,
+          "duration": "days to weeks",
+          "symbols": ["H", "?"],
+          "confidence": 0.35,
+          "citationIds": ["cit-epi-anisimov-2003"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-epi-single-group",
+          "field": "expanded.humanEvidence",
+          "value": "Most Epithalon human and animal data come from the Khavinson / St. Petersburg Institute of Bioregulation and Gerontology group without independent replication at contemporary standards.",
+          "species": "mixed",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?"],
+          "confidence": 0.85,
+          "citationIds": ["cit-epi-khavinson-2003", "cit-epi-anisimov-2003"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-epi-khavinson-2003",
+          "sourceType": "pubmed",
+          "title": "Peptide promotes overcoming of the division limit in human somatic cell",
+          "authors": ["Khavinson VKh", "Bondarev IE", "Butyugov AA"],
+          "year": 2003,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/14508534/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["claim-epi-telomerase", "claim-epi-single-group"],
+          "notes": "Bull Exp Biol Med — foundational paper on proposed telomerase activation by AEDG tetrapeptide; methodology and independent replication concerns noted."
+        },
+        {
+          "id": "cit-epi-anisimov-2003",
+          "sourceType": "pubmed",
+          "title": "Effects of Epithalon on biomarkers of aging, lifespan and spontaneous tumor incidence in female CBA mice and on the pineal gland function in humans",
+          "authors": ["Anisimov VN", "Khavinson VKh", "Provinciali M", "et al."],
+          "year": 2003,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Anisimov+Epithalon+lifespan+CBA+mice+pineal",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["claim-epi-melatonin", "claim-epi-single-group"],
+          "notes": "Representative Khavinson-group paper covering rodent lifespan and human pineal/melatonin outcomes; single-group evidence."
+        }
+      ]
+    },
+    {
+      "id": "foxo4-dri",
+      "names": {
+        "primary": "FOXO4-DRI",
+        "aliases": ["FOXO4-D-Retro-Inverso peptide", "FOXO4-p53 interaction disruptor"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": null,
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": 46,
+        "modifications": [
+          "D-amino acid retro-inverso modification of FOXO4 sequence encompassing the p53-binding region",
+          "Cell-penetrating peptide fusion for intracellular delivery",
+          "Protease-resistant due to D-amino acid backbone"
+        ],
+        "structureClass": "retro-inverso peptide (D-amino acid)"
+      },
+      "classification": {
+        "peptideClass": "senolytic peptide",
+        "mechanismFamily": "FOXO4–p53 interaction disruptor",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "D-retro-inverso peptide derived from FOXO4 that disrupts the FOXO4–p53 interaction in senescent cells, releasing nuclear-excluded p53 and inducing apoptosis selectively in senescent cells (senolysis) in preclinical models.",
+        "localization": "Intracellular; acts in senescent cells expressing elevated FOXO4 and sequestered p53",
+        "clinicalUses": [
+          "None — preclinical only",
+          "Proof-of-concept senolytic tool compound"
+        ],
+        "sideEffects": [
+          "No human safety data",
+          "Preclinical studies report no overt toxicity at effective senolytic doses in mice"
+        ],
+        "dosing": {
+          "quick": "No validated human dose. Baar et al. (2017) used ~5 mg/kg IP in mice, three doses/week.",
+          "adminRoute": "IP (preclinical); no validated human route",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["FOXO4", "TP53", "CDKN1A", "CDKN2A"],
+        "proteins": ["FOXO4", "p53", "p21 (CDKN1A)"],
+        "receptors": [],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Senolytic (FOXO4–p53 disruption)",
+            "steps": [
+              "In senescent cells, FOXO4 is elevated and binds p53, sequestering it away from mitochondria",
+              "FOXO4-DRI competitively disrupts the FOXO4–p53 interaction",
+              "Released p53 translocates and initiates intrinsic apoptosis",
+              "Senescent cells die preferentially while non-senescent cells are spared"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "claim-foxo4-senolysis"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "There are no clinical trials of FOXO4-DRI in humans. No pharmacokinetic, safety, or efficacy data exist in human populations. Any human use is experimental self-administration and is unsupported by evidence.",
+        "animalEvidence": "Baar et al. (2017, Cell) demonstrated that FOXO4-DRI selectively kills senescent but not proliferating cells in culture and, in mice, reversed markers of chemotoxicity-induced senescence, improved fur density, renal function, and running capacity in naturally aged mice. These results established FOXO4-DRI as a proof-of-concept senolytic but have not been independently replicated at the scale of a regulatory development program, and therapeutic-window data remain limited.",
+        "mechanismDetail": "The peptide is a D-amino acid retro-inverso sequence encompassing the FOXO4 region that interacts with p53. The retro-inverso D-amino acid design confers protease resistance and preserves the three-dimensional binding surface. In senescent cells, FOXO4 is upregulated and binds p53, sequestering it and blocking mitochondrial translocation. FOXO4-DRI competitively displaces p53 from FOXO4, allowing p53 to initiate intrinsic apoptosis. Because proliferating cells have lower FOXO4 and different p53 regulation, the peptide's cytotoxicity is biased toward senescent cells. Cell-penetrating peptide conjugation enables intracellular delivery.",
+        "safetyDetail": "No human safety data exist. Preclinical rodent studies report no overt toxicity at effective senolytic doses, but comprehensive toxicology packages equivalent to IND-enabling studies have not been publicly disclosed. Theoretical concerns include off-target p53 activation in non-senescent stressed cells, immunologic responses to a large D-peptide with cell-penetrating sequence, and poorly characterized pharmacokinetics. Research-grade product for self-administration carries standard risks of unregulated injectable peptides, compounded here by the large peptide size and CPP fusion.",
+        "safetyRisks": [
+          {
+            "system": "Regulatory / clinical",
+            "label": "No human clinical data",
+            "color": "red",
+            "helpSummary": "Entire evidence base is preclinical, centered on a single foundational 2017 paper.",
+            "harmSummary": "Human pharmacokinetics, metabolism, immunogenicity, and safety profile are completely unknown.",
+            "citationIds": ["cit-foxo4-baar-2017"]
+          },
+          {
+            "system": "Oncologic / apoptotic",
+            "label": "Off-target p53 activation risk",
+            "color": "yellow",
+            "helpSummary": "Senolytic selectivity demonstrated in mice at published doses.",
+            "harmSummary": "Non-senescent stressed cells may be vulnerable at higher doses; therapeutic window in humans is undefined.",
+            "citationIds": ["cit-foxo4-baar-2017"]
+          },
+          {
+            "system": "Immunologic",
+            "label": "Immunogenicity of large D-peptide with CPP fusion",
+            "color": "yellow",
+            "helpSummary": "D-amino acids reduce standard protease-driven clearance.",
+            "harmSummary": "Large 46-mer D-peptide with cell-penetrating sequence has unknown immunogenicity profile in humans.",
+            "citationIds": []
+          },
+          {
+            "system": "Quality / identity",
+            "label": "Research-grade material risk",
+            "color": "red",
+            "helpSummary": "FOXO4-DRI is sold only as a research chemical.",
+            "harmSummary": "No pharmaceutical-grade product exists; identity, purity, endotoxin, and correct D-amino acid synthesis are not guaranteed.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Strong preclinical rationale for senolytic activity and healthspan extension in aged mice. Marketed in longevity communities for anti-aging use.",
+          "caveat": "No human trial, no pharmacokinetic data, no human safety database. Preclinical mouse healthspan data does not establish human efficacy or safety. Self-administration of a large CPP-fused D-peptide without regulatory oversight is high-risk and unsupported.",
+          "citationIds": ["cit-foxo4-baar-2017"]
+        },
+        "missingEvidence": [
+          "No clinical trials in humans",
+          "No human pharmacokinetics or metabolism",
+          "No human safety data",
+          "No independent large-scale replication of foundational senolytic findings",
+          "No IND-enabling toxicology in the public domain"
+        ],
+        "anecdotalUse": [
+          "Self-administration of research-grade FOXO4-DRI at poorly characterized doses for purported longevity/senolytic benefit; unsupported and high-risk."
+        ]
+      },
+      "claims": [
+        {
+          "id": "claim-foxo4-senolysis",
+          "field": "biology.cascades.Senolytic (FOXO4–p53 disruption)",
+          "value": "FOXO4-DRI disrupts the FOXO4–p53 interaction in senescent cells, releasing p53 to induce apoptosis selectively in senescent cells, and improves healthspan markers in aged and chemotoxicity-induced senescent mice.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "senescent cell cultures, aged mice, chemotherapy-treated mice",
+          "route": "in vitro, IP",
+          "sampleSize": null,
+          "duration": "weeks of intermittent dosing",
+          "symbols": ["C", "A"],
+          "confidence": 0.8,
+          "citationIds": ["cit-foxo4-baar-2017"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-foxo4-no-human",
+          "field": "expanded.humanEvidence",
+          "value": "No clinical trials of FOXO4-DRI have been conducted in humans.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?"],
+          "confidence": 0.95,
+          "citationIds": ["cit-foxo4-baar-2017"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-foxo4-baar-2017",
+          "sourceType": "pubmed",
+          "title": "Targeted apoptosis of senescent cells restores tissue homeostasis in response to chemotoxicity and aging",
+          "authors": ["Baar MP", "Brandt RMC", "Putavet DA", "Klein JDD", "Derks KWJ", "Bourgeois BRM", "Stryeck S", "Rijksen Y", "van Willigenburg H", "Feijtel DA", "van der Pluijm I", "Essers J", "van Cappellen WA", "van IJcken WF", "Houtsmuller AB", "Pothof J", "de Bruin RWF", "Madl T", "Hoeijmakers JHJ", "Campisi J", "de Keizer PLJ"],
+          "year": 2017,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28340339/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["claim-foxo4-senolysis"],
+          "notes": "Cell — foundational FOXO4-DRI senolytic paper demonstrating selective senescent-cell killing and healthspan effects in aged mice."
+        }
+      ]
+    },
+    {
+      "id": "snap-8",
+      "names": {
+        "primary": "SNAP-8",
+        "aliases": ["Acetyl Glutamyl Octapeptide-3", "Acetyl octapeptide-3", "Argireline analog"],
+        "tradeNames": ["SNAP-8 (Lipotec / Lubrizol ingredient name)"]
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": 894.95,
+        "cas": "868844-74-0",
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": "Ac-Glu-Glu-Met-Gln-Arg-Arg-Ala-Asp-NH2",
+        "length": 8,
+        "modifications": ["N-terminal acetylation", "C-terminal amidation", "Elongated analog of Argireline (acetyl hexapeptide-3/8)"],
+        "structureClass": "synthetic acetylated octapeptide"
+      },
+      "classification": {
+        "peptideClass": "cosmetic peptide",
+        "mechanismFamily": "proposed SNAP-25 / SNARE-complex mimetic (topical)",
+        "regulatoryStatus": "not_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Synthetic acetylated octapeptide derived from the N-terminus of SNAP-25, proposed to competitively inhibit SNARE complex assembly and thereby attenuate acetylcholine release at neuromuscular junctions when applied topically; evidence is largely in vitro and manufacturer-sponsored.",
+        "localization": "Topical cosmetic use on facial skin (marketed indication); systemic administration is not a use case",
+        "clinicalUses": [
+          "Cosmetic ingredient in topical anti-wrinkle products (not a therapeutic drug)",
+          "Not FDA-approved as a drug; regulated as a cosmetic ingredient"
+        ],
+        "sideEffects": [
+          "Topical: occasional mild irritation in sensitive skin",
+          "No meaningful systemic safety concern with topical cosmetic use given negligible transdermal absorption of an 8-residue peptide"
+        ],
+        "dosing": {
+          "quick": "Topical formulations typically contain SNAP-8 at 3–10% concentration; applied to skin per manufacturer instructions",
+          "adminRoute": "Topical (cosmetic)",
+          "publicDisplayAllowed": true,
+          "context": "vendor"
+        }
+      },
+      "biology": {
+        "genes": ["SNAP25"],
+        "proteins": ["SNAP-25 (target of mimicry)", "SNARE complex"],
+        "receptors": [],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Proposed SNARE-complex inhibition",
+            "steps": [
+              "SNAP-8 is an acetylated octapeptide mimic of the N-terminus of SNAP-25",
+              "Proposed to competitively inhibit SNAP-25 incorporation into the SNARE complex",
+              "Reduced SNARE assembly → reduced acetylcholine vesicle exocytosis at neuromuscular junctions",
+              "Proposed attenuation of facial muscle contraction and expression-line formation"
+            ],
+            "symbols": ["C", "?"],
+            "claimRef": "claim-snap8-snare"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Human evidence is largely confined to manufacturer-sponsored studies reporting modest reductions in wrinkle depth with topical application of SNAP-8-containing formulations. Independent, well-controlled, blinded RCTs of isolated SNAP-8 against appropriate controls are limited. The core assumption — that an 8-residue peptide applied topically penetrates to neuromuscular junctions in effective concentrations — is not well established in human skin pharmacology.",
+        "animalEvidence": "In vitro assays support competitive inhibition of SNARE complex assembly by SNAP-25 N-terminal peptides at appropriate concentrations. Translation to intact skin and neuromuscular pharmacology in animal models is limited.",
+        "mechanismDetail": "SNAP-8 extends the Argireline (acetyl hexapeptide-3/8) concept with two additional N-terminal residues. The proposed pharmacophore mimics the N-terminal region of SNAP-25, which is cleaved by botulinum toxin A. By competing for SNARE assembly, the peptide is proposed to reduce vesicle fusion and acetylcholine release. The practical limiting step for any cosmetic peptide is transdermal penetration: intact 8-residue peptides have very poor passive diffusion across stratum corneum, and any efficacy may reflect hydration, surfactant, or excipient effects rather than specific pharmacology.",
+        "safetyDetail": "Topical cosmetic use has a low systemic safety concern profile because transdermal absorption of an acetylated octapeptide is minimal. Mild local irritation is the most common reported event. SNAP-8 is not administered systemically; injectable use is not a recognized indication and would carry unknown risks.",
+        "safetyRisks": [
+          {
+            "system": "Dermatologic",
+            "label": "Local irritation",
+            "color": "green",
+            "helpSummary": "Topical use generally well tolerated.",
+            "harmSummary": "Occasional mild irritation in sensitive skin; typical of cosmetic peptides.",
+            "citationIds": []
+          },
+          {
+            "system": "Efficacy / evidence",
+            "label": "Weak independent efficacy evidence",
+            "color": "yellow",
+            "helpSummary": "Marketed as Botox-mimetic topical.",
+            "harmSummary": "Independent, well-controlled RCTs supporting meaningful wrinkle reduction are limited; most data are manufacturer-sponsored.",
+            "citationIds": ["cit-snap8-blanes-2010"]
+          },
+          {
+            "system": "Pharmacokinetic",
+            "label": "Transdermal penetration uncertainty",
+            "color": "yellow",
+            "helpSummary": "Peptide is small and N-terminally acetylated.",
+            "harmSummary": "Effective delivery of intact octapeptide to neuromuscular junctions via topical application is not well established.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Marketed as a topical cosmetic wrinkle-reduction ingredient. Evidence for meaningful clinical effect is modest and largely manufacturer-sponsored.",
+          "caveat": "SNAP-8 is a cosmetic ingredient, not a drug. Claims of Botox-like efficacy are not supported by comparative clinical data; expectations should reflect the limited and industry-sponsored evidence base.",
+          "citationIds": ["cit-snap8-blanes-2010"]
+        },
+        "missingEvidence": [
+          "Independent, well-controlled RCTs of isolated SNAP-8 vs appropriate controls",
+          "Rigorous transdermal penetration data to neuromuscular targets in human skin",
+          "Head-to-head comparisons vs topical Argireline or non-peptide actives"
+        ],
+        "anecdotalUse": [
+          "Routine topical use in 3–10% serum/cream formulations; widely marketed and used cosmetically."
+        ]
+      },
+      "claims": [
+        {
+          "id": "claim-snap8-snare",
+          "field": "biology.cascades.Proposed SNARE-complex inhibition",
+          "value": "SNAP-8 is proposed to competitively inhibit SNAP-25 incorporation into the SNARE complex, reducing acetylcholine release at neuromuscular junctions in vitro; translation to effective topical activity in human skin is not well established.",
+          "species": "mixed",
+          "context": "cell",
+          "population": "in vitro SNARE assembly assays",
+          "route": "in vitro",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "?"],
+          "confidence": 0.5,
+          "citationIds": ["cit-snap8-blanes-2010"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-snap8-cosmetic",
+          "field": "tile.clinicalUses",
+          "value": "SNAP-8 is marketed as a topical cosmetic anti-wrinkle ingredient; most human efficacy data are manufacturer-sponsored.",
+          "species": "human",
+          "context": "vendor",
+          "population": "adults using topical cosmetic formulations",
+          "route": "topical",
+          "sampleSize": null,
+          "duration": "weeks of daily application",
+          "symbols": ["V", "H"],
+          "confidence": 0.6,
+          "citationIds": ["cit-snap8-blanes-2010"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-snap8-blanes-2010",
+          "sourceType": "other",
+          "title": "Lipotec/Lubrizol technical literature on SNAP-8 (Acetyl Octapeptide-3) as a cosmetic active",
+          "authors": [],
+          "year": 2010,
+          "url": "https://www.lubrizol.com/Personal-Care/Products/Ingredients/Actives-for-Skin",
+          "accessedAt": "2026-04-21",
+          "quality": "vendor",
+          "supportsClaimIds": ["claim-snap8-snare", "claim-snap8-cosmetic"],
+          "notes": "Manufacturer technical literature; cited as the primary provenance for SNAP-8 mechanistic and efficacy claims, which should be interpreted as vendor-quality evidence."
+        }
+      ]
+    },
+    {
+      "id": "kpv",
+      "names": {
+        "primary": "KPV",
+        "aliases": ["Lysine-Proline-Valine", "α-MSH(11-13)", "Alpha-MSH C-terminal tripeptide"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C16H30N4O4",
+        "molecularWeight": 342.44,
+        "cas": "35193-72-9",
+        "sequenceOneLetter": "KPV",
+        "sequenceThreeLetter": "Lys-Pro-Val",
+        "length": 3,
+        "modifications": ["Unmodified linear tripeptide", "C-terminal tripeptide of α-MSH (residues 11–13)"],
+        "structureClass": "linear tripeptide"
+      },
+      "classification": {
+        "peptideClass": "anti-inflammatory peptide",
+        "mechanismFamily": "melanocortin-derived anti-inflammatory (largely melanocortin-receptor-independent)",
+        "regulatoryStatus": "investigational"
+      },
+      "tile": {
+        "mechanismSummary": "C-terminal tripeptide of α-MSH with anti-inflammatory activity largely independent of classical melanocortin receptors; reduces NF-κB signaling, pro-inflammatory cytokine production, and immune cell activation in preclinical models.",
+        "localization": "Proposed intracellular/extracellular actions in epithelial and immune cells; topical and systemic activity in preclinical models",
+        "clinicalUses": [
+          "None FDA-approved",
+          "Investigational in atopic dermatitis (topical), inflammatory bowel disease (preclinical/limited early-phase), and inflammatory dermatoses"
+        ],
+        "sideEffects": [
+          "Limited safety data; generally well tolerated in available small human studies",
+          "No large safety database"
+        ],
+        "dosing": {
+          "quick": "No validated standard human dose. Preclinical: 100–500 µg/kg systemic (rodent) or topical 0.5–1% formulations. Limited early-phase human dermatology use.",
+          "adminRoute": "Topical (dermatology, investigational), oral and rectal (IBD preclinical), SC (anecdotal)",
+          "publicDisplayAllowed": false,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["NFKB1", "TNF", "IL1B", "IL6"],
+        "proteins": ["NF-κB (reduced activation)", "IκBα", "PepT1 (proposed uptake transporter in gut epithelium)"],
+        "receptors": ["Anti-inflammatory activity is largely melanocortin-receptor-independent"],
+        "channelsTransporters": [
+          {
+            "name": "PepT1 (SLC15A1)",
+            "effect": "proposed uptake of KPV by intestinal epithelial cells via peptide transporter",
+            "context": "gut epithelial anti-inflammatory action"
+          }
+        ],
+        "cytokinesInterleukins": [
+          {
+            "name": "TNF-α",
+            "effect": "reduced production",
+            "context": "macrophages and epithelial cells in preclinical inflammation models",
+            "symbols": ["A", "C"],
+            "citationIds": ["cit-kpv-brzoska-2008"]
+          },
+          {
+            "name": "IL-1β",
+            "effect": "reduced production",
+            "context": "macrophages and epithelial cells in preclinical inflammation models",
+            "symbols": ["A", "C"],
+            "citationIds": ["cit-kpv-brzoska-2008"]
+          },
+          {
+            "name": "IL-6",
+            "effect": "reduced production",
+            "context": "macrophages and epithelial cells in preclinical inflammation models",
+            "symbols": ["A", "C"],
+            "citationIds": ["cit-kpv-brzoska-2008"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "NF-κB / cytokine suppression",
+            "steps": [
+              "KPV enters cells (in gut via PepT1 in preclinical models)",
+              "Intracellular interference with NF-κB activation and nuclear translocation",
+              "Reduced transcription of TNF-α, IL-1β, IL-6, and other NF-κB targets",
+              "Attenuation of inflammation in dermatitis, colitis, and airway models"
+            ],
+            "symbols": ["A", "C"],
+            "claimRef": "claim-kpv-nfkb"
+          },
+          {
+            "category": "Melanocortin-receptor-independent action",
+            "steps": [
+              "KPV retains anti-inflammatory activity in MC1R/MC3R knockout or blockade preclinical systems",
+              "Mechanism differs from full-length α-MSH, which signals primarily through melanocortin receptors",
+              "Supports intracellular target engagement as the dominant mode"
+            ],
+            "symbols": ["A", "C"],
+            "claimRef": "claim-kpv-mcr-independent"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Human evidence is limited. Small dermatology studies have investigated topical KPV formulations for atopic dermatitis and inflammatory dermatoses with modest signals of benefit. Early-phase exploration for inflammatory bowel disease has been largely preclinical, with limited translation to pivotal human trials. No regulator has approved KPV for any indication, and no large modern RCTs have been published.",
+        "animalEvidence": "Robust preclinical anti-inflammatory activity has been demonstrated in rodent models of DSS and TNBS colitis, allergic contact dermatitis, atopic-dermatitis-like phenotypes, and acute inflammation. Oral, rectal, topical, and systemic routes have all been characterized with consistent reductions in TNF-α, IL-1β, IL-6, and neutrophil/macrophage infiltration. Nanoparticle-delivered oral KPV has been shown to target colitic mucosa selectively.",
+        "mechanismDetail": "KPV is the C-terminal tripeptide of α-MSH (residues 11–13). Unlike full-length α-MSH, which acts through melanocortin receptors (MC1R, MC3R, MC4R, MC5R), KPV retains anti-inflammatory activity in systems lacking functional melanocortin receptors, indicating a largely receptor-independent mechanism. Proposed mechanism centers on intracellular interference with NF-κB activation and downstream cytokine production. In the gut, PepT1 (SLC15A1) on intestinal epithelial cells has been proposed to mediate KPV uptake, localizing its action to colonic mucosa. The pharmacology is more analogous to intracellular NF-κB modulators than to conventional receptor agonists.",
+        "safetyDetail": "Short-term safety in small human dermatology studies and extensive preclinical work has been favorable, with no serious adverse events reported. Systemic safety in humans is not well characterized due to the limited scale of human exposure. Research-grade product for self-administration carries standard risks of unregulated injectable peptides. The small size and simplicity of the tripeptide limits immunogenicity concerns but does not substitute for a formal safety database.",
+        "safetyRisks": [
+          {
+            "system": "Immunologic / inflammatory",
+            "label": "Immunosuppression in susceptible hosts",
+            "color": "yellow",
+            "helpSummary": "Anti-inflammatory activity is targeted and modest in preclinical work.",
+            "harmSummary": "Broad NF-κB suppression could theoretically increase infection risk with chronic systemic use; not quantified in humans.",
+            "citationIds": ["cit-kpv-brzoska-2008"]
+          },
+          {
+            "system": "Regulatory / clinical",
+            "label": "Limited human evidence base",
+            "color": "yellow",
+            "helpSummary": "Small dermatology studies suggest topical benefit in atopic dermatitis.",
+            "harmSummary": "No pivotal RCTs, no approved indication, no comprehensive human safety database.",
+            "citationIds": ["cit-kpv-brzoska-2008"]
+          },
+          {
+            "system": "Quality / identity",
+            "label": "Research-grade material risk",
+            "color": "red",
+            "helpSummary": "No pharmaceutical-grade injectable KPV product is widely available.",
+            "harmSummary": "Self-administered product is research-grade with no guarantee of sterility, identity, or endotoxin limits.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Credible anti-inflammatory pharmacology at the preclinical level and plausible topical dermatology utility. No controlled trial supports KPV for physique, performance, or generalized healthspan enhancement in healthy adults.",
+          "caveat": "Preclinical anti-inflammatory and IBD data do not establish human efficacy or safety for systemic use. Claims of recovery or performance enhancement in healthy adults are not supported by controlled data.",
+          "citationIds": ["cit-kpv-brzoska-2008", "cit-kpv-laroui-2010"]
+        },
+        "missingEvidence": [
+          "No FDA-approved indication",
+          "No large modern RCTs in IBD or dermatology",
+          "No comprehensive human pharmacokinetic or safety database",
+          "No head-to-head comparisons vs established anti-inflammatory therapies"
+        ],
+        "anecdotalUse": [
+          "Oral or SC self-administration at 200–500 mcg/day for purported anti-inflammatory or recovery benefit; topical use for inflammatory dermatoses; unsupported by pivotal trials."
+        ]
+      },
+      "claims": [
+        {
+          "id": "claim-kpv-nfkb",
+          "field": "biology.cascades.NF-κB / cytokine suppression",
+          "value": "KPV reduces NF-κB activation and pro-inflammatory cytokine production (TNF-α, IL-1β, IL-6) in preclinical models of dermatitis, colitis, and acute inflammation.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "rodent models of DSS/TNBS colitis, contact and atopic dermatitis; macrophage and epithelial cell cultures",
+          "route": "oral, rectal, topical, IP (rodent)",
+          "sampleSize": null,
+          "duration": "days to weeks",
+          "symbols": ["A", "C"],
+          "confidence": 0.85,
+          "citationIds": ["cit-kpv-brzoska-2008", "cit-kpv-laroui-2010"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-kpv-mcr-independent",
+          "field": "biology.cascades.Melanocortin-receptor-independent action",
+          "value": "KPV retains anti-inflammatory activity in systems lacking functional melanocortin receptor signaling, supporting a largely receptor-independent intracellular mechanism.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "rodent models and cell culture with MC1R/MC3R blockade or knockout",
+          "route": "systemic, in vitro",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "C"],
+          "confidence": 0.75,
+          "citationIds": ["cit-kpv-brzoska-2008"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-kpv-dermatology",
+          "field": "expanded.humanEvidence",
+          "value": "Small human dermatology studies have reported modest benefit from topical KPV formulations in atopic dermatitis, without pivotal RCT support or regulatory approval.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "atopic dermatitis patients",
+          "route": "topical",
+          "sampleSize": null,
+          "duration": "weeks",
+          "symbols": ["H"],
+          "confidence": 0.55,
+          "citationIds": ["cit-kpv-brzoska-2008"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-kpv-brzoska-2008",
+          "sourceType": "pubmed",
+          "title": "Alpha-melanocyte-stimulating hormone and related tripeptides: biochemistry, antiinflammatory and protective effects in vitro and in vivo, and future perspectives for the treatment of immune-mediated inflammatory diseases",
+          "authors": ["Brzoska T", "Luger TA", "Maaser C", "Abels C", "Böhm M"],
+          "year": 2008,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18701722/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["claim-kpv-nfkb", "claim-kpv-mcr-independent", "claim-kpv-dermatology"],
+          "notes": "Endocr Rev — comprehensive review covering KPV and α-MSH-derived tripeptide anti-inflammatory pharmacology and early human dermatology work."
+        },
+        {
+          "id": "cit-kpv-laroui-2010",
+          "sourceType": "pubmed",
+          "title": "Targeting intestinal inflammation with CD98 siRNA/PEI–loaded nanoparticles and KPV-loaded nanoparticles",
+          "authors": ["Laroui H", "Dalmasso G", "Nguyen HTT", "Yan Y", "Sitaraman SV", "Merlin D"],
+          "year": 2010,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Laroui+KPV+nanoparticle+colitis+PepT1",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["claim-kpv-nfkb"],
+          "notes": "Gastroenterology — oral KPV nanoparticle delivery in colitis models, PepT1-mediated uptake framework."
+        }
+      ]
+    }
+  ]
+}

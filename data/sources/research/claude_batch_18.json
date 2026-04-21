@@ -1,0 +1,845 @@
+{
+  "batch_id": "batch-18",
+  "generated_at": "2026-04-21",
+  "batch_notes": "Final targeted cleanup batch. Three of the four peptides here are FDA-approved drugs with formal labels and pivotal trial programs (pramlintide/Symlin for insulin-requiring diabetes; bremelanotide/Vyleesi/PT-141 for HSDD in premenopausal women; teduglutide/Gattex/Revestive for short bowel syndrome). Melanotan-II is the non-approved, non-selective melanocortin receptor agonist that was the chemical parent of PT-141 before C-terminal modification; it has no pharmaceutical-grade product, no approved indication in any jurisdiction, and is the subject of specific regulator warnings (UK MHRA, Australian TGA). Mechanistic specificity enforced across three distinct receptor families (amylin receptors = CTR+RAMP heterodimers; melanocortin MC1R/MC3R/MC4R/MC5R family; GLP-2R) so they are not conflated. Off-label and enhancement caveats are explicit, particularly for MT-II and for bremelanotide misuse. Black-box / boxed-warning content reproduced from the current FDA labels where applicable.",
+  "peptides": [
+    {
+      "id": "pramlintide",
+      "names": {
+        "primary": "Pramlintide",
+        "aliases": ["Pramlintide acetate", "AC137"],
+        "tradeNames": ["Symlin", "SymlinPen"]
+      },
+      "identity": {
+        "formula": "C171H267N51O53S2",
+        "molecularWeight": 3949.4,
+        "cas": "151126-32-8",
+        "sequenceOneLetter": "KCNTATCATQRLANFLVHSSNNFGPILPPTNVGSNTY",
+        "sequenceThreeLetter": "Lys-Cys-Asn-Thr-Ala-Thr-Cys-Ala-Thr-Gln-Arg-Leu-Ala-Asn-Phe-Leu-Val-His-Ser-Ser-Asn-Asn-Phe-Gly-Pro-Ile-Leu-Pro-Pro-Thr-Asn-Val-Gly-Ser-Asn-Thr-Tyr-NH2",
+        "length": 37,
+        "modifications": [
+          "Pro substitutions at positions 25, 28, 29 (replacing native amylin Ala-25, Ser-28, Ser-29) to prevent fibril aggregation",
+          "Intramolecular disulfide bond between Cys2 and Cys7",
+          "C-terminal amidation"
+        ],
+        "structureClass": "synthetic amylin analog (37-residue peptide hormone)"
+      },
+      "classification": {
+        "peptideClass": "amylin analog",
+        "mechanismFamily": "amylin receptor (AMY1/AMY2/AMY3 = CTR + RAMP1/2/3) agonist",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Synthetic analog of the beta-cell co-hormone amylin; amylin receptor agonist that suppresses postprandial glucagon secretion, slows gastric emptying, and enhances centrally mediated satiety, complementing insulin in controlling postprandial glucose.",
+        "localization": "Amylin receptors in area postrema (central satiety and glucagon suppression), pancreatic alpha cells, gastric vagal pathways",
+        "clinicalUses": [
+          "Adjunct to mealtime insulin in type 1 diabetes with inadequate glycemic control despite optimal insulin therapy (FDA-approved)",
+          "Adjunct to mealtime insulin in type 2 diabetes with inadequate glycemic control despite optimal insulin therapy, with or without concurrent sulfonylurea and/or metformin (FDA-approved)"
+        ],
+        "sideEffects": [
+          "Severe insulin-induced hypoglycemia (boxed warning) — risk of serious injury when used with insulin",
+          "Nausea (very common, especially during initiation)",
+          "Vomiting, anorexia, decreased appetite",
+          "Headache, fatigue, abdominal pain",
+          "Injection-site reactions"
+        ],
+        "dosing": {
+          "quick": "Type 1 diabetes: start 15 mcg SC immediately before major meals, titrate by 15 mcg every ~3 days as tolerated to 30–60 mcg. Type 2 diabetes: start 60 mcg SC before major meals, titrate to 120 mcg after 3–7 days. Reduce preprandial rapid/short-acting insulin by 50% at initiation.",
+          "adminRoute": "SC (abdomen or thigh), separate injection from insulin",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["IAPP", "CALCR", "RAMP1", "RAMP2", "RAMP3"],
+        "proteins": ["Amylin (IAPP)", "Calcitonin receptor (CTR)", "RAMP1", "RAMP2", "RAMP3"],
+        "receptors": [
+          "AMY1 (CTR + RAMP1)",
+          "AMY2 (CTR + RAMP2)",
+          "AMY3 (CTR + RAMP3)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Glucagon suppression",
+            "steps": [
+              "Pramlintide binds amylin receptors (CTR+RAMP heterodimers) in the area postrema and pancreatic alpha-cell-relevant pathways",
+              "Gs-coupled signaling increases intracellular cAMP in target neurons",
+              "Central and paracrine signaling suppresses postprandial glucagon release from pancreatic alpha cells",
+              "Attenuation of the inappropriate postprandial glucagon surge seen in type 1 and type 2 diabetes"
+            ],
+            "symbols": ["H", "Rx"],
+            "claimRef": "claim-pram-glucagon"
+          },
+          {
+            "category": "Gastric emptying",
+            "steps": [
+              "Amylin receptor activation in vagal afferent pathways slows gastric emptying",
+              "Reduced rate of glucose delivery to the small intestine",
+              "Lower postprandial glucose excursion"
+            ],
+            "symbols": ["H", "Rx"],
+            "claimRef": "claim-pram-gastric"
+          },
+          {
+            "category": "Central satiety",
+            "steps": [
+              "Area postrema amylin receptor activation increases satiety signaling",
+              "Reduced meal-time caloric intake",
+              "Modest weight effect (typically weight neutral to modest weight loss in trials)"
+            ],
+            "symbols": ["H", "Rx"],
+            "claimRef": "claim-pram-satiety"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Pramlintide was FDA-approved in 2005 based on pivotal 52-week randomized placebo-controlled trials in type 1 and insulin-treated type 2 diabetes. Trials demonstrated statistically significant reductions in HbA1c (typically ~0.3–0.6% beyond optimized insulin), reductions in postprandial glucose excursion, and modest weight benefit (weight neutral to 1–2 kg loss). Postprandial glucagon suppression and slowed gastric emptying are reproducible pharmacodynamic findings in humans.",
+        "animalEvidence": "Rodent studies established amylin as a beta-cell co-secreted hormone acting at CTR+RAMP heterodimers to suppress glucagon, slow gastric emptying, and promote satiety. Pramlintide's proline substitutions (A25P, S28P, S29P) were designed to eliminate the amyloidogenic aggregation behavior of native human amylin while preserving receptor agonism.",
+        "mechanismDetail": "Amylin receptors are not a single GPCR but heterodimeric complexes of the calcitonin receptor (CTR) with receptor activity-modifying proteins (RAMP1, RAMP2, or RAMP3), yielding pharmacologically distinct AMY1, AMY2, and AMY3 subtypes. Pramlintide retains native amylin's receptor agonism with similar potency but has dramatically improved solubility and resistance to aggregation due to the three proline substitutions. It does not bind to insulin receptors or GLP-1 receptors. The coupled action of postprandial glucagon suppression and slowed gastric emptying makes pramlintide a mechanistic complement to prandial insulin rather than a substitute for it.",
+        "safetyDetail": "The FDA label carries a boxed warning for severe insulin-induced hypoglycemia: pramlintide itself does not cause hypoglycemia, but co-administration with insulin in patients whose insulin dose is not proactively reduced at initiation leads to serious hypoglycemia, particularly within 3 hours of dosing. The label mandates a 50% reduction in preprandial rapid/short-acting insulin at pramlintide initiation. Nausea is very common during titration and is a frequent cause of discontinuation; slow titration mitigates it. Pramlintide is not indicated in patients with confirmed gastroparesis, hypoglycemia unawareness, or poor compliance with insulin/glucose monitoring.",
+        "safetyRisks": [
+          {
+            "system": "Endocrine / metabolic",
+            "label": "Severe insulin-induced hypoglycemia (boxed warning)",
+            "color": "red",
+            "helpSummary": "Proper insulin dose reduction and glucose monitoring prevent most episodes.",
+            "harmSummary": "Boxed warning: severe hypoglycemia within ~3 hours of dosing when insulin is not reduced; can result in serious injury.",
+            "citationIds": ["cit-pram-fda-label"]
+          },
+          {
+            "system": "Gastrointestinal",
+            "label": "Nausea (dose-limiting)",
+            "color": "yellow",
+            "helpSummary": "Slow titration reduces incidence and severity.",
+            "harmSummary": "Common during initiation and titration; frequent cause of discontinuation.",
+            "citationIds": ["cit-pram-fda-label"]
+          },
+          {
+            "system": "Gastrointestinal",
+            "label": "Delayed gastric emptying",
+            "color": "yellow",
+            "helpSummary": "Part of the intended mechanism of action.",
+            "harmSummary": "Can alter absorption of orally administered drugs where rate of absorption matters (e.g., analgesics, antibiotics).",
+            "citationIds": ["cit-pram-fda-label"]
+          },
+          {
+            "system": "Behavioral / adherence",
+            "label": "Not for patients with poor adherence or hypoglycemia unawareness",
+            "color": "yellow",
+            "helpSummary": "Appropriate patient selection preserves the risk-benefit ratio.",
+            "harmSummary": "Label specifies against use in patients with HbA1c >9%, recurrent severe hypoglycemia, hypoglycemia unawareness, confirmed gastroparesis, or poor compliance.",
+            "citationIds": ["cit-pram-fda-label"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Mechanism (glucagon suppression, gastric emptying delay, central satiety) overlaps conceptually with modern incretin / amylin-agonist weight-loss pharmacology (e.g., cagrilintide).",
+          "caveat": "Pramlintide is labeled as an adjunct to insulin in insulin-treated diabetes; it is not indicated or adequately studied as a weight-loss agent in non-diabetic adults, and the boxed hypoglycemia warning applies specifically to co-administration with insulin. Off-label use for weight loss in non-insulin-treated individuals is not supported by the label.",
+          "citationIds": ["cit-pram-fda-label"]
+        },
+        "missingEvidence": [
+          "No approval or well-powered efficacy trials as a monotherapy weight-loss agent in non-diabetic adults",
+          "Limited long-term (multi-year) outcome data beyond glycemic and weight endpoints",
+          "No head-to-head data vs modern long-acting amylin analogs (e.g., cagrilintide)"
+        ],
+        "anecdotalUse": [
+          "Occasional off-label use for weight management; not supported by the FDA label and complicated by hypoglycemia risk when combined with insulin"
+        ]
+      },
+      "claims": [
+        {
+          "id": "claim-pram-glucagon",
+          "field": "biology.cascades.Glucagon suppression",
+          "value": "Pramlintide suppresses postprandial glucagon secretion in insulin-requiring type 1 and type 2 diabetes via amylin receptor agonism.",
+          "species": "human",
+          "context": "fda_label",
+          "population": "insulin-treated T1D and T2D adults",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "up to 52 weeks in pivotal trials",
+          "symbols": ["H", "Rx"],
+          "confidence": 0.95,
+          "citationIds": ["cit-pram-fda-label"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-pram-gastric",
+          "field": "biology.cascades.Gastric emptying",
+          "value": "Pramlintide slows gastric emptying, reducing postprandial glucose excursion.",
+          "species": "human",
+          "context": "fda_label",
+          "population": "insulin-treated diabetic adults and healthy pharmacology studies",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "acute pharmacology and long-term trials",
+          "symbols": ["H", "Rx"],
+          "confidence": 0.95,
+          "citationIds": ["cit-pram-fda-label"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-pram-satiety",
+          "field": "biology.cascades.Central satiety",
+          "value": "Pramlintide increases satiety and produces weight-neutral to modest weight-loss outcomes versus placebo in 52-week trials.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "insulin-treated T1D and T2D adults",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "up to 52 weeks",
+          "symbols": ["H"],
+          "confidence": 0.85,
+          "citationIds": ["cit-pram-fda-label", "cit-pram-ratner-2004"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-pram-fda-label",
+          "sourceType": "fda_label",
+          "title": "Symlin (pramlintide acetate) injection Prescribing Information",
+          "authors": [],
+          "year": 2024,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/021332s019lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["claim-pram-glucagon", "claim-pram-gastric", "claim-pram-satiety"],
+          "notes": "FDA prescribing information for Symlin; includes boxed warning on severe insulin-induced hypoglycemia."
+        },
+        {
+          "id": "cit-pram-ratner-2004",
+          "sourceType": "pubmed",
+          "title": "Amylin replacement with pramlintide as an adjunct to insulin therapy improves long-term glycaemic and weight control in Type 1 diabetes mellitus: a 1-year, randomized controlled trial",
+          "authors": ["Ratner RE", "Dickey R", "Fineman M", "et al."],
+          "year": 2004,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15606631/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["claim-pram-satiety"],
+          "notes": "Pivotal 1-year T1D trial supporting long-term glycemic and weight benefits."
+        }
+      ]
+    },
+    {
+      "id": "pt-141",
+      "names": {
+        "primary": "Bremelanotide",
+        "aliases": ["PT-141", "AC-253", "acetyl-Nle-cyclo[Asp-His-DPhe-Arg-Trp-Lys]-OH"],
+        "tradeNames": ["Vyleesi"]
+      },
+      "identity": {
+        "formula": "C50H68N14O10",
+        "molecularWeight": 1025.18,
+        "cas": "189691-06-3",
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": "Ac-Nle-cyclo[Asp-His-DPhe-Arg-Trp-Lys]-OH",
+        "length": 7,
+        "modifications": [
+          "N-terminal acetylation",
+          "Norleucine (Nle) substitution",
+          "D-phenylalanine at position 4",
+          "Cyclic lactam bridge between Asp and Lys side chains",
+          "Free C-terminal carboxylate (distinguishes from melanotan-II, which is C-terminally amidated)"
+        ],
+        "structureClass": "synthetic cyclic heptapeptide melanocortin analog"
+      },
+      "classification": {
+        "peptideClass": "melanocortin receptor agonist",
+        "mechanismFamily": "non-selective melanocortin receptor agonist with MC4R-preferential activity relevant to sexual function",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Cyclic heptapeptide melanocortin receptor agonist; activates central MC4R (and other MC receptors) to modulate hypothalamic neural circuits involved in sexual desire and arousal in premenopausal women with HSDD.",
+        "localization": "Central MC4R-expressing hypothalamic circuits (primary therapeutic target); peripheral MC1R (pigmentation), MC3R, MC5R effects",
+        "clinicalUses": [
+          "Treatment of acquired, generalized hypoactive sexual desire disorder (HSDD) in premenopausal women (FDA-approved 2019)"
+        ],
+        "sideEffects": [
+          "Transient increase in blood pressure and decrease in heart rate (boxed concern; contraindicated in uncontrolled hypertension or known CV disease)",
+          "Nausea (~40%), sometimes severe; often most pronounced with first dose",
+          "Flushing, injection-site reactions, headache",
+          "Focal hyperpigmentation (face, gums, breasts) especially with dark skin or frequent dosing"
+        ],
+        "dosing": {
+          "quick": "1.75 mg SC (single-use autoinjector) in abdomen or thigh at least 45 minutes before anticipated sexual activity; no more than 1 dose per 24 hours and no more than 8 doses per month.",
+          "adminRoute": "SC autoinjector",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["MC1R", "MC3R", "MC4R", "MC5R", "POMC"],
+        "proteins": ["Melanocortin 1, 3, 4, and 5 receptors"],
+        "receptors": ["MC4R (primary therapeutic target)", "MC1R", "MC3R", "MC5R"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Central MC4R signaling for sexual desire",
+            "steps": [
+              "Bremelanotide crosses the BBB (cyclic peptide with sufficient CNS penetration pharmacologically demonstrated)",
+              "Activates MC4R on hypothalamic neurons (paraventricular and medial preoptic areas)",
+              "Gs-coupled signaling → cAMP elevation",
+              "Modulation of downstream dopaminergic and oxytocinergic pathways implicated in sexual desire and arousal"
+            ],
+            "symbols": ["H", "Rx"],
+            "claimRef": "claim-pt141-mc4r"
+          },
+          {
+            "category": "Peripheral melanocortin effects",
+            "steps": [
+              "MC1R activation on melanocytes → dose- and exposure-dependent focal hyperpigmentation",
+              "Transient pressor effect of ~6 mmHg systolic over ~4 hours (class-typical for systemic melanocortin agonism)",
+              "Modest nausea largely centrally mediated (area postrema) and MC receptor family-linked"
+            ],
+            "symbols": ["H", "Rx"],
+            "claimRef": "claim-pt141-peripheral"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Bremelanotide was FDA-approved in June 2019 on the basis of two identical Phase 3 placebo-controlled 24-week trials (RECONNECT) in premenopausal women with acquired, generalized HSDD. Both trials met co-primary endpoints of improvement in the Female Sexual Function Index desire domain and reduction in distress associated with low sexual desire. Responder rates for meaningful improvement were modest but statistically significant over placebo. Extensive cardiovascular safety pharmacology was performed prior to approval, characterizing the transient pressor effect that underpins cardiovascular contraindications.",
+        "animalEvidence": "Rodent and primate melanocortin pharmacology established the MC4R dependence of central pro-erectile and pro-sexual effects. Bremelanotide was derived from melanotan-II by substitution of the C-terminal amide with a free carboxylate, which modestly altered MC receptor selectivity and CNS pharmacokinetics while preserving the pro-sexual effect.",
+        "mechanismDetail": "Bremelanotide is structurally a close analog of melanotan-II, differing primarily at the C-terminus (free carboxylate vs amide). It is a non-selective melanocortin receptor agonist, but the therapeutic indication rests on its central MC4R activity modulating hypothalamic circuits for sexual desire. Unlike flibanserin (Addyi), which is a serotonergic once-daily oral agent for HSDD, bremelanotide is an on-demand SC agent with a completely different mechanism. Peripheral MC1R activation accounts for hyperpigmentation risk; transient pressor effect is a class effect of systemic melanocortin agonism.",
+        "safetyDetail": "The Vyleesi label specifies that use is contraindicated in patients with uncontrolled hypertension or known cardiovascular disease because of the transient but reproducible ~6 mmHg systolic BP increase and ~2–3 bpm heart rate decrease observed after dosing, peaking within hours and typically resolving within 12 hours. Nausea is the most common adverse event (~40%), most prominent with the first dose and often improving; an antiemetic is sometimes recommended. Focal hyperpigmentation has been observed particularly in patients with darker skin and with more frequent dosing, and may not fully reverse on discontinuation. The 8-dose-per-month and 1-dose-per-24-hour caps are built into the label to limit cumulative exposure.",
+        "safetyRisks": [
+          {
+            "system": "Cardiovascular",
+            "label": "Transient pressor effect; contraindicated in uncontrolled HTN or CV disease",
+            "color": "red",
+            "helpSummary": "Self-limited BP increase in healthy users under label-compliant dosing.",
+            "harmSummary": "Contraindicated in uncontrolled hypertension or known cardiovascular disease; meaningful risk with off-label dosing.",
+            "citationIds": ["cit-pt141-fda-label"]
+          },
+          {
+            "system": "Gastrointestinal",
+            "label": "Nausea",
+            "color": "yellow",
+            "helpSummary": "Often improves after first dose; antiemetic can help.",
+            "harmSummary": "~40% incidence; 13% discontinuation for nausea in pivotal trials.",
+            "citationIds": ["cit-pt141-fda-label"]
+          },
+          {
+            "system": "Dermatologic",
+            "label": "Focal hyperpigmentation",
+            "color": "yellow",
+            "helpSummary": "Label-compliant dosing (≤8/month) limits exposure.",
+            "harmSummary": "Face, gums, breasts; may not fully reverse; higher risk with darker skin and frequent dosing.",
+            "citationIds": ["cit-pt141-fda-label"]
+          },
+          {
+            "system": "Behavioral / off-label",
+            "label": "Off-label use as 'male libido' or 'erectile' agent",
+            "color": "yellow",
+            "helpSummary": "On-label indication is HSDD in premenopausal women.",
+            "harmSummary": "Extensive off-label SC self-administration in men and in post-menopausal women is outside the approved population and safety database; research-grade product sold online carries sterility and identity risks.",
+            "citationIds": ["cit-pt141-fda-label"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "On-label indication (premenopausal women HSDD) is narrow; off-label use for male libido/erectile function and for non-indicated female populations is common.",
+          "caveat": "Approved efficacy and safety data are limited to premenopausal women with acquired, generalized HSDD. Extrapolation to men, post-menopausal women, or recreational use is not supported by the label, and cumulative dosing above 8 per month increases hyperpigmentation and cardiovascular risk.",
+          "citationIds": ["cit-pt141-fda-label"]
+        },
+        "missingEvidence": [
+          "No label-supported indication in men or post-menopausal women",
+          "No long-term (>1 year) controlled safety data for cumulative dosing",
+          "No head-to-head trials vs flibanserin"
+        ],
+        "anecdotalUse": [
+          "Off-label SC self-administration in men for erectile and libido effects, typically 1–2 mg SC; outside approved label and safety database"
+        ]
+      },
+      "claims": [
+        {
+          "id": "claim-pt141-mc4r",
+          "field": "biology.cascades.Central MC4R signaling for sexual desire",
+          "value": "Bremelanotide activates central MC4R-expressing hypothalamic circuits to improve sexual desire and distress in premenopausal women with HSDD.",
+          "species": "human",
+          "context": "fda_label",
+          "population": "premenopausal women with acquired, generalized HSDD",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "24-week pivotal trials with open-label extension",
+          "symbols": ["H", "Rx"],
+          "confidence": 0.9,
+          "citationIds": ["cit-pt141-fda-label", "cit-pt141-kingsberg-2019"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-pt141-peripheral",
+          "field": "biology.cascades.Peripheral melanocortin effects",
+          "value": "Bremelanotide produces a transient pressor effect and focal hyperpigmentation via peripheral melanocortin receptor activation.",
+          "species": "human",
+          "context": "fda_label",
+          "population": "adult women (label population)",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "acute and cumulative",
+          "symbols": ["H", "Rx"],
+          "confidence": 0.9,
+          "citationIds": ["cit-pt141-fda-label"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-pt141-fda-label",
+          "sourceType": "fda_label",
+          "title": "Vyleesi (bremelanotide) injection Prescribing Information",
+          "authors": [],
+          "year": 2023,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/210557s005lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["claim-pt141-mc4r", "claim-pt141-peripheral"],
+          "notes": "FDA prescribing information for Vyleesi; includes warnings on transient BP increase and focal hyperpigmentation."
+        },
+        {
+          "id": "cit-pt141-kingsberg-2019",
+          "sourceType": "pubmed",
+          "title": "Bremelanotide for the Treatment of Hypoactive Sexual Desire Disorder: Two Randomized Phase 3 Trials",
+          "authors": ["Kingsberg SA", "Clayton AH", "Portman D", "et al."],
+          "year": 2019,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31299748/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["claim-pt141-mc4r"],
+          "notes": "Obstet Gynecol — RECONNECT Phase 3 trials pivotal for FDA approval."
+        }
+      ]
+    },
+    {
+      "id": "melanotan-ii",
+      "names": {
+        "primary": "Melanotan-II",
+        "aliases": ["MT-II", "MT2", "Melanotan 2", "Ac-Nle-cyclo[Asp-His-DPhe-Arg-Trp-Lys]-NH2"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C50H69N15O9",
+        "molecularWeight": 1024.18,
+        "cas": "121062-08-6",
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": "Ac-Nle-cyclo[Asp-His-DPhe-Arg-Trp-Lys]-NH2",
+        "length": 7,
+        "modifications": [
+          "N-terminal acetylation",
+          "Norleucine substitution",
+          "D-phenylalanine at position 4",
+          "Cyclic lactam bridge between Asp and Lys side chains",
+          "C-terminal amide (distinguishes from bremelanotide, which has a free carboxylate)"
+        ],
+        "structureClass": "synthetic cyclic heptapeptide melanocortin analog"
+      },
+      "classification": {
+        "peptideClass": "melanocortin receptor agonist (non-selective)",
+        "mechanismFamily": "non-selective MC1R/MC3R/MC4R/MC5R agonist",
+        "regulatoryStatus": "not_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Non-selective melanocortin receptor agonist originally developed as a sunless-tanning and erectile-function tool compound; parent structure of bremelanotide (PT-141). Activates MC1R (pigmentation), MC3R, MC4R (sexual function, appetite suppression), and MC5R.",
+        "localization": "Peripheral melanocytes (MC1R → melanogenesis); hypothalamic MC4R circuits; broad systemic melanocortin receptor exposure",
+        "clinicalUses": [
+          "None approved in any major jurisdiction",
+          "Not a licensed medicine; actively subject to regulator warnings (UK MHRA, Australian TGA, others)"
+        ],
+        "sideEffects": [
+          "Darkening and changes in existing moles; new nevi; case reports of new-onset melanoma temporally associated with MT-II use",
+          "Spontaneous penile erection / priapism risk",
+          "Nausea, vomiting (often marked on initiation)",
+          "Flushing, yawning, appetite suppression",
+          "Transient hypertension",
+          "Rhabdomyolysis case reports"
+        ],
+        "dosing": {
+          "quick": "No validated human dose. No pharmaceutical-grade product exists. Anecdotal SC self-dosing at 0.25–1 mg/day is unsupported and carries serious risk.",
+          "adminRoute": "SC (anecdotal only)",
+          "publicDisplayAllowed": false,
+          "context": "unknown"
+        }
+      },
+      "biology": {
+        "genes": ["MC1R", "MC3R", "MC4R", "MC5R"],
+        "proteins": ["Melanocortin 1, 3, 4, 5 receptors"],
+        "receptors": ["MC1R", "MC3R", "MC4R", "MC5R"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "MC1R melanogenesis",
+            "steps": [
+              "MT-II binds MC1R on melanocytes",
+              "Gs → cAMP → PKA → MITF upregulation",
+              "Increased tyrosinase activity and eumelanin synthesis",
+              "Generalized skin darkening and darkening/new nevi formation"
+            ],
+            "symbols": ["H", "?"],
+            "claimRef": "claim-mt2-mc1r"
+          },
+          {
+            "category": "Central MC4R effects",
+            "steps": [
+              "MC4R activation in hypothalamic circuits",
+              "Pro-erectile neural signaling → spontaneous erections",
+              "Appetite suppression",
+              "Dose-dependent nausea via central melanocortin pathways"
+            ],
+            "symbols": ["H", "?"],
+            "claimRef": "claim-mt2-mc4r"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Melanotan-II has been studied in small early-phase human pharmacology studies in the 1990s (University of Arizona program) that documented skin-darkening and pro-erectile effects, but the compound was never advanced to pivotal trials and was never submitted for regulatory approval. It has no FDA, EMA, MHRA, or TGA approval. Instead, regulators have issued warnings against use: the UK MHRA has advised against purchasing or using MT-II for tanning, and the Australian TGA has classified it as unapproved and potentially unsafe. Published case reports document new-onset melanoma, darkening and change of existing nevi, priapism, rhabdomyolysis, and other serious adverse events temporally associated with MT-II self-administration.",
+        "animalEvidence": "Rodent and primate studies established the melanocortin receptor pharmacology of the cyclic heptapeptide scaffold and led to the derivation of bremelanotide (PT-141) with a C-terminal carboxylate in place of the amide.",
+        "mechanismDetail": "Melanotan-II is a cyclic heptapeptide with the same Nle-Asp-His-DPhe-Arg-Trp-Lys sequence as bremelanotide but with a C-terminal amide rather than a free carboxylate. It is a non-selective agonist across MC1R, MC3R, MC4R, and MC5R, with MC1R activity driving the sunless-tanning effect and MC4R activity driving sexual and appetite effects. This non-selectivity is why it causes pronounced pigmentation changes in addition to the centrally mediated effects that motivated its use, and why it was abandoned as a lead compound in favor of bremelanotide for the sexual-function indication.",
+        "safetyDetail": "Safety concerns are substantial and come from two categories. First, pharmacologic effects: priapism, transient hypertension, severe nausea, and rhabdomyolysis. Second, oncologic concern: MC1R activation in melanocytes can drive darkening and proliferation, and multiple case reports describe new-onset or altered melanocytic lesions, including melanoma, in association with MT-II self-administration. Because MT-II is sold only as a research chemical or underground product, there is no assurance of identity, sterility, or endotoxin. UK MHRA and Australian TGA have issued formal warnings; MT-II is not a legally marketable medicine in these jurisdictions.",
+        "safetyRisks": [
+          {
+            "system": "Oncologic / dermatologic",
+            "label": "New and altered nevi; case reports of melanoma",
+            "color": "red",
+            "helpSummary": "None — there is no established safe usage pattern.",
+            "harmSummary": "Published case reports of new-onset melanoma and of darkening / architectural change in existing nevi temporally associated with MT-II use. MC1R-driven melanocyte proliferation is the mechanistic basis for concern.",
+            "citationIds": ["cit-mt2-cardones-2009", "cit-mt2-ong-2017"]
+          },
+          {
+            "system": "Urologic",
+            "label": "Priapism",
+            "color": "red",
+            "helpSummary": "None — priapism is unpredictable with MT-II.",
+            "harmSummary": "Reported prolonged erections including priapism requiring urologic intervention.",
+            "citationIds": ["cit-mt2-mhra-warning"]
+          },
+          {
+            "system": "Cardiovascular",
+            "label": "Transient hypertension",
+            "color": "yellow",
+            "helpSummary": "Class effect of systemic melanocortin agonism.",
+            "harmSummary": "Dose-dependent pressor effect without the monitoring infrastructure built into approved melanocortin drugs.",
+            "citationIds": ["cit-mt2-mhra-warning"]
+          },
+          {
+            "system": "Musculoskeletal",
+            "label": "Rhabdomyolysis (case reports)",
+            "color": "yellow",
+            "helpSummary": "Not a predictable dose-dependent effect.",
+            "harmSummary": "Case reports of rhabdomyolysis associated with MT-II self-administration.",
+            "citationIds": ["cit-mt2-mhra-warning"]
+          },
+          {
+            "system": "Regulatory / quality",
+            "label": "No approval; regulator warnings issued",
+            "color": "red",
+            "helpSummary": "None — regulators advise against use.",
+            "harmSummary": "No approved product exists; UK MHRA and Australian TGA have issued public warnings. Product sold online is research-grade with no sterility or identity guarantees.",
+            "citationIds": ["cit-mt2-mhra-warning"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Used anecdotally for sunless tanning, appetite suppression, and pro-sexual effects.",
+          "caveat": "No indication is approved and no pivotal trial data exists. Oncologic concern (melanocytic lesions including melanoma case reports), priapism, pressor effect, and rhabdomyolysis reports combined with the research-chemical supply chain make MT-II a high-risk compound. Bremelanotide (Vyleesi) is the regulated descendant for the sexual-function indication in premenopausal women with HSDD.",
+          "citationIds": ["cit-mt2-cardones-2009", "cit-mt2-mhra-warning"]
+        },
+        "missingEvidence": [
+          "No modern pivotal trials for any indication",
+          "No approved human product in any major jurisdiction",
+          "No long-term safety database, particularly for melanocytic lesions and cumulative cardiovascular exposure"
+        ],
+        "anecdotalUse": [
+          "SC self-administration for sunless tanning, typically 0.25–1 mg/day until desired pigmentation is reached, then periodic maintenance; unsupported and carries regulator-documented risk."
+        ]
+      },
+      "claims": [
+        {
+          "id": "claim-mt2-mc1r",
+          "field": "biology.cascades.MC1R melanogenesis",
+          "value": "Melanotan-II activates MC1R on melanocytes, producing generalized skin darkening and darkening / new nevi formation with repeated exposure.",
+          "species": "human",
+          "context": "observational",
+          "population": "adults self-administering MT-II, small early pharmacology cohorts",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "days to months of repeated exposure",
+          "symbols": ["H", "?"],
+          "confidence": 0.85,
+          "citationIds": ["cit-mt2-cardones-2009", "cit-mt2-ong-2017"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-mt2-mc4r",
+          "field": "biology.cascades.Central MC4R effects",
+          "value": "Melanotan-II activates central MC4R circuits producing spontaneous erections, appetite suppression, and nausea.",
+          "species": "human",
+          "context": "observational",
+          "population": "adults self-administering MT-II; small early pharmacology cohorts",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "acute and repeated dosing",
+          "symbols": ["H"],
+          "confidence": 0.8,
+          "citationIds": ["cit-mt2-mhra-warning"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-mt2-melanoma",
+          "field": "expanded.safetyRisks",
+          "value": "Multiple case reports describe new-onset melanoma or architectural change and darkening in existing nevi temporally associated with MT-II self-administration.",
+          "species": "human",
+          "context": "observational",
+          "population": "adults self-administering MT-II, dermatology case reports",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "weeks to years",
+          "symbols": ["H", "?"],
+          "confidence": 0.7,
+          "citationIds": ["cit-mt2-cardones-2009", "cit-mt2-ong-2017"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-mt2-cardones-2009",
+          "sourceType": "pubmed",
+          "title": "Melanoma arising in a patient using 'Melanotan-II'",
+          "authors": ["Cardones AR", "Grichnik JM"],
+          "year": 2009,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Cardones+Grichnik+melanoma+Melanotan-II+2009",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["claim-mt2-mc1r", "claim-mt2-melanoma"],
+          "notes": "Archives of Dermatology — one of the early published case reports of melanoma in an MT-II user."
+        },
+        {
+          "id": "cit-mt2-ong-2017",
+          "sourceType": "pubmed",
+          "title": "Dermoscopic features of melanocytic nevi in patients using melanotan-II",
+          "authors": ["Ong S", "Bowling J"],
+          "year": 2012,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Ong+Bowling+melanotan+II+dermoscopy+nevi",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["claim-mt2-mc1r", "claim-mt2-melanoma"],
+          "notes": "Dermoscopic case series documenting architectural change in nevi among MT-II users."
+        },
+        {
+          "id": "cit-mt2-mhra-warning",
+          "sourceType": "official_regulator",
+          "title": "Medicines and Healthcare products Regulatory Agency (MHRA) warning on Melanotan injections",
+          "authors": [],
+          "year": 2019,
+          "url": "https://www.gov.uk/government/news/melanotan-ii-injections-warning",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["claim-mt2-mc4r", "claim-mt2-melanoma"],
+          "notes": "UK MHRA public warning against purchase and use of Melanotan injections; documents reported adverse events including priapism, rhabdomyolysis, and melanocytic lesions."
+        }
+      ]
+    },
+    {
+      "id": "teduglutide",
+      "names": {
+        "primary": "Teduglutide",
+        "aliases": ["ALX-0600", "[Gly2]-GLP-2", "recombinant human GLP-2 analog"],
+        "tradeNames": ["Gattex", "Revestive"]
+      },
+      "identity": {
+        "formula": "C164H252N44O55S",
+        "molecularWeight": 3752.1,
+        "cas": "197922-42-2",
+        "sequenceOneLetter": "HGDGSFSDEMNTILDNLAARDFINWLIQTKITD",
+        "sequenceThreeLetter": "His-Gly-Asp-Gly-Ser-Phe-Ser-Asp-Glu-Met-Asn-Thr-Ile-Leu-Asp-Asn-Leu-Ala-Ala-Arg-Asp-Phe-Ile-Asn-Trp-Leu-Ile-Gln-Thr-Lys-Ile-Thr-Asp",
+        "length": 33,
+        "modifications": [
+          "Ala2Gly substitution (A2G) of native human GLP-2 conferring resistance to DPP-4 cleavage at the penultimate N-terminal residue"
+        ],
+        "structureClass": "recombinant GLP-2 analog (33-residue peptide)"
+      },
+      "classification": {
+        "peptideClass": "GLP-2 analog",
+        "mechanismFamily": "GLP-2 receptor agonist (intestinotrophic)",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "DPP-4-resistant GLP-2 analog that activates GLP-2 receptors on enteroendocrine L cells, enteric neurons, and subepithelial myofibroblasts, increasing intestinal villus height, crypt depth, and absorptive capacity in short bowel syndrome.",
+        "localization": "GLP-2 receptors on enteroendocrine L cells, enteric neurons, and subepithelial myofibroblasts of the small and large intestine",
+        "clinicalUses": [
+          "Short bowel syndrome (SBS) in adults requiring parenteral support (FDA-approved 2012)",
+          "Short bowel syndrome in pediatric patients ≥1 year old requiring parenteral support (FDA-approved 2019)"
+        ],
+        "sideEffects": [
+          "Acceleration of neoplastic growth — colorectal polyps and colon cancer (label warning; baseline and surveillance colonoscopy required)",
+          "Intestinal obstruction (small bowel, stomal)",
+          "Gallbladder, biliary, and pancreatic disease (cholecystitis, cholangitis, pancreatitis)",
+          "Fluid overload",
+          "Injection-site reactions",
+          "Abdominal pain, nausea, abdominal distension"
+        ],
+        "dosing": {
+          "quick": "0.05 mg/kg SC once daily. Administer in alternating sites (abdomen, thighs, upper arms). Colonoscopy required before starting (adults) with periodic surveillance per label.",
+          "adminRoute": "SC once daily",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["GLP2R", "GCG"],
+        "proteins": ["Glucagon-like peptide-2 receptor (GLP-2R)", "GLP-2 (endogenous)", "Dipeptidyl peptidase-4 (DPP-4, which cleaves native GLP-2 but not teduglutide)"],
+        "receptors": ["GLP-2R"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Intestinotrophic signaling",
+            "steps": [
+              "Teduglutide binds GLP-2R on enteroendocrine L cells, enteric neurons, and subepithelial myofibroblasts",
+              "Gs → cAMP → PKA signaling in GLP-2R-expressing cells",
+              "Paracrine release of IGF-1, EGF-family ligands, and other trophic factors from subepithelial myofibroblasts",
+              "Increased crypt cell proliferation; taller villi; deeper crypts; increased intestinal absorptive surface",
+              "Reduced fluid and nutrient loss → decreased parenteral support requirement"
+            ],
+            "symbols": ["H", "Rx"],
+            "claimRef": "claim-tedu-intestinotrophic"
+          },
+          {
+            "category": "DPP-4 resistance",
+            "steps": [
+              "Native GLP-2 is cleaved by DPP-4 at the Ala2–Asp3 bond, halving its activity within minutes",
+              "Teduglutide's A2G substitution prevents this cleavage",
+              "Plasma half-life extended from minutes to ~2 hours, enabling once-daily SC dosing"
+            ],
+            "symbols": ["H", "Rx"],
+            "claimRef": "claim-tedu-dpp4"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Teduglutide was approved by the FDA in 2012 for adults with short bowel syndrome (SBS) dependent on parenteral support, based on pivotal randomized controlled trials (STEPS, STEPS-2, STEPS-3) showing that ≥20% reduction in weekly parenteral support volume at week 24 was achieved in significantly more teduglutide-treated patients than placebo. Extension data demonstrated durable responses with continued dosing. Pediatric approval (≥1 year) followed in 2019 based on open-label pediatric trials.",
+        "animalEvidence": "Rodent studies established GLP-2 as the major endogenous intestinotrophic hormone secreted by enteroendocrine L cells after meals, and GLP-2R agonism as the mechanism for villus and crypt growth. A2G substitution was rationally designed to resist DPP-4 inactivation, preserving activity for systemic once-daily dosing.",
+        "mechanismDetail": "GLP-2R is a Gs-coupled GPCR expressed not on enterocytes themselves but on enteroendocrine L cells, enteric neurons, and subepithelial myofibroblasts. Trophic effects on the intestinal epithelium are therefore paracrine, mediated by IGF-1, EGF-family ligands, and other factors released from GLP-2R-expressing cells in response to teduglutide. The A2G substitution in teduglutide prevents DPP-4-mediated cleavage that rapidly inactivates native GLP-2, extending plasma half-life enough to support once-daily SC dosing. Distinct from GLP-1-based incretin drugs (which target GLP-1R, a different receptor on different tissues).",
+        "safetyDetail": "The FDA label includes prominent warnings for: (1) acceleration of neoplastic growth, including colorectal polyps and colon cancer — the mechanism involves GLP-2R-driven cellular proliferation, and colonoscopy is required before starting therapy in adults with periodic surveillance; (2) intestinal obstruction, which can be mechanical in patients with altered anatomy; (3) biliary and pancreatic disease; and (4) fluid overload. Injection-site reactions, abdominal pain, nausea, and abdominal distension are common. The risk-benefit profile is specifically justified in the context of parenteral-support-dependent SBS, where the benefit of reduced parenteral support is substantial.",
+        "safetyRisks": [
+          {
+            "system": "Oncologic",
+            "label": "Acceleration of neoplastic growth (colorectal polyps and cancer)",
+            "color": "red",
+            "helpSummary": "Pre-therapy and surveillance colonoscopy per label reduces risk.",
+            "harmSummary": "GLP-2R-driven proliferation can accelerate colorectal neoplasia; colonoscopy required before starting (adults) and at defined intervals thereafter.",
+            "citationIds": ["cit-tedu-fda-label"]
+          },
+          {
+            "system": "Gastrointestinal",
+            "label": "Intestinal obstruction",
+            "color": "yellow",
+            "helpSummary": "Clinical monitoring identifies obstruction early.",
+            "harmSummary": "Label warning; particularly relevant in patients with altered intestinal anatomy.",
+            "citationIds": ["cit-tedu-fda-label"]
+          },
+          {
+            "system": "Hepatobiliary / pancreatic",
+            "label": "Gallbladder, biliary, and pancreatic disease",
+            "color": "yellow",
+            "helpSummary": "Baseline and periodic surveillance of biliary/pancreatic function per label.",
+            "harmSummary": "Cholecystitis, cholangitis, and pancreatitis reported; label requires monitoring.",
+            "citationIds": ["cit-tedu-fda-label"]
+          },
+          {
+            "system": "Fluid balance",
+            "label": "Fluid overload",
+            "color": "yellow",
+            "helpSummary": "Parenteral support is adjusted as absorption increases.",
+            "harmSummary": "Improved intestinal absorption combined with continued parenteral support can cause overload if parenteral volumes are not proactively reduced.",
+            "citationIds": ["cit-tedu-fda-label"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "On-label indication is specific: parenteral-support-dependent short bowel syndrome. Mechanism is intestinal trophic; no rationale for use in healthy adults.",
+          "caveat": "The neoplasia warning and biliary/pancreatic monitoring requirements are built into the label because of GLP-2R-driven proliferation. Teduglutide is not an 'enhancement' peptide and off-label use outside SBS is inappropriate given the safety profile.",
+          "citationIds": ["cit-tedu-fda-label"]
+        },
+        "missingEvidence": [
+          "Limited long-term (>multi-year) oncologic surveillance data beyond registries",
+          "Limited head-to-head data vs next-generation GLP-2 analogs (e.g., glepaglutide, apraglutide)"
+        ],
+        "anecdotalUse": [
+          "No significant 'enhancement' community use; the indication, cost, and safety profile constrain off-label use."
+        ]
+      },
+      "claims": [
+        {
+          "id": "claim-tedu-intestinotrophic",
+          "field": "biology.cascades.Intestinotrophic signaling",
+          "value": "Teduglutide activates GLP-2R on enteroendocrine L cells, enteric neurons, and subepithelial myofibroblasts, producing paracrine trophic effects that increase villus height, crypt depth, and intestinal absorptive capacity, reducing parenteral support requirements in short bowel syndrome.",
+          "species": "human",
+          "context": "fda_label",
+          "population": "adults and pediatric patients (≥1 year) with SBS dependent on parenteral support",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "24-week pivotal trials with long-term extensions",
+          "symbols": ["H", "Rx"],
+          "confidence": 0.95,
+          "citationIds": ["cit-tedu-fda-label", "cit-tedu-jeppesen-2012"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-tedu-dpp4",
+          "field": "biology.cascades.DPP-4 resistance",
+          "value": "The Ala2Gly (A2G) substitution in teduglutide prevents DPP-4-mediated inactivation that rapidly cleaves native GLP-2, extending half-life to ~2 hours and enabling once-daily SC dosing.",
+          "species": "human",
+          "context": "fda_label",
+          "population": "adults with SBS; healthy pharmacology participants",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "acute and chronic pharmacology",
+          "symbols": ["H", "Rx"],
+          "confidence": 0.95,
+          "citationIds": ["cit-tedu-fda-label"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "claim-tedu-neoplasia",
+          "field": "expanded.safetyRisks",
+          "value": "Teduglutide carries a label warning for acceleration of neoplastic growth including colorectal polyps and colon cancer, and colonoscopy is required before starting therapy in adults.",
+          "species": "human",
+          "context": "fda_label",
+          "population": "adults with SBS",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "chronic",
+          "symbols": ["H", "Rx"],
+          "confidence": 0.95,
+          "citationIds": ["cit-tedu-fda-label"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-tedu-fda-label",
+          "sourceType": "fda_label",
+          "title": "Gattex (teduglutide) for injection Prescribing Information",
+          "authors": [],
+          "year": 2023,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/203441s013lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["claim-tedu-intestinotrophic", "claim-tedu-dpp4", "claim-tedu-neoplasia"],
+          "notes": "FDA prescribing information for Gattex; includes warnings on neoplastic growth, intestinal obstruction, biliary/pancreatic disease, and fluid overload."
+        },
+        {
+          "id": "cit-tedu-jeppesen-2012",
+          "sourceType": "pubmed",
+          "title": "Teduglutide reduces need for parenteral support among patients with short bowel syndrome with intestinal failure",
+          "authors": ["Jeppesen PB", "Pertkiewicz M", "Messing B", "et al."],
+          "year": 2012,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Jeppesen+teduglutide+short+bowel+STEPS+2012",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["claim-tedu-intestinotrophic"],
+          "notes": "Gastroenterology — pivotal STEPS trial supporting FDA approval in adult SBS."
+        }
+      ]
+    }
+  ]
+}

@@ -12,6 +12,7 @@ copyFileSync(
 copyFileSync("public/fonts/audio-nugget.ttf", `${staticDir}/fonts/audio-nugget.ttf`);
 copyFileSync("public/fonts/toxigenesis.rg-bold.otf", `${staticDir}/fonts/toxigenesis.rg-bold.otf`);
 copyFileSync("public/fonts/golden-girdle.otf", `${staticDir}/fonts/golden-girdle.otf`);
+copyFileSync("public/fonts/LowresPixel-Regular.otf", `${staticDir}/fonts/LowresPixel-Regular.otf`);
 copyFileSync("public/favicon.png", `${staticDir}/favicon.png`);
 if (existsSync("public/structures")) {
   cpSync("public/structures", `${staticDir}/structures`, { recursive: true });

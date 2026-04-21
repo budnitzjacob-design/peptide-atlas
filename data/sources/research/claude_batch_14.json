@@ -1,0 +1,700 @@
+{
+  "batch_id": "batch-14",
+  "generated_at": "2026-04-21",
+  "batch_notes": "CNS / neuroendocrine batch. Evidence-tier separation is the big issue here: (1) Oxytocin has an FDA-approved product (Pitocin) but ONLY for obstetric indications — all CNS/behavioral claims derive from a largely-intranasal research literature whose clinical translation has been mixed. (2) Semax and Selank are approved in Russia/Ukraine but not in the US/EU; most of their clinical evidence is Russian-language and has not been independently replicated in large Western RCTs. (3) Pinealon is a Khavinson-group research-only tripeptide with essentially all evidence from Russian cell-culture and rodent work; its proposed direct peptide-DNA / gene-expression mechanism is not established by Western replication. Sensitive-topic caveats: claims about psychiatric/behavioral benefit are flagged as not supported by current Western Phase 3 data.",
+  "peptides": [
+    {
+      "id": "semax",
+      "names": {
+        "primary": "Semax",
+        "aliases": ["ACTH(4-7)PGP", "MEHFPGP", "Met-Glu-His-Phe-Pro-Gly-Pro"],
+        "tradeNames": ["Semax (Russian Federation, prescription nasal drops 0.1% and 1%)"]
+      },
+      "identity": {
+        "formula": "C37H51N9O10S",
+        "molecularWeight": 813.92,
+        "cas": "80714-61-0",
+        "sequenceOneLetter": "MEHFPGP",
+        "sequenceThreeLetter": "H-Met-Glu-His-Phe-Pro-Gly-Pro-OH",
+        "length": 7,
+        "modifications": [
+          "N-terminal fragment of ACTH (residues 4-7)",
+          "C-terminal Pro-Gly-Pro extension to increase enzymatic stability"
+        ],
+        "structureClass": "Synthetic heptapeptide; ACTH(4-7) analog with PGP stability extension"
+      },
+      "classification": {
+        "peptideClass": "Melanocortin-derived neuropeptide",
+        "mechanismFamily": "Melanocortin receptor partial agonist; BDNF/NGF transcription modulator",
+        "regulatoryStatus": "non_us_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Heptapeptide derived from ACTH(4-7) with a C-terminal PGP tail for metabolic stability. Increases BDNF and NGF transcription and TrkB signaling in the hippocampus and cortex; modulates melanocortin, serotonergic, dopaminergic, and cholinergic systems. Does not retain ACTH-like steroidogenic activity.",
+        "localization": "Penetrates CNS via intranasal route; active in hippocampus and cortex. Receptor activity likely via melanocortin receptors (notably MC4R, partial agonist).",
+        "clinicalUses": [
+          "Russia/Ukraine: approved prescription for acute ischemic stroke, transient ischemic attack, cognitive disorders, optic nerve atrophy, and peptic ulcer disease (indication varies by concentration)",
+          "No FDA or EMA approval"
+        ],
+        "sideEffects": [
+          "Mild nasal irritation (intranasal)",
+          "Transient headache",
+          "Rare reports of dizziness or sleep changes"
+        ],
+        "dosing": {
+          "quick": "Russian prescribing: 0.1% intranasal drops (~50 mcg per drop) for general use; 1% nasal solution (~500 mcg per drop) for acute stroke — total daily dose varies by indication",
+          "adminRoute": "Intranasal",
+          "publicDisplayAllowed": true,
+          "context": "regulatory"
+        }
+      },
+      "biology": {
+        "genes": ["BDNF", "NGF", "NTRK2 (TrkB)", "MC4R", "CREB1", "MMP9", "FOS"],
+        "proteins": ["BDNF", "NGF", "TrkB", "CREB (phospho-active)", "MMP-9", "c-Fos", "JNK"],
+        "receptors": ["MC4R (melanocortin 4 receptor; partial agonist, proposed)", "MC3R (proposed)"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "IL-6",
+            "effect": "downregulation of pro-inflammatory expression after cerebral ischemia (animal model)",
+            "context": "rat tMCAO model",
+            "symbols": ["A"],
+            "citationIds": ["cit-semax-dolgikh2021"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "neuroprotection",
+            "steps": [
+              "Intranasal Semax crosses the cribriform plate and reaches CNS tissue",
+              "Proposed interaction with melanocortin receptors (MC3R/MC4R) on neurons and microglia",
+              "Transcriptional upregulation of BDNF and NGF in hippocampus and peri-infarct cortex",
+              "Activation of TrkB -> PI3K/Akt and MAPK survival signaling",
+              "Upregulation of phospho-CREB in ischemic penumbra",
+              "Downregulation of MMP-9, c-Fos, and active JNK at 24 h post-tMCAO"
+            ],
+            "symbols": ["A", "?"],
+            "claimRef": "cl-semax-1"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Russian clinical trial literature and post-marketing experience support Semax for acute ischemic stroke and cognitive/vascular disorders; summary clinical data underlies the Russian Ministry of Health registration. These trials are largely Russian-language, smaller than Western Phase 3 standards, and have not been independently replicated in randomized Western trials. There is no FDA/EMA approval and no high-quality Western efficacy data for nootropic use in healthy adults.",
+        "animalEvidence": "Rat tMCAO/pMCAO ischemia models consistently show upregulation of Bdnf, Ngf, and TrkB transcripts after Semax administration (Dolotov, Filippenkov, and others). Transcriptomic RNA-seq work reports suppression of inflammatory genes and activation of neurotransmitter and neurotrophic gene programs. Protein-level work confirms upregulation of phospho-CREB with concurrent downregulation of MMP-9, c-Fos, and active JNK at 24 h in ischemic cortex.",
+        "mechanismDetail": "Semax is the fragment Met-Glu-His-Phe of ACTH (residues 4-7) with a Pro-Gly-Pro C-terminal extension that confers resistance to aminopeptidases. It is devoid of classical ACTH steroidogenic activity (no MC2R corticotropic drive) but retains affinity for brain melanocortin receptors, particularly MC4R as a partial agonist. Its dominant characterized effect is transcriptional — upregulation of BDNF, NGF, and their receptors — with downstream TrkB/PI3K/Akt signaling. Additional modulation of serotonergic, dopaminergic, and cholinergic tone is reported but less mechanistically resolved.",
+        "safetyDetail": "Decades of Russian/Ukrainian pediatric and adult intranasal use suggest a benign acute safety profile; reported adverse events are mild and local. Long-term safety data in non-Russian populations are essentially absent. Theoretical considerations include possible melanocortin-related effects on appetite and autonomic tone with chronic high-dose exposure, and uncharacterized long-term consequences of sustained BDNF/NGF elevation.",
+        "safetyRisks": [
+          {
+            "system": "neurological",
+            "label": "Transient headache / nasal irritation",
+            "color": "green",
+            "helpSummary": "Intranasal dosing is generally well tolerated.",
+            "harmSummary": "Local irritation is the most frequently reported adverse event.",
+            "citationIds": ["cit-semax-glpbase2026"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Biologically plausible BDNF/NGF-mediated cognitive and neuroprotective effects; Russian clinical use for cognitive disorders and stroke recovery.",
+          "caveat": "No Western Phase 3 trial supports nootropic use in healthy adults. Enhancement claims rest on preclinical mechanism plus Russian clinical data that has not been independently replicated.",
+          "citationIds": ["cit-semax-medvedeva2021", "cit-semax-dolgikh2021"]
+        },
+        "missingEvidence": [
+          "Independent Western Phase 3 RCTs",
+          "Controlled cognitive outcome trials in healthy adults",
+          "Long-term safety data outside Russian post-marketing surveillance"
+        ],
+        "anecdotalUse": [
+          "Intranasal nootropic use in biohacker / cognitive enhancement communities",
+          "Off-label post-stroke recovery where legally obtainable"
+        ]
+      },
+      "claims": [
+        {
+          "id": "cl-semax-1",
+          "field": "mechanism",
+          "value": "In rat cerebral ischemia models, Semax upregulates BDNF, NGF, and TrkB transcripts and protein, and shifts the brain protein expression profile toward neuroprotection (increased phospho-CREB; decreased MMP-9, c-Fos, active JNK at 24 h post-tMCAO).",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "Rat permanent and transient MCAO models",
+          "route": "intraperitoneal or intranasal",
+          "sampleSize": null,
+          "duration": "24 h post-ischemia",
+          "symbols": ["A"],
+          "confidence": 0.85,
+          "citationIds": ["cit-semax-dolgikh2021", "cit-semax-medvedeva2021"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cl-semax-2",
+          "field": "regulatory",
+          "value": "Semax is a prescription medication in the Russian Federation for acute ischemic stroke, cognitive/vascular disorders, optic nerve atrophy, and peptic ulcer (indication varies by concentration); it is not approved by the FDA or EMA.",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": "intranasal",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx"],
+          "confidence": 0.75,
+          "citationIds": ["cit-semax-glpbase2026"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-semax-dolgikh2021",
+          "sourceType": "pmc",
+          "title": "Brain Protein Expression Profile Confirms the Protective Effect of the ACTH(4-7)PGP Peptide (Semax) in a Rat Model of Cerebral Ischemia-Reperfusion",
+          "authors": [],
+          "year": 2021,
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8226508/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-semax-1"],
+          "notes": "Protein-level confirmation of anti-inflammatory and pro-survival effects in rat tMCAO model."
+        },
+        {
+          "id": "cit-semax-medvedeva2021",
+          "sourceType": "pmc",
+          "title": "Semax and Pro-Gly-Pro Activate the Transcription of Neurotrophins and Their Receptor Genes after Cerebral Ischemia",
+          "authors": [],
+          "year": 2021,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11498467/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-semax-1"],
+          "notes": "Transcriptional upregulation of Bdnf, Ngf, and TrkB in rat cortex after pMCAO."
+        },
+        {
+          "id": "cit-semax-glpbase2026",
+          "sourceType": "other",
+          "title": "Semax: The Complete Guide",
+          "authors": [],
+          "year": 2026,
+          "url": "https://glpbase.com/peptides/semax/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cl-semax-2"],
+          "notes": "Secondary summary of Russian regulatory status and human clinical literature; needs primary-source confirmation of specific Russian registration."
+        }
+      ]
+    },
+    {
+      "id": "selank",
+      "names": {
+        "primary": "Selank",
+        "aliases": ["TKPRPGP", "Thr-Lys-Pro-Arg-Pro-Gly-Pro", "tuftsin analog"],
+        "tradeNames": ["Selank (Russian Federation)"]
+      },
+      "identity": {
+        "formula": "C33H57N11O9",
+        "molecularWeight": 751.87,
+        "cas": "129954-34-3",
+        "sequenceOneLetter": "TKPRPGP",
+        "sequenceThreeLetter": "H-Thr-Lys-Pro-Arg-Pro-Gly-Pro-OH",
+        "length": 7,
+        "modifications": [
+          "Tuftsin core (Thr-Lys-Pro-Arg) extended at C-terminus with Pro-Gly-Pro for metabolic stability"
+        ],
+        "structureClass": "Synthetic heptapeptide; tuftsin (TKPR, immunoglobulin G heavy-chain fragment) analog"
+      },
+      "classification": {
+        "peptideClass": "Immunomodulatory / neuroregulatory peptide",
+        "mechanismFamily": "Proposed GABAergic modulator (indirect); tuftsin analog",
+        "regulatoryStatus": "non_us_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Synthetic heptapeptide tuftsin analog. Primary characterized effect is anxiolytic, proposed to operate via modulation of GABAergic gene expression and indirect GABA-A receptor function, plus effects on serotonergic, dopaminergic, and BDNF-related signaling.",
+        "localization": "Crosses blood-brain barrier; effects observed in hippocampus and cortex; peripheral immunomodulatory activity in spleen.",
+        "clinicalUses": [
+          "Russia: approved prescription for generalized anxiety disorder and neurasthenia (intranasal)",
+          "No FDA or EMA approval"
+        ],
+        "sideEffects": [
+          "Mild nasal irritation",
+          "Transient headache",
+          "No reported dependence or withdrawal in published Russian trials"
+        ],
+        "dosing": {
+          "quick": "Russian clinical use: intranasal 0.15% solution, approximately 75-300 mcg several times per day for anxiety disorders over ~14 days",
+          "adminRoute": "Intranasal",
+          "publicDisplayAllowed": true,
+          "context": "regulatory"
+        }
+      },
+      "biology": {
+        "genes": ["GABRA2", "GABRA3", "SLC6A1 (GAT-1)", "BDNF"],
+        "proteins": ["GABA-A receptor subunits (expression modulation)", "Enkephalinase (putative inhibition)", "BDNF"],
+        "receptors": ["GABA-A receptor (indirect modulation of subunit expression)"],
+        "channelsTransporters": ["GAT-1 / SLC6A1 GABA transporter (expression-level effect)"],
+        "cytokinesInterleukins": [
+          {
+            "name": "Interferons / chemokines",
+            "effect": "Modulation of chemokine and cytokine gene expression in mouse spleen after single-dose Selank",
+            "context": "preclinical mouse immunomodulation",
+            "symbols": ["A"],
+            "citationIds": ["cit-selank-kolomin2016"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "anxiolysis",
+            "steps": [
+              "Intranasal Selank crosses the BBB; rapid systemic clearance (~10 min)",
+              "Alters expression of GABAergic neurotransmission genes (IMR-32 and in vivo rodent data)",
+              "Indirect positive modulation of GABA-A receptor function (comparable effect magnitude to benzodiazepines in preclinical/Russian clinical anxiety paradigms, without benzodiazepine-like sedation or dependence)",
+              "Secondary modulation of serotonergic, dopaminergic, and BDNF-related signaling"
+            ],
+            "symbols": ["A", "H", "?"],
+            "claimRef": "cl-selank-1"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Medvedev et al. 2008 (Zh Nevrol Psikhiatr Im S S Korsakova, Russian-language) reports efficacy in generalized anxiety disorder and neurasthenia comparable to low-dose benzodiazepines without cognitive impairment or dependence. Subsequent Russian-language trials compared Selank with medazepam/phenazepam with similar findings. All major human efficacy data are Russian. No FDA/EMA registrations; no large independent Western RCT exists.",
+        "animalEvidence": "Kolomin et al. 2016 (Front Pharmacol) characterized Selank-induced changes in GABAergic neurotransmission gene expression in IMR-32 human neuroblastoma cells and in rodents. Anxiolytic activity is reproducible in rodent paradigms (open field, elevated plus maze) and in a naloxone-precipitated morphine withdrawal model in outbred rats. Immunomodulatory gene-expression changes have been documented in mouse spleen.",
+        "mechanismDetail": "Tuftsin (Thr-Lys-Pro-Arg) is an IgG heavy-chain fragment with endogenous immunomodulatory activity but a very short half-life. Selank adds a C-terminal Pro-Gly-Pro tail to slow aminopeptidase and carboxypeptidase cleavage. Rather than acting as a direct GABA-A receptor ligand (as benzodiazepines do), Selank appears to modulate the expression of GABAergic system components at the transcriptional level, producing an anxiolytic phenotype without benzodiazepine-like allosteric potentiation. Secondary effects on enkephalinase inhibition, serotonergic tone, and BDNF have been reported in Russian literature.",
+        "safetyDetail": "Russian clinical experience shows a favorable short-term safety profile, including no reported dependence or withdrawal and no significant cognitive impairment. Independent long-term safety and Western pharmacovigilance data are absent. As with Semax, the evidence base is heavily Russian-language and under-replicated.",
+        "safetyRisks": [
+          {
+            "system": "psychiatric",
+            "label": "Anxiolytic — not a substitute for evaluated psychiatric care",
+            "color": "amber",
+            "helpSummary": "Russian clinical trials report symptomatic improvement in generalized anxiety disorder.",
+            "harmSummary": "Not approved by FDA/EMA; should not replace guideline-based treatment for moderate-to-severe psychiatric disorders.",
+            "citationIds": ["cit-selank-medvedev2008"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Plausible anxiolytic and mild nootropic effect based on Russian clinical and preclinical data.",
+          "caveat": "No Western RCTs; mechanism is partially characterized. Long-term safety in non-Russian populations is uncharacterized.",
+          "citationIds": ["cit-selank-kolomin2016", "cit-selank-medvedev2008"]
+        },
+        "missingEvidence": [
+          "Independent Western Phase 3 RCTs in anxiety disorders",
+          "Head-to-head vs current first-line anxiolytics in Western populations",
+          "Long-term safety and dependence-potential data outside Russian literature"
+        ],
+        "anecdotalUse": [
+          "Intranasal anxiolytic in biohacker communities",
+          "Off-label use for performance/exam anxiety where legally available"
+        ]
+      },
+      "claims": [
+        {
+          "id": "cl-selank-1",
+          "field": "mechanism",
+          "value": "Selank alters expression of genes involved in GABAergic neurotransmission in IMR-32 cells and rodent brain; anxiolytic phenotype in rodent models approximates benzodiazepine effect magnitude without sedation.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "IMR-32 cells; outbred and inbred rodents",
+          "route": "in vitro; IP/intranasal",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "C"],
+          "confidence": 0.7,
+          "citationIds": ["cit-selank-kolomin2016"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cl-selank-2",
+          "field": "human_trial",
+          "value": "In Russian clinical trials, Selank produced anxiolytic efficacy in generalized anxiety disorder and neurasthenia comparable to low-dose benzodiazepines without reported cognitive impairment or dependence.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "Russian GAD / neurasthenia cohorts",
+          "route": "intranasal",
+          "sampleSize": null,
+          "duration": "up to ~14 days",
+          "symbols": ["H", "Rx"],
+          "confidence": 0.55,
+          "citationIds": ["cit-selank-medvedev2008"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-selank-kolomin2016",
+          "sourceType": "pmc",
+          "title": "Selank Administration Affects the Expression of Some Genes Involved in GABAergic Neurotransmission",
+          "authors": ["Kolomin T", "Shadrina M", "Slominsky P", "Limborska S", "Myasoedov N"],
+          "year": 2016,
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4757669/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-selank-1"],
+          "notes": "Front Pharmacol 7:31. GABAergic gene-expression mechanism in cell and rodent systems."
+        },
+        {
+          "id": "cit-selank-medvedev2008",
+          "sourceType": "pubmed",
+          "title": "Efficacy and possible mechanisms of action of a new peptide anxiolytic selank in the therapy of generalized anxiety disorders and neurasthenia",
+          "authors": ["Medvedev VE", "Tereshchenko OI", "Kost NV", "Ter-Israelyan AIu", "Gushanskaia EV", "Chobanu IK", "Sokolov OIu", "Miasoedov NF"],
+          "year": 2008,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18454096/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-selank-2"],
+          "notes": "Zh Nevrol Psikhiatr Im S S Korsakova 108(4):38-48 (Russian)."
+        }
+      ]
+    },
+    {
+      "id": "pinealon",
+      "names": {
+        "primary": "Pinealon",
+        "aliases": ["EDR", "EDR peptide", "Glu-Asp-Arg tripeptide"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C15H26N6O8",
+        "molecularWeight": 418.4,
+        "cas": "868046-13-9",
+        "sequenceOneLetter": "EDR",
+        "sequenceThreeLetter": "H-Glu-Asp-Arg-OH",
+        "length": 3,
+        "modifications": [],
+        "structureClass": "Synthetic tripeptide; Khavinson short bioregulator (cytogen) class"
+      },
+      "classification": {
+        "peptideClass": "Short bioregulatory peptide (cytogen)",
+        "mechanismFamily": "Proposed peptide-DNA / chromatin interaction; gene-expression modulator (unconfirmed by Western replication)",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "Ultra-short tripeptide (Glu-Asp-Arg) from the Khavinson bioregulator program. Proposed to penetrate the cell membrane and nucleus and to interact with specific DNA sequences, modulating transcription of genes implicated in neuronal survival and antioxidant defense. Primary evidence is Russian cell-culture and rodent work; the direct peptide-DNA mechanism has not been independently confirmed in Western laboratories.",
+        "localization": "Proposed nuclear localization in pinealocytes and neurons; penetrates plasma membrane in HeLa cell fluorescence-labeling experiments (Fedoreyeva 2011).",
+        "clinicalUses": [
+          "None approved"
+        ],
+        "sideEffects": [
+          "No meaningful human safety dataset exists"
+        ],
+        "dosing": {
+          "quick": "No validated human dosing; research protocols use variable routes and doses",
+          "adminRoute": "Subcutaneous, oral (claimed oral bioavailability), or intranasal in research settings",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["Genes related to antioxidant defense and neuronal survival (claimed; specific targets not consistently reported)"],
+        "proteins": [],
+        "receptors": [],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "neuroprotection",
+            "steps": [
+              "Pinealon crosses the plasma membrane (fluorescent-label evidence in HeLa cells)",
+              "Proposed nuclear entry and sequence-specific interaction with promoter DNA (Khavinson-group hypothesis)",
+              "Claimed modulation of transcription of antioxidant-defense and neuronal-survival genes",
+              "Reported reductions in reactive oxygen species and preservation of mitochondrial membrane potential in neuronal cell culture under oxidative stress / hypoxia"
+            ],
+            "symbols": ["C", "A", "?"],
+            "claimRef": "cl-pinealon-1"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "No controlled Western human trials exist. Small Russian clinical observations (e.g., Bashkireva & Artamonova 2012 in Russian truck drivers) report symptomatic benefit on neurotic disorder indices but are not on a quality tier comparable to FDA-registration trials. No Phase 3 data anywhere.",
+        "animalEvidence": "Khavinson and colleagues (2011) report that Pinealon increases cell viability in neuronal cultures under free-radical stress, reduces ROS, and supports proliferative processes. In prenatal hyperhomocysteinemia rat offspring models, Pinealon protected cognitive function postnatally. In diabetic rat models, Pinealon maintained learning retention. Replication outside the Khavinson group and in Western labs is limited.",
+        "mechanismDetail": "Pinealon is representative of the Khavinson 'cytogen' concept, wherein ultra-short charged peptides are hypothesized to enter the nucleus and bind double-stranded DNA at specific promoter sites. Fedoreyeva 2011 reported nuclear localization of fluorescently-labeled short peptides in HeLa cells and in vitro DNA interaction. The general cytogen mechanism has attracted scientific skepticism in Western biology because most short peptides do not natively cross the nuclear envelope, and the proposed sequence specificity of a tripeptide-DNA interaction is mechanistically unusual; this should be communicated honestly to users.",
+        "safetyDetail": "Published adverse-event data are essentially absent. Because no rigorous controlled human trial exists, safety at any dose, duration, or population cannot be responsibly quantified.",
+        "safetyRisks": [
+          {
+            "system": "general",
+            "label": "Inadequate human safety data",
+            "color": "amber",
+            "helpSummary": "Preclinical reports suggest low acute toxicity.",
+            "harmSummary": "No validated human safety dataset; long-term consequences of chronic peptide-DNA interaction claims are speculative.",
+            "citationIds": ["cit-pinealon-khavinson2011", "cit-pinealon-fedoreyeva2011"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Speculative. Mechanistic claims (nuclear peptide-DNA interaction, epigenetic modulation) are not independently confirmed.",
+          "caveat": "No Western Phase 1-3 trial supports cognitive, longevity, or anti-aging claims. Recommend research-only framing with explicit mechanistic uncertainty.",
+          "citationIds": ["cit-pinealon-wikipedia2026"]
+        },
+        "missingEvidence": [
+          "Independent Western replication of nuclear peptide-DNA mechanism",
+          "Any controlled human trial",
+          "Reliable pharmacokinetic data (absorption, BBB penetration, nuclear localization in vivo)"
+        ],
+        "anecdotalUse": [
+          "Longevity/biohacker communities as a Khavinson-style bioregulator",
+          "Often stacked with Epithalon, Cortagen, and other cytogen peptides"
+        ]
+      },
+      "claims": [
+        {
+          "id": "cl-pinealon-1",
+          "field": "mechanism",
+          "value": "Pinealon reduces reactive oxygen species and supports cell viability in neuronal cultures under oxidative/free-radical stress; fluorescently labeled short peptides including EDR show nuclear localization in HeLa cells and DNA interaction in vitro.",
+          "species": "mixed",
+          "context": "cell",
+          "population": "Neuronal and HeLa cell cultures; some rat models",
+          "route": "in vitro",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "?"],
+          "confidence": 0.5,
+          "citationIds": ["cit-pinealon-khavinson2011", "cit-pinealon-fedoreyeva2011"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-pinealon-khavinson2011",
+          "sourceType": "pubmed",
+          "title": "Pinealon increases cell viability by suppression of free radical levels and activating proliferative processes",
+          "authors": ["Khavinson V", "Ribakova Y", "Kulebiakin K", "Vladychenskaya E", "Kozina L", "Arutjunyan A", "Boldyrev A"],
+          "year": 2012,
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3342713/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-pinealon-1"],
+          "notes": "Rejuvenation Res. 2012; cell-culture neuroprotection / antioxidant data."
+        },
+        {
+          "id": "cit-pinealon-fedoreyeva2011",
+          "sourceType": "pubmed",
+          "title": "Penetration of short fluorescence-labeled peptides into the nucleus in HeLa cells and in vitro specific interaction of the peptides with deoxyribooligonucleotides and DNA",
+          "authors": ["Fedoreyeva LI", "Kireev II", "Khavinson VKh", "Vanyushin BF"],
+          "year": 2011,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22117547/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-pinealon-1"],
+          "notes": "Biochemistry (Mosc) 76(11):1210-9. Primary source for the Khavinson-group peptide-DNA hypothesis; Western replication remains limited."
+        },
+        {
+          "id": "cit-pinealon-wikipedia2026",
+          "sourceType": "other",
+          "title": "Pinealon - Wikipedia",
+          "authors": [],
+          "year": 2026,
+          "url": "https://en.wikipedia.org/wiki/Pinealon",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": [],
+          "notes": "Summary reference for geroprotector framing and Russian-literature scope."
+        }
+      ]
+    },
+    {
+      "id": "oxytocin",
+      "names": {
+        "primary": "Oxytocin",
+        "aliases": ["OT", "alpha-hypophamine"],
+        "tradeNames": ["Pitocin (US, IV/IM, obstetric)", "Syntocinon (discontinued in US; historical intranasal in some jurisdictions)"]
+      },
+      "identity": {
+        "formula": "C43H66N12O12S2",
+        "molecularWeight": 1007.19,
+        "cas": "50-56-6",
+        "sequenceOneLetter": "CYIQNCPLG-NH2",
+        "sequenceThreeLetter": "H-Cys-Tyr-Ile-Gln-Asn-Cys-Pro-Leu-Gly-NH2",
+        "length": 9,
+        "modifications": [
+          "Disulfide bridge between Cys1 and Cys6",
+          "C-terminal glycinamide"
+        ],
+        "structureClass": "Cyclic nonapeptide neurohypophyseal hormone (posterior pituitary)"
+      },
+      "classification": {
+        "peptideClass": "Neurohypophyseal hormone / neuropeptide",
+        "mechanismFamily": "Oxytocin receptor (OXTR) agonist",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Endogenous cyclic nonapeptide produced in hypothalamic supraoptic and paraventricular nuclei and released from the posterior pituitary. Peripherally, OXTR activation drives myometrial contraction and milk ejection. Centrally, OXTR signaling in amygdala, prefrontal cortex, and striatum modulates social cognition, fear processing, and stress responses.",
+        "localization": "Hypothalamic synthesis; posterior pituitary release into systemic circulation; CNS OXTR expression in amygdala, PFC, nucleus accumbens, and related circuits. OXTR also expressed in myometrium and mammary myoepithelial cells.",
+        "clinicalUses": [
+          "FDA-approved (Pitocin / Oxytocin Injection USP): antepartum induction/stimulation of labor and postpartum control of uterine hemorrhage",
+          "Off-label / investigational (intranasal): autism spectrum disorder social symptoms, social anxiety, PTSD, couple-conflict research — not FDA-approved"
+        ],
+        "sideEffects": [
+          "IV (Pitocin): uterine hyperstimulation, uterine rupture with misuse, water intoxication with prolonged high-dose infusion, hypotension, tachycardia, arrhythmia, fetal bradycardia",
+          "Intranasal (research/compounded): nasal irritation, mild headache; not a validated long-term therapeutic"
+        ],
+        "dosing": {
+          "quick": "Labor induction: IV 0.5-1 mU/min initial, titrate (per Pitocin label); postpartum hemorrhage control: 10 units IM or IV infusion per label. Behavioral research (intranasal, off-label): 20-40 IU single dose — not FDA-approved.",
+          "adminRoute": "IV, IM (FDA-approved); intranasal (off-label/research)",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["OXT", "OXTR", "AVP", "CD38"],
+        "proteins": ["Oxytocin", "Oxytocin receptor (OXTR)", "Vasopressin (structural analog)"],
+        "receptors": ["OXTR (Gq-coupled GPCR; also activates Gi in some contexts)"],
+        "channelsTransporters": ["L-type voltage-gated Ca2+ channels (downstream of OXTR/PLC in myometrium)"],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "reproductive",
+            "steps": [
+              "Oxytocin binds OXTR on myometrial smooth muscle",
+              "Gq/PLC -> IP3 -> intracellular Ca2+ release",
+              "L-type Ca2+ channel opening reinforces contraction",
+              "Synergy with prostaglandins for sustained labor-pattern contractions"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "cl-oxt-1"
+          },
+          {
+            "category": "CNS_social",
+            "steps": [
+              "Central OXTR activation in amygdala reduces amygdala reactivity to social threat stimuli",
+              "OXTR signaling in striatum/PFC modulates reward and social salience processing",
+              "Context-dependent behavioral effect: pro-social in familiar/safe settings; can increase in-group bias and out-group vigilance in competitive settings"
+            ],
+            "symbols": ["H", "?"],
+            "claimRef": "cl-oxt-2"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Decades of obstetric use and pharmacokinetic data support the FDA-approved indications. The Pitocin label (Oxytocin Injection USP) documents labor induction/augmentation and postpartum hemorrhage control with detailed titration, monitoring, and contraindications. For central/behavioral use, Kosfeld et al. 2005 (Nature) showed intranasal oxytocin increased trust behavior in a financial game; subsequent studies (e.g., Kirsch 2005; Ditzen 2009) reported reduced amygdala reactivity and improved couple-conflict communication. However, pivotal RCTs in autism spectrum disorder and psychiatric indications have produced mixed results, and intranasal oxytocin is not approved for any psychiatric or behavioral indication.",
+        "animalEvidence": "Extensive rodent and non-human primate literature establishes OXTR's role in pair-bonding (e.g., vole studies), maternal behavior, social recognition, and stress buffering via HPA modulation.",
+        "mechanismDetail": "Oxytocin is a cyclic nonapeptide with a Cys1-Cys6 disulfide bridge and C-terminal glycinamide. It acts at OXTR, a Gq-coupled GPCR, with secondary activity at vasopressin receptors (V1a in particular) because oxytocin and AVP differ at only two residues. Peripherally, OXTR density in myometrium rises dramatically near term, explaining the dose-response at labor onset. Centrally, OXTR signaling is context-dependent: Kirsch 2005 showed reduced amygdala reactivity to fearful faces, while other studies show increased in-group bias, supporting a 'social salience' rather than a simple 'bonding' model.",
+        "safetyDetail": "IV oxytocin carries real obstetric risks: uterine hyperstimulation with fetal compromise, uterine rupture, water intoxication with convulsions/coma (due to intrinsic antidiuretic activity at high doses), postpartum hemorrhage if afibrinogenemia develops, and cardiovascular effects (hypotension, tachycardia, arrhythmia; QTc prolongation in interaction contexts). Per the Pitocin label, cumulative dose should not exceed 30 units per 12-hour period due to water intoxication risk. Intranasal oxytocin at research doses (20-40 IU) is generally well tolerated acutely, but long-term daily behavioral use lacks safety data; potential effects on vasopressin response with chronic exposure are theoretical concerns.",
+        "safetyRisks": [
+          {
+            "system": "reproductive",
+            "label": "Uterine hyperstimulation / rupture (IV)",
+            "color": "red",
+            "helpSummary": "Controlled IV oxytocin is standard obstetric care.",
+            "harmSummary": "Improper dosing can cause hypertonic or tetanic contractions, uterine rupture, fetal hypoxia, and maternal/fetal death.",
+            "citationIds": ["cit-oxt-pitocinlabel"]
+          },
+          {
+            "system": "metabolic",
+            "label": "Water intoxication (IV)",
+            "color": "red",
+            "helpSummary": "Manageable with label-adherent infusion rates.",
+            "harmSummary": "Prolonged high-rate infusion (40-50 mU/min) in electrolyte-free fluids has caused maternal convulsions, coma, and death due to intrinsic antidiuretic activity.",
+            "citationIds": ["cit-oxt-pitocinlabel"]
+          },
+          {
+            "system": "psychiatric",
+            "label": "Context-dependent behavioral effects (intranasal)",
+            "color": "amber",
+            "helpSummary": "May reduce amygdala reactivity and social anxiety in some contexts.",
+            "harmSummary": "Effects are context-dependent; can increase in-group bias and out-group vigilance. No FDA approval for psychiatric use; mixed pivotal-trial results in ASD.",
+            "citationIds": ["cit-oxt-kirsch2005", "cit-oxt-glpbase2026"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Intranasal oxytocin has well-documented acute effects on amygdala reactivity and specific social-cognitive tasks in healthy adults.",
+          "caveat": "Clinical translation has been mixed. No controlled trial supports chronic intranasal oxytocin as a nootropic, mood, or relationship intervention. The 'love hormone' framing is oversimplified and not supported by the full literature.",
+          "citationIds": ["cit-oxt-kirsch2005", "cit-oxt-glpbase2026"]
+        },
+        "missingEvidence": [
+          "Positive pivotal Phase 3 trials in autism spectrum disorder",
+          "Controlled long-term safety data for chronic intranasal use",
+          "Mechanistic understanding of when oxytocin produces pro-social vs out-group-biased effects"
+        ],
+        "anecdotalUse": [
+          "Off-label compounded intranasal oxytocin for couples therapy, social anxiety, and bonding support",
+          "Not a validated psychiatric treatment"
+        ]
+      },
+      "claims": [
+        {
+          "id": "cl-oxt-1",
+          "field": "clinical_use",
+          "value": "IV oxytocin (Pitocin) is FDA-approved for antepartum labor induction/augmentation and postpartum hemorrhage control; the label specifies titration, monitoring, and a 30-unit/12-hour ceiling for water-intoxication risk.",
+          "species": "human",
+          "context": "fda_label",
+          "population": "Term and near-term pregnancy, postpartum",
+          "route": "IV / IM",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.98,
+          "citationIds": ["cit-oxt-pitocinlabel", "cit-oxt-fdainj2022"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cl-oxt-2",
+          "field": "mechanism",
+          "value": "Intranasal oxytocin (24 IU) reduces amygdala reactivity to socially threatening stimuli and modulates brain circuits for social cognition and fear in healthy adults.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "Healthy adult fMRI volunteers",
+          "route": "intranasal",
+          "sampleSize": null,
+          "duration": "acute single-dose",
+          "symbols": ["H"],
+          "confidence": 0.8,
+          "citationIds": ["cit-oxt-kirsch2005"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-oxt-pitocinlabel",
+          "sourceType": "fda_label",
+          "title": "Pitocin (oxytocin) Prescribing Information",
+          "authors": [],
+          "year": 2014,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2014/018261s031lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["cl-oxt-1"],
+          "notes": "FDA-approved labeling for Pitocin (JHP Pharmaceuticals)."
+        },
+        {
+          "id": "cit-oxt-fdainj2022",
+          "sourceType": "fda_label",
+          "title": "Oxytocin Injection, USP - Prescribing Information (Fresenius Kabi, 2022)",
+          "authors": [],
+          "year": 2022,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2022/018248s049lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["cl-oxt-1"],
+          "notes": "More recent generic FDA label with updated warnings."
+        },
+        {
+          "id": "cit-oxt-kirsch2005",
+          "sourceType": "pubmed",
+          "title": "Oxytocin modulates neural circuitry for social cognition and fear in humans",
+          "authors": ["Kirsch P", "Esslinger C", "Chen Q", "Mier D", "Lis S", "Siddhanti S", "Gruppe H", "Mattay VS", "Gallhofer B", "Meyer-Lindenberg A"],
+          "year": 2005,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16339042/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-oxt-2"],
+          "notes": "J Neurosci 25(49):11489-93. Foundational fMRI study of intranasal oxytocin and amygdala reactivity."
+        },
+        {
+          "id": "cit-oxt-statpearls2025",
+          "sourceType": "other",
+          "title": "Oxytocin - StatPearls",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK507848/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": [],
+          "notes": "NCBI Bookshelf clinical reference; useful summary of approved indications and adverse reactions."
+        },
+        {
+          "id": "cit-oxt-glpbase2026",
+          "sourceType": "other",
+          "title": "Oxytocin: The Complete Guide",
+          "authors": [],
+          "year": 2026,
+          "url": "https://glpbase.com/peptides/oxytocin/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": [],
+          "notes": "Secondary source distinguishing FDA-approved Pitocin use from off-label intranasal behavioral research."
+        }
+      ]
+    }
+  ]
+}

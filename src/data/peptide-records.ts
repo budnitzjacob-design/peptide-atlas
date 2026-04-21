@@ -13,6 +13,11 @@ import claudeBatch09Raw from "../../data/sources/research/claude_batch_09.json";
 import claudeBatch10Raw from "../../data/sources/research/claude_batch_10.json";
 import claudeBatch11Raw from "../../data/sources/research/claude_batch_11.json";
 import claudeBatch13Raw from "../../data/sources/research/claude_batch_13.json";
+import claudeBatch14Raw from "../../data/sources/research/claude_batch_14.json";
+import claudeBatch15Raw from "../../data/sources/research/claude_batch_15.json";
+import claudeBatch16Raw from "../../data/sources/research/claude_batch_16.json";
+import claudeBatch17Raw from "../../data/sources/research/claude_batch_17.json";
+import claudeBatch18Raw from "../../data/sources/research/claude_batch_18.json";
 
 const accessedAt = "2026-04-21";
 
@@ -158,7 +163,12 @@ const researchBatches = [
   claudeBatch09Raw,
   claudeBatch10Raw,
   claudeBatch11Raw,
-  claudeBatch13Raw
+  claudeBatch13Raw,
+  claudeBatch14Raw,
+  claudeBatch15Raw,
+  claudeBatch16Raw,
+  claudeBatch17Raw,
+  claudeBatch18Raw
 ] as ResearchBatch[];
 
 const researchOverrides: Record<string, DeepPartial<PeptideRecord>> = Object.fromEntries(

@@ -56,6 +56,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Lowres Pixel";
+  src: url("/fonts/LowresPixel-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   min-height: 100%;
   background: #000;
@@ -116,7 +124,7 @@ a:hover {
 main {
   width: var(--content-width);
   margin: 0 auto;
-  padding: 24px 0 68px;
+  padding: 14px 0 68px;
 }
 
 .app-shell {
@@ -148,7 +156,7 @@ h4 {
   position: relative;
   display: inline-block;
   font-family: "Apple Garamond", "Cormorant Garamond", "EB Garamond", Georgia, serif;
-  font-size: clamp(38px, 6.8vw, 82px);
+  font-size: clamp(58px, 8vw, 108px);
   line-height: 0.9;
   font-style: italic;
   margin-top: 0;
@@ -181,52 +189,18 @@ h3 {
 }
 
 .hero {
-  min-height: 11vh;
+  min-height: 132px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 430px);
+  grid-template-columns: 1fr;
   gap: 22px;
-  align-items: start;
+  align-items: center;
   justify-items: center;
   text-align: center;
-  padding-bottom: 6px;
-  padding-top: 6px;
+  padding-bottom: 8px;
+  padding-top: 4px;
   border-bottom: 0;
   width: 100%;
   margin: 0 auto;
-}
-
-.app-shell.intro-active .hero {
-  position: fixed;
-  inset: 0;
-  z-index: 20;
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  padding: 0;
-  background: #000;
-}
-
-.app-shell.intro-active .hero > div {
-  display: grid;
-  place-items: center;
-  width: 100%;
-}
-
-.app-shell.intro-active .brand-title {
-  font-size: clamp(88px, 13vw, 220px);
-  animation: brand-overture 2.8s ease-in-out both;
-}
-
-.app-shell.intro-active .atlas-frame,
-.app-shell.intro-active .toolbar,
-.app-shell.intro-active .tiles,
-.app-shell.intro-active .detail-backdrop,
-.app-shell.intro-active .bibliography-backdrop,
-.app-shell.intro-active .related-backdrop,
-.app-shell.intro-active .key-backdrop,
-.app-shell.intro-active .image-backdrop {
-  opacity: 0;
-  pointer-events: none;
 }
 
 .eyebrow {
@@ -254,7 +228,6 @@ h3 {
 
 .hero {
   position: relative;
-  grid-template-columns: 1fr;
 }
 
 .hero-actions {
@@ -379,7 +352,7 @@ h3 {
   align-items: stretch;
   gap: 10px;
   padding: 12px 0;
-  margin: 0 auto 8px;
+  margin: 0 auto 10px;
   background: transparent;
   backdrop-filter: none;
   box-shadow: none;
@@ -424,84 +397,65 @@ textarea {
 .atlas-frame {
   position: relative;
   width: 100%;
-  padding-top: 40px;
+  padding-top: 0;
 }
 
 .side-rail {
   position: fixed;
-  top: 16vh;
-  bottom: 12vh;
-  width: 46px;
+  top: 156px;
+  bottom: 0;
+  width: 34px;
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
-  mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.96) 15%, rgba(0, 0, 0, 0.96) 85%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.96) 15%, rgba(0, 0, 0, 0.96) 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.96) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.96) 100%);
 }
 
 .side-rail-left {
-  left: max(6px, calc((100vw - min(1200px, calc(100vw - 28px))) / 2 - 72px));
+  left: max(8px, calc((100vw - min(1200px, calc(100vw - 28px))) / 2 - 124px));
 }
 
 .side-rail-right {
-  right: max(6px, calc((100vw - min(1200px, calc(100vw - 28px))) / 2 - 72px));
+  right: max(8px, calc((100vw - min(1200px, calc(100vw - 28px))) / 2 - 124px));
 }
 
 .side-rail-track {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
-  font-family: "Golden Girdle", "Apple Garamond", Georgia, serif;
-  color: rgba(244, 239, 228, 0.74);
-  font-size: 26px;
+  gap: 7px;
+  font-family: "Lowres Pixel", "JetBrains Mono", ui-monospace, monospace;
+  color: rgba(244, 239, 228, 0.34);
+  font-size: 18px;
   line-height: 1;
   letter-spacing: 0;
   user-select: none;
 }
 
 .side-rail-left .side-rail-track {
-  animation: rail-rise 28s linear infinite;
+  animation: rail-rise 40s linear infinite;
 }
 
 .side-rail-right .side-rail-track {
-  animation: rail-fall 28s linear infinite;
-}
-
-@keyframes brand-overture {
-  0% {
-    opacity: 0;
-    transform: translateY(0) scale(1);
-  }
-  18% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-  54% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(calc(-38vh + 24px)) scale(0.37);
-  }
+  animation: rail-fall 40s linear infinite;
 }
 
 @keyframes rail-rise {
   0% {
-    transform: translateY(16%);
+    transform: translateY(18%);
   }
   100% {
-    transform: translateY(-44%);
+    transform: translateY(-78%);
   }
 }
 
 @keyframes rail-fall {
   0% {
-    transform: translateY(-44%);
+    transform: translateY(-78%);
   }
   100% {
-    transform: translateY(16%);
+    transform: translateY(18%);
   }
 }
 
@@ -608,7 +562,8 @@ textarea:focus {
 }
 
 .tile-structure img {
-  width: min(100%, 172px);
+  width: 80%;
+  max-width: 80%;
   max-height: 124px;
   object-fit: contain;
   display: block;
@@ -954,7 +909,7 @@ tbody tr:nth-child(odd) td {
 }
 
 .article-head .name-display {
-  margin-top: 4px;
+  margin-top: 10px;
 }
 
 .article-head p {
@@ -1064,8 +1019,8 @@ tbody tr:nth-child(odd) td {
 }
 
 .structure-panel img {
-  width: min(100%, 360px);
-  max-height: 340px;
+  width: min(100%, 420px);
+  max-height: 380px;
   object-fit: contain;
   display: block;
 }
@@ -1083,6 +1038,30 @@ tbody tr:nth-child(odd) td {
   border-radius: 6px;
   padding: 12px;
   margin-top: 18px;
+}
+
+.critical-effects-box {
+  border: 1px solid #273444;
+  background: linear-gradient(135deg, rgba(12, 19, 27, 0.95), rgba(0, 0, 0, 0.95));
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 16px;
+}
+
+.critical-effects-box .eyebrow {
+  margin-bottom: 8px;
+}
+
+.critical-effects-box ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.critical-effects-box li {
+  color: #f0eadf;
+  font-size: 12px;
 }
 
 .identity-panel h3 {

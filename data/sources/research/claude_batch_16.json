@@ -1,0 +1,963 @@
+{
+  "batch_id": "batch-16",
+  "generated_at": "2026-04-21",
+  "batch_notes": "Immune / anti-inflammatory / repair / lipolysis peptides. Evidence asymmetry is large: VIP has an approved non-US indication (aviptadil + phentolamine for ED) and a well-known phase 3 failure in COVID-ARDS (RLF-100/Zyesami); TB4 has early-phase ophthalmic/dermatologic human data but no approved indication and is WADA-prohibited; AOD-9604 failed its phase 2b obesity trial and is not approved as a drug anywhere, though it has limited food-ingredient GRAS status; thymulin is almost entirely preclinical with foundational 1970s-1980s French work. Marketing claims for TB-500 and AOD-9604 in gray-market channels materially exceed the human evidence, which this entry treats explicitly.",
+  "peptides": [
+    {
+      "id": "thymulin",
+      "names": {
+        "primary": "Thymulin",
+        "aliases": ["FTS (facteur thymique sérique)", "serum thymic factor", "Zn-FTS"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C33H54N12O15",
+        "molecularWeight": 857.86,
+        "cas": "63958-90-7",
+        "sequenceOneLetter": "<pE>AKSQGGSN",
+        "sequenceThreeLetter": "pGlu-Ala-Lys-Ser-Gln-Gly-Gly-Ser-Asn",
+        "length": 9,
+        "modifications": ["N-terminal pyroglutamate", "biologically active form is zinc-bound (1:1 Zn2+)"],
+        "structureClass": "zinc_bound_nonapeptide"
+      },
+      "classification": {
+        "peptideClass": "thymic_hormone",
+        "mechanismFamily": "T_cell_differentiation_factor",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "Zinc-dependent thymic hormone originally isolated from serum as FTS (facteur thymique sérique) by Bach and colleagues in 1977. The biologically active form is a 1:1 complex of the nonapeptide with Zn2+; the apo-peptide is largely inactive. Produced by thymic epithelial cells and implicated in T-cell differentiation, regulation of peripheral T-cell function, and neuroendocrine-immune crosstalk. Mechanistic detail remains largely preclinical.",
+        "localization": "serum, thymic epithelium; activity zinc-dependent",
+        "clinicalUses": [],
+        "sideEffects": [
+          "human safety database is very small; adverse events not systematically characterized"
+        ],
+        "dosing": {
+          "quick": "No approved clinical dose. Preclinical studies have used microgram-range parenteral dosing in rodents; a small number of older human pilot studies used IM/SC microgram doses.",
+          "adminRoute": "parenteral (historical research)",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": ["zinc-binding thymic epithelial factor"],
+        "receptors": ["putative thymulin receptor on T lineage cells (not molecularly cloned)"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "IL-2",
+            "effect": "thymulin reported to modulate IL-2 production by T cells in some cell and animal studies",
+            "context": "mixed",
+            "symbols": ["C", "A"],
+            "citationIds": ["thym_lunin2013"]
+          },
+          {
+            "name": "IL-6 / TNF-alpha",
+            "effect": "reduction reported in preclinical inflammation and fever models with thymulin or thymulin gene therapy",
+            "context": "animal",
+            "symbols": ["A"],
+            "citationIds": ["thym_reggiani2014"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "T_cell_differentiation",
+            "steps": [
+              "thymulin (Zn-bound) -> putative receptor on immature T cells -> modulation of T-cell differentiation markers (preclinical)",
+              "downstream -> altered IL-2 / IFN-gamma production in stimulated T cells (cell, animal)"
+            ],
+            "symbols": ["A", "C"],
+            "claimRef": "thym_claim_tcell"
+          },
+          {
+            "category": "neuroendocrine_immune",
+            "steps": [
+              "thymulin administration -> attenuation of LPS-induced fever and sickness behavior in rodents (central)",
+              "central anti-inflammatory signature in aged-rat brain reported with thymulin gene therapy"
+            ],
+            "symbols": ["A"],
+            "claimRef": "thym_claim_neuroimmune"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Very limited and dated. A small number of 1980s clinical pilot studies (primarily French) explored thymulin in primary immunodeficiency, rheumatoid arthritis, and pediatric infection contexts, with small sample sizes and no modern RCT replication. No regulator has approved thymulin for any indication. Circulating thymulin bioactivity has been used as a biomarker of zinc status and thymic function in observational studies.",
+        "animalEvidence": "Rodent studies, including thymulin gene-therapy (adenoviral thymulin in aged rats by the Goya group in Argentina), describe anti-inflammatory and neuroimmunomodulatory effects: reduced LPS-induced fever, attenuated central IL-1/TNF responses, partial restoration of thymic function in aged or athymic animals, and anti-arthritic effects in adjuvant-induced arthritis models. Effects are often zinc-status dependent.",
+        "mechanismDetail": "Thymulin is a zinc-dependent nonapeptide with a pyroglutamate N-terminus. The Zn2+-bound form is the biologically active species; zinc chelation abolishes activity, and zinc deficiency in vivo decreases circulating thymulin bioactivity. A specific molecular receptor has not been cloned, and downstream signaling is inferred from cellular phenotypes rather than directly measured. Reported effects cluster around T-cell differentiation support and dampening of inflammatory cytokine output.",
+        "safetyDetail": "Minimal human safety data. Endogenous thymulin circulates at picomolar concentrations without known toxicity. Supraphysiologic exogenous dosing in humans has not been systematically studied. Research-chemical thymulin sold via gray-market vendors has no GMP oversight; zinc saturation state and peptide purity cannot be assumed.",
+        "safetyRisks": [
+          {
+            "system": "evidence",
+            "label": "Minimal human data",
+            "color": "yellow",
+            "helpSummary": "Endogenous thymulin is well tolerated physiologically.",
+            "harmSummary": "Exogenous pharmacologic dosing in humans is poorly characterized; no modern pharmacovigilance data exist.",
+            "citationIds": ["thym_bach1977"]
+          },
+          {
+            "system": "regulatory",
+            "label": "Not approved",
+            "color": "red",
+            "helpSummary": "No regulator has reviewed thymulin.",
+            "harmSummary": "Any clinical-style use is off-label and outside GMP supply chains.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "No evidence supports thymulin as a healthy-human enhancer of immunity, energy, or performance. Clinical hypotheses are restricted to immunodeficiency, aging-related thymic involution, and rheumatologic contexts, and even there the modern trial base is essentially empty.",
+          "caveat": "Strong preclinical findings in aged or zinc-deficient animals do not translate automatically to benefit in healthy, zinc-sufficient adults.",
+          "citationIds": ["thym_lunin2013"]
+        },
+        "missingEvidence": [
+          "No cloned molecular receptor",
+          "No modern RCT",
+          "No established human pharmacokinetics for exogenous dosing",
+          "No chronic human safety data"
+        ],
+        "anecdotalUse": [
+          "Occasional gray-market self-administration framed as 'immune support,' without controlled outcome data"
+        ]
+      },
+      "claims": [
+        {
+          "id": "thym_claim_identity",
+          "field": "identity",
+          "value": "Zn-dependent nonapeptide (pyroGlu-Ala-Lys-Ser-Gln-Gly-Gly-Ser-Asn) produced by thymic epithelium; apo-peptide is largely inactive.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "C"],
+          "confidence": 0.9,
+          "citationIds": ["thym_bach1977", "thym_dardenne1982"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "thym_claim_tcell",
+          "field": "mechanism",
+          "value": "Modulates T-cell differentiation markers and IL-2 production in cell and animal models.",
+          "species": "mixed",
+          "context": "cell",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.7,
+          "citationIds": ["thym_lunin2013"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "thym_claim_neuroimmune",
+          "field": "mechanism",
+          "value": "Adenoviral thymulin gene therapy in aged rats attenuates central inflammatory cytokine signatures.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "aged rats",
+          "route": "adenoviral vector",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.65,
+          "citationIds": ["thym_reggiani2014"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "thym_claim_no_modern_rct",
+          "field": "humanEvidence",
+          "value": "No modern randomized controlled trial supports thymulin for any indication.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.85,
+          "citationIds": ["thym_lunin2013"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "thym_bach1977",
+          "sourceType": "pubmed",
+          "title": "Isolation, biochemical characteristics and biological activity of a circulating thymic hormone in the mouse and in the human",
+          "authors": ["Bach JF", "Dardenne M", "Pleau JM", "Rosa J"],
+          "year": 1977,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Bach+Dardenne+thymic+hormone+1977",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["thym_claim_identity"],
+          "notes": "Foundational isolation paper (Nature / Annals NYAS era). Moderator to pin the exact citation."
+        },
+        {
+          "id": "thym_dardenne1982",
+          "sourceType": "pubmed",
+          "title": "Contribution of zinc and other metals to the biological activity of the serum thymic factor",
+          "authors": ["Dardenne M", "Pleau JM", "Nabarra B", "Lefrancier P", "Derrien M", "Choay J", "Bach JF"],
+          "year": 1982,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Dardenne+zinc+thymic+factor+FTS",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["thym_claim_identity"],
+          "notes": "Establishes zinc dependency of bioactivity; moderator to pin exact PMID."
+        },
+        {
+          "id": "thym_lunin2013",
+          "sourceType": "pubmed",
+          "title": "Thymus hormones as prospective anti-inflammatory agents",
+          "authors": ["Lunin SM", "Novoselova EG"],
+          "year": 2010,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20528211/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["thym_claim_tcell", "thym_claim_no_modern_rct"],
+          "notes": "Overview of thymulin and related thymic peptides; used for mechanism and evidence-gap framing."
+        },
+        {
+          "id": "thym_reggiani2014",
+          "sourceType": "pubmed",
+          "title": "Thymulin gene therapy in aged rats attenuates central inflammatory cytokine response",
+          "authors": ["Reggiani PC", "Morel GR", "Console GM", "Barbeito CG", "Rodriguez SS", "Brown OA", "Bellini MJ", "Pléau JM", "Dardenne M", "Goya RG"],
+          "year": 2014,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Reggiani+thymulin+gene+therapy+aged+rats",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["thym_claim_neuroimmune"],
+          "notes": "Representative Goya group paper on adenoviral thymulin; moderator to pin the strongest specific citation."
+        }
+      ]
+    },
+    {
+      "id": "vip",
+      "names": {
+        "primary": "Vasoactive intestinal peptide",
+        "aliases": ["VIP", "aviptadil (synthetic VIP drug substance)"],
+        "tradeNames": ["Invicorp (aviptadil + phentolamine, non-US ED indication)", "Zyesami / RLF-100 (aviptadil, investigational)"]
+      },
+      "identity": {
+        "formula": "C147H237N43O43S",
+        "molecularWeight": 3326.8,
+        "cas": "37221-79-7",
+        "sequenceOneLetter": "HSDAVFTDNYTRLRKQMAVKKYLNSILN",
+        "sequenceThreeLetter": "His-Ser-Asp-Ala-Val-Phe-Thr-Asp-Asn-Tyr-Thr-Arg-Leu-Arg-Lys-Gln-Met-Ala-Val-Lys-Lys-Tyr-Leu-Asn-Ser-Ile-Leu-Asn",
+        "length": 28,
+        "modifications": ["C-terminal amidation"],
+        "structureClass": "secretin_family_neuropeptide"
+      },
+      "classification": {
+        "peptideClass": "secretin_glucagon_family_neuropeptide",
+        "mechanismFamily": "VPAC1_VPAC2_agonist",
+        "regulatoryStatus": "non_us_approved"
+      },
+      "tile": {
+        "mechanismSummary": "28-residue C-terminally amidated neuropeptide of the secretin/glucagon family, isolated by Said and Mutt in 1970. Acts at Class B GPCRs VPAC1 and VPAC2, and with lower affinity at PAC1. Widely expressed in CNS, enteric nervous system, respiratory epithelium, and vascular smooth muscle. Signals predominantly via Gs / cAMP / PKA, with downstream vasodilation, bronchodilation, anti-inflammatory, and immunomodulatory effects.",
+        "localization": "CNS, GI tract, respiratory tract, vascular smooth muscle, immune cells",
+        "clinicalUses": [
+          "erectile dysfunction (aviptadil + phentolamine, Invicorp; approved in select non-US jurisdictions)",
+          "investigational in COVID-19 acute respiratory distress syndrome (RLF-100/Zyesami; phase 3 did not meet primary endpoint)",
+          "investigational in sarcoidosis and pulmonary arterial hypertension"
+        ],
+        "sideEffects": [
+          "flushing (cutaneous, dose-dependent)",
+          "hypotension with IV infusion",
+          "tachycardia",
+          "diarrhea at high systemic doses"
+        ],
+        "dosing": {
+          "quick": "Invicorp: fixed-dose intracavernosal injection of aviptadil 25 µg + phentolamine 2 mg per dose for ED (per non-US labeling). RLF-100 trials used IV aviptadil at investigational doses in ICU patients.",
+          "adminRoute": "intracavernosal (Invicorp), IV infusion (investigational ARDS), inhaled (investigational)",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["VIP (gene encoding prepro-VIP/PHI)"],
+        "proteins": [],
+        "receptors": ["VPAC1 (VIPR1)", "VPAC2 (VIPR2)", "PAC1 (ADCYAP1R1; low affinity)"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "TNF-alpha",
+            "effect": "reduced by VIP in activated macrophages and in preclinical sepsis models",
+            "context": "mixed",
+            "symbols": ["C", "A"],
+            "citationIds": ["vip_delgado_review"]
+          },
+          {
+            "name": "IL-6",
+            "effect": "reduced in activated immune cells in vitro and in preclinical inflammation models",
+            "context": "mixed",
+            "symbols": ["C", "A"],
+            "citationIds": ["vip_delgado_review"]
+          },
+          {
+            "name": "IL-10",
+            "effect": "increased in some immune cell preparations exposed to VIP (pro-regulatory shift)",
+            "context": "cell",
+            "symbols": ["C"],
+            "citationIds": ["vip_delgado_review"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "Gs_cAMP_signaling",
+            "steps": [
+              "VIP -> VPAC1/VPAC2 (Class B GPCR) -> Gs activation -> adenylyl cyclase -> increased cAMP -> PKA activation",
+              "downstream -> smooth muscle relaxation (vasodilation, bronchodilation), exocrine/endocrine secretion modulation"
+            ],
+            "symbols": ["C", "A", "H"],
+            "claimRef": "vip_claim_gs_camp"
+          },
+          {
+            "category": "immunomodulation",
+            "steps": [
+              "VIP at VPAC1/VPAC2 on T cells, macrophages, dendritic cells -> reduced NF-kB activation, reduced pro-inflammatory cytokines",
+              "downstream -> skewing toward Treg / IL-10-producing phenotype (preclinical)"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "vip_claim_immunomodulation"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Approved-product-level evidence for intracavernosal aviptadil + phentolamine (Invicorp) in erectile dysfunction in select non-US jurisdictions, with open-label and controlled data supporting efficacy in ED refractory to other agents. In COVID-19 ARDS, the RLF-100/Zyesami phase 3 program (Relief Therapeutics / NeuroRx) did not meet its primary efficacy endpoint despite early open-label and compassionate-use enthusiasm, and aviptadil was not approved for this indication. Smaller human studies have explored inhaled aviptadil in sarcoidosis and pulmonary arterial hypertension with mixed results.",
+        "animalEvidence": "Extensive preclinical work documents vasodilator, bronchodilator, anti-inflammatory, and immunomodulatory effects in rodent and larger-animal models of sepsis, autoimmune disease (EAE, collagen-induced arthritis), asthma, and ischemia-reperfusion. VPAC2-selective agonism in preclinical models has been of particular interest for immunomodulation.",
+        "mechanismDetail": "VIP is the prototype ligand for VPAC1 and VPAC2 and shares receptors and downstream signaling with PACAP. Canonical signaling is Gs / cAMP / PKA, with additional cross-talk through Gq / PLC depending on receptor and cell context. Effects are pleiotropic and tissue-dependent: vasodilation via cAMP-driven smooth muscle relaxation; immunomodulation via cAMP-mediated suppression of NF-kB signaling in activated leukocytes and upregulation of IL-10 in certain cell types; endocrine/exocrine secretion modulation in GI and pancreatic tissue.",
+        "safetyDetail": "Flushing, mild hypotension, and tachycardia are expected class effects of systemic VIP/aviptadil administration and track with the drug's vasodilator mechanism. Intracavernosal administration carries ED-class risks (priapism, penile bruising, injection site discomfort). In ICU-dosed aviptadil trials, hypotension required careful monitoring. Aviptadil is not approved in the US for any indication.",
+        "safetyRisks": [
+          {
+            "system": "cardiovascular",
+            "label": "Vasodilation / hypotension",
+            "color": "yellow",
+            "helpSummary": "Dose-dependent vasodilation underlies therapeutic effect.",
+            "harmSummary": "IV or inhaled systemic dosing can cause clinically significant hypotension; ICU trial protocols required BP monitoring.",
+            "citationIds": ["vip_rlf100_trial"]
+          },
+          {
+            "system": "genitourinary",
+            "label": "ED injection class risks",
+            "color": "yellow",
+            "helpSummary": "Invicorp efficacy is real in ED refractory to other agents.",
+            "harmSummary": "Intracavernosal injection carries class risks: priapism, bruising, fibrosis with repeated dosing, injection-site discomfort.",
+            "citationIds": ["vip_invicorp_label"]
+          },
+          {
+            "system": "regulatory",
+            "label": "US unapproved",
+            "color": "red",
+            "helpSummary": "Approved in select non-US jurisdictions for ED only (as Invicorp).",
+            "harmSummary": "Aviptadil is not FDA-approved for any indication; COVID-ARDS phase 3 was negative.",
+            "citationIds": ["vip_rlf100_trial"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "VIP is not a healthy-human enhancement agent. Approved use is limited to intracavernosal ED in specific jurisdictions; other clinical programs are either investigational or have failed key endpoints.",
+          "caveat": "Enthusiasm generated by early open-label COVID-ARDS reports did not survive phase 3.",
+          "citationIds": ["vip_rlf100_trial"]
+        },
+        "missingEvidence": [
+          "No positive phase 3 for any systemic indication",
+          "Limited long-term safety data beyond ED use",
+          "No FDA-approved indication"
+        ],
+        "anecdotalUse": [
+          "Nasal VIP self-experimentation in online communities framed as 'anti-inflammatory' or 'autoimmune modulation,' without controlled evidence"
+        ]
+      },
+      "claims": [
+        {
+          "id": "vip_claim_gs_camp",
+          "field": "mechanism",
+          "value": "Agonizes VPAC1 and VPAC2 Class B GPCRs, signaling predominantly via Gs / cAMP / PKA.",
+          "species": "mixed",
+          "context": "cell",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A", "H"],
+          "confidence": 0.95,
+          "citationIds": ["vip_said_mutt_1970", "vip_delgado_review"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "vip_claim_immunomodulation",
+          "field": "mechanism",
+          "value": "Reduces pro-inflammatory cytokine output and supports Treg / IL-10 phenotypes in preclinical immune cell and animal models.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.75,
+          "citationIds": ["vip_delgado_review"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "vip_claim_invicorp",
+          "field": "clinicalUses",
+          "value": "Aviptadil + phentolamine (Invicorp) is approved in select non-US jurisdictions for intracavernosal treatment of erectile dysfunction.",
+          "species": "human",
+          "context": "regulatory",
+          "population": "adult men with ED refractory to other agents",
+          "route": "intracavernosal injection",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "Rx"],
+          "confidence": 0.85,
+          "citationIds": ["vip_invicorp_label"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "vip_claim_rlf100_failure",
+          "field": "clinicalUses",
+          "value": "Aviptadil (RLF-100/Zyesami) did not meet its primary efficacy endpoint in phase 3 trials for COVID-19 ARDS and was not approved for this indication.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "COVID-19 ARDS patients requiring intensive respiratory support",
+          "route": "IV (investigational)",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.85,
+          "citationIds": ["vip_rlf100_trial"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "vip_said_mutt_1970",
+          "sourceType": "pubmed",
+          "title": "Polypeptide with broad biological activity: isolation from small intestine",
+          "authors": ["Said SI", "Mutt V"],
+          "year": 1970,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Said+Mutt+VIP+1970",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["vip_claim_gs_camp"],
+          "notes": "Original discovery paper (Science 1970). Moderator to pin the exact citation."
+        },
+        {
+          "id": "vip_delgado_review",
+          "sourceType": "pubmed",
+          "title": "Vasoactive intestinal peptide: a neuropeptide with pleiotropic immune functions",
+          "authors": ["Delgado M", "Ganea D"],
+          "year": 2013,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23550063/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["vip_claim_gs_camp", "vip_claim_immunomodulation"],
+          "notes": "Representative Delgado/Ganea immunomodulation review; moderator may substitute a stronger primary paper."
+        },
+        {
+          "id": "vip_invicorp_label",
+          "sourceType": "official_regulator",
+          "title": "Invicorp (aviptadil / phentolamine mesilate) prescribing information",
+          "authors": [],
+          "year": null,
+          "url": "https://www.medicines.org.uk/emc/product/11129/smpc",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["vip_claim_invicorp"],
+          "notes": "UK eMC SmPC entry for Invicorp; moderator to confirm the current live SmPC URL."
+        },
+        {
+          "id": "vip_rlf100_trial",
+          "sourceType": "clinicaltrials",
+          "title": "Aviptadil (RLF-100/Zyesami) phase 3 trial in COVID-19-associated ARDS",
+          "authors": [],
+          "year": 2021,
+          "url": "https://clinicaltrials.gov/study/NCT04311697",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["vip_claim_rlf100_failure"],
+          "notes": "Registered RLF-100 ARDS trial; moderator should link to the matching peer-reviewed publication reporting the negative primary endpoint."
+        }
+      ]
+    },
+    {
+      "id": "tb4-frag",
+      "names": {
+        "primary": "Thymosin beta-4 (and active fragments)",
+        "aliases": ["TB4", "Tβ4", "TB-500 (gray-market synthetic TB4 product)", "Ac-SDKP (goralatide, N-terminal tetrapeptide fragment)"],
+        "tradeNames": ["RGN-259 (ophthalmic Tβ4, investigational)", "RGN-137 (topical Tβ4, investigational)"]
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": 4963.4,
+        "cas": "77591-33-4",
+        "sequenceOneLetter": "SDKPDMAEIEKFDKSKLKKTETQEKNPLPSKETIEQEKQAGES",
+        "sequenceThreeLetter": "Ser-Asp-Lys-Pro-Asp-Met-Ala-Glu-Ile-Glu-Lys-Phe-Asp-Lys-Ser-Lys-Leu-Lys-Lys-Thr-Glu-Thr-Gln-Glu-Lys-Asn-Pro-Leu-Pro-Ser-Lys-Glu-Thr-Ile-Glu-Gln-Glu-Lys-Gln-Ala-Gly-Glu-Ser",
+        "length": 43,
+        "modifications": ["N-terminal acetylation (native Tβ4)", "Ac-SDKP fragment is the N-terminal acetylated tetrapeptide"],
+        "structureClass": "intrinsically_disordered_actin_binding_peptide"
+      },
+      "classification": {
+        "peptideClass": "beta_thymosin_actin_sequestering",
+        "mechanismFamily": "actin_sequestration_tissue_repair",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "Thymosin beta-4 is a highly conserved 43-residue intrinsically disordered peptide that is the major G-actin-sequestering factor in most animal cells. Reported additional activities span endothelial cell migration, angiogenesis, anti-inflammatory signaling, and tissue repair. Two fragments receive most attention: the N-terminal tetrapeptide Ac-SDKP (goralatide), an endogenous anti-fibrotic agent, and the LKKTETQ-containing core region. 'TB-500' on the gray market is typically a synthetic full-length or near-full-length Tβ4 preparation sold as a research chemical. Not approved as a drug; WADA-prohibited.",
+        "localization": "cytoplasmic (G-actin binding); secreted forms detected in plasma, wound fluid, and tears",
+        "clinicalUses": [],
+        "sideEffects": [
+          "in published early-phase human studies (ophthalmic, dermal, IV cardiac pilots): generally well tolerated at the doses tested",
+          "systemic gray-market self-injection safety is not characterized"
+        ],
+        "dosing": {
+          "quick": "No approved dose. Investigational programs (RegeneRx) used topical ophthalmic drops (RGN-259) and topical ointment (RGN-137); small IV pilots in cardiac repair have been reported. Gray-market TB-500 protocols (mg-range IM/SC) are not evidence-based.",
+          "adminRoute": "topical (investigational ophthalmic/dermal), IV (small pilots), gray-market SC/IM",
+          "publicDisplayAllowed": false,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["TMSB4X"],
+        "proteins": ["G-actin (primary binding partner)", "ATP-synthase subunits (reported)", "Ku80 (reported)"],
+        "receptors": ["no canonical cell-surface receptor definitively established; proposed interactions include membrane components on endothelial cells"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "TNF-alpha",
+            "effect": "reduced in preclinical models of cardiac ischemia-reperfusion and corneal injury with Tβ4 administration",
+            "context": "animal",
+            "symbols": ["A"],
+            "citationIds": ["tb4_crockford2010"]
+          },
+          {
+            "name": "IL-8 / CXCL family",
+            "effect": "modulation reported in corneal epithelial cell and wound healing models",
+            "context": "cell",
+            "symbols": ["C"],
+            "citationIds": ["tb4_sosne_dry_eye"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "actin_sequestration",
+            "steps": [
+              "Tβ4 -> 1:1 binding to G-actin -> maintains G/F-actin equilibrium -> cytoskeletal dynamics regulation (cell)",
+              "release of G-actin on demand -> support for cell migration and wound closure"
+            ],
+            "symbols": ["C"],
+            "claimRef": "tb4_claim_actin"
+          },
+          {
+            "category": "tissue_repair_angiogenesis",
+            "steps": [
+              "Tβ4 administration -> endothelial cell migration and tube formation enhancement (cell)",
+              "in cardiac ischemia-reperfusion models -> reduced infarct size, improved functional recovery (animal)",
+              "in corneal injury and dermal wound models -> accelerated re-epithelialization (animal, early human)"
+            ],
+            "symbols": ["C", "A", "H"],
+            "claimRef": "tb4_claim_repair"
+          },
+          {
+            "category": "antifibrotic_AcSDKP",
+            "steps": [
+              "native Tβ4 N-terminal cleavage by prolyl oligopeptidase -> Ac-SDKP generation",
+              "Ac-SDKP -> anti-fibrotic signaling in cardiac, renal, and pulmonary fibrosis models (animal)"
+            ],
+            "symbols": ["A"],
+            "claimRef": "tb4_claim_acsdkp"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Early-phase human data come mostly from RegeneRx-sponsored programs: ophthalmic Tβ4 (RGN-259) in dry eye disease and neurotrophic keratopathy, and topical Tβ4 (RGN-137) in epidermolysis bullosa wound healing. Results across trials have been mixed, with some positive signals and some failed primary endpoints; no product has achieved FDA approval. Small IV pilot studies in acute myocardial infarction and stroke have been reported. Goralatide (Ac-SDKP) has been studied in small trials as an anti-fibrotic and hematopoietic protective agent, without approval.",
+        "animalEvidence": "Extensive preclinical literature: reduced infarct size and improved ventricular function in rodent and porcine cardiac ischemia-reperfusion, accelerated dermal and corneal wound healing, neuroprotection in stroke models, and reduced fibrosis in cardiac, renal, and pulmonary models (particularly with Ac-SDKP).",
+        "mechanismDetail": "The dominant validated molecular function of thymosin beta-4 is G-actin sequestration through a 1:1 stoichiometry binding interaction involving its conserved LKKTET(Q) motif. Additional reported activities — angiogenic endothelial support, anti-apoptotic signaling, and anti-inflammatory effects — are real in preclinical systems but lack a single validated cell-surface receptor, which complicates pharmacology. The N-terminal tetrapeptide Ac-SDKP, released physiologically by prolyl oligopeptidase cleavage, has its own well-described anti-fibrotic profile and is the molecular basis for some of the reported antifibrotic effects of parent Tβ4 in vivo.",
+        "safetyDetail": "In published early-phase human trials at topical ophthalmic, topical dermal, and limited IV pilot doses, Tβ4 has been generally well tolerated. No approved product exists, so pharmacovigilance is limited. Gray-market 'TB-500' is sold as a research chemical with no GMP oversight; purity, endotoxin burden, and exact identity cannot be assumed. Tβ4 is on the WADA Prohibited List as an unapproved substance, with a theoretical performance/tissue-repair rationale for athletic misuse that has not been supported by controlled human performance data.",
+        "safetyRisks": [
+          {
+            "system": "regulatory",
+            "label": "No approval; WADA-prohibited",
+            "color": "red",
+            "helpSummary": "Investigational products (RegeneRx) explored topical and IV use in trial settings.",
+            "harmSummary": "No approved drug product exists. Tβ4 is WADA-prohibited; athletes face sanctions. Gray-market 'TB-500' is a research chemical without regulatory oversight.",
+            "citationIds": ["tb4_wada"]
+          },
+          {
+            "system": "oncologic_theoretical",
+            "label": "Pro-angiogenic / pro-migratory signaling",
+            "color": "yellow",
+            "helpSummary": "Angiogenesis and migration are useful in repair.",
+            "harmSummary": "Tβ4 is pro-angiogenic and pro-migratory in cell models; chronic systemic supraphysiologic dosing in humans with occult malignancy has not been studied.",
+            "citationIds": ["tb4_crockford2010"]
+          },
+          {
+            "system": "evidence",
+            "label": "No approved human indication",
+            "color": "red",
+            "helpSummary": "Real early-phase human data exist for ophthalmic and dermal use.",
+            "harmSummary": "Gray-market systemic injection protocols are not supported by controlled human outcome data and do not reflect the investigational use contexts.",
+            "citationIds": ["tb4_sosne_dry_eye"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "TB4 has a reasonable preclinical repair/angiogenic/anti-fibrotic case, but no approved human indication and no controlled data supporting systemic self-injection for recovery, performance, or healing in healthy adults.",
+          "caveat": "Gray-market 'TB-500' marketing for 'faster healing' or 'joint repair' substantially exceeds the published human evidence.",
+          "citationIds": ["tb4_crockford2010", "tb4_wada"]
+        },
+        "missingEvidence": [
+          "No phase 3 approval-level human efficacy data",
+          "No controlled systemic-injection safety data at gray-market doses",
+          "No controlled performance or recovery data in healthy adults"
+        ],
+        "anecdotalUse": [
+          "Self-injection for soft-tissue injury recovery in athletes and bodybuilders",
+          "Use alongside BPC-157 in gray-market 'healing stacks' without controlled evidence"
+        ]
+      },
+      "claims": [
+        {
+          "id": "tb4_claim_actin",
+          "field": "mechanism",
+          "value": "1:1 binding to G-actin via the LKKTET(Q) motif is the primary validated molecular function of Tβ4.",
+          "species": "mixed",
+          "context": "cell",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C"],
+          "confidence": 0.95,
+          "citationIds": ["tb4_huff2001"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tb4_claim_repair",
+          "field": "mechanism",
+          "value": "Supports endothelial migration and angiogenesis in cell models; reduces infarct size and improves functional recovery in cardiac ischemia-reperfusion animal models.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.8,
+          "citationIds": ["tb4_crockford2010"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tb4_claim_acsdkp",
+          "field": "mechanism",
+          "value": "The N-terminal tetrapeptide Ac-SDKP (goralatide), released from Tβ4 by prolyl oligopeptidase, exerts anti-fibrotic effects in cardiac, renal, and pulmonary fibrosis animal models.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.8,
+          "citationIds": ["tb4_acsdkp_review"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "tb4_claim_rgn259",
+          "field": "clinicalUses",
+          "value": "RGN-259 (ophthalmic Tβ4) was studied in dry eye and neurotrophic keratopathy in multiple trials with mixed primary endpoint results and no approval.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "dry eye disease and neurotrophic keratopathy",
+          "route": "topical ophthalmic",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.75,
+          "citationIds": ["tb4_sosne_dry_eye"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "tb4_claim_wada",
+          "field": "regulatoryStatus",
+          "value": "Tβ4 / TB-500 is on the WADA Prohibited List.",
+          "species": "human",
+          "context": "regulatory",
+          "population": "competitive athletes",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "Rx"],
+          "confidence": 0.9,
+          "citationIds": ["tb4_wada"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "tb4_huff2001",
+          "sourceType": "pubmed",
+          "title": "Beta-thymosins, small acidic peptides with multiple functions",
+          "authors": ["Huff T", "Müller CS", "Otto AM", "Netzker R", "Hannappel E"],
+          "year": 2001,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11312119/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["tb4_claim_actin"],
+          "notes": "Standard beta-thymosin review establishing actin-sequestration as the canonical function."
+        },
+        {
+          "id": "tb4_crockford2010",
+          "sourceType": "pubmed",
+          "title": "Thymosin beta4: structure, function, and biological properties supporting current and future clinical applications",
+          "authors": ["Crockford D", "Turjman N", "Allan C", "Angel J"],
+          "year": 2010,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20536547/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["tb4_claim_repair"],
+          "notes": "RegeneRx-authored review; useful for summarizing cardiac and wound repair preclinical package."
+        },
+        {
+          "id": "tb4_acsdkp_review",
+          "sourceType": "pubmed",
+          "title": "Ac-SDKP (goralatide): an endogenous tetrapeptide with antifibrotic activity",
+          "authors": [],
+          "year": 2011,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Ac-SDKP+antifibrotic+goralatide",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["tb4_claim_acsdkp"],
+          "notes": "Placeholder; moderator to pin the strongest single primary or review citation for Ac-SDKP antifibrotic activity."
+        },
+        {
+          "id": "tb4_sosne_dry_eye",
+          "sourceType": "pubmed",
+          "title": "Thymosin beta 4 and the eye: clinical trials in dry eye and neurotrophic keratopathy",
+          "authors": ["Sosne G", "Kim C", "Kleinman HK"],
+          "year": 2016,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Sosne+thymosin+beta+4+eye",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["tb4_claim_rgn259"],
+          "notes": "Representative ophthalmic Tβ4 clinical review; moderator to pin the specific RGN-259 trial publication."
+        },
+        {
+          "id": "tb4_wada",
+          "sourceType": "official_regulator",
+          "title": "World Anti-Doping Agency Prohibited List",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.wada-ama.org/en/prohibited-list",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["tb4_claim_wada"],
+          "notes": "TB4 / TB-500 falls under WADA's prohibition of non-approved substances (S0); confirm current-year list entry."
+        }
+      ]
+    },
+    {
+      "id": "aod-9604",
+      "names": {
+        "primary": "AOD-9604",
+        "aliases": ["Anti-Obesity Drug 9604", "Tyr-hGH(177-191)", "AOD9604"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C78H123N23O23S2",
+        "molecularWeight": 1815.12,
+        "cas": "221231-10-9",
+        "sequenceOneLetter": "YLRIVQCRSVEGSCGF",
+        "sequenceThreeLetter": "Tyr-Leu-Arg-Ile-Val-Gln-Cys-Arg-Ser-Val-Glu-Gly-Ser-Cys-Gly-Phe",
+        "length": 16,
+        "modifications": ["disulfide bond between Cys7 and Cys14", "N-terminal tyrosine added to native hGH(177-191) sequence"],
+        "structureClass": "disulfide_cyclized_hGH_fragment_analog"
+      },
+      "classification": {
+        "peptideClass": "hGH_c_terminal_fragment_analog",
+        "mechanismFamily": "putative_lipolytic_non_somatogenic",
+        "regulatoryStatus": "not_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Synthetic 16-residue disulfide-cyclized analog of the C-terminal fragment of human growth hormone (hGH residues 177-191) with an added N-terminal tyrosine. Developed by Metabolic Pharmaceuticals (Australia) as an anti-obesity candidate designed to retain the lipolytic and anti-lipogenic properties attributed to the hGH C-terminal fragment while lacking the somatogenic (IGF-1 raising and growth-promoting) properties of intact hGH. Preclinical rodent data support lipolytic activity; the pivotal human phase 2b obesity trial did not meet its primary weight-loss endpoint, and AOD-9604 has not been approved as a drug anywhere. Limited GRAS-style food-ingredient recognition exists in some jurisdictions for non-drug use.",
+        "localization": "adipose tissue (proposed site of lipolytic effect based on hGH fragment work)",
+        "clinicalUses": [],
+        "sideEffects": [
+          "in the phase 2b trial: generally similar adverse event profile to placebo at tested doses",
+          "systemic gray-market self-injection safety not characterized"
+        ],
+        "dosing": {
+          "quick": "No approved clinical dose. The pivotal phase 2b obesity trial used oral AOD-9604 at doses up to 1 mg/day for 12 weeks with no significant weight-loss advantage over placebo. Gray-market injectable protocols (SC microgram doses) are not evidence-based.",
+          "adminRoute": "oral (investigational), subcutaneous (gray-market)",
+          "publicDisplayAllowed": false,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": ["hormone-sensitive lipase (proposed activation based on hGH fragment work, preclinical)"],
+        "receptors": ["specific receptor not identified; does not bind the classical GH receptor"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "lipolysis",
+            "steps": [
+              "AOD-9604 -> proposed stimulation of lipolysis in adipocytes via partial mimicry of hGH(177-191) activity (preclinical, rodent)",
+              "no validated receptor or downstream second-messenger pathway established in humans"
+            ],
+            "symbols": ["A", "?"],
+            "claimRef": "aod_claim_lipolysis_preclinical"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "The pivotal phase 2b randomized double-blind placebo-controlled trial of oral AOD-9604 in obese adults did not demonstrate a statistically significant weight-loss advantage over placebo at any dose tested. Smaller phase 1/2a studies had suggested metabolic signals but did not translate into approval-supporting efficacy. Metabolic Pharmaceuticals subsequently discontinued AOD-9604 development as an obesity drug.",
+        "animalEvidence": "Rodent studies from the Ng/Heffernan/Monash group reported reduced body weight gain, increased lipolysis, and reduced lipogenesis after AOD-9604 or parent hGH(177-191) fragment administration, without the growth-hormone-like effects on IGF-1 or long-bone growth seen with intact hGH.",
+        "mechanismDetail": "AOD-9604 was engineered to retain the lipolytic and anti-lipogenic properties reported for the C-terminal 177-191 fragment of hGH while lacking somatogenic activity. Mechanistically, AOD-9604 does not bind the classical GH receptor and does not raise IGF-1 in preclinical dosing. The precise receptor mediating its lipolytic effect has not been identified; some preclinical work invokes modulation of hormone-sensitive lipase, but this remains incompletely validated. The gap between coherent rodent mechanism and failed human efficacy is a central issue for this compound.",
+        "safetyDetail": "In the controlled oral trial setting, safety was similar to placebo. AOD-9604 is not approved as a drug anywhere. In some jurisdictions (notably the US), AOD-9604 has been granted GRAS (Generally Recognized As Safe) status as a food ingredient under narrow conditions; this GRAS status is not drug approval and does not support therapeutic claims. Gray-market injectable AOD-9604 is sold as a research chemical without GMP oversight. AOD-9604 is on the WADA Prohibited List as an unapproved substance.",
+        "safetyRisks": [
+          {
+            "system": "evidence",
+            "label": "Phase 2b efficacy failure",
+            "color": "red",
+            "helpSummary": "Rodent data looked promising.",
+            "harmSummary": "The pivotal 12-week oral phase 2b trial did not beat placebo on weight loss, and development for obesity was discontinued. Current marketing claims are not supported by the trial that actually tested them.",
+            "citationIds": ["aod_stier2013"]
+          },
+          {
+            "system": "regulatory",
+            "label": "Not approved as a drug; WADA-prohibited",
+            "color": "red",
+            "helpSummary": "Limited food-ingredient GRAS status in some jurisdictions.",
+            "harmSummary": "No regulator has approved AOD-9604 as a therapeutic drug. Food-ingredient GRAS does not license therapeutic use. On the WADA Prohibited List.",
+            "citationIds": ["aod_wada"]
+          },
+          {
+            "system": "quality",
+            "label": "Gray-market injectable purity",
+            "color": "yellow",
+            "helpSummary": "Research-chemical supply chain has no GMP oversight.",
+            "harmSummary": "Identity, disulfide integrity, and endotoxin burden of injectable AOD-9604 from non-GMP vendors cannot be assumed.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "AOD-9604 is widely marketed online as a fat-loss peptide, but the pivotal human trial designed to demonstrate fat loss did not show benefit over placebo.",
+          "caveat": "Rodent lipolysis data should not be used to support human fat-loss claims in the face of a negative phase 2b trial.",
+          "citationIds": ["aod_stier2013"]
+        },
+        "missingEvidence": [
+          "No positive pivotal human efficacy trial",
+          "No identified receptor",
+          "No controlled human data on subcutaneous injection (the gray-market route)",
+          "No long-term safety data"
+        ],
+        "anecdotalUse": [
+          "Gray-market SC self-injection for fat loss, often stacked with GH secretagogues, without controlled evidence"
+        ]
+      },
+      "claims": [
+        {
+          "id": "aod_claim_design",
+          "field": "identity",
+          "value": "Disulfide-cyclized analog of hGH(177-191) with added N-terminal tyrosine, engineered to retain lipolytic activity without somatogenic GH receptor activation.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "C"],
+          "confidence": 0.9,
+          "citationIds": ["aod_heffernan2001"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "aod_claim_lipolysis_preclinical",
+          "field": "mechanism",
+          "value": "Reduces body weight gain and increases lipolysis in rodent obesity models without raising IGF-1.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "obese rodent models",
+          "route": "parenteral and oral",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.75,
+          "citationIds": ["aod_heffernan2001"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "aod_claim_phase2b_failure",
+          "field": "clinicalUses",
+          "value": "The phase 2b oral obesity trial did not demonstrate a statistically significant weight-loss advantage over placebo.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "obese adults",
+          "route": "oral",
+          "sampleSize": null,
+          "duration": "12 weeks",
+          "symbols": ["H", "?"],
+          "confidence": 0.85,
+          "citationIds": ["aod_stier2013"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "aod_claim_not_approved",
+          "field": "regulatoryStatus",
+          "value": "AOD-9604 is not approved as a drug in any jurisdiction; some food-ingredient GRAS status exists but does not license therapeutic use.",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "Rx"],
+          "confidence": 0.9,
+          "citationIds": ["aod_stier2013"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "aod_heffernan2001",
+          "sourceType": "pubmed",
+          "title": "The effects of human GH and its lipolytic fragment (AOD9604) on lipid metabolism following chronic treatment in obese mice and beta3-AR knock-out mice",
+          "authors": ["Heffernan M", "Summers RJ", "Thorburn A", "Ogru E", "Gianello R", "Jiang WJ", "Ng FM"],
+          "year": 2001,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11713216/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["aod_claim_design", "aod_claim_lipolysis_preclinical"],
+          "notes": "Key preclinical paper from the Monash group characterizing AOD-9604 lipid effects independent of beta3-AR."
+        },
+        {
+          "id": "aod_stier2013",
+          "sourceType": "pubmed",
+          "title": "Safety and tolerability of the hexadecapeptide AOD9604 in humans",
+          "authors": ["Stier H", "Vos E", "Kenley D"],
+          "year": 2013,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=AOD9604+Stier+safety+tolerability+humans",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["aod_claim_phase2b_failure", "aod_claim_not_approved"],
+          "notes": "Safety-focused human summary; moderator should additionally pin the specific phase 2b efficacy publication (Metabolic Pharmaceuticals program) documenting the negative primary endpoint."
+        },
+        {
+          "id": "aod_wada",
+          "sourceType": "official_regulator",
+          "title": "World Anti-Doping Agency Prohibited List",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.wada-ama.org/en/prohibited-list",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": [],
+          "notes": "AOD-9604 falls under WADA's prohibition of non-approved substances (S0); confirm current-year list entry."
+        }
+      ]
+    }
+  ]
+}
