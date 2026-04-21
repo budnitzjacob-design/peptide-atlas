@@ -688,6 +688,48 @@ const ss31Ant: Citation = {
   notes: "Mechanistic study reporting improved ADP sensitivity in aged mitochondria with evidence implicating the adenine nucleotide translocator."
 };
 
+const ss31FdaApproval: Citation = {
+  id: "fda-forzinity-2025",
+  sourceType: "fda_label",
+  title: "FDA Grants Accelerated Approval to First Treatment for Barth Syndrome",
+  authors: ["U.S. Food and Drug Administration"],
+  year: 2025,
+  url: "https://www.fda.gov/news-events/press-announcements/fda-grants-accelerated-approval-first-treatment-barth-syndrome",
+  accessedAt,
+  quality: "regulatory",
+  supportsClaimIds: ["ss31-fda-barth", "ss31-injection-site"],
+  notes: "Official FDA press announcement dated September 19, 2025 stating accelerated approval of Forzinity (elamipretide) for Barth syndrome in patients weighing at least 30 kg."
+};
+
+const ss31Mmpower2: Citation = {
+  id: "pmid-32096613",
+  sourceType: "pubmed",
+  title: "A randomized crossover trial of elamipretide in adults with primary mitochondrial myopathy",
+  authors: ["A. Karaa", "PubMed indexed authors"],
+  year: 2020,
+  pmid: "32096613",
+  url: "https://pubmed.ncbi.nlm.nih.gov/32096613/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["ss31-mmpower2-fatigue"],
+  notes: "MMPOWER-2 crossover trial in primary mitochondrial myopathy showing fatigue endpoint improvement with non-significant 6MWT primary endpoint."
+};
+
+const ss31Mmpower3: Citation = {
+  id: "pmid-37268435",
+  sourceType: "pubmed",
+  title: "Efficacy and Safety of Elamipretide in Individuals With Primary Mitochondrial Myopathy: The MMPOWER-3 Randomized Clinical Trial",
+  authors: ["A. Karaa", "PubMed indexed authors"],
+  year: 2023,
+  pmid: "37268435",
+  doi: "10.1212/WNL.0000000000207402",
+  url: "https://pubmed.ncbi.nlm.nih.gov/37268435/",
+  accessedAt,
+  quality: "primary",
+  supportsClaimIds: ["ss31-mmpower3-overall"],
+  notes: "Phase 3 PMM trial showing no overall benefit on co-primary endpoints in the heterogeneous PMM population."
+};
+
 const curated: Record<string, DeepPartial<PeptideRecord>> = {
   "tirzepatide": {
     names: { aliases: ["Mounjaro", "Zepbound", "LY3298176"], tradeNames: ["Mounjaro", "Zepbound"] },
@@ -1361,22 +1403,23 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
   },
   "ss-31": {
     names: { aliases: ["Elamipretide", "MTP-131", "Bendavia"], tradeNames: [] },
-    classification: { evidenceTier: "human_phase2", regulatoryStatus: "investigational" },
+    classification: { evidenceTier: "fda_phase3", regulatoryStatus: "fda_approved" },
     tile: {
-      mechanismSummary: "SS-31/elamipretide is a mitochondria-targeted tetrapeptide that transiently localizes to the inner mitochondrial membrane and associates with cardiolipin.",
+      mechanismSummary: "Elamipretide is a cell-permeable aromatic-cationic tetrapeptide that concentrates in cardiolipin-rich inner mitochondrial membrane domains, stabilizes cristae organization, improves ETC/supercomplex function, and reduces mitochondrial ROS leak.",
       localization: "Inner mitochondrial membrane and cardiolipin-rich mitochondrial compartments.",
       enhancingEffects: [
+        { label: "Barth syndrome approved-use context", symbols: ["Rx", "H"], claimRef: "ss31-fda-barth" },
         { label: "exercise performance in primary mitochondrial myopathy trial", symbols: ["H"], claimRef: "ss31-human-exercise" },
-        { label: "mitochondrial membrane/cardiolipin biology", symbols: ["H", "A", "C"], claimRef: "ss31-human-exercise" },
+        { label: "mitochondrial membrane/cardiolipin biology", symbols: ["H", "A", "C"], claimRef: "ss31-cardiolipin-mechanism" },
         { label: "enhancement in healthy humans", symbols: ["?"], claimRef: "ss31-enhancement-unknown" }
       ],
-      sideEffects: ["The attached Consensus export reports no increased safety concerns in one short PMM trial; this is not proof of broad safety.", "Healthy-human enhancement evidence is not established in the current imported source set."],
-      clinicalUses: ["Investigational mitochondrial-disease and ophthalmology contexts; no broad FDA approval in current source set."],
+      sideEffects: ["The most common adverse effects in clinical programs are mild-to-moderate injection-site reactions; this does not establish broad healthy-human safety.", "Healthy-human enhancement evidence is not established in the current imported source set."],
+      clinicalUses: ["FDA accelerated approval exists for Barth syndrome in patients weighing at least 30 kg; the broader human program remains disease-context specific."],
       dosing: {
-        quick: "Clinical trial context: intravenous elamipretide dose-escalation arms were used for 5 days in PMM; not enhancement advice.",
-        adminRoute: "Trial route/dose context only; healthy enhancement dose remains unverified.",
+        quick: "FDA context: Forzinity is administered subcutaneously once daily for Barth syndrome in patients weighing at least 30 kg; PMM and other development programs used separate IV or SC trial schedules.",
+        adminRoute: "Subcutaneous approved-use context plus indication-specific clinical-trial dosing; healthy enhancement dose remains unverified.",
         publicDisplayAllowed: true,
-        context: "clinical_trial"
+        context: "fda_label"
       }
     },
     biology: {
@@ -1386,49 +1429,59 @@ const curated: Record<string, DeepPartial<PeptideRecord>> = {
       channelsTransporters: ["adenine nucleotide translocator", "mitochondrial permeability-transition context requires verification"],
       cytokinesInterleukins: [{ name: "ROS", type: "other", effect: "mitochondrial oxidative-stress marker; trial/source-specific direction requires extraction", context: "mitochondrial disease/preclinical contexts", symbols: ["H", "A", "C", "?"], claimRef: "ss31-human-exercise" }],
       cascades: [
-        { category: "mitochondrial membrane signaling", steps: ["SS-31 partitions into the inner mitochondrial membrane", "cardiolipin-associated membrane surface electrostatics are modulated", "cristae architecture and respiratory-supercomplex organization may stabilize", "cytochrome-c peroxidase / ROS leak stress may decrease", "ATP-generating efficiency may improve"], symbols: ["H", "A", "C"], claimRef: "ss31-cardiolipin-mechanism" },
-        { category: "ADP transport and energetics", steps: ["aged mitochondria show impaired ADP sensitivity", "SS-31 increases ANT-linked ADP uptake in mechanistic work", "ADP delivery to ATP synthase improves", "oxidative-phosphorylation responsiveness rises", "force / energetic efficiency may improve in aged-animal systems"], symbols: ["A", "C"], claimRef: "ss31-ant-adp" },
-        { category: "clinical functional signaling", steps: ["mitochondrial energetic stress burden may decrease", "skeletal-muscle fatigue burden may decrease", "short-duration exercise performance may improve in mitochondrial disease", "6-minute-walk distance improved in one imported PMM randomized trial", "healthy-human enhancement remains unverified"], symbols: ["H"], claimRef: "ss31-human-exercise" }
+        { category: "mitochondrial inner-membrane biophysics", steps: ["elamipretide partitions into cardiolipin-rich IMM interfacial domains", "cardiolipin-associated surface electrostatics and lipid organization are stabilized", "cristae curvature and IMM structural integrity are preserved", "cytochrome c electron-carrying function is favored over peroxidase activity", "ROS leak and lipid-peroxidative stress decrease"], symbols: ["H", "A", "C"], claimRef: "ss31-cardiolipin-mechanism" },
+        { category: "oxidative phosphorylation and energetics", steps: ["cardiolipin stabilization preserves ETC supercomplex coupling", "Complex I / III / IV electron transfer and ATP-synthase-linked efficiency improve", "ANT-mediated ADP uptake improves in aged or stressed mitochondria", "oxidative-phosphorylation responsiveness rises under dysfunctional conditions", "bioenergetic reserve and tissue-level energetic efficiency can improve"], symbols: ["A", "C"], claimRef: "ss31-ant-adp" },
+        { category: "clinical disease-context function", steps: ["mitochondrial energetic stress burden decreases in disease-context tissues", "fatigue and exercise-limitation burden may lessen in mitochondrial disease populations", "short-course PMM studies showed functional and symptom signals", "phase 3 efficacy was not confirmed across the full heterogeneous PMM population", "healthy-human enhancement remains unverified"], symbols: ["H"], claimRef: "ss31-mmpower3-overall" }
       ]
     },
     expanded: {
-      humanEvidence: "A 36-participant randomized PMM trial is imported and supports short-duration exercise-performance improvement without increased safety concerns in that study; additional short human elamipretide studies in AMD and heart failure remain indication-specific and do not establish broad healthy-human benefit.",
-      mechanismDetail: "The SS-31 pathway now shown is: inner-membrane partitioning -> cardiolipin-linked membrane/electrostatic stabilization -> improved cristae respiratory organization -> improved ANT-mediated ADP handling -> improved oxidative phosphorylation efficiency. Clinical findings such as 6MWT change in mitochondrial myopathy sit downstream of that mitochondrial-bioenergetic cascade.",
-      safetyDetail: "Short human studies are directionally reassuring but still limited. Injection-site reactions were common in some subcutaneous programs, and absence of broad severe toxicity in short trials is not the same thing as proven healthy-human safety or enhancement utility.",
+      humanEvidence: "Human SS-31 evidence is now mixed but more specific: FDA accelerated approval exists for Barth syndrome based on a muscle-strength endpoint reasonably likely to predict benefit, short PMM trials showed signal on 6MWT or fatigue, and MMPOWER-3 did not confirm benefit across the overall heterogeneous PMM population. AMD and heart-failure studies remain indication-specific and do not establish general healthy-human benefit.",
+      mechanismDetail: "Elamipretide is not a receptor agonist. Its mechanistic center of gravity is the inner mitochondrial membrane: the peptide partitions into cardiolipin-rich IMM domains, modulates surface electrostatics, stabilizes cristae structure, and improves respiratory-chain/supercomplex behavior while reducing cytochrome-c peroxidase activity and ROS leak. Under stressed or dysfunctional mitochondrial conditions, downstream consequences can include improved ANT-linked ADP handling and more efficient oxidative phosphorylation; that mitochondrial-bioenergetic cascade sits upstream of the disease-context functional outcomes reported in Barth syndrome and PMM trials.",
+      safetyDetail: "Current human safety language should stay disease-context specific. The clearest recurring tolerability issue is injection-site reactivity in subcutaneous programs; short human studies and FDA materials do not justify reframing SS-31 as broadly safe for healthy-human enhancement or chronic unsupervised use.",
       safetyRisks: [
-        {
-          system: "musculoskeletal",
-          label: "Musculoskeletal / exercise",
-          color: "#c4b5fd",
-          icon: "muscle",
-          helpSummary: "Primary mitochondrial-myopathy trial reported short-duration 6MWT improvement in a disease population.",
-          harmSummary: null,
-          citationIds: ["consensus-ss31-karaa-2018"]
-        },
         {
           system: "dermatologic",
           label: "Dermatologic / injection site",
           color: "#f9a8d4",
           icon: "skin",
           helpSummary: null,
-          harmSummary: "Short human elamipretide programs reported mild to moderate injection-site reactions in subcutaneous use contexts.",
-          citationIds: ["consensus-ss31-karaa-2018"]
+          harmSummary: "Subcutaneous clinical programs and FDA materials identify injection-site reactions as the dominant recurring tolerability issue.",
+          citationIds: ["fda-forzinity-2025"]
+        },
+        {
+          system: "immune",
+          label: "Immune / hypersensitivity",
+          color: "#fbbf24",
+          icon: "shield",
+          helpSummary: null,
+          harmSummary: "FDA materials describe serious hypersensitivity as a contraindication context for the approved Barth syndrome product.",
+          citationIds: ["fda-forzinity-2025"]
         }
       ],
       enhancementPotential: {
-        summary: "SS-31 is often framed as a mitochondrial or endurance enhancer, but the imported human evidence is disease-context clinical development rather than healthy-human enhancement.",
-        caveat: "Animal and mechanistic bioenergetic data should not be translated into claims of improved normal human physiology without direct trials.",
-        citationIds: ["consensus-ss31-karaa-2018", "doi-10-1074-jbc-ra119-012094", "doi-10-1007-s11357-023-00861-y"]
+        summary: "SS-31 is often framed publicly as a mitochondrial or endurance enhancer, but the published human evidence remains disease-population evidence rather than controlled healthy-human enhancement data.",
+        caveat: "Primary mechanistic work and disease-context trials support action in dysfunctional mitochondria; those findings should not be translated into claims of improved normal human physiology without direct trials in non-diseased adults.",
+        citationIds: ["doi-10-1074-jbc-ra119-012094", "doi-10-1007-s11357-023-00861-y", "pmid-37268435"]
       },
-      anecdotalUse: ["Healthy-human mitochondrial/performance enhancement claims are discussed publicly, but the imported human evidence does not establish that use."]
+      anecdotalUse: ["Healthy-human mitochondrial/performance enhancement claims are discussed publicly, but the imported human evidence does not establish that use."],
+      missingEvidence: [
+        "healthy-human pharmacodynamic enhancement data",
+        "absolute human bioavailability estimate",
+        "published chronic heart-failure primary outcome paper",
+        "confirmatory post-approval Barth syndrome trial results",
+        "phase 3 AMD program results"
+      ]
     },
     claims: [
+      claim("ss31-fda-barth", "tile.clinicalUses", "FDA granted accelerated approval to Forzinity (elamipretide) in September 2025 for Barth syndrome in patients weighing at least 30 kg.", ["Rx", "H"], ["fda-forzinity-2025"], "fda_label", "human", 0.93),
       claim("ss31-human-exercise", "expanded.humanEvidence", "Elamipretide improved 6MWT/exercise performance after 5 days in adults with primary mitochondrial myopathy in the imported randomized trial row.", ["H"], ["consensus-ss31-karaa-2018"], "clinical_trial", "human", 0.78, { population: "Adults with genetically confirmed primary mitochondrial myopathy", sampleSize: "n=36", route: "IV infusion", duration: "5 days" }),
+      claim("ss31-mmpower2-fatigue", "expanded.humanEvidence", "MMPOWER-2 showed statistically significant fatigue improvements with non-significant 6MWT change after 4 weeks of subcutaneous dosing in primary mitochondrial myopathy.", ["H"], ["pmid-32096613"], "clinical_trial", "human", 0.76, { population: "Adults with genetically confirmed primary mitochondrial myopathy", sampleSize: "n=30", route: "subcutaneous", duration: "4 weeks" }),
+      claim("ss31-mmpower3-overall", "expanded.humanEvidence", "MMPOWER-3 did not improve the co-primary endpoints across the overall primary mitochondrial myopathy population, although genotype-specific post-hoc hypotheses remain under study.", ["H"], ["pmid-37268435"], "clinical_trial", "human", 0.8, { population: "Adults with genetically confirmed primary mitochondrial myopathy", sampleSize: "n=218", route: "subcutaneous", duration: "24 weeks" }),
       claim("ss31-cardiolipin-mechanism", "biology.proteins", "Primary mechanistic work showed SS-31 binding to lipid bilayers and modulation of membrane surface electrostatics as part of its cardiolipin-linked mechanism.", ["C"], ["doi-10-1074-jbc-ra119-012094"], "cell", "cell", 0.74),
       claim("ss31-ant-adp", "biology.channelsTransporters", "Primary mechanistic aging work linked SS-31 to improved ADP sensitivity through ANT-associated mitochondrial uptake.", ["A", "C"], ["doi-10-1007-s11357-023-00861-y"], "preclinical", "mixed", 0.72),
       claim("ss31-enhancement-unknown", "tile.enhancingEffects", "Healthy-human enhancement evidence is not established in the current imported source set.", ["?"], ["consensus-ss31-karaa-2018"], "unknown", "unknown", 0.35)
     ],
-    citations: [ss31Consensus, ss31Membrane, ss31Ant, source("peptidePartnersShop"), source("peptidePartnersCerts")],
+    citations: [ss31FdaApproval, ss31Consensus, ss31Mmpower2, ss31Mmpower3, ss31Membrane, ss31Ant, source("peptidePartnersShop"), source("peptidePartnersCerts")],
     moderation: { status: "needs_review" }
   }
 };

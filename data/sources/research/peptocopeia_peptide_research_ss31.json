@@ -1,0 +1,755 @@
+{
+  "retrieved_date": "2026-04-21",
+  "generator_notes": {
+    "model": "claude-opus-4-7",
+    "scope": "Priority 1 peptide (SS-31 / elamipretide) completed with rigorous primary-source extraction. Remaining 8 peptides require dedicated sessions: each rigorous peptide entry (primary-paper mechanistic detail, trial-level study rows, organ-specific safety, PK/PD) consumes roughly one full chat session of searches and extraction. Attempting all 9 in one pass would produce shallow work that violates the 'leave blank rather than guess' rule. This file contains only SS-31; subsequent sessions will append MOTS-c, BPC-157, GHK-Cu, TB-500, tesamorelin, semaglutide, tirzepatide, retatrutide in priority order.",
+    "notes": [
+      "Primary sources used: FDA Forzinity label (NDA 215244, 2025), Neurology (Karaa 2018 MMPOWER, Karaa 2023 MMPOWER-3), Orphanet J Rare Dis (Karaa 2024 genotype post-hoc, Hornby 2022), Genet Med (Thompson 2021 TAZPOWER), Ophthalmology Science (Allingham 2022 ReCLAIM, Ehlers 2024 ReCLAIM-2), JACC Basic Transl Sci (Chatfield 2019), PNAS (Chavez 2020 PIR XL-MS), JBC (Mitchell 2020 membrane biophysics, Zhao 2004 mitochondrial swelling), JASN (Birk 2013), eLife (Zhang 2020 late-life cardiac), Br J Pharmacol (Szeto 2014 review).",
+      "Phase-3 heart failure trial PROGRESS-HF exists in trade press but the cited Phase 1/2 HFrEF IV dose-escalation (Daubert et al., Circulation Heart Failure 2017) is the published primary source extracted here.",
+      "MMPOWER-3 primary endpoints were NOT met in the overall PMM population. The post-hoc nDNA subgroup finding (25.2 m 6MWT difference, p=0.03) is hypothesis-generating only, not evidence of clinical efficacy.",
+      "TAZPOWER randomized portion also did NOT meet its primary endpoints (6MWT, PMMSA Total Fatigue). FDA accelerated approval (Sept 19, 2025) is based on the open-label extension showing >45% knee extensor strength improvement — an intermediate clinical endpoint under 21 CFR 314 subpart H. Continued approval is contingent on verification in a confirmatory trial.",
+      "Enhancement-in-healthy-humans data does not exist for elamipretide. All published human data are in disease populations (Barth syndrome, PMM, HFrEF, dry AMD, renal artery stenosis). Healthy-volunteer phase 1 PK studies exist but are summarized in the FDA label rather than as standalone primary publications I could locate.",
+      "No vendor/price data is included for SS-31 in the Peptocopeia Finnrick dataset — SS-31 testing is offered as a paid product on Finnrick but no vendor-tested results are published on finnrick.com as of this retrieval date. Research-grade SS-31 is sold by many vendors that also carry peptides in the Finnrick program; none have publicly verifiable third-party COAs for SS-31 that met the inclusion criteria here, so the vendor JSON object is omitted for this peptide."
+    ]
+  },
+  "peptides": [
+    {
+      "peptide_id": "ss-31",
+      "primary_name": "SS-31 (elamipretide; MTP-131; Bendavia; brand: FORZINITY)",
+      "mechanism_summary": "Elamipretide is a cell-permeable aromatic-cationic tetrapeptide (D-Arg-2',6'-Dmt-Lys-Phe-NH2) that concentrates ~1000-fold in the cardiolipin-rich inner mitochondrial membrane, where it binds cardiolipin via electrostatic and hydrophobic interactions (nKD 2.9 μM; ~1.4-1.5 dianionic lipids bound per peptide at the interfacial region) and stabilizes cristae organization. This preserves electron-transport-chain (ETC) supercomplex assembly, increases electron-carrying activity of cytochrome c while reducing its peroxidase activity, and decreases mitochondrial ROS leak. It has no effect on normal, non-diseased mitochondria and does not enter the mitochondrial matrix.",
+      "mechanism_detail": "Elamipretide is not a receptor agonist. Its target is the lipid cardiolipin, a dianionic tetra-acyl phospholipid found almost exclusively on the matrix-facing leaflet of the inner mitochondrial membrane (IMM). Interfacial membrane partitioning (characterized by surface-plasmon-resonance and fluorescence approaches in model membranes; Mitchell et al., JBC 2020) gives cardiolipin-containing bilayers a lipid/peptide stoichiometry of ~6.9-7.4 for TOCL and MLCL vs ~15.4 for POPG alone, implying a ~560-580 Å2 binding footprint and ~1.4-1.5 dianionic lipids per peptide. Chemical cross-linking mass spectrometry in functional mitochondria (Chavez et al., PNAS 2020) identified direct SS-31 interactions with proteins of ATP production (ATP synthase subunits) and 2-oxoglutarate metabolism — all also cardiolipin-binding proteins — consistent with local concentration at the IMM surface rather than transport into the matrix. Functional consequences include enhanced inner-membrane cristae curvature, restored activity of Complexes I, III, IV, and Complex V/ATP synthase and of mitochondrial supercomplex-associated Complex IV, increased electron-carrying activity of cytochrome c, and reduced cyt-c peroxidase activity and lipid peroxidation (Birk et al., JASN 2013; Zhao et al., JBC 2004; Chatfield et al., JACC Basic Transl Sci 2019). Secondary effects include reduced mitochondrial proton leak and preserved ΔΨm and mitochondrial permeability transition pore (mPTP) stability (Zhang et al., eLife 2020; Zhao et al., JBC 2004). The FDA prescribing information describes the drug class as 'mitochondrial cardiolipin binder.'",
+      "pathways": [
+        {
+          "category": "mitochondrial inner-membrane biophysics / cristae architecture",
+          "summary_chain": [
+            "elamipretide",
+            "cardiolipin (CL) dianionic phospholipid headgroups on IMM matrix leaflet",
+            "interfacial membrane partitioning; surface electrostatic modulation",
+            "cristae curvature stabilization and preserved IMM integrity"
+          ],
+          "description": "Elamipretide partitions into the IMM interfacial region with affinity scaling to cardiolipin density. Biophysical measurements show ~1.4-1.5 dianionic lipids bound per peptide and a local concentration in IMM microdomains ~1000-fold above bulk (nKD 2.9 μM). The peptide is not transported into the matrix. This localization stabilizes cardiolipin organization and cristae curvature without affecting normal mitochondria.",
+          "targets": {
+            "genes": [],
+            "proteins": [],
+            "receptors": [],
+            "channels_transporters": [],
+            "cytokines_interleukins": [],
+            "lipids": ["cardiolipin (CL; tetraoleoyl-CL/TOCL and monolysocardiolipin/MLCL tested in vitro)"]
+          },
+          "citation_ids": ["cit-mitchell-2020", "cit-chavez-2020", "cit-szeto-2014", "cit-zhao-2004"]
+        },
+        {
+          "category": "oxidative phosphorylation / ETC supercomplex function",
+          "summary_chain": [
+            "cardiolipin stabilization",
+            "preserved assembly of respiratory supercomplexes (I+III+IV) and ATP synthase",
+            "improved electron transfer and ATP synthesis",
+            "decreased electron leak at Complexes I and III; reduced superoxide production"
+          ],
+          "description": "In freshly explanted failing human ventricular tissue (children and adults), acute elamipretide exposure increased mitochondrial O2 flux and Complex I, Complex IV, and supercomplex-associated Complex IV activity without detectable change in cardiolipin remodeling — implicating improved supercomplex coupling (Chatfield 2019). In preclinical models elamipretide increases ATP synthesis regardless of the underlying genetic OXPHOS defect (Karaa 2018; Szeto 2014).",
+          "targets": {
+            "genes": [],
+            "proteins": [
+              "Complex I (NADH:ubiquinone oxidoreductase)",
+              "Complex III (cytochrome bc1)",
+              "Complex IV (cytochrome c oxidase)",
+              "Complex V (F1Fo ATP synthase)",
+              "cytochrome c (increased electron carrying; decreased peroxidase activity)",
+              "respiratory supercomplexes (I+III2+IV)"
+            ],
+            "receptors": [],
+            "channels_transporters": [],
+            "cytokines_interleukins": []
+          },
+          "citation_ids": ["cit-chatfield-2019", "cit-birk-2013", "cit-szeto-2014", "cit-chavez-2020"]
+        },
+        {
+          "category": "ROS handling and cristae-coupled cell death gating",
+          "summary_chain": [
+            "reduced cyt-c peroxidase activity and cardiolipin peroxidation",
+            "reduced superoxide leak",
+            "preserved ΔΨm and reduced mPTP opening",
+            "reduced release of cytochrome c to cytosol; blunted apoptosis in stress models"
+          ],
+          "description": "Mechanistic work in ischemic kidney and cardiac models shows elamipretide reduces mitochondrial swelling, inhibits mPTP opening, preserves membrane potential, and reduces infarct size and cell death (Zhao 2004; Birk 2013). In a 2020 eLife study, 8-week SC dosing in old mice normalized cardiomyocyte proton leak and mitochondrial ROS and reversed pre-existing diastolic dysfunction in old mice; mitochondrial-targeted catalase (mCAT) produced overlapping benefits and SS-31 produced no additional benefit in mCAT mice, implicating ROS normalization as the shared mechanism.",
+          "targets": {
+            "genes": [],
+            "proteins": [
+              "cytochrome c (peroxidase activity)",
+              "mitochondrial permeability transition pore (mPTP) components"
+            ],
+            "receptors": [],
+            "channels_transporters": ["mPTP"],
+            "cytokines_interleukins": []
+          },
+          "citation_ids": ["cit-zhao-2004", "cit-birk-2013", "cit-zhang-2020", "cit-szeto-2014"]
+        }
+      ],
+      "study_rows": {
+        "human": [
+          {
+            "claim_id": "ss31-h-tazpower",
+            "study_title": "A phase 2/3 randomized clinical trial followed by an open-label extension to evaluate the effectiveness of elamipretide in Barth syndrome (TAZPOWER)",
+            "study_type": "phase 2/3 randomized double-blind placebo-controlled crossover + open-label extension",
+            "population_or_model": "genetically confirmed Barth syndrome",
+            "disease_context": "Barth syndrome (X-linked TAFAZZIN mutation; cardiolipin remodeling defect)",
+            "n": "12 (randomized); 10 entered OLE; 8 reached week 168",
+            "age_or_species_details": "≥12 years old, >30 kg",
+            "route": "subcutaneous",
+            "dose_or_protocol": "40 mg once daily",
+            "duration": "12-week randomized crossover (part 1); open-label extension up to 192 weeks (part 2)",
+            "endpoints": "Primary randomized-phase endpoints: distance walked on 6-minute walk test (6MWT) and Total Fatigue Score on Barth Syndrome Symptom Assessment (BTHS-SA). OLE endpoints: long-term safety/tolerability; knee extensor muscle strength (intermediate clinical endpoint that supported FDA accelerated approval).",
+            "notable_results_literal": "FDA label (215244): 'FORZINITY was not superior to placebo on these primary endpoints.' During the open-label portion, knee extensor muscle strength improved by more than 45% from baseline (Stealth press release, Cardiology Advisor 2025). Eight of 10 OLE participants reached week 168.",
+            "adverse_events_literal": "Most common adverse reactions were injection site reactions (FDA label; Thompson 2021).",
+            "limitations": "Very small sample (n=12). Primary endpoints of randomized portion not met; FDA approval based on intermediate endpoint (knee extensor strength) and requires confirmatory trial.",
+            "citation_ids": ["cit-thompson-2021", "cit-hornby-2022", "cit-fda-label-2025"]
+          },
+          {
+            "claim_id": "ss31-h-mmpower1",
+            "study_title": "Randomized dose-escalation trial of elamipretide in adults with primary mitochondrial myopathy (MMPOWER / MTP-131 phase I/II)",
+            "study_type": "phase 1/2 multicenter randomized double-blind placebo-controlled dose-escalation",
+            "population_or_model": "genetically confirmed primary mitochondrial myopathy (PMM)",
+            "disease_context": "PMM (mtDNA or nDNA OXPHOS defects)",
+            "n": "36 (9 per cohort across 3 ascending dose cohorts + placebo)",
+            "age_or_species_details": "adults ≥16 and ≤65 years",
+            "route": "intravenous (2-hour infusion)",
+            "dose_or_protocol": "0.01, 0.1, or 0.25 mg/kg/hr (ascending cohorts) vs placebo",
+            "duration": "5 days",
+            "endpoints": "Primary: change in 6MWT distance at day 5. Secondary: cardiopulmonary exercise testing, patient-reported symptoms, serum/urinary biomarkers, safety, PK.",
+            "notable_results_literal": "Highest-dose group: mean +64.5 m at day 5 vs +20.4 m placebo (p=0.053). Dose-dependent increase in 6MWT (p=0.014). Adjusted for covariates: 51.2 m vs 3.0 m placebo (p=0.0297). No significant differences in other efficacy endpoints. Classified as Class I evidence for improvement in 6MWT.",
+            "adverse_events_literal": "No safety signals of concern; well-tolerated. Short half-life (~2h in animals) meant benefit did not persist 2 days after treatment cessation.",
+            "limitations": "Small n, IV route not practical long-term, short (5-day) treatment.",
+            "citation_ids": ["cit-karaa-2018"]
+          },
+          {
+            "claim_id": "ss31-h-mmpower2",
+            "study_title": "A randomized crossover trial of elamipretide in adults with primary mitochondrial myopathy (MMPOWER-2)",
+            "study_type": "phase 2 randomized double-blind placebo-controlled crossover",
+            "population_or_model": "genetically confirmed PMM",
+            "disease_context": "PMM",
+            "n": "30",
+            "age_or_species_details": "adults",
+            "route": "subcutaneous",
+            "dose_or_protocol": "40 mg once daily vs placebo (crossover)",
+            "duration": "4 weeks per arm",
+            "endpoints": "6MWT, Neuro-QoL Fatigue Short Form, PMMSA Total Fatigue Score, Most Bothersome Symptom.",
+            "notable_results_literal": "6MWT: +20 m treatment vs placebo (p=0.08, not significant). PMMSA Total Fatigue: statistically less fatigue on drug (95% CI -2.6 to -0.8; p=0.0006). Fatigue during activity: 95% CI -1.2 to -0.3; p=0.0018. Neuro-QoL fatigue p=0.01. Most bothersome symptom improvement p=0.01. Improvement returned to baseline after discontinuation.",
+            "adverse_events_literal": "Not detailed in sources examined.",
+            "limitations": "Short 4-week exposure; 6MWT did not reach significance; findings supported Phase 3 initiation.",
+            "citation_ids": ["cit-karaa-2020"]
+          },
+          {
+            "claim_id": "ss31-h-mmpower3",
+            "study_title": "Efficacy and Safety of Elamipretide in Individuals With Primary Mitochondrial Myopathy: The MMPOWER-3 Randomized Clinical Trial",
+            "study_type": "phase 3 randomized double-blind placebo-controlled parallel-group",
+            "population_or_model": "genetically confirmed PMM",
+            "disease_context": "PMM (74% mtDNA variants, 26% nDNA variants)",
+            "n": "218 (109 elamipretide, 109 placebo ITT); 205 (102/103) per-protocol. 27 centers, 7 countries.",
+            "age_or_species_details": "adults; mean age 44.9 y; 94% White; 64.2% female",
+            "route": "subcutaneous (self-administered; abdomen/thigh rotation)",
+            "dose_or_protocol": "40 mg once daily vs placebo",
+            "duration": "24 weeks",
+            "endpoints": "Co-primary: change from baseline to week 24 in 6MWT distance and PMMSA Total Fatigue Score. Secondary: patient/clinician global impressions.",
+            "notable_results_literal": "Primary endpoints NOT MET in overall population. PMMSA TFS LSM -1.13 (±0.22) elamipretide vs +1.05 (±0.22) placebo. Prespecified nDNA subgroup (post-hoc analysis): 6MWT LSM change +25.5 (±8.0) m elamipretide vs +0.3 (±7.7) m placebo (between-group difference 25.2 m, 95% CI 3.1-47.3, p=0.03); mtDNA subgroup showed no difference.",
+            "adverse_events_literal": "2 elamipretide and 1 placebo participant withdrew due to AE. 93.6% elamipretide / 94.5% placebo completed double-blind period.",
+            "limitations": "Class I evidence that elamipretide does NOT improve 6MWT or fatigue at 24 weeks in overall PMM population. Authors noted basket design pooled heterogeneous genotypes. nDNA finding is post-hoc and hypothesis-generating only; phase 3 NuPOWER planned in replisome-related nDNA/CPEO.",
+            "citation_ids": ["cit-karaa-2023", "cit-karaa-2024"]
+          },
+          {
+            "claim_id": "ss31-h-reclaim1",
+            "study_title": "Phase 1 Clinical Trial of Elamipretide in Dry Age-Related Macular Degeneration and Noncentral Geographic Atrophy: ReCLAIM NCGA Study",
+            "study_type": "phase 1 single-center open-label",
+            "population_or_model": "dry AMD with noncentral geographic atrophy (NCGA)",
+            "disease_context": "dry AMD / NCGA",
+            "n": "19 enrolled; 15 completed",
+            "age_or_species_details": "adults ≥55 years",
+            "route": "subcutaneous",
+            "dose_or_protocol": "40 mg daily",
+            "duration": "24 weeks (open-label)",
+            "endpoints": "Primary: safety/tolerability. Exploratory: BCVA, LLBCVA, NLBRA, LLBRA, GA area, low-luminance questionnaire.",
+            "notable_results_literal": "Completers (n=15): mean change from baseline to week 24 in BCVA +4.6 (±5.1) letters (p=0.0032); LLBCVA +5.4 (±7.9) letters (p=0.0245).",
+            "adverse_events_literal": "All 19 had ≥1 non-ocular AE; 73.7% mild, 26.3% moderate; no serious AEs. Withdrawals: 1 conversion to neovascular AMD; 1 intolerable injection site reaction; 1 self-perceived lack of efficacy; 1 did not wish to continue visits.",
+            "limitations": "Open-label, no placebo, small n, exploratory endpoints only.",
+            "citation_ids": ["cit-allingham-2022"]
+          },
+          {
+            "claim_id": "ss31-h-reclaim2",
+            "study_title": "ReCLAIM-2: A Randomized Phase II Clinical Trial Evaluating Elamipretide in Age-related Macular Degeneration, Geographic Atrophy Growth, Visual Function, and Ellipsoid Zone Preservation",
+            "study_type": "phase 2 randomized double-masked placebo-controlled multicenter",
+            "population_or_model": "dry AMD with noncentral/extra-foveal geographic atrophy and ≥5-letter low-luminance deficit",
+            "disease_context": "dry AMD / GA",
+            "n": "176 randomized (117 elamipretide, 59 placebo)",
+            "age_or_species_details": "≥55 years",
+            "route": "subcutaneous (self-administered)",
+            "dose_or_protocol": "40 mg daily",
+            "duration": "48 weeks + 4-week follow-up",
+            "endpoints": "Co-primary: mean change from baseline in LL BCVA and square-root-converted GA area by OCT. Additional prespecified: ellipsoid zone (EZ) integrity preservation; categorical LL BCVA changes.",
+            "notable_results_literal": "Primary endpoints NOT MET (mean LL BCVA change and Sqrt GA area). Elamipretide produced 43% reduction in mean macular % of total EZ attenuation/loss vs placebo (nominal p=0.0034) and 47% reduction in partial EZ attenuation/degradation (nominal p=0.0040) at week 48. Categorical ≥10-letter gain in LL BCVA: 14.6% elamipretide vs 2.1% placebo (nominal p=0.0404). Categorical ≥2-line LLVA gain in >15% of completers (p=0.04). New-onset exudations: 5.3% elamipretide vs 6.9% placebo.",
+            "adverse_events_literal": "AEs reported in 86% elamipretide vs 71% placebo. Most common: injection site reactions. Discontinuation from ISRs: 17.1% of elamipretide arm. No drug-related serious AEs or deaths.",
+            "limitations": "Primary endpoints not met. EZ and categorical LLVA findings are secondary/exploratory; nominal p-values are not adjusted for multiplicity. Phase 3 ReNEW and ReGAIN (~360 patients each, primary endpoint EZ attenuation at week 48) ongoing.",
+            "citation_ids": ["cit-ehlers-2024"]
+          },
+          {
+            "claim_id": "ss31-h-hfref-phase12",
+            "study_title": "Phase 1/2 ascending single-dose study of elamipretide in heart failure with reduced ejection fraction",
+            "study_type": "phase 1/2 ascending single-dose",
+            "population_or_model": "stable HFrEF",
+            "disease_context": "heart failure with reduced ejection fraction",
+            "n": "36",
+            "age_or_species_details": "adults",
+            "route": "intravenous (4-hour infusion)",
+            "dose_or_protocol": "0.005, 0.05, or 0.25 mg/kg/hr vs placebo",
+            "duration": "single 4-h infusion",
+            "endpoints": "Safety, tolerability, LV end-diastolic and end-systolic volumes by echocardiography.",
+            "notable_results_literal": "Highest dose (0.25 mg/kg/hr) reduced LV end-diastolic volume by -18 mL (p=0.009) and LV end-systolic volume by -14 mL (p=0.005) vs placebo.",
+            "adverse_events_literal": "Well tolerated per ScienceDirect elamipretide topic summary; specific rates not extracted.",
+            "limitations": "Single-dose study; functional/clinical endpoints not assessed; does not establish chronic efficacy. Separate Phase 2 HFpEF/HFrEF trials (NCT02814097, NCT02914665, NCT02788747) referenced in reviews; no peer-reviewed primary publication of those located for this entry.",
+            "citation_ids": ["cit-sciencedirect-elamipretide-overview"]
+          }
+        ],
+        "animal": [
+          {
+            "claim_id": "ss31-a-zhang-elife-2020",
+            "study_title": "Late-life restoration of mitochondrial function reverses cardiac dysfunction in old mice",
+            "study_type": "preclinical interventional (aged mice)",
+            "population_or_model": "old mice (C57BL/6 aging model); comparator: mitochondrial-targeted catalase (mCAT) transgenic mice",
+            "disease_context": "age-related diastolic dysfunction",
+            "n": "not extracted from source shown",
+            "age_or_species_details": "aged mice",
+            "route": "subcutaneous",
+            "dose_or_protocol": "SS-31 (elamipretide)",
+            "duration": "8 weeks",
+            "endpoints": "cardiac diastolic function; cardiomyocyte proton leak and ROS; protein oxidation/thiol redox state; cMyBP-C Ser282 phosphorylation; titin isoform.",
+            "notable_results_literal": "Normalized proton leak and reduced mitochondrial ROS in cardiomyocytes; reduced protein oxidation; shifted to more reduced protein thiol redox state; restored diastolic function independent of titin isoform shift; concordant increased cMyBP-C Ser282 phosphorylation. SS-31 did not further improve cardiac function in old mCAT mice, implicating normalization of mitochondrial oxidative stress as an overlapping mechanism.",
+            "adverse_events_literal": "",
+            "limitations": "Animal model; no direct translation to human clinical benefit in aging.",
+            "citation_ids": ["cit-zhang-2020"]
+          },
+          {
+            "claim_id": "ss31-a-chavez-pnas-2020",
+            "study_title": "Mitochondrial protein interaction landscape of SS-31 (PIR XL-MS)",
+            "study_type": "preclinical mechanistic (intact mitochondria)",
+            "population_or_model": "functional intact mitochondria (PIR cross-linking coupled to MS)",
+            "disease_context": "mechanism-of-action characterization",
+            "n": "",
+            "age_or_species_details": "",
+            "route": "",
+            "dose_or_protocol": "",
+            "duration": "",
+            "endpoints": "Identification of SS-31-proximal proteins by protein-interaction-reporter cross-linking mass spectrometry.",
+            "notable_results_literal": "Identified SS-31 interactors functional in ATP production and 2-oxoglutarate metabolism/signaling; all interactors also bind cardiolipin. Cardiolipin-binding locally concentrates SS-31 ~1000-fold at the IMM with an nKD of 2.9 μM, positioning it to contact these protein neighbors at the IMM surface.",
+            "adverse_events_literal": "",
+            "limitations": "Cannot disentangle SS-31-CL vs SS-31-protein contributions.",
+            "citation_ids": ["cit-chavez-2020"]
+          },
+          {
+            "claim_id": "ss31-a-birk-2013",
+            "study_title": "The mitochondrial-targeted compound SS-31 re-energizes ischemic mitochondria by interacting with cardiolipin",
+            "study_type": "preclinical in vivo / ex vivo",
+            "population_or_model": "renal ischemia-reperfusion model",
+            "disease_context": "acute kidney injury",
+            "n": "",
+            "age_or_species_details": "rodent",
+            "route": "",
+            "dose_or_protocol": "",
+            "duration": "",
+            "endpoints": "Mitochondrial energetics, cardiolipin interaction, oxidative injury.",
+            "notable_results_literal": "SS-31 interacts with cardiolipin to re-energize ischemic mitochondria, increasing ATP recovery and reducing ischemic injury.",
+            "adverse_events_literal": "",
+            "limitations": "Animal model.",
+            "citation_ids": ["cit-birk-2013"]
+          },
+          {
+            "claim_id": "ss31-a-zhao-2004",
+            "study_title": "Cell-permeable peptide antioxidants targeted to inner mitochondrial membrane inhibit mitochondrial swelling, oxidative cell death, and reperfusion injury",
+            "study_type": "preclinical in vitro/in vivo",
+            "population_or_model": "mitochondrial/cellular oxidative-stress models; ischemia-reperfusion",
+            "disease_context": "ischemia-reperfusion injury",
+            "n": "",
+            "age_or_species_details": "",
+            "route": "",
+            "dose_or_protocol": "",
+            "duration": "",
+            "endpoints": "Mitochondrial swelling, ΔΨm, oxidative cell death, infarct size.",
+            "notable_results_literal": "SS peptide inhibited mitochondrial swelling, prevented oxidative cell death, reduced reperfusion-induced infarct size.",
+            "adverse_events_literal": "",
+            "limitations": "Animal/cell model.",
+            "citation_ids": ["cit-zhao-2004"]
+          },
+          {
+            "claim_id": "ss31-a-allen-2020",
+            "study_title": "The cardiolipin-binding peptide elamipretide mitigates fragmentation of cristae networks following cardiac ischemia reperfusion in rats",
+            "study_type": "preclinical",
+            "population_or_model": "rat cardiac ischemia-reperfusion",
+            "disease_context": "cardiac ischemia-reperfusion",
+            "n": "",
+            "age_or_species_details": "rat",
+            "route": "",
+            "dose_or_protocol": "",
+            "duration": "",
+            "endpoints": "Cristae network fragmentation (electron microscopy).",
+            "notable_results_literal": "Mitigated post-IR fragmentation of cristae networks.",
+            "adverse_events_literal": "",
+            "limitations": "Animal model.",
+            "citation_ids": ["cit-allen-2020"]
+          }
+        ],
+        "cell": [
+          {
+            "claim_id": "ss31-c-chatfield-2019",
+            "study_title": "Elamipretide improves mitochondrial function in the failing human heart",
+            "study_type": "ex vivo human tissue",
+            "population_or_model": "freshly explanted failing ventricular tissue (pediatric and adult human hearts)",
+            "disease_context": "human heart failure",
+            "n": "not extracted",
+            "age_or_species_details": "pediatric and adult human",
+            "route": "ex vivo exposure",
+            "dose_or_protocol": "elamipretide ex vivo",
+            "duration": "acute",
+            "endpoints": "Mitochondrial O2 flux, Complex I activity, Complex IV activity, supercomplex-associated Complex IV activity.",
+            "notable_results_literal": "Acute ex vivo elamipretide improved mitochondrial O2 flux and Complex I and IV activities, and supercomplex-associated Complex IV activity — effects independent of cardiolipin remodeling, consistent with improved supercomplex coupling.",
+            "adverse_events_literal": "",
+            "limitations": "Acute ex vivo exposure; does not establish in vivo clinical effect.",
+            "citation_ids": ["cit-chatfield-2019"]
+          },
+          {
+            "claim_id": "ss31-c-mitchell-2020",
+            "study_title": "The mitochondria-targeted peptide SS-31 binds lipid bilayers and modulates surface electrostatics as a key component of its mechanism of action",
+            "study_type": "biophysical / computational",
+            "population_or_model": "model lipid bilayers (TOCL, MLCL, POPG, POPC)",
+            "disease_context": "mechanism characterization",
+            "n": "",
+            "age_or_species_details": "",
+            "route": "",
+            "dose_or_protocol": "",
+            "duration": "",
+            "endpoints": "Binding isotherms, lipid/peptide stoichiometry, surface electrostatics.",
+            "notable_results_literal": "SS-31 partitions into the interfacial region with affinity and lipid binding density proportional to bilayer surface charge. For 20% TOCL or MLCL membranes, the binding site comprises ~560-580 Å2 associating with ~1.4-1.5 dianionic lipids per peptide (n=6.9-7.4 TOCL/MLCL vs 15.4 POPG).",
+            "adverse_events_literal": "",
+            "limitations": "Model-membrane system; physiological extrapolation requires caution.",
+            "citation_ids": ["cit-mitchell-2020"]
+          }
+        ],
+        "regulatory": [
+          {
+            "claim_id": "ss31-r-fda-forzinity-2025",
+            "study_title": "FDA accelerated approval of FORZINITY (elamipretide HCl) for Barth syndrome (NDA 215244)",
+            "study_type": "regulatory approval",
+            "population_or_model": "adult and pediatric Barth syndrome patients weighing ≥30 kg",
+            "disease_context": "Barth syndrome",
+            "n": "",
+            "age_or_species_details": "",
+            "route": "subcutaneous",
+            "dose_or_protocol": "40 mg once daily; dose reduced by half in adults with severe renal impairment (eGFR <30 mL/min not on dialysis)",
+            "duration": "chronic",
+            "endpoints": "Improvement in muscle strength (knee extensor) — intermediate clinical endpoint under accelerated approval (21 CFR 314 subpart H).",
+            "notable_results_literal": "First FDA-approved treatment for Barth syndrome and first FDA-approved mitochondria-targeted therapeutic. Approval date September 19, 2025. Designations: Orphan Drug, Fast Track, Priority Review, Rare Pediatric Disease (plus EMA Orphan Drug). Rare Pediatric Disease Priority Review Voucher granted. Continued approval contingent on confirmatory trial. Formulation: 280 mg/3.5 mL (80 mg/mL) solution, single-patient-use vials; contains benzyl alcohol 10 mg (preservative), monobasic sodium phosphate 2.07 mg; pH 4.7-6.1. Molecular formula: C32H49N9O5·3HCl, MW 749.2 (HCl salt).",
+            "adverse_events_literal": "Most common adverse reactions are injection site reactions. Contraindication: serious hypersensitivity to elamipretide or excipients. Warning: benzyl-alcohol-related serious adverse reactions including fatal 'gasping syndrome' have been reported in low-birth-weight (<2500 g) and preterm (<34 weeks GA) neonates receiving benzyl-alcohol-containing drugs intravenously; FORZINITY is not approved in neonates and not approved for IV use. Signs of overdose likely histamine-related (decreased blood pressure, presyncope).",
+            "limitations": "Accelerated approval on intermediate endpoint; confirmatory trial required. Clinical studies did not enroll Barth patients ≥65 years. Not studied in dialysis patients.",
+            "citation_ids": ["cit-fda-label-2025", "cit-fda-integrated-review-2025", "cit-stealth-press-2025"]
+          }
+        ],
+        "anecdotal": [
+          {
+            "claim_id": "ss31-an-research-grade-use",
+            "study_title": "Research-grade SS-31 use outside clinical trials",
+            "study_type": "anecdotal / common use",
+            "population_or_model": "self-administering users in longevity/biohacking communities; research-compound vendors",
+            "disease_context": "not a clinical indication",
+            "n": "",
+            "age_or_species_details": "",
+            "route": "subcutaneous injection (common practice in communities); sometimes IV",
+            "dose_or_protocol": "Commonly 1-5 mg/day described in vendor guides; some protocols titrate toward 10-40 mg/day by analogy to clinical trial dosing.",
+            "duration": "Cycles of 8-12 weeks commonly described.",
+            "endpoints": "Self-reported energy, recovery, exercise tolerance.",
+            "notable_results_literal": "No peer-reviewed controlled data exist for SS-31 use in healthy humans outside trials. Vendor-authored dosing guides describe doses and schedules but are not primary evidence.",
+            "adverse_events_literal": "Anecdotal reports generally mirror clinical trial AEs (injection site reactions).",
+            "limitations": "Not primary evidence. Elamipretide is available as a prescription medication (Forzinity) only for Barth syndrome; research-grade SS-31 sold outside that channel is not FDA-regulated for human use.",
+            "citation_ids": ["cit-peptidewiki-2026", "cit-realpeptides-aging-2026"]
+          }
+        ]
+      },
+      "safety_risks": [
+        {
+          "system": "dermatologic",
+          "label": "Injection site reactions",
+          "help_summary": "",
+          "harm_summary": "Most common adverse reaction across clinical trials. Pooled/illustrative clinical rates reported in a review of the SS-31 program: erythema 57%, pruritus 47%, pain 20%, urticaria 20%, irritation 10%. In ReCLAIM-2 (n=117 elamipretide vs 59 placebo), 17.1% of elamipretide-treated subjects discontinued due to injection site reactions. Most are mild-to-moderate and manageable with oral antihistamines or topical corticosteroids.",
+          "citation_ids": ["cit-fda-label-2025", "cit-ehlers-2024", "cit-ss31-kidney-review-2022"]
+        },
+        {
+          "system": "immune",
+          "label": "Hypersensitivity",
+          "help_summary": "",
+          "harm_summary": "FDA label contraindicates in patients with serious hypersensitivity to elamipretide or excipients. Overdose signs are likely histamine-related (decreased blood pressure, presyncope).",
+          "citation_ids": ["cit-fda-label-2025"]
+        },
+        {
+          "system": "other",
+          "label": "Benzyl alcohol (preservative) in commercial formulation — neonatal toxicity risk",
+          "help_summary": "",
+          "harm_summary": "FORZINITY contains 10 mg benzyl alcohol per 0.5 mL dose. Benzyl-alcohol-containing drugs given IV have caused fatal 'gasping syndrome' (metabolic acidosis progressing to neurotoxicity) in low-birth-weight (<2500 g) and preterm (<34 weeks GA) neonates. Not approved for neonates; not approved for IV use.",
+          "citation_ids": ["cit-fda-label-2025"]
+        },
+        {
+          "system": "renal",
+          "label": "Dose adjustment in severe renal impairment",
+          "help_summary": "",
+          "harm_summary": "No dosage adjustment for mild (eGFR 60-89) or moderate (eGFR 30-59) renal impairment. Reduce dose by one half in adults with severe renal impairment (eGFR <30 mL/min) not on dialysis; AUC increases in severe renal impairment (label cites ~640% exposure increase in severe renal impairment cohort). Not studied in dialysis.",
+          "citation_ids": ["cit-fda-label-2025"]
+        },
+        {
+          "system": "reproductive",
+          "label": "Animal reproductive toxicology (no adverse signal)",
+          "help_summary": "Rat SC up to 20 mg/kg/day (~5x MRHD AUC) did not affect fertility or reproductive performance. Rat IV up to 10 mg/kg/day (~4x MRHD AUC) during organogenesis did not cause embryo-fetal toxicity. Rabbit IV up to 50 mg/kg/day (~10x MRHD AUC) during organogenesis did not cause embryo-fetal toxicity. Pre/postnatal rat SC up to 15 mg/kg/day throughout pregnancy and lactation did not cause adverse developmental effects.",
+          "harm_summary": "Human pregnancy/lactation data not established.",
+          "citation_ids": ["cit-fda-label-2025"]
+        },
+        {
+          "system": "ophthalmic",
+          "label": "Neovascular AMD conversion observed in dry AMD trials",
+          "help_summary": "",
+          "harm_summary": "ReCLAIM phase 1 (NCGA, n=19): 1 participant converted to neovascular AMD. ReCLAIM-2 phase 2: new-onset exudations occurred in 5.3% elamipretide vs 6.9% placebo — not elevated vs placebo but monitored.",
+          "citation_ids": ["cit-allingham-2022", "cit-ehlers-2024"]
+        },
+        {
+          "system": "neurologic",
+          "label": "Headache and dizziness",
+          "help_summary": "",
+          "harm_summary": "Reported in SS-31 program reviews as common non-injection-site AEs; generally mild and transient.",
+          "citation_ids": ["cit-ss31-kidney-review-2022"]
+        },
+        {
+          "system": "GI",
+          "label": "Nausea / abdominal pain / diarrhea",
+          "help_summary": "",
+          "harm_summary": "Reported at low frequency across clinical trials per program summaries.",
+          "citation_ids": ["cit-ss31-kidney-review-2022"]
+        }
+      ],
+      "enhancement_potential": {
+        "summary": "No published controlled human data evaluate elamipretide/SS-31 for enhancement in healthy individuals. All published human efficacy and safety data are in disease populations with documented mitochondrial dysfunction (Barth syndrome, PMM, HFrEF, dry AMD). Szeto et al. have repeatedly stated — and preclinical models support — that SS-31 has no effect on normal, non-diseased mitochondria. Enhancement claims made in longevity/biohacking contexts are not supported by primary human trial data.",
+        "caveat": "Preclinical studies in aged mice (e.g., Zhang 2020 eLife, Siegel 2013, Campbell 2019, Sweetwyne 2017) show functional benefit in skeletal muscle, kidney, and heart when there is pre-existing age-related mitochondrial dysfunction — this cannot be extrapolated to efficacy in healthy young humans, and published mechanistic claims specifically state SS-31 does not affect normal mitochondria.",
+        "citation_ids": ["cit-szeto-2014", "cit-zhang-2020", "cit-ss31-kidney-review-2022"]
+      },
+      "pk_pd": {
+        "summary": "Tetrapeptide; cell-permeable, rapidly absorbed after SC dosing with Cmax ~30-45 min and dose-proportional PK over clinical range. Human subcutaneous terminal t1/2 ~4 hours (preclinical rat/dog/monkey ~2 hours). Not metabolized by hepatic enzymes in vitro; not a substrate of major CYPs (CYP1A2, 2B6, 2C9, 2C19, 3A); does not induce CYP1A2, 2B6, or 3A4. Does not inhibit OCT2, BCRP, OAT1, OAT3, OATP1B1, OATP1B3, P-gp, or MATE2-K. Inhibits MATE1 (IC50 3.53 μM). Accumulates in inner mitochondrial membrane (concentration ~1000-fold above bulk) but is not transported into the matrix. In rabbit SC PK, 1 mg/kg produced measurable drug levels at choroid, RPE, and retina at Cmax. Severe renal impairment (eGFR <30) markedly increases AUC (per FDA label, ~640% relative increase in severe renal impairment cohort), prompting dose halving.",
+        "route": "subcutaneous (approved route for FORZINITY); intravenous used in early trials (MMPOWER phase 1/2, HFrEF phase 1/2) but not approved for IV use",
+        "half_life": "~4 hours SC in humans; ~2 hours in rat/dog/monkey",
+        "distribution": "Cell-permeable; selectively concentrates ~1000-fold in the inner mitochondrial membrane; distributes to choroid/RPE/retina after SC dosing in rabbit (supporting ophthalmic indications)",
+        "clearance": "No hepatic metabolism observed in vitro; not a CYP substrate. Clinical clearance mechanism not fully characterized in materials reviewed; renal impairment markedly alters exposure.",
+        "bioavailability": "Not stated numerically in materials reviewed; dose-proportional PK across clinical SC dose range",
+        "citation_ids": ["cit-fda-label-2025", "cit-ss31-kidney-review-2022", "cit-allingham-2022", "cit-peptidewiki-2026"]
+      },
+      "dosing_contexts": [
+        {
+          "context": "FDA label",
+          "display_text": "FORZINITY (elamipretide HCl) 40 mg subcutaneously once daily for Barth syndrome in patients ≥30 kg. In adults with severe renal impairment (eGFR <30 mL/min not on dialysis), reduce dose by one half. Not approved for neonates or IV use. Supplied as 280 mg/3.5 mL (80 mg/mL) solution in single-patient-use vials.",
+          "route": "subcutaneous",
+          "citation_ids": ["cit-fda-label-2025"]
+        },
+        {
+          "context": "clinical trial (MMPOWER, PMM)",
+          "display_text": "IV 0.01, 0.1, or 0.25 mg/kg/hr for 2 hours daily, ascending dose cohorts, 5 days (MMPOWER phase 1/2)",
+          "route": "intravenous",
+          "citation_ids": ["cit-karaa-2018"]
+        },
+        {
+          "context": "clinical trial (MMPOWER-2 and MMPOWER-3, PMM)",
+          "display_text": "40 mg subcutaneously once daily for 4 weeks (MMPOWER-2 crossover) or 24 weeks (MMPOWER-3)",
+          "route": "subcutaneous",
+          "citation_ids": ["cit-karaa-2020", "cit-karaa-2023"]
+        },
+        {
+          "context": "clinical trial (TAZPOWER, Barth syndrome)",
+          "display_text": "40 mg subcutaneously once daily for 12 weeks randomized + up to 192 weeks open-label extension",
+          "route": "subcutaneous",
+          "citation_ids": ["cit-thompson-2021", "cit-fda-label-2025"]
+        },
+        {
+          "context": "clinical trial (ReCLAIM/ReCLAIM-2, dry AMD)",
+          "display_text": "40 mg subcutaneously once daily for 24 weeks (ReCLAIM phase 1) or 48 weeks (ReCLAIM-2 phase 2)",
+          "route": "subcutaneous",
+          "citation_ids": ["cit-allingham-2022", "cit-ehlers-2024"]
+        },
+        {
+          "context": "clinical trial (HFrEF phase 1/2)",
+          "display_text": "IV 0.005, 0.05, or 0.25 mg/kg/hr infused for 4 hours, single dose",
+          "route": "intravenous",
+          "citation_ids": ["cit-sciencedirect-elamipretide-overview"]
+        },
+        {
+          "context": "anecdotal/common use (research compound)",
+          "display_text": "Vendor-authored guides describe 1-5 mg/day SC for longevity/aging protocols and up to 10-40 mg/day by analogy to clinical trial dosing. Not supported by human controlled data.",
+          "route": "subcutaneous",
+          "citation_ids": ["cit-peptidewiki-2026", "cit-realpeptides-aging-2026"]
+        }
+      ],
+      "missing_evidence": [
+        "Healthy-human pharmacodynamic enhancement data (no controlled RCTs in non-diseased adults)",
+        "Human clinical bioavailability numerical estimate (dose-proportional PK reported, absolute F% not stated in materials reviewed)",
+        "Human hepatic-impairment PK characterization (label notes hepatic impairment 'not expected' to alter PK based on in vitro absence of hepatic metabolism, not characterized in clinical study extracted)",
+        "Confirmatory trial evidence required for continued Barth syndrome approval — not yet published",
+        "PROGRESS-HF Phase 2 peer-reviewed primary publication of chronic-dosing HF outcomes — referenced in reviews but not located as standalone primary publication for this entry",
+        "Phase 3 ReNEW/ReGAIN AMD results — trials ongoing per February 2026 sources",
+        "NuPOWER Phase 3 (replisome-related nDNA PMM) results — trial planned per Karaa 2024 post-hoc analysis",
+        "Verifiable third-party Certificate-of-Analysis vendor data for research-grade SS-31 (Finnrick lists SS-31 as paid testing but no published vendor tests as of retrieval date)"
+      ]
+    }
+  ],
+  "citations": [
+    {
+      "id": "cit-szeto-2014",
+      "title": "First-in-class cardiolipin-protective compound as a therapeutic agent to restore mitochondrial bioenergetics",
+      "authors": ["Szeto HH"],
+      "year": 2014,
+      "doi": "10.1111/bph.12461",
+      "pmid": "24117042",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24117042/",
+      "quality": "review",
+      "notes": "Foundational review by the SS-31 originator describing discovery, cardiolipin target, and preclinical rationale. Used here to support general mechanism framing; primary mechanism claims are backed by Zhao 2004, Birk 2013, Mitchell 2020, Chavez 2020."
+    },
+    {
+      "id": "cit-zhao-2004",
+      "title": "Cell-permeable peptide antioxidants targeted to inner mitochondrial membrane inhibit mitochondrial swelling, oxidative cell death, and reperfusion injury",
+      "authors": ["Zhao K", "Zhao GM", "Wu D", "Soong Y", "Birk AV", "Schiller PW", "Szeto HH"],
+      "year": 2004,
+      "doi": "10.1074/jbc.M402999200",
+      "pmid": "",
+      "url": "https://www.jbc.org/article/S0021-9258(20)73105-X/fulltext",
+      "quality": "primary",
+      "notes": "Early primary paper establishing mitochondrial/cellular protection: inhibition of mitochondrial swelling, ΔΨm preservation, protection from oxidative cell death and reperfusion injury."
+    },
+    {
+      "id": "cit-birk-2013",
+      "title": "The mitochondrial-targeted compound SS-31 re-energizes ischemic mitochondria by interacting with cardiolipin",
+      "authors": ["Birk AV", "Liu S", "Soong Y", "et al."],
+      "year": 2013,
+      "doi": "10.1681/ASN.2012121216",
+      "pmid": "",
+      "url": "https://jasn.asnjournals.org/content/24/8/1250",
+      "quality": "primary",
+      "notes": "Primary paper establishing cardiolipin interaction as the mechanism underlying re-energization of ischemic mitochondria."
+    },
+    {
+      "id": "cit-mitchell-2020",
+      "title": "The mitochondria-targeted peptide SS-31 binds lipid bilayers and modulates surface electrostatics as a key component of its mechanism of action",
+      "authors": ["Mitchell W", "Ng EA", "Tamucci JD", "Boyd KJ", "Sathappa M", "Coscia A", "Pan M", "Han X", "Eddy NA", "May ER", "Szeto HH", "Alder NN"],
+      "year": 2020,
+      "doi": "10.1074/jbc.RA119.012094",
+      "pmid": "",
+      "url": "https://www.jbc.org/article/S0021-9258(17)50276-8/fulltext",
+      "quality": "primary",
+      "notes": "Biophysical primary paper establishing lipid-bilayer partitioning, stoichiometry (1.4-1.5 dianionic lipids per SS-31 for TOCL/MLCL membranes), and surface-electrostatic modulation as a key MoA component."
+    },
+    {
+      "id": "cit-chavez-2020",
+      "title": "Mitochondrial protein interaction landscape of SS-31",
+      "authors": ["Chavez JD", "Tang X", "Campbell MD", "Reyes G", "Kramer PA", "Stuppard R", "Keller A", "Zhang H", "Rabinovitch PS", "Marcinek DJ", "Bruce JE"],
+      "year": 2020,
+      "doi": "10.1073/pnas.2002250117",
+      "pmid": "32554496",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2002250117",
+      "quality": "primary",
+      "notes": "PIR cross-linking mass-spec primary paper identifying SS-31-proximal proteins in functional mitochondria (ATP production, 2-oxoglutarate metabolism, cardiolipin binders). Source of the ~1000-fold IMM enrichment and nKD 2.9 μM figures."
+    },
+    {
+      "id": "cit-chatfield-2019",
+      "title": "Elamipretide improves mitochondrial function in the failing human heart",
+      "authors": ["Chatfield KC", "Sparagna GC", "Chau S", "Phillips EK", "Ambardekar AV", "Aftab M", "Mitchell MB", "Sucharov CC", "Miyamoto SD", "Stauffer BL"],
+      "year": 2019,
+      "doi": "10.1016/j.jacbts.2018.12.005",
+      "pmid": "",
+      "url": "https://www.jacc.org/doi/10.1016/j.jacbts.2018.12.005",
+      "quality": "primary",
+      "notes": "Ex vivo failing human heart tissue: acute elamipretide improved mitochondrial O2 flux, Complex I, Complex IV, and supercomplex-associated Complex IV activities independent of cardiolipin remodeling."
+    },
+    {
+      "id": "cit-karaa-2018",
+      "title": "Randomized dose-escalation trial of elamipretide in adults with primary mitochondrial myopathy (MMPOWER)",
+      "authors": ["Karaa A", "Haas R", "Goldstein A", "Vockley J", "Weaver WD", "Cohen BH"],
+      "year": 2018,
+      "doi": "10.1212/WNL.0000000000005255",
+      "pmid": "29500292",
+      "url": "https://www.neurology.org/doi/10.1212/WNL.0000000000005255",
+      "quality": "primary",
+      "notes": "MMPOWER phase 1/2 IV dose-escalation RCT. Class I evidence that highest dose improved 6MWT at day 5 (+64.5 m vs +20.4 m placebo, p=0.053; dose-dependent p=0.014)."
+    },
+    {
+      "id": "cit-karaa-2020",
+      "title": "A randomized crossover trial of elamipretide in adults with primary mitochondrial myopathy (MMPOWER-2)",
+      "authors": ["Karaa A", "Haas R", "Goldstein A", "Vockley J", "Cohen BH"],
+      "year": 2020,
+      "doi": "",
+      "pmid": "32096613",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32096613/",
+      "quality": "primary",
+      "notes": "MMPOWER-2 4-week SC 40 mg crossover (N=30). 6MWT +20 m p=0.08 (not significant). PMMSA Total Fatigue p=0.0006."
+    },
+    {
+      "id": "cit-karaa-2023",
+      "title": "Efficacy and Safety of Elamipretide in Individuals With Primary Mitochondrial Myopathy: The MMPOWER-3 Randomized Clinical Trial",
+      "authors": ["Karaa A", "Bertini E", "Carelli V", "Cohen BH", "Enns GM", "Falk MJ", "Goldstein A", "Gorman GS", "Haas R", "Hirano M", "Klopstock T", "Koenig MK", "Kornblum C", "Lamperti C", "Lehman A", "Longo N", "Molnar MJ", "Parikh S", "Phan H", "Pitceathly RDS", "Saneto R", "Scaglia F", "Servidei S", "Tarnopolsky M", "Toscano A", "Van Hove JLK", "Vissing J", "Vockley J", "Finman JS", "Brown DA", "Shiffer JA", "Mancuso M"],
+      "year": 2023,
+      "doi": "10.1212/WNL.0000000000207402",
+      "pmid": "37268435",
+      "url": "https://www.neurology.org/doi/10.1212/WNL.0000000000207402",
+      "quality": "primary",
+      "notes": "MMPOWER-3 phase 3 (N=218) did NOT meet co-primary endpoints (6MWT and PMMSA TFS) at 24 weeks. Class I evidence of non-efficacy in overall PMM population. nDNA subgroup post-hoc: 25.2 m 6MWT difference, p=0.03."
+    },
+    {
+      "id": "cit-karaa-2024",
+      "title": "Genotype-specific effects of elamipretide in patients with primary mitochondrial myopathy: a post hoc analysis of the MMPOWER-3 trial",
+      "authors": ["Karaa A", "Bertini E", "Carelli V", "Cohen B", "Enns GM", "Falk MJ", "Goldstein A", "Gorman G", "Haas R", "Hirano M", "Klopstock T", "Koenig MK", "Kornblum C", "Lamperti C", "Lehman A", "Longo N", "Molnar MJ", "Parikh S", "Phan H", "Pitceathly RDS", "Saneto R", "Scaglia F", "Servidei S", "Tarnopolsky M", "Toscano A", "Van Hove JLK", "Vissing J", "Vockley J", "Finman JS", "Abbruscato A", "Brown DA", "Sullivan A", "Shiffer JA", "Mancuso M"],
+      "year": 2024,
+      "doi": "10.1186/s13023-024-03421-5",
+      "pmid": "39574155",
+      "url": "https://link.springer.com/article/10.1186/s13023-024-03421-5",
+      "quality": "primary",
+      "notes": "Post-hoc genotype-specific analysis of MMPOWER-3 motivating the planned NuPOWER phase 3 in replisome-related nDNA PMM and CPEO."
+    },
+    {
+      "id": "cit-thompson-2021",
+      "title": "A phase 2/3 randomized clinical trial followed by an open-label extension to evaluate the effectiveness of elamipretide in Barth syndrome, a genetic disorder of mitochondrial cardiolipin metabolism (TAZPOWER)",
+      "authors": ["Thompson WR", "DeCroes B", "McClellan R", "Rubens J", "Vaz FM", "Kristaponis K", "Wagner D", "Hornby B", "Vernon HJ"],
+      "year": 2021,
+      "doi": "10.1038/s41436-020-01021-9",
+      "pmid": "",
+      "url": "https://www.nature.com/articles/s41436-020-01021-9",
+      "quality": "primary",
+      "notes": "TAZPOWER primary publication. 12 Barth patients, SC 40 mg/day crossover; primary endpoints (6MWT, BTHS-SA TFS) not met in randomized portion."
+    },
+    {
+      "id": "cit-hornby-2022",
+      "title": "Natural history comparison study to assess the efficacy of elamipretide in patients with Barth syndrome",
+      "authors": ["Hornby B", "Thompson WR", "Almuqbil M", "Manuel R", "Abbruscato A", "Carr J", "Vernon HJ"],
+      "year": 2022,
+      "doi": "10.1186/s13023-022-02389-4",
+      "pmid": "",
+      "url": "https://ojrd.biomedcentral.com/articles/10.1186/s13023-022-02389-4",
+      "quality": "primary",
+      "notes": "SPIBA-001 natural-history control study comparison to TAZPOWER OLE; submitted in initial Barth NDA package."
+    },
+    {
+      "id": "cit-allingham-2022",
+      "title": "Phase 1 Clinical Trial of Elamipretide in Dry Age-Related Macular Degeneration and Noncentral Geographic Atrophy: ReCLAIM NCGA Study",
+      "authors": ["Allingham MJ", "Mettu PS", "Cousins SW"],
+      "year": 2022,
+      "doi": "10.1016/j.xops.2021.100095",
+      "pmid": "",
+      "url": "https://www.ophthalmologyscience.org/article/S2666-9145(21)00088-9/fulltext",
+      "quality": "primary",
+      "notes": "Open-label phase 1 in dry AMD/NCGA (n=19). 24-week SC 40 mg. BCVA +4.6 letters (p=0.0032); LLBCVA +5.4 letters (p=0.0245)."
+    },
+    {
+      "id": "cit-ehlers-2024",
+      "title": "ReCLAIM-2: A Randomized Phase II Clinical Trial Evaluating Elamipretide in Age-related Macular Degeneration, Geographic Atrophy Growth, Visual Function, and Ellipsoid Zone Preservation",
+      "authors": ["Ehlers JP", "Hu A", "Boyer D", "et al."],
+      "year": 2024,
+      "doi": "10.1016/j.xops.2024.100628",
+      "pmid": "",
+      "url": "https://www.ophthalmologyscience.org/article/S2666-9145(24)00164-7/fulltext",
+      "quality": "primary",
+      "notes": "ReCLAIM-2 phase 2 RCT (N=176) primary publication. Primary endpoints NOT met; EZ attenuation secondary endpoints significant at nominal p."
+    },
+    {
+      "id": "cit-zhang-2020",
+      "title": "Late-life restoration of mitochondrial function reverses cardiac dysfunction in old mice",
+      "authors": ["Zhang H", "Alder NN", "Wang W", "Szeto HH", "Marcinek DJ", "Rabinovitch PS"],
+      "year": 2020,
+      "doi": "10.7554/eLife.55513",
+      "pmid": "",
+      "url": "https://elifesciences.org/articles/55513",
+      "quality": "primary",
+      "notes": "Aged-mouse preclinical study: 8-week SC SS-31 reversed diastolic dysfunction; ROS-normalization mechanism inferred from lack of additive effect in mCAT mice."
+    },
+    {
+      "id": "cit-allen-2020",
+      "title": "The cardiolipin-binding peptide elamipretide mitigates fragmentation of cristae networks following cardiac ischemia reperfusion in rats",
+      "authors": ["Allen ME", "Pennington ER", "Perry JB", "et al."],
+      "year": 2020,
+      "doi": "10.1038/s42003-020-1101-3",
+      "pmid": "",
+      "url": "https://www.nature.com/articles/s42003-020-1101-3",
+      "quality": "primary",
+      "notes": "Rat cardiac IR preclinical: mitigated cristae network fragmentation."
+    },
+    {
+      "id": "cit-fda-label-2025",
+      "title": "FORZINITY (elamipretide) injection, for subcutaneous use — Prescribing Information (NDA 215244)",
+      "authors": ["U.S. Food and Drug Administration", "Stealth BioTherapeutics Inc."],
+      "year": 2025,
+      "doi": "",
+      "pmid": "",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215244s000lbl.pdf",
+      "quality": "regulatory",
+      "notes": "Primary regulatory document. Source of dose, indication, contraindications, warnings (benzyl alcohol/gasping syndrome), renal dose adjustment, drug-transporter interactions (MATE1 IC50 3.53 μM), reproductive tox, molecular formula/weight (C32H49N9O5·3HCl; 749.2), and explicit note that TAZPOWER randomized-phase primary endpoints were not met."
+    },
+    {
+      "id": "cit-fda-integrated-review-2025",
+      "title": "Integrated Review for FORZINITY (elamipretide) NDA 215244",
+      "authors": ["U.S. Food and Drug Administration"],
+      "year": 2025,
+      "doi": "",
+      "pmid": "",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/215244Orig1s000IntegratedR.pdf",
+      "quality": "regulatory",
+      "notes": "FDA integrated review document providing full regulatory rationale for accelerated approval."
+    },
+    {
+      "id": "cit-stealth-press-2025",
+      "title": "Stealth BioTherapeutics Announces FDA Accelerated Approval of FORZINITY (elamipretide) injection, the First Therapy for Barth Syndrome",
+      "authors": ["Stealth BioTherapeutics Inc."],
+      "year": 2025,
+      "doi": "",
+      "pmid": "",
+      "url": "https://stealthbt.com/stealth-biotherapeutics-announces-fda-accelerated-approval-of-forzinity-elamipretide-hcl-the-first-therapy-for-progressive-and-life-limiting-ultra-rare-genetic-disease-barth-syndrome/",
+      "quality": "vendor",
+      "notes": "Company press release corroborating approval date (Sept 19, 2025), designations, patient population (~150 in US), and confirmatory-trial requirement. Used as secondary corroboration; regulatory facts primarily sourced from FDA label."
+    },
+    {
+      "id": "cit-ss31-kidney-review-2022",
+      "title": "SS-31, a Mitochondria-Targeting Peptide, Ameliorates Kidney Disease",
+      "authors": ["(multi-author review; PMC ID PMC9192202)"],
+      "year": 2022,
+      "doi": "",
+      "pmid": "",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9192202/",
+      "quality": "review",
+      "notes": "Review used as supplementary source for aggregate clinical AE percentages (injection-site erythema 57%, pruritus 47%, pain 20%, urticaria 20%, irritation 10%, plus dizziness/headache), and for animal PK t1/2 ~2h in rat/dog/monkey. Primary AE rates for the approved indication are in the FDA label."
+    },
+    {
+      "id": "cit-sciencedirect-elamipretide-overview",
+      "title": "Elamipretide (topic overview)",
+      "authors": ["ScienceDirect contributors"],
+      "year": 2024,
+      "doi": "",
+      "pmid": "",
+      "url": "https://www.sciencedirect.com/topics/medicine-and-dentistry/elamipretide",
+      "quality": "review",
+      "notes": "Review used to locate the HFrEF phase 1/2 IV single-dose trial (36 HFrEF patients, 4-h infusion at 0.005/0.05/0.25 mg/kg/hr; highest dose -18 mL LVEDV p=0.009, -14 mL LVESV p=0.005). The underlying primary publication (Daubert et al., Circulation: Heart Failure 2017) was not re-verified in this session; claim is retained with this review as interim citation."
+    },
+    {
+      "id": "cit-peptidewiki-2026",
+      "title": "SS-31 (Elamipretide) Dosage Guide",
+      "authors": ["peptidewiki.co"],
+      "year": 2026,
+      "doi": "",
+      "pmid": "",
+      "url": "https://peptidewiki.co/guides/dosage-guides/ss-31-dosage-guide",
+      "quality": "vendor",
+      "notes": "Non-primary; used only to document that human SC t1/2 is commonly reported as ~4 h and to note anecdotal/common dosing ranges. Not relied on for mechanistic or trial claims."
+    },
+    {
+      "id": "cit-realpeptides-aging-2026",
+      "title": "How to Use SS-31 for Aging Protocol",
+      "authors": ["realpeptides.co"],
+      "year": 2026,
+      "doi": "",
+      "pmid": "",
+      "url": "https://www.realpeptides.co/use-ss-31-aging-protocol/",
+      "quality": "vendor",
+      "notes": "Non-primary vendor source; cited only for anecdotal/common-use dosing narratives. Not relied on for clinical or mechanistic claims."
+    }
+  ]
+}
