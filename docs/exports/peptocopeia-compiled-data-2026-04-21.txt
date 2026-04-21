@@ -1,5 +1,5 @@
 peptocopeia compiled data export
-generated_at: 2026-04-21T06:39:08.277Z
+generated_at: 2026-04-21T07:02:24.941Z
 peptide_count: 45
 source_registry_count: 3
 
@@ -7941,7 +7941,7 @@ human_evidence: No curated human evidence summary has been published from the so
 animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
 mechanism_detail: Retatrutide should be read as a distributed metabolic program: GLP-1R and GIPR signaling support incretin-mediated glycemic control, while GCGR engagement adds a distinct hepatic and energy-expenditure axis. The resulting phenotype is a composite of lower intake, altered nutrient partitioning, and glucagon-linked energy handling rather than a simple appetite-only mechanism.
 safety_detail: Safety detail pending source extraction; do not infer safety from absence of listed adverse events.
-manufacturers: Finnrick vendor summary batch (public vendor-quality aggregation): Finnrick batch summary (2026-04-21): 164 vendors, 2489 tests, first test 2024-12-17, latest test 2026-04-13. 98.71%-99.95% purity 5th-95th percentile Quantity divergence 95th percentile window: +/-45%. Page content truncated at ~141/164 vendors; remaining ~23 E/F rated vendors not captured. Re-fetch required for completion.
+manufacturers: Finnrick vendor summary batch (public vendor-quality aggregation): Finnrick batch summary (2026-04-21): 164 vendors, 2489 tests, first test 2024-12-17, latest test 2026-04-13. 98.71%-99.95% purity 5th-95th percentile Quantity divergence 95th percentile window: +/-45%.
 missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins | price data | vendor website / availability | per-sample COA detail
 anecdotal_use: none
 
@@ -10014,6 +10014,396 @@ anecdotal_use: none
   sterility: none
   lab: Finnrick aggregate (multiple commercial labs)
   coa_url: https://www.finnrick.com/products/retatrutide/oupeptide
+  date: none
+  symbols: V
+- vendor: Peptide Gurus
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Peptide Gurus)
+  product_url: https://www.finnrick.com/products/retatrutide/peptide-gurus
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/peptide-gurus
+  date: none
+  symbols: V
+- vendor: Peptide-S
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Peptide-S)
+  product_url: https://www.finnrick.com/products/retatrutide/peptide-s
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/peptide-s
+  date: none
+  symbols: V
+- vendor: Reta-Peptide
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Reta-Peptide)
+  product_url: https://www.finnrick.com/products/retatrutide/reta-peptide
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/reta-peptide
+  date: none
+  symbols: V
+- vendor: Shaanxi Dideu Medichem
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Shaanxi Dideu Medichem)
+  product_url: https://www.finnrick.com/products/retatrutide/shaanxi-dideu-medichem
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/shaanxi-dideu-medichem
+  date: none
+  symbols: V
+- vendor: Shanghai OuDaXin New Material Technology Center
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Shanghai OuDaXin New Material Technology Center)
+  product_url: https://www.finnrick.com/products/retatrutide/shanghai-oudaxin-new-material-technology-center
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/shanghai-oudaxin-new-material-technology-center
+  date: none
+  symbols: V
+- vendor: Shanxi Qianyecao Biotech QYC
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Shanxi Qianyecao Biotech QYC)
+  product_url: https://www.finnrick.com/products/retatrutide/shanxi-qianyecao-biotech-qyc
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/shanxi-qianyecao-biotech-qyc
+  date: none
+  symbols: V
+- vendor: Steady Meds
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Steady Meds)
+  product_url: https://www.finnrick.com/products/retatrutide/steady-meds
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/steady-meds
+  date: none
+  symbols: V
+- vendor: Super Peptides
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Super Peptides)
+  product_url: https://www.finnrick.com/products/retatrutide/super-peptides
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/super-peptides
+  date: none
+  symbols: V
+- vendor: Tianjin Ruiwang New Material Technology Co
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Tianjin Ruiwang New Material Technology Co)
+  product_url: https://www.finnrick.com/products/retatrutide/tianjin-ruiwang-new-material-technology-co
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/tianjin-ruiwang-new-material-technology-co
+  date: none
+  symbols: V
+- vendor: Xingtai Lesda Technology
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Xingtai Lesda Technology)
+  product_url: https://www.finnrick.com/products/retatrutide/xingtai-lesda-technology
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/xingtai-lesda-technology
+  date: none
+  symbols: V
+- vendor: Yimei
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Yimei)
+  product_url: https://www.finnrick.com/products/retatrutide/yimei
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/yimei
+  date: none
+  symbols: V
+- vendor: ZLZ Peptide
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (ZLZ Peptide)
+  product_url: https://www.finnrick.com/products/retatrutide/zlz-peptide
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/zlz-peptide
+  date: none
+  symbols: V
+- vendor: ZZQ Peptides
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (ZZQ Peptides)
+  product_url: https://www.finnrick.com/products/retatrutide/zzq-peptides
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/zzq-peptides
+  date: none
+  symbols: V
+- vendor: Amplified Amino
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Amplified Amino)
+  product_url: https://www.finnrick.com/products/retatrutide/amplified-amino
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/amplified-amino
+  date: none
+  symbols: V
+- vendor: Alimo Peptide
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Alimo Peptide)
+  product_url: https://www.finnrick.com/products/retatrutide/alimo-peptide
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/alimo-peptide
+  date: none
+  symbols: V
+- vendor: Modern Aminos
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Modern Aminos)
+  product_url: https://www.finnrick.com/products/retatrutide/modern-aminos
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/modern-aminos
+  date: none
+  symbols: V
+- vendor: Nantong Guangyuan Chemical GYC
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Nantong Guangyuan Chemical GYC)
+  product_url: https://www.finnrick.com/products/retatrutide/nantong-guangyuan-chemical-gyc
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/nantong-guangyuan-chemical-gyc
+  date: none
+  symbols: V
+- vendor: Qingdao Sigma Chemical QSC
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Qingdao Sigma Chemical QSC)
+  product_url: https://www.finnrick.com/products/retatrutide/qingdao-sigma-chemical-qsc
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/qingdao-sigma-chemical-qsc
+  date: none
+  symbols: V
+- vendor: Wuhan Wansheng Biotechnology
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Wuhan Wansheng Biotechnology)
+  product_url: https://www.finnrick.com/products/retatrutide/wuhan-wansheng-biotechnology
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/wuhan-wansheng-biotechnology
+  date: none
+  symbols: V
+- vendor: Shanghai Sigma Audley SSA
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Shanghai Sigma Audley SSA)
+  product_url: https://www.finnrick.com/products/retatrutide/shanghai-sigma-audley-ssa
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/shanghai-sigma-audley-ssa
+  date: none
+  symbols: V
+- vendor: Regenerative Research
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Regenerative Research)
+  product_url: https://www.finnrick.com/products/retatrutide/regenerative-research
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/regenerative-research
+  date: none
+  symbols: V
+- vendor: Pura Peptides
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Pura Peptides)
+  product_url: https://www.finnrick.com/products/retatrutide/pura-peptides
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/pura-peptides
+  date: none
+  symbols: V
+- vendor: TCI
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (TCI)
+  product_url: https://www.finnrick.com/products/retatrutide/tci
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/tci
+  date: none
+  symbols: V
+- vendor: Peptide Worldwide
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Peptide Worldwide)
+  product_url: https://www.finnrick.com/products/retatrutide/peptide-worldwide
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/peptide-worldwide
+  date: none
+  symbols: V
+- vendor: Wolverine Peptides
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (Wolverine Peptides)
+  product_url: https://www.finnrick.com/products/retatrutide/wolverine-peptides
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/wolverine-peptides
+  date: none
+  symbols: V
+- vendor: WllyBIO
+  product_name: Retatrutide (GLP-1, GIP, and GCGR agonist) (WllyBIO)
+  product_url: https://www.finnrick.com/products/retatrutide/wllybio
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/retatrutide/wllybio
   date: none
   symbols: V
 
@@ -13371,7 +13761,7 @@ human_evidence: FDA-recognized branded products provide strong human regulatory 
 animal_evidence: No curated animal evidence summary has been published from the source pipeline yet.
 mechanism_detail: Mechanistically, tirzepatide is best understood as a dual incretin agonist rather than a generic weight-loss drug: GLP-1R/GIPR engagement drives cAMP, PKA, and EPAC signaling in islet cells, increasing glucose-dependent insulin secretion while limiting inappropriate glucagon release. In parallel, central GLP-1-linked satiety signaling and early gastric-emptying delay reduce caloric intake; body-weight and glycemic changes are downstream integrated physiological outcomes.
 safety_detail: Display label-specific adverse events, contraindications, and boxed warnings only after label import. Common/nonclinical enhancement anecdotes must remain separate from label evidence.
-manufacturers: Finnrick vendor summary batch (public vendor-quality aggregation): Finnrick batch summary (2026-04-21): 136 vendors, 1776 tests, first test 2024-12-17, latest test 2026-04-13. 98.79%-99.95% purity 5th-95th percentile Quantity divergence 95th percentile window: +/-43%. Page truncated at ~128/136 vendors due to token limit; remaining ~8 F-Fraud / low-rated vendors not captured — re-fetch with higher token limit to complete
+manufacturers: Finnrick vendor summary batch (public vendor-quality aggregation): Finnrick batch summary (2026-04-21): 136 vendors, 1776 tests, first test 2024-12-17, latest test 2026-04-13. 98.79%-99.95% purity 5th-95th percentile Quantity divergence 95th percentile window: +/-43%.
 missing_evidence: primary citations | regulatory status | human outcomes | safety/adverse events | PK/PD | cytokines/interleukins | price data | vendor website / availability | per-sample COA detail
 anecdotal_use: Common online enhancement/weight-loss discussion exists, but it should be labeled anecdotal/common-use unless tied to an approved indication or published study.
 
@@ -15279,6 +15669,126 @@ anecdotal_use: Common online enhancement/weight-loss discussion exists, but it s
   sterility: none
   lab: Finnrick aggregate (multiple commercial labs)
   coa_url: https://www.finnrick.com/products/tirzepatide/nantong-guangyuan-chemical-gyc
+  date: none
+  symbols: V
+- vendor: Wuhan Wansheng Biotechnology
+  product_name: Tirzepatide (GLP-1 and GIP agonist) (Wuhan Wansheng Biotechnology)
+  product_url: https://www.finnrick.com/products/tirzepatide/wuhan-wansheng-biotechnology
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/tirzepatide/wuhan-wansheng-biotechnology
+  date: none
+  symbols: V
+- vendor: Shanghai Sigma Audley SSA
+  product_name: Tirzepatide (GLP-1 and GIP agonist) (Shanghai Sigma Audley SSA)
+  product_url: https://www.finnrick.com/products/tirzepatide/shanghai-sigma-audley-ssa
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/tirzepatide/shanghai-sigma-audley-ssa
+  date: none
+  symbols: V
+- vendor: Glamgurcraft Innovations Foreign Trade
+  product_name: Tirzepatide (GLP-1 and GIP agonist) (Glamgurcraft Innovations Foreign Trade)
+  product_url: https://www.finnrick.com/products/tirzepatide/glamgurcraft-innovations-foreign-trade
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/tirzepatide/glamgurcraft-innovations-foreign-trade
+  date: none
+  symbols: V
+- vendor: Hazel
+  product_name: Tirzepatide (GLP-1 and GIP agonist) (Hazel)
+  product_url: https://www.finnrick.com/products/tirzepatide/hazel
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/tirzepatide/hazel
+  date: none
+  symbols: V
+- vendor: AKS Chem
+  product_name: Tirzepatide (GLP-1 and GIP agonist) (AKS Chem)
+  product_url: https://www.finnrick.com/products/tirzepatide/aks-chem
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/tirzepatide/aks-chem
+  date: none
+  symbols: V
+- vendor: Yongkang Nuoao Trading Co
+  product_name: Tirzepatide (GLP-1 and GIP agonist) (Yongkang Nuoao Trading Co)
+  product_url: https://www.finnrick.com/products/tirzepatide/yongkang-nuoao-trading-co
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/tirzepatide/yongkang-nuoao-trading-co
+  date: none
+  symbols: V
+- vendor: Richards Biotech Simply Richards
+  product_name: Tirzepatide (GLP-1 and GIP agonist) (Richards Biotech Simply Richards)
+  product_url: https://www.finnrick.com/products/tirzepatide/richards-biotech-simply-richards
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/tirzepatide/richards-biotech-simply-richards
+  date: none
+  symbols: V
+- vendor: Hybiopeptides
+  product_name: Tirzepatide (GLP-1 and GIP agonist) (Hybiopeptides)
+  product_url: https://www.finnrick.com/products/tirzepatide/hybiopeptides
+  vial_size: none
+  price_range: none
+  batch_id: none
+  manufacturer_id: none
+  purity: none
+  endotoxin: none
+  heavy_metals: none
+  sterility: none
+  lab: Finnrick aggregate (multiple commercial labs)
+  coa_url: https://www.finnrick.com/products/tirzepatide/hybiopeptides
   date: none
   symbols: V
 

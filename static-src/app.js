@@ -8,17 +8,19 @@ const defaultState = {
   sort: "evidence",
   selected: null,
   tag: null,
+  keySymbol: null,
   humanOnly: false,
   animalOnly: false,
   bibliographyOpen: false,
-  legendOpen: true,
   brandAlt: false
 };
 
 let state = { ...defaultState };
+const wikiCache = new Map();
+const wikiPending = new Set();
 
 const CATEGORY_COLORS = {
-  Metabolic: "#7dd3fc",
+  Metabolic: "#ff5a1f",
   "Growth Factors": "#c4b5fd",
   "Recovery & Repair": "#fda4af",
   "Anti-Aging": "#f9a8d4",
@@ -78,7 +80,12 @@ function restoreFocus(snapshot) {
 
 function symbols(items = []) {
   return `<span class="symbols">${items
-    .map((symbol) => `<abbr title="${esc(DATA.evidenceLegend[symbol] || "unmapped evidence symbol")}">${symbolGlyph(symbol)}</abbr>`)
+    .map(
+      (symbol) =>
+        `<button class="symbol-button" type="button" data-open-key="${esc(symbol)}" aria-label="${esc(
+          DATA.evidenceLegend[symbol] || "unmapped evidence symbol"
+        )}" title="${esc(DATA.evidenceLegend[symbol] || "unmapped evidence symbol")}">${symbolGlyph(symbol)}</button>`
+    )
     .join("")}</span>`;
 }
 
@@ -112,6 +119,13 @@ function formatPeptideName(name) {
 
 function categoryColor(category) {
   return CATEGORY_COLORS[category] || "#9fb0c4";
+}
+
+function hexToRgb(hex) {
+  const raw = (hex || "").replace("#", "");
+  if (raw.length !== 6) return "159,176,196";
+  const value = Number.parseInt(raw, 16);
+  return `${(value >> 16) & 255},${(value >> 8) & 255},${value & 255}`;
 }
 
 function evidenceClass(tier) {
@@ -170,9 +184,12 @@ function hasAnimalStudies(peptide) {
 }
 
 function tag(type, value, sy = [], sourcePeptideId = "") {
-  return `<button class="tag tag-${esc(type)}" data-tag-type="${esc(type)}" data-tag-value="${esc(value)}" data-tag-source="${esc(sourcePeptideId)}">
-    ${esc(value)}${sy.length ? ` ${symbols(sy)}` : ""}
-  </button>`;
+  return `<span class="tag-cluster">
+    <button class="tag tag-${esc(type)}" data-tag-type="${esc(type)}" data-tag-value="${esc(value)}" data-tag-source="${esc(sourcePeptideId)}">
+      ${esc(value)}
+    </button>
+    ${sy.length ? symbols(sy) : ""}
+  </span>`;
 }
 
 function searchable(p) {
@@ -223,7 +240,7 @@ function filteredPeptides() {
 }
 
 function resetToGridState() {
-  state = { ...defaultState, legendOpen: state.legendOpen, brandAlt: state.brandAlt };
+  state = { ...defaultState, brandAlt: state.brandAlt };
 }
 
 function syncHistory(view = "grid") {
@@ -276,20 +293,90 @@ function relatedPeptides() {
     .filter((item) => item.matches.length);
 }
 
+function infoQueryForTag(tagState) {
+  const value = tagState?.value || "";
+  const aliases = {
+    AMPK: "AMP-activated protein kinase",
+    "TNF-alpha": "Tumor necrosis factor",
+    TNF: "Tumor necrosis factor",
+    "IL-6": "Interleukin 6",
+    "IL-1beta": "Interleukin 1 beta",
+    VEGF: "Vascular endothelial growth factor",
+    VEGFR1: "FLT1",
+    VEGFR2: "KDR",
+    AKT: "Protein kinase B",
+    ERK1: "MAPK3",
+    ERK2: "MAPK1",
+    "NF-kB": "NF-kappa B",
+    "NF-kappaB": "NF-kappa B",
+    Nrf2: "NFE2L2",
+    TGFbeta1: "Transforming growth factor beta 1",
+    TGFb1: "Transforming growth factor beta 1",
+    Smad2: "SMAD2",
+    Smad3: "SMAD3",
+    "MMP-9": "Matrix metallopeptidase 9",
+    "TIMP-1": "TIMP1",
+    "GLP-1R": "Glucagon-like peptide-1 receptor",
+    GIPR: "Gastric inhibitory polypeptide receptor",
+    GCGR: "Glucagon receptor",
+    GHRHR: "Growth hormone-releasing hormone receptor",
+    GHSR: "Growth hormone secretagogue receptor",
+    CK2: "Casein kinase 2",
+    APPL1: "APPL1",
+    "PGC-1alpha": "PPARGC1A",
+    eNOS: "NOS3",
+    "COX-2": "PTGS2"
+  };
+  return aliases[value] || value;
+}
+
+async function fetchWikiSummary(tagState) {
+  if (!tagState) return;
+  const cacheKey = `${tagState.type}:${tagState.value}`;
+  if (wikiCache.has(cacheKey) || wikiPending.has(cacheKey)) return;
+  wikiPending.add(cacheKey);
+  render();
+  const query = infoQueryForTag(tagState);
+  try {
+    const searchRes = await fetch(
+      `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&origin=*`
+    );
+    const searchJson = await searchRes.json();
+    const title = searchJson?.query?.search?.[0]?.title || query;
+    const summaryRes = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`);
+    const summaryJson = await summaryRes.json();
+    wikiCache.set(cacheKey, {
+      title: summaryJson?.title || title,
+      extract: summaryJson?.extract || "Wikipedia summary unavailable for this term.",
+      url: summaryJson?.content_urls?.desktop?.page || `https://en.wikipedia.org/wiki/${encodeURIComponent(title.replaceAll(" ", "_"))}`
+    });
+  } catch {
+    wikiCache.set(cacheKey, {
+      title: query,
+      extract: "Wikipedia summary unavailable for this term.",
+      url: null
+    });
+  } finally {
+    wikiPending.delete(cacheKey);
+    render();
+  }
+}
+
 function tile(p) {
   const review = moderationLabel(p.moderation.status);
   const clinical = p.tile.clinicalUses[0] || "Clinical use context not yet verified.";
   const enhancement = p.expanded.anecdotalUse[0] || "No enhancement/common-use statement imported.";
   const risk = p.tile.sideEffects[0] || p.expanded.safetyDetail || "Key risk context pending extraction.";
   const classColor = categoryColor(p.category);
-  return `<article class="tile" style="--type-color:${esc(classColor)}" data-expand="${esc(p.id)}" data-peptide-id="${esc(p.id)}" tabindex="0" aria-label="Open ${esc(p.names.primary)} article">
+  return `<article class="tile" style="--type-color:${esc(classColor)};--type-rgb:${hexToRgb(classColor)}" data-expand="${esc(p.id)}" data-peptide-id="${esc(p.id)}" tabindex="0" aria-label="Open ${esc(p.names.primary)} article">
     <header>
       <div>
         <p class="eyebrow category-label">${esc(p.category)}</p>
         <h2 class="name-display">${formatPeptideName(p.names.primary)}</h2>
-        <p class="aliases"><span class="type-pill">${esc(p.classification.peptideClass)}</span> ${esc(p.names.aliases.join(" / "))}</p>
       </div>
-      <span class="verify ${p.moderation.status === "verified" ? "ok" : "pending"}" title="${esc(review)}"></span>
+      <button class="verify ${p.moderation.status === "verified" ? "ok" : "pending"}" data-open-key="review" title="${esc(review)}" aria-label="${esc(
+        review
+      )}"></button>
     </header>
     <div class="tile-status">
       <span class="evidence-badge ${evidenceClass(p.classification.evidenceTier)}" title="${esc(evidenceTierTitle(p.classification.evidenceTier))}">${esc(DATA.evidenceTierLabel[p.classification.evidenceTier])}</span>
@@ -312,14 +399,38 @@ function signalingSection(p) {
   const chains = p.biology.cascades.length
     ? p.biology.cascades
     : [{ category: "mechanism", steps: [p.classification.peptideClass, p.classification.mechanismFamily, "clinical effect requires extraction"], symbols: ["?"] }];
+  const summarySteps = chains[0]?.steps || [p.names.primary, p.classification.mechanismFamily, "effect context pending"];
   return `<section class="article-section">
     <h3>Physiological Pathways</h3>
     <p class="section-note">${esc(p.expanded.mechanismDetail)}</p>
+    <div class="pathway-summary">
+      <p class="eyebrow">summary mechanism ${symbols(chains[0]?.symbols || ["?"])}</p>
+      <div class="signal-chain compact">
+        ${summarySteps
+          .map(
+            (step, index) =>
+              `${index ? '<span class="signal-arrow">-></span>' : ""}<span class="signal-node"><i class="signal-step-index">${index + 1}</i><span>${esc(step)}</span></span>`
+          )
+          .join("")}
+      </div>
+    </div>
     <div class="signal-grid">
       ${chains
         .map(
-          (chain) => `<div>
-            <p class="eyebrow">${esc(chain.category)} ${symbols(chain.symbols)}</p>
+          (chain) => {
+            const claim = p.claims.find((item) => item.id === chain.claimRef);
+            const description = `This pathway segment starts at ${chain.steps[0] || "the proximal trigger"}, runs through ${
+              chain.steps.slice(1, -1).join(", ") || "intermediate signaling"
+            }, and converges on ${chain.steps[chain.steps.length - 1] || "the current extracted endpoint"}.`;
+            return `<article class="pathway-card">
+            <div class="pathway-card-head">
+              <div>
+                <p class="eyebrow">${esc(chain.category)} ${symbols(chain.symbols)}</p>
+                <h4>${esc(chain.category)}</h4>
+              </div>
+              <div class="pathway-cites">${claim ? citationRefsByIds(p, claim.citationIds) : ""}</div>
+            </div>
+            <p class="pathway-description">${esc(description)}</p>
             <div class="signal-chain">
               ${chain.steps
                 .map(
@@ -328,7 +439,8 @@ function signalingSection(p) {
                 )
                 .join("")}
             </div>
-          </div>`
+          </article>`;
+          }
         )
         .join("")}
     </div>
@@ -460,19 +572,70 @@ function bibliographyDrawer() {
   </section>`;
 }
 
-function relatedPanel(mode = "detail") {
+function keyModal() {
+  if (!state.keySymbol) return "";
+  const reviewMode = state.keySymbol === "review";
+  return `<section class="key-backdrop" data-close-key-modal>
+    <aside class="key-modal" aria-label="Evidence key">
+      <header>
+        <div>
+          <p class="eyebrow">key</p>
+          <h3>${reviewMode ? "Verification status" : "Evidence symbol"}</h3>
+        </div>
+        <button class="icon" data-close-key-button aria-label="Close key">x</button>
+      </header>
+      ${
+        reviewMode
+          ? `<div class="key-grid">
+              <div class="key-row"><span class="verify pending"></span><div><strong>Yellow dot</strong><p>Model-drafted or pending human/mod verification.</p></div></div>
+              <div class="key-row"><span class="verify ok"></span><div><strong>Green dot</strong><p>A moderator has verified the article or claim set.</p></div></div>
+            </div>`
+          : `<div class="key-grid">
+              ${Object.entries(DATA.evidenceLegend)
+                .map(
+                  ([key, value]) => `<button class="key-row ${key === state.keySymbol ? "active" : ""}" type="button" data-open-key="${esc(key)}">
+                    <span class="key-icon"><span class="symbol-button inert">${symbolGlyph(key)}</span></span>
+                    <div><strong>${esc(key)}</strong><p>${esc(value)}</p></div>
+                  </button>`
+                )
+                .join("")}
+              <div class="key-row"><span class="verify pending"></span><div><strong>Yellow dot</strong><p>Model-drafted or pending human/mod verification.</p></div></div>
+              <div class="key-row"><span class="verify ok"></span><div><strong>Green dot</strong><p>A moderator has verified the article or claim set.</p></div></div>
+            </div>`
+      }
+    </aside>
+  </section>`;
+}
+
+function relatedPanel() {
   if (!state.tag) return "";
   const rows = relatedPeptides();
-  return `<section class="related-panel ${mode === "global" ? "global-related" : ""}">
+  const cacheKey = `${state.tag.type}:${state.tag.value}`;
+  const wiki = wikiCache.get(cacheKey);
+  const loading = wikiPending.has(cacheKey);
+  return `<section class="related-backdrop" data-close-related-modal>
+    <aside class="related-modal" aria-label="${esc(state.tag.value)} overview">
     <header>
       <div>
-        <p class="eyebrow">Related peptides</p>
+        <p class="eyebrow">${esc(state.tag.type)} overview</p>
         <h3>${esc(state.tag.value)}</h3>
       </div>
-      <button class="icon" data-clear-related>x</button>
+      <button class="icon" data-clear-related aria-label="Close related overview">x</button>
     </header>
+    <section class="related-summary">
+      <h4>Brief overview</h4>
+      <p>${
+        wiki
+          ? `${esc(wiki.extract)} ${wiki.url ? `<a class="table-link" href="${esc(wiki.url)}" target="_blank" rel="noreferrer">Wikipedia</a>` : ""}`
+          : loading
+            ? "Loading Wikipedia summary..."
+            : "Summary pending fetch."
+      }</p>
+    </section>
+    <section class="related-summary">
+      <h4>Associated peptides</h4>
     <table>
-      <thead><tr><th>Peptide</th><th>Evidence</th><th>Brief mechanism</th><th>Key effects</th><th>Shared item</th></tr></thead>
+      <thead><tr><th>Peptide</th><th>Evidence</th><th>Association</th><th>Brief mechanism</th><th>Key effects</th></tr></thead>
       <tbody>${
         rows.length
           ? rows
@@ -480,15 +643,17 @@ function relatedPanel(mode = "detail") {
                 (item) => `<tr>
                   <td><button class="inline-link" data-expand="${esc(item.p.id)}">${esc(item.p.names.primary)}</button></td>
                   <td>${esc(DATA.evidenceTierLabel[item.p.classification.evidenceTier])}</td>
+                  <td>${esc(item.matches.join(", "))}</td>
                   <td>${esc(item.p.tile.mechanismSummary)}</td>
                   <td>${esc(item.p.tile.enhancingEffects.slice(0, 3).map((effect) => effect.label).join(", ") || "none listed")}</td>
-                  <td>${esc(item.matches.join(", "))}</td>
                 </tr>`
               )
               .join("")
           : '<tr><td colspan="5">No related peptide rows in the current data.</td></tr>'
       }</tbody>
     </table>
+    </section>
+  </aside>
   </section>`;
 }
 
@@ -552,7 +717,6 @@ function detail(p) {
           <div class="tag-block"><h4>Proteins</h4>${p.biology.proteins.map((protein) => tag("protein", protein, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div>
           <div class="tag-block"><h4>Channels</h4>${p.biology.channelsTransporters.map((channel) => tag("channel", channel, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div>
         </section>
-        ${relatedPanel("detail")}
         <section class="article-section">
           <h3>Cytokines, Interleukins, And Markers</h3>
           <table>
@@ -635,14 +799,6 @@ function hero() {
       <h1 class="brand-title ${state.brandAlt ? "alt" : ""}" data-toggle-brand>${BRAND}</h1>
       <p class="lede">peptide signaling & mechanism reference for biologists & physicians</p>
     </div>
-    <aside class="legend ${state.legendOpen ? "open" : "collapsed"}">
-      <button class="legend-toggle" data-toggle-legend aria-label="${state.legendOpen ? "Collapse key" : "Expand key"}">${state.legendOpen ? "-" : "+"}</button>
-      ${state.legendOpen ? `<div class="legend-body">
-        ${Object.entries(DATA.evidenceLegend).map(([key, value]) => `<span><abbr>${symbolGlyph(key)}</abbr>${esc(value)}</span>`).join("")}
-        <span><i class="review-dot"></i>Yellow dot means model-drafted or pending human/mod verification.</span>
-        <span><i class="review-dot ok"></i>Green dot means a moderator has verified the article or claim set.</span>
-      </div>` : ""}
-    </aside>
   </section>`;
 }
 
@@ -675,9 +831,10 @@ function render() {
   const categories = ["All", ...new Set(DATA.peptides.map((p) => p.category))];
   const peptides = filteredPeptides();
   app.innerHTML = `${hero()}${toolbar(categories)}
-    ${state.tag && !state.selected ? relatedPanel("global") : ""}
     <section class="tiles">${peptides.map(tile).join("")}</section>
     ${detail(state.selected)}
+    ${relatedPanel()}
+    ${keyModal()}
     ${bibliographyDrawer()}`;
   restoreFocus(focus);
 }
@@ -708,7 +865,10 @@ app.addEventListener("click", (event) => {
   const bibliographyBackdrop = target.closest("[data-close-bibliography]");
   const bibliographyButton = target.closest("[data-open-bibliography]");
   const bibliographyClose = target.closest("[data-close-bibliography-button]");
-  const legendToggle = target.closest("[data-toggle-legend]");
+  const keyOpen = target.closest("[data-open-key]");
+  const keyBackdrop = target.closest("[data-close-key-modal]");
+  const keyClose = target.closest("[data-close-key-button]");
+  const relatedBackdrop = target.closest("[data-close-related-modal]");
   const brandToggle = target.closest("[data-toggle-brand]");
   const interactive = target.closest("button, a, input, select, textarea, .citation");
 
@@ -717,8 +877,8 @@ app.addEventListener("click", (event) => {
     return;
   }
 
-  if (legendToggle) {
-    state.legendOpen = !state.legendOpen;
+  if (keyOpen) {
+    state.keySymbol = keyOpen.dataset.openKey;
     render();
     return;
   }
@@ -741,13 +901,20 @@ app.addEventListener("click", (event) => {
     return;
   }
 
-  if (tagButton) {
-    state.tag = { type: tagButton.dataset.tagType, value: tagButton.dataset.tagValue, sourcePeptideId: tagButton.dataset.tagSource || null };
+  if (keyClose || (keyBackdrop && target === keyBackdrop)) {
+    state.keySymbol = null;
     render();
     return;
   }
 
-  if (clearRelated) {
+  if (tagButton) {
+    state.tag = { type: tagButton.dataset.tagType, value: tagButton.dataset.tagValue, sourcePeptideId: tagButton.dataset.tagSource || null };
+    fetchWikiSummary(state.tag);
+    render();
+    return;
+  }
+
+  if (clearRelated || (relatedBackdrop && target === relatedBackdrop)) {
     state.tag = null;
     render();
     return;
@@ -772,6 +939,16 @@ app.addEventListener("keydown", (event) => {
     }
   }
   if (event.key === "Escape") {
+    if (state.tag) {
+      state.tag = null;
+      render();
+      return;
+    }
+    if (state.keySymbol) {
+      state.keySymbol = null;
+      render();
+      return;
+    }
     if (state.selected) {
       closeToGrid();
       return;

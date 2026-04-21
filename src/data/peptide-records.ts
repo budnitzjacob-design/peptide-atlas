@@ -1,5 +1,6 @@
 import type { Citation, Claim, EvidenceSymbol, PeptideRecord } from "@/types/peptide";
 import vendorBatchRaw from "../../data/sources/vendors/peptocopeia_batch_1.json";
+import vendorBatch2Raw from "../../data/sources/vendors/peptocopeia_batch_2.json";
 
 const accessedAt = "2026-04-21";
 
@@ -52,7 +53,7 @@ const baseCitations: Record<string, Citation> = {
 
 const source = (key: keyof typeof baseCitations) => baseCitations[key];
 
-const vendorBatch1 = vendorBatchRaw as {
+type VendorBatch = {
   retrieved_date: string;
   source_run_id: string;
   peptides: Array<{
@@ -72,6 +73,8 @@ const vendorBatch1 = vendorBatchRaw as {
     };
     vendor_observations: Array<{
       vendor: string;
+      vendor_slug?: string | null;
+      manufacturer?: string | null;
       product_name: string;
       product_url: string | null;
       source_platform: string;
@@ -102,37 +105,82 @@ const vendorBatch1 = vendorBatchRaw as {
         finnrick_test_count?: number | null;
         finnrick_oldest_test?: string | null;
         finnrick_latest_test?: string | null;
+        peptidetracker_rating?: number | null;
+        review_count?: number | null;
+        satisfaction_summary?: string | null;
+        sentiment_score?: number | null;
+        complaints?: string[] | null;
       };
       source_snapshot?: {
         title?: string | null;
         url?: string | null;
         notes?: string | null;
+        retrieved_date?: string | null;
+        access?: string | null;
+        pass2_detail_url?: string | null;
+        fraud_note?: string | null;
+        staleness_note?: string | null;
       };
     }>;
   }>;
 };
 
+const vendorBatch1 = vendorBatchRaw as VendorBatch;
+const vendorBatch2 = vendorBatch2Raw as VendorBatch;
+
+function vendorBatchFor(peptideId: string) {
+  return (
+    [vendorBatch2, vendorBatch1]
+      .map((batch) => ({ batch, peptide: batch.peptides.find((item) => item.peptide_id === peptideId) }))
+      .find((item) => item.peptide) ?? null
+  );
+}
+
 function vendorNotes(peptideId: string) {
-  const batchPeptide = vendorBatch1.peptides.find((item) => item.peptide_id === peptideId);
-  if (!batchPeptide?.finnrick_summary) return [];
+  const match = vendorBatchFor(peptideId);
+  if (!match?.peptide?.finnrick_summary) return [];
+  const { batch, peptide: batchPeptide } = match;
   const summary = batchPeptide.finnrick_summary;
   const purity = summary.purity_5_95_pct?.length === 2 ? `${summary.purity_5_95_pct[0]}%-${summary.purity_5_95_pct[1]}% purity 5th-95th percentile` : null;
+  const trackerSignals = batchPeptide.vendor_observations
+    .map((entry) =>
+      [
+        entry.ratings?.peptidetracker_rating != null ? `PeptideTracker ${entry.ratings.peptidetracker_rating}/5` : null,
+        entry.ratings?.review_count != null ? `${entry.ratings.review_count} review(s)` : null,
+        entry.ratings?.satisfaction_summary || null
+      ]
+        .filter(Boolean)
+        .join(", ")
+    )
+    .filter(Boolean);
   return [
-    `Finnrick batch summary (${vendorBatch1.retrieved_date}): ${summary.vendor_count ?? "unknown"} vendors, ${summary.total_tests ?? "unknown"} tests, first test ${summary.first_test ?? "unknown"}, latest test ${summary.last_test ?? "unknown"}.`,
+    `Finnrick batch summary (${batch.retrieved_date}): ${summary.vendor_count ?? "unknown"} vendors, ${summary.total_tests ?? "unknown"} tests, first test ${summary.first_test ?? "unknown"}, latest test ${summary.last_test ?? "unknown"}.`,
     purity,
     summary.quantity_divergence_95pct ? `Quantity divergence 95th percentile window: ${summary.quantity_divergence_95pct}.` : null,
     summary.capture_note ?? null,
     summary.note ?? null,
     summary.note_top3 ?? null,
-    summary.variant_note ?? null
+    summary.variant_note ?? null,
+    trackerSignals.length ? `Imported tracker/vendor sentiment signals: ${trackerSignals.slice(0, 3).join(" | ")}.` : null
   ].filter(Boolean) as string[];
 }
 
 function finnrickVendorRows(peptideId: string): PeptideRecord["vendorData"] {
-  const batchPeptide = vendorBatch1.peptides.find((item) => item.peptide_id === peptideId);
-  if (!batchPeptide) return [];
+  const match = vendorBatchFor(peptideId);
+  if (!match?.peptide) return [];
+  const { peptide: batchPeptide } = match;
   return batchPeptide.vendor_observations.map((entry) => {
     const labSummary = entry.lab_results?.[0];
+    const issueNotes = [
+      labSummary?.other_tests,
+      entry.ratings?.satisfaction_summary,
+      entry.ratings?.complaints?.length ? `Complaints: ${entry.ratings.complaints.join("; ")}` : null,
+      entry.source_snapshot?.notes,
+      entry.source_snapshot?.fraud_note,
+      entry.source_snapshot?.staleness_note
+    ]
+      .filter(Boolean)
+      .join(" ");
     return {
       vendor: entry.vendor,
       productName: entry.product_name,
@@ -140,7 +188,7 @@ function finnrickVendorRows(peptideId: string): PeptideRecord["vendorData"] {
       vialSize: entry.vial_size,
       priceRange: entry.price?.raw ?? null,
       batchId: labSummary?.batch_id ?? null,
-      manufacturerId: null,
+      manufacturerId: entry.manufacturer ?? null,
       purity: labSummary?.purity ?? null,
       endotoxin: labSummary?.endotoxin ?? null,
       heavyMetals: labSummary?.heavy_metals ?? null,
@@ -158,7 +206,7 @@ function finnrickVendorRows(peptideId: string): PeptideRecord["vendorData"] {
       testCount: entry.ratings?.finnrick_test_count ?? null,
       oldestTest: entry.ratings?.finnrick_oldest_test ?? null,
       latestTest: entry.ratings?.finnrick_latest_test ?? null,
-      notes: [labSummary?.other_tests, entry.source_snapshot?.notes].filter(Boolean).join(" ") || null,
+      notes: issueNotes || null,
       sourceTitle: entry.source_snapshot?.title ?? null
     };
   });

@@ -1,0 +1,200 @@
+You are generating structured source-backed peptide data for Peptocopeia.
+
+Goal:
+Fill only missing or weakly supported fields for the peptides below. Prefer primary peer-reviewed papers, regulator pages, ClinicalTrials.gov, PubMed-indexed studies, official labels, and high-quality mechanistic studies. Use reviews only to discover primary papers, not as the final support for key mechanistic claims unless no primary source exists.
+
+Target peptides:
+- SS-31 / elamipretide
+- MOTS-c
+- BPC-157
+- TB-500 / thymosin beta-4 fragment
+- GHK-Cu
+- tesamorelin
+- semaglutide
+- tirzepatide
+- retatrutide
+
+Important rules:
+1. Do not infer healthy-human enhancement from disease-population trials.
+2. Do not infer clinical efficacy from animal or cell findings.
+3. Separate human, animal, cell, regulatory, review, and anecdotal/common-use evidence.
+4. If a field is absent, leave it blank rather than guessing.
+5. Every nontrivial claim must point to one or more citations.
+6. Be conservative, literal, and specific.
+7. For mechanism text, do not stop at vague phrases like "improves mitochondrial function" or "reduces inflammation." Name the actual receptor, ligand, kinase, transcription factor, transporter, cytokine, or pathway member when the paper states it.
+
+What I need most:
+- better receptor / protein / cytokine detail
+- better mechanistic cascades for non-approved peptides
+- organ-specific safety help/harm summaries with citations
+- PK/PD and dosing context
+- stronger study rows with population, n, protocol, endpoints, adverse events
+- price/vendor data only if publicly verifiable
+
+Return ONE JSON object with this exact top-level structure:
+{
+  "retrieved_date": "YYYY-MM-DD",
+  "generator_notes": {
+    "model": "string",
+    "scope": "string",
+    "notes": ["string"]
+  },
+  "peptides": [
+    {
+      "peptide_id": "ss-31",
+      "primary_name": "SS-31",
+      "mechanism_summary": "1-3 sentence concise but specific summary.",
+      "mechanism_detail": "A short paragraph for biologists/physicians.",
+      "pathways": [
+        {
+          "category": "mitochondrial membrane / bioenergetics",
+          "summary_chain": [
+            "SS-31",
+            "cardiolipin-rich inner mitochondrial membrane",
+            "membrane surface electrostatics / cristae organization",
+            "ETC coupling / ATP handling / reduced ROS leak"
+          ],
+          "description": "2-4 sentences that explain what is happening and why it matters.",
+          "targets": {
+            "genes": [],
+            "proteins": [],
+            "receptors": [],
+            "channels_transporters": [],
+            "cytokines_interleukins": []
+          },
+          "citation_ids": ["cit-1", "cit-2"]
+        }
+      ],
+      "study_rows": {
+        "human": [
+          {
+            "claim_id": "string",
+            "study_title": "string",
+            "study_type": "RCT | phase 1 | observational | case_report | etc",
+            "population_or_model": "string",
+            "disease_context": "string",
+            "n": "string",
+            "age_or_species_details": "string",
+            "route": "string",
+            "dose_or_protocol": "string",
+            "duration": "string",
+            "endpoints": "string",
+            "notable_results_literal": "string",
+            "adverse_events_literal": "string",
+            "limitations": "string",
+            "citation_ids": ["cit-3"]
+          }
+        ],
+        "animal": [],
+        "cell": [],
+        "regulatory": [],
+        "anecdotal": []
+      },
+      "safety_risks": [
+        {
+          "system": "cardiac | neurologic | renal | hepatic | endocrine | GI | dermatologic | ophthalmic | pulmonary | musculoskeletal | reproductive | immune | hematologic | other",
+          "label": "Human-readable label",
+          "help_summary": "Use only if there is evidence.",
+          "harm_summary": "Use only if there is evidence.",
+          "citation_ids": ["cit-4"]
+        }
+      ],
+      "enhancement_potential": {
+        "summary": "Brief and conservative.",
+        "caveat": "Explicitly state why this is limited / speculative / disease-context only.",
+        "citation_ids": ["cit-5"]
+      },
+      "pk_pd": {
+        "summary": "literal summary",
+        "route": "string",
+        "half_life": "string",
+        "distribution": "string",
+        "clearance": "string",
+        "bioavailability": "string",
+        "citation_ids": ["cit-6"]
+      },
+      "dosing_contexts": [
+        {
+          "context": "FDA label | clinical trial | observational | preclinical | anecdotal/common use",
+          "display_text": "string",
+          "route": "string",
+          "citation_ids": ["cit-7"]
+        }
+      ],
+      "missing_evidence": [
+        "PK/PD missing",
+        "human adverse-event detail missing"
+      ]
+    }
+  ],
+  "citations": [
+    {
+      "id": "cit-1",
+      "title": "string",
+      "authors": ["string"],
+      "year": 2024,
+      "doi": "string",
+      "pmid": "string",
+      "url": "string",
+      "quality": "primary | regulatory | review | vendor",
+      "notes": "Why this citation matters and what it supports."
+    }
+  ]
+}
+
+If you can also obtain vendor/price data, return it in a second JSON object with this structure:
+{
+  "retrieved_date": "YYYY-MM-DD",
+  "vendors": [
+    {
+      "peptide_id": "string",
+      "vendor": "string",
+      "manufacturer": "string",
+      "product_name": "string",
+      "product_url": "string",
+      "vial_size": "string",
+      "price_raw": "string",
+      "availability": "string",
+      "shipping_region": "string",
+      "lab": "string",
+      "coa_url": "string",
+      "purity": "string",
+      "quantity_assay": "string",
+      "endotoxin": "conforms | does_not_conform | unknown",
+      "heavy_metals": "conforms | does_not_conform | unknown",
+      "sterility": "pass | fail | unknown",
+      "finnrick_grade": "string",
+      "finnrick_score": 0,
+      "finnrick_test_count": 0,
+      "peptidetracker_rating": 0,
+      "review_count": 0,
+      "satisfaction_summary": "string",
+      "complaints": ["string"],
+      "retrieved_date": "YYYY-MM-DD",
+      "notes": "string",
+      "source_citation_ids": ["cit-v1"]
+    }
+  ],
+  "citations": [
+    {
+      "id": "cit-v1",
+      "title": "string",
+      "url": "string",
+      "quality": "vendor | aggregation",
+      "notes": "string"
+    }
+  ]
+}
+
+Priority order:
+1. SS-31 / elamipretide
+2. MOTS-c
+3. BPC-157
+4. GHK-Cu
+5. TB-500 / thymosin beta-4 fragment
+6. tesamorelin
+7. semaglutide
+8. tirzepatide
+9. retatrutide
+
+Do not return markdown. Return raw JSON only.
