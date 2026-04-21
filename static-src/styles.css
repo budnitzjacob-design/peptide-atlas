@@ -119,6 +119,10 @@ main {
   padding: 24px 0 68px;
 }
 
+.app-shell {
+  position: relative;
+}
+
 h1,
 h2,
 h3,
@@ -151,8 +155,19 @@ h4 {
   color: #f4efe4;
   filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.44));
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
-  cursor: default;
-  animation: brand-majestic 5.8s ease-out both;
+  cursor: pointer;
+}
+
+.brand-title-button {
+  border: 0;
+  background: transparent;
+  min-height: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.brand-title-button.active .brand-title {
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
 }
 
 h2 {
@@ -178,6 +193,40 @@ h3 {
   border-bottom: 0;
   width: 100%;
   margin: 0 auto;
+}
+
+.app-shell.intro-active .hero {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 0;
+  background: #000;
+}
+
+.app-shell.intro-active .hero > div {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.app-shell.intro-active .brand-title {
+  font-size: clamp(88px, 13vw, 220px);
+  animation: brand-overture 2.8s ease-in-out both;
+}
+
+.app-shell.intro-active .atlas-frame,
+.app-shell.intro-active .toolbar,
+.app-shell.intro-active .tiles,
+.app-shell.intro-active .detail-backdrop,
+.app-shell.intro-active .bibliography-backdrop,
+.app-shell.intro-active .related-backdrop,
+.app-shell.intro-active .key-backdrop,
+.app-shell.intro-active .image-backdrop {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .eyebrow {
@@ -379,77 +428,62 @@ textarea {
 }
 
 .side-rail {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 56px;
+  position: fixed;
+  top: 16vh;
+  bottom: 12vh;
+  width: 46px;
   overflow: hidden;
   pointer-events: none;
+  z-index: 0;
   mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.96) 15%, rgba(0, 0, 0, 0.96) 85%, transparent 100%);
   -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.96) 15%, rgba(0, 0, 0, 0.96) 85%, transparent 100%);
 }
 
 .side-rail-left {
-  left: clamp(8px, calc((100vw - 1200px) / 4), 58px);
+  left: max(6px, calc((100vw - min(1200px, calc(100vw - 28px))) / 2 - 72px));
 }
 
 .side-rail-right {
-  right: clamp(8px, calc((100vw - 1200px) / 4), 58px);
+  right: max(6px, calc((100vw - min(1200px, calc(100vw - 28px))) / 2 - 72px));
 }
 
 .side-rail-track {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-family: "Golden Girdle", "Apple Garamond", Georgia, serif;
-  color: rgba(244, 239, 228, 0.86);
-  font-size: 30px;
+  color: rgba(244, 239, 228, 0.74);
+  font-size: 26px;
   line-height: 1;
   letter-spacing: 0;
   user-select: none;
 }
 
 .side-rail-left .side-rail-track {
-  animation: rail-rise 20s linear infinite;
+  animation: rail-rise 28s linear infinite;
 }
 
 .side-rail-right .side-rail-track {
-  animation: rail-fall 20s linear infinite;
+  animation: rail-fall 28s linear infinite;
 }
 
-.atlas-path {
-  position: absolute;
-  inset: 0 0 auto;
-  width: 100%;
-  height: min(86vw, 1180px);
-  overflow: visible;
-  pointer-events: none;
-}
-
-.atlas-path-text {
-  fill: #f4efe4;
-  font-family: "Apple Garamond", "Cormorant Garamond", "EB Garamond", Georgia, serif;
-  font-style: italic;
-  font-size: 26px;
-}
-
-@keyframes brand-majestic {
+@keyframes brand-overture {
   0% {
     opacity: 0;
-    transform: translateY(18px) scale(1.12);
+    transform: translateY(0) scale(1);
   }
-  26% {
+  18% {
     opacity: 1;
-    transform: translateY(0) scale(1.02);
+    transform: translateY(0) scale(1);
   }
-  68% {
+  54% {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
   100% {
-    opacity: 0.9;
-    transform: translateY(0) scale(1);
+    opacity: 1;
+    transform: translateY(calc(-38vh + 24px)) scale(0.37);
   }
 }
 
@@ -563,6 +597,21 @@ textarea:focus {
   border-color: color-mix(in srgb, var(--type-color, #1e232b) 26%, #1e232b);
   transition: border-color 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease;
   font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.tile-structure {
+  margin: 6px 0 12px;
+  min-height: 118px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile-structure img {
+  width: min(100%, 172px);
+  max-height: 124px;
+  object-fit: contain;
+  display: block;
 }
 
 .tile::before {
@@ -914,6 +963,22 @@ tbody tr:nth-child(odd) td {
   overflow-wrap: anywhere;
 }
 
+.article-head-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: start;
+  justify-content: flex-end;
+}
+
+.header-button {
+  min-height: 40px;
+  padding: 8px 12px;
+  border-radius: 16px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
 .bibliography-backdrop {
   position: fixed;
   inset: 0;
@@ -924,10 +989,10 @@ tbody tr:nth-child(odd) td {
 
 .bibliography-drawer {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: min(760px, calc(100vw - 32px));
-  max-height: calc(100vh - 32px);
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(960px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
   overflow: auto;
   border: 1px solid #323845;
   border-radius: 10px;
@@ -1118,9 +1183,27 @@ tbody tr:nth-child(odd) td {
 
 .tag-block {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
+  gap: 10px;
+  align-content: start;
+  padding: 12px;
+  border: 1px solid #273444;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(12, 19, 27, 0.95), rgba(0, 0, 0, 0.95));
+  margin: 0;
+}
+
+.tag-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
   margin: 12px 0;
+}
+
+.tag-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: flex-start;
 }
 
 .tag-block h4 {
@@ -1286,6 +1369,21 @@ tbody tr:nth-child(odd) td {
   margin-top: 4px;
 }
 
+.notice-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  z-index: 24;
+  padding: 10px 14px;
+  border: 1px solid rgba(135, 232, 255, 0.28);
+  border-radius: 16px;
+  background: rgba(5, 6, 8, 0.96);
+  color: #f4efe4;
+  font-size: 12px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.34);
+}
+
 .citations-section a {
   border: 0;
   padding: 0;
@@ -1302,8 +1400,7 @@ tbody tr:nth-child(odd) td {
     padding-top: 0;
   }
 
-  .side-rail,
-  .atlas-path {
+  .side-rail {
     display: none;
   }
 
@@ -1344,10 +1441,6 @@ tbody tr:nth-child(odd) td {
 
   .bibliography-button {
     width: 100%;
-  }
-
-  .atlas-path-text {
-    font-size: 22px;
   }
 
   .side-rail {

@@ -1,0 +1,889 @@
+{
+  "batch_id": "batch-13",
+  "generated_at": "2026-04-21",
+  "batch_notes": "Neurotrophic / neuroprotective / mitochondrial-signaling peptides. Human evidence is asymmetric: cerebrolysin has real (though contested) human RCT data; DSIP has weak and dated human work; dihexa is essentially preclinical-only; humanin is preclinical + observational biomarker data, no therapeutic human trials. Mechanism claims are kept at the level primary sources actually support (cell or animal unless stated otherwise). Cognition / nootropic framing deliberately avoided for dihexa and humanin because the human evidence does not exist.",
+  "peptides": [
+    {
+      "id": "cerebrolysin",
+      "names": {
+        "primary": "Cerebrolysin",
+        "aliases": ["FPF1070", "Cerebrolysin concentrate"],
+        "tradeNames": ["Cerebrolysin"]
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": null,
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": null,
+        "modifications": [],
+        "structureClass": "peptide_mixture"
+      },
+      "classification": {
+        "peptideClass": "neurotrophic_peptide_mixture",
+        "mechanismFamily": "neurotrophic_mimetic",
+        "regulatoryStatus": "non_us_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Porcine brain-derived enzymatic digest containing free amino acids and low-molecular-weight peptides (<10 kDa). Proposed to exert neurotrophic, anti-apoptotic, and anti-inflammatory effects that partially overlap those of endogenous neurotrophins (BDNF, GDNF, NGF, CNTF). Most mechanistic evidence is preclinical; human evidence is clinical-outcome-level rather than mechanism-level.",
+        "localization": "CNS (crosses blood-brain barrier per preclinical and pharmacokinetic reports)",
+        "clinicalUses": [
+          "acute ischemic stroke (approved in multiple non-US jurisdictions)",
+          "vascular dementia (approved in multiple non-US jurisdictions)",
+          "traumatic brain injury (approved in multiple non-US jurisdictions)",
+          "Alzheimer disease (approved in multiple non-US jurisdictions)"
+        ],
+        "sideEffects": [
+          "injection site reaction",
+          "dizziness",
+          "headache",
+          "sweating",
+          "hypersensitivity (rare)"
+        ],
+        "dosing": {
+          "quick": "Typical clinical-trial dosing: 30 mL/day IV infusion for acute stroke (CARS), 10–30 mL/day for dementia indications, given in cycles of 10–21 days.",
+          "adminRoute": "IV infusion or IM injection",
+          "publicDisplayAllowed": true,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": ["BDNF (mimetic-like activity, preclinical)", "GDNF (mimetic-like activity, preclinical)", "NGF (mimetic-like activity, preclinical)"],
+        "receptors": ["TrkB (downstream engagement inferred from preclinical BDNF-like signaling)"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "IL-6",
+            "effect": "reduced in some preclinical stroke/TBI models",
+            "context": "animal",
+            "symbols": ["A"],
+            "citationIds": ["cbl_zhang2021"]
+          },
+          {
+            "name": "TNF-alpha",
+            "effect": "reduced in some preclinical stroke/TBI models",
+            "context": "animal",
+            "symbols": ["A"],
+            "citationIds": ["cbl_zhang2021"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "neurotrophic_signaling",
+            "steps": [
+              "cerebrolysin peptide fraction -> putative TrkB / PI3K-Akt activation (preclinical)",
+              "PI3K-Akt -> reduced BAX / caspase-3 activation -> reduced neuronal apoptosis (animal stroke/TBI models)",
+              "concurrent MAPK/ERK engagement -> neurite outgrowth and synaptic plasticity markers (cell / animal)"
+            ],
+            "symbols": ["A", "C"],
+            "claimRef": "cbl_claim_mechanism"
+          },
+          {
+            "category": "amyloid_and_tau_modulation",
+            "steps": [
+              "cerebrolysin -> modulation of APP processing and reduction of amyloid-beta plaque burden (transgenic AD mouse models)",
+              "downstream -> reduced tau hyperphosphorylation markers (animal)"
+            ],
+            "symbols": ["A"],
+            "claimRef": "cbl_claim_ad_preclinical"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Multiple randomized controlled trials in acute ischemic stroke, vascular dementia, Alzheimer disease, and traumatic brain injury. CARS (Muresanu 2016) showed functional recovery benefit in moderate-to-severe ischemic stroke on combined mRS/Barthel/NIHSS endpoints. CASTA (Heiss 2012) did not meet its primary endpoint. CAPTAIN-II and related TBI trials suggested signals of benefit. Cochrane reviews (Ziganshina et al.) have been cautious, noting heterogeneity, risk of bias, and industry-sponsored trial dominance. Net: real human RCT data exist, but effect sizes are modest and the literature is contested.",
+        "animalEvidence": "Extensive rodent literature in focal ischemia (MCAO), controlled cortical impact TBI, transgenic AD models, and developmental CNS injury. Reported effects: reduced infarct volume, reduced neuronal apoptosis, preserved hippocampal neurogenesis markers, reduced amyloid burden in APP transgenics, neurite outgrowth in cultured neurons.",
+        "mechanismDetail": "Cerebrolysin is an enzymatically digested porcine brain peptide preparation; the active fraction is a heterogeneous mixture of free amino acids (~85% by mass) and low-molecular-weight peptides (<10 kDa, ~15%). No single active peptide has been isolated. Proposed mechanisms at the cell/animal level: partial mimicry of endogenous neurotrophin signaling (TrkB engagement inferred from downstream phospho-Akt / phospho-ERK patterns), reduction of excitotoxic calcium influx, reduction of caspase-3 activation, modulation of microglial activation phenotype, and reduction of amyloid-beta plaque load in transgenic models. Because the drug is a mixture, clean pharmacokinetic or target-engagement claims are not possible in the way they would be for a single-entity peptide.",
+        "safetyDetail": "Generally well tolerated in the trial literature. Most common adverse events are mild injection-site reactions, dizziness, headache, and sweating. Hypersensitivity reactions have been reported and are a labeled contraindication. Caution in severe renal impairment and status epilepticus. Because it is a porcine-derived biologic, theoretical concerns about prion/xenogeneic contamination exist, though the manufacturer states enzymatic processing eliminates proteins >10 kDa. Not FDA-approved; not available legally as a prescription drug in the US.",
+        "safetyRisks": [
+          {
+            "system": "allergic",
+            "label": "Hypersensitivity",
+            "color": "yellow",
+            "helpSummary": "Most patients tolerate IV/IM infusion without issue.",
+            "harmSummary": "Anaphylaxis and urticarial reactions have been reported; porcine-derived biologic warrants caution in patients with known protein-allergic histories.",
+            "citationIds": ["cbl_manuf_pi"]
+          },
+          {
+            "system": "neurological",
+            "label": "Seizure threshold",
+            "color": "yellow",
+            "helpSummary": "Not generally epileptogenic in trials.",
+            "harmSummary": "Manufacturer labeling and some reviews list caution in status epilepticus or grand mal epilepsy.",
+            "citationIds": ["cbl_manuf_pi"]
+          },
+          {
+            "system": "regulatory",
+            "label": "US unapproved",
+            "color": "red",
+            "helpSummary": "Approved as a prescription drug in 50+ non-US jurisdictions.",
+            "harmSummary": "Not FDA-approved. US supply is typically gray-market import, with uncertain chain-of-custody and no FDA safety oversight.",
+            "citationIds": ["cbl_manuf_pi"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Cerebrolysin is not a healthy-human cognitive enhancer in the evidence base. All positive human trials are in diseased populations (stroke, dementia, TBI). No RCT has evaluated cognitive performance in cognitively intact adults.",
+          "caveat": "Claims of nootropic benefit in healthy adults are unsupported by any trial in the published literature; effects in diseased populations cannot be extrapolated to healthy enhancement.",
+          "citationIds": ["cbl_cars2016", "cbl_cochrane2020"]
+        },
+        "missingEvidence": [
+          "No randomized trial in cognitively intact adults",
+          "No single-active-ingredient isolation",
+          "No FDA review",
+          "Long-term (>12 month) safety data sparse outside registry cohorts"
+        ],
+        "anecdotalUse": [
+          "Biohacker / nootropic community imports for self-administered IM injection cycles",
+          "Post-concussion self-treatment (not supported by US-approved indication)"
+        ]
+      },
+      "claims": [
+        {
+          "id": "cbl_claim_cars_stroke",
+          "field": "clinicalUses",
+          "value": "Functional recovery benefit on combined mRS/Barthel/NIHSS endpoints in moderate-to-severe acute ischemic stroke (CARS, n=208).",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "moderate-to-severe acute ischemic stroke patients",
+          "route": "IV 30 mL/day x 21 days",
+          "sampleSize": 208,
+          "duration": "21 days treatment, 90 day follow-up",
+          "symbols": ["H", "Rx"],
+          "confidence": 0.75,
+          "citationIds": ["cbl_cars2016"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cbl_claim_casta",
+          "field": "clinicalUses",
+          "value": "CASTA trial in acute ischemic stroke did not meet primary efficacy endpoint.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "acute ischemic stroke patients within 12 hours",
+          "route": "IV 30 mL/day x 10 days",
+          "sampleSize": 1070,
+          "duration": "90 days",
+          "symbols": ["H", "?"],
+          "confidence": 0.8,
+          "citationIds": ["cbl_casta2012"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cbl_claim_mechanism",
+          "field": "mechanism",
+          "value": "Preclinical models indicate reduced neuronal apoptosis, reduced caspase-3 activation, and neurotrophin-like downstream signaling.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.7,
+          "citationIds": ["cbl_zhang2021"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cbl_claim_ad_preclinical",
+          "field": "mechanism",
+          "value": "Reduction of amyloid-beta plaque load and tau hyperphosphorylation markers in transgenic AD mouse models.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.6,
+          "citationIds": ["cbl_rockenstein2003"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "cbl_claim_cochrane",
+          "field": "evidenceQuality",
+          "value": "Cochrane review concluded evidence for acute ischemic stroke is limited by risk of bias and does not support routine use.",
+          "species": "human",
+          "context": "review",
+          "population": "acute ischemic stroke",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.85,
+          "citationIds": ["cbl_cochrane2020"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "cbl_cars2016",
+          "sourceType": "pubmed",
+          "title": "Cerebrolysin and Recovery After Stroke (CARS): A Randomized, Placebo-Controlled, Double-Blind, Multicenter Trial",
+          "authors": ["Muresanu DF", "Heiss WD", "Hoemberg V", "Bajenaru O", "Popescu CD", "Vester JC", "Rahlfs VW", "Doppler E", "Meier D", "Moessler H", "Guekht A"],
+          "year": 2016,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26585395/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cbl_claim_cars_stroke"],
+          "notes": "Phase 3 RCT, n=208, moderate-to-severe ischemic stroke, composite endpoint positive."
+        },
+        {
+          "id": "cbl_casta2012",
+          "sourceType": "pubmed",
+          "title": "Cerebrolysin in Patients With Acute Ischemic Stroke in Asia: Results of a Double-Blind, Placebo-Controlled Randomized Trial (CASTA)",
+          "authors": ["Heiss WD", "Brainin M", "Bornstein NM", "Tuomilehto J", "Hong Z"],
+          "year": 2012,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22357715/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cbl_claim_casta"],
+          "notes": "Large RCT, n=1070, did not meet primary endpoint but showed subgroup signals."
+        },
+        {
+          "id": "cbl_cochrane2020",
+          "sourceType": "other",
+          "title": "Cerebrolysin for acute ischaemic stroke (Cochrane Systematic Review)",
+          "authors": ["Ziganshina LE", "Abakumova T", "Hoyle CH"],
+          "year": 2020,
+          "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD007026.pub6/full",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cbl_claim_cochrane"],
+          "notes": "Cochrane review, cautious conclusions."
+        },
+        {
+          "id": "cbl_zhang2021",
+          "sourceType": "pubmed",
+          "title": "Cerebrolysin reduces astrogliosis and neuroinflammation in cerebral ischemia models (representative preclinical mechanism paper)",
+          "authors": [],
+          "year": 2021,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=cerebrolysin+ischemia+neuroinflammation",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cbl_claim_mechanism"],
+          "notes": "Placeholder identifier for the preclinical mechanistic literature; moderator should select the strongest individual study (e.g., Zhang, Chopp, or Muresanu group) to pin here."
+        },
+        {
+          "id": "cbl_rockenstein2003",
+          "sourceType": "pubmed",
+          "title": "Effects of Cerebrolysin on amyloid-beta pathology in APP transgenic mice",
+          "authors": ["Rockenstein E", "Mante M", "Adame A", "Crews L", "Moessler H", "Masliah E"],
+          "year": 2003,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Rockenstein+Cerebrolysin+APP",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cbl_claim_ad_preclinical"],
+          "notes": "Masliah lab APP transgenic model; exact PMID to be confirmed by moderator."
+        },
+        {
+          "id": "cbl_manuf_pi",
+          "sourceType": "other",
+          "title": "Cerebrolysin prescribing information (manufacturer)",
+          "authors": [],
+          "year": null,
+          "url": "https://www.everpharma.com/en/products/cerebrolysin/",
+          "accessedAt": "2026-04-21",
+          "quality": "vendor",
+          "supportsClaimIds": [],
+          "notes": "Ever Pharma manufacturer site; used only for composition and label-style safety claims."
+        }
+      ]
+    },
+    {
+      "id": "dsip",
+      "names": {
+        "primary": "Delta sleep-inducing peptide",
+        "aliases": ["DSIP"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C35H48N10O15",
+        "molecularWeight": 848.82,
+        "cas": "62568-57-4",
+        "sequenceOneLetter": "WAGGDASGE",
+        "sequenceThreeLetter": "Trp-Ala-Gly-Gly-Asp-Ala-Ser-Gly-Glu",
+        "length": 9,
+        "modifications": [],
+        "structureClass": "linear_nonapeptide"
+      },
+      "classification": {
+        "peptideClass": "putative_neuropeptide",
+        "mechanismFamily": "unknown_target",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "Nonapeptide originally isolated from rabbit cerebral venous blood during electrically induced sleep (Monnier and Schoenenberger, 1977). Named for its reported sleep-inducing activity in rabbits, but subsequent controlled studies have not consistently reproduced reliable sleep induction in humans, and no specific receptor has been firmly established. Mechanism is effectively unknown at the target level.",
+        "localization": "reported in brain, CSF, and peripheral tissues at low concentrations; no specific receptor confirmed",
+        "clinicalUses": [],
+        "sideEffects": [
+          "mild injection-site reactions reported in small human series",
+          "otherwise poorly characterized"
+        ],
+        "dosing": {
+          "quick": "No approved dose. Historical research studies used subcutaneous or IV microgram-scale doses; no validated clinical regimen exists.",
+          "adminRoute": "subcutaneous, IV (research only)",
+          "publicDisplayAllowed": false,
+          "context": "unknown"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [],
+        "receptors": [],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "putative_neuromodulation",
+            "steps": [
+              "DSIP administration -> non-specific modulation of EEG delta activity in animal models",
+              "no downstream target pathway has been validated at the primary-source level"
+            ],
+            "symbols": ["A", "?"],
+            "claimRef": "dsip_claim_mechanism_unknown"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Human evidence is very limited. A small number of 1980s–1990s human studies, largely from Eastern European and Swiss groups, explored DSIP in insomnia, chronic pain, opiate withdrawal, and depression. Sample sizes were small, blinding was often weak, and results have not been replicated in modern controlled trials. No regulator anywhere has approved DSIP for any indication.",
+        "animalEvidence": "Early work in rabbits and rats reported EEG delta-wave increases following intracerebroventricular administration. Subsequent animal work has been inconsistent. Some preclinical reports describe antinociceptive, anticonvulsant, and stress-modulating effects, but target engagement has never been rigorously demonstrated.",
+        "mechanismDetail": "Despite the name, DSIP does not reliably induce sleep in controlled human or animal studies. No high-affinity receptor has been cloned or validated. Proposed mechanisms in older literature include modulation of GABAergic tone, opioid system interaction, and HPA axis modulation, but none of these have strong primary-source support. DSIP is functionally a peptide whose biological target remains unknown.",
+        "safetyDetail": "Human safety data are sparse. Older small-series human studies reported tolerability but did not systematically collect adverse events. Modern pharmacovigilance data do not exist. Because DSIP is sold on gray-market research-chemical channels without GMP oversight, contamination, endotoxin burden, and identity are primary real-world risks.",
+        "safetyRisks": [
+          {
+            "system": "regulatory",
+            "label": "Research-only, no regulatory oversight",
+            "color": "red",
+            "helpSummary": "No FDA or comparable regulator has reviewed DSIP.",
+            "harmSummary": "Compounds obtained from research-chemical vendors have no guarantee of identity, purity, or endotoxin content.",
+            "citationIds": []
+          },
+          {
+            "system": "evidence",
+            "label": "Mechanism unknown",
+            "color": "yellow",
+            "helpSummary": "No specific receptor or validated pathway.",
+            "harmSummary": "Users cannot meaningfully reason about interactions, contraindications, or expected effects.",
+            "citationIds": ["dsip_monnier1977"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "No replicated controlled evidence supports DSIP for sleep, mood, pain, or performance in healthy adults.",
+          "caveat": "The original name reflects a 1977 finding in rabbits that did not generalize cleanly to humans. Modern sleep-medicine literature does not treat DSIP as a validated sleep agent.",
+          "citationIds": ["dsip_monnier1977"]
+        },
+        "missingEvidence": [
+          "No cloned receptor",
+          "No modern RCT",
+          "No pharmacokinetic data in humans beyond older fragmentary reports",
+          "No long-term safety data"
+        ],
+        "anecdotalUse": [
+          "Self-administered by biohackers for sleep, stress, and recovery, without controlled evidence supporting these uses"
+        ]
+      },
+      "claims": [
+        {
+          "id": "dsip_claim_identity",
+          "field": "identity",
+          "value": "Nonapeptide Trp-Ala-Gly-Gly-Asp-Ala-Ser-Gly-Glu, MW 848.8 Da, originally isolated from rabbit cerebral venous blood.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.9,
+          "citationIds": ["dsip_monnier1977"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "dsip_claim_mechanism_unknown",
+          "field": "mechanism",
+          "value": "No specific receptor or validated signaling pathway has been established.",
+          "species": "mixed",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?"],
+          "confidence": 0.85,
+          "citationIds": ["dsip_kovalzon2011"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "dsip_claim_sleep_not_confirmed",
+          "field": "clinicalUses",
+          "value": "DSIP does not reliably induce sleep in controlled human studies.",
+          "species": "human",
+          "context": "review",
+          "population": "adults with insomnia or healthy sleepers",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.7,
+          "citationIds": ["dsip_kovalzon2011"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "dsip_monnier1977",
+          "sourceType": "pubmed",
+          "title": "Discovery of a sleep-inducing substance in the blood of rabbits (delta sleep-inducing peptide)",
+          "authors": ["Monnier M", "Schoenenberger GA"],
+          "year": 1977,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Monnier+Schoenenberger+DSIP+1977",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["dsip_claim_identity"],
+          "notes": "Original discovery paper (Experientia / Pflugers Archiv era work). Exact PMID linkage limited due to age of the literature."
+        },
+        {
+          "id": "dsip_kovalzon2011",
+          "sourceType": "pubmed",
+          "title": "Delta sleep-inducing peptide (DSIP): a still unresolved riddle",
+          "authors": ["Kovalzon VM", "Strekalova TV"],
+          "year": 2006,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16705420/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["dsip_claim_mechanism_unknown", "dsip_claim_sleep_not_confirmed"],
+          "notes": "Kovalzon review critically summarizes the lack of consistent mechanism or reproducible sleep effect."
+        }
+      ]
+    },
+    {
+      "id": "dihexa",
+      "names": {
+        "primary": "Dihexa",
+        "aliases": ["N-hexanoic-Tyr-Ile-(6)-aminohexanoic amide", "PNB-0408"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": null,
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": null,
+        "modifications": ["N-terminal hexanoyl group", "C-terminal 6-aminohexanoic amide"],
+        "structureClass": "angiotensin_IV_peptidomimetic"
+      },
+      "classification": {
+        "peptideClass": "angiotensin_IV_analog",
+        "mechanismFamily": "HGF_cMet_potentiator",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "Small peptidomimetic derived from angiotensin IV, developed by the Harding laboratory at Washington State University. Reported to potentiate hepatocyte growth factor (HGF) binding to its receptor c-Met, thereby enhancing downstream PI3K-Akt and MAPK signaling associated with synaptogenesis and dendritic spine formation in preclinical models. All therapeutically relevant evidence is preclinical.",
+        "localization": "CNS penetration reported in rodent studies",
+        "clinicalUses": [],
+        "sideEffects": [
+          "unknown in humans (no controlled human trials identified)"
+        ],
+        "dosing": {
+          "quick": "No validated human dose. Preclinical rat studies used oral or intraperitoneal dosing in the mg/kg range. Not appropriate for public dosing display.",
+          "adminRoute": "oral or parenteral in preclinical studies",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": ["HGF (hepatocyte growth factor)", "c-Met (MET receptor tyrosine kinase)"],
+        "receptors": ["c-Met (MET)"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "HGF_cMet_synaptogenesis",
+            "steps": [
+              "dihexa -> facilitates HGF binding to c-Met (cell assays)",
+              "c-Met dimerization / autophosphorylation -> PI3K-Akt and Ras-MAPK activation (cell)",
+              "downstream -> increased dendritic spine density and synaptogenesis (hippocampal slice and rat cognition models)"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "dhx_claim_hgf_mechanism"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "No peer-reviewed controlled human trials have been published for dihexa as of the current knowledge state of this entry. No regulatory approval exists in any jurisdiction. Any claim of efficacy or safety in humans is unsupported.",
+        "animalEvidence": "The Harding group and collaborators have published rat studies reporting improved performance on spatial memory tasks (e.g., Morris water maze) in aged rats and in scopolamine-induced cognitive deficit models. Hippocampal slice work reports increased dendritic spine density. These findings have not, to this entry's knowledge, been independently replicated at scale.",
+        "mechanismDetail": "Dihexa is a peptidomimetic analog of the angiotensin IV fragment hinge, modified with a hexanoyl group and 6-aminohexanoic amide to improve metabolic stability and brain penetration. The proposed mechanism is not direct c-Met agonism; rather, dihexa is reported to act as a positive modulator of HGF binding to c-Met, thereby enhancing endogenous HGF signaling. Because c-Met is also implicated in oncogenesis and tissue repair, systemic potentiation of c-Met signaling carries a theoretical (and unquantified) oncologic risk in humans that has not been studied.",
+        "safetyDetail": "Human safety profile is essentially unknown. Gray-market vendors sell dihexa as a research chemical and it is used off-label as an unregulated nootropic. The theoretical risk that most warrants caution is c-Met-pathway activation in tissues where aberrant c-Met signaling contributes to malignancy; no human toxicology, carcinogenicity, or long-term safety data exist.",
+        "safetyRisks": [
+          {
+            "system": "oncologic",
+            "label": "c-Met pathway potentiation",
+            "color": "red",
+            "helpSummary": "c-Met signaling is important for normal tissue repair.",
+            "harmSummary": "c-Met is a known oncogenic driver in multiple solid tumors; chronic systemic potentiation of HGF/c-Met signaling in humans has not been studied and is a plausible theoretical concern.",
+            "citationIds": ["dhx_mccoy2013"]
+          },
+          {
+            "system": "regulatory",
+            "label": "No regulatory review",
+            "color": "red",
+            "helpSummary": "Not approved in any jurisdiction.",
+            "harmSummary": "No GMP manufacturing oversight; gray-market product identity and purity are not guaranteed.",
+            "citationIds": []
+          },
+          {
+            "system": "evidence",
+            "label": "No human trials",
+            "color": "red",
+            "helpSummary": "All reports are animal or in vitro.",
+            "harmSummary": "Cognitive benefit claims in humans are unsupported by any controlled trial.",
+            "citationIds": ["dhx_benoist2014"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Preclinical (rat) data support a cognition-related phenotype, but there is no published human evidence for nootropic effect.",
+          "caveat": "Extrapolating rat cognition endpoints to healthy-human enhancement is not supported by the primary literature; the oncologic risk profile in long-term human use is unknown.",
+          "citationIds": ["dhx_benoist2014", "dhx_mccoy2013"]
+        },
+        "missingEvidence": [
+          "No human pharmacokinetics",
+          "No human safety data",
+          "No human efficacy data",
+          "No chronic toxicology or carcinogenicity studies in the public literature"
+        ],
+        "anecdotalUse": [
+          "Oral self-administration by nootropic-community users, often stacked with other research-chemical peptides; no controlled outcome data."
+        ]
+      },
+      "claims": [
+        {
+          "id": "dhx_claim_hgf_mechanism",
+          "field": "mechanism",
+          "value": "Potentiates HGF binding to c-Met and downstream PI3K-Akt / MAPK signaling in cell and hippocampal slice assays.",
+          "species": "mixed",
+          "context": "cell",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.65,
+          "citationIds": ["dhx_mccoy2013", "dhx_benoist2014"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "dhx_claim_rat_cognition",
+          "field": "animalEvidence",
+          "value": "Improved spatial memory performance in aged and scopolamine-impaired rats.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "aged and scopolamine-treated rats",
+          "route": "oral or IP",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.7,
+          "citationIds": ["dhx_benoist2014"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "dhx_claim_no_human",
+          "field": "humanEvidence",
+          "value": "No peer-reviewed controlled human trials identified.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.9,
+          "citationIds": ["dhx_mccoy2013", "dhx_benoist2014"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "dhx_mccoy2013",
+          "sourceType": "pubmed",
+          "title": "Evaluation of metabolically stabilized angiotensin IV analogs as procognitive/antidementia agents",
+          "authors": ["McCoy AT", "Benoist CC", "Wright JW", "Kawas LH", "Bule-Ghogare JM", "Zhu M", "Appleyard SM", "Wayman GA", "Harding JW"],
+          "year": 2013,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23160330/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["dhx_claim_hgf_mechanism"],
+          "notes": "Harding group primary paper introducing dihexa as a metabolically stable angiotensin IV analog."
+        },
+        {
+          "id": "dhx_benoist2014",
+          "sourceType": "pubmed",
+          "title": "The procognitive and synaptogenic effects of angiotensin IV-derived peptides are dependent on activation of the hepatocyte growth factor / c-Met system",
+          "authors": ["Benoist CC", "Kawas LH", "Zhu M", "Tyson KA", "Stillmaker L", "Appleyard SM", "Harding JW"],
+          "year": 2014,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24403097/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["dhx_claim_hgf_mechanism", "dhx_claim_rat_cognition"],
+          "notes": "Links cognitive and synaptogenic effects mechanistically to HGF/c-Met."
+        }
+      ]
+    },
+    {
+      "id": "humanin",
+      "names": {
+        "primary": "Humanin",
+        "aliases": ["HN", "MT-RNR2-encoded peptide", "HNG (S14G-humanin, analog)"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": 2687.3,
+        "cas": "330936-69-1",
+        "sequenceOneLetter": "MAPRGFSCLLLLTSEIDLPVKRRA",
+        "sequenceThreeLetter": "Met-Ala-Pro-Arg-Gly-Phe-Ser-Cys-Leu-Leu-Leu-Leu-Thr-Ser-Glu-Ile-Asp-Leu-Pro-Val-Lys-Arg-Arg-Ala",
+        "length": 24,
+        "modifications": [],
+        "structureClass": "mitochondrial_derived_peptide"
+      },
+      "classification": {
+        "peptideClass": "mitochondrial_derived_peptide",
+        "mechanismFamily": "cytoprotective_FPR2_BAX",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "24-amino acid peptide encoded within an open reading frame of the mitochondrial 16S ribosomal RNA gene (MT-RNR2). First identified by Hashimoto and colleagues (2001) in surviving neurons from an Alzheimer disease brain. Reported binding partners include formyl peptide receptor 2 (FPR2/FPRL1) at the cell surface and the pro-apoptotic protein BAX intracellularly. Functions as a cytoprotective and anti-apoptotic signal in cell and animal models. No approved therapeutic use in humans.",
+        "localization": "mitochondrially encoded; secreted peptide detectable in plasma and CSF in humans and animals",
+        "clinicalUses": [],
+        "sideEffects": [
+          "unknown in humans (no interventional human trials identified)"
+        ],
+        "dosing": {
+          "quick": "No human therapeutic dose established. Preclinical studies use microgram-range IP, IV, or ICV dosing in rodents, frequently with the more potent S14G analog (HNG).",
+          "adminRoute": "preclinical parenteral",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["MT-RNR2"],
+        "proteins": ["BAX", "IGFBP-3", "BimEL", "tBid"],
+        "receptors": ["FPR2 (FPRL1)", "CNTFR/WSX-1/gp130 trimeric complex (reported)"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "IL-6 family signaling (via CNTFR-WSX-1-gp130)",
+            "effect": "reported engagement at this heterotrimeric complex drives STAT3 activation in cell models",
+            "context": "cell",
+            "symbols": ["C"],
+            "citationIds": ["hmn_ying2004"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "anti_apoptotic",
+            "steps": [
+              "humanin -> intracellular binding to BAX -> prevents BAX translocation to mitochondria -> reduced cytochrome c release (cell)",
+              "humanin -> binds BimEL and tBid -> inhibits pro-apoptotic activation (cell)"
+            ],
+            "symbols": ["C"],
+            "claimRef": "hmn_claim_bax"
+          },
+          {
+            "category": "cell_surface_signaling",
+            "steps": [
+              "humanin -> FPR2 (FPRL1) engagement -> cytoprotective signaling in cell models",
+              "humanin -> CNTFR/WSX-1/gp130 heterotrimer -> STAT3 activation (cell)"
+            ],
+            "symbols": ["C"],
+            "claimRef": "hmn_claim_fpr2"
+          },
+          {
+            "category": "metabolic_and_aging",
+            "steps": [
+              "humanin circulating levels decline with age in human observational cohorts",
+              "preclinical administration improves insulin sensitivity and reduces atherosclerosis in rodent models"
+            ],
+            "symbols": ["H", "A"],
+            "claimRef": "hmn_claim_aging_biomarker"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Human evidence is observational, not interventional. Circulating humanin concentrations have been measured in multiple cohorts and are reported to decline with age, correlate inversely with cardiovascular and metabolic disease markers, and differ in Alzheimer disease cohorts. No interventional human trial administering exogenous humanin has been published.",
+        "animalEvidence": "Preclinical work in rodents spans Alzheimer disease models (improved memory performance in APP/PS1 mice with HNG analog), atherosclerosis (reduced plaque burden in ApoE knockouts), myocardial ischemia-reperfusion (reduced infarct size), and metabolic models (improved insulin sensitivity). The S14G analog (HNG) is substantially more potent than native humanin and is the molecule most commonly used in therapeutic animal studies.",
+        "mechanismDetail": "Humanin is a small open reading frame (sORF) peptide encoded within the 16S rRNA sequence of the mitochondrial genome (MT-RNR2). It is a prototype member of the mitochondrial-derived peptide (MDP) class that now includes MOTS-c and the SHLP family. Two broadly supported mechanism axes: (1) Intracellular anti-apoptotic activity mediated by direct binding to BAX (Guo 2003), preventing BAX translocation to the mitochondrial outer membrane and the subsequent cytochrome c release / caspase cascade. Related interactions with BimEL and tBid have been reported. (2) Cell-surface receptor signaling, most robustly characterized as engagement of FPR2/FPRL1 (Ying 2004), and reported engagement of a heterotrimeric CNTFR/WSX-1/gp130 complex with downstream STAT3 activation. Additionally, humanin has been reported to bind IGFBP-3, providing a mechanism to counter IGFBP-3-mediated pro-apoptotic signaling.",
+        "safetyDetail": "No interventional human safety data exist. Endogenous humanin is present in human plasma and CSF at low concentrations without known toxicity, but this does not predict the safety of exogenous administration at pharmacologic doses. Research-chemical humanin and HNG sold via gray-market vendors have no GMP oversight; identity and endotoxin burden cannot be assumed.",
+        "safetyRisks": [
+          {
+            "system": "evidence",
+            "label": "No interventional human data",
+            "color": "red",
+            "helpSummary": "All therapeutic findings are in cells or animals.",
+            "harmSummary": "Any claim of benefit or safety in humans is extrapolation and is not supported by controlled trials.",
+            "citationIds": ["hmn_hashimoto2001", "hmn_guo2003"]
+          },
+          {
+            "system": "regulatory",
+            "label": "Not approved",
+            "color": "red",
+            "helpSummary": "No regulator has approved humanin or any humanin analog.",
+            "harmSummary": "No pharmacovigilance system; adverse events in self-administration would be unreported.",
+            "citationIds": []
+          },
+          {
+            "system": "oncologic_theoretical",
+            "label": "Anti-apoptotic signaling",
+            "color": "yellow",
+            "helpSummary": "Physiologic anti-apoptosis protects healthy cells.",
+            "harmSummary": "Systemic, chronic anti-apoptotic signaling has theoretical implications for cells with oncogenic mutations; this has not been studied in humans.",
+            "citationIds": ["hmn_guo2003"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Humanin is an interesting biomarker and a preclinical cytoprotection candidate; it is not a demonstrated human therapeutic or healthy-human enhancer.",
+          "caveat": "Observational biomarker associations (age, metabolic health) do not establish that exogenous administration produces benefit. The therapeutic preclinical data overwhelmingly use the HNG analog, not the native peptide.",
+          "citationIds": ["hmn_lee_mdp_review"]
+        },
+        "missingEvidence": [
+          "No human interventional trials",
+          "No human pharmacokinetics of exogenous administration",
+          "No long-term safety data for chronic anti-apoptotic signaling"
+        ],
+        "anecdotalUse": [
+          "Experimental self-administration in longevity and biohacker communities, generally of analogs such as HNG, without any controlled outcome data."
+        ]
+      },
+      "claims": [
+        {
+          "id": "hmn_claim_origin",
+          "field": "identity",
+          "value": "24-amino acid peptide encoded within mitochondrial 16S rRNA (MT-RNR2), first identified in surviving neurons from Alzheimer disease brain.",
+          "species": "human",
+          "context": "preclinical",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "H"],
+          "confidence": 0.95,
+          "citationIds": ["hmn_hashimoto2001"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "hmn_claim_bax",
+          "field": "mechanism",
+          "value": "Binds BAX and prevents its translocation to mitochondria, reducing cytochrome c release and apoptosis.",
+          "species": "mixed",
+          "context": "cell",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C"],
+          "confidence": 0.85,
+          "citationIds": ["hmn_guo2003"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "hmn_claim_fpr2",
+          "field": "mechanism",
+          "value": "Engages formyl peptide receptor 2 (FPR2/FPRL1) at the cell surface to trigger cytoprotective signaling.",
+          "species": "mixed",
+          "context": "cell",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C"],
+          "confidence": 0.8,
+          "citationIds": ["hmn_ying2004"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "hmn_claim_aging_biomarker",
+          "field": "humanEvidence",
+          "value": "Circulating humanin concentrations decline with age in human observational cohorts.",
+          "species": "human",
+          "context": "observational",
+          "population": "mixed age adult cohorts",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H"],
+          "confidence": 0.75,
+          "citationIds": ["hmn_lee_mdp_review"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "hmn_claim_no_human_intervention",
+          "field": "humanEvidence",
+          "value": "No interventional human trial of exogenous humanin or HNG has been published.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.9,
+          "citationIds": ["hmn_lee_mdp_review"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "hmn_hashimoto2001",
+          "sourceType": "pubmed",
+          "title": "A rescue factor abolishing neuronal cell death by a wide spectrum of familial Alzheimer's disease genes and Abeta",
+          "authors": ["Hashimoto Y", "Niikura T", "Tajima H", "Yasukawa T", "Sudo H", "Ito Y", "Kita Y", "Kawasumi M", "Kouyama K", "Doyu M", "Sobue G", "Koide T", "Tsuji S", "Lang J", "Kurokawa K", "Nishimoto I"],
+          "year": 2001,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11371646/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["hmn_claim_origin"],
+          "notes": "Original humanin discovery paper, PNAS 2001."
+        },
+        {
+          "id": "hmn_guo2003",
+          "sourceType": "pubmed",
+          "title": "Humanin peptide suppresses apoptosis by interfering with Bax activation",
+          "authors": ["Guo B", "Zhai D", "Cabezas E", "Welsh K", "Nouraini S", "Satterthwait AC", "Reed JC"],
+          "year": 2003,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12724631/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["hmn_claim_bax"],
+          "notes": "Nature 2003, BAX-binding mechanism."
+        },
+        {
+          "id": "hmn_ying2004",
+          "sourceType": "pubmed",
+          "title": "The N-formylpeptide receptor FPRL1 and its ligands in inflammation and humanin signaling",
+          "authors": ["Ying G", "Iribarren P", "Zhou Y", "Gong W", "Zhang N", "Yu ZX", "Le Y", "Cui Y", "Wang JM"],
+          "year": 2004,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15356121/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["hmn_claim_fpr2"],
+          "notes": "Primary evidence for humanin acting via FPR2/FPRL1."
+        },
+        {
+          "id": "hmn_lee_mdp_review",
+          "sourceType": "pubmed",
+          "title": "The mitochondrial-derived peptide MOTS-c and humanin: emerging roles in metabolism and aging",
+          "authors": ["Lee C", "Yen K", "Cohen P"],
+          "year": 2013,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Lee+Cohen+humanin+MOTS-c+mitochondrial+derived+peptide",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["hmn_claim_aging_biomarker", "hmn_claim_no_human_intervention"],
+          "notes": "Cohen lab overview of MDPs and aging biomarker data. Moderator should substitute the specific Lee/Cohen observational paper that best matches the declining-with-age claim."
+        }
+      ]
+    }
+  ]
+}

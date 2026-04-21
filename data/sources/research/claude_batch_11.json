@@ -1,0 +1,769 @@
+{
+  "batch_id": "batch-11",
+  "generated_at": "2026-04-21",
+  "batch_notes": "GHRH/GHSR axis peptides. CJC-1295 entry covers the DAC (albumin-binding) variant as primary, with 'Modified GRF 1-29' (without-DAC) captured as a distinct alias/identity. Ipamorelin, GHRP-2, and GHRP-6 are GHSR-1a agonists with decreasing selectivity for GH over cortisol/prolactin/ACTH. Only GHRP-2 has a regulator approval anywhere (PMDA Japan, 2004, diagnostic only). No FDA approval exists for any of the four for therapeutic use. Healthy-subject human GH/IGF-1 elevation is documented for CJC-1295 (Teichman 2006). Ipamorelin's one published human RCT was in postoperative ileus (Beck 2014, NCT00672074) and missed its primary endpoint. GHRP-6 requires intact endogenous GHRH for its full GH response in humans (Pandya 1998). Enhancement-use claims (body composition, anti-aging, athletic performance) are not supported by controlled human trials for any of the four and are flagged accordingly.",
+  "peptides": [
+    {
+      "id": "cjc-1295",
+      "names": {
+        "primary": "CJC-1295",
+        "aliases": [
+          "CJC-1295 DAC",
+          "CJC-1295 with DAC",
+          "DAC:GRF",
+          "drug affinity complex:GRF",
+          "Modified GRF (1-29) [no-DAC variant; distinct compound]",
+          "CJC-1295 without DAC [no-DAC variant]"
+        ],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C165H269N47O46",
+        "molecularWeight": 3647.29,
+        "cas": "863288-34-0",
+        "sequenceOneLetter": "YaDAIFTQSYRKVLAQLSARKLLQDILSR-NH2 (Lys30-Nɛ-maleimidopropionyl)",
+        "sequenceThreeLetter": "H-Tyr-D-Ala-Asp-Ala-Ile-Phe-Thr-Gln-Ser-Tyr-Arg-Lys-Val-Leu-Ala-Gln-Leu-Ser-Ala-Arg-Lys-Leu-Leu-Gln-Asp-Ile-Leu-Ser-Arg-Lys(Nɛ-MPA)-NH2",
+        "length": 30,
+        "modifications": [
+          "D-Ala at position 2",
+          "Gln at position 8",
+          "Ala at position 15",
+          "Leu at position 27",
+          "C-terminal amidation",
+          "Lys30 with Nɛ-maleimidopropionyl group (DAC) for covalent albumin conjugation"
+        ],
+        "structureClass": "GHRH(1-29) analog with albumin-binding drug affinity complex"
+      },
+      "classification": {
+        "peptideClass": "GHRH analog (growth hormone secretagogue)",
+        "mechanismFamily": "GHRH receptor agonist",
+        "regulatoryStatus": "investigational"
+      },
+      "tile": {
+        "mechanismSummary": "Synthetic GHRH(1-29) analog with four amino acid substitutions conferring DPP-IV resistance and a C-terminal maleimide that covalently binds circulating albumin, extending plasma half-life to ~6-8 days and sustaining GH/IGF-1 elevation.",
+        "localization": "Circulates bound to serum albumin; active at GHRH receptor on anterior pituitary somatotrophs.",
+        "clinicalUses": [
+          "Investigated for growth hormone deficiency and HIV-associated lipodystrophy (Phase II; development halted)",
+          "No current approved clinical use"
+        ],
+        "sideEffects": [
+          "Injection site reactions",
+          "Facial flushing",
+          "Transient headache",
+          "Theoretical risk of chronic IGF-1 elevation (uncharacterized long-term)"
+        ],
+        "dosing": {
+          "quick": "Trial doses in healthy adults were 30-250 mcg/kg SC single or multiple doses; 30-60 mcg/kg was best tolerated per Teichman 2006",
+          "adminRoute": "Subcutaneous injection",
+          "publicDisplayAllowed": true,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["GHRH", "GHRHR", "GH1", "IGF1"],
+        "proteins": ["Growth hormone (GH)", "Insulin-like growth factor 1 (IGF-1)", "Serum albumin (covalent carrier)"],
+        "receptors": ["GHRHR (growth hormone-releasing hormone receptor)"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "endocrine",
+            "steps": [
+              "CJC-1295 covalently conjugates to plasma albumin via maleimide-thiol chemistry",
+              "Albumin-bound CJC-1295 engages GHRHR on anterior pituitary somatotrophs",
+              "Gs-coupled GHRHR activation increases intracellular cAMP and PKA signaling",
+              "Pulsatile GH release into circulation is preserved but amplitude increases",
+              "Hepatic GH receptor activation drives IGF-1 synthesis and secretion",
+              "Sustained albumin binding prolongs pharmacodynamic effect to days"
+            ],
+            "symbols": ["H", "A"],
+            "claimRef": "cl-cjc1295-1"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Teichman et al. 2006 (JCEM) conducted two randomized, placebo-controlled, double-blind ascending-dose trials (28 and 49 days) in healthy adults ages 21-61. Single SC CJC-1295 produced dose-dependent 2-10x increases in mean plasma GH for 6+ days and 1.5-3x increases in IGF-1 for 9-11 days. Estimated terminal half-life was 5.8-8.1 days. Multiple dosing led to cumulative IGF-1 elevation persisting up to 28 days. No serious adverse events; 30-60 mcg/kg doses were best tolerated. A later Phase II trial was discontinued after a subject death attributed by the attending physician to unrelated asymptomatic coronary artery disease. No long-term (>~3 months) controlled human safety data exist.",
+        "animalEvidence": "Alba et al. 2006 (Am J Physiol Endocrinol Metab) showed that daily CJC-1295 normalized body weight and length in GHRH-knockout mice and increased pituitary GH mRNA and somatotroph proliferation. Dose-interval comparisons (24, 48, 72 h) showed frequency-dependent auxological response. Earlier rat PK work demonstrated albumin bioconjugation in vivo within 15 minutes.",
+        "mechanismDetail": "CJC-1295 is Sermorelin (GHRH 1-29) with [D-Ala2, Gln8, Ala15, Leu27] substitutions and a C-terminal Lys30 bearing an Nɛ-maleimidopropionyl group. D-Ala2 confers resistance to dipeptidyl peptidase-IV cleavage. The maleimide reacts with the free thiol of Cys34 on endogenous serum albumin, forming a stable thioether conjugate. Because albumin has a ~19-day half-life in humans, the bioconjugate persists for days, unlike native GHRH (t1/2 ~7 min). Activation of pituitary GHRHR is unchanged mechanistically; the innovation is pharmacokinetic. The combination of tonic GHRHR stimulation from CJC-1295 with pulsatile GHSR-1a activation (e.g., ipamorelin) is frequently used in compounding practice because the two receptor systems converge on somatotrophs through independent second messengers (cAMP vs PLC/IP3).",
+        "safetyDetail": "Published short-term human safety data are limited to the Teichman trials (n~47 combined, up to 49 days) and scattered Phase II data. Published adverse effects are primarily injection-site reactions, flushing, and headache. The one Phase II death was formally judged by the trial physician to be due to preexisting asymptomatic coronary disease and unrelated to study drug, but full adjudication data are not public. Sustained elevation of IGF-1 is of theoretical concern given epidemiologic associations between chronically high IGF-1 and certain cancers, but whether exogenous GHRH-driven elevation carries the same risk is unknown. No published human data exist beyond ~90 days of continuous dosing.",
+        "safetyRisks": [
+          {
+            "system": "endocrine",
+            "label": "Sustained IGF-1 elevation",
+            "color": "amber",
+            "helpSummary": "Durable GH/IGF-1 elevation may support anabolism and tissue repair.",
+            "harmSummary": "Chronic IGF-1 elevation of unknown duration-risk relationship; theoretical concern for neoplasia and insulin resistance.",
+            "citationIds": ["cit-cjc1295-teichman2006", "cit-cjc1295-realpeptides2026"]
+          },
+          {
+            "system": "cardiovascular",
+            "label": "Unresolved Phase II safety signal",
+            "color": "amber",
+            "helpSummary": "Phase II subject death was attributed to pre-existing coronary disease, not study drug.",
+            "harmSummary": "Program was nonetheless discontinued; no long-term human cardiovascular safety data published.",
+            "citationIds": ["cit-cjc1295-wikipedia2026"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "In healthy adults, short-course CJC-1295 produces measurable, durable increases in GH and IGF-1. This is the strongest enhancement-relevant human pharmacodynamic signal in this batch.",
+          "caveat": "Teichman 2006 measured biomarkers only; no controlled trial has tested body composition, performance, recovery, or sleep endpoints in healthy adults. Any claim of enhancement effects rests on PD biomarker extrapolation, not outcome data. WADA prohibits GHRH analogs at all times.",
+          "citationIds": ["cit-cjc1295-teichman2006"]
+        },
+        "missingEvidence": [
+          "Controlled human outcome data (body composition, performance, sleep, cognition)",
+          "Long-term (>90 day) human safety data",
+          "Dose-response for healthy-adult safety vs benefit",
+          "Head-to-head comparison with Tesamorelin or Sermorelin"
+        ],
+        "anecdotalUse": [
+          "Compounding-pharmacy prescription for 'anti-aging' and recovery",
+          "Combined with ipamorelin in athletic / longevity communities"
+        ]
+      },
+      "claims": [
+        {
+          "id": "cl-cjc1295-1",
+          "field": "pharmacodynamics",
+          "value": "Single SC CJC-1295 in healthy adults produced dose-dependent 2-10x increases in mean plasma GH for >=6 days and 1.5-3x increases in IGF-1 for 9-11 days; estimated t1/2 5.8-8.1 days.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "Healthy adults 21-61 y",
+          "route": "subcutaneous",
+          "sampleSize": null,
+          "duration": "28 and 49 day trials",
+          "symbols": ["H"],
+          "confidence": 0.85,
+          "citationIds": ["cit-cjc1295-teichman2006"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cl-cjc1295-2",
+          "field": "mechanism",
+          "value": "CJC-1295 covalently conjugates to serum albumin via a maleimide-Cys34 thioether, extending circulating half-life and GHRHR agonist duration.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "Rat PK and chemistry characterization",
+          "route": "subcutaneous",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.85,
+          "citationIds": ["cit-cjc1295-alba2006", "cit-cjc1295-fda2024"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cl-cjc1295-3",
+          "field": "regulatory",
+          "value": "Clinical development reached Phase II and was discontinued after a trial subject death attributed by the attending physician to pre-existing coronary artery disease.",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "?"],
+          "confidence": 0.6,
+          "citationIds": ["cit-cjc1295-wikipedia2026"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-cjc1295-teichman2006",
+          "sourceType": "pubmed",
+          "title": "Prolonged Stimulation of Growth Hormone (GH) and Insulin-Like Growth Factor I Secretion by CJC-1295, a Long-Acting Analog of GH-Releasing Hormone, in Healthy Adults",
+          "authors": ["Teichman SL", "Neale A", "Lawrence B", "Gagnon C", "Castaigne JP", "Frohman LA"],
+          "year": 2006,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16352683/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-cjc1295-1"],
+          "notes": "J Clin Endocrinol Metab 91(3):799-805. Two RCTs in healthy adults. Primary pharmacokinetic/pharmacodynamic source."
+        },
+        {
+          "id": "cit-cjc1295-alba2006",
+          "sourceType": "pubmed",
+          "title": "Once-daily administration of CJC-1295, a long-acting growth hormone-releasing hormone (GHRH) analog, normalizes growth in the GHRH knockout mouse",
+          "authors": ["Alba M", "Fintini D", "Sagazio A", "Lawrence B", "Castaigne JP", "Frohman LA", "Salvatori R"],
+          "year": 2006,
+          "url": "https://journals.physiology.org/doi/full/10.1152/ajpendo.00201.2006",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-cjc1295-2"],
+          "notes": "Am J Physiol Endocrinol Metab 291(6):E1290-4. Mouse mechanistic/efficacy data."
+        },
+        {
+          "id": "cit-cjc1295-wikipedia2026",
+          "sourceType": "other",
+          "title": "CJC-1295 - Wikipedia",
+          "authors": [],
+          "year": 2026,
+          "url": "https://en.wikipedia.org/wiki/CJC-1295",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cl-cjc1295-3"],
+          "notes": "Summary reference for Phase II discontinuation. Tertiary source; needs primary regulatory confirmation."
+        },
+        {
+          "id": "cit-cjc1295-fda2024",
+          "sourceType": "fda_label",
+          "title": "FDA Docket FDA-2024-N-4777-0002 attachment (nomination background including CJC-1295 primary literature summary)",
+          "authors": [],
+          "year": 2024,
+          "url": "https://downloads.regulations.gov/FDA-2024-N-4777-0002/attachment_7.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["cl-cjc1295-2"],
+          "notes": "FDA 503A/503B bulk nomination dossier citing Teichman 2006 and Alba 2006."
+        },
+        {
+          "id": "cit-cjc1295-realpeptides2026",
+          "sourceType": "other",
+          "title": "Is CJC-1295 Safe Long Term Use? (Research Insights)",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.realpeptides.co/cjc-1295-safe-long-term-use-research-insights/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": [],
+          "notes": "Secondary synthesis referencing absence of >90 day human safety data."
+        }
+      ]
+    },
+    {
+      "id": "ipamorelin",
+      "names": {
+        "primary": "Ipamorelin",
+        "aliases": ["NNC 26-0161"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C38H49N9O5",
+        "molecularWeight": 711.86,
+        "cas": "170851-70-4",
+        "sequenceOneLetter": "Aib-H-(D-2Nal)-(D-F)-K-NH2",
+        "sequenceThreeLetter": "H-Aib-His-D-2-Nal-D-Phe-Lys-NH2",
+        "length": 5,
+        "modifications": [
+          "N-terminal alpha-aminoisobutyric acid (Aib)",
+          "D-2-naphthylalanine at position 3",
+          "D-Phe at position 4",
+          "C-terminal amidation"
+        ],
+        "structureClass": "Synthetic pentapeptide GHS-R1a agonist (GHRP-1 derivative)"
+      },
+      "classification": {
+        "peptideClass": "Growth hormone secretagogue (GHRP)",
+        "mechanismFamily": "GHSR-1a (ghrelin receptor) agonist",
+        "regulatoryStatus": "investigational"
+      },
+      "tile": {
+        "mechanismSummary": "Selective GHSR-1a agonist that triggers pulsatile GH release from anterior pituitary somatotrophs with notably less ACTH, cortisol, and prolactin stimulation than other GHRPs.",
+        "localization": "Active at GHSR-1a on pituitary somatotrophs and hypothalamic arcuate nucleus neurons; peripheral GHSR-1a also expressed in enteric/vagal circuits.",
+        "clinicalUses": [
+          "Investigated for postoperative ileus (Phase 2, primary endpoint not met)",
+          "No currently approved clinical use"
+        ],
+        "sideEffects": [
+          "Injection-site reactions",
+          "Headache",
+          "Mild transient nausea",
+          "Water retention"
+        ],
+        "dosing": {
+          "quick": "IV 0.03 mg/kg twice daily was tested in the POI RCT (Beck 2014); research compounding doses commonly 100-300 mcg SC 1-3x daily but are not FDA-validated",
+          "adminRoute": "Subcutaneous or intravenous",
+          "publicDisplayAllowed": true,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["GHSR", "GH1", "IGF1", "GHRH"],
+        "proteins": ["Growth hormone (GH)", "Insulin-like growth factor 1 (IGF-1)"],
+        "receptors": ["GHSR-1a (growth hormone secretagogue receptor 1a; ghrelin receptor)"],
+        "channelsTransporters": ["IP3-gated intracellular Ca2+ release (downstream of Gq/PLC)"],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "endocrine",
+            "steps": [
+              "Ipamorelin binds GHSR-1a on pituitary somatotrophs",
+              "Gq/11 activation -> PLC -> IP3 / DAG",
+              "Intracellular Ca2+ mobilization -> GH exocytosis",
+              "Hypothalamic GHSR-1a activation amplifies pulse via GHRH neurons and somatostatin withdrawal",
+              "Selective effect: ACTH/cortisol and PRL pathways minimally activated at GH-releasing doses"
+            ],
+            "symbols": ["H", "A"],
+            "claimRef": "cl-ipa-1"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Beck et al. 2014 (Int J Colorectal Dis) reported a multicenter, double-blind, placebo-controlled Phase 2 RCT (NCT00672074) in bowel-resection patients. Ipamorelin IV 0.03 mg/kg BID for up to 7 days was well tolerated but did not achieve statistical significance on time to first tolerated solid meal (median 25.3 h vs 32.6 h placebo; HR ~1.33; p=0.16). Pharmacodynamic human studies show transient GH rises. No published controlled human trials address body composition, anti-aging, or athletic performance.",
+        "animalEvidence": "Raun et al. 1998 (Eur J Endocrinol) is the primary characterization: ipamorelin released GH in rat pituitary cells with EC50 1.3 nmol/L and Emax comparable to GHRP-6; in pentobarbital-anesthetized rats ED50 was 80 nmol/kg. In conscious swine, ipamorelin did not meaningfully elevate ACTH or cortisol even at doses >200x the GH-release ED50, whereas GHRP-6 and GHRP-2 did. Svensson et al. 2000 and related rodent work show bone density and lean mass effects with chronic dosing.",
+        "mechanismDetail": "Ipamorelin is structurally a pentapeptide derived from GHRP-1 by removal of the Ala-Trp dipeptide. It binds GHSR-1a, a Gq-coupled 7TM receptor expressed in pituitary somatotrophs and hypothalamic arcuate nucleus neurons. Receptor activation produces PLC-IP3-Ca2+ signaling and GH exocytosis. The D-Lys3-GHRP-6 antagonist blocks its effect, confirming GHSR-1a specificity. Unlike GHRP-6, GHRP-2, and hexarelin, ipamorelin does not clinically stimulate the HPA axis or lactotrophs at GH-releasing doses. Its elimination half-life is approximately 2 hours.",
+        "safetyDetail": "In the Beck POI RCT, ipamorelin was well tolerated with safety comparable to placebo. Adverse effects reported across human and animal literature are transient and primarily injection-site or GI. Long-term (>7 day) controlled human safety data are effectively absent. Theoretical concerns parallel those for any sustained GH secretagogue: fluid retention, carpal tunnel-like paresthesias, insulin resistance, and theoretical IGF-1-mediated proliferation risk. The clean cortisol/prolactin profile is ipamorelin's distinguishing selling point and is well-supported pharmacologically.",
+        "safetyRisks": [
+          {
+            "system": "endocrine",
+            "label": "GH/IGF-1 axis stimulation",
+            "color": "amber",
+            "helpSummary": "Produces GH pulses without appreciable cortisol or prolactin co-stimulation.",
+            "harmSummary": "Long-term consequences of repeated GH/IGF-1 pulsing in healthy adults are uncharacterized.",
+            "citationIds": ["cit-ipa-raun1998", "cit-ipa-beck2014"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Preclinical and short-term human PD data support selective GH release; selectivity is ipamorelin's main differentiator over GHRP-2 and GHRP-6.",
+          "caveat": "No controlled human trial has evaluated body composition, performance, recovery, or longevity endpoints. Any enhancement framing is PD-biomarker-based extrapolation from preclinical and PK data.",
+          "citationIds": ["cit-ipa-raun1998"]
+        },
+        "missingEvidence": [
+          "Long-term (>7 day) controlled human safety data",
+          "Human outcome trials for body composition, sleep, or recovery",
+          "Head-to-head clinical data vs other GHSs"
+        ],
+        "anecdotalUse": [
+          "Compounded with CJC-1295 for 'GHRH + GHRP' stacking in longevity/performance settings",
+          "Not FDA-approved; WADA-prohibited for athletes"
+        ]
+      },
+      "claims": [
+        {
+          "id": "cl-ipa-1",
+          "field": "mechanism",
+          "value": "Ipamorelin is a selective GHSR-1a agonist that releases GH with efficacy comparable to GHRP-6 but without significant ACTH, cortisol, FSH, LH, PRL, or TSH elevation at doses up to >200x the GH-release ED50 in swine.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "Rat pituitary cells; anesthetized rats; conscious swine",
+          "route": "IV / SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.9,
+          "citationIds": ["cit-ipa-raun1998"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cl-ipa-2",
+          "field": "human_trial",
+          "value": "In a Phase 2 RCT in bowel-resection patients (NCT00672074), IV ipamorelin 0.03 mg/kg BID did not significantly shorten time to first tolerated solid meal vs placebo (median 25.3 h vs 32.6 h; p=0.16) but was well tolerated.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "Postoperative ileus, n~117 MITT",
+          "route": "intravenous",
+          "sampleSize": 117,
+          "duration": "up to 7 days",
+          "symbols": ["Rx", "H"],
+          "confidence": 0.85,
+          "citationIds": ["cit-ipa-beck2014"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-ipa-raun1998",
+          "sourceType": "pubmed",
+          "title": "Ipamorelin, the first selective growth hormone secretagogue",
+          "authors": ["Raun K", "Hansen BS", "Johansen NL", "Thogersen H", "Madsen K", "Ankersen M", "Andersen PH"],
+          "year": 1998,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9849822/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-ipa-1"],
+          "notes": "Eur J Endocrinol 139(5):552-561. Foundational selectivity characterization."
+        },
+        {
+          "id": "cit-ipa-beck2014",
+          "sourceType": "pubmed",
+          "title": "Prospective, randomized, controlled proof of concept study of the Ghrelin mimetic ipamorelin for the management of postoperative ileus in bowel resection patients",
+          "authors": ["Beck DE", "Sweeney WB", "McCarter MD"],
+          "year": 2014,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25112197/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-ipa-2"],
+          "notes": "Int J Colorectal Dis 29(12):1527-34. NCT00672074. Primary human RCT."
+        },
+        {
+          "id": "cit-ipa-ishida2020",
+          "sourceType": "other",
+          "title": "Growth hormone secretagogues: history, mechanism of action, and clinical development",
+          "authors": ["Ishida J", "Saitoh M", "Ebner N", "Springer J", "Anker SD", "von Haehling S"],
+          "year": 2020,
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/rco2.9",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": [],
+          "notes": "Peer-reviewed review; useful for developmental history of GHSs and Novo Nordisk origin of ipamorelin."
+        }
+      ]
+    },
+    {
+      "id": "ghrp-2",
+      "names": {
+        "primary": "GHRP-2",
+        "aliases": ["Pralmorelin", "KP-102", "Growth hormone-releasing peptide-2"],
+        "tradeNames": ["GHRP Kaken (Japan, diagnostic)"]
+      },
+      "identity": {
+        "formula": "C45H55N9O6",
+        "molecularWeight": 817.97,
+        "cas": "158861-67-7",
+        "sequenceOneLetter": "(D-A)-(D-2Nal)-A-W-(D-F)-K-NH2",
+        "sequenceThreeLetter": "H-D-Ala-D-2-Nal-Ala-Trp-D-Phe-Lys-NH2",
+        "length": 6,
+        "modifications": [
+          "D-Ala at position 1",
+          "D-2-naphthylalanine at position 2",
+          "D-Phe at position 5",
+          "C-terminal amidation"
+        ],
+        "structureClass": "Synthetic hexapeptide GHS-R1a agonist"
+      },
+      "classification": {
+        "peptideClass": "Growth hormone secretagogue (GHRP)",
+        "mechanismFamily": "GHSR-1a (ghrelin receptor) agonist",
+        "regulatoryStatus": "non_us_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Synthetic hexapeptide ghrelin mimetic. Potent GHSR-1a agonist that elicits strong GH release with modest but real ACTH/cortisol and prolactin elevation — less selective than ipamorelin, more potent per microgram.",
+        "localization": "GHSR-1a on pituitary somatotrophs and hypothalamic arcuate nucleus neurons.",
+        "clinicalUses": [
+          "Diagnostic test for growth hormone deficiency in adults and children (Japan, PMDA-approved October 2004 as pralmorelin)",
+          "No US approval; not approved for therapeutic use anywhere"
+        ],
+        "sideEffects": [
+          "Transient ACTH/cortisol rise",
+          "Transient prolactin rise",
+          "Appetite stimulation (less intense than GHRP-6)",
+          "Injection-site reactions",
+          "Transient flushing"
+        ],
+        "dosing": {
+          "quick": "PMDA diagnostic dose (Japan): 100 mcg IV single dose for GHD testing; research/compounding doses vary and are not regulator-validated",
+          "adminRoute": "Intravenous (diagnostic); subcutaneous (research)",
+          "publicDisplayAllowed": true,
+          "context": "regulatory"
+        }
+      },
+      "biology": {
+        "genes": ["GHSR", "GH1", "POMC", "PRL"],
+        "proteins": ["Growth hormone (GH)", "ACTH", "Cortisol", "Prolactin", "IGF-1"],
+        "receptors": ["GHSR-1a"],
+        "channelsTransporters": ["IP3-gated intracellular Ca2+ release"],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "endocrine",
+            "steps": [
+              "GHRP-2 binds GHSR-1a on pituitary somatotrophs and hypothalamus",
+              "Gq/PLC activation -> IP3 / DAG -> Ca2+ mobilization",
+              "GH exocytosis from somatotrophs; maximum acute GH release larger per mcg than GHRP-6 or ipamorelin",
+              "Cross-activation of corticotrophs and lactotrophs produces measurable ACTH, cortisol, and PRL elevation",
+              "Orexigenic signal via hypothalamic NPY/AgRP neurons (less than GHRP-6)"
+            ],
+            "symbols": ["Rx", "H", "A"],
+            "claimRef": "cl-ghrp2-1"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Arvat et al. 1997 (Peptides) directly compared GHRP-2 and hexarelin with GHRH, TRH, and hCRH in humans, documenting GH release plus measurable ACTH, cortisol, and prolactin responses. Pralmorelin (GHRP-2) was approved by Japan's PMDA in October 2004 as a diagnostic GH-stimulation agent. Multiple human PD studies confirm dose-dependent GH peaks after IV or SC administration. No Phase 3 therapeutic-indication trial has been completed; North American rights were at one point sublicensed to Wyeth but did not advance to FDA approval.",
+        "animalEvidence": "Rodent and primate studies show ~2-fold increases in plasma GH and consistent appetite stimulation. Myoprotective effects in striated muscle atrophy models have been reported via direct GHS-R1a agonism independent of IGF-1 transcription.",
+        "mechanismDetail": "GHRP-2 is a second-generation hexapeptide derived from the GHRP structure-activity series that produced GHRP-6. Compared with GHRP-6, it has improved GH-releasing potency per microgram, but compared with ipamorelin, it retains off-target HPA axis and lactotroph activation. The concurrent ACTH and prolactin rises are dose-related and transient (typically return to baseline within 2-3 hours). GHRP-2 synergizes with GHRH analogs (e.g., sermorelin, CJC-1295) because the two converge on somatotrophs through independent signaling (Gs/cAMP for GHRH vs Gq/PLC/Ca2+ for GHSR-1a). Half-life is short (~15-60 minutes).",
+        "safetyDetail": "Single-dose diagnostic safety is established through Japanese regulatory approval. Long-term therapeutic safety is not established. Repeated dosing concerns include chronic cortisol/prolactin elevation (metabolic, immune, and reproductive implications), appetite-driven weight gain, and theoretical IGF-1-related risk. GHRP-2 is prohibited by WADA at all times.",
+        "safetyRisks": [
+          {
+            "system": "endocrine",
+            "label": "HPA axis activation",
+            "color": "amber",
+            "helpSummary": "Transient ACTH/cortisol rise is dose-related and returns to baseline within hours.",
+            "harmSummary": "Repeated daily dosing may produce clinically meaningful cumulative cortisol exposure; unquantified in humans.",
+            "citationIds": ["cit-ghrp2-arvat1997"]
+          },
+          {
+            "system": "endocrine",
+            "label": "Prolactin elevation",
+            "color": "amber",
+            "helpSummary": "Less pronounced than GHRP-6 or hexarelin.",
+            "harmSummary": "Chronic hyperprolactinemia can affect reproductive and mood function.",
+            "citationIds": ["cit-ghrp2-arvat1997"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Reliably elevates GH in humans at diagnostic doses; pharmacodynamic basis for anabolic/recovery claims exists.",
+          "caveat": "No controlled human outcome trial supports body-composition or performance claims. Less selective than ipamorelin. WADA-prohibited.",
+          "citationIds": ["cit-ghrp2-arvat1997", "cit-ghrp2-ishida2020"]
+        },
+        "missingEvidence": [
+          "Phase 3 therapeutic trials",
+          "Controlled long-term human safety data",
+          "Healthy-adult body-composition outcome trials"
+        ],
+        "anecdotalUse": [
+          "Body-composition and recovery stacks (combined with GHRH analogs)",
+          "Appetite stimulation in clinical wasting contexts (off-label)"
+        ]
+      },
+      "claims": [
+        {
+          "id": "cl-ghrp2-1",
+          "field": "mechanism",
+          "value": "GHRP-2 activates GHSR-1a and produces robust GH release with concurrent, dose-related ACTH, cortisol, and prolactin elevation in humans.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "Healthy adult volunteers (comparative endocrine study)",
+          "route": "intravenous",
+          "sampleSize": null,
+          "duration": "acute",
+          "symbols": ["H"],
+          "confidence": 0.85,
+          "citationIds": ["cit-ghrp2-arvat1997"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cl-ghrp2-2",
+          "field": "regulatory",
+          "value": "Pralmorelin (GHRP-2) received PMDA approval in Japan in October 2004 as a diagnostic agent for growth hormone deficiency; it is not FDA-approved.",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": "intravenous",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx"],
+          "confidence": 0.85,
+          "citationIds": ["cit-ghrp2-ishida2020"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-ghrp2-arvat1997",
+          "sourceType": "pubmed",
+          "title": "Effects of GHRP-2 and hexarelin, two synthetic GH-releasing peptides, on GH, prolactin, ACTH and cortisol levels in man. Comparison with the effects of GHRH, TRH and hCRH",
+          "authors": ["Arvat E", "Di Vito L", "Maccagno B", "Broglio F", "Boghen MF", "Deghenghi R", "Camanni F", "Ghigo E"],
+          "year": 1997,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9285940/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-ghrp2-1"],
+          "notes": "Peptides 18(6):885-91. Direct human endocrine comparison."
+        },
+        {
+          "id": "cit-ghrp2-ishida2020",
+          "sourceType": "other",
+          "title": "Growth hormone secretagogues: history, mechanism of action, and clinical development",
+          "authors": ["Ishida J", "Saitoh M", "Ebner N", "Springer J", "Anker SD", "von Haehling S"],
+          "year": 2020,
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/rco2.9",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cl-ghrp2-2"],
+          "notes": "JCSM Rapid Communications peer-reviewed review covering PMDA approval and developmental history."
+        }
+      ]
+    },
+    {
+      "id": "ghrp-6",
+      "names": {
+        "primary": "GHRP-6",
+        "aliases": ["Growth hormone-releasing peptide-6", "Growth hormone-releasing hexapeptide", "SKF-110679"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C46H56N12O6",
+        "molecularWeight": 872.99,
+        "cas": "87616-84-0",
+        "sequenceOneLetter": "H-(D-W)-A-W-(D-F)-K-NH2",
+        "sequenceThreeLetter": "H-His-D-Trp-Ala-Trp-D-Phe-Lys-NH2",
+        "length": 6,
+        "modifications": [
+          "D-Trp at position 2",
+          "D-Phe at position 5",
+          "C-terminal amidation"
+        ],
+        "structureClass": "Synthetic hexapeptide GHS-R1a agonist; derived from met-enkephalin analog series"
+      },
+      "classification": {
+        "peptideClass": "Growth hormone secretagogue (GHRP)",
+        "mechanismFamily": "GHSR-1a (ghrelin receptor) agonist",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "First in the GHRP class. Hexapeptide GHSR-1a agonist that stimulates GH release, intense appetite, and modest HPA and lactotroph activation. Was the pharmacological tool that led to the discovery of ghrelin in 1999.",
+        "localization": "GHSR-1a on pituitary somatotrophs, hypothalamic arcuate nucleus (NPY/AgRP), and peripheral tissues including cardiac and enteric cells.",
+        "clinicalUses": [
+          "None approved",
+          "Historically studied in Phase 1-2 for GH deficiency and cachexia; no indication advanced to approval"
+        ],
+        "sideEffects": [
+          "Strong appetite stimulation (orexigenic) within 15-30 min",
+          "Cortisol and ACTH elevation",
+          "Prolactin elevation",
+          "Transient water retention",
+          "Paresthesias (carpal-tunnel-like) at higher GH exposures",
+          "Injection-site reactions"
+        ],
+        "dosing": {
+          "quick": "Human PD studies have used IV bolus doses on the order of 1 mcg/kg; community research/compounding doses vary and are not regulator-validated",
+          "adminRoute": "Subcutaneous or intravenous",
+          "publicDisplayAllowed": true,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["GHSR", "GH1", "POMC", "PRL", "NPY", "AGRP"],
+        "proteins": ["Growth hormone (GH)", "ACTH", "Cortisol", "Prolactin", "Ghrelin (endogenous comparator)"],
+        "receptors": ["GHSR-1a", "CD36 (proposed non-classical binding)"],
+        "channelsTransporters": ["IP3-gated intracellular Ca2+ release"],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "endocrine_and_appetite",
+            "steps": [
+              "GHRP-6 binds GHSR-1a on pituitary somatotrophs and hypothalamic neurons",
+              "Gq/PLC activation -> IP3 / DAG -> Ca2+ release -> GH exocytosis",
+              "Hypothalamic GHSR-1a activation drives NPY/AgRP-mediated hunger signaling",
+              "Endogenous hypothalamic GHRH is required for the full GH response (GHRH antagonist abolishes ~80% of GH release)",
+              "Concurrent ACTH, cortisol, and prolactin elevation from cross-activation of corticotrophs/lactotrophs"
+            ],
+            "symbols": ["A", "H"],
+            "claimRef": "cl-ghrp6-1"
+          },
+          {
+            "category": "cytoprotection",
+            "steps": [
+              "GHS-R1a and CD36 expressed in cardiomyocytes and other peripheral tissues",
+              "PI3K/Akt activation supports cell survival",
+              "Reduced reactive oxygen species and pro-inflammatory signaling in preclinical ischemia models"
+            ],
+            "symbols": ["A"],
+            "claimRef": "cl-ghrp6-2"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Bowers et al. 1990 (JCEM) established GH-releasing activity in healthy men and synergy with GHRH. Pandya et al. 1998 (JCEM) showed that pretreatment with a GHRH antagonist reduced the GH response to IV GHRP-6 (1 mcg/kg) by ~80% in nine healthy men (AUC 1701 -> 376 mcg*min/L; p<0.001), establishing that most of GHRP-6's GH effect in humans requires intact endogenous GHRH. Arvat et al. 2001 compared GHRP-6 with hexarelin and ghrelin in humans and documented robust GH release with food-intake increase within 60 minutes and transient cortisol/prolactin rises. No Phase 3 trial has been completed for any therapeutic indication.",
+        "animalEvidence": "Foundational rodent pituitary and in vivo data from Bowers' group in the 1980s. Subsequent animal work documents cardioprotection in ischemia/reperfusion models, wound healing in diabetic rodents (Diaz-Rodriguez 2012), and potent orexigenic effects via ghrelin-mimetic action. GHSR-1a expression beyond the pituitary (cardiac, enteric, pancreatic) supports GH-independent peripheral effects.",
+        "mechanismDetail": "GHRP-6 was derived by Cyril Bowers from met-enkephalin analog series in the early 1980s. Its activity through a non-opioid receptor led to the hypothesis of an orphan GH secretagogue receptor, cloned by Howard et al. 1996 as GHS-R, and its endogenous ligand ghrelin was identified in 1999 (Kojima et al., Nature). GHRP-6 activates Gq-coupled GHSR-1a, triggering PLC -> IP3 -> Ca2+ -> GH exocytosis. It also engages hypothalamic GHRH neurons and suppresses somatostatin tone, amplifying the endogenous pulse. The orexigenic arm operates through arcuate NPY/AgRP neurons. CD36-mediated binding has been proposed for some peripheral cytoprotective effects. Half-life is short.",
+        "safetyDetail": "Short-term single-dose safety in human PD studies has been benign (no serious adverse events at typical research doses). Chronic safety is uncharacterized. Practical limitations in repeated dosing include: (1) intense hunger that can drive unintended weight gain, (2) cumulative cortisol/prolactin exposure, (3) water retention and paresthesias from GH/IGF-1 elevation, and (4) receptor desensitization with frequent dosing reported across the GHRP class. Not FDA-approved; WADA-prohibited.",
+        "safetyRisks": [
+          {
+            "system": "endocrine",
+            "label": "Strong orexigenic effect",
+            "color": "amber",
+            "helpSummary": "May be useful where appetite stimulation is therapeutic (cachexia).",
+            "harmSummary": "In weight-management contexts, severe hunger within 15-30 minutes drives overeating.",
+            "citationIds": ["cit-ghrp6-arvat2001", "cit-ghrp6-kojima1999"]
+          },
+          {
+            "system": "endocrine",
+            "label": "HPA and lactotroph activation",
+            "color": "amber",
+            "helpSummary": "ACTH/cortisol/prolactin rises are typically transient.",
+            "harmSummary": "Repeated dosing may produce cumulative elevations; not quantified in humans.",
+            "citationIds": ["cit-ghrp6-arvat2001"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Pharmacodynamic basis for GH elevation is solid in humans, but effect size is GHRH-dependent; most of the GH response requires intact endogenous GHRH tone.",
+          "caveat": "No controlled human outcome data for body composition, performance, or longevity. Appetite effect is a significant practical liability outside clinical wasting. Less selective than ipamorelin or GHRP-2.",
+          "citationIds": ["cit-ghrp6-pandya1998", "cit-ghrp6-arvat2001"]
+        },
+        "missingEvidence": [
+          "Phase 3 trials for any indication",
+          "Controlled long-term human safety data",
+          "Outcome trials beyond PD endpoints"
+        ],
+        "anecdotalUse": [
+          "Appetite stimulation in community / athletic settings",
+          "Historically stacked with GHRH analogs before more selective secretagogues (ipamorelin) displaced it"
+        ]
+      },
+      "claims": [
+        {
+          "id": "cl-ghrp6-1",
+          "field": "mechanism",
+          "value": "In healthy men, pretreatment with a GHRH antagonist reduced the GH response to IV GHRP-6 by approximately 80% (AUC 1701 -> 376 mcg*min/L; p<0.001), demonstrating that endogenous GHRH is required for most of GHRP-6's GH effect in humans.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "9 healthy men aged 20-30 y",
+          "route": "intravenous",
+          "sampleSize": 9,
+          "duration": "acute",
+          "symbols": ["H"],
+          "confidence": 0.9,
+          "citationIds": ["cit-ghrp6-pandya1998"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cl-ghrp6-2",
+          "field": "preclinical_cytoprotection",
+          "value": "Preclinical models show GHSR-1a/CD36-mediated cardioprotective and cytoprotective effects independent of GH release, including PI3K/Akt activation in cardiomyocytes.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "Rodent cardiac and wound-healing models",
+          "route": "varies",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.6,
+          "citationIds": ["cit-ghrp6-pmc2017"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "cit-ghrp6-pandya1998",
+          "sourceType": "pubmed",
+          "title": "Growth hormone (GH)-releasing peptide-6 requires endogenous hypothalamic GH-releasing hormone for maximal GH stimulation",
+          "authors": ["Pandya N", "DeMott-Friberg R", "Bowers CY", "Barkan AL", "Jaffe CA"],
+          "year": 1998,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9543138/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cl-ghrp6-1"],
+          "notes": "J Clin Endocrinol Metab. Primary human mechanistic source."
+        },
+        {
+          "id": "cit-ghrp6-kojima1999",
+          "sourceType": "pubmed",
+          "title": "Ghrelin is a growth-hormone-releasing acylated peptide from stomach",
+          "authors": ["Kojima M", "Hosoda H", "Date Y", "Nakazato M", "Matsuo H", "Kangawa K"],
+          "year": 1999,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10604470/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": [],
+          "notes": "Nature 402(6762):656-60. Identifies the endogenous GHSR-1a ligand; contextualizes GHRP-6's orexigenic effect."
+        },
+        {
+          "id": "cit-ghrp6-arvat2001",
+          "sourceType": "pubmed",
+          "title": "Endocrine activities of ghrelin, a natural growth hormone secretagogue (GHS), in humans: comparison and interactions with hexarelin, a nonnatural peptidyl GHS, and GH-releasing hormone",
+          "authors": ["Arvat E", "Maccario M", "Di Vito L", "Broglio F", "Benso A", "Gottero C", "Papotti M", "Muccioli G", "Dieguez C", "Casanueva FF", "Deghenghi R", "Camanni F", "Ghigo E"],
+          "year": 2001,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11297568/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": [],
+          "notes": "Comparative human endocrine data for GHRPs."
+        },
+        {
+          "id": "cit-ghrp6-pmc2017",
+          "sourceType": "pmc",
+          "title": "Synthetic Growth Hormone-Releasing Peptides (GHRPs): A Historical Appraisal of the Evidences Supporting Their Cytoprotective Effects",
+          "authors": ["Berlanga-Acosta J", "Abreu-Cruz A", "Herrera DG", "Mendoza-Marí Y", "Rodríguez-Ulloa A", "García-Ojalvo A", "Falcón-Cama V", "Hernández-Bernal F", "Beichen Q", "Guillén-Nieto G"],
+          "year": 2017,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5392015/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cl-ghrp6-2"],
+          "notes": "Peer-reviewed review summarizing GH-independent cytoprotective signaling."
+        }
+      ]
+    }
+  ]
+}

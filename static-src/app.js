@@ -13,7 +13,9 @@ const defaultState = {
   studyFilter: "all",
   bibliographyOpen: false,
   lineFeature: true,
-  brandAlt: false
+  brandAlt: false,
+  brandIntro: true,
+  notice: ""
 };
 
 let state = { ...defaultState };
@@ -21,6 +23,8 @@ const wikiCache = new Map();
 const wikiPending = new Set();
 let citationRegistry = { citations: [], index: new Map() };
 let pendingDetailScrollTop = null;
+let brandIntroTimer = null;
+let noticeTimer = null;
 function tileSizeScore(peptide) {
   return (
     peptide.names.primary.length * 2 +
@@ -201,6 +205,28 @@ function citationNumber(citation) {
   return citationRegistry.index.get(citation.id) || "?";
 }
 
+function peptideUrl(peptideOrId) {
+  if (typeof window === "undefined") return "";
+  const id = typeof peptideOrId === "string" ? peptideOrId : peptideOrId?.id;
+  return `${window.location.origin}${window.location.pathname}${id ? `#${encodeURIComponent(id)}` : ""}`;
+}
+
+function peptideFromLocation() {
+  if (typeof window === "undefined") return null;
+  const id = decodeURIComponent((window.location.hash || "").replace(/^#/, ""));
+  if (!id) return null;
+  return DATA.peptides.find((peptide) => peptide.id === id) || null;
+}
+
+function setNotice(message) {
+  state.notice = message;
+  if (noticeTimer) window.clearTimeout(noticeTimer);
+  noticeTimer = window.setTimeout(() => {
+    state.notice = "";
+    render();
+  }, 1800);
+}
+
 function citationLink(citation) {
   const number = citationNumber(citation);
   return `<span class="citation" tabindex="0">
@@ -241,6 +267,13 @@ function tag(type, value, sy = [], sourcePeptideId = "") {
     </button>
     ${sy.length ? symbols(sy) : ""}
   </span>`;
+}
+
+function tileStructurePreview(p) {
+  if (!state.brandAlt) return "";
+  return `<div class="tile-structure" aria-hidden="true">
+    <img src="/structures/${esc(p.id)}.png" alt="" loading="lazy" onerror="this.closest('.tile-structure')?.remove()">
+  </div>`;
 }
 
 function searchable(p) {
@@ -297,25 +330,31 @@ function filteredPeptides() {
 }
 
 function resetToGridState() {
-  state = { ...defaultState, brandAlt: state.brandAlt };
+  state = {
+    ...defaultState,
+    brandAlt: state.brandAlt,
+    brandIntro: state.brandIntro,
+    notice: state.notice
+  };
 }
 
-function syncHistory(view = "grid") {
+function syncHistory(view = "grid", mode = "auto") {
   if (typeof window === "undefined") return;
   const nextState = view === "detail" && state.selected ? { view: "detail", peptideId: state.selected.id } : { view: "grid" };
+  const url = `${window.location.pathname}${window.location.search}${nextState.peptideId ? `#${encodeURIComponent(nextState.peptideId)}` : ""}`;
   if (history.state?.view === nextState.view && history.state?.peptideId === nextState.peptideId) return;
-  if (view === "detail") {
-    history.pushState(nextState, "", window.location.pathname);
-  } else {
-    history.replaceState(nextState, "", window.location.pathname);
-  }
+  const method = mode === "replace" ? "replaceState" : mode === "push" ? "pushState" : view === "detail" ? "pushState" : "replaceState";
+  history[method](nextState, "", url);
 }
 
-function openDetail(peptideId) {
+function openDetail(peptideId, options = {}) {
   state.selected = DATA.peptides.find((p) => p.id === peptideId) || null;
   state.tag = null;
+  state.structureZoom = null;
+  state.bibliographyOpen = false;
+  state.keySymbol = null;
   pendingDetailScrollTop = 0;
-  syncHistory("detail");
+  syncHistory("detail", options.historyMode || "push");
   render();
 }
 
@@ -514,6 +553,7 @@ function tile(p) {
         review
       )}"></button>
     </header>
+    ${tileStructurePreview(p)}
     <p class="mechanism">${esc(p.tile.mechanismSummary)} ${p.citations.slice(0, 2).map(citationLink).join("")}</p>
     <dl class="quick">
       <div><dt>Medical / Clinical</dt><dd>${esc(clinical)}</dd></div>
@@ -825,6 +865,11 @@ function bibliographyDrawer() {
   </section>`;
 }
 
+function noticeToast() {
+  if (!state.notice) return "";
+  return `<div class="notice-toast" role="status" aria-live="polite">${esc(state.notice)}</div>`;
+}
+
 function structureModal() {
   if (!state.structureZoom) return "";
   return `<section class="image-backdrop" data-close-structure-modal>
@@ -959,7 +1004,11 @@ function detail(p) {
             <h2 class="name-display">${formatPeptideName(p.names.primary)}</h2>
             <p>${esc(p.names.aliases.join(" / ") || p.classification.peptideClass)}</p>
           </div>
-          <button class="icon" data-close aria-label="Close article">x</button>
+          <div class="article-head-actions">
+            <button class="header-button" data-share-link="${esc(p.id)}" aria-label="Share link to ${esc(p.names.primary)}">Share</button>
+            <button class="header-button" data-copy-link="${esc(p.id)}" aria-label="Copy link to ${esc(p.names.primary)}">Copy link</button>
+            <button class="icon" data-close aria-label="Close article">x</button>
+          </div>
         </header>
         <section class="article-section intro">
           <div>
@@ -1007,10 +1056,12 @@ function detail(p) {
         </section>
         <section class="article-section">
           <h3>Interactable Biology</h3>
-          <div class="tag-block"><h4>Effects</h4>${p.tile.enhancingEffects.map((effect) => tag("effect", effect.label, effect.symbols, p.id)).join("")}</div>
-          <div class="tag-block"><h4>Genes</h4>${p.biology.genes.map((gene) => tag("gene", gene, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div>
-          <div class="tag-block"><h4>Proteins</h4>${p.biology.proteins.map((protein) => tag("protein", protein, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div>
-          <div class="tag-block"><h4>Channels</h4>${p.biology.channelsTransporters.map((channel) => tag("channel", channel, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div>
+          <div class="tag-groups">
+            <div class="tag-block"><h4>Effects</h4><div class="tag-flow">${p.tile.enhancingEffects.map((effect) => tag("effect", effect.label, effect.symbols, p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div></div>
+            <div class="tag-block"><h4>Genes</h4><div class="tag-flow">${p.biology.genes.map((gene) => tag("gene", gene, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div></div>
+            <div class="tag-block"><h4>Proteins</h4><div class="tag-flow">${p.biology.proteins.map((protein) => tag("protein", protein, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div></div>
+            <div class="tag-block"><h4>Channels</h4><div class="tag-flow">${p.biology.channelsTransporters.map((channel) => tag("channel", channel, [], p.id)).join("") || '<span class="muted">Pending extraction</span>'}</div></div>
+          </div>
         </section>
         <section class="article-section">
           <h3>Cytokines, Interleukins, And Markers</h3>
@@ -1091,7 +1142,11 @@ function detail(p) {
 function hero() {
   return `<section class="hero">
     <div>
-      <h1 class="brand-title">${BRAND}</h1>
+      <button class="brand-title-button ${state.brandAlt ? "active" : ""}" type="button" data-toggle-brand-mode aria-pressed="${
+        state.brandAlt ? "true" : "false"
+      }" aria-label="Toggle hidden structure mode">
+        <h1 class="brand-title">${BRAND}</h1>
+      </button>
     </div>
   </section>`;
 }
@@ -1110,13 +1165,7 @@ function sideRail(direction) {
 function atlasFrameOpen() {
   return `<section class="atlas-frame">
     ${sideRail("left")}
-    ${sideRail("right")}
-    <svg class="atlas-path" viewBox="0 0 1400 1180" preserveAspectRatio="none" aria-hidden="true">
-      <path id="atlas-curve" d="M 78 1040 C 52 828 54 386 172 236 C 244 146 404 126 596 126 L 1118 126 C 1294 126 1358 228 1358 402 L 1358 1010" />
-      <text class="atlas-path-text">
-        <textPath href="#atlas-curve" startOffset="1%">peptocopia: a biological signaling atlas for peptides commonly used off-label or for enhancement</textPath>
-      </text>
-    </svg>`;
+    ${sideRail("right")}`;
 }
 
 function atlasFrameClose() {
@@ -1170,7 +1219,8 @@ function render() {
   const categories = ["All", ...new Set(DATA.peptides.map((p) => p.category))];
   const peptides = filteredPeptides();
   refreshCitationRegistry();
-  app.innerHTML = `${lineFeature()}${hero()}
+  app.innerHTML = `<div class="app-shell ${state.brandIntro ? "intro-active" : ""}">
+    ${lineFeature()}${hero()}
     ${atlasFrameOpen()}
     ${toolbar(categories)}
     <section class="tiles">${peptides.map(tile).join("")}</section>
@@ -1179,7 +1229,9 @@ function render() {
     ${structureModal()}
     ${relatedPanel()}
     ${keyModal()}
-    ${bibliographyDrawer()}`;
+    ${bibliographyDrawer()}
+    ${noticeToast()}
+  </div>`;
   restoreFocus(focus);
   if (state.selected) {
     const detailElement = app.querySelector(".detail");
@@ -1187,6 +1239,27 @@ function render() {
     if (detailElement && typeof scrollTop === "number") detailElement.scrollTop = scrollTop;
   }
   pendingDetailScrollTop = null;
+  if (state.brandIntro && !brandIntroTimer) {
+    brandIntroTimer = window.setTimeout(() => {
+      brandIntroTimer = null;
+      state.brandIntro = false;
+      render();
+    }, 2800);
+  }
+}
+
+function updateLineFeatureDom() {
+  const shell = app.querySelector(".app-shell");
+  if (!shell) return;
+  const existing = app.querySelector(".line-feature");
+  if (state.lineFeature && !existing) shell.insertAdjacentHTML("afterbegin", lineFeature());
+  if (!state.lineFeature && existing) existing.remove();
+  const button = app.querySelector("[data-toggle-line]");
+  if (button) {
+    button.classList.toggle("active", state.lineFeature);
+    button.setAttribute("aria-pressed", state.lineFeature ? "true" : "false");
+    button.textContent = state.lineFeature ? "Line On" : "Line Off";
+  }
 }
 
 app.addEventListener("input", (event) => {
@@ -1222,6 +1295,9 @@ app.addEventListener("click", (event) => {
   const keyBackdrop = target.closest("[data-close-key-modal]");
   const keyClose = target.closest("[data-close-key-button]");
   const relatedBackdrop = target.closest("[data-close-related-modal]");
+  const copyLinkButton = target.closest("[data-copy-link]");
+  const shareLinkButton = target.closest("[data-share-link]");
+  const toggleBrandMode = target.closest("[data-toggle-brand-mode]");
   const interactive = target.closest("button, a, input, select, textarea, .citation");
 
   if (closeDetail || (backdrop && target === backdrop)) {
@@ -1243,6 +1319,12 @@ app.addEventListener("click", (event) => {
 
   if (toggleLine) {
     state.lineFeature = !state.lineFeature;
+    updateLineFeatureDom();
+    return;
+  }
+
+  if (toggleBrandMode) {
+    state.brandAlt = !state.brandAlt;
     render();
     return;
   }
@@ -1281,6 +1363,53 @@ app.addEventListener("click", (event) => {
     state.tag = { type: tagButton.dataset.tagType, value: tagButton.dataset.tagValue, sourcePeptideId: tagButton.dataset.tagSource || null };
     fetchWikiSummary(state.tag);
     render();
+    return;
+  }
+
+  if (copyLinkButton) {
+    const url = peptideUrl(copyLinkButton.dataset.copyLink);
+    const fallbackCopy = () => {
+      const input = document.createElement("input");
+      input.value = url;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      input.remove();
+    };
+    Promise.resolve()
+      .then(() => (navigator.clipboard?.writeText ? navigator.clipboard.writeText(url) : fallbackCopy()))
+      .then(() => {
+        setNotice("Link copied.");
+        render();
+      })
+      .catch(() => {
+        fallbackCopy();
+        setNotice("Link copied.");
+        render();
+      });
+    return;
+  }
+
+  if (shareLinkButton) {
+    const peptideId = shareLinkButton.dataset.shareLink;
+    const peptide = DATA.peptides.find((item) => item.id === peptideId);
+    const url = peptideUrl(peptideId);
+    const payload = {
+      title: peptide ? `${peptide.names.primary} | Peptocopeia` : "Peptocopeia",
+      text: peptide ? `${peptide.names.primary} on Peptocopeia` : "Peptocopeia",
+      url
+    };
+    Promise.resolve()
+      .then(() => {
+        if (navigator.share) return navigator.share(payload);
+        if (navigator.clipboard?.writeText) return navigator.clipboard.writeText(url);
+        return null;
+      })
+      .then(() => {
+        setNotice(navigator.share ? "Share sheet opened." : "Link copied.");
+        render();
+      })
+      .catch(() => {});
     return;
   }
 
@@ -1332,7 +1461,17 @@ app.addEventListener("keydown", (event) => {
 });
 
 window.addEventListener("popstate", () => {
-  resetToGridState();
+  const peptide = peptideFromLocation();
+  if (peptide) {
+    state.selected = peptide;
+    state.tag = null;
+    state.structureZoom = null;
+    state.bibliographyOpen = false;
+    state.keySymbol = null;
+    pendingDetailScrollTop = 0;
+  } else {
+    resetToGridState();
+  }
   render();
 });
 
@@ -1341,5 +1480,12 @@ window.addEventListener("pointermove", (event) => {
   document.documentElement.style.setProperty("--line-y", `${event.clientY}px`);
 });
 
-syncHistory("grid");
+const initialPeptide = peptideFromLocation();
+if (initialPeptide) {
+  state.selected = initialPeptide;
+  pendingDetailScrollTop = 0;
+  syncHistory("detail", "replace");
+} else {
+  syncHistory("grid", "replace");
+}
 render();
