@@ -1,0 +1,9 @@
+node_modules
+.git
+.next
+static
+*.tsbuildinfo
+*.log
+.env
+.env.local
+data/sources/consensus/**/*.normalized.json
