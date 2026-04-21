@@ -1411,8 +1411,8 @@ function hero() {
 }
 
 function sideRail(direction) {
-  const glyphs = "PEPTIDE SIGNALING ATLAS ".split("");
-  const repeated = Array.from({ length: 4 }, () => glyphs)
+  const glyphs = "PEPTIDE  SIGNALING  ATLAS  ".split("");
+  const repeated = Array.from({ length: 8 }, () => glyphs)
     .flat()
     .map((char) => `<span>${esc(char === " " ? " " : char)}</span>`)
     .join("");
