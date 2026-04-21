@@ -20,6 +20,7 @@ function makeDefaultState() {
     bibliographyOpen: false,
     lineFeature: !mobile,
     scrollersOn: false,
+    mobileWarningOpen: mobile,
     brandAlt: false,
     notice: ""
   };
@@ -1044,6 +1045,17 @@ function noticeToast() {
   return `<div class="notice-toast" role="status" aria-live="polite">${esc(state.notice)}</div>`;
 }
 
+function mobileWarningModal() {
+  if (!state.mobileWarningOpen) return "";
+  return `<section class="mobile-warning-backdrop" data-close-mobile-warning>
+    <aside class="mobile-warning-modal" role="dialog" aria-modal="true" aria-label="Mobile warning">
+      <p class="eyebrow">Notice</p>
+      <h3>NOT OPTIMIZED FOR MOBILE</h3>
+      <button class="bibliography-button" data-dismiss-mobile-warning aria-label="Dismiss mobile warning">Continue</button>
+    </aside>
+  </section>`;
+}
+
 function structureModal() {
   if (!state.structureZoom) return "";
   return `<section class="image-backdrop" data-close-structure-modal>
@@ -1490,6 +1502,7 @@ function render() {
     ${structureModal()}
     ${relatedPanel()}
     ${keyModal()}
+    ${mobileWarningModal()}
     ${bibliographyDrawer()}
     ${noticeToast()}
   </div>`;
@@ -1550,6 +1563,8 @@ app.addEventListener("click", (event) => {
   const keyBackdrop = target.closest("[data-close-key-modal]");
   const keyClose = target.closest("[data-close-key-button]");
   const relatedBackdrop = target.closest("[data-close-related-modal]");
+  const mobileWarningBackdrop = target.closest("[data-close-mobile-warning]");
+  const dismissMobileWarning = target.closest("[data-dismiss-mobile-warning]");
   const copyLinkButton = target.closest("[data-copy-link]");
   const shareLinkButton = target.closest("[data-share-link]");
   const toggleBrandMode = target.closest("[data-toggle-brand-mode]");
@@ -1676,6 +1691,12 @@ app.addEventListener("click", (event) => {
   if (clearRelated || (relatedBackdrop && target === relatedBackdrop)) {
     pendingDetailScrollTop = app.querySelector(".detail")?.scrollTop ?? pendingDetailScrollTop ?? 0;
     state.tag = null;
+    render();
+    return;
+  }
+
+  if (dismissMobileWarning || (mobileWarningBackdrop && target === mobileWarningBackdrop)) {
+    state.mobileWarningOpen = false;
     render();
     return;
   }

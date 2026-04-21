@@ -1227,7 +1227,8 @@ button.evidence-badge {
 
 .related-backdrop,
 .key-backdrop,
-.image-backdrop {
+.image-backdrop,
+.mobile-warning-backdrop {
   position: fixed;
   inset: 0;
   z-index: 16;
@@ -1237,7 +1238,8 @@ button.evidence-badge {
 
 .related-modal,
 .key-modal,
-.image-modal {
+.image-modal,
+.mobile-warning-modal {
   position: absolute;
   inset: 50% auto auto 50%;
   transform: translate(-50%, -50%);
@@ -1248,6 +1250,18 @@ button.evidence-badge {
   border-radius: 10px;
   background: #050506;
   padding: 18px;
+}
+
+.mobile-warning-modal {
+  width: min(360px, calc(100vw - 32px));
+  text-align: center;
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+}
+
+.mobile-warning-modal .eyebrow {
+  margin-bottom: 0;
 }
 
 .image-modal-frame {
