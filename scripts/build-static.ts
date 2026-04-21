@@ -10,6 +10,7 @@ copyFileSync(
   `${staticDir}/fonts/PixelSpaceFreePersonalUseR-zrppw.ttf`
 );
 copyFileSync("public/fonts/audio-nugget.ttf", `${staticDir}/fonts/audio-nugget.ttf`);
+copyFileSync("public/fonts/toxigenesis.rg-bold.otf", `${staticDir}/fonts/toxigenesis.rg-bold.otf`);
 copyFileSync("public/fonts/golden-girdle.otf", `${staticDir}/fonts/golden-girdle.otf`);
 copyFileSync("public/favicon.png", `${staticDir}/favicon.png`);
 copyFileSync("static-src/styles.css", `${staticDir}/styles.css`);

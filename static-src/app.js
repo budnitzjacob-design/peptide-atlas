@@ -5,12 +5,11 @@ const app = document.getElementById("app");
 const defaultState = {
   query: "",
   category: "All",
-  sort: "evidence",
+  sort: "random",
   selected: null,
   tag: null,
   keySymbol: null,
-  humanOnly: false,
-  animalOnly: false,
+  studyFilter: "all",
   bibliographyOpen: false,
   brandAlt: false
 };
@@ -18,6 +17,11 @@ const defaultState = {
 let state = { ...defaultState };
 const wikiCache = new Map();
 const wikiPending = new Set();
+const RANDOM_ORDER = new Map(
+  [...DATA.peptides.map((peptide) => peptide.id)]
+    .sort(() => Math.random() - 0.5)
+    .map((id, index) => [id, index])
+);
 
 const CATEGORY_COLORS = {
   Metabolic: "#ff5a1f",
@@ -221,11 +225,17 @@ function filteredPeptides() {
     .filter((p) => {
       const matchesQuery = !state.query || searchable(p).includes(state.query.toLowerCase());
       const matchesCategory = state.category === "All" || p.category === state.category;
-      const matchesHuman = !state.humanOnly || hasHumanStudies(p);
-      const matchesAnimal = !state.animalOnly || hasAnimalStudies(p);
-      return matchesQuery && matchesCategory && matchesHuman && matchesAnimal;
+      const human = hasHumanStudies(p);
+      const animal = hasAnimalStudies(p);
+      const matchesStudy =
+        state.studyFilter === "all" ||
+        (state.studyFilter === "human" && human) ||
+        (state.studyFilter === "animal" && animal) ||
+        (state.studyFilter === "both" && human && animal);
+      return matchesQuery && matchesCategory && matchesStudy;
     })
     .sort((a, b) => {
+      if (state.sort === "random") return (RANDOM_ORDER.get(a.id) || 0) - (RANDOM_ORDER.get(b.id) || 0);
       if (state.sort === "name") return a.names.primary.localeCompare(b.names.primary);
       if (state.sort === "category") return a.category.localeCompare(b.category) || a.names.primary.localeCompare(b.names.primary);
       if (state.sort === "review") {
@@ -391,8 +401,57 @@ function tile(p) {
     </dl>
     <section class="effects">${p.tile.enhancingEffects.slice(0, 4).map((effect) => tag("effect", effect.label, effect.symbols, p.id)).join("")}</section>
     <section class="chips">${p.biology.proteins.slice(0, 5).map((protein) => tag("protein", protein, [], p.id)).join("")}</section>
-    <p class="click-hint">Click tile for full article, citations, signaling, studies, and vendor tables.</p>
   </article>`;
+}
+
+function stepRole(index, total) {
+  if (index === 0) return "upstream trigger";
+  if (index === total - 1) return "distal outcome";
+  if (index === 1) return "primary transducer";
+  if (index === total - 2) return "physiologic integration";
+  return "intermediate node";
+}
+
+function describeStep(chain, step, index, total) {
+  const role = stepRole(index, total);
+  const normalized = String(step || "").toLowerCase();
+  if (normalized.includes("bind") || normalized.includes("agon") || normalized.includes("partitions")) {
+    return `${role}: ligand, receptor, or membrane engagement that initiates the pathway.`;
+  }
+  if (normalized.includes("camp") || normalized.includes("pka") || normalized.includes("epac") || normalized.includes("erk") || normalized.includes("akt") || normalized.includes("smad") || normalized.includes("nf-kb") || normalized.includes("nrf2")) {
+    return `${role}: intracellular signaling node that shifts transcriptional, inflammatory, or metabolic state.`;
+  }
+  if (normalized.includes("transcription") || normalized.includes("gene") || normalized.includes("expression") || normalized.includes("biogenesis")) {
+    return `${role}: transcriptional or program-level shift that changes phenotype over time.`;
+  }
+  if (normalized.includes("insulin") || normalized.includes("glucagon") || normalized.includes("gastric emptying") || normalized.includes("satiety") || normalized.includes("lipolysis") || normalized.includes("glucose")) {
+    return `${role}: integrated physiologic effect linking signaling to organ-level metabolic behavior.`;
+  }
+  if (normalized.includes("weight") || normalized.includes("hba1c") || normalized.includes("repair") || normalized.includes("fibrosis") || normalized.includes("exercise") || normalized.includes("wound")) {
+    return `${role}: tissue or clinical endpoint associated with the upstream cascade.`;
+  }
+  return `${role}: extracted ${chain.category} step in the current pathway map.`;
+}
+
+function pathwayNarrative(chain) {
+  const category = String(chain.category || "").toLowerCase();
+  const steps = chain.steps || [];
+  if (category.includes("islet") || category.includes("gh axis") || category.includes("tri-agonist") || category.includes("incretin")) {
+    return `This pathway is organized around receptor engagement at the endocrine control point, then second-messenger amplification, then hormone-output and substrate-handling consequences. In the current record, the extracted nodes indicate directionality from receptor agonism toward changed insulin, glucagon, GH, IGF-1, or energy-balance physiology rather than a vague “metabolic support” claim.`;
+  }
+  if (category.includes("satiety") || category.includes("appetite") || category.includes("gastric")) {
+    return `This chain maps the CNS and gastrointestinal control arm of the peptide. The upstream nodes alter meal salience or gastric-emptying kinetics first, and the weight or intake phenotype appears downstream as an integrated behavioral and autonomic consequence.`;
+  }
+  if (category.includes("mitochond") || category.includes("energetic")) {
+    return `This cascade is mitochondrial rather than receptor-surface biology. The extracted sequence moves from membrane or transporter behavior to altered oxidative-phosphorylation handling, then to energetic efficiency and finally to tissue-level function under stressed conditions.`;
+  }
+  if (category.includes("angiogenesis") || category.includes("repair") || category.includes("matrix") || category.includes("wound")) {
+    return `This is a tissue-repair cascade: endothelial or stromal signals shift first, migration / remodeling programs change next, and the visible wound-healing or repair phenotype appears at the end of the chain. The imported record supports biologic plausibility here more strongly than direct human efficacy.`;
+  }
+  if (category.includes("inflammatory") || category.includes("immune") || category.includes("anti-fibrotic")) {
+    return `This pathway centers on inflammatory tone. The sequence starts at cytokine, transcription-factor, or oxidative-stress nodes, then moves toward remodeling, immune-state, or fibrosis endpoints; each downstream effect should still be read in the original disease or experimental context.`;
+  }
+  return `This pathway begins at ${steps[0] || "the extracted upstream node"}, propagates through ${steps.slice(1, -1).join(", ") || "intermediate signaling nodes"}, and ends at ${steps[steps.length - 1] || "the current distal phenotype"}. The intended reading is mechanistic directionality from proximal trigger to distal tissue or clinical consequence.`;
 }
 
 function signalingSection(p) {
@@ -419,9 +478,7 @@ function signalingSection(p) {
         .map(
           (chain) => {
             const claim = p.claims.find((item) => item.id === chain.claimRef);
-            const description = `This pathway segment starts at ${chain.steps[0] || "the proximal trigger"}, runs through ${
-              chain.steps.slice(1, -1).join(", ") || "intermediate signaling"
-            }, and converges on ${chain.steps[chain.steps.length - 1] || "the current extracted endpoint"}.`;
+            const description = pathwayNarrative(chain);
             return `<article class="pathway-card">
             <div class="pathway-card-head">
               <div>
@@ -439,6 +496,18 @@ function signalingSection(p) {
                 )
                 .join("")}
             </div>
+            <table class="pathway-table">
+              <thead><tr><th>Stage</th><th>Node</th><th>Functional note</th></tr></thead>
+              <tbody>${chain.steps
+                .map(
+                  (step, index) => `<tr>
+                    <td>${esc(stepRole(index, chain.steps.length))}</td>
+                    <td>${esc(step)}</td>
+                    <td>${esc(describeStep(chain, step, index, chain.steps.length))}</td>
+                  </tr>`
+                )
+                .join("")}</tbody>
+            </table>
           </article>`;
           }
         )
@@ -595,7 +664,7 @@ function keyModal() {
                 .map(
                   ([key, value]) => `<button class="key-row ${key === state.keySymbol ? "active" : ""}" type="button" data-open-key="${esc(key)}">
                     <span class="key-icon"><span class="symbol-button inert">${symbolGlyph(key)}</span></span>
-                    <div><strong>${esc(key)}</strong><p>${esc(value)}</p></div>
+                    <div><p>${esc(value)}</p></div>
                   </button>`
                 )
                 .join("")}
@@ -672,9 +741,9 @@ function detail(p) {
         </header>
         <section class="article-section intro">
           <div>
-            <p><strong>Mechanism:</strong> ${esc(p.tile.mechanismSummary)}</p>
-            <p><strong>Localization:</strong> ${esc(p.tile.localization)}</p>
-            <p><strong>Clinical context:</strong> ${esc(p.tile.clinicalUses.join(" "))}</p>
+            <p><span class="label-mono">MECHANISM:</span> ${esc(p.tile.mechanismSummary)}</p>
+            <p><span class="label-mono">LOCALIZATION:</span> ${esc(p.tile.localization)}</p>
+            <p><span class="label-mono">CLINICAL CONTEXT:</span> ${esc(p.tile.clinicalUses.join(" "))}</p>
           </div>
           <aside>
             <span class="evidence-badge ${evidenceClass(p.classification.evidenceTier)}">${esc(DATA.evidenceTierLabel[p.classification.evidenceTier])}</span>
@@ -796,8 +865,7 @@ function detail(p) {
 function hero() {
   return `<section class="hero">
     <div>
-      <h1 class="brand-title ${state.brandAlt ? "alt" : ""}" data-toggle-brand>${BRAND}</h1>
-      <p class="lede">peptide signaling & mechanism reference for biologists & physicians</p>
+      <h1 class="brand-title">${BRAND}</h1>
     </div>
   </section>`;
 }
@@ -809,19 +877,18 @@ function toolbar(categories) {
       ${categories.map((category) => `<option ${category === state.category ? "selected" : ""}>${esc(category)}</option>`).join("")}
     </select>
     <select data-sort data-focus-key="sort">
+      <option value="random" ${state.sort === "random" ? "selected" : ""}>Randomized</option>
       <option value="evidence" ${state.sort === "evidence" ? "selected" : ""}>Evidence strength</option>
       <option value="name" ${state.sort === "name" ? "selected" : ""}>Name A-Z</option>
       <option value="category" ${state.sort === "category" ? "selected" : ""}>Category</option>
       <option value="review" ${state.sort === "review" ? "selected" : ""}>Needs review</option>
     </select>
-    <label class="toggle">
-      <input type="checkbox" data-human-filter ${state.humanOnly ? "checked" : ""}>
-      <span>Human studies</span>
-    </label>
-    <label class="toggle">
-      <input type="checkbox" data-animal-filter ${state.animalOnly ? "checked" : ""}>
-      <span>Animal studies</span>
-    </label>
+    <select data-study-filter data-focus-key="study-filter">
+      <option value="all" ${state.studyFilter === "all" ? "selected" : ""}>All studies</option>
+      <option value="human" ${state.studyFilter === "human" ? "selected" : ""}>Human only</option>
+      <option value="animal" ${state.studyFilter === "animal" ? "selected" : ""}>Animal only</option>
+      <option value="both" ${state.studyFilter === "both" ? "selected" : ""}>Human + animal</option>
+    </select>
     <button class="bibliography-button" data-open-bibliography aria-label="Open bibliography">[n]</button>
   </section>`;
 }
@@ -849,8 +916,7 @@ app.addEventListener("input", (event) => {
 app.addEventListener("change", (event) => {
   if (event.target.matches("[data-category]")) state.category = event.target.value;
   if (event.target.matches("[data-sort]")) state.sort = event.target.value;
-  if (event.target.matches("[data-human-filter]")) state.humanOnly = event.target.checked;
-  if (event.target.matches("[data-animal-filter]")) state.animalOnly = event.target.checked;
+  if (event.target.matches("[data-study-filter]")) state.studyFilter = event.target.value;
   render();
 });
 
@@ -869,7 +935,6 @@ app.addEventListener("click", (event) => {
   const keyBackdrop = target.closest("[data-close-key-modal]");
   const keyClose = target.closest("[data-close-key-button]");
   const relatedBackdrop = target.closest("[data-close-related-modal]");
-  const brandToggle = target.closest("[data-toggle-brand]");
   const interactive = target.closest("button, a, input, select, textarea, .citation");
 
   if (closeDetail || (backdrop && target === backdrop)) {
@@ -879,12 +944,6 @@ app.addEventListener("click", (event) => {
 
   if (keyOpen) {
     state.keySymbol = keyOpen.dataset.openKey;
-    render();
-    return;
-  }
-
-  if (brandToggle) {
-    state.brandAlt = !state.brandAlt;
     render();
     return;
   }
