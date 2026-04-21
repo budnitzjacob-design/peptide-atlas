@@ -57,19 +57,31 @@ def resolve_cid(candidates):
 
 def process_png(raw: bytes) -> Image.Image:
     image = Image.open(BytesIO(raw)).convert("RGBA")
-    gray = ImageOps.grayscale(image)
-    alpha = Image.eval(gray, lambda px: max(0, 255 - px))
-    bbox = alpha.getbbox()
-    if bbox:
-        image = image.crop(bbox)
-        alpha = alpha.crop(bbox)
+    processed = Image.new("RGBA", image.size, (255, 255, 255, 0))
 
-    white = Image.new("RGBA", image.size, (255, 255, 255, 255))
-    white.putalpha(alpha)
+    for x in range(image.width):
+        for y in range(image.height):
+            r, g, b, a = image.getpixel((x, y))
+            if a == 0:
+                continue
+
+            alpha = max(0, 255 - min(r, g, b))
+            if alpha < 10:
+                continue
+
+            if max(r, g, b) - min(r, g, b) < 18:
+                processed.putpixel((x, y), (255, 255, 255, alpha))
+            else:
+                processed.putpixel((x, y), (r, g, b, alpha))
+
+    alpha_channel = processed.getchannel("A")
+    bbox = alpha_channel.getbbox()
+    if bbox:
+        processed = processed.crop(bbox)
 
     pad = 14
-    canvas = Image.new("RGBA", (white.width + pad * 2, white.height + pad * 2), (255, 255, 255, 0))
-    canvas.alpha_composite(white, (pad, pad))
+    canvas = Image.new("RGBA", (processed.width + pad * 2, processed.height + pad * 2), (255, 255, 255, 0))
+    canvas.alpha_composite(processed, (pad, pad))
     return canvas
 
 

@@ -557,6 +557,57 @@ function pathwayNarrative(chain) {
   return `This pathway begins at ${steps[0] || "the extracted upstream node"}, propagates through ${steps.slice(1, -1).join(", ") || "intermediate signaling nodes"}, and ends at ${steps[steps.length - 1] || "the current distal phenotype"}. The intended reading is mechanistic directionality from proximal trigger to distal tissue or clinical consequence.`;
 }
 
+function inferDirection(text) {
+  const value = norm(text);
+  if (/(downreg|decreas|lower|reduc|suppress|inhibit|attenuat|blunt)/.test(value)) return "decrease / inhibition";
+  if (/(upreg|increas|rais|enhanc|activat|stimul|augment|promot|induc|secret|release)/.test(value)) return "increase / activation";
+  if (/(stabiliz|preserv|maintain|support)/.test(value)) return "stabilization / preservation";
+  return "direction not fully extracted";
+}
+
+function extractPathwayRows(p, chain) {
+  const entities = [
+    ...p.biology.proteins,
+    ...p.biology.receptors,
+    ...p.biology.channelsTransporters,
+    ...p.biology.genes,
+    ...p.biology.cytokinesInterleukins.map((item) => item.name)
+  ].filter(Boolean);
+  const dedupedEntities = [...new Set(entities)];
+  const rows = [];
+  const seen = new Set();
+
+  chain.steps.forEach((step, index) => {
+    const next = chain.steps[index + 1] || "";
+    const hits = dedupedEntities.filter((item) => norm(step).includes(norm(item)) || norm(next).includes(norm(item))).slice(0, 4);
+    const direction = inferDirection(`${step} ${next}`);
+    const downstream = chain.steps.slice(index + 1, index + 3).join(" -> ") || chain.steps[chain.steps.length - 1] || "downstream effect pending extraction";
+    const candidates = hits.length ? hits : [step];
+
+    candidates.forEach((node) => {
+      const key = `${node}__${direction}__${downstream}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      rows.push({
+        node,
+        direction,
+        downstream
+      });
+    });
+  });
+
+  if (!rows.length) {
+    const fallback = chain.steps.slice(0, -1).map((step, index) => ({
+      node: step,
+      direction: inferDirection(`${step} ${chain.steps[index + 1] || ""}`),
+      downstream: chain.steps[index + 1] || "downstream effect pending extraction"
+    }));
+    return fallback;
+  }
+
+  return rows;
+}
+
 function signalingSection(p) {
   const chains = p.biology.cascades.length
     ? p.biology.cascades
@@ -607,6 +658,18 @@ function signalingSection(p) {
                     <td>${esc(stepRole(index, chain.steps.length))}</td>
                     <td>${esc(step)}</td>
                     <td>${esc(describeStep(chain, step, index, chain.steps.length))}</td>
+                  </tr>`
+                )
+                .join("")}</tbody>
+            </table>
+            <table class="pathway-table pathway-reg-table">
+              <thead><tr><th>Protein / enzyme / node</th><th>Direction</th><th>Downstream effect</th></tr></thead>
+              <tbody>${extractPathwayRows(p, chain)
+                .map(
+                  (row) => `<tr>
+                    <td>${esc(row.node)}</td>
+                    <td>${esc(row.direction)}</td>
+                    <td>${esc(row.downstream)}</td>
                   </tr>`
                 )
                 .join("")}</tbody>
@@ -987,6 +1050,7 @@ function hero() {
   return `<section class="hero">
     <div>
       <h1 class="brand-title">${BRAND}</h1>
+      <p class="brand-subtitle">peptide atlas &amp; signaling</p>
     </div>
   </section>`;
 }

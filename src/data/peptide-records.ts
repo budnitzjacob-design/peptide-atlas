@@ -1,6 +1,10 @@
 import type { Citation, Claim, EvidenceSymbol, PeptideRecord } from "@/types/peptide";
 import vendorBatchRaw from "../../data/sources/vendors/peptocopeia_batch_1.json";
 import vendorBatch2Raw from "../../data/sources/vendors/peptocopeia_batch_2.json";
+import claudeBatch01Raw from "../../data/sources/research/claude_batch_01.json";
+import claudeBatch02Raw from "../../data/sources/research/claude_batch_02.json";
+import claudeBatch03Raw from "../../data/sources/research/claude_batch_03.json";
+import claudeBatch04Raw from "../../data/sources/research/claude_batch_04.json";
 
 const accessedAt = "2026-04-21";
 
@@ -127,6 +131,64 @@ type VendorBatch = {
 
 const vendorBatch1 = vendorBatchRaw as VendorBatch;
 const vendorBatch2 = vendorBatch2Raw as VendorBatch;
+
+type ResearchBatch = {
+  batch_id: string;
+  generated_at: string;
+  peptides: Array<DeepPartial<PeptideRecord> & { id: string }>;
+};
+
+const researchBatches = [claudeBatch01Raw, claudeBatch02Raw, claudeBatch03Raw, claudeBatch04Raw] as ResearchBatch[];
+
+const researchOverrides: Record<string, DeepPartial<PeptideRecord>> = Object.fromEntries(
+  researchBatches.flatMap((batch) =>
+    batch.peptides.map((peptide) => [
+      peptide.id,
+      {
+        ...peptide,
+        moderation: {
+          status: "needs_review",
+          staleAfter: "2026-07-21"
+        }
+      } satisfies DeepPartial<PeptideRecord>
+    ])
+  )
+);
+
+const regulatoryRank: Record<PeptideRecord["classification"]["regulatoryStatus"], number> = {
+  unknown: 0,
+  research_only: 1,
+  not_approved: 1,
+  investigational: 2,
+  non_us_approved: 3,
+  fda_approved: 4
+};
+
+const evidenceRank: Record<PeptideRecord["classification"]["evidenceTier"], number> = {
+  secondary_only: 0,
+  preclinical: 1,
+  translational: 2,
+  human_pk_pd: 3,
+  human_topical_and_mechanistic: 4,
+  human_clinical_development: 5,
+  human_phase2: 6,
+  human_phase3: 7,
+  fda_phase3: 8,
+  conflict: 9
+};
+
+function uniqById<T extends { id: string }>(items: T[]) {
+  const seen = new Set<string>();
+  return items.filter((item) => {
+    if (seen.has(item.id)) return false;
+    seen.add(item.id);
+    return true;
+  });
+}
+
+function uniqStrings(items: string[]) {
+  return [...new Set(items.filter(Boolean))];
+}
 
 function vendorBatchFor(peptideId: string) {
   return (
@@ -1490,7 +1552,25 @@ const vendorIds = new Set(["bpc-157", "tb-500", "ipamorelin", "cjc-1295", "semag
 
 export const peptideRecords: PeptideRecord[] = catalog.map((row) => {
   const base = baseRecord(row);
-  const patched = mergeRecord(base, curated[base.id] ?? {});
+  const withCurated = mergeRecord(base, curated[base.id] ?? {});
+  const researchPatch = researchOverrides[base.id] ?? {};
+  const patched = mergeRecord(withCurated, researchPatch);
+
+  if ((researchPatch.citations?.length ?? 0) > 0) {
+    patched.citations = uniqById([...(withCurated.citations || []), ...(researchPatch.citations || [])] as Citation[]);
+  }
+  if ((researchPatch.claims?.length ?? 0) > 0) {
+    patched.claims = uniqById([...(withCurated.claims || []), ...(researchPatch.claims || [])] as Claim[]);
+  }
+  if (regulatoryRank[withCurated.classification.regulatoryStatus] > regulatoryRank[patched.classification.regulatoryStatus]) {
+    patched.classification.regulatoryStatus = withCurated.classification.regulatoryStatus;
+  }
+  if (evidenceRank[withCurated.classification.evidenceTier] > evidenceRank[patched.classification.evidenceTier]) {
+    patched.classification.evidenceTier = withCurated.classification.evidenceTier;
+  }
+  patched.expanded.missingEvidence = uniqStrings([...(withCurated.expanded.missingEvidence || []), ...(patched.expanded.missingEvidence || [])]);
+  patched.expanded.anecdotalUse = uniqStrings([...(withCurated.expanded.anecdotalUse || []), ...(patched.expanded.anecdotalUse || [])]);
+
   const finnrickRows = finnrickVendorRows(patched.id);
   if (finnrickRows.length) {
     patched.vendorData = finnrickRows;

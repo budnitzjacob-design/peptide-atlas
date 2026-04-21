@@ -154,6 +154,14 @@ h4 {
   cursor: default;
 }
 
+.brand-subtitle {
+  margin: 8px 0 0;
+  color: #d9d2c5;
+  font-style: italic;
+  font-size: clamp(15px, 1.8vw, 20px);
+  line-height: 1.1;
+}
+
 h2 {
   font-size: 34px;
   line-height: 1.02;
@@ -914,6 +922,10 @@ tbody tr:nth-child(odd) td {
 
 .pathway-table {
   margin-top: 12px;
+}
+
+.pathway-reg-table td:nth-child(2) {
+  white-space: nowrap;
 }
 
 .signal-chain {

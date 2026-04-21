@@ -1,0 +1,1389 @@
+{
+  "batch_id": "batch-03",
+  "generated_at": "2026-04-21",
+  "peptides": [
+    {
+      "id": "pramlintide",
+      "names": {
+        "primary": "Pramlintide",
+        "aliases": ["AC-137", "pramlintide acetate"],
+        "tradeNames": ["Symlin", "SymlinPen 60", "SymlinPen 120"]
+      },
+      "identity": {
+        "formula": "C171H267N51O53S2 (free base; acetate salt form: C171H267N51O53S2·x C2H4O2, 3 \u2264 x \u2264 8)",
+        "molecularWeight": 3949.4,
+        "cas": "151126-32-8",
+        "sequenceOneLetter": "KCNTATCATQRLANFLVHSSNNFGPILPPTNVGSNTY",
+        "sequenceThreeLetter": "Lys-Cys-Asn-Thr-Ala-Thr-Cys-Ala-Thr-Gln-Arg-Leu-Ala-Asn-Phe-Leu-Val-His-Ser-Ser-Asn-Asn-Phe-Gly-Pro-Ile-Leu-Pro-Pro-Thr-Asn-Val-Gly-Ser-Asn-Thr-Tyr-NH2",
+        "length": 37,
+        "modifications": [
+          "C-terminal amidation (Tyr37-NH2)",
+          "Intramolecular disulfide bridge between Cys2 and Cys7",
+          "Three proline substitutions vs human amylin: Pro25 (replaces Ala), Pro28 (replaces Ser), Pro29 (replaces Ser)"
+        ],
+        "structureClass": "linear cyclic peptide (single intrachain disulfide) amylin analog"
+      },
+      "classification": {
+        "peptideClass": "amylin analog",
+        "mechanismFamily": "amylin / calcitonin receptor (AMY1/AMY2/AMY3 + CTR) agonist",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Synthetic analog of pancreatic amylin that agonizes amylin receptors (heterodimers of the calcitonin receptor with RAMP1/2/3) to slow gastric emptying, suppress postprandial glucagon, and reduce food intake.",
+        "localization": "Peripheral (gastric emptying, pancreatic alpha-cell suppression) and central (area postrema / brainstem satiety circuits).",
+        "clinicalUses": [
+          "Adjunct to mealtime insulin in adults with type 1 diabetes who have not achieved target glycemic control",
+          "Adjunct to mealtime insulin in adults with type 2 diabetes who have not achieved target glycemic control"
+        ],
+        "sideEffects": [
+          "Severe hypoglycemia (boxed warning, especially in type 1 diabetes when combined with insulin)",
+          "Nausea",
+          "Vomiting",
+          "Anorexia / decreased appetite",
+          "Headache",
+          "Injection site reactions",
+          "Abdominal pain"
+        ],
+        "dosing": {
+          "quick": "FDA-approved, subcutaneous, dosed before each major meal. In type 1 diabetes: start 15 mcg SC, titrate in 15 mcg steps to 30-60 mcg as tolerated. In type 2 diabetes: start 60 mcg SC, titrate to 120 mcg if tolerated. Reduce mealtime insulin by 50% when initiating.",
+          "adminRoute": "subcutaneous injection (abdomen or thigh) before meals; do not mix with insulin in same syringe",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["IAPP (endogenous amylin)", "CALCR (calcitonin receptor)", "RAMP1", "RAMP2", "RAMP3"],
+        "proteins": ["Amylin / IAPP", "Calcitonin receptor (CTR)", "Receptor activity-modifying proteins 1/2/3 (RAMP1/2/3)"],
+        "receptors": [
+          "AMY1 receptor (CTR + RAMP1) \u2014 preferred pramlintide target",
+          "AMY2 receptor (CTR + RAMP2)",
+          "AMY3 receptor (CTR + RAMP3)",
+          "Calcitonin receptor (weak)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "postprandial glucose control",
+            "steps": [
+              "Pramlintide binds AMY1/AMY3 receptors on gastric smooth muscle and vagal afferents",
+              "Gastric emptying is slowed",
+              "Rate of nutrient delivery to small intestine is reduced",
+              "Postprandial plasma glucose rise is blunted"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "fda_label_postprandial"
+          },
+          {
+            "category": "glucagon suppression",
+            "steps": [
+              "Pramlintide engages amylin receptors in CNS and on pancreatic alpha cells (indirect)",
+              "Postprandial glucagon secretion is suppressed",
+              "Hepatic glucose output is reduced in the postprandial window"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "fda_label_glucagon"
+          },
+          {
+            "category": "central satiety / food intake",
+            "steps": [
+              "Pramlintide acts at amylin receptors in the area postrema",
+              "Satiety signaling to hypothalamic appetite circuits increases",
+              "Meal size and caloric intake decrease"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "fda_label_satiety"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Supported by multiple randomized controlled trials in adults with type 1 and type 2 diabetes showing modest HbA1c reductions (~0.3-0.5%) and modest weight loss (1-2 kg) vs placebo when added to insulin. FDA-approved on this basis in 2005. Not studied in pediatrics and not approved for obesity as monotherapy.",
+        "animalEvidence": "Preclinical rodent and canine work established amylin's role in slowing gastric emptying, suppressing glucagon, and reducing food intake; the Des-Lys1 metabolite is biologically active in rats.",
+        "mechanismDetail": "Pramlintide differs from human amylin by three proline substitutions (Ala25Pro, Ser28Pro, Ser29Pro) chosen to reduce the amyloidogenicity that plagues human amylin. Functionally it is a non-selective agonist of amylin receptors (heterodimers of the class B calcitonin GPCR with RAMP1/2/3 = AMY1/AMY2/AMY3) with slight preference for AMY1; it also weakly activates the bare calcitonin receptor. Downstream signaling is primarily Gs \u2192 adenylyl cyclase \u2192 cAMP. Physiologically: (1) slowing of gastric emptying delays carbohydrate delivery to the small intestine; (2) suppression of inappropriately elevated postprandial glucagon reduces hepatic glucose output; (3) activation of area postrema amylin receptors enhances satiety and reduces caloric intake. Plasma half-life is ~48 minutes, requiring dosing before each major meal. Primary metabolite (Des-Lys1 pramlintide) retains activity. Cleared mainly via the kidneys.",
+        "safetyDetail": "Boxed warning for severe insulin-induced hypoglycemia, particularly in type 1 diabetes; mealtime insulin must be reduced by 50% when starting pramlintide. Contraindicated in patients with confirmed gastroparesis or hypoglycemia unawareness. Gastrointestinal side effects (nausea, vomiting, anorexia) are dose-limiting and titration-dependent. No increased risk of cardiovascular events has been established, but cardiovascular outcomes trials have not been conducted. Not recommended in pediatrics. Pharmacokinetics in end-stage renal disease and hepatic impairment are not established.",
+        "safetyRisks": [
+          {
+            "system": "endocrine / metabolic",
+            "label": "Severe hypoglycemia",
+            "color": "red",
+            "helpSummary": "Adjunct therapy can reduce postprandial glucose spikes and support insulin-dose reduction",
+            "harmSummary": "Combining pramlintide with mealtime insulin can precipitate severe, potentially disabling hypoglycemia if insulin is not appropriately reduced",
+            "citationIds": ["fda-symlin-label-2015"]
+          },
+          {
+            "system": "gastrointestinal",
+            "label": "Nausea / vomiting / gastroparesis-like symptoms",
+            "color": "orange",
+            "helpSummary": "Slowed gastric emptying is part of the intended mechanism",
+            "harmSummary": "Nausea and vomiting are common, dose-limiting, and pramlintide is contraindicated in patients with confirmed gastroparesis",
+            "citationIds": ["fda-symlin-label-2015"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "No evidence base for metabolic or cosmetic 'enhancement' in healthy-weight, non-diabetic adults. Weight effects in diabetic populations are small (1-2 kg).",
+          "caveat": "Off-label use for weight loss in non-diabetic, non-obese individuals is not supported by trials, carries hypoglycemia risk when combined with any insulin secretagogue, and is not reflected in the FDA label.",
+          "citationIds": ["fda-symlin-label-2015", "medicaid-amylin-class-2013"]
+        },
+        "missingEvidence": [
+          "Long-term cardiovascular outcome trials",
+          "Pediatric efficacy/safety data",
+          "Data in end-stage renal disease / dialysis",
+          "Head-to-head trials vs GLP-1 receptor agonists for weight loss in non-diabetic populations"
+        ],
+        "anecdotalUse": [
+          "Occasionally used off-label for appetite suppression and weight loss in obesity, largely supplanted by cagrilintide and GLP-1 combinations"
+        ]
+      },
+      "claims": [
+        {
+          "id": "pram-01",
+          "field": "regulatoryStatus",
+          "value": "FDA-approved (2005) as adjunct to mealtime insulin in type 1 and type 2 diabetes with boxed warning for severe hypoglycemia",
+          "species": "human",
+          "context": "fda_label",
+          "population": "adults with T1DM or T2DM on mealtime insulin",
+          "route": "subcutaneous",
+          "sampleSize": 5325,
+          "duration": "up to 52 weeks",
+          "symbols": ["Rx", "H"],
+          "confidence": 0.98,
+          "citationIds": ["fda-symlin-label-2015", "fda-symlin-label-2005"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "pram-02",
+          "field": "mechanism",
+          "value": "Non-selective amylin receptor (AMY1/AMY2/AMY3) agonist with slight preference for AMY1; activates bare CTR weakly; signals via Gs/cAMP",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "HEK293 and COS-7 recombinant receptor assays",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "A"],
+          "confidence": 0.9,
+          "citationIds": ["pubmed-pramlintide-amyr-2013", "wiki-amylin-receptor"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "pram-03",
+          "field": "pharmacokinetics",
+          "value": "Plasma half-life ~48 minutes; primary elimination renal; primary metabolite Des-Lys1 pramlintide retains activity",
+          "species": "human",
+          "context": "fda_label",
+          "population": "healthy adults and patients with T1DM",
+          "route": "subcutaneous",
+          "sampleSize": 21,
+          "duration": "single-dose PK",
+          "symbols": ["H"],
+          "confidence": 0.95,
+          "citationIds": ["fda-symlin-label-2015", "fda-symlin-label-2007"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "pram-04",
+          "field": "enhancementPotential",
+          "value": "No demonstrated benefit for healthy or non-diabetic adults; weight reduction in diabetic trials is small (1-2 kg) and not generalizable",
+          "species": "human",
+          "context": "review",
+          "population": "adults with diabetes on insulin",
+          "route": "subcutaneous",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "N"],
+          "confidence": 0.85,
+          "citationIds": ["medicaid-amylin-class-2013"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "fda-symlin-label-2015",
+          "sourceType": "regulator_label",
+          "title": "SYMLIN (pramlintide acetate) injection for subcutaneous use \u2014 FDA prescribing information (2015 label, 021332s025lbl)",
+          "authors": ["Amylin Pharmaceuticals / AstraZeneca"],
+          "year": 2015,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2015/021332s025lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["pram-01", "pram-03"],
+          "notes": "Contains sequence, MW 3949.4, formula C171H267N51O53S2, indication, boxed warning, mechanism section."
+        },
+        {
+          "id": "fda-symlin-label-2005",
+          "sourceType": "regulator_label",
+          "title": "SYMLIN (pramlintide acetate) injection \u2014 initial FDA approval label (2005, 021332lbl)",
+          "authors": ["Amylin Pharmaceuticals"],
+          "year": 2005,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2005/021332lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["pram-01"],
+          "notes": "Original approval documentation."
+        },
+        {
+          "id": "fda-symlin-label-2007",
+          "sourceType": "regulator_label",
+          "title": "SYMLIN (pramlintide acetate) injection \u2014 FDA label 2007 (021332s006lbl)",
+          "authors": ["Amylin Pharmaceuticals"],
+          "year": 2007,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2007/021332s006lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["pram-03"],
+          "notes": "Contains PK, half-life ~48 min, Des-Lys1 metabolite, renal clearance info."
+        },
+        {
+          "id": "pubmed-pramlintide-amyr-2013",
+          "sourceType": "primary_literature",
+          "title": "Activity of pramlintide, rat and human amylin but not A\u03b21-42 at human amylin receptors (Gingell et al., Endocrinology 2014 / PMID 24169554)",
+          "authors": ["Gingell JJ", "Burns ER", "Hay DL"],
+          "year": 2014,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24169554/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["pram-02"],
+          "notes": "Pramlintide activates all three AMYRs with slight preference for AMY1."
+        },
+        {
+          "id": "wiki-amylin-receptor",
+          "sourceType": "tertiary",
+          "title": "Amylin receptor \u2014 Wikipedia (CTR/RAMP heterodimer pharmacology summary)",
+          "authors": [],
+          "year": 2026,
+          "url": "https://en.wikipedia.org/wiki/Amylin_receptor",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["pram-02"],
+          "notes": "Background reference for AMY1/AMY2/AMY3 architecture."
+        },
+        {
+          "id": "medicaid-amylin-class-2013",
+          "sourceType": "secondary_review",
+          "title": "Therapeutic Class Overview: Amylin Analogs (Nevada Medicaid, 2013)",
+          "authors": [],
+          "year": 2013,
+          "url": "https://www.medicaid.nv.gov/Downloads/provider/Amylin_Analogs_2013-0812.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["pram-04"],
+          "notes": "Summarizes clinical efficacy and weight effects in diabetic cohorts."
+        }
+      ]
+    },
+
+    {
+      "id": "mazdutide",
+      "names": {
+        "primary": "Mazdutide",
+        "aliases": ["IBI362", "IBI-362", "LY3305677", "LY-3305677", "OXM-3"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": "2259884-03-0",
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": null,
+        "modifications": [
+          "Synthetic analog of mammalian oxyntomodulin (OXM)",
+          "Fatty-acyl moiety for albumin binding and extended half-life enabling once-weekly dosing"
+        ],
+        "structureClass": "oxyntomodulin-based lipidated peptide (GLP-1R / GCGR dual agonist)"
+      },
+      "classification": {
+        "peptideClass": "oxyntomodulin analog",
+        "mechanismFamily": "GLP-1 receptor / glucagon receptor dual agonist",
+        "regulatoryStatus": "non_us_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Oxyntomodulin-based dual agonist of the GLP-1 receptor and glucagon receptor; GLP-1R activation drives appetite suppression, delayed gastric emptying, and glucose-dependent insulin secretion, while glucagon receptor activation is thought to increase energy expenditure and hepatic fat oxidation.",
+        "localization": "Hypothalamic / brainstem appetite circuits (GLP-1R), pancreas, gut (GLP-1R), and liver (GCGR).",
+        "clinicalUses": [
+          "Chronic weight management in Chinese adults with overweight or obesity (NMPA-approved June 2025)",
+          "Glycemic control in Chinese adults with type 2 diabetes (NMPA-approved September 2025)"
+        ],
+        "sideEffects": [
+          "Nausea",
+          "Vomiting",
+          "Diarrhea",
+          "Decreased appetite",
+          "Abdominal distension",
+          "Upper respiratory tract infection (in phase 1b)",
+          "Transient, titration-linked GI symptoms"
+        ],
+        "dosing": {
+          "quick": "NMPA-approved Chinese labeling: once-weekly subcutaneous injection. Weight management dose 6 mg; 9 mg dose under supplemental NDA review for moderate-to-severe obesity. T2D dosing uses titration schedules studied in DREAMS trials. Not approved in the US or EU.",
+          "adminRoute": "subcutaneous injection, once weekly",
+          "publicDisplayAllowed": true,
+          "context": "regulatory"
+        }
+      },
+      "biology": {
+        "genes": ["GCG (proglucagon, parent of oxyntomodulin and GLP-1)", "GLP1R", "GCGR"],
+        "proteins": ["Glucagon-like peptide-1 receptor (GLP-1R)", "Glucagon receptor (GCGR)", "Oxyntomodulin (endogenous peptide mimicked)"],
+        "receptors": [
+          "GLP-1R (class B GPCR)",
+          "Glucagon receptor / GCGR (class B GPCR)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "GLP-1R pathway (appetite / insulin)",
+            "steps": [
+              "Mazdutide binds GLP-1R (Ki ~28.6 nM human)",
+              "Gs activation \u2192 adenylyl cyclase \u2192 cAMP rise in pancreatic beta cells and hypothalamic/brainstem neurons",
+              "Glucose-dependent insulin secretion increases; postprandial glucagon is suppressed; appetite decreases; gastric emptying slows"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "dreams1-nature"
+          },
+          {
+            "category": "GCGR pathway (energy expenditure / hepatic lipid)",
+            "steps": [
+              "Mazdutide binds GCGR (Ki ~17.7 nM human)",
+              "Gs/cAMP activation in hepatocytes \u2192 increased fatty acid oxidation and reduced hepatic lipogenesis",
+              "Increased thermogenesis and energy expenditure (implied from preclinical models); may improve liver fat content and insulin sensitivity"
+            ],
+            "symbols": ["Rx", "A"],
+            "claimRef": "preclinical-gcgr-effect"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Phase 3 GLORY-1 (Chinese adults with overweight/obesity, 4 and 6 mg doses for 48 weeks) showed superior weight loss vs placebo (~14% treatment difference at 6 mg). GLORY-2 (9 mg cohort) met primary endpoint with up to ~20% weight loss in moderate-to-severe obesity. DREAMS-1 and DREAMS-2 (published as Nature accelerated previews, 2025) established efficacy in treatment-na\u00efve and oral-antidiabetic-refractory T2D respectively. DREAMS-3 demonstrated superiority of mazdutide vs semaglutide 1 mg on a composite HbA1c < 7% and \u226510% weight loss endpoint at week 32 in Chinese adults with T2D and obesity (48% vs 21%, p<0.0001).",
+        "animalEvidence": "Preclinical mouse studies confirm mazdutide improves glucose control, reduces body weight, and increases energy expenditure; effects persist partially in Gcgr-knockout and Glp1r-knockout models, consistent with genuine dual agonism. Binds both human and murine GCGR / GLP-1R in the nanomolar range.",
+        "mechanismDetail": "Mazdutide is a synthetic, long-acting analog of mammalian oxyntomodulin \u2014 an endogenous proglucagon-derived peptide that is itself a weak dual GLP-1R/GCGR agonist. Like semaglutide and liraglutide, mazdutide carries a fatty-acyl side chain enabling albumin binding and once-weekly subcutaneous dosing. Binding affinities reported for mazdutide TFA: human GCGR Ki 17.7 nM; human GLP-1R Ki 28.6 nM; mouse islet insulin secretion EC50 ~5.2 nM. Dual agonism is hypothesized to deliver the appetite-suppressing/insulinotropic benefits of GLP-1R agonism plus GCGR-mediated increases in energy expenditure and hepatic lipid mobilization, potentially mitigating the adaptive metabolic slowdown seen with GLP-1-only therapy. Evidence that balance matters: intentional bias in favor of GLP-1R limits glucagon-driven hyperglycemia.",
+        "safetyDetail": "Across phase 1b through phase 3 trials, the adverse event profile mirrors the GLP-1 class \u2014 predominantly mild-to-moderate GI events (nausea, diarrhea, vomiting, decreased appetite) concentrated during dose titration. DREAMS-3 reported no severe hypoglycemia events; mild-to-moderate hypoglycemia incidence was comparable to dulaglutide 1.5 mg. No new safety signals distinct from the GLP-1 class have emerged in Chinese phase 3 data. Long-term cardiovascular and oncologic outcomes are not yet established in non-Chinese populations; EU/US regulatory approval has not been granted.",
+        "safetyRisks": [
+          {
+            "system": "gastrointestinal",
+            "label": "Titration-phase nausea, vomiting, diarrhea",
+            "color": "orange",
+            "helpSummary": "Slowed gastric emptying is part of the intended mechanism",
+            "harmSummary": "GI events are the most common cause of discontinuation in the dual-agonist class; incidence is dose- and titration-dependent",
+            "citationIds": ["prnewswire-dreams-nature-2025", "nature-comms-phase2-mazdutide-2023"]
+          },
+          {
+            "system": "endocrine / metabolic",
+            "label": "Hypoglycemia when combined with insulin / sulfonylurea",
+            "color": "yellow",
+            "helpSummary": "Glucose-dependent insulin secretion reduces baseline hypoglycemia risk",
+            "harmSummary": "Risk rises when combined with insulin or sulfonylureas",
+            "citationIds": ["prnewswire-dreams3-semaglutide-2025"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "No evidence base for healthy, lean adults; all phase 3 data are in Chinese adults with overweight/obesity or T2D.",
+          "caveat": "Not approved in the US or EU as of April 2026; off-label use in non-Chinese populations has no regulatory sanction and no registration trials outside China.",
+          "citationIds": ["prnewswire-nmpa-weight-2025"]
+        },
+        "missingEvidence": [
+          "Long-term cardiovascular outcomes trials",
+          "Non-East-Asian phase 3 efficacy and safety data",
+          "MASH and HFpEF studies (planned/initiated)",
+          "Pediatric PK/efficacy (NCT06536023 completed but data maturity unclear)"
+        ],
+        "anecdotalUse": []
+      },
+      "claims": [
+        {
+          "id": "mazd-01",
+          "field": "regulatoryStatus",
+          "value": "NMPA-approved in China (June 2025 for chronic weight management; September 2025 for T2D glycemic control); investigational in the US and EU",
+          "species": "human",
+          "context": "regulatory",
+          "population": "Chinese adults with overweight/obesity or T2D",
+          "route": "subcutaneous",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.95,
+          "citationIds": ["prnewswire-nmpa-weight-2025", "prnewswire-dreams-nature-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "mazd-02",
+          "field": "mechanism",
+          "value": "Oxyntomodulin-analog dual agonist of GLP-1R (Ki ~28.6 nM) and GCGR (Ki ~17.7 nM) with fatty-acyl albumin binder for weekly dosing",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "in vitro receptor binding, mouse islets, knockout mice",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.9,
+          "citationIds": ["medchemexpress-mazdutide", "wiki-mazdutide"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "mazd-03",
+          "field": "clinicalEfficacy",
+          "value": "GLORY-2 (9 mg once weekly) achieved up to 20.1% body weight reduction in Chinese adults with moderate-to-severe obesity at ~48 weeks; GLORY-1 showed ~14% placebo-adjusted weight loss at 6 mg (48 weeks); DREAMS-3 showed superiority over semaglutide on HbA1c <7% + \u226510% weight reduction composite (48% vs 21% at 32 weeks)",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "Chinese adults with overweight/obesity (\u00b1 T2D)",
+          "route": "subcutaneous",
+          "sampleSize": null,
+          "duration": "24-60 weeks",
+          "symbols": ["Rx", "H"],
+          "confidence": 0.92,
+          "citationIds": ["prnewswire-glory2-2025", "prnewswire-dreams3-semaglutide-2025", "pmc-phase1b-mazdutide-2022"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "prnewswire-nmpa-weight-2025",
+          "sourceType": "press_release",
+          "title": "Innovent Announces Mazdutide, First Dual GCG/GLP-1 Receptor Agonist, Received Approval from China's NMPA for Chronic Weight Management",
+          "authors": ["Innovent Biologics, Inc."],
+          "year": 2025,
+          "url": "https://www.prnewswire.com/news-releases/innovent-announces-mazdutide-first-dual-gcgglp-1-receptor-agonist-received-approval-from-chinas-nmpa-for-chronic-weight-management-302493152.html",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["mazd-01"],
+          "notes": "Company announcement of NMPA approval for weight management; corroborates September 2025 T2D approval via sister press releases."
+        },
+        {
+          "id": "prnewswire-dreams-nature-2025",
+          "sourceType": "press_release",
+          "title": "Nature \u2014 Two Phase 3 Clinical Results of Mazdutide (GLP-1/GCG Dual Receptor Agonist) in Chinese Adults with Type 2 Diabetes Have Been Back-to-Back Published in Nature",
+          "authors": ["Innovent Biologics, Inc."],
+          "year": 2025,
+          "url": "https://www.prnewswire.com/news-releases/nature--two-phase-3-clinical-results-of-mazdutide-glp-1gcg-dual-receptor-agonist-in-chinese-adults-with-type-2-diabetes-have-been-back-to-back-published-in-nature-302644606.html",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["mazd-01"],
+          "notes": "DREAMS-1 and DREAMS-2 phase 3 results published in Nature; covers both T2D indications."
+        },
+        {
+          "id": "prnewswire-glory2-2025",
+          "sourceType": "press_release",
+          "title": "Mazdutide 9 mg Achieves Up to 20.1% Weight Loss in Chinese Adults with Obesity, GLORY-2 Study Meets Primary and All Key Secondary Endpoints",
+          "authors": ["Innovent Biologics, Inc."],
+          "year": 2025,
+          "url": "https://www.prnewswire.com/news-releases/mazdutide-9-mg-achieves-up-to-20-1-weight-loss-in-chinese-adults-with-obesity-glory-2-study-meets-primary-and-all-key-secondary-endpoints-302620471.html",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["mazd-03"],
+          "notes": "Phase 3 GLORY-2 topline efficacy at 9 mg weekly."
+        },
+        {
+          "id": "prnewswire-dreams3-semaglutide-2025",
+          "sourceType": "press_release",
+          "title": "Innovent's Mazdutide Shows Superiority in Glycemic Control with Weight Loss over Semaglutide in a Head-to-head Phase 3 Clinical Trial DREAMS-3",
+          "authors": ["Innovent Biologics, Inc."],
+          "year": 2025,
+          "url": "https://www.prnewswire.com/news-releases/innovents-mazdutide-shows-superiority-in-glycemic-control-with-weight-loss-over-semaglutide-in-a-head-to-head-phase-3-clinical-trial-dreams-3-302594633.html",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["mazd-03"],
+          "notes": "Head-to-head phase 3 topline: mazdutide superior to semaglutide on composite HbA1c + weight endpoint at week 32."
+        },
+        {
+          "id": "pmc-phase1b-mazdutide-2022",
+          "sourceType": "primary_literature",
+          "title": "Safety and efficacy of a GLP-1 and glucagon receptor dual agonist mazdutide (IBI362) 9 mg and 10 mg in Chinese adults with overweight or obesity: a randomised, placebo-controlled, multiple-ascending-dose phase 1b trial (Ji et al., eClinicalMedicine 2022)",
+          "authors": ["Ji L", "Jiang H", "An P", "et al."],
+          "year": 2022,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9561728/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["mazd-03"],
+          "notes": "12- to 16-week phase 1b weight loss of ~9.5-11.7% vs ~1.8-3.3% placebo at 9-10 mg doses."
+        },
+        {
+          "id": "nature-comms-phase2-mazdutide-2023",
+          "sourceType": "primary_literature",
+          "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity (Nature Communications 2023)",
+          "authors": ["Ji L", "et al."],
+          "year": 2023,
+          "url": "https://www.nature.com/articles/s41467-023-44067-4",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["mazd-03"],
+          "notes": "24-week phase 2 data, 3/4.5/6 mg cohorts."
+        },
+        {
+          "id": "medchemexpress-mazdutide",
+          "sourceType": "vendor",
+          "title": "Mazdutide (IBI-362; LY-3305677) \u2014 GLP-1R/GCGR Agonist product sheet (MedChemExpress)",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.medchemexpress.com/mazdutide.html",
+          "accessedAt": "2026-04-21",
+          "quality": "vendor",
+          "supportsClaimIds": ["mazd-02"],
+          "notes": "Reports Ki values at human and mouse GCGR/GLP-1R and mouse islet EC50."
+        },
+        {
+          "id": "wiki-mazdutide",
+          "sourceType": "tertiary",
+          "title": "Mazdutide \u2014 Wikipedia",
+          "authors": [],
+          "year": 2025,
+          "url": "https://en.wikipedia.org/wiki/Mazdutide",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["mazd-02"],
+          "notes": "Background: oxyntomodulin analog, IBI362/LY3305677, China approval timeline."
+        }
+      ]
+    },
+
+    {
+      "id": "survodutide",
+      "names": {
+        "primary": "Survodutide",
+        "aliases": ["BI 456906", "BI-456906"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": "2805997-46-8",
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": 29,
+        "modifications": [
+          "29-amino acid glucagon-derived peptide backbone (not oxyntomodulin-derived)",
+          "C18 fatty diacid acylation at a lysine side chain enabling albumin binding (>99% albumin-bound)",
+          "GLP-1-derived residues grafted onto glucagon scaffold for balanced dual receptor activation"
+        ],
+        "structureClass": "glucagon-derived lipidated peptide (GCGR / GLP-1R dual agonist)"
+      },
+      "classification": {
+        "peptideClass": "glucagon analog / twincretin",
+        "mechanismFamily": "GLP-1 receptor / glucagon receptor dual agonist (GLP-1R:GCGR activity bias ~8:1 favoring GLP-1R)",
+        "regulatoryStatus": "investigational"
+      },
+      "tile": {
+        "mechanismSummary": "29-amino acid glucagon-derived lipidated peptide that dually agonizes the glucagon and GLP-1 receptors. GLP-1R activation reduces appetite, slows gastric emptying, and improves glucose-dependent insulin secretion; glucagon receptor agonism adds increased energy expenditure and direct hepatic lipid mobilization.",
+        "localization": "CNS appetite centers and gut (GLP-1R); liver (GCGR); pancreas.",
+        "clinicalUses": [
+          "Investigational for obesity (SYNCHRONIZE-1/-2/-CVOT phase 3)",
+          "Investigational for MASH with fibrosis (LIVERAGE phase 3); FDA Breakthrough Therapy designation September 2024",
+          "Phase 2 evidence in type 2 diabetes"
+        ],
+        "sideEffects": [
+          "Nausea",
+          "Diarrhea",
+          "Vomiting",
+          "Decreased appetite",
+          "Dose-escalation-related GI events",
+          "Injection site reactions"
+        ],
+        "dosing": {
+          "quick": "Investigational, not FDA-approved. Phase 3 trials use once-weekly subcutaneous injection with titration to target doses of 3.6 mg or 6.0 mg. Phase 2 obesity range tested: 2.4-4.8 mg weekly.",
+          "adminRoute": "subcutaneous injection, once weekly",
+          "publicDisplayAllowed": true,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["GCG (proglucagon)", "GLP1R", "GCGR"],
+        "proteins": ["Glucagon receptor (GCGR)", "Glucagon-like peptide-1 receptor (GLP-1R)", "Human serum albumin (binding partner for the C18 diacid tail)"],
+        "receptors": [
+          "GLP-1R (class B GPCR) \u2014 EC50 ~0.33 nM (CHO-K1)",
+          "GCGR (class B GPCR) \u2014 EC50 ~0.52 nM (CHO-K1)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "GLP-1R pathway",
+            "steps": [
+              "Survodutide binds GLP-1R at very high potency (EC50 0.33 nM)",
+              "Gs activation \u2192 cAMP rise \u2192 glucose-dependent insulin secretion",
+              "Central effects: reduced appetite, delayed gastric emptying"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "zimmermann-molmet-2022"
+          },
+          {
+            "category": "GCGR pathway (hepatic / energy expenditure)",
+            "steps": [
+              "Survodutide binds GCGR (EC50 0.52 nM)",
+              "Hepatocyte Gs/cAMP activation \u2192 increased fatty acid oxidation, ketogenesis, and decreased lipogenesis",
+              "Increased resting energy expenditure contributes to weight loss beyond GLP-1R alone; proposed to drive MASH fibrosis improvement"
+            ],
+            "symbols": ["Rx", "A"],
+            "claimRef": "sanyal-mash-nejm-2024"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Phase 1 PK established once-weekly dosing feasibility with ~6-day half-life (>99% albumin-bound). Phase 2 obesity (NCT04667377) showed up to ~19% mean body weight reduction at 46 weeks at the 4.8 mg dose. Phase 2 T2D on metformin background showed dose-dependent HbA1c reductions at 16 weeks. Phase 2 MASH (NCT04771273, Sanyal et al., NEJM 2024) randomized 293 adults with biopsy-confirmed MASH and F1-F3 fibrosis to 2.4, 4.8, or 6.0 mg or placebo for 48 weeks \u2014 primary endpoint (MASH improvement without worsening fibrosis) met in 47/62/43% vs 14% placebo; fibrosis improvement in 34/36/34% vs 22%. Phase 3 SYNCHRONIZE-1/-2 (obesity), SYNCHRONIZE-CVOT (CV outcomes in ~4,935 participants), LIVERAGE/LIVERAGE-Cirrhosis (MASH), and SYNCHRONIZE-JP/China obesity trials are ongoing.",
+        "animalEvidence": "Preclinical DIO models (Zimmermann et al., Mol Metab 2022) established superior anti-obesity efficacy relative to selective GLP-1R agonism; cryo-EM structures of survodutide bound to GLP-1R and GCGR (with G protein) support a dual agonist binding mode resembling oxyntomodulin.",
+        "mechanismDetail": "Unlike mazdutide (oxyntomodulin analog), survodutide is a glucagon analog reshaped with GLP-1-like residues to produce a balanced dual agonist biased modestly toward GLP-1R activity (activity ratio ~1:8 GCGR:GLP-1R). It is 29 amino acids with a C18 fatty diacid enabling albumin binding (>99%) and a ~6-day plasma half-life. cAMP EC50 values (CHO-K1): GCGR 0.52 nM, GLP-1R 0.33 nM. Compared with native peptides, survodutide is ~4\u00d7 less potent than GLP-1 at GLP-1R and ~22\u00d7 less potent than glucagon at GCGR \u2014 resembling the dual agonist oxyntomodulin. Dual engagement is hypothesized to couple the appetite/insulin effects of GLP-1R to direct hepatic effects of GCGR (increased fatty acid oxidation, reduced steatosis) that may underpin the MASH fibrosis benefit.",
+        "safetyDetail": "Across phase 1-3 trials, GI adverse events (nausea, diarrhea, vomiting) are the most common events and are concentrated during dose escalation. In the phase 2 MASH trial, survodutide adverse event rates were: nausea 66% vs 23% placebo, diarrhea 49% vs 23%, vomiting 41% vs 4%; serious adverse events 8% vs 7%. No unexpected hepatic or cardiovascular signal has been reported in completed trials, and a phase 1 trial in cirrhosis showed no need for dose adjustment in hepatic impairment. Long-term cardiovascular safety awaits SYNCHRONIZE-CVOT. Not approved anywhere.",
+        "safetyRisks": [
+          {
+            "system": "gastrointestinal",
+            "label": "Nausea / vomiting / diarrhea during titration",
+            "color": "orange",
+            "helpSummary": "Consistent with the GLP-1 class; mostly mild-to-moderate and dose-dependent",
+            "harmSummary": "Higher incidence than GLP-1-only agonists in some comparisons; can drive discontinuation during rapid escalation",
+            "citationIds": ["sanyal-mash-nejm-2024"]
+          },
+          {
+            "system": "endocrine / metabolic",
+            "label": "Potential for glucagon-driven hyperglycemia",
+            "color": "yellow",
+            "helpSummary": "GLP-1 bias in molecule design mitigates this risk; net effect in trials is glucose-lowering",
+            "harmSummary": "Theoretical risk inherent to GCGR agonism; not observed as a net effect in trials to date",
+            "citationIds": ["bluher-diabetologia-2024"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "No data in healthy, lean adults; all efficacy data are in overweight/obese populations or MASH / T2D.",
+          "caveat": "Investigational; no regulatory approval anywhere as of April 2026. Off-label research or self-experimentation is not supported by any approved label.",
+          "citationIds": ["boehringer-survodutide-pipeline"]
+        },
+        "missingEvidence": [
+          "Phase 3 obesity efficacy readouts (SYNCHRONIZE-1/-2)",
+          "Phase 3 MASH histology data (LIVERAGE)",
+          "Cardiovascular outcomes trial readout (SYNCHRONIZE-CVOT)",
+          "Head-to-head vs tirzepatide or retatrutide"
+        ],
+        "anecdotalUse": []
+      },
+      "claims": [
+        {
+          "id": "surv-01",
+          "field": "regulatoryStatus",
+          "value": "Investigational globally. FDA Breakthrough Therapy for non-cirrhotic MASH with F2/F3 fibrosis (September 2024); EMA PRIME scheme acceptance (November 2023); NMPA Breakthrough Therapy for MASH (June 2024)",
+          "species": "human",
+          "context": "regulatory",
+          "population": "adults with obesity and/or MASH",
+          "route": "subcutaneous",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "Rx"],
+          "confidence": 0.95,
+          "citationIds": ["boehringer-mash-breakthrough-2024", "zealand-survodutide-pipeline"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "surv-02",
+          "field": "clinicalEfficacy_MASH",
+          "value": "Phase 2 MASH trial (NCT04771273, n=293): MASH improvement without worsening fibrosis in 47% (2.4 mg), 62% (4.8 mg), 43% (6.0 mg) vs 14% placebo at 48 weeks; fibrosis improvement in 34/36/34% vs 22%",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adults with biopsy-confirmed MASH and F1-F3 fibrosis, with or without T2D",
+          "route": "subcutaneous",
+          "sampleSize": 293,
+          "duration": "48 weeks",
+          "symbols": ["Rx", "H"],
+          "confidence": 0.95,
+          "citationIds": ["sanyal-mash-nejm-2024"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "surv-03",
+          "field": "clinicalEfficacy_obesity",
+          "value": "Phase 2 dose-finding trial in overweight/obese adults without T2D showed up to ~19% mean body weight reduction at 46 weeks at 4.8 mg; ~65% of that dose cohort achieved \u226515% weight loss",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adults with overweight or obesity without T2D",
+          "route": "subcutaneous",
+          "sampleSize": 387,
+          "duration": "46 weeks",
+          "symbols": ["Rx", "H"],
+          "confidence": 0.9,
+          "citationIds": ["boehringer-phase3-weight-2023", "zealand-survodutide-pipeline"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "surv-04",
+          "field": "mechanism",
+          "value": "29-amino acid glucagon-derived peptide with C18 diacid; dual GCGR/GLP-1R agonist, EC50 0.52 nM (GCGR) and 0.33 nM (GLP-1R) in CHO-K1; activity bias ~1:8 GCGR:GLP-1R",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "CHO-K1 recombinant cells, DIO mice",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.9,
+          "citationIds": ["zimmermann-molmet-2022", "medchemexpress-survodutide", "klein-perspective-2023"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "boehringer-mash-breakthrough-2024",
+          "sourceType": "press_release",
+          "title": "Survodutide US FDA Breakthrough Therapy designation and phase 3 MASH trials \u2014 Boehringer Ingelheim",
+          "authors": ["Boehringer Ingelheim"],
+          "year": 2024,
+          "url": "https://www.boehringer-ingelheim.com/human-health/metabolic-diseases/survodutide-us-fda-breakthrough-therapy-phase-3-trials-mash",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["surv-01"],
+          "notes": "Confirms FDA Breakthrough (Sep 2024), EMA PRIME (Nov 2023), NMPA Breakthrough (Jun 2024)."
+        },
+        {
+          "id": "zealand-survodutide-pipeline",
+          "sourceType": "company_pipeline",
+          "title": "Survodutide \u2014 Zealand Pharma pipeline",
+          "authors": ["Zealand Pharma"],
+          "year": 2025,
+          "url": "https://www.zealandpharma.com/pipeline/survodutide/",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["surv-01", "surv-03"],
+          "notes": "Summary of discovery (BI / Zealand), phase 3 program, and MASH regulatory designations."
+        },
+        {
+          "id": "sanyal-mash-nejm-2024",
+          "sourceType": "primary_literature",
+          "title": "A Phase 2 Randomized Trial of Survodutide in MASH and Fibrosis (Sanyal et al., N Engl J Med 2024;391:311-319)",
+          "authors": ["Sanyal AJ", "Bedossa P", "Fraessdorf M", "et al."],
+          "year": 2024,
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2401755",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["surv-02"],
+          "notes": "Pivotal MASH phase 2 data; NCT04771273."
+        },
+        {
+          "id": "boehringer-phase3-weight-2023",
+          "sourceType": "press_release",
+          "title": "Survodutide Phase III study weight loss \u2014 Boehringer Ingelheim",
+          "authors": ["Boehringer Ingelheim"],
+          "year": 2023,
+          "url": "https://www.boehringer-ingelheim.com/human-health/metabolic-diseases/survodutide-phase-iii-study-weight-loss",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["surv-03"],
+          "notes": "Reports ~19% weight loss in phase 2 dose-finding study."
+        },
+        {
+          "id": "zimmermann-molmet-2022",
+          "sourceType": "primary_literature",
+          "title": "BI 456906: discovery and preclinical pharmacology of a novel GCGR/GLP-1R dual agonist with robust anti-obesity efficacy (Zimmermann et al., Mol Metab 2022;66:101633)",
+          "authors": ["Zimmermann T", "Thomas L", "Baader-Pagler T", "et al."],
+          "year": 2022,
+          "url": "https://www.sciencedirect.com/science/article/pii/S2212877822001867",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["surv-04"],
+          "notes": "Reports CHO-K1 EC50 values and preclinical anti-obesity biology."
+        },
+        {
+          "id": "bluher-diabetologia-2024",
+          "sourceType": "primary_literature",
+          "title": "Dose-response effects on HbA1c and bodyweight reduction of survodutide, a dual glucagon/GLP-1 receptor agonist, compared with placebo and open-label semaglutide in people with type 2 diabetes (Bluher et al., Diabetologia 2024;67:470-482)",
+          "authors": ["Bluher M", "Rosenstock J", "Hoefler J", "Manuel R", "Hennige AM"],
+          "year": 2024,
+          "url": "https://doi.org/10.1007/s00125-023-06053-9",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["surv-04"],
+          "notes": "Phase 2 T2D dose-response trial."
+        },
+        {
+          "id": "klein-perspective-2023",
+          "sourceType": "secondary_review",
+          "title": "Perspectives in weight control in diabetes \u2014 Survodutide (Klein, Augustin, Hennige; Diabetes Research and Clinical Practice 2023)",
+          "authors": ["Klein T", "Augustin R", "Hennige AM"],
+          "year": 2023,
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0168822723005429",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["surv-04"],
+          "notes": "Review describing 29-aa peptide design, C18 diacid, once-weekly dosing."
+        },
+        {
+          "id": "medchemexpress-survodutide",
+          "sourceType": "vendor",
+          "title": "Survodutide (BI 456906) \u2014 GCGR/GLP-1R dual agonist product sheet (MedChemExpress)",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.medchemexpress.com/survodutide.html",
+          "accessedAt": "2026-04-21",
+          "quality": "vendor",
+          "supportsClaimIds": ["surv-04"],
+          "notes": "CAS 2805997-46-8; 29-aa peptide with C18 fatty acid; EC50 values."
+        },
+        {
+          "id": "boehringer-survodutide-pipeline",
+          "sourceType": "company_pipeline",
+          "title": "Survodutide (BI 456906): GLP1/GCGR agonist \u2014 Boehringer Ingelheim pipeline",
+          "authors": ["Boehringer Ingelheim"],
+          "year": 2025,
+          "url": "https://www.boehringer-ingelheim.com/science-innovation/human-health-innovation/clinical-pipeline/survodutide-bi-456906-glp1-gcgr-agonist-0",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["surv-01"],
+          "notes": "Ongoing development program page."
+        }
+      ]
+    },
+
+    {
+      "id": "orforglipron",
+      "names": {
+        "primary": "Orforglipron",
+        "aliases": ["LY3502970", "LY-3502970", "OWL833", "OWL-833"],
+        "tradeNames": ["Foundayo"]
+      },
+      "identity": {
+        "formula": "C48H48F2N10O5",
+        "molecularWeight": 882.96,
+        "cas": "2212020-52-3",
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": null,
+        "modifications": [
+          "Non-peptide small molecule; no canonical peptide sequence",
+          "Binds GLP-1R at a site distinct from the endogenous peptide's orthosteric pocket (cryo-EM characterized)",
+          "G-protein-biased partial agonist: activates Gs/cAMP with minimal \u03b2-arrestin recruitment"
+        ],
+        "structureClass": "oral small-molecule (non-peptide) GLP-1 receptor partial agonist"
+      },
+      "classification": {
+        "peptideClass": "non-peptide small molecule GLP-1 receptor agonist",
+        "mechanismFamily": "GLP-1 receptor agonist (biased partial)",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Oral, once-daily small-molecule partial agonist of the GLP-1 receptor that biases signaling toward Gs/cAMP over \u03b2-arrestin recruitment, mimicking the appetite-suppressing, gastric-emptying, and glucose-dependent insulinotropic effects of peptide GLP-1 analogs without requiring injection.",
+        "localization": "GLP-1R expressing tissues \u2014 pancreatic beta cells, gut, and CNS appetite centers.",
+        "clinicalUses": [
+          "Chronic weight management in adults with obesity, or overweight with at least one weight-related comorbidity (FDA-approved as Foundayo, April 1, 2026)",
+          "Investigational for type 2 diabetes (regulatory submission planned 2026)",
+          "Under study for obstructive sleep apnea, hypertension, and osteoarthritis knee pain"
+        ],
+        "sideEffects": [
+          "Nausea",
+          "Constipation",
+          "Diarrhea",
+          "Vomiting",
+          "Dyspepsia",
+          "Abdominal pain",
+          "Headache",
+          "Abdominal distension",
+          "Fatigue",
+          "Eructation",
+          "Gastroesophageal reflux",
+          "Flatulence",
+          "Hair loss",
+          "Boxed warning: risk of thyroid C-cell tumors"
+        ],
+        "dosing": {
+          "quick": "FDA-approved oral tablet (Foundayo), once daily, any time of day, with or without food. Start 0.8 mg daily; increase to 2.5 mg after \u226530 days, then 5.5 mg after \u226530 days, with further escalation to 9, 14.5, or 17.2 mg at \u226530-day intervals based on response and tolerability.",
+          "adminRoute": "oral tablet, once daily",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["GLP1R"],
+        "proteins": ["Glucagon-like peptide-1 receptor (GLP-1R, class B GPCR)"],
+        "receptors": [
+          "GLP-1R (selective; partial agonist, G-protein biased)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "biased GLP-1R signaling",
+            "steps": [
+              "Orforglipron binds GLP-1R at a site that partially overlaps the peptide orthosteric pocket (cryo-EM, Kawai et al. PNAS 2020)",
+              "Gs coupling \u2192 adenylyl cyclase \u2192 cAMP rise in pancreatic beta cells and neurons",
+              "Minimal \u03b2-arrestin recruitment \u2014 hypothesized to reduce receptor desensitization",
+              "Downstream: glucose-dependent insulin secretion increases, appetite decreases, gastric emptying slows"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "kawai-pnas-2020"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "FDA-approved April 1, 2026 for chronic weight management based on the ATTAIN phase 3 program (>4,500 participants). ATTAIN-1 (NCT05869903, n=3,127, 72 weeks): mean weight change \u22127.5%/\u22128.4%/\u221211.2% with 6/12/36 mg vs \u22122.1% placebo (efficacy estimand, highest dose delivered ~27.3 lbs / 12.4% mean loss); \u226510% weight loss in 54.6% of 36 mg group vs 12.9% placebo. ATTAIN-2 (NCT in obesity + T2D, 72 weeks): up to 9.6% mean weight loss at 36 mg. ACHIEVE-1 (NCT, 40 weeks, n=559 early T2D): HbA1c reductions \u22121.24/\u22121.47/\u22121.48 percentage points at 3/12/36 mg vs \u22120.41 placebo; weight loss up to 7.6% at 36 mg. ATTAIN-MAINTAIN demonstrated weight maintenance after switching from injectable semaglutide or tirzepatide. Adverse event profile is consistent with the GLP-1 class (GI-predominant, mild-to-moderate).",
+        "animalEvidence": "Discovered by Chugai Pharmaceutical (OWL833) and licensed to Lilly (2018). Preclinical characterization (Kawai et al., PNAS 2020) established cryo-EM structure of LY3502970 bound to GLP-1R, documenting biased partial agonism with cAMP induction and near-absent \u03b2-arrestin recruitment; high GLP-1R selectivity over other class B GPCRs; pharmacokinetics suitable for oral dosing.",
+        "mechanismDetail": "Orforglipron is structurally a small organic molecule (MW 882.96; C48H48F2N10O5) \u2014 not a peptide \u2014 that occupies a pocket adjacent to the endogenous GLP-1 binding site on GLP-1R. It is a partial, G-protein-biased agonist: it raises cAMP comparably to peptide GLP-1 analogs but recruits little \u03b2-arrestin, which has been hypothesized to reduce receptor desensitization and possibly improve tolerability. Downstream effects mirror peptide GLP-1R agonists \u2014 glucose-dependent insulin secretion, glucagon suppression, delayed gastric emptying, and reduced appetite. Because it is a small molecule, oral bioavailability does not require permeation-enhancing formulation, so unlike oral semaglutide (Rybelsus), Foundayo has no food- or water-intake timing restrictions.",
+        "safetyDetail": "FDA label carries a boxed warning for thyroid C-cell tumors, inherited from the GLP-1 class precedent; contraindicated in patients with a personal or family history of medullary thyroid carcinoma or MEN 2. Additional warnings: acute pancreatitis, severe GI adverse reactions, acute kidney injury due to volume depletion, hypoglycemia (especially with insulin or sulfonylureas), serious hypersensitivity reactions, diabetic retinopathy complications in T2D, acute gallbladder disease, and pulmonary aspiration risk during general anesthesia/deep sedation. In ATTAIN-1, treatment discontinuation due to adverse events occurred in 5.3-10.3% of orforglipron patients vs 2.7% placebo; no hepatic safety signal was observed.",
+        "safetyRisks": [
+          {
+            "system": "endocrine / oncologic",
+            "label": "Thyroid C-cell tumors (boxed warning)",
+            "color": "red",
+            "helpSummary": "Risk inferred from rodent data seen with peptide GLP-1 class; no confirmed human signal to date",
+            "harmSummary": "Contraindicated in personal/family history of MTC or MEN 2; counsel patients to report neck masses, hoarseness, dysphagia, dyspnea",
+            "citationIds": ["fda-foundayo-press-2026", "drugs-foundayo-history-2026"]
+          },
+          {
+            "system": "gastrointestinal",
+            "label": "Nausea / vomiting / constipation / pancreatitis risk",
+            "color": "orange",
+            "helpSummary": "Mild-to-moderate and largely titration-linked; less nausea than some peptide GLP-1 analogs in some comparisons",
+            "harmSummary": "Nausea 28.9-35.9% across doses vs 10.4% placebo in ATTAIN-1; acute pancreatitis and gallbladder disease are labeled risks",
+            "citationIds": ["lilly-attain1-2025", "drugs-foundayo-history-2026"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Off-label use in healthy, lean, non-obese adults is not supported by any approved indication. Weight loss magnitude (~12% at highest dose) is meaningful but modest compared with injectable GLP-1 or GLP-1/GIP agonists.",
+          "caveat": "Only indicated for adults with obesity or overweight with a weight-related comorbidity. Not approved for T2D as of April 2026. Thyroid C-cell tumor boxed warning applies regardless of indication.",
+          "citationIds": ["fda-foundayo-press-2026", "lilly-foundayo-press-2026"]
+        },
+        "missingEvidence": [
+          "Long-term cardiovascular outcomes trial data",
+          "FDA approval for type 2 diabetes (submission planned 2026)",
+          "Head-to-head efficacy versus injectable tirzepatide or semaglutide in diabetes",
+          "Pediatric safety/efficacy"
+        ],
+        "anecdotalUse": []
+      },
+      "claims": [
+        {
+          "id": "orfo-01",
+          "field": "regulatoryStatus",
+          "value": "FDA-approved April 1, 2026 as Foundayo for chronic weight management in adults with obesity or overweight with \u22651 weight-related comorbidity; first new molecular entity approved under the FDA's Commissioner's National Priority Voucher program; investigational for T2D",
+          "species": "human",
+          "context": "fda_label",
+          "population": "adults with obesity or overweight + comorbidity",
+          "route": "oral",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.98,
+          "citationIds": ["fda-foundayo-press-2026", "lilly-foundayo-press-2026"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "orfo-02",
+          "field": "clinicalEfficacy",
+          "value": "ATTAIN-1 (n=3,127, 72 weeks): mean body weight change \u22127.5%/\u22128.4%/\u221211.2% at 6/12/36 mg vs \u22122.1% placebo (efficacy estimand); \u226510% weight loss in 54.6% of the 36 mg arm vs 12.9% placebo. ACHIEVE-1 (early T2D, 40 weeks): HbA1c reductions \u22121.24 to \u22121.48 percentage points vs \u22120.41 placebo",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "ATTAIN-1: adults with obesity without diabetes; ACHIEVE-1: adults with early T2D",
+          "route": "oral",
+          "sampleSize": 3127,
+          "duration": "72 weeks",
+          "symbols": ["Rx", "H"],
+          "confidence": 0.95,
+          "citationIds": ["wharton-attain1-nejm-2025", "rosenstock-achieve1-nejm-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "orfo-03",
+          "field": "mechanism",
+          "value": "Non-peptide small molecule (MW 882.96, C48H48F2N10O5); G-protein-biased partial agonist of GLP-1R with minimal \u03b2-arrestin recruitment; cryo-EM-characterized binding at a site adjacent to the peptide orthosteric pocket",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "recombinant HEK293 GLP-1R; cryo-EM",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.95,
+          "citationIds": ["kawai-pnas-2020", "drughunter-orforglipron"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "orfo-04",
+          "field": "safety",
+          "value": "Boxed warning for thyroid C-cell tumors; contraindicated in personal/family history of MTC or MEN 2; AE discontinuation 5.3-10.3% (orforglipron) vs 2.7% (placebo) in ATTAIN-1",
+          "species": "human",
+          "context": "fda_label",
+          "population": "ATTAIN-1 obesity cohort",
+          "route": "oral",
+          "sampleSize": 3127,
+          "duration": "72 weeks",
+          "symbols": ["Rx", "H"],
+          "confidence": 0.97,
+          "citationIds": ["drugs-foundayo-history-2026", "lilly-foundayo-press-2026"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "fda-foundayo-press-2026",
+          "sourceType": "regulator_press",
+          "title": "FDA Approves First New Molecular Entity Under National Priority Voucher Program (Foundayo / orforglipron)",
+          "authors": ["U.S. Food and Drug Administration"],
+          "year": 2026,
+          "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["orfo-01"],
+          "notes": "Confirms April 1, 2026 approval; indication language; boxed warning for thyroid C-cell tumors."
+        },
+        {
+          "id": "lilly-foundayo-press-2026",
+          "sourceType": "press_release",
+          "title": "FDA approves Lilly's Foundayo (orforglipron), the only GLP-1 pill for weight loss that can be taken any time of day without food or water restrictions",
+          "authors": ["Eli Lilly and Company"],
+          "year": 2026,
+          "url": "https://investor.lilly.com/news-releases/news-release-details/fda-approves-lillys-foundayotm-orforglipron-only-glp-1-pill",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["orfo-01", "orfo-04"],
+          "notes": "Sponsor press release with commercial access details."
+        },
+        {
+          "id": "drugs-foundayo-history-2026",
+          "sourceType": "secondary_review",
+          "title": "Foundayo (orforglipron) FDA Approval History \u2014 Drugs.com",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.drugs.com/history/foundayo.html",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["orfo-01", "orfo-04"],
+          "notes": "Dosing schedule, full adverse event list, boxed warning, and ATTAIN headline numbers."
+        },
+        {
+          "id": "wharton-attain1-nejm-2025",
+          "sourceType": "primary_literature",
+          "title": "Orforglipron, an Oral Small-Molecule GLP-1 Receptor Agonist for Obesity Treatment (Wharton et al., N Engl J Med 2025;393:1796-1806) \u2014 ATTAIN-1",
+          "authors": ["Wharton S", "Aronne LJ", "Stefanski A", "et al."],
+          "year": 2025,
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2511774",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["orfo-02"],
+          "notes": "72-week pivotal phase 3 efficacy and safety in adults with obesity without diabetes."
+        },
+        {
+          "id": "rosenstock-achieve1-nejm-2025",
+          "sourceType": "primary_literature",
+          "title": "Orforglipron, an Oral Small-Molecule GLP-1 Receptor Agonist, in Early Type 2 Diabetes (Rosenstock et al., N Engl J Med 2025;393:1065-1076) \u2014 ACHIEVE-1",
+          "authors": ["Rosenstock J", "Hsia S", "Nevarez Ruiz L", "et al."],
+          "year": 2025,
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2505669",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["orfo-02"],
+          "notes": "40-week phase 3 T2D; HbA1c reductions at 3/12/36 mg."
+        },
+        {
+          "id": "kawai-pnas-2020",
+          "sourceType": "primary_literature",
+          "title": "Structural basis for GLP-1 receptor activation by LY3502970, an orally active nonpeptide agonist (Kawai et al., PNAS 2020;117(47):29959-29967)",
+          "authors": ["Kawai T", "Sun B", "Yoshino H", "et al."],
+          "year": 2020,
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7703558/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["orfo-03"],
+          "notes": "Cryo-EM of LY3502970-GLP-1R complex; MW 882.96, formula C48H48F2N10O5; G-protein-biased partial agonism."
+        },
+        {
+          "id": "drughunter-orforglipron",
+          "sourceType": "secondary_review",
+          "title": "Orforglipron \u2014 Drug Hunter molecule profile",
+          "authors": [],
+          "year": 2025,
+          "url": "https://drughunter.com/molecule/orforglipron",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["orfo-03"],
+          "notes": "Provides structural and discovery context (Chugai OWL833 \u2192 Lilly LY3502970)."
+        }
+      ]
+    },
+
+    {
+      "id": "cagrilintide",
+      "names": {
+        "primary": "Cagrilintide",
+        "aliases": ["AM833", "NN9838"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": null,
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": 37,
+        "modifications": [
+          "37-amino acid amylin analog built on a pramlintide-like backbone (not human amylin) to reduce fibrillation",
+          "Reported position substitutions include 14E and 17R forming a stabilizing salt bridge and a C-terminal proline / tyrosine modification (per Novo Nordisk medicinal chemistry paper)",
+          "N-terminal (Lys1) acylation with a C20 eicosanedioic fatty diacid via a \u03b3-glutamic acid linker, enabling reversible albumin binding",
+          "C-terminal amidation; intramolecular Cys-Cys disulfide consistent with amylin scaffold"
+        ],
+        "structureClass": "long-acting acylated amylin analog (DACRA-like: dual amylin and calcitonin receptor agonist pharmacology)"
+      },
+      "classification": {
+        "peptideClass": "amylin analog (long-acting, acylated)",
+        "mechanismFamily": "non-selective amylin receptor (AMY1/AMY2/AMY3) and calcitonin receptor (CTR) agonist",
+        "regulatoryStatus": "investigational"
+      },
+      "tile": {
+        "mechanismSummary": "Long-acting, lipidated amylin analog that non-selectively agonizes AMY1, AMY2, AMY3, and the calcitonin receptor. Acts on area postrema and hypothalamic circuits to suppress appetite, slows gastric emptying, and inhibits postprandial glucagon \u2014 engineered for once-weekly dosing via albumin binding.",
+        "localization": "Area postrema / brainstem satiety circuits; hypothalamic appetite centers; peripheral amylin-receptor sites on stomach and pancreatic alpha cells.",
+        "clinicalUses": [
+          "Investigational for chronic weight management, primarily as part of the fixed-dose CagriSema combination with semaglutide 2.4 mg",
+          "CagriSema NDA submitted to the FDA (December 2025); not yet approved as of April 21, 2026",
+          "Cagrilintide monotherapy programs (RENEW) also explored"
+        ],
+        "sideEffects": [
+          "Nausea",
+          "Vomiting",
+          "Diarrhea",
+          "Constipation",
+          "Decreased appetite",
+          "Injection site reactions",
+          "Titration-phase GI events"
+        ],
+        "dosing": {
+          "quick": "Investigational; not FDA-approved. Phase 3 use (CagriSema): cagrilintide 2.4 mg once weekly subcutaneous, co-administered with semaglutide 2.4 mg. Monotherapy phase 2 titration reached 4.5 mg weekly.",
+          "adminRoute": "subcutaneous injection, once weekly",
+          "publicDisplayAllowed": true,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["IAPP (endogenous amylin)", "CALCR (calcitonin receptor)", "RAMP1", "RAMP2", "RAMP3"],
+        "proteins": ["Calcitonin receptor (CTR)", "Receptor activity-modifying proteins 1/2/3 (RAMP1/2/3)", "Human serum albumin (binding partner for the C20 diacid tail)"],
+        "receptors": [
+          "AMY1 receptor (CTR + RAMP1)",
+          "AMY2 receptor (CTR + RAMP2)",
+          "AMY3 receptor (CTR + RAMP3)",
+          "Calcitonin receptor (CTR, unopposed) \u2014 cagrilintide is a non-selective DACRA"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "central appetite suppression",
+            "steps": [
+              "Cagrilintide binds AMY1/AMY3/CTR in the area postrema and nucleus tractus solitarius",
+              "Gs / adenylyl cyclase / cAMP activation in satiety neurons",
+              "Projection to hypothalamic appetite circuits reduces meal size and caloric intake",
+              "Single-dose preclinical food-intake suppression lasts 48-60 h vs ~6 h for pramlintide"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "jmedchem-cagrilintide-2021"
+          },
+          {
+            "category": "postprandial glucagon / gastric emptying",
+            "steps": [
+              "Cagrilintide engages peripheral and central amylin receptors",
+              "Postprandial glucagon secretion is suppressed; gastric emptying is slowed",
+              "Contributes to blood-glucose control in T2D combinations"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "am833-jpet-2024"
+          },
+          {
+            "category": "complementarity with GLP-1 (CagriSema)",
+            "steps": [
+              "Amylin receptor pathway is non-overlapping with GLP-1R signaling",
+              "Combining cagrilintide 2.4 mg with semaglutide 2.4 mg yields additive weight loss in REDEFINE 1 (~22.7% vs 16.1% semaglutide mono vs 11.8% cagrilintide mono at 68 weeks)"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "novo-redefine1-2024"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Phase 1b study in adults with overweight/obesity established safety and PK (half-life 159-195 h; Cmax at 24-72 h post-dose) for once-weekly dosing. Phase 2 dose-finding (up to 4.5 mg weekly) produced ~10.8% mean weight loss over 26 weeks as monotherapy, exceeding liraglutide 3.0 mg. In the phase 3 REDEFINE 1 trial (NCT05669755; n=3,417; 68 weeks), cagrilintide 2.4 mg monotherapy produced ~11.8% weight loss, semaglutide 2.4 mg ~16.1%, and the CagriSema combination ~22.7%, all relative to ~2.3% with placebo; 91.9% of CagriSema participants achieved \u22655% weight reduction vs 31.5% placebo. REDEFINE 2 in adults with T2D showed 13.7% weight loss with CagriSema. Novo Nordisk submitted a CagriSema NDA to the FDA in December 2025 for weight management.",
+        "animalEvidence": "Development work (Kruse et al., Nitsche et al., and Novo Nordisk medicinal chemistry program, J Med Chem 2021) established the 37-aa pramlintide-like backbone, N-terminal C20 fatty diacid attachment via \u03b3-Glu, and structural mutations for helix stabilization and fibril resistance. Cryo-EM structures (Nature Communications 2025) of cagrilintide bound to AMY1, AMY2, AMY3, and CTR reveal a non-selective binding mode distinct from both rat amylin and salmon calcitonin. Preclinical food-intake assays show sustained anorectic effects of 48-60 h per single dose.",
+        "mechanismDetail": "Cagrilintide is a 37-amino acid peptide modeled on the pramlintide backbone (chosen over human amylin to blunt amyloidogenicity), with additional engineered substitutions believed to form a stabilizing intramolecular salt bridge (14E/17R reported) and a fatty-acid attachment point at the N-terminal lysine. Attachment of a C20 eicosanedioic fatty diacid via a \u03b3-glutamic acid linker produces high-affinity, reversible albumin binding and an elimination half-life of 159-195 hours \u2014 a ~200-fold extension versus pramlintide's ~48-minute half-life \u2014 enabling once-weekly subcutaneous dosing. Pharmacologically, cagrilintide is a DACRA (dual amylin and calcitonin receptor agonist): unlike pramlintide (selective for AMYRs), cagrilintide retains meaningful activity at the bare calcitonin receptor. This may contribute both to efficacy and to safety monitoring (historical concern about calcitonin-containing products and malignancy, though no such signal has been observed with cagrilintide).",
+        "safetyDetail": "Phase 1-3 data show a safety profile dominated by transient, titration-related GI adverse events (nausea, vomiting, diarrhea). REDEFINE 1 reported single-digit discontinuation rates. No new class-defining safety signal has been reported as of April 2026. As an amylin/calcitonin receptor family agonist, long-term monitoring for C-cell effects is theoretically prudent but not observed clinically to date. The medicinal-chemistry literature noted historical concern about calcitonin products and malignancy but did not identify such a signal with cagrilintide. Cardiovascular outcomes data for the combination (CagriSema) versus GLP-1-only comparators are not yet mature.",
+        "safetyRisks": [
+          {
+            "system": "gastrointestinal",
+            "label": "Titration-phase nausea, vomiting, diarrhea",
+            "color": "orange",
+            "helpSummary": "Most events are mild-to-moderate and concentrated during dose escalation",
+            "harmSummary": "Discontinuation rates in REDEFINE 1 were low single-digit, but GI events are the dominant AE category",
+            "citationIds": ["hcplive-cagrisema-ada-2025", "novo-redefine1-2024"]
+          },
+          {
+            "system": "endocrine / oncologic (theoretical)",
+            "label": "Calcitonin-receptor family activation \u2014 theoretical C-cell concern",
+            "color": "yellow",
+            "helpSummary": "No increased malignancy signal observed in trials to date",
+            "harmSummary": "Historical pharmacologic precedent prompted safety screening; cagrilintide's pharmacologic resemblance to pramlintide (no malignancy signal) is reassuring but not definitive",
+            "citationIds": ["jmedchem-cagrilintide-2021"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "No data in healthy, lean adults. All phase 3 efficacy is in adults with overweight/obesity (\u00b1T2D). As of April 21, 2026, cagrilintide and CagriSema are investigational; the CagriSema NDA filed in December 2025 has not been acted on.",
+          "caveat": "Off-label use outside trials is not supported by regulatory approval; the 'research-use-only' material widely sold is not a medicine. Long-term safety data are limited.",
+          "citationIds": ["prnewswire-cagrisema-nda-2025"]
+        },
+        "missingEvidence": [
+          "FDA approval decision for CagriSema",
+          "Long-term cardiovascular outcomes data for CagriSema vs tirzepatide",
+          "Cagrilintide monotherapy phase 3 data (RENEW)",
+          "Direct head-to-head weight-composition (fat vs lean mass) comparisons with GLP-1 or GLP-1/GIP combinations"
+        ],
+        "anecdotalUse": [
+          "Widely sold in the 'research peptide' gray market as a cagrilintide/semaglutide stack; this use is not supported by any approved label and the products are not quality-controlled for human use"
+        ]
+      },
+      "claims": [
+        {
+          "id": "cagr-01",
+          "field": "regulatoryStatus",
+          "value": "Investigational worldwide. CagriSema (cagrilintide 2.4 mg + semaglutide 2.4 mg) NDA submitted to the FDA on December 18, 2025 for chronic weight management; no approval decision as of April 21, 2026. Cagrilintide monotherapy remains in development (RENEW).",
+          "species": "human",
+          "context": "regulatory",
+          "population": "adults with obesity or overweight with comorbidity",
+          "route": "subcutaneous",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "Rx"],
+          "confidence": 0.95,
+          "citationIds": ["prnewswire-cagrisema-nda-2025", "novo-redefine1-2024"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cagr-02",
+          "field": "clinicalEfficacy",
+          "value": "REDEFINE 1 (phase 3, n=3,417, 68 weeks): CagriSema ~22.7% mean weight loss vs 16.1% semaglutide, 11.8% cagrilintide mono, and placebo; 91.9% of CagriSema arm achieved \u22655% weight loss vs 31.5% placebo. REDEFINE 2 (T2D): ~13.7% weight loss with CagriSema.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adults with obesity or overweight with comorbidity (REDEFINE 1); adults with T2D (REDEFINE 2)",
+          "route": "subcutaneous",
+          "sampleSize": 3417,
+          "duration": "68 weeks",
+          "symbols": ["Rx", "H"],
+          "confidence": 0.92,
+          "citationIds": ["novo-redefine1-2024", "hcplive-cagrisema-ada-2025", "pharmexec-cagrisema-nda-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cagr-03",
+          "field": "pharmacokinetics",
+          "value": "Half-life 159-195 h (6.6-8.1 days); median Cmax 24-72 h; exposure is dose-proportional over 0.16-4.5 mg; once-weekly subcutaneous dosing supported by albumin binding via the C20 fatty diacid",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adults with overweight/obesity",
+          "route": "subcutaneous",
+          "sampleSize": 95,
+          "duration": "single- and multiple-dose PK studies",
+          "symbols": ["H"],
+          "confidence": 0.92,
+          "citationIds": ["jmedchem-cagrilintide-2021", "creative-peptides-cagrilintide"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cagr-04",
+          "field": "mechanism",
+          "value": "Non-selective agonist of AMY1, AMY2, AMY3, and the bare calcitonin receptor (DACRA-type pharmacology); based on a pramlintide-like 37-aa backbone with N-terminal C20 fatty diacid via a \u03b3-Glu linker for albumin binding",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "recombinant receptor assays (HEK293, CHO); cryo-EM with each receptor",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.92,
+          "citationIds": ["am833-jpet-2024", "natcomms-cagrilintide-struct-2025", "jmedchem-cagrilintide-2021"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "prnewswire-cagrisema-nda-2025",
+          "sourceType": "press_release",
+          "title": "Novo Nordisk files for FDA approval of CagriSema, the first once-weekly combination of GLP-1 and amylin analogues for weight management",
+          "authors": ["Novo Nordisk A/S"],
+          "year": 2025,
+          "url": "https://www.prnewswire.com/news-releases/novo-nordisk-files-for-fda-approval-of-cagrisema-the-first-once-weekly-combination-of-glp1-and-amylin-analogues-for-weight-management-302645862.html",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["cagr-01"],
+          "notes": "December 18, 2025 NDA submission; 23% average body weight loss cited under 'trial-policy' estimand in REDEFINE 1 scenario."
+        },
+        {
+          "id": "novo-redefine1-2024",
+          "sourceType": "press_release",
+          "title": "Novo Nordisk REDEFINE 1 phase 3 CagriSema headline results (Company announcement, 20 December 2024)",
+          "authors": ["Novo Nordisk A/S"],
+          "year": 2024,
+          "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=915082",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["cagr-01", "cagr-02"],
+          "notes": "Reports weight reductions: CagriSema 22.7%, semaglutide 16.1%, cagrilintide 11.8%, placebo 2.3% at 68 weeks."
+        },
+        {
+          "id": "hcplive-cagrisema-ada-2025",
+          "sourceType": "secondary_review",
+          "title": "ADA 2025: CagriSema Demonstrates Dual Benefit in Obesity and Type 2 Diabetes (HCPLive)",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.hcplive.com/view/ada-2025-cagrisema-demonstrates-dual-benefit-in-obesity-and-type-2-diabetes",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cagr-02"],
+          "notes": "Summary of REDEFINE 1 and REDEFINE 2 data presented at ADA 2025."
+        },
+        {
+          "id": "pharmexec-cagrisema-nda-2025",
+          "sourceType": "secondary_review",
+          "title": "Novo Nordisk Submits NDA to FDA for CagriSema (Pharmaceutical Executive)",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.pharmexec.com/view/novo-nordisk-submits-nda-fda-cagrisema",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cagr-01", "cagr-02"],
+          "notes": "Reports 91.9% of CagriSema patients achieving \u22655% weight loss vs 31.5% placebo in REDEFINE 1."
+        },
+        {
+          "id": "jmedchem-cagrilintide-2021",
+          "sourceType": "primary_literature",
+          "title": "Development of Cagrilintide, a Long-Acting Amylin Analogue (Kruse et al., J Med Chem 2021)",
+          "authors": ["Kruse T", "et al."],
+          "year": 2021,
+          "url": "https://pubs.acs.org/doi/10.1021/acs.jmedchem.1c00565",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cagr-03", "cagr-04"],
+          "notes": "Medicinal chemistry program paper; pramlintide-like backbone, N-terminal C20 fatty acid, 14E/17R salt bridge, half-life 159-195 h."
+        },
+        {
+          "id": "am833-jpet-2024",
+          "sourceType": "primary_literature",
+          "title": "AM833 Is a Novel Agonist of Calcitonin Family G Protein-Coupled Receptors: Pharmacological Comparison with Six Selective and Nonselective Agonists (JPET / ScienceDirect)",
+          "authors": ["Sexton PM", "et al."],
+          "year": 2024,
+          "url": "https://www.sciencedirect.com/science/article/pii/S0022356524270324",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cagr-04"],
+          "notes": "Characterizes AM833 (cagrilintide) as non-selective AMYR and CTR agonist across 25 endpoints."
+        },
+        {
+          "id": "natcomms-cagrilintide-struct-2025",
+          "sourceType": "primary_literature",
+          "title": "Structural and dynamic features of cagrilintide binding to calcitonin and amylin receptors (Nature Communications 2025)",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.nature.com/articles/s41467-025-58680-y",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cagr-04"],
+          "notes": "Cryo-EM structures of cagrilintide bound to AMY1R, AMY2R, AMY3R, and CTR."
+        },
+        {
+          "id": "creative-peptides-cagrilintide",
+          "sourceType": "vendor",
+          "title": "What is Cagrilintide Peptide? \u2014 Creative Peptides",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.creative-peptides.com/resources/what-is-cagrilintide-peptide.html",
+          "accessedAt": "2026-04-21",
+          "quality": "vendor",
+          "supportsClaimIds": ["cagr-03"],
+          "notes": "Secondary summary of half-life (159-195 h) and dose-proportional exposure."
+        }
+      ]
+    }
+  ]
+}

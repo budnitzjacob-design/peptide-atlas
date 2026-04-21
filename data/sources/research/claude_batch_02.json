@@ -1,0 +1,1411 @@
+{
+  "batch_id": "batch-02",
+  "generated_at": "2026-04-21",
+  "peptides": [
+    {
+      "id": "tesamorelin",
+      "names": {
+        "primary": "Tesamorelin",
+        "aliases": ["TH9507", "tesamorelin acetate", "GHRH(1-44) analog"],
+        "tradeNames": ["Egrifta", "Egrifta SV", "Egrifta WR"]
+      },
+      "identity": {
+        "formula": "C221H366N72O67S",
+        "molecularWeight": 5135.9,
+        "cas": "218949-48-5",
+        "sequenceOneLetter": "YADAIFTNSYRKVLGQLSARKLLQDIMSRQQGESNQERGARARL",
+        "sequenceThreeLetter": "Tyr-Ala-Asp-Ala-Ile-Phe-Thr-Asn-Ser-Tyr-Arg-Lys-Val-Leu-Gly-Gln-Leu-Ser-Ala-Arg-Lys-Leu-Leu-Gln-Asp-Ile-Met-Ser-Arg-Gln-Gln-Gly-Glu-Ser-Asn-Gln-Glu-Arg-Gly-Ala-Arg-Ala-Arg-Leu",
+        "length": 44,
+        "modifications": [
+          "N-terminal trans-3-hexenoyl modification on Tyr1",
+          "C-terminal amidation (-NH2)",
+          "acetate salt form"
+        ],
+        "structureClass": "stabilized GHRH(1-44) analog"
+      },
+      "classification": {
+        "peptideClass": "GHRH analog",
+        "mechanismFamily": "growth hormone secretagogue (GHRH receptor agonist)",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Synthetic analog of endogenous GHRH(1-44) that binds pituitary somatotroph GHRH receptors, stimulating endogenous GH release and downstream hepatic IGF-1 production.",
+        "localization": "anterior pituitary somatotrophs (GHRHR); downstream effects in liver (IGF-1) and adipose tissue",
+        "clinicalUses": [
+          "reduction of excess visceral abdominal fat in HIV-infected adults with lipodystrophy"
+        ],
+        "sideEffects": [
+          "arthralgia",
+          "injection site reactions",
+          "peripheral edema",
+          "hyperglycemia/glucose intolerance",
+          "musculoskeletal pain",
+          "paresthesia",
+          "rash",
+          "hypersensitivity reactions"
+        ],
+        "dosing": {
+          "quick": "FDA-approved: Egrifta SV 2 mg SC once daily in abdomen; Egrifta WR 1.28 mg SC once daily in abdomen (bioequivalent, lower volume).",
+          "adminRoute": "subcutaneous",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["GHRH", "GHRHR", "GH1", "IGF1"],
+        "proteins": [
+          "growth hormone-releasing hormone receptor (GHRHR)",
+          "growth hormone (GH)",
+          "insulin-like growth factor 1 (IGF-1)",
+          "IGF binding proteins"
+        ],
+        "receptors": ["GHRHR (class B GPCR, Gs-coupled)"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "endocrine",
+            "steps": [
+              "tesamorelin binds pituitary GHRHR",
+              "Gs activation -> adenylate cyclase -> cAMP -> PKA",
+              "somatotroph GH synthesis and pulsatile release",
+              "hepatic GHR activation -> JAK2/STAT5 -> IGF-1 secretion",
+              "IGF-1 and direct GH effects on adipose tissue -> reduction in visceral adipose tissue (VAT)"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "tesamorelin-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Two pivotal 26-week multicenter, randomized, double-blind, placebo-controlled Phase 3 trials in HIV-infected patients with abdominal lipohypertrophy supported approval. Tesamorelin 2 mg SC daily reduced visceral adipose tissue (VAT) versus placebo. IGF-1 rises to steady state within approximately 2 weeks of daily dosing. Effect on weight is neutral; tesamorelin is explicitly not indicated for weight-loss management.",
+        "animalEvidence": "Rat toxicology studies showed hydrocephaly in offspring at systemic exposures approximately 2-4x the human clinical exposure during organogenesis/lactation. Preclinical data support the GH/IGF-1 axis pharmacology.",
+        "mechanismDetail": "Tesamorelin is a 44-amino-acid GHRH(1-44) analog N-terminally modified with a trans-3-hexenoyl group that confers resistance to DPP-4 cleavage and prolongs half-life relative to native GHRH. It agonizes the class B GPCR GHRHR on pituitary somatotrophs, elevating intracellular cAMP, activating PKA, and producing pulsatile endogenous GH secretion rather than exogenous GH replacement. GH then acts at hepatic GHR (JAK2/STAT5) to elevate IGF-1 and on adipose GHR to promote lipolysis, selectively reducing visceral rather than subcutaneous fat. Because the pituitary remains the rate-limiter, the physiologic feedback loop is largely preserved, unlike exogenous rhGH.",
+        "safetyDetail": "Most commonly reported adverse reactions in HIV patients are arthralgia, injection site reactions, and peripheral edema. Fluid retention (carpal tunnel, arthralgia) and impaired glucose tolerance reflect GH-axis activation. Long-term cardiovascular safety has not been established per FDA labeling. The label includes contraindications in active malignancy, disrupted hypothalamic-pituitary axis (pituitary tumor/surgery, head irradiation), pregnancy, and hypersensitivity. Evidence in non-HIV populations, healthy adults, or older adults (>65) is limited per the label.",
+        "safetyRisks": [
+          {
+            "system": "endocrine/metabolic",
+            "label": "Glucose intolerance / worsening diabetes",
+            "color": "amber",
+            "helpSummary": "Reflects physiologic GH-axis activation; monitor glycemia.",
+            "harmSummary": "GH-driven insulin resistance can unmask or worsen type 2 diabetes.",
+            "citationIds": ["tesa-label-egriftawr-2025"]
+          },
+          {
+            "system": "musculoskeletal",
+            "label": "Arthralgia / fluid retention / carpal tunnel",
+            "color": "amber",
+            "helpSummary": "Common class effect of GH excess.",
+            "harmSummary": "Joint pain, peripheral edema, and paresthesia can require dose interruption.",
+            "citationIds": ["tesa-label-egriftawr-2025", "tesa-label-egriftasv"]
+          },
+          {
+            "system": "oncologic",
+            "label": "Use in active malignancy is contraindicated",
+            "color": "red",
+            "helpSummary": "GH/IGF-1 elevation may promote tumor growth.",
+            "harmSummary": "Label contraindicates use in patients with active cancer; any prior cancer must be inactive.",
+            "citationIds": ["tesa-label-egriftawr-2025"]
+          },
+          {
+            "system": "cardiovascular",
+            "label": "Long-term CV safety not established",
+            "color": "amber",
+            "helpSummary": "Absence of long-term CV outcomes data.",
+            "harmSummary": "Consider risk/benefit in patients without meaningful VAT reduction.",
+            "citationIds": ["tesa-label-egriftawr-2025"]
+          },
+          {
+            "system": "immune",
+            "label": "Hypersensitivity / injection site reactions",
+            "color": "yellow",
+            "helpSummary": "Local and occasional systemic hypersensitivity reported.",
+            "harmSummary": "Serious hypersensitivity reactions have been reported; label warning applies.",
+            "citationIds": ["tesa-label-egriftawr-2025"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Off-label and research interest exists for visceral-fat reduction and GH/IGF-1 elevation in non-HIV populations, but FDA approval is HIV-lipodystrophy-specific and the label explicitly notes Tesamorelin is weight-neutral.",
+          "caveat": "Efficacy and safety in non-HIV adults, healthy volunteers for performance/anti-aging use, and pediatric populations are not established. Longer-term cardiovascular and neoplastic risk in such populations is unknown.",
+          "citationIds": ["tesa-label-egriftawr-2025", "tesa-label-egriftasv"]
+        },
+        "missingEvidence": [
+          "long-term cardiovascular outcomes",
+          "safety/efficacy in non-HIV obesity or metabolic disease",
+          "pediatric safety (label excludes children with open epiphyses)",
+          "renal/hepatic impairment PK"
+        ],
+        "anecdotalUse": [
+          "off-label use by some clinicians and consumers for visceral fat reduction and body composition in non-HIV adults"
+        ]
+      },
+      "claims": [
+        {
+          "id": "tesamorelin-mech-01",
+          "field": "mechanism",
+          "value": "GHRHR agonist that stimulates endogenous pituitary GH release and downstream hepatic IGF-1",
+          "species": "human",
+          "context": "fda_label",
+          "population": "HIV-infected adults with lipodystrophy",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.95,
+          "citationIds": ["tesa-label-egriftawr-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tesamorelin-indication-01",
+          "field": "regulatoryIndication",
+          "value": "FDA-approved for reduction of excess abdominal fat in HIV-infected adult patients with lipodystrophy",
+          "species": "human",
+          "context": "fda_label",
+          "population": "HIV-infected adults with lipodystrophy",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R", "H"],
+          "confidence": 0.98,
+          "citationIds": ["tesa-label-egriftawr-2025", "fda-egrifta-wr-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tesamorelin-dose-01",
+          "field": "dosing",
+          "value": "Egrifta WR 1.28 mg SC once daily (abdomen); Egrifta SV 2 mg SC once daily (abdomen)",
+          "species": "human",
+          "context": "fda_label",
+          "population": "HIV-infected adults",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.98,
+          "citationIds": ["tesa-label-egriftawr-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tesamorelin-weight-neutral-01",
+          "field": "effectOnBodyWeight",
+          "value": "weight-neutral per FDA label; not indicated for weight-loss management",
+          "species": "human",
+          "context": "fda_label",
+          "population": "HIV-infected adults with lipodystrophy",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.95,
+          "citationIds": ["tesa-label-egriftawr-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tesamorelin-egriftawr-approval-01",
+          "field": "regulatoryMilestone",
+          "value": "FDA approved Egrifta WR (F8 formulation, 1.28 mg/day) in March 2025; daily SC dosing with weekly reconstitution",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.97,
+          "citationIds": ["fda-egrifta-wr-2025", "theratech-pr-2025"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "tesa-label-egriftawr-2025",
+          "sourceType": "drug_label",
+          "title": "EGRIFTA WR (tesamorelin for injection) prescribing information",
+          "authors": ["Theratechnologies Inc."],
+          "year": 2025,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022505s020lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": [
+            "tesamorelin-mech-01",
+            "tesamorelin-indication-01",
+            "tesamorelin-dose-01",
+            "tesamorelin-weight-neutral-01"
+          ],
+          "notes": "Current FDA full prescribing information for Egrifta WR (F8 formulation)."
+        },
+        {
+          "id": "tesa-label-egriftasv",
+          "sourceType": "drug_label",
+          "title": "EGRIFTA SV (tesamorelin for injection) prescribing information",
+          "authors": ["Theratechnologies Inc."],
+          "year": 2019,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/022505s012s013lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["tesamorelin-dose-01", "tesamorelin-weight-neutral-01"],
+          "notes": "Egrifta SV label; 2 mg/day SC formulation."
+        },
+        {
+          "id": "fda-egrifta-wr-2025",
+          "sourceType": "regulator_news",
+          "title": "FDA Approves F8 Formulation of Theratechnologies' Tesamorelin (Egrifta WR) for HIV-Associated Lipodystrophy",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.contagionlive.com/view/fda-approves-f8-formulation-of-theratechnologies-tesamorelin-for-hiv-associated-lipodystrophy",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["tesamorelin-egriftawr-approval-01", "tesamorelin-indication-01"],
+          "notes": "Reports FDA sBLA approval March 25, 2025."
+        },
+        {
+          "id": "theratech-pr-2025",
+          "sourceType": "company_press_release",
+          "title": "Theratechnologies Receives FDA Approval for EGRIFTA WR (Tesamorelin F8)",
+          "authors": ["Theratechnologies Inc."],
+          "year": 2025,
+          "url": "https://www.theratech.com/news-releases/news-release-details/theratechnologies-receives-fda-approval-egrifta-wrtm-tesamorelin/",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["tesamorelin-egriftawr-approval-01"],
+          "notes": "Official sponsor press release announcing F8 approval."
+        }
+      ]
+    },
+    {
+      "id": "semaglutide",
+      "names": {
+        "primary": "Semaglutide",
+        "aliases": ["NN9535", "GLP-1 analog (Arg34, Aib8, fatty-diacid-C18 Lys26)"],
+        "tradeNames": ["Ozempic", "Wegovy", "Rybelsus"]
+      },
+      "identity": {
+        "formula": "C187H291N45O59",
+        "molecularWeight": 4113.58,
+        "cas": "910463-68-2",
+        "sequenceOneLetter": "HXEGTFTSDVSSYLEGQAAKEFIAWLVRGRG",
+        "sequenceThreeLetter": "His-Aib-Glu-Gly-Thr-Phe-Thr-Ser-Asp-Val-Ser-Ser-Tyr-Leu-Glu-Gly-Gln-Ala-Ala-Lys(gamma-Glu-2xOEG-C18 diacid)-Glu-Phe-Ile-Ala-Trp-Leu-Val-Arg-Gly-Arg-Gly",
+        "length": 31,
+        "modifications": [
+          "Aib (2-aminoisobutyric acid) substitution at position 8 (DPP-4 resistance)",
+          "Lys26 modified with gamma-Glu + 2x OEG linker + C18 fatty diacid (albumin-binding, extended half-life)",
+          "Arg34 substitution (ensures single fatty-acid attachment site)"
+        ],
+        "structureClass": "long-acting GLP-1 receptor agonist (94% homology to human GLP-1)"
+      },
+      "classification": {
+        "peptideClass": "GLP-1 receptor agonist (incretin mimetic)",
+        "mechanismFamily": "GLP-1R agonism (class B GPCR, Gs-coupled)",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Selective GLP-1 receptor agonist with 94% sequence homology to native GLP-1; enhances glucose-dependent insulin secretion, suppresses glucagon, delays gastric emptying, and acts on hypothalamic appetite centers.",
+        "localization": "pancreatic beta- and alpha-cells; hypothalamic arcuate/POMC neurons and area postrema; gut smooth muscle; cardiovascular and renal tissue",
+        "clinicalUses": [
+          "type 2 diabetes (Ozempic SC; Rybelsus oral)",
+          "chronic weight management in obesity/overweight (Wegovy SC; Wegovy tablets)",
+          "MACE risk reduction in T2D with CVD (Ozempic)",
+          "MACE risk reduction in adults with CVD and obesity/overweight (Wegovy)",
+          "noncirrhotic MASH with moderate-to-advanced fibrosis (F2-F3) (Wegovy, accelerated approval August 15, 2025)"
+        ],
+        "sideEffects": [
+          "nausea",
+          "vomiting",
+          "diarrhea",
+          "constipation",
+          "abdominal pain",
+          "pancreatitis",
+          "gallbladder disease",
+          "acute kidney injury (volume depletion-mediated)",
+          "diabetic retinopathy complications",
+          "hypoglycemia when combined with insulin/SU",
+          "injection site reactions",
+          "hypersensitivity including anaphylaxis and angioedema"
+        ],
+        "dosing": {
+          "quick": "FDA-approved: Ozempic T2D 0.25->2 mg SC weekly; Wegovy obesity 0.25->2.4 mg SC weekly; Rybelsus T2D 3->14 mg oral daily; Wegovy tablets for CV/weight indications (approved Dec 2025).",
+          "adminRoute": "subcutaneous (Ozempic, Wegovy injection) or oral (Rybelsus, Wegovy tablet)",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["GLP1R", "INS", "GCG", "POMC"],
+        "proteins": ["GLP-1 receptor (GLP1R)", "insulin", "glucagon", "POMC/alpha-MSH"],
+        "receptors": ["GLP-1R (class B GPCR, Gs-coupled)"],
+        "channelsTransporters": ["KATP closure in beta-cells (indirect via glucose metabolism/cAMP)"],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "metabolic/endocrine",
+            "steps": [
+              "semaglutide binds GLP-1R on pancreatic beta-cells",
+              "Gs -> AC -> cAMP -> PKA/EPAC2",
+              "glucose-dependent insulin exocytosis; alpha-cell glucagon suppression",
+              "vagal afferents and hypothalamic POMC activation reduce appetite",
+              "delayed gastric emptying",
+              "chronic effects: weight loss, HbA1c reduction, reduced MACE, hepatic fat and inflammation improvements"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "sema-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Large randomized Phase 3 programs support each indication: SUSTAIN (T2D, Ozempic), PIONEER (oral T2D, Rybelsus), STEP (obesity, Wegovy), SELECT (17,600+ adults with CVD and overweight/obesity; MACE reduction demonstrated), and ESSENCE (noncirrhotic MASH F2-F3, accelerated approval August 15, 2025). In SELECT, MACE occurred in 6.5% on Wegovy versus 8% on placebo, supporting the 2024 CV indication. Wegovy tablet approval added in December 2025.",
+        "animalEvidence": "Rodent carcinogenicity studies in mice and rats showed dose- and duration-dependent thyroid C-cell tumors (adenomas and carcinomas) at clinically relevant plasma exposures. Human relevance remains undetermined; this is the basis for the boxed warning.",
+        "mechanismDetail": "Semaglutide is a 31-residue GLP-1 analog engineered for albumin binding via a C18 fatty-diacid side chain on Lys26 (extending half-life to ~1 week) and Aib8 substitution for DPP-4 resistance. GLP-1R activation on pancreatic beta-cells elevates cAMP and enhances glucose-dependent insulin secretion while suppressing alpha-cell glucagon. Central GLP-1R activation in hypothalamic arcuate POMC neurons and the area postrema reduces appetite and caloric intake. Peripheral effects include delayed gastric emptying. Cardiometabolic benefits in MACE and MASH trials appear to involve weight loss, improved insulin sensitivity, reduced hepatic steatosis/inflammation, and possibly direct vascular effects not fully characterized.",
+        "safetyDetail": "Boxed warning for rodent thyroid C-cell tumors (MTC); contraindicated in personal/family history of MTC or MEN 2. Warnings: pancreatitis, acute gallbladder disease, hypoglycemia (especially with insulin/SU), acute kidney injury secondary to GI volume depletion, hypersensitivity including anaphylaxis and angioedema, diabetic retinopathy complications (notable in SUSTAIN-6), increased heart rate, and suicidal behavior/thinking. In SELECT, participants >=75 years reported more hip and pelvic fractures on Wegovy than placebo. Most commonly reported adverse events across programs are gastrointestinal and dose-related.",
+        "safetyRisks": [
+          {
+            "system": "oncologic",
+            "label": "Thyroid C-cell tumors (rodent; boxed warning)",
+            "color": "red",
+            "helpSummary": "Rodent MTC signal drives label contraindication in MEN 2 and MTC history.",
+            "harmSummary": "Human relevance is undetermined; contraindicated in patients with personal/family history of MTC or MEN 2.",
+            "citationIds": ["wegovy-label-2025", "fda-wegovy-mash-2025"]
+          },
+          {
+            "system": "gastrointestinal",
+            "label": "Pancreatitis",
+            "color": "amber",
+            "helpSummary": "Monitor for persistent severe abdominal pain.",
+            "harmSummary": "Labeled warning; discontinue if suspected.",
+            "citationIds": ["wegovy-label-2025"]
+          },
+          {
+            "system": "hepatobiliary",
+            "label": "Gallbladder disease / cholelithiasis",
+            "color": "amber",
+            "helpSummary": "Rapid weight loss can precipitate gallstones.",
+            "harmSummary": "Cholecystitis and gallstone-related events reported.",
+            "citationIds": ["wegovy-label-2025", "fda-wegovy-cv-2024"]
+          },
+          {
+            "system": "renal",
+            "label": "Acute kidney injury",
+            "color": "amber",
+            "helpSummary": "Usually secondary to GI-driven volume depletion.",
+            "harmSummary": "Postmarketing reports include cases requiring hemodialysis.",
+            "citationIds": ["wegovy-label-2025"]
+          },
+          {
+            "system": "ophthalmic",
+            "label": "Diabetic retinopathy complications",
+            "color": "amber",
+            "helpSummary": "Rapid glycemic improvement can transiently worsen retinopathy.",
+            "harmSummary": "Monitor patients with pre-existing diabetic retinopathy.",
+            "citationIds": ["wegovy-label-2025"]
+          },
+          {
+            "system": "metabolic",
+            "label": "Hypoglycemia with insulin/secretagogues",
+            "color": "amber",
+            "helpSummary": "Risk rises when combined with insulin or sulfonylureas.",
+            "harmSummary": "Consider dose reduction of co-administered insulin/SU.",
+            "citationIds": ["wegovy-label-2025"]
+          },
+          {
+            "system": "immune",
+            "label": "Hypersensitivity (anaphylaxis, angioedema)",
+            "color": "red",
+            "helpSummary": "Serious reactions have been reported postmarketing.",
+            "harmSummary": "Contraindicated after serious hypersensitivity to semaglutide.",
+            "citationIds": ["wegovy-label-2025"]
+          },
+          {
+            "system": "musculoskeletal",
+            "label": "Hip/pelvic fractures in >=75 y (SELECT signal)",
+            "color": "yellow",
+            "helpSummary": "Geriatric subgroup signal from SELECT trial.",
+            "harmSummary": "Observed more frequently on Wegovy than placebo in adults >=75 y in SELECT.",
+            "citationIds": ["wegovy-novomedlink"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Regulatory-approved uses now span diabetes, obesity, MACE reduction in CVD with overweight/obesity, and noncirrhotic MASH with F2-F3 fibrosis. Use outside these indications (e.g., cosmetic weight loss at low BMI, healthy adults, or off-label indications without the required comorbidities) is not FDA-sanctioned.",
+          "caveat": "Efficacy and safety have been established within defined trial populations. Extrapolation to healthy, non-obese, or non-diabetic adults for cosmetic or performance purposes lacks regulatory support; long-term safety in such populations is unknown.",
+          "citationIds": ["wegovy-label-2025", "fda-wegovy-cv-2024", "fda-wegovy-mash-2025"]
+        },
+        "missingEvidence": [
+          "long-term oncologic safety in humans (MTC signal remains unresolved)",
+          "safety in pregnancy (avoid; washout ~2 months before pregnancy advised)",
+          "use in type 1 diabetes",
+          "safety in cosmetic weight-loss populations without qualifying comorbidities"
+        ],
+        "anecdotalUse": [
+          "widespread off-label use for non-indicated weight loss (including in individuals below labeled BMI thresholds)",
+          "compounded non-FDA-approved semaglutide marketed via telehealth channels"
+        ]
+      },
+      "claims": [
+        {
+          "id": "sema-mech-01",
+          "field": "mechanism",
+          "value": "GLP-1 receptor agonist with 94% sequence homology to native human GLP-1",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": "SC or oral",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.98,
+          "citationIds": ["wegovy-label-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "sema-indications-01",
+          "field": "regulatoryIndications",
+          "value": "FDA-approved for T2D (Ozempic/Rybelsus), chronic weight management (Wegovy injection and tablets), MACE reduction with CVD + overweight/obesity (Wegovy 2024), and noncirrhotic MASH with F2-F3 fibrosis (Wegovy, accelerated approval August 15, 2025)",
+          "species": "human",
+          "context": "fda_label",
+          "population": "varies by indication",
+          "route": "SC or oral",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R", "H"],
+          "confidence": 0.98,
+          "citationIds": ["wegovy-label-2025", "fda-wegovy-cv-2024", "fda-wegovy-mash-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "sema-select-01",
+          "field": "cardiovascularOutcome",
+          "value": "In SELECT, MACE (CV death, nonfatal MI, nonfatal stroke) occurred in 6.5% on Wegovy vs 8% on placebo",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adults with established CVD and obesity/overweight",
+          "route": "SC",
+          "sampleSize": 17600,
+          "duration": "long-term",
+          "symbols": ["Rx", "H"],
+          "confidence": 0.95,
+          "citationIds": ["fda-wegovy-cv-2024"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "sema-mash-01",
+          "field": "mashApproval",
+          "value": "FDA granted accelerated approval August 15, 2025 for Wegovy in noncirrhotic MASH with moderate-to-advanced fibrosis (F2-F3)",
+          "species": "human",
+          "context": "regulatory",
+          "population": "adults with MASH and F2-F3 fibrosis, without cirrhosis",
+          "route": "SC",
+          "sampleSize": 800,
+          "duration": "72 weeks (interim)",
+          "symbols": ["Rx", "R", "H"],
+          "confidence": 0.95,
+          "citationIds": ["fda-wegovy-mash-2025", "wegovy-novomedlink"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "sema-mtc-01",
+          "field": "boxedWarning",
+          "value": "Boxed warning for rodent thyroid C-cell tumors; contraindicated in personal/family history of MTC or MEN 2",
+          "species": "mixed",
+          "context": "fda_label",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": "lifetime rodent exposure",
+          "symbols": ["Rx", "R", "A", "?"],
+          "confidence": 0.95,
+          "citationIds": ["wegovy-label-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "sema-identity-01",
+          "field": "identity",
+          "value": "C187H291N45O59, MW 4113.58 g/mol; 31-AA GLP-1 analog with Aib8, Arg34, and C18 fatty-diacid on Lys26",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.98,
+          "citationIds": ["wegovy-label-2025"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "wegovy-label-2025",
+          "sourceType": "drug_label",
+          "title": "WEGOVY (semaglutide) injection and tablets full prescribing information",
+          "authors": ["Novo Nordisk"],
+          "year": 2025,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215256s024lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["sema-mech-01", "sema-indications-01", "sema-mtc-01", "sema-identity-01"],
+          "notes": "Updated prescribing information reflecting MASH indication and tablet formulation."
+        },
+        {
+          "id": "fda-wegovy-cv-2024",
+          "sourceType": "regulator_news",
+          "title": "FDA Approves First Treatment to Reduce Risk of Serious Heart Problems Specifically in Adults with Obesity or Overweight",
+          "authors": ["U.S. Food and Drug Administration"],
+          "year": 2024,
+          "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-reduce-risk-serious-heart-problems-specifically-adults-obesity-or",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["sema-indications-01", "sema-select-01"],
+          "notes": "FDA press release for SELECT-based CV indication."
+        },
+        {
+          "id": "fda-wegovy-mash-2025",
+          "sourceType": "regulator_news",
+          "title": "FDA Approves Treatment for Serious Liver Disease Known as 'MASH'",
+          "authors": ["U.S. Food and Drug Administration"],
+          "year": 2025,
+          "url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-serious-liver-disease-known-mash",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["sema-indications-01", "sema-mash-01"],
+          "notes": "FDA announcement of accelerated approval for noncirrhotic MASH F2-F3."
+        },
+        {
+          "id": "wegovy-novomedlink",
+          "sourceType": "sponsor_portal",
+          "title": "Wegovy (semaglutide) Indications and HCP Information",
+          "authors": ["Novo Nordisk"],
+          "year": 2025,
+          "url": "https://www.novomedlink.com/multiple-indications/wegovy-gateway.html",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["sema-mash-01"],
+          "notes": "Sponsor portal summarizing all FDA-approved indications; includes geriatric fracture signal from SELECT."
+        }
+      ]
+    },
+    {
+      "id": "tirzepatide",
+      "names": {
+        "primary": "Tirzepatide",
+        "aliases": ["LY3298176"],
+        "tradeNames": ["Mounjaro", "Zepbound"]
+      },
+      "identity": {
+        "formula": "C225H348F2N48O68",
+        "molecularWeight": 4813.5,
+        "cas": "2023788-19-2",
+        "sequenceOneLetter": "YXEGTFTSDYSIYLDKIAQKAFVQWLIAGGPSSGAPPPS",
+        "sequenceThreeLetter": "Tyr-Aib-Glu-Gly-Thr-Phe-Thr-Ser-Asp-Tyr-Ser-Ile-Tyr-Leu-Asp-Lys-Ile-Ala-Gln-Lys(gamma-Glu-2xOEG-C20 diacid)-Ala-Phe-Val-Gln-Trp-Leu-Ile-Ala-Gly-Gly-Pro-Ser-Ser-Gly-Ala-Pro-Pro-Pro-Ser-NH2",
+        "length": 39,
+        "modifications": [
+          "Aib substitution at positions 2 and 13 (DPP-4 resistance)",
+          "Lys20 modified with gamma-Glu + 2x OEG linker + C20 fatty diacid (albumin-binding)",
+          "C-terminal amidation"
+        ],
+        "structureClass": "dual GIP/GLP-1 receptor agonist; structurally based on native GIP backbone"
+      },
+      "classification": {
+        "peptideClass": "dual incretin (GIP and GLP-1) receptor agonist",
+        "mechanismFamily": "GIPR + GLP-1R co-agonism (class B GPCRs, Gs-coupled)",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Single-molecule dual agonist of GIP and GLP-1 receptors that enhances glucose-dependent insulin secretion, reduces glucagon, slows gastric emptying, and suppresses appetite; GIP agonism may add benefits in insulin sensitivity and lipid handling beyond GLP-1 alone.",
+        "localization": "pancreatic beta- and alpha-cells (GIPR, GLP-1R); hypothalamus and area postrema; adipose tissue (GIPR); gut",
+        "clinicalUses": [
+          "type 2 diabetes (Mounjaro, approved May 2022)",
+          "chronic weight management in obesity/overweight (Zepbound, approved November 2023)",
+          "moderate-to-severe obstructive sleep apnea in adults with obesity (Zepbound, approved December 20, 2024)"
+        ],
+        "sideEffects": [
+          "nausea",
+          "vomiting",
+          "diarrhea",
+          "constipation",
+          "abdominal pain",
+          "pancreatitis",
+          "gallbladder disease",
+          "hypoglycemia with insulin/SU",
+          "acute kidney injury (volume-depletion mediated)",
+          "hypersensitivity reactions",
+          "injection site reactions"
+        ],
+        "dosing": {
+          "quick": "FDA-approved: 2.5 mg SC weekly starter, titrated monthly by 2.5 mg increments to maintenance 5, 10, or 15 mg weekly; additional 7.5 and 12.5 mg doses available. Sleep apnea indication uses 10 or 15 mg weekly.",
+          "adminRoute": "subcutaneous",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["GIPR", "GLP1R", "INS", "GCG"],
+        "proteins": ["GIP receptor (GIPR)", "GLP-1 receptor (GLP1R)", "insulin", "glucagon"],
+        "receptors": ["GIPR (class B GPCR, Gs-coupled)", "GLP-1R (class B GPCR, Gs-coupled)"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "metabolic/endocrine",
+            "steps": [
+              "tirzepatide engages both GIPR and GLP-1R on beta-cells and other tissues",
+              "Gs -> AC -> cAMP -> glucose-dependent insulin secretion, alpha-cell glucagon suppression",
+              "central GLP-1R signaling in hypothalamus/area postrema reduces appetite",
+              "delayed gastric emptying",
+              "GIPR signaling in adipose tissue may enhance lipid handling and insulin sensitivity",
+              "net effects: HbA1c reduction, body weight loss, improved AHI in OSA"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "tirz-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "SURPASS program supported the T2D indication (Mounjaro, May 2022). SURMOUNT-1 and SURMOUNT-2 supported the chronic weight management indication (Zepbound, November 2023). SURMOUNT-OSA supported the 2024 sleep apnea indication: in participants using PAP, tirzepatide reduced AHI by ~29 events/hour versus ~6 on placebo; in those not using PAP, ~25 versus ~5 on placebo, with mean weight loss approximately 45-50 lb on tirzepatide versus 4-6 lb on placebo.",
+        "animalEvidence": "Rodent carcinogenicity studies showed thyroid C-cell tumors, triggering the class boxed warning shared with other GLP-1-containing incretin agonists.",
+        "mechanismDetail": "Tirzepatide is a 39-residue peptide built on a modified GIP backbone with Aib substitutions at positions 2 and 13 for DPP-4 resistance and a C20 fatty-diacid (gamma-Glu-2x OEG) on Lys20 for albumin binding and extended half-life (~5 days). It engages both GIPR and GLP-1R, activating Gs-coupled cAMP/PKA signaling. At beta-cells, glucose-dependent insulin release is enhanced and glucagon is suppressed; in the hypothalamus and area postrema, appetite is reduced; gastric emptying is delayed. GIPR activation may additionally promote adipose insulin sensitivity and lipid handling. In SURMOUNT-OSA, the AHI reduction was accompanied by substantial weight loss, suggesting the OSA benefit is in large part mediated by weight-loss-driven reduction in upper airway fat and loading.",
+        "safetyDetail": "Class warnings include boxed warning for rodent thyroid C-cell tumors/MTC; contraindicated in personal/family history of MTC or MEN 2 and in serious hypersensitivity to tirzepatide. Labeled warnings include pancreatitis, gallbladder disease, hypoglycemia with insulin/SU, acute kidney injury (volume depletion), hypersensitivity, diabetic retinopathy complications, and suicidal behavior/ideation monitoring per class. GI adverse events are most common and dose-related; dose escalation mitigates them.",
+        "safetyRisks": [
+          {
+            "system": "oncologic",
+            "label": "Thyroid C-cell tumors (rodent; boxed warning)",
+            "color": "red",
+            "helpSummary": "Class boxed warning for incretin agonists.",
+            "harmSummary": "Contraindicated in patients with personal/family history of MTC or MEN 2.",
+            "citationIds": ["zepbound-label-osa", "fda-zepbound-osa-2024"]
+          },
+          {
+            "system": "gastrointestinal",
+            "label": "Pancreatitis",
+            "color": "amber",
+            "helpSummary": "Monitor for severe abdominal pain.",
+            "harmSummary": "Discontinue if suspected.",
+            "citationIds": ["zepbound-label-osa"]
+          },
+          {
+            "system": "hepatobiliary",
+            "label": "Gallbladder disease",
+            "color": "amber",
+            "helpSummary": "Rapid weight loss can precipitate gallstones.",
+            "harmSummary": "Cholecystitis and gallstone-related events reported.",
+            "citationIds": ["zepbound-label-osa"]
+          },
+          {
+            "system": "metabolic",
+            "label": "Hypoglycemia with insulin/secretagogues",
+            "color": "amber",
+            "helpSummary": "Higher risk when combined with insulin or SUs.",
+            "harmSummary": "Consider reducing insulin/SU dose on initiation.",
+            "citationIds": ["zepbound-label-osa"]
+          },
+          {
+            "system": "renal",
+            "label": "Acute kidney injury",
+            "color": "amber",
+            "helpSummary": "Volume depletion from GI losses can precipitate AKI.",
+            "harmSummary": "Postmarketing AKI reports across incretin class.",
+            "citationIds": ["zepbound-label-osa"]
+          },
+          {
+            "system": "immune",
+            "label": "Hypersensitivity reactions",
+            "color": "amber",
+            "helpSummary": "Including anaphylaxis and angioedema.",
+            "harmSummary": "Discontinue if serious hypersensitivity occurs.",
+            "citationIds": ["zepbound-label-osa"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Approved indications now cover T2D, chronic weight management, and moderate-to-severe OSA with obesity, making it the first FDA-approved drug for OSA. Use outside these indications lacks regulatory support.",
+          "caveat": "Efficacy and safety are established within trial populations that met specific BMI and disease criteria; extrapolation to cosmetic weight loss in otherwise healthy adults is not FDA-sanctioned and long-term safety in that context is unknown.",
+          "citationIds": ["fda-zepbound-osa-2024", "zepbound-label-osa"]
+        },
+        "missingEvidence": [
+          "head-to-head long-term outcomes vs semaglutide (cardiovascular mortality, cancer)",
+          "pediatric safety and efficacy",
+          "long-term (>5 year) safety in chronic weight management",
+          "performance/healthy-adult use data"
+        ],
+        "anecdotalUse": [
+          "widespread off-label use for non-indicated weight loss",
+          "compounded non-FDA-approved tirzepatide via telehealth channels"
+        ]
+      },
+      "claims": [
+        {
+          "id": "tirz-mech-01",
+          "field": "mechanism",
+          "value": "Dual GIP/GLP-1 receptor agonist (single-molecule co-agonist)",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.98,
+          "citationIds": ["zepbound-label-osa", "fda-zepbound-osa-2024"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tirz-indications-01",
+          "field": "regulatoryIndications",
+          "value": "FDA-approved for T2D (Mounjaro, May 2022), chronic weight management (Zepbound, November 2023), and moderate-to-severe OSA with obesity (Zepbound, December 20, 2024)",
+          "species": "human",
+          "context": "fda_label",
+          "population": "varies by indication",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R", "H"],
+          "confidence": 0.98,
+          "citationIds": ["fda-zepbound-osa-2024", "ajmc-zepbound-osa"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tirz-osa-efficacy-01",
+          "field": "osaEfficacy",
+          "value": "SURMOUNT-OSA: AHI reduction ~25 events/hour (no PAP) and ~29 events/hour (with PAP) vs ~5-6 on placebo at 52 weeks",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adults with moderate-to-severe OSA and obesity",
+          "route": "SC",
+          "sampleSize": 469,
+          "duration": "52 weeks",
+          "symbols": ["Rx", "H"],
+          "confidence": 0.9,
+          "citationIds": ["lilly-osa-2024", "ajmc-zepbound-osa"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tirz-dose-01",
+          "field": "dosing",
+          "value": "Maintenance 5, 10, or 15 mg SC once weekly after 2.5 mg starter; 7.5 and 12.5 mg intermediate doses available; OSA indication uses 10 or 15 mg weekly",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.95,
+          "citationIds": ["ajmc-zepbound-osa", "ajmc-zepbound-kwikpen-2026"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "fda-zepbound-osa-2024",
+          "sourceType": "regulator_news",
+          "title": "FDA Approves First Medication for Obstructive Sleep Apnea",
+          "authors": ["U.S. Food and Drug Administration"],
+          "year": 2024,
+          "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-medication-obstructive-sleep-apnea",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["tirz-indications-01", "tirz-mech-01"],
+          "notes": "FDA press release December 20, 2024 announcing Zepbound OSA approval."
+        },
+        {
+          "id": "lilly-osa-2024",
+          "sourceType": "company_press_release",
+          "title": "FDA approves Zepbound (tirzepatide) as the first and only prescription medicine for moderate-to-severe obstructive sleep apnea in adults with obesity",
+          "authors": ["Eli Lilly and Company"],
+          "year": 2024,
+          "url": "https://investor.lilly.com/news-releases/news-release-details/fda-approves-zepboundr-tirzepatide-first-and-only-prescription",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["tirz-osa-efficacy-01"],
+          "notes": "Sponsor press release with SURMOUNT-OSA details (n=469, 52 weeks)."
+        },
+        {
+          "id": "ajmc-zepbound-osa",
+          "sourceType": "secondary_article",
+          "title": "FDA Approves Zepbound as First Drug for Obstructive Sleep Apnea",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.medcentral.com/osa/zepbound-label-expansion-could-broaden-the-sleep-apnea-armamentarium",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["tirz-osa-efficacy-01", "tirz-dose-01", "tirz-indications-01"],
+          "notes": "Summarizes SURMOUNT-OSA trial results and dose range."
+        },
+        {
+          "id": "zepbound-label-osa",
+          "sourceType": "drug_label",
+          "title": "Zepbound (tirzepatide) Prescribing Information (OSA indication included)",
+          "authors": ["Eli Lilly and Company"],
+          "year": 2025,
+          "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217806",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["tirz-mech-01", "tirz-dose-01"],
+          "notes": "FDA Drugs@FDA overview for Zepbound (tirzepatide); full PI referenced in insurance and FDA documents."
+        },
+        {
+          "id": "ajmc-zepbound-kwikpen-2026",
+          "sourceType": "secondary_article",
+          "title": "FDA Approves Monthly KwikPen Option for Tirzepatide in Chronic Weight Management",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.ajmc.com/view/fda-approves-monthly-kwikpen-option-for-tirzepatide-in-chronic-weight-management",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["tirz-dose-01"],
+          "notes": "2026 KwikPen approval; confirms Zepbound 2.5, 5, 7.5, 10, 12.5, 15 mg dose range."
+        }
+      ]
+    },
+    {
+      "id": "retatrutide",
+      "names": {
+        "primary": "Retatrutide",
+        "aliases": ["LY3437943"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": "2381089-83-2",
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": 39,
+        "modifications": [
+          "Aib substitutions for DPP-4 resistance",
+          "lipidated lysine side chain for albumin binding (long half-life supporting weekly dosing)"
+        ],
+        "structureClass": "triple agonist peptide with activity at GIP, GLP-1, and glucagon receptors; details beyond public pharmacology are proprietary"
+      },
+      "classification": {
+        "peptideClass": "triple incretin/glucagon receptor agonist",
+        "mechanismFamily": "GIPR + GLP-1R + GCGR agonism (class B GPCRs)",
+        "regulatoryStatus": "investigational"
+      },
+      "tile": {
+        "mechanismSummary": "Single-molecule triple agonist of GIP, GLP-1, and glucagon receptors; adds glucagon-receptor activation to the GIP/GLP-1 dual-agonist concept, with the intent of increasing energy expenditure and hepatic lipid mobilization on top of appetite suppression and glycemic effects.",
+        "localization": "pancreatic beta- and alpha-cells; hypothalamus; adipose tissue; liver (hepatocyte GCGR); skeletal muscle",
+        "clinicalUses": [],
+        "sideEffects": [
+          "nausea",
+          "vomiting",
+          "diarrhea",
+          "constipation",
+          "dysesthesia/cutaneous sensitivity at high doses (TRIUMPH-4 signal)",
+          "injection site reactions",
+          "typical incretin-class GI adverse events"
+        ],
+        "dosing": {
+          "quick": "Investigational; not FDA-approved. TRIUMPH-4 used weekly SC dosing titrated to target 9 mg or 12 mg. Not authorized for prescription or compounding use.",
+          "adminRoute": "subcutaneous (investigational)",
+          "publicDisplayAllowed": false,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["GIPR", "GLP1R", "GCGR"],
+        "proteins": ["GIP receptor (GIPR)", "GLP-1 receptor (GLP1R)", "glucagon receptor (GCGR)"],
+        "receptors": [
+          "GIPR (class B GPCR)",
+          "GLP-1R (class B GPCR)",
+          "GCGR (class B GPCR, hepatic)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "metabolic/endocrine",
+            "steps": [
+              "retatrutide engages GIPR and GLP-1R on pancreatic and CNS sites (glucose-dependent insulin secretion, appetite suppression, delayed gastric emptying)",
+              "engages hepatic GCGR -> increased hepatic glucose output and lipid mobilization; increased resting energy expenditure",
+              "net effect in obesity trials: weight loss exceeding dual-agonist benchmarks at the 12 mg dose"
+            ],
+            "symbols": ["H", "?"],
+            "claimRef": "reta-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "As of April 2026, retatrutide is not FDA-approved and remains in Phase 3 TRIUMPH development under Eli Lilly. TRIUMPH-4 (NCT05931367) was a 68-week, randomized, placebo-controlled Phase 3 trial in adults with obesity/overweight and knee osteoarthritis (n=445, randomized 1:1:1 to 9 mg, 12 mg, or placebo) and reported topline results December 11, 2025 including approximately 28.7% mean body weight reduction at the 12 mg dose and improvements in WOMAC pain score. A second Phase 3 readout, TRANSCEND-T2D-1, was announced March 19, 2026. Seven additional Phase 3 readouts are expected in 2026 across obesity, type 2 diabetes, cardiovascular and renal outcomes, MASLD/MASH, OSA, and chronic low back pain. Phase 2 data (previously reported) showed up to ~24% weight loss at 48 weeks at the 12 mg dose.",
+        "animalEvidence": "Preclinical pharmacology and animal data from Lilly support triple-receptor engagement and weight-loss efficacy; detailed published animal data remains sparser than for approved incretin agonists.",
+        "mechanismDetail": "Retatrutide is a lipidated peptide engineered for once-weekly SC dosing that agonizes GIP, GLP-1, and glucagon receptors from a single molecule. GLP-1R and GIPR engagement drives appetite suppression, glucose-dependent insulin secretion, and delayed gastric emptying, similar to tirzepatide. The added GCGR agonism at the liver raises hepatic glucose output and lipid mobilization and modestly increases resting energy expenditure, which is hypothesized to account for the larger weight-loss magnitudes observed. The exact receptor-activity ratio and biased signaling profile are proprietary.",
+        "safetyDetail": "Publicly reported safety signals include typical incretin-class gastrointestinal adverse events (nausea, vomiting, diarrhea, constipation) and a dose-dependent cutaneous dysesthesia signal (skin sensitivity/tingling/tenderness) reported at the highest TRIUMPH-4 dose (approximately 20.9% of participants on the 12 mg dose in secondary reporting). Because retatrutide is investigational, the full safety profile, long-term cancer signals, and cardiovascular outcomes are not yet established. Any non-trial supply (compounded or 'research peptide') is outside FDA-approved channels and not quality-controlled.",
+        "safetyRisks": [
+          {
+            "system": "regulatory",
+            "label": "Not FDA-approved; investigational only",
+            "color": "red",
+            "helpSummary": "Only legally available through clinical trials or (in narrow cases) expanded access.",
+            "harmSummary": "Non-trial supply is unregulated; identity, purity, and sterility cannot be guaranteed.",
+            "citationIds": ["lilly-reta-triumph4-2025", "remy-reta-2026"]
+          },
+          {
+            "system": "dermatologic/neurologic",
+            "label": "Cutaneous dysesthesia at high dose",
+            "color": "amber",
+            "helpSummary": "Skin sensitivity/tingling reported at the 12 mg dose.",
+            "harmSummary": "Not observed at this frequency with GLP-1 or GLP-1/GIP agonists; mechanism unclear.",
+            "citationIds": ["nextgenglp1-reta-2026"]
+          },
+          {
+            "system": "gastrointestinal",
+            "label": "Class GI adverse events",
+            "color": "amber",
+            "helpSummary": "Similar profile to other incretin agonists.",
+            "harmSummary": "Nausea, vomiting, diarrhea, constipation reported.",
+            "citationIds": ["lilly-reta-triumph4-2025"]
+          },
+          {
+            "system": "oncologic/cardiovascular/other",
+            "label": "Long-term safety unknown",
+            "color": "amber",
+            "helpSummary": "Registrational safety and outcomes data incomplete.",
+            "harmSummary": "MTC signal, CV outcomes, and renal outcomes await further Phase 3 readouts.",
+            "citationIds": ["remy-reta-2026", "lilly-reta-triumph4-2025"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Phase 2 and initial Phase 3 (TRIUMPH-4) data suggest weight-loss efficacy exceeding currently approved GLP-1 and GLP-1/GIP agonists, with approximately 28.7% mean weight loss at the 12 mg dose in a 68-week Phase 3 trial.",
+          "caveat": "Retatrutide remains investigational. Early-access obesity data comes from populations with obesity/overweight plus comorbidities, not healthy adults. Safety, durability, and rebound effects after discontinuation have not been fully characterized. Non-trial 'research peptide' sourcing is outside regulated manufacturing and is not an approved medical product.",
+          "citationIds": ["lilly-reta-triumph4-2025", "remy-reta-2026"]
+        },
+        "missingEvidence": [
+          "confirmed formal sequence/formula/molecular weight publicly (proprietary; not yet in FDA label)",
+          "NDA filing date (no public confirmation as of April 2026)",
+          "cardiovascular outcomes trial readout",
+          "long-term oncologic, renal, and hepatic safety",
+          "pediatric data"
+        ],
+        "anecdotalUse": [
+          "grey-market 'research' supply from non-FDA-approved peptide vendors; not a legal prescription pathway"
+        ]
+      },
+      "claims": [
+        {
+          "id": "reta-status-01",
+          "field": "regulatoryStatus",
+          "value": "Not FDA-approved as of April 2026; investigational in Phase 3 (TRIUMPH program); no NDA filing publicly confirmed",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "R"],
+          "confidence": 0.97,
+          "citationIds": ["remy-reta-2026", "lilly-reta-triumph4-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "reta-mech-01",
+          "field": "mechanism",
+          "value": "Single-molecule triple agonist of GIP, GLP-1, and glucagon receptors",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": null,
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H", "?"],
+          "confidence": 0.9,
+          "citationIds": ["lilly-reta-triumph4-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "reta-triumph4-01",
+          "field": "efficacyTrial",
+          "value": "TRIUMPH-4 (NCT05931367): 68-week Phase 3 in adults with obesity/overweight and knee osteoarthritis, n=445, randomized 1:1:1 to 9 mg, 12 mg, or placebo; topline December 11, 2025 reported ~28.7% mean weight loss at 12 mg and WOMAC pain reduction up to 4.5 points (75.8%)",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adults with BMI >=27 and knee OA",
+          "route": "SC",
+          "sampleSize": 445,
+          "duration": "68 weeks",
+          "symbols": ["H"],
+          "confidence": 0.92,
+          "citationIds": ["lilly-reta-triumph4-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "reta-dysesthesia-01",
+          "field": "adverseEvent",
+          "value": "Dose-dependent cutaneous dysesthesia reported at the highest dose; not a typical GLP-1 class finding",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adults with obesity",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": "68 weeks",
+          "symbols": ["H", "?"],
+          "confidence": 0.7,
+          "citationIds": ["nextgenglp1-reta-2026"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "reta-triple-agonist-01",
+          "field": "noveltyClaim",
+          "value": "Retatrutide is the first triple GIP/GLP-1/glucagon agonist to reach Phase 3",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H"],
+          "confidence": 0.9,
+          "citationIds": ["remy-reta-2026"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "lilly-reta-triumph4-2025",
+          "sourceType": "company_press_release",
+          "title": "Lilly's triple agonist, retatrutide, delivered weight loss of up to an average of 71.2 lbs along with substantial relief from osteoarthritis pain in first successful Phase 3 trial",
+          "authors": ["Eli Lilly and Company"],
+          "year": 2025,
+          "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["reta-triumph4-01", "reta-mech-01", "reta-status-01"],
+          "notes": "Sponsor release for TRIUMPH-4 topline, December 11, 2025."
+        },
+        {
+          "id": "remy-reta-2026",
+          "sourceType": "secondary_article",
+          "title": "Is Retatrutide Approved? FDA and NDA Status (2026)",
+          "authors": [],
+          "year": 2026,
+          "url": "https://remypeptides.com/research/is-retatrutide-approved",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["reta-status-01", "reta-triple-agonist-01"],
+          "notes": "Tracks April 2026 status; confirms no FDA approval, Phase 3 ongoing, no NDA filed."
+        },
+        {
+          "id": "nextgenglp1-reta-2026",
+          "sourceType": "secondary_article",
+          "title": "Retatrutide FDA Approval Status 2026: Phase 3 Results Update",
+          "authors": [],
+          "year": 2026,
+          "url": "https://nextgenglp1.com/retatrutide-fda-approval-status-2026-phase-3-results-update/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["reta-dysesthesia-01"],
+          "notes": "Secondary source reporting ~20.9% dysesthesia at 12 mg dose in TRIUMPH-4; awaits peer-reviewed publication."
+        }
+      ]
+    },
+    {
+      "id": "liraglutide",
+      "names": {
+        "primary": "Liraglutide",
+        "aliases": ["NN2211"],
+        "tradeNames": ["Victoza", "Saxenda"]
+      },
+      "identity": {
+        "formula": "C172H265N43O51",
+        "molecularWeight": 3751.2,
+        "cas": "204656-20-2",
+        "sequenceOneLetter": "HAEGTFTSDVSSYLEGQAAKEFIAWLVRGRG",
+        "sequenceThreeLetter": "His-Ala-Glu-Gly-Thr-Phe-Thr-Ser-Asp-Val-Ser-Ser-Tyr-Leu-Glu-Gly-Gln-Ala-Ala-Lys(gamma-Glu-C16 palmitoyl)-Glu-Phe-Ile-Ala-Trp-Leu-Val-Arg-Gly-Arg-Gly",
+        "length": 31,
+        "modifications": [
+          "Arg34 substituted for Lys34 in native GLP-1 (to ensure single acylation site at Lys26)",
+          "C16 palmitic acid attached to Lys26 via a gamma-glutamic acid spacer (albumin binding; half-life ~13 h)"
+        ],
+        "structureClass": "long-acting GLP-1 analog (97% homology to human GLP-1)"
+      },
+      "classification": {
+        "peptideClass": "GLP-1 receptor agonist (incretin mimetic)",
+        "mechanismFamily": "GLP-1R agonism (class B GPCR, Gs-coupled)",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Acylated GLP-1 analog with 97% homology to native human GLP-1; enhances glucose-dependent insulin secretion, suppresses glucagon, delays gastric emptying, and reduces appetite via central GLP-1R activation.",
+        "localization": "pancreatic beta- and alpha-cells; hypothalamus and area postrema; gut",
+        "clinicalUses": [
+          "type 2 diabetes in adults and pediatric patients >=10 y (Victoza)",
+          "reduction of MACE in adults with T2D and established CVD (Victoza)",
+          "chronic weight management in adults with obesity/overweight and pediatric patients >=12 y with body weight >60 kg and obesity (Saxenda)"
+        ],
+        "sideEffects": [
+          "nausea",
+          "vomiting",
+          "diarrhea",
+          "constipation",
+          "abdominal pain",
+          "headache",
+          "injection site reactions",
+          "hypoglycemia with insulin/SU",
+          "pancreatitis",
+          "gallbladder disease",
+          "acute kidney injury",
+          "hypersensitivity including anaphylaxis and angioedema",
+          "increased heart rate"
+        ],
+        "dosing": {
+          "quick": "FDA-approved: Victoza 0.6 mg SC daily starter, titrated to 1.2 or 1.8 mg daily for T2D; Saxenda 0.6 mg SC daily starter, escalated weekly to 3 mg daily for chronic weight management.",
+          "adminRoute": "subcutaneous",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["GLP1R", "INS", "GCG", "POMC"],
+        "proteins": ["GLP-1 receptor (GLP1R)", "insulin", "glucagon", "POMC/alpha-MSH"],
+        "receptors": ["GLP-1R (class B GPCR, Gs-coupled)"],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "metabolic/endocrine",
+            "steps": [
+              "liraglutide binds GLP-1R on pancreatic beta-cells",
+              "Gs -> AC -> cAMP -> glucose-dependent insulin secretion; glucagon suppression in alpha-cells",
+              "hypothalamic GLP-1R activation reduces appetite",
+              "delayed gastric emptying",
+              "chronic effects: HbA1c reduction, weight loss, reduced MACE in T2D+CVD (LEADER)"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "lira-mech-01"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "LEAD program supported initial T2D approval (Victoza, January 25, 2010). SCALE program supported obesity approval (Saxenda, December 23, 2014). LEADER demonstrated MACE reduction in adults with T2D and established CV disease, supporting the CV risk-reduction indication. Pediatric T2D (Victoza) was approved in 2019 for ages >=10 y. First generic Victoza (liraglutide injection 18 mg/3 mL) was FDA-approved in December 2024; first generic Saxenda was approved and launched in August 2025.",
+        "animalEvidence": "Rodent carcinogenicity studies demonstrated dose- and duration-dependent thyroid C-cell tumors at clinically relevant exposures; human relevance remains undetermined. Rat studies showed no effect on fertility at doses up to 0.6 mg/kg.",
+        "mechanismDetail": "Liraglutide is a 31-residue GLP-1 analog with ~97% sequence homology to human GLP-1. The peptide precursor is produced in Saccharomyces cerevisiae and then acylated with a C16 palmitic acid via a gamma-glutamic acid spacer on Lys26; position 34 is substituted from Lys to Arg to ensure a single acylation site. The fatty acid enables reversible albumin binding, extending plasma half-life to approximately 13 hours and supporting once-daily dosing. At the GLP-1R, liraglutide activates Gs/cAMP/PKA signaling to enhance glucose-dependent insulin secretion and suppress glucagon. Central GLP-1R activation in the hypothalamus and area postrema reduces appetite. Chronic administration lowers HbA1c, reduces body weight, and reduces MACE in the T2D+CVD population studied in LEADER.",
+        "safetyDetail": "Boxed warning for rodent thyroid C-cell tumors/MTC applies; contraindicated in personal/family history of MTC or MEN 2. Labeled warnings include pancreatitis, gallbladder disease, hypoglycemia (especially with insulin/SU), acute kidney injury (volume depletion), hypersensitivity including anaphylaxis and angioedema, and in adult SAXENDA trials a numerical imbalance of breast cancer events among women (17 of 2379 on SAXENDA vs 3 of 1300 on placebo) whose causal interpretation is unclear and is flagged in the label. Anti-liraglutide antibodies develop in approximately 2.8% of adult SAXENDA-treated patients, with neutralizing antibodies in ~1.2%; in pediatric SAXENDA trials, 12% developed anti-liraglutide antibodies and ~1% had cross-reactivity with native GLP-1.",
+        "safetyRisks": [
+          {
+            "system": "oncologic",
+            "label": "Thyroid C-cell tumors (rodent; boxed warning)",
+            "color": "red",
+            "helpSummary": "Rodent MTC signal drives label warning.",
+            "harmSummary": "Contraindicated in personal/family history of MTC or MEN 2.",
+            "citationIds": ["saxenda-label-2025"]
+          },
+          {
+            "system": "oncologic",
+            "label": "Breast cancer imbalance signal in SAXENDA adult trials",
+            "color": "amber",
+            "helpSummary": "Numerical imbalance in adjudicated cases; causality unclear.",
+            "harmSummary": "17/2379 on SAXENDA vs 3/1300 on placebo (adult female participants).",
+            "citationIds": ["saxenda-label-2025"]
+          },
+          {
+            "system": "gastrointestinal",
+            "label": "Pancreatitis",
+            "color": "amber",
+            "helpSummary": "Class effect; monitor for severe abdominal pain.",
+            "harmSummary": "Labeled warning; discontinue if suspected.",
+            "citationIds": ["saxenda-label-2025"]
+          },
+          {
+            "system": "hepatobiliary",
+            "label": "Gallbladder disease",
+            "color": "amber",
+            "helpSummary": "Class effect amplified by rapid weight loss.",
+            "harmSummary": "Cholelithiasis and cholecystitis reported.",
+            "citationIds": ["saxenda-label-2025"]
+          },
+          {
+            "system": "metabolic",
+            "label": "Hypoglycemia with insulin/secretagogues",
+            "color": "amber",
+            "helpSummary": "Higher risk with insulin or sulfonylurea.",
+            "harmSummary": "Consider insulin/SU dose reduction on initiation.",
+            "citationIds": ["saxenda-label-2025"]
+          },
+          {
+            "system": "renal",
+            "label": "Acute kidney injury",
+            "color": "amber",
+            "helpSummary": "Usually secondary to GI-driven volume depletion.",
+            "harmSummary": "Postmarketing AKI including dialysis-requiring cases.",
+            "citationIds": ["saxenda-label-2025"]
+          },
+          {
+            "system": "immune",
+            "label": "Hypersensitivity (anaphylaxis, angioedema); anti-drug antibodies",
+            "color": "amber",
+            "helpSummary": "Serious hypersensitivity reported; antibodies may occur.",
+            "harmSummary": "Neutralizing antibodies may reduce response or associate with injection-site reactions and low glucose.",
+            "citationIds": ["saxenda-label-2025"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Approved uses span T2D (including pediatric >=10 y), MACE reduction in T2D with CVD, and chronic weight management (including pediatric >=12 y with body weight >60 kg). Liraglutide has been surpassed in potency and weight-loss magnitude by semaglutide and tirzepatide but is now available as a generic, changing access dynamics.",
+          "caveat": "Efficacy and safety are established in the trial populations studied. Off-label use in populations not meeting BMI or comorbidity criteria is not FDA-sanctioned and lacks the same evidentiary basis. Daily injection burden relative to weekly GLP-1 RAs is a practical limitation.",
+          "citationIds": ["saxenda-label-2025", "teva-generic-saxenda-2025", "drugs-liraglutide-2025"]
+        },
+        "missingEvidence": [
+          "long-term oncologic outcomes (MTC, breast cancer signal adjudication)",
+          "safety in type 1 diabetes",
+          "pregnancy data (avoid use)",
+          "head-to-head long-term CV outcomes vs semaglutide"
+        ],
+        "anecdotalUse": [
+          "off-label use for non-indicated weight loss outside labeled BMI thresholds"
+        ]
+      },
+      "claims": [
+        {
+          "id": "lira-mech-01",
+          "field": "mechanism",
+          "value": "Acylated GLP-1 analog with 97% homology to native human GLP-1; GLP-1R agonist",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.98,
+          "citationIds": ["saxenda-label-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "lira-indications-01",
+          "field": "regulatoryIndications",
+          "value": "Victoza: T2D in adults and pediatric >=10 y, and MACE reduction in T2D with CVD. Saxenda: chronic weight management in adults with obesity/overweight+comorbidity and pediatric >=12 y with body weight >60 kg and obesity.",
+          "species": "human",
+          "context": "fda_label",
+          "population": "varies by indication",
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R", "H"],
+          "confidence": 0.98,
+          "citationIds": ["saxenda-label-2025", "drugs-liraglutide-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "lira-identity-01",
+          "field": "identity",
+          "value": "C172H265N43O51, MW 3751.2 Da; 31 residues; Arg34 substitution; C16 palmitoyl on Lys26 via gamma-Glu spacer",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.98,
+          "citationIds": ["saxenda-label-2025", "pubchem-liraglutide"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "lira-dose-01",
+          "field": "dosing",
+          "value": "Victoza 0.6 mg SC daily starter titrated to 1.2 or 1.8 mg; Saxenda 0.6 mg SC daily titrated weekly to 3 mg",
+          "species": "human",
+          "context": "fda_label",
+          "population": null,
+          "route": "SC",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.97,
+          "citationIds": ["saxenda-label-2025", "drugs-liraglutide-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "lira-generic-01",
+          "field": "genericStatus",
+          "value": "First generic Victoza approved December 2024; first generic Saxenda approved and launched August 2025 (Teva)",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "R"],
+          "confidence": 0.95,
+          "citationIds": ["teva-generic-saxenda-2025", "pharmacytimes-generic-lira-2025"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "lira-breast-signal-01",
+          "field": "adverseEvent",
+          "value": "SAXENDA adult trials: adjudicated breast cancer in 17/2379 on liraglutide vs 3/1300 on placebo; causal interpretation unclear",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adult women in SAXENDA trials",
+          "route": "SC",
+          "sampleSize": 3679,
+          "duration": "varies",
+          "symbols": ["Rx", "H", "?"],
+          "confidence": 0.9,
+          "citationIds": ["saxenda-label-2025"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "saxenda-label-2025",
+          "sourceType": "drug_label",
+          "title": "SAXENDA (liraglutide) injection full prescribing information",
+          "authors": ["Novo Nordisk"],
+          "year": 2025,
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/206321s020lbl.pdf",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": [
+            "lira-mech-01",
+            "lira-indications-01",
+            "lira-identity-01",
+            "lira-dose-01",
+            "lira-breast-signal-01"
+          ],
+          "notes": "Current FDA label with identity, indications, warnings, and adjudicated breast cancer numbers."
+        },
+        {
+          "id": "drugs-liraglutide-2025",
+          "sourceType": "secondary_article",
+          "title": "Liraglutide: Uses, Dosage, Side Effects, Warnings",
+          "authors": ["Drugs.com editorial"],
+          "year": 2025,
+          "url": "https://www.drugs.com/liraglutide.html",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["lira-indications-01", "lira-dose-01"],
+          "notes": "Aggregator summarizing Victoza (0.6/1.2/1.8 mg) and Saxenda (up to 3 mg) dose forms and indications."
+        },
+        {
+          "id": "teva-generic-saxenda-2025",
+          "sourceType": "company_press_release",
+          "title": "Teva Announces FDA Approval and Launch of Generic Saxenda (liraglutide injection): First Generic GLP-1 Indicated for Weight Loss",
+          "authors": ["Teva Pharmaceuticals"],
+          "year": 2025,
+          "url": "https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2025/Teva-Announces-FDA-Approval-and-Launch-of-Generic-Saxenda-liraglutide-injection--First-Generic-GLP-1-Indicated-for-Weight-Loss/default.aspx",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["lira-generic-01"],
+          "notes": "Generic Saxenda approval announced August 28, 2025."
+        },
+        {
+          "id": "pharmacytimes-generic-lira-2025",
+          "sourceType": "secondary_article",
+          "title": "FDA Approves Generic Version of Liraglutide Injection, a GLP-1 for Weight Loss",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.pharmacytimes.com/view/fda-approves-generic-version-of-liraglutide-injection-a-glp-1-for-weight-loss",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["lira-generic-01"],
+          "notes": "Summarizes generic Victoza (2024) and generic Saxenda (2025) approvals."
+        },
+        {
+          "id": "pubchem-liraglutide",
+          "sourceType": "database",
+          "title": "Liraglutide (PubChem CID 16134956)",
+          "authors": ["National Library of Medicine"],
+          "year": null,
+          "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Liraglutide",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["lira-identity-01"],
+          "notes": "Confirms molecular formula C172H265N43O51."
+        }
+      ]
+    }
+  ]
+}

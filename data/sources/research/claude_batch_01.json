@@ -1,0 +1,1177 @@
+{
+  "batch_id": "batch-01",
+  "generated_at": "2026-04-21",
+  "peptides": [
+    {
+      "id": "ss-31",
+      "names": {
+        "primary": "Elamipretide",
+        "aliases": ["SS-31", "MTP-131", "Bendavia", "Szeto-Schiller 31"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C32H49N9O5",
+        "molecularWeight": 639.79,
+        "cas": "736992-21-5",
+        "sequenceOneLetter": "r-Dmt-K-F-NH2",
+        "sequenceThreeLetter": "D-Arg-Dmt-Lys-Phe-NH2",
+        "length": 4,
+        "modifications": [
+          "D-arginine at position 1",
+          "2',6'-dimethyl-L-tyrosine (Dmt) at position 2 (non-proteinogenic)",
+          "C-terminal primary amide"
+        ],
+        "structureClass": "Aromatic-cationic tetrapeptide (Szeto-Schiller class); mitochondria-targeting without a classical mitochondrial targeting sequence"
+      },
+      "classification": {
+        "peptideClass": "Mitochondria-targeted aromatic-cationic peptide",
+        "mechanismFamily": "Cardiolipin-binding / inner-mitochondrial-membrane stabilizer",
+        "regulatoryStatus": "investigational"
+      },
+      "tile": {
+        "mechanismSummary": "Concentrates on the inner mitochondrial membrane and binds cardiolipin, preserving cristae architecture and electron transport chain supercomplex integrity, which reduces mitochondrial ROS and restores ATP production.",
+        "localization": "Inner mitochondrial membrane (cardiolipin-rich domains)",
+        "clinicalUses": [
+          "Primary mitochondrial myopathy (investigational; pivotal Phase 3 did not meet primary endpoint)",
+          "Barth syndrome (investigational; FDA regulatory history is evolving)",
+          "Leber hereditary optic neuropathy (investigational)",
+          "Age-related macular degeneration, dry/geographic atrophy (investigational)"
+        ],
+        "sideEffects": [
+          "Injection-site reactions (erythema, pruritus, induration) — most common in human trials",
+          "Headache",
+          "Nausea",
+          "Rare hypersensitivity"
+        ],
+        "dosing": {
+          "quick": "Investigational only; typical adult trial dose 40 mg subcutaneous once daily in Barth syndrome and primary mitochondrial myopathy studies. Not an approved product. Do not prescribe outside a trial.",
+          "adminRoute": "Subcutaneous injection (also studied intravenously and as ophthalmic formulation)",
+          "publicDisplayAllowed": true,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [
+          "Cardiolipin (CL) — direct binding partner on the inner mitochondrial membrane",
+          "Cytochrome c — cardiolipin binding modulates its peroxidase activity and apoptotic release",
+          "Electron transport chain complexes I–IV (supercomplex stability via cardiolipin)"
+        ],
+        "receptors": [],
+        "channelsTransporters": [
+          "Mitochondrial permeability transition pore (MPTP) — indirectly stabilized; not a direct binding target"
+        ],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "Mitochondrial bioenergetics",
+            "steps": [
+              "Elamipretide crosses outer mitochondrial membrane",
+              "Concentrates electrostatically at inner mitochondrial membrane (IMM)",
+              "Binds cardiolipin on IMM",
+              "Stabilizes cardiolipin-cytochrome c interaction and ETC supercomplexes (I+III2+IV)",
+              "Reduces electron leak and mitochondrial ROS",
+              "Preserves cristae morphology and ATP synthesis"
+            ],
+            "symbols": ["C", "A", "H"],
+            "claimRef": "ss31-claim-mechanism"
+          },
+          {
+            "category": "Apoptosis modulation (preclinical)",
+            "steps": [
+              "Cardiolipin binding reduces cardiolipin peroxidation",
+              "Decreased cytochrome c release from IMM",
+              "Reduced caspase-9 activation in injury models"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "ss31-claim-apoptosis"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Elamipretide has been studied in multiple Phase 2 and Phase 3 human trials. MMPOWER-3 (NCT03323749), a pivotal Phase 3 in primary mitochondrial myopathy, did not meet its primary endpoints on the 6-minute walk test or Primary Mitochondrial Myopathy Symptom Assessment. TAZPOWER (NCT03098797) in Barth syndrome produced mixed results in the randomized phase but showed functional improvements during open-label extension, which became the basis of the Barth syndrome regulatory submission; FDA review has involved multiple cycles including a Complete Response Letter and subsequent advisory committee activity (status should be verified against current FDA communications). ReCLAIM and related trials have explored geographic atrophy and dry AMD with modest functional signals. Safety in humans is dominated by injection-site reactions.",
+        "animalEvidence": "Extensive preclinical evidence across cardiac ischemia-reperfusion, heart failure, renal ischemia, sarcopenia, age-related mitochondrial decline, and neurodegeneration models. Consistently restores cristae structure, reduces mitochondrial ROS, and improves ATP production in aged or injured tissues.",
+        "mechanismDetail": "Elamipretide is an aromatic-cationic tetrapeptide that accumulates 1000-5000 fold in the inner mitochondrial membrane without a mitochondrial targeting sequence, via an electrostatic and hydrophobic mechanism. Its primary molecular target is cardiolipin, the signature phospholipid of the inner mitochondrial membrane. By binding cardiolipin, elamipretide stabilizes cytochrome c-cardiolipin interactions (reducing peroxidase activity and apoptotic release), preserves assembly of electron transport chain supercomplexes, and supports cristae curvature. Downstream effects include reduced electron leak, reduced mitochondrial ROS, improved oxidative phosphorylation efficiency, and preserved ATP output. It does not scavenge ROS directly in a stoichiometric antioxidant sense.",
+        "safetyDetail": "Human safety data are reasonably well characterized for subcutaneous use in adults with mitochondrial disease over months to years. Most adverse events are local injection-site reactions. Systemic AEs reported include headache, nausea, dizziness. No clear hepatotoxicity or cardiac signal has emerged, but long-term safety beyond several years and safety in healthy non-diseased adults are not established. Drug interaction data are limited.",
+        "safetyRisks": [
+          {
+            "system": "Local / injection site",
+            "label": "Injection-site reactions",
+            "color": "yellow",
+            "helpSummary": "Commonly reversible on rotation of sites.",
+            "harmSummary": "Frequent (often >30% of participants in trials); occasional discontinuation.",
+            "citationIds": ["ss31-cit-tazpower", "ss31-cit-mmpower3"]
+          },
+          {
+            "system": "Systemic / regulatory",
+            "label": "Not approved — unknown long-term risk outside trials",
+            "color": "red",
+            "helpSummary": "Investigational only.",
+            "harmSummary": "No approved product; compounded or gray-market material lacks identity, purity, and sterility assurance.",
+            "citationIds": ["ss31-cit-fda-orphan"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Enhancement claims in healthy adults (e.g., anti-aging, athletic mitochondrial support) are not supported by controlled human evidence. All positive human mechanistic readouts are in diseased populations with baseline mitochondrial dysfunction.",
+          "caveat": "Do not infer healthy-human benefit from Barth syndrome, primary mitochondrial myopathy, or aged-rodent data. There are no published placebo-controlled trials of elamipretide in healthy adults for enhancement endpoints.",
+          "citationIds": ["ss31-cit-szeto-2014", "ss31-cit-mmpower3"]
+        },
+        "missingEvidence": [
+          "Placebo-controlled human trials in healthy adults",
+          "Long-term (>5 year) safety data",
+          "Pharmacokinetics in non-diseased populations",
+          "Oral bioavailability (peptide; not oral)"
+        ],
+        "anecdotalUse": [
+          "Gray-market use for 'mitochondrial anti-aging' — unsupported by controlled human data",
+          "Compounded injectable use marketed to athletes — no clinical trial support and regulatory status unclear"
+        ]
+      },
+      "claims": [
+        {
+          "id": "ss31-claim-mechanism",
+          "field": "biology.cascades",
+          "value": "Elamipretide binds cardiolipin on the inner mitochondrial membrane and stabilizes ETC supercomplexes.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "cell-free, cell culture, rodent",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.85,
+          "citationIds": ["ss31-cit-szeto-2014", "ss31-cit-birk-2013"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "ss31-claim-apoptosis",
+          "field": "biology.cascades",
+          "value": "Cardiolipin binding reduces cytochrome c peroxidase activity and mitochondrial apoptotic release in injury models.",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "cell culture, rodent ischemia models",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.75,
+          "citationIds": ["ss31-cit-birk-2013", "ss31-cit-szeto-2014"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "ss31-claim-mmpower3-neg",
+          "field": "expanded.humanEvidence",
+          "value": "MMPOWER-3 Phase 3 in primary mitochondrial myopathy did not meet its primary efficacy endpoints.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adults with genetically confirmed primary mitochondrial myopathy",
+          "route": "subcutaneous 40 mg daily",
+          "sampleSize": 218,
+          "duration": "24 weeks",
+          "symbols": ["H", "N"],
+          "confidence": 0.9,
+          "citationIds": ["ss31-cit-mmpower3"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "ss31-claim-tazpower",
+          "field": "expanded.humanEvidence",
+          "value": "TAZPOWER in Barth syndrome showed improvement in functional measures during open-label extension after mixed randomized-phase results.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "adolescents and adults with Barth syndrome",
+          "route": "subcutaneous 40 mg daily",
+          "sampleSize": 12,
+          "duration": "36+ weeks including OLE",
+          "symbols": ["H", "?"],
+          "confidence": 0.6,
+          "citationIds": ["ss31-cit-tazpower"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "ss31-claim-regulatory",
+          "field": "classification.regulatoryStatus",
+          "value": "Not FDA-approved as of knowledge cutoff; regulatory trajectory in Barth syndrome has been active and should be re-verified.",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "?"],
+          "confidence": 0.7,
+          "citationIds": ["ss31-cit-fda-orphan"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "ss31-cit-szeto-2014",
+          "sourceType": "review",
+          "title": "First-in-class cardiolipin-protective compound as a therapeutic agent to restore mitochondrial bioenergetics",
+          "authors": ["Szeto HH"],
+          "year": 2014,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24506331/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["ss31-claim-mechanism", "ss31-claim-apoptosis"],
+          "notes": "Br J Pharmacol 171(8):2029-50. Foundational mechanism review by SS-31's co-inventor; useful for mechanism but self-interested on therapeutic framing."
+        },
+        {
+          "id": "ss31-cit-birk-2013",
+          "sourceType": "primary",
+          "title": "The mitochondrial-targeted compound SS-31 re-energizes ischemic mitochondria by interacting with cardiolipin",
+          "authors": ["Birk AV", "Liu S", "Soong Y", "Mills W", "Singh P", "Warren JD", "Seshan SV", "Pardee JD", "Szeto HH"],
+          "year": 2013,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23687356/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["ss31-claim-mechanism", "ss31-claim-apoptosis"],
+          "notes": "J Am Soc Nephrol 24(8):1250-61. Demonstrates cardiolipin binding and rescue of ETC supercomplexes in ischemic mitochondria."
+        },
+        {
+          "id": "ss31-cit-mmpower3",
+          "sourceType": "primary",
+          "title": "MMPOWER-3 Trial: subcutaneous elamipretide for primary mitochondrial myopathy (NCT03323749)",
+          "authors": ["Karaa A", "et al."],
+          "year": 2020,
+          "url": "https://clinicaltrials.gov/study/NCT03323749",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["ss31-claim-mmpower3-neg"],
+          "notes": "Pivotal Phase 3. Did not meet primary endpoints of 6MWT distance or PMM Symptom Assessment Total Fatigue. Results reported by sponsor and in peer review."
+        },
+        {
+          "id": "ss31-cit-tazpower",
+          "sourceType": "primary",
+          "title": "Randomized, double-blind, placebo-controlled trial of elamipretide in Barth syndrome (TAZPOWER)",
+          "authors": ["Reid Thompson W", "et al."],
+          "year": 2021,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33496032/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["ss31-claim-tazpower"],
+          "notes": "J Inherit Metab Dis. Small n (~12). Randomized phase did not meet primary endpoint; open-label extension produced functional gains used in regulatory filings."
+        },
+        {
+          "id": "ss31-cit-fda-orphan",
+          "sourceType": "regulatory",
+          "title": "FDA orphan drug and review activity for elamipretide",
+          "authors": [],
+          "year": null,
+          "url": "https://www.accessdata.fda.gov/scripts/opdlisting/oopd/",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["ss31-claim-regulatory"],
+          "notes": "FDA Orphan Drug Designation database. Regulatory trajectory for Barth syndrome has evolved over multiple cycles and should be re-checked against current FDA communications before publishing."
+        }
+      ]
+    },
+    {
+      "id": "mots-c",
+      "names": {
+        "primary": "MOTS-c",
+        "aliases": ["Mitochondrial ORF of the 12S rRNA-c", "MOTSc"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C101H156N30O23S2",
+        "molecularWeight": 2174.6,
+        "cas": "1627580-64-6",
+        "sequenceOneLetter": "MRWQEMGYIFYPRKLR",
+        "sequenceThreeLetter": "Met-Arg-Trp-Gln-Glu-Met-Gly-Tyr-Ile-Phe-Tyr-Pro-Arg-Lys-Leu-Arg",
+        "length": 16,
+        "modifications": [],
+        "structureClass": "Mitochondrial-derived peptide (MDP); encoded within the 12S rRNA gene (MT-RNR1)"
+      },
+      "classification": {
+        "peptideClass": "Mitochondrial-derived peptide",
+        "mechanismFamily": "AMPK activator / metabolic stress signaling peptide",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "A 16-aa peptide encoded within mitochondrial 12S rRNA that activates AMPK signaling, enhances glucose uptake, and under metabolic stress translocates to the nucleus to regulate antioxidant and metabolic gene expression.",
+        "localization": "Cytosol, mitochondria (origin), nucleus (under stress)",
+        "clinicalUses": [],
+        "sideEffects": [
+          "Human safety not characterized — no published human dosing trials"
+        ],
+        "dosing": {
+          "quick": "No human dosing regimen is established. Rodent studies typically use 0.1–5 mg/kg intraperitoneal or subcutaneous. Do not extrapolate to human use.",
+          "adminRoute": "Intraperitoneal or subcutaneous in rodent studies; no validated human route",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["MT-RNR1 (12S rRNA; contains the MOTS-c ORF)"],
+        "proteins": [
+          "AMPK (activation downstream)",
+          "ACC (phosphorylated downstream of AMPK)",
+          "NRF2 (nuclear translocation; oxidative stress response)",
+          "ATF1 (nuclear target under metabolic stress)"
+        ],
+        "receptors": [],
+        "channelsTransporters": [
+          "GLUT4 (membrane translocation increased in skeletal muscle in rodent studies)"
+        ],
+        "cytokinesInterleukins": [
+          {
+            "name": "IL-6",
+            "effect": "Reduced in some rodent obesity and aging models",
+            "context": "Preclinical; indirect, likely AMPK-mediated",
+            "symbols": ["A"],
+            "citationIds": ["motsc-cit-lee-2015"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "Metabolic / AMPK axis",
+            "steps": [
+              "MOTS-c is translated from the 12S rRNA ORF and exported from mitochondria",
+              "Activates AMPK (likely via folate-AICAR-adenosine pathway interaction)",
+              "AMPK phosphorylates ACC, inhibits lipogenesis, promotes fatty acid oxidation",
+              "Increases GLUT4 translocation in skeletal muscle (rodent)",
+              "Improves insulin sensitivity in diet-induced obesity (rodent)"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "motsc-claim-ampk"
+          },
+          {
+            "category": "Stress-responsive nuclear translocation",
+            "steps": [
+              "Metabolic stress (glucose restriction, oxidative stress)",
+              "MOTS-c translocates to nucleus",
+              "Regulates NRF2/antioxidant and metabolic gene expression",
+              "Mediates adaptive transcriptional response"
+            ],
+            "symbols": ["C"],
+            "claimRef": "motsc-claim-nuclear"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Human evidence for exogenous MOTS-c administration is absent in peer-reviewed literature as of the knowledge cutoff. Observational human studies have measured endogenous circulating MOTS-c and reported inverse associations with obesity, insulin resistance, and some aging markers, but these are correlative and cannot support dosing or efficacy claims. No randomized trials of administered MOTS-c in humans have been published.",
+        "animalEvidence": "In rodents, MOTS-c administration improves insulin sensitivity, protects against diet-induced obesity, enhances exercise capacity, and reduces age-related metabolic decline. Effects are attributed to AMPK activation, increased skeletal muscle glucose uptake, and mitochondrial adaptation. Evidence is reasonably consistent across multiple laboratories but still primarily from the original discovering group and close collaborators.",
+        "mechanismDetail": "MOTS-c is one of several mitochondrial-derived peptides translated from small ORFs in mitochondrial RNA. Its proposed mechanism involves interference with folate-methionine cycle intermediates, leading to AICAR accumulation and AMPK activation, although direct molecular targets remain incompletely defined. Under metabolic stress MOTS-c translocates to the nucleus where it regulates stress-responsive transcription in part through NRF2-related pathways. No canonical cell-surface receptor has been identified.",
+        "safetyDetail": "No human safety data. Rodent studies at doses up to several mg/kg have not reported major toxicity, but long-term safety, immunogenicity, and off-target effects in humans are unknown. Gray-market injectable MOTS-c sold online has no identity, purity, endotoxin, or sterility assurance.",
+        "safetyRisks": [
+          {
+            "system": "Systemic / unknown",
+            "label": "No human safety characterization",
+            "color": "red",
+            "helpSummary": "Endogenous peptide with broad metabolic effects.",
+            "harmSummary": "Exogenous dosing in humans is untested; AMPK activation has tissue-specific and dose-dependent effects that are not validated at therapeutic doses in humans.",
+            "citationIds": ["motsc-cit-lee-2015", "motsc-cit-kim-2018"]
+          },
+          {
+            "system": "Product quality",
+            "label": "Gray-market supply chain",
+            "color": "red",
+            "helpSummary": "No pharmaceutical-grade source exists.",
+            "harmSummary": "Research-grade or online material lacks verification; injection of impure peptide carries infection and contamination risk.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Enhancement claims for weight loss, longevity, or athletic performance in healthy humans are not supported by human trial evidence. Rodent and correlational human data are suggestive but not dispositive.",
+          "caveat": "Correlation of endogenous circulating MOTS-c with metabolic health does not imply that exogenous administration will reproduce those effects in humans.",
+          "citationIds": ["motsc-cit-lee-2015"]
+        },
+        "missingEvidence": [
+          "Any randomized controlled human trial of administered MOTS-c",
+          "Pharmacokinetics and bioavailability in humans",
+          "Identified molecular receptor or primary binding partner",
+          "Long-term preclinical safety / carcinogenicity"
+        ],
+        "anecdotalUse": [
+          "Gray-market use as a 'mitochondrial biogenesis' or 'metabolic longevity' injectable — no human clinical evidence supports this use"
+        ]
+      },
+      "claims": [
+        {
+          "id": "motsc-claim-ampk",
+          "field": "biology.cascades",
+          "value": "MOTS-c activates AMPK and improves insulin sensitivity in rodent diet-induced obesity models.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "high-fat-diet C57BL/6 mice",
+          "route": "intraperitoneal",
+          "sampleSize": null,
+          "duration": "weeks",
+          "symbols": ["A", "C"],
+          "confidence": 0.8,
+          "citationIds": ["motsc-cit-lee-2015"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "motsc-claim-nuclear",
+          "field": "biology.cascades",
+          "value": "Under metabolic stress MOTS-c translocates to the nucleus and engages stress-responsive transcription.",
+          "species": "mixed",
+          "context": "cell",
+          "population": "cultured mammalian cells and mouse tissues",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "A"],
+          "confidence": 0.7,
+          "citationIds": ["motsc-cit-kim-2018"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "motsc-claim-human",
+          "field": "expanded.humanEvidence",
+          "value": "No randomized controlled trials of administered MOTS-c in humans have been published.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "?"],
+          "confidence": 0.9,
+          "citationIds": ["motsc-cit-kumagai-review"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "motsc-cit-lee-2015",
+          "sourceType": "primary",
+          "title": "The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance",
+          "authors": ["Lee C", "Zeng J", "Drew BG", "Sallam T", "Martin-Montalvo A", "Wan J", "Kim SJ", "Mehta H", "Hevener AL", "de Cabo R", "Cohen P"],
+          "year": 2015,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25738459/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["motsc-claim-ampk"],
+          "notes": "Cell Metabolism 21(3):443-454. Discovery and primary characterization."
+        },
+        {
+          "id": "motsc-cit-kim-2018",
+          "sourceType": "primary",
+          "title": "The mitochondrial-derived peptide MOTS-c translocates to the nucleus to regulate nuclear gene expression in response to metabolic stress",
+          "authors": ["Kim KH", "Son JM", "Benayoun BA", "Lee C"],
+          "year": 2018,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29514079/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["motsc-claim-nuclear"],
+          "notes": "Cell Metabolism 28(3):516-524. Nuclear translocation and transcriptional role."
+        },
+        {
+          "id": "motsc-cit-kumagai-review",
+          "sourceType": "review",
+          "title": "MOTS-c in health and disease: reviews of evidence and open questions",
+          "authors": ["Kumagai H", "Coelho AR", "Wan J", "Mehta HH", "Yen K", "Huang A", "Zempo H", "Fuku N", "Cohen P"],
+          "year": 2023,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37288496/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["motsc-claim-human"],
+          "notes": "Representative review; title/year should be verified against PubMed before publication."
+        }
+      ]
+    },
+    {
+      "id": "bpc-157",
+      "names": {
+        "primary": "BPC-157",
+        "aliases": ["Body Protection Compound-157", "Pentadecapeptide BPC-157", "PL 14736", "PL-10"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C62H98N16O22",
+        "molecularWeight": 1419.53,
+        "cas": "137525-51-0",
+        "sequenceOneLetter": "GEPPPGKPADDAGLV",
+        "sequenceThreeLetter": "Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val",
+        "length": 15,
+        "modifications": [
+          "Synthetic; corresponds to a 15-aa fragment originally described from a region of human gastric juice protein"
+        ],
+        "structureClass": "Pentadecapeptide (synthetic gastric juice-derived fragment)"
+      },
+      "classification": {
+        "peptideClass": "Gastric juice-derived synthetic peptide (cytoprotective / pro-angiogenic candidate)",
+        "mechanismFamily": "NO pathway and VEGFR2-associated pro-angiogenic signaling (proposed)",
+        "regulatoryStatus": "not_approved"
+      },
+      "tile": {
+        "mechanismSummary": "A 15-amino-acid synthetic peptide claimed to promote tissue healing through NO-pathway modulation and pro-angiogenic signaling including VEGFR2. Mechanistic claims are drawn almost entirely from rodent studies by a single group and its collaborators.",
+        "localization": "Systemic in preclinical studies; tissue-level effects reported in gut, tendon, ligament, muscle, and CNS models",
+        "clinicalUses": [],
+        "sideEffects": [
+          "Human adverse event profile is poorly characterized; no large human trials"
+        ],
+        "dosing": {
+          "quick": "No approved human dose. Rodent studies commonly use 10 µg/kg IP or PO. Gray-market protocols of 250–500 µg subcutaneous are not supported by published human trial data.",
+          "adminRoute": "Intraperitoneal, subcutaneous, or oral in rodent studies; no validated human route or dose",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [
+          "VEGFR2 (KDR) — proposed interaction in pro-angiogenic effects",
+          "eNOS / NOS system — upregulated in several rodent models",
+          "Growth hormone receptor — upregulation reported in tendon fibroblasts",
+          "EGR-1 (early growth response 1) — induction reported",
+          "FAK, paxillin — cytoskeletal signaling reported downstream"
+        ],
+        "receptors": [
+          "VEGFR2 (indirect / proposed)",
+          "GHR (growth hormone receptor; upregulation reported rather than direct binding)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "TNF-α",
+            "effect": "Reduced in some rodent colitis and inflammation models",
+            "context": "Preclinical only",
+            "symbols": ["A"],
+            "citationIds": ["bpc157-cit-sikiric-review-2018"]
+          },
+          {
+            "name": "IL-6",
+            "effect": "Reduced in some rodent inflammation models",
+            "context": "Preclinical only",
+            "symbols": ["A"],
+            "citationIds": ["bpc157-cit-sikiric-review-2018"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "Angiogenesis / healing (rodent)",
+            "steps": [
+              "BPC-157 administration (local or systemic)",
+              "Upregulation of VEGFR2 and eNOS in injured tissue",
+              "Increased NO bioavailability",
+              "Enhanced angiogenesis and granulation tissue formation",
+              "Faster closure of experimental wounds and tendon/muscle repair in rodents"
+            ],
+            "symbols": ["A"],
+            "claimRef": "bpc157-claim-angio"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "There are no large, well-powered, published randomized controlled trials of BPC-157 in humans. Limited early clinical activity exists for a related formulation (PL 14736) in inflammatory bowel disease from the early 2000s, but no Phase 3 human data are in the peer-reviewed literature supporting the contemporary gray-market uses (tendon, ligament, gut, brain). Human safety data are sparse. Claims about 'healing' in humans are extrapolations from rodent work.",
+        "animalEvidence": "Extensive rodent literature across gut ulcer, colitis, tendon, ligament, muscle, bone, skin, vascular, and CNS injury models, predominantly from the Sikiric laboratory and its collaborators. Effects are broad and unusually consistent across disparate models, which is a methodological red flag that warrants independent replication by unaffiliated groups.",
+        "mechanismDetail": "Proposed mechanisms center on the NO-NOS system, VEGFR2-driven angiogenesis, and upregulation of growth hormone receptor signaling in fibroblasts and tenocytes. BPC-157 does not have a confirmed canonical receptor; interactions are inferred from downstream pathway changes and pharmacological blockade experiments rather than direct binding assays with published structural data.",
+        "safetyDetail": "In rodents, BPC-157 appears to have a wide therapeutic index and no notable toxicity at tested doses. Human safety evidence is limited to small early studies of related formulations. Long-term human safety, immunogenicity, and oncological risk are unknown. The FDA has flagged BPC-157 in the context of compounding for safety and identity concerns, and WADA has prohibited it since 2022.",
+        "safetyRisks": [
+          {
+            "system": "Regulatory",
+            "label": "Not approved; flagged for compounding safety by FDA",
+            "color": "red",
+            "helpSummary": "No pharmaceutical-grade approved product exists.",
+            "harmSummary": "FDA has identified BPC-157 as a substance with insufficient safety information for inclusion on the 503A bulk drug substances list for compounding. WADA prohibits it in competition.",
+            "citationIds": ["bpc157-cit-fda-503a", "bpc157-cit-wada-list"]
+          },
+          {
+            "system": "Product quality",
+            "label": "Gray-market identity and purity",
+            "color": "red",
+            "helpSummary": "Mail-order 'research peptide' supply is unregulated.",
+            "harmSummary": "No guarantee of peptide identity, purity, sterility, or endotoxin control. Infection, pyrogenic reactions, and contaminated product are real risks.",
+            "citationIds": []
+          },
+          {
+            "system": "Oncology (theoretical)",
+            "label": "Pro-angiogenic effects — theoretical tumor concern",
+            "color": "yellow",
+            "helpSummary": "Angiogenesis is a shared feature of wound healing and tumor growth.",
+            "harmSummary": "No human data address whether chronic systemic dosing alters tumor biology. Caution in individuals with known or suspected malignancy.",
+            "citationIds": ["bpc157-cit-sikiric-review-2018"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Popular claims for accelerated healing of tendons, ligaments, muscle, and gut in humans are not supported by adequate human RCT evidence. Rodent findings are promising but have not been independently validated in controlled human trials.",
+          "caveat": "Do not represent rodent wound healing as evidence of human efficacy. Single-group replication is not independent validation.",
+          "citationIds": ["bpc157-cit-sikiric-review-2018"]
+        },
+        "missingEvidence": [
+          "Adequately powered randomized controlled human trials for any indication",
+          "Independent replication by unaffiliated laboratories of key rodent findings",
+          "Long-term human safety and oncology surveillance data",
+          "Defined canonical receptor and high-quality binding data"
+        ],
+        "anecdotalUse": [
+          "Tendon and ligament injury recovery",
+          "Gastrointestinal symptom management (leaky gut, IBD-like symptoms)",
+          "Post-surgical recovery and exercise-related soft-tissue injury"
+        ]
+      },
+      "claims": [
+        {
+          "id": "bpc157-claim-angio",
+          "field": "biology.cascades",
+          "value": "BPC-157 promotes angiogenesis and tissue repair in rodent injury models via NO and VEGFR2-associated signaling.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "rats, mice in tendon/muscle/gut injury models",
+          "route": "IP, SC, oral",
+          "sampleSize": null,
+          "duration": "days to weeks",
+          "symbols": ["A"],
+          "confidence": 0.6,
+          "citationIds": ["bpc157-cit-sikiric-review-2018", "bpc157-cit-chang-2011"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "bpc157-claim-no-human-rct",
+          "field": "expanded.humanEvidence",
+          "value": "No adequately powered published randomized human trials support modern BPC-157 use in musculoskeletal or gastrointestinal indications.",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["N", "H"],
+          "confidence": 0.9,
+          "citationIds": ["bpc157-cit-fda-503a"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "bpc157-claim-regulatory",
+          "field": "classification.regulatoryStatus",
+          "value": "BPC-157 is not FDA-approved; FDA has flagged it for 503A compounding safety concerns, and WADA has prohibited it since January 2022.",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "N"],
+          "confidence": 0.9,
+          "citationIds": ["bpc157-cit-fda-503a", "bpc157-cit-wada-list"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "bpc157-cit-sikiric-review-2018",
+          "sourceType": "review",
+          "title": "Brain-gut axis and pentadecapeptide BPC 157: theoretical and practical implications",
+          "authors": ["Sikiric P", "Seiwerth S", "Rucman R", "et al."],
+          "year": 2018,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29305073/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["bpc157-claim-angio"],
+          "notes": "Representative review by the group that has produced most BPC-157 literature; treat as interested-party summary."
+        },
+        {
+          "id": "bpc157-cit-chang-2011",
+          "sourceType": "primary",
+          "title": "The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration",
+          "authors": ["Chang CH", "Tsai WC", "Lin MS", "Hsu YH", "Pang JH"],
+          "year": 2011,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21127294/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["bpc157-claim-angio"],
+          "notes": "J Appl Physiol. Independent (non-Sikiric) in vitro and rat tendon cell study; useful because it is from an unaffiliated group."
+        },
+        {
+          "id": "bpc157-cit-fda-503a",
+          "sourceType": "regulatory",
+          "title": "FDA 503A bulk drug substances list — BPC-157 not nominated for inclusion; safety concerns described in FDA review of compounding substances",
+          "authors": [],
+          "year": 2023,
+          "url": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-nominated-use-compounding-under-section-503a-federal-food-drug-and-cosmetic-act",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["bpc157-claim-no-human-rct", "bpc157-claim-regulatory"],
+          "notes": "FDA has expressed safety and identity concerns about BPC-157 for compounding. Confirm current status against FDA's most recent category 2 list before publication."
+        },
+        {
+          "id": "bpc157-cit-wada-list",
+          "sourceType": "regulatory",
+          "title": "WADA Prohibited List — BPC-157 (listed under S0 Non-Approved Substances since 2022)",
+          "authors": [],
+          "year": 2022,
+          "url": "https://www.wada-ama.org/en/prohibited-list",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["bpc157-claim-regulatory"],
+          "notes": "BPC-157 prohibited at all times for athletes subject to WADA code since January 1, 2022."
+        }
+      ]
+    },
+    {
+      "id": "tb-500",
+      "names": {
+        "primary": "TB-500",
+        "aliases": ["Thymosin beta-4 (commonly conflated)", "Tβ4", "TB4 (gray-market)", "Thymosin β4 fragment"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": "C212H350N56O78S1",
+        "molecularWeight": 4963.44,
+        "cas": "77591-33-4",
+        "sequenceOneLetter": "SDKPDMAEIEKFDKSKLKKTETQEKNPLPSKETIEQEKQAGES",
+        "sequenceThreeLetter": "Ser-Asp-Lys-Pro-Asp-Met-Ala-Glu-Ile-Glu-Lys-Phe-Asp-Lys-Ser-Lys-Leu-Lys-Lys-Thr-Glu-Thr-Gln-Glu-Lys-Asn-Pro-Leu-Pro-Ser-Lys-Glu-Thr-Ile-Glu-Gln-Glu-Lys-Gln-Ala-Gly-Glu-Ser",
+        "length": 43,
+        "modifications": [
+          "N-terminal acetylation in native thymosin β4",
+          "Gray-market 'TB-500' product is often sold as the full 43-aa Tβ4 sequence, though the name historically refers to a specific shorter fragment (often described as containing the LKKTETQ actin-binding region)"
+        ],
+        "structureClass": "Beta-thymosin family; small intracellular actin-monomer-sequestering protein"
+      },
+      "classification": {
+        "peptideClass": "Beta-thymosin (actin-binding peptide)",
+        "mechanismFamily": "G-actin sequestration / actin cytoskeleton regulator with pro-angiogenic and anti-inflammatory activity",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "A 43-amino-acid actin-sequestering peptide that binds G-actin via a conserved LKKTETQ motif, modulating cytoskeletal dynamics; downstream effects include enhanced cell migration, angiogenesis, and attenuation of inflammation in preclinical models.",
+        "localization": "Intracellular and extracellular; highly abundant intracellular pool of G-actin-bound peptide in most tissues",
+        "clinicalUses": [],
+        "sideEffects": [
+          "Human safety data are limited to small RegeneRx-sponsored studies of related Tβ4 formulations; gray-market use is not characterized"
+        ],
+        "dosing": {
+          "quick": "No approved human systemic dose. Small ophthalmic and topical human trials of Tβ4 formulations have used microgram to low-milligram local dosing. Gray-market systemic dosing (2–10 mg SC weekly) is not supported by published human trials.",
+          "adminRoute": "Intravenous, subcutaneous, topical, ophthalmic drop — varies by study",
+          "publicDisplayAllowed": false,
+          "context": "preclinical"
+        }
+      },
+      "biology": {
+        "genes": ["TMSB4X (encodes thymosin β4)"],
+        "proteins": [
+          "G-actin — primary binding partner via LKKTETQ motif",
+          "Integrin-linked kinase (ILK) — upregulation reported in cardiac repair models",
+          "AKT — activation downstream in cardiac injury models",
+          "MRTF-A / SRF pathway — modulated via actin dynamics"
+        ],
+        "receptors": [],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "TNF-α",
+            "effect": "Reduced in preclinical inflammation and corneal injury models",
+            "context": "Preclinical and limited human ophthalmic",
+            "symbols": ["A", "C"],
+            "citationIds": ["tb500-cit-goldstein-2005"]
+          },
+          {
+            "name": "IL-1β",
+            "effect": "Reduced in preclinical injury models",
+            "context": "Preclinical",
+            "symbols": ["A"],
+            "citationIds": ["tb500-cit-goldstein-2005"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "Actin cytoskeleton and cell migration",
+            "steps": [
+              "Tβ4 / TB-500 binds G-actin via LKKTETQ motif",
+              "Maintains pool of polymerization-competent actin monomers",
+              "Facilitates dynamic cytoskeletal remodeling for cell migration",
+              "Enables epithelial and endothelial migration in wound healing"
+            ],
+            "symbols": ["C", "A"],
+            "claimRef": "tb500-claim-actin"
+          },
+          {
+            "category": "Angiogenesis and cardiac repair (preclinical)",
+            "steps": [
+              "Tβ4 administration in cardiac injury models",
+              "Upregulation of ILK and AKT signaling",
+              "Preservation of cardiomyocyte survival and enhanced angiogenesis",
+              "Improved functional recovery in rodent MI models"
+            ],
+            "symbols": ["A"],
+            "claimRef": "tb500-claim-cardiac"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Limited human trial evidence exists for Tβ4 formulations developed by RegeneRx, primarily in dry eye disease, neurotrophic keratopathy, epidermolysis bullosa, and venous stasis ulcers. These generally used local (ophthalmic or topical) delivery rather than systemic dosing. Results have been mixed and the programs have not reached FDA approval. There are effectively no published large RCTs of systemic 'TB-500' injection for musculoskeletal healing, tendon repair, or athletic recovery — the dominant gray-market use cases.",
+        "animalEvidence": "Extensive preclinical literature across cardiac ischemia, corneal injury, dermal wound healing, neurological injury, and fibrosis. Mechanisms consistently involve actin sequestration, cell migration, angiogenesis, and anti-inflammatory effects. Evidence is broader and more independently replicated than for BPC-157 but still largely preclinical.",
+        "mechanismDetail": "Thymosin β4 is the most abundant member of the beta-thymosin family and functions as the primary G-actin-sequestering peptide in most mammalian cells. Its LKKTETQ motif binds G-actin in a 1:1 stoichiometry, maintaining a polymerization-competent monomer pool. Beyond actin sequestration it has reported roles in angiogenesis (VEGF pathway), anti-apoptosis, anti-fibrosis, and anti-inflammatory signaling, some of which may be mediated by the N-terminal tetrapeptide Ac-SDKP after proteolytic cleavage. 'TB-500' marketed online is usually either full-length Tβ4 or a synthetic fragment; buyers often cannot verify which.",
+        "safetyDetail": "In human ophthalmic and topical trials, Tβ4 has generally been well tolerated. Systemic human safety is poorly characterized. Theoretical concerns include pro-angiogenic effects in occult malignancy and fibrosis modulation with unknown long-term consequences. WADA prohibits Tβ4.",
+        "safetyRisks": [
+          {
+            "system": "Regulatory",
+            "label": "Not approved; WADA prohibited",
+            "color": "red",
+            "helpSummary": "No approved TB-500 product.",
+            "harmSummary": "WADA prohibits Tβ4 / TB-500. Gray-market product is unregulated.",
+            "citationIds": ["tb500-cit-wada-list"]
+          },
+          {
+            "system": "Oncology (theoretical)",
+            "label": "Pro-angiogenic / pro-migratory — theoretical concern",
+            "color": "yellow",
+            "helpSummary": "Actin dynamics and angiogenesis shared with tumor biology.",
+            "harmSummary": "No human data on chronic systemic dosing in individuals with occult malignancy; caution advised.",
+            "citationIds": ["tb500-cit-goldstein-2005"]
+          },
+          {
+            "system": "Product quality",
+            "label": "Ambiguous identity ('TB-500' vs full Tβ4)",
+            "color": "yellow",
+            "helpSummary": "Market nomenclature is inconsistent.",
+            "harmSummary": "Buyers frequently cannot verify whether product is full-length Tβ4, a specific fragment, or a mislabeled unrelated peptide.",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Gray-market use for tendon, ligament, and muscle recovery is unsupported by published human RCTs. Preclinical data are suggestive but do not establish human efficacy at commonly used doses.",
+          "caveat": "Human ophthalmic and topical trial experience is not transferable to systemic musculoskeletal recovery claims.",
+          "citationIds": ["tb500-cit-goldstein-2005"]
+        },
+        "missingEvidence": [
+          "Randomized controlled human trials of systemic TB-500 for musculoskeletal recovery",
+          "Well-characterized human pharmacokinetics of systemic Tβ4",
+          "Long-term oncological safety data",
+          "Clear identity standard differentiating 'TB-500' from full-length Tβ4 in gray-market supply"
+        ],
+        "anecdotalUse": [
+          "Tendon and ligament recovery in recreational and elite athletes",
+          "Post-surgical recovery",
+          "General 'healing and recovery' stacks"
+        ]
+      },
+      "claims": [
+        {
+          "id": "tb500-claim-actin",
+          "field": "biology.cascades",
+          "value": "Tβ4 / TB-500 binds G-actin via the LKKTETQ motif, maintaining a polymerization-competent actin monomer pool.",
+          "species": "mixed",
+          "context": "cell",
+          "population": "mammalian cell biology, structural biology",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C"],
+          "confidence": 0.95,
+          "citationIds": ["tb500-cit-goldstein-2005"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "tb500-claim-cardiac",
+          "field": "biology.cascades",
+          "value": "Tβ4 promotes cardiomyocyte survival and angiogenesis in rodent cardiac injury models via ILK/AKT signaling.",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "rodent myocardial infarction models",
+          "route": "IP, IV",
+          "sampleSize": null,
+          "duration": "days to weeks",
+          "symbols": ["A"],
+          "confidence": 0.7,
+          "citationIds": ["tb500-cit-bock-melnyk-2004"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "tb500-claim-human-ophthalmic",
+          "field": "expanded.humanEvidence",
+          "value": "Human trials of Tβ4 formulations have been conducted primarily for ophthalmic and dermatologic indications with mixed results; no approvals to date.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "dry eye disease, neurotrophic keratopathy, venous stasis ulcers, epidermolysis bullosa",
+          "route": "ophthalmic drop, topical",
+          "sampleSize": null,
+          "duration": "weeks",
+          "symbols": ["H", "?"],
+          "confidence": 0.7,
+          "citationIds": ["tb500-cit-regenerx"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "tb500-claim-wada",
+          "field": "classification.regulatoryStatus",
+          "value": "Tβ4 / TB-500 is prohibited at all times under the WADA Prohibited List.",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "N"],
+          "confidence": 0.95,
+          "citationIds": ["tb500-cit-wada-list"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "tb500-cit-goldstein-2005",
+          "sourceType": "review",
+          "title": "Thymosin beta4: actin-sequestering protein moonlights to repair injured tissues",
+          "authors": ["Goldstein AL", "Hannappel E", "Kleinman HK"],
+          "year": 2005,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15986403/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["tb500-claim-actin"],
+          "notes": "Trends Mol Med 11(9):421-429. Canonical review of Tβ4 biology."
+        },
+        {
+          "id": "tb500-cit-bock-melnyk-2004",
+          "sourceType": "primary",
+          "title": "Thymosin β4 activates integrin-linked kinase and promotes cardiac cell migration, survival and cardiac repair",
+          "authors": ["Bock-Marquette I", "Saxena A", "White MD", "Dimaio JM", "Srivastava D"],
+          "year": 2004,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15525990/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["tb500-claim-cardiac"],
+          "notes": "Nature 432(7016):466-72. Primary evidence for ILK/AKT axis in cardiac repair."
+        },
+        {
+          "id": "tb500-cit-regenerx",
+          "sourceType": "regulatory",
+          "title": "RegeneRx Biopharmaceuticals — Tβ4 clinical trial program overview",
+          "authors": [],
+          "year": null,
+          "url": "https://clinicaltrials.gov/search?term=thymosin+beta+4",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["tb500-claim-human-ophthalmic"],
+          "notes": "Trials include NCT02918292 (dry eye), NCT02355470 (neurotrophic keratopathy), and others; specific trial outcomes should be pulled per indication before publication."
+        },
+        {
+          "id": "tb500-cit-wada-list",
+          "sourceType": "regulatory",
+          "title": "WADA Prohibited List — Thymosin β4 / TB-500 prohibited at all times",
+          "authors": [],
+          "year": 2024,
+          "url": "https://www.wada-ama.org/en/prohibited-list",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["tb500-claim-wada"],
+          "notes": "Confirm year version of the Prohibited List cited matches publication date."
+        }
+      ]
+    },
+    {
+      "id": "ghk-cu",
+      "names": {
+        "primary": "GHK-Cu",
+        "aliases": ["Copper tripeptide-1", "Glycyl-L-histidyl-L-lysine:copper(II)", "GHK copper", "Prezatide copper acetate"],
+        "tradeNames": ["Iamin (historical topical)", "used as 'copper peptide' in many cosmetic products"]
+      },
+      "identity": {
+        "formula": "C14H23CuN6O4 (1:1 Cu(II) complex of GHK tripeptide)",
+        "molecularWeight": 402.9,
+        "cas": "49557-75-7",
+        "sequenceOneLetter": "GHK",
+        "sequenceThreeLetter": "Gly-His-Lys",
+        "length": 3,
+        "modifications": [
+          "1:1 Cu(II) chelate; copper is coordinated by the N-terminal amino group, imidazole of histidine, and deprotonated amide nitrogen"
+        ],
+        "structureClass": "Copper-binding tripeptide"
+      },
+      "classification": {
+        "peptideClass": "Copper-binding endogenous tripeptide",
+        "mechanismFamily": "Copper delivery / extracellular matrix remodeling / transcriptional modulator",
+        "regulatoryStatus": "non_us_approved"
+      },
+      "tile": {
+        "mechanismSummary": "An endogenous tripeptide that binds Cu(II) with high affinity and modulates extracellular matrix remodeling, antioxidant response, and angiogenesis. It is widely used as a cosmetic ingredient; limited small clinical trials support topical skin benefits, but systemic therapeutic claims are not well supported.",
+        "localization": "Extracellular and intracellular in skin and connective tissue; human plasma levels decline with age",
+        "clinicalUses": [
+          "Cosmetic topical use for skin aging and wound support (widespread ingredient use)",
+          "Investigational topical use for wound healing"
+        ],
+        "sideEffects": [
+          "Topical: generally well tolerated; occasional contact dermatitis",
+          "Injectable use is not a standard clinical practice and is not well characterized in humans"
+        ],
+        "dosing": {
+          "quick": "Topical cosmetic use at ~0.05–0.2% is typical in published skin studies. No validated systemic dose. Injectable gray-market use is not supported by controlled human trial data.",
+          "adminRoute": "Topical (cosmetic, wound-care); injectable in unregulated gray-market use; IV historically in early wound-healing research",
+          "publicDisplayAllowed": true,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [
+          "Collagen (type I and III) — synthesis stimulated in dermal fibroblasts",
+          "Elastin — synthesis stimulated in some models",
+          "Decorin — induced",
+          "MMP-2 — modulated (regulation is context-dependent, not simple inhibition)",
+          "TGF-β1 — modulated",
+          "SOD1 / antioxidant enzymes — activity influenced via copper delivery"
+        ],
+        "receptors": [],
+        "channelsTransporters": [
+          "Copper transport proteins (CTR1, ATP7A) — GHK acts in part as a copper shuttle"
+        ],
+        "cytokinesInterleukins": [
+          {
+            "name": "TGF-β1",
+            "effect": "Modulated (often increased) in dermal fibroblast models",
+            "context": "Cell and small human skin studies",
+            "symbols": ["C", "H"],
+            "citationIds": ["ghkcu-cit-pickart-2018"]
+          },
+          {
+            "name": "TNF-α",
+            "effect": "Reduced in some inflammation / wound models",
+            "context": "Preclinical, limited human",
+            "symbols": ["A", "C"],
+            "citationIds": ["ghkcu-cit-pickart-2018"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "Skin ECM remodeling",
+            "steps": [
+              "Topical GHK-Cu penetrates stratum corneum",
+              "Delivers Cu(II) to dermal fibroblasts",
+              "Upregulates collagen I/III, elastin, decorin synthesis",
+              "Modulates MMP-2 activity",
+              "Improves measured markers of skin firmness and photodamage in small human trials"
+            ],
+            "symbols": ["C", "H"],
+            "claimRef": "ghkcu-claim-skin"
+          },
+          {
+            "category": "Transcriptional / antioxidant",
+            "steps": [
+              "GHK-Cu enters cells and donates copper to antioxidant enzymes",
+              "Modulates expression of DNA repair and antioxidant genes in cell models (gene expression array data)",
+              "Postulated contribution to wound healing and tissue regeneration"
+            ],
+            "symbols": ["C"],
+            "claimRef": "ghkcu-claim-transcriptional"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Small controlled and open-label human studies — primarily in cosmetics and wound-care — support topical GHK-Cu effects on skin firmness, fine wrinkles, photodamage markers, and wound healing. Studies are generally small (n=20-100), often industry-sponsored, and use varied formulations, limiting strength of conclusions. There are no large randomized trials of systemic (injected) GHK-Cu in humans for any indication, and the robust human evidence is confined to topical cosmetic-scale endpoints.",
+        "animalEvidence": "Rodent studies support roles in wound healing, hair follicle stimulation, and tissue repair. Gene expression studies in cell lines document broad transcriptional effects consistent with wound-repair programs.",
+        "mechanismDetail": "GHK is an endogenous tripeptide present in human plasma at nanomolar concentrations, with levels declining with age. It binds Cu(II) with high affinity and acts as a copper shuttle between plasma proteins (notably albumin) and cells. Once inside cells, copper delivered by GHK supports copper-dependent enzymes including SOD1 and lysyl oxidase. In dermal fibroblasts GHK-Cu upregulates synthesis of collagens I and III, elastin, decorin, and glycosaminoglycans, and modulates MMP activity. Transcriptomic studies have reported that GHK affects expression of hundreds to thousands of genes involved in tissue remodeling, antioxidant defense, and DNA repair, but many of these are from a small number of array studies and require independent replication.",
+        "safetyDetail": "Topical GHK-Cu has a strong cosmetic-scale safety record, including long history as a cosmetic ingredient. Contact dermatitis is uncommon. Systemic or injected use is not standard and lacks modern controlled safety data. Copper overload is theoretically possible with chronic high-dose injection, particularly in individuals with Wilson disease or copper-handling disorders.",
+        "safetyRisks": [
+          {
+            "system": "Dermatologic",
+            "label": "Contact dermatitis",
+            "color": "green",
+            "helpSummary": "Uncommon.",
+            "harmSummary": "Occasional local irritation or allergic contact dermatitis to topical products.",
+            "citationIds": ["ghkcu-cit-pickart-2018"]
+          },
+          {
+            "system": "Systemic (injectable use)",
+            "label": "Copper overload (theoretical)",
+            "color": "yellow",
+            "helpSummary": "Copper-related hepatic/neurologic risk in susceptible individuals.",
+            "harmSummary": "Chronic parenteral copper peptide dosing is not established as safe; caution in individuals with Wilson disease or impaired biliary copper excretion.",
+            "citationIds": []
+          },
+          {
+            "system": "Oncology (theoretical)",
+            "label": "Broad transcriptional effects — theoretical concern",
+            "color": "yellow",
+            "helpSummary": "Gene-expression modulation is broad.",
+            "harmSummary": "Limited data on chronic systemic exposure and tumor biology.",
+            "citationIds": ["ghkcu-cit-pickart-2018"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Topical cosmetic benefits (skin firmness, wrinkle reduction, wound healing support) have modest but real human evidence. Systemic anti-aging, hair regrowth, and healing claims outside topical use are not supported by controlled human trials.",
+          "caveat": "Do not generalize topical cosmetic trial outcomes to systemic injectable use or to longevity endpoints.",
+          "citationIds": ["ghkcu-cit-pickart-2018", "ghkcu-cit-leyden-2002"]
+        },
+        "missingEvidence": [
+          "Large randomized trials of systemic / injectable GHK-Cu for any therapeutic indication",
+          "Independent replication of transcriptomic claims beyond Pickart-group publications",
+          "Long-term safety of chronic parenteral use",
+          "Head-to-head comparison against established dermatologic ingredients (retinoids, peptide complexes) in photoaging"
+        ],
+        "anecdotalUse": [
+          "Topical cosmetic use for anti-aging and post-procedure skin recovery",
+          "Scalp application for hair density (weak human evidence)",
+          "Gray-market systemic injection for 'regenerative' effects (not supported by controlled human trials)"
+        ]
+      },
+      "claims": [
+        {
+          "id": "ghkcu-claim-skin",
+          "field": "biology.cascades",
+          "value": "Topical GHK-Cu improves measured skin parameters (firmness, density, fine wrinkles, photodamage markers) in small human studies.",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "healthy adults with photoaged skin",
+          "route": "topical",
+          "sampleSize": 67,
+          "duration": "12 weeks",
+          "symbols": ["H", "C"],
+          "confidence": 0.65,
+          "citationIds": ["ghkcu-cit-leyden-2002", "ghkcu-cit-pickart-2018"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "ghkcu-claim-transcriptional",
+          "field": "biology.cascades",
+          "value": "GHK modulates expression of a broad set of genes involved in tissue remodeling and antioxidant defense in cell and tissue array studies.",
+          "species": "mixed",
+          "context": "cell",
+          "population": "fibroblast cultures, gene-expression array datasets",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C", "?"],
+          "confidence": 0.5,
+          "citationIds": ["ghkcu-cit-pickart-2018"],
+          "needsModeratorReview": true
+        },
+        {
+          "id": "ghkcu-claim-copper-shuttle",
+          "field": "biology.cascades",
+          "value": "GHK binds Cu(II) with high affinity and functions as a copper shuttle between plasma albumin and cells, delivering copper to copper-dependent enzymes.",
+          "species": "mixed",
+          "context": "cell",
+          "population": "biochemical and cell biology studies",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["C"],
+          "confidence": 0.9,
+          "citationIds": ["ghkcu-cit-pickart-2018"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "ghkcu-cit-pickart-2018",
+          "sourceType": "review",
+          "title": "Regenerative and protective actions of the GHK-Cu peptide in the light of the new gene data",
+          "authors": ["Pickart L", "Margolina A"],
+          "year": 2018,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29883407/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["ghkcu-claim-transcriptional", "ghkcu-claim-copper-shuttle", "ghkcu-claim-skin"],
+          "notes": "Int J Mol Sci 19(7):1987. Comprehensive GHK-Cu mechanism review; note that Pickart is the discoverer and much of the transcriptomic literature comes from his group."
+        },
+        {
+          "id": "ghkcu-cit-leyden-2002",
+          "sourceType": "primary",
+          "title": "Skin care benefits of copper peptide containing facial cream",
+          "authors": ["Leyden J", "Stephens T", "Finkey MB", "Barkovic S"],
+          "year": 2002,
+          "url": "https://www.aad.org/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["ghkcu-claim-skin"],
+          "notes": "American Academy of Dermatology meeting abstract / paper on topical copper peptide facial cream; representative small human cosmetic trial. Specific bibliographic record should be verified before publication."
+        }
+      ]
+    }
+  ]
+}
