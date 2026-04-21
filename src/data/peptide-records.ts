@@ -5,6 +5,7 @@ import claudeBatch01Raw from "../../data/sources/research/claude_batch_01.json";
 import claudeBatch02Raw from "../../data/sources/research/claude_batch_02.json";
 import claudeBatch03Raw from "../../data/sources/research/claude_batch_03.json";
 import claudeBatch04Raw from "../../data/sources/research/claude_batch_04.json";
+import claudeBatch05Raw from "../../data/sources/research/claude_batch_05.json";
 import claudeBatch06Raw from "../../data/sources/research/claude_batch_06.json";
 import claudeBatch07Raw from "../../data/sources/research/claude_batch_07.json";
 import claudeBatch08Raw from "../../data/sources/research/claude_batch_08.json";
@@ -148,6 +149,7 @@ const researchBatches = [
   claudeBatch02Raw,
   claudeBatch03Raw,
   claudeBatch04Raw,
+  claudeBatch05Raw,
   claudeBatch06Raw,
   claudeBatch07Raw,
   claudeBatch08Raw,

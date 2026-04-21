@@ -1096,8 +1096,21 @@ function hero() {
   </section>`;
 }
 
+function sideRail(direction) {
+  const glyphs = "PEPTOCOPEIA.COM.".split("");
+  const repeated = Array.from({ length: 4 }, () => glyphs)
+    .flat()
+    .map((char) => `<span>${esc(char === "." ? "•" : char)}</span>`)
+    .join("");
+  return `<div class="side-rail side-rail-${esc(direction)}" aria-hidden="true">
+    <div class="side-rail-track">${repeated}</div>
+  </div>`;
+}
+
 function atlasFrameOpen() {
   return `<section class="atlas-frame">
+    ${sideRail("left")}
+    ${sideRail("right")}
     <svg class="atlas-path" viewBox="0 0 1400 1180" preserveAspectRatio="none" aria-hidden="true">
       <path id="atlas-curve" d="M 78 1040 C 52 828 54 386 172 236 C 244 146 404 126 596 126 L 1118 126 C 1294 126 1358 228 1358 402 L 1358 1010" />
       <text class="atlas-path-text">

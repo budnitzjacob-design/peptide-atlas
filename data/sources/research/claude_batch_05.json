@@ -1,0 +1,1353 @@
+{
+  "batch_id": "batch-05",
+  "generated_at": "2026-04-21",
+  "peptides": [
+    {
+      "id": "cjc-1295",
+      "names": {
+        "primary": "CJC-1295",
+        "aliases": ["CJC-1295 DAC", "DAC:GRF", "CJC-1295 with DAC"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": null,
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": "H-Tyr-D-Ala-Asp-Ala-Ile-Phe-Thr-Gln-Ser-Tyr-Arg-Lys-Val-Leu-Ala-Gln-Leu-Ser-Ala-Arg-Lys-Leu-Leu-Gln-Asp-Ile-Leu-Ser-Arg-Lys(N-\u03b5-maleimidopropionyl)-NH2",
+        "length": 30,
+        "modifications": [
+          "Modified GHRH(1-29) core with four substitutions vs native GHRH: D-Ala2, Gln8, Ala15, Leu27 (confer resistance to DPP-4 cleavage and enzymatic degradation)",
+          "C-terminal lysine extension bearing a N-\u03b5-maleimidopropionyl (MPA) group \u2014 the 'Drug Affinity Complex' (DAC) moiety",
+          "DAC forms a covalent thioether bond with Cys34 of endogenous human serum albumin in vivo, creating a long-circulating peptide-albumin conjugate",
+          "C-terminal amidation"
+        ],
+        "structureClass": "GHRH(1-29) analog with albumin-conjugating DAC linker (long-acting peptide prodrug)"
+      },
+      "classification": {
+        "peptideClass": "GHRH analog (growth hormone-releasing hormone)",
+        "mechanismFamily": "GHRH receptor (GHRHR) agonist (Gs/cAMP/PKA) \u2014 somatotroph-targeted GH secretagogue",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "A tetrasubstituted, DAC-modified analog of GHRH(1-29) (sermorelin) that covalently conjugates to serum albumin after injection, producing a long-lived albumin-bound pool that chronically activates pituitary somatotroph GHRH receptors to raise GH and IGF-1 over days rather than minutes.",
+        "localization": "Anterior pituitary somatotrophs (GHRH receptor) \u2192 systemic GH rise \u2192 hepatic IGF-1 secretion.",
+        "clinicalUses": [
+          "No approved clinical uses; was investigated for lipodystrophy and GH deficiency and reached phase 2, discontinued",
+          "Widely used off-label / in 'research-peptide' and wellness contexts for body composition and anti-aging \u2014 not supported by regulatory approval"
+        ],
+        "sideEffects": [
+          "Injection-site reactions, erythema, pruritus",
+          "Transient flushing, headache",
+          "Water retention, edema",
+          "Possible paresthesia",
+          "Elevations in IGF-1 that can contribute to joint discomfort, carpal tunnel symptoms, insulin resistance (extrapolated from GH class)",
+          "Theoretical oncologic risk from chronically elevated GH/IGF-1 axis (not demonstrated in short trials)"
+        ],
+        "dosing": {
+          "quick": "Investigational / research-only. Published human phase 1/2 trials used single or weekly subcutaneous injections in the 30-250 \u00b5g/kg range. No FDA-sanctioned dosing protocol exists.",
+          "adminRoute": "subcutaneous injection (historical trial route)",
+          "publicDisplayAllowed": false,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["GHRH (endogenous)", "GHRHR", "GH1", "IGF1"],
+        "proteins": ["Growth hormone-releasing hormone receptor (GHRHR)", "Growth hormone (GH)", "Insulin-like growth factor 1 (IGF-1)", "Human serum albumin (covalent carrier via Cys34)"],
+        "receptors": [
+          "GHRHR (class B GPCR, Gs-coupled) on anterior pituitary somatotrophs"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "somatotroph GH release",
+            "steps": [
+              "CJC-1295 DAC is injected subcutaneously and forms a covalent albumin conjugate via Michael addition of the maleimide group to albumin Cys34",
+              "Albumin-bound CJC-1295 circulates for ~6-8 days and binds GHRHR on anterior pituitary somatotrophs",
+              "Gs activation \u2192 adenylyl cyclase \u2192 cAMP rise \u2192 PKA phosphorylation \u2192 CREB-driven GH gene transcription and release",
+              "Plasma GH increases 2- to 10-fold for ~6 days after a single dose"
+            ],
+            "symbols": ["A", "H"],
+            "claimRef": "teichman-jcem-2006"
+          },
+          {
+            "category": "hepatic IGF-1 secretion",
+            "steps": [
+              "Sustained GH elevation activates hepatic GH receptor (GHR) \u2192 JAK2/STAT5 signaling",
+              "STAT5-driven IGF1 transcription raises plasma IGF-1",
+              "In human volunteers IGF-1 rose 0.5- to 3-fold for 9-11 days per dose, and remained elevated for up to 28 days with repeated dosing"
+            ],
+            "symbols": ["A", "H"],
+            "claimRef": "teichman-jcem-2006"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Small phase 1 / phase 2 trials (Teichman et al., JCEM 2006) in healthy adults showed a single subcutaneous dose of CJC-1295 DAC produced a 2- to 10-fold increase in plasma GH sustained for up to 6 days and a 1.5- to 3-fold increase in IGF-1 sustained for 9-11 days. Multiple dosing produced IGF-1 elevations lasting up to 28 days. CJC-1295 was under investigation in lipodystrophy and adult GH deficiency but development was discontinued in the mid-2000s. One phase 2 subject died during the program; the attending physician attributed the death to asymptomatic coronary artery disease and considered it unrelated to study drug, but this event contributed to the program's halt. No completed phase 3 program, no regulatory approval in any jurisdiction.",
+        "animalEvidence": "Alba et al. (Am J Physiol Endocrinol Metab 2006) showed daily, every-other-day, or every-third-day subcutaneous CJC-1295 in GHRH-knockout mice normalized body weight, length, and body composition; pituitary GH mRNA and total pituitary RNA rose, indicating somatotroph proliferation. Separate rodent PK work demonstrated the covalent albumin conjugation mechanism.",
+        "mechanismDetail": "Native GHRH(1-44) has an active N-terminal 1-29 fragment (sermorelin) with a half-life of ~7 minutes, limited by DPP-4 cleavage at the Tyr1-Ala2 bond. CJC-1295 replaces that cleavage site (D-Ala2) and three other labile residues (Gln8, Ala15, Leu27) to produce a peptide that resembles the sermorelin backbone but resists enzymatic degradation. A single C-terminal lysine is then appended bearing a maleimidopropionyl (MPA) reactive group \u2014 the Drug Affinity Complex (DAC) moiety. After subcutaneous injection, the maleimide group reacts via Michael addition with the free thiol of albumin Cys34, producing a stable thioether-linked peptide-albumin conjugate that inherits albumin's ~19-day half-life. The resulting pharmacology is a long-lived, sustained GHRHR tone that amplifies endogenous GH pulses (somatostatin-driven pulsatility is preserved because the peptide only signals through GHRHR) rather than replacing them. Downstream, GH activates hepatic GHR \u2192 JAK2/STAT5 \u2192 IGF1 transcription. An unmodified variant, 'modified GRF(1-29)' / 'CJC-1295 without DAC', shares the four amino acid substitutions but lacks the MPA-lysine \u2014 its half-life is only ~30 minutes.",
+        "safetyDetail": "Short-term human safety data are limited to small trials. Reported adverse events are mostly injection-site reactions, flushing, and transient water retention. One death occurred in the phase 2 program (attributed to pre-existing coronary artery disease and considered unrelated to study drug by the investigator), but it contributed to program termination. Long-term safety of sustained, non-pulsatile GH/IGF-1 elevation is unknown; theoretical risks include insulin resistance, edema, carpal tunnel syndrome, acromegalic changes, and possible promotion of occult malignancy \u2014 none of these have been rigorously characterized in CJC-1295 populations. Quality and identity of 'research-chemical' CJC-1295 sold online is not regulated; contamination and mislabeling are common concerns. WADA prohibits GHRH analogs in sport.",
+        "safetyRisks": [
+          {
+            "system": "cardiovascular",
+            "label": "Unresolved cardiovascular safety signal",
+            "color": "red",
+            "helpSummary": "Not demonstrated to cause cardiovascular events at trial doses",
+            "harmSummary": "A phase 2 subject died during the CJC-1295 development program; while attributed to pre-existing coronary disease, the event contributed to program discontinuation and long-term cardiovascular safety is uncharacterized",
+            "citationIds": ["wiki-cjc1295"]
+          },
+          {
+            "system": "endocrine / metabolic",
+            "label": "Chronic GH/IGF-1 elevation",
+            "color": "orange",
+            "helpSummary": "Transient GH/IGF-1 rises are part of the intended pharmacology",
+            "harmSummary": "Sustained non-pulsatile GH/IGF-1 tone may promote insulin resistance, fluid retention, carpal tunnel, acromegalic features, and theoretical tumor growth \u2014 not evaluated in long-term human trials",
+            "citationIds": ["teichman-jcem-2006", "alba-ajp-2006"]
+          },
+          {
+            "system": "quality / regulatory",
+            "label": "Unregulated research-peptide supply",
+            "color": "orange",
+            "helpSummary": "Clinical-grade material was produced for trials and is no longer available",
+            "harmSummary": "Current access is almost entirely via unregulated 'research-use-only' vendors with no guaranteed purity, sterility, or identity; banned by WADA",
+            "citationIds": ["wiki-cjc1295", "bocsci-cjc1295"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Small trials documented meaningful GH/IGF-1 elevation, but there are no controlled data in healthy non-deficient adults showing durable body-composition, strength, cognitive, or longevity benefits.",
+          "caveat": "Off-label use in healthy adults is not supported by any approved indication or long-term outcome data. Extrapolating 'more GH/IGF-1 is better' from small endocrine studies is not warranted.",
+          "citationIds": ["teichman-jcem-2006"]
+        },
+        "missingEvidence": [
+          "Long-term (>1 year) safety data in any human population",
+          "Completed phase 3 efficacy trials for any indication",
+          "Cardiovascular and oncologic outcome data",
+          "Human data in healthy adults seeking body-composition benefits (only short, small studies exist)"
+        ],
+        "anecdotalUse": [
+          "Widely used off-label in anti-aging and bodybuilding contexts, often paired with a GHRP (e.g., ipamorelin) to stack GHRH-driven GH release with ghrelin-receptor-mediated somatostatin suppression"
+        ]
+      },
+      "claims": [
+        {
+          "id": "cjc-01",
+          "field": "regulatoryStatus",
+          "value": "Not approved in any jurisdiction; clinical development was discontinued after phase 2",
+          "species": "human",
+          "context": "regulatory",
+          "population": "healthy adults and patients with lipodystrophy / GH deficiency",
+          "route": "subcutaneous",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "N"],
+          "confidence": 0.9,
+          "citationIds": ["wiki-cjc1295"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cjc-02",
+          "field": "pharmacokinetics",
+          "value": "DAC-mediated covalent albumin conjugation extends half-life to ~6-8 days in humans; a single subcutaneous dose raises GH 2- to 10-fold for up to 6 days and IGF-1 0.5- to 3-fold for 9-11 days; with repeated dosing IGF-1 remains elevated up to 28 days",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "healthy adult volunteers",
+          "route": "subcutaneous",
+          "sampleSize": null,
+          "duration": "single- and multiple-dose PK/PD",
+          "symbols": ["A", "H"],
+          "confidence": 0.85,
+          "citationIds": ["teichman-jcem-2006", "wiki-cjc1295"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "cjc-03",
+          "field": "mechanism",
+          "value": "Tetrasubstituted (D-Ala2/Gln8/Ala15/Leu27) GHRH(1-29) analog with C-terminal Lys-MPA 'DAC' that covalently binds albumin Cys34; acts as a sustained GHRHR agonist driving Gs/cAMP signaling in anterior pituitary somatotrophs to amplify endogenous GH release",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "GHRHKO mice and in vitro receptor pharmacology",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.9,
+          "citationIds": ["alba-ajp-2006", "wiki-cjc1295"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "wiki-cjc1295",
+          "sourceType": "tertiary",
+          "title": "CJC-1295 \u2014 Wikipedia",
+          "authors": [],
+          "year": 2025,
+          "url": "https://en.wikipedia.org/wiki/CJC-1295",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["cjc-01", "cjc-02", "cjc-03"],
+          "notes": "Summarizes tetrasubstitution, DAC chemistry, PK (6-8 day half-life; GH/IGF-1 duration), and trial discontinuation after a subject death attributed to pre-existing coronary disease."
+        },
+        {
+          "id": "teichman-jcem-2006",
+          "sourceType": "primary_literature",
+          "title": "Prolonged stimulation of growth hormone (GH) and insulin-like growth factor I secretion by CJC-1295, a long-acting analog of GH-releasing hormone, in healthy adults (Teichman SL, Neale A, Lawrence B, Gagnon C, Castaigne J-P, Frohman LA; JCEM 2006;91(3):799-805)",
+          "authors": ["Teichman SL", "Neale A", "Lawrence B", "Gagnon C", "Castaigne J-P", "Frohman LA"],
+          "year": 2006,
+          "url": "https://doi.org/10.1210/jc.2005-1536",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cjc-02"],
+          "notes": "Primary human PK/PD study documenting GH and IGF-1 elevation duration."
+        },
+        {
+          "id": "alba-ajp-2006",
+          "sourceType": "primary_literature",
+          "title": "Once-daily administration of CJC-1295, a long-acting growth hormone-releasing hormone (GHRH) analog, normalizes growth in the GHRH knockout mouse (Alba M, Fintini D, Sagazio A, Lawrence B, Castaigne J-P, Frohman LA, Salvatori R; AJP Endocrinol Metab 2006;291:E1290-1294)",
+          "authors": ["Alba M", "Fintini D", "Sagazio A", "Lawrence B", "Castaigne J-P", "Frohman LA", "Salvatori R"],
+          "year": 2006,
+          "url": "https://journals.physiology.org/doi/full/10.1152/ajpendo.00201.2006",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["cjc-03"],
+          "notes": "Demonstrates CJC-1295 normalizes growth in GHRH-KO mice and drives somatotroph proliferation."
+        },
+        {
+          "id": "bocsci-cjc1295",
+          "sourceType": "vendor",
+          "title": "What is CJC-1295 without DAC? (BOC Sciences)",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.bocsci.com/resources/what-is-cjc1295-without-dac.html",
+          "accessedAt": "2026-04-21",
+          "quality": "vendor",
+          "supportsClaimIds": ["cjc-03"],
+          "notes": "Vendor comparison of CJC-1295 (DAC) vs modified GRF(1-29); confirms half-life differences."
+        }
+      ]
+    },
+
+    {
+      "id": "igf-1-lr3",
+      "names": {
+        "primary": "IGF-1 LR3",
+        "aliases": ["Long R3 IGF-1", "LR3-IGF-1", "Long-R3-IGF-1"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": 9116,
+        "cas": null,
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": 83,
+        "modifications": [
+          "Based on the 70-residue human IGF-1 backbone",
+          "N-terminal 13-residue extension (MFPAMPLLSLFVN) \u2014 the 'Long' modification",
+          "Substitution of Glu3 with Arg \u2014 the 'R3' modification \u2014 which dramatically reduces affinity for IGF-binding proteins (IGFBPs)",
+          "Three intramolecular disulfide bonds retained from native IGF-1"
+        ],
+        "structureClass": "recombinant IGF-1 analog (extended, arginine-3 substituted; IGF-1R agonist with reduced IGFBP affinity)"
+      },
+      "classification": {
+        "peptideClass": "insulin-like growth factor (IGF) analog",
+        "mechanismFamily": "IGF-1 receptor (IGF-1R) agonist (receptor tyrosine kinase \u2192 PI3K/AKT/mTOR and MAPK/ERK)",
+        "regulatoryStatus": "research_only"
+      },
+      "tile": {
+        "mechanismSummary": "Synthetic, recombinant IGF-1 analog engineered with an N-terminal 13-amino-acid extension and a Glu3\u2192Arg substitution so it retains full IGF-1 receptor agonism but binds IGF-binding proteins very weakly, keeping more peptide free and bioactive and extending plasma half-life to ~20-30 hours.",
+        "localization": "IGF-1R-expressing tissues \u2014 especially skeletal muscle, liver, bone, neurons, cartilage.",
+        "clinicalUses": [
+          "No approved human therapeutic use. Native recombinant IGF-1 (mecasermin / Increlex) is FDA-approved for severe primary IGF-1 deficiency; IGF-1 LR3 is not approved for any indication.",
+          "Used as a research reagent (e.g., in cell culture media) and widely used off-label in athletic / 'research peptide' contexts for anabolic purposes \u2014 not supported by regulatory approval."
+        ],
+        "sideEffects": [
+          "Hypoglycemia (especially at higher doses or when combined with insulin)",
+          "Muscle and joint pain",
+          "Headache",
+          "Nausea",
+          "Injection-site reactions",
+          "Theoretical promotion of occult malignancy via IGF-1R activation (not demonstrated in short-term human data)",
+          "Prohibited in competitive sport (WADA)"
+        ],
+        "dosing": {
+          "quick": "Research-only; no approved human dosing protocol exists. Community 'research peptide' protocols commonly cite 20-100 \u00b5g subcutaneous once daily, but these are not clinically validated.",
+          "adminRoute": "subcutaneous injection (research-only)",
+          "publicDisplayAllowed": false,
+          "context": "research_only"
+        }
+      },
+      "biology": {
+        "genes": ["IGF1", "IGF1R", "IGFBP1", "IGFBP2", "IGFBP3", "IGFBP4", "IGFBP5", "IGFBP6"],
+        "proteins": ["Insulin-like growth factor 1 receptor (IGF-1R)", "Insulin receptor (IR) \u2014 low-affinity cross-talk", "IGF-binding proteins 1-6 (IGFBPs)"],
+        "receptors": [
+          "IGF-1 receptor (IGF-1R, receptor tyrosine kinase)",
+          "Hybrid IGF-1R/insulin receptor (at supraphysiologic concentrations)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "anabolic signaling",
+            "steps": [
+              "IGF-1 LR3 binds IGF-1R on the cell surface",
+              "Autophosphorylation of the IGF-1R \u03b2-subunit tyrosine kinase domain",
+              "Recruitment of IRS-1/IRS-2 adaptors and Shc",
+              "PI3K activation \u2192 AKT phosphorylation \u2192 mTORC1 activation \u2192 increased protein synthesis and cellular hypertrophy; AKT-mediated inhibition of FoxO and GSK3\u03b2 reduces protein breakdown",
+              "Parallel MAPK/ERK1/2 activation drives satellite cell proliferation and myoblast differentiation"
+            ],
+            "symbols": ["A", "H"],
+            "claimRef": "peptideuniversity-igf1lr3"
+          },
+          {
+            "category": "evasion of IGFBP regulation",
+            "steps": [
+              "Glu3\u2192Arg substitution plus the 13-aa N-terminal extension destabilize the IGFBP-binding interface",
+              "IGFBPs (especially IGFBP-3) retain free native IGF-1 in circulation; IGF-1 LR3 largely escapes this pool",
+              "A higher fraction of IGF-1 LR3 remains receptor-available, yielding greater bioactivity per molecule and a ~20-30 h plasma half-life vs ~10-20 min for native IGF-1"
+            ],
+            "symbols": ["A"],
+            "claimRef": "wiki-igf1lr3"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "No controlled human trials support IGF-1 LR3 as a therapeutic. Native IGF-1 (mecasermin / Increlex) has FDA approval for severe primary IGF-1 deficiency; that approval does not extend to IGF-1 LR3. Short-term intravenous or subcutaneous IGF-1 (native) in humans produces hypoglycemia and suppresses GH. Trials using the closely related LR3 analog in humans are essentially absent \u2014 most human data are extrapolations from native IGF-1 pharmacology and from preclinical IGF-1 LR3 studies in rodents and cell models.",
+        "animalEvidence": "Extensive preclinical work shows IGF-1 LR3 is ~3\u00d7 more potent than native IGF-1 in muscle cell proliferation and protein-synthesis assays, reflecting its reduced IGFBP affinity and longer half-life. Rodent studies confirm anabolic effects on skeletal muscle, stimulation of satellite cell proliferation, and pro-differentiation effects on myoblasts. IGF-1 LR3 is routinely used as a cell-culture reagent in stem cell, tissue engineering, and vaccine manufacturing.",
+        "mechanismDetail": "Native IGF-1 is a 70-amino-acid peptide with three intramolecular disulfide bonds and a plasma half-life of ~10-20 minutes, constrained by rapid binding to IGFBPs (especially IGFBP-3) that form a ternary complex with the acid-labile subunit. IGF-1 LR3 adds 13 amino acids (MFPAMPLLSLFVN) at the N-terminus and swaps Glu3 for Arg, producing an 83-residue analog. These modifications preserve full agonism at IGF-1R but reduce IGFBP affinity by several orders of magnitude, so a larger fraction of circulating LR3 is free and receptor-available. Half-life extends to ~20-30 hours. Relative to insulin receptor engagement, IGF-1 LR3 also shows ~10-fold lower IR cross-reactivity than native IGF-1, favoring IGF-1R-specific anabolic signaling over insulin-like glucose disposal. Downstream, IGF-1R activation drives PI3K/AKT/mTORC1 (protein synthesis, anti-proteolysis, satellite cell survival) and MAPK/ERK1/2 (satellite cell proliferation, myoblast differentiation) cascades. At concentrations above ~500 nM, hybrid IGF-1R/IR receptor engagement becomes significant and introduces insulin-like glucose uptake effects.",
+        "safetyDetail": "Acute safety concerns reflect the IGF-1 class: hypoglycemia (more likely with rapid-acting or high doses, or with concomitant insulin), injection-site reactions, myalgia/arthralgia, and headache. Long-term safety of supraphysiologic IGF-1R stimulation in healthy adults is not established; IGF-1R activation is implicated in the proliferation of multiple cancer types, so chronic off-label use raises theoretical oncologic concern. There are case reports of central serous chorioretinopathy attributed to high-dose off-label IGF-1 analog use. IGF-1 LR3 is banned in sport by WADA. 'Research-peptide' supply is unregulated; purity, identity, and sterility are not guaranteed.",
+        "safetyRisks": [
+          {
+            "system": "endocrine / metabolic",
+            "label": "Hypoglycemia",
+            "color": "red",
+            "helpSummary": "Controlled research dosing minimizes this risk",
+            "harmSummary": "Potent IGF-1R agonism and low-affinity insulin-receptor crossover can drop blood glucose, especially with high doses or insulin co-use",
+            "citationIds": ["chemicalbook-igf1lr3", "hubmed-igf1lr3"]
+          },
+          {
+            "system": "oncologic (theoretical)",
+            "label": "IGF-1R stimulation and cancer risk",
+            "color": "orange",
+            "helpSummary": "Short-term use in research settings has not demonstrated tumor development",
+            "harmSummary": "Chronic supraphysiologic IGF-1R activation is mechanistically linked to proliferation of several tumor types; long-term safety in healthy users is uncharacterized",
+            "citationIds": ["hubmed-igf1lr3", "chemicalbook-igf1lr3"]
+          },
+          {
+            "system": "ophthalmologic",
+            "label": "Central serous chorioretinopathy (case reports)",
+            "color": "yellow",
+            "helpSummary": "Not reported at research-dose ranges",
+            "harmSummary": "High-dose off-label IGF-1/IGF-1 LR3 use has been associated with CSC-like vision changes in case reports",
+            "citationIds": ["hubmed-igf1lr3"]
+          },
+          {
+            "system": "quality / regulatory",
+            "label": "Research-peptide supply, sports-ban",
+            "color": "orange",
+            "helpSummary": "Clinical-grade IGF-1 (mecasermin) is available under regulated prescription",
+            "harmSummary": "IGF-1 LR3 sold for 'research use only' lacks regulatory oversight; prohibited in competitive sport by WADA",
+            "citationIds": ["wiki-igf1lr3"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Preclinical data support anabolic and satellite-cell effects in muscle. There are no controlled human trials demonstrating durable, safe enhancement of body composition or performance in healthy adults.",
+          "caveat": "Extrapolation from rodent / cell-culture data to healthy humans is speculative. The best-studied IGF-1 therapeutic (mecasermin) is reserved for severe IGF-1 deficiency because of hypoglycemia and other safety constraints even in severely deficient patients.",
+          "citationIds": ["wiki-igf1lr3", "peptideuniversity-igf1lr3"]
+        },
+        "missingEvidence": [
+          "Randomized controlled human trials of IGF-1 LR3 for any indication",
+          "Long-term safety and oncologic outcome data",
+          "Pharmacokinetic / pharmacodynamic studies in healthy adults",
+          "Dose-response data in aging or sarcopenia populations"
+        ],
+        "anecdotalUse": [
+          "Used off-label in bodybuilding contexts for claimed muscle hypertrophy and recovery; often stacked with GH secretagogues",
+          "Used as a cell-culture reagent in academic and biomanufacturing research"
+        ]
+      },
+      "claims": [
+        {
+          "id": "igf1lr3-01",
+          "field": "regulatoryStatus",
+          "value": "Not approved by any regulator for human therapeutic use; research-reagent grade only. Native IGF-1 (mecasermin/Increlex) is FDA-approved for severe primary IGF-1 deficiency but that approval does not extend to the LR3 analog",
+          "species": "human",
+          "context": "regulatory",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "N"],
+          "confidence": 0.95,
+          "citationIds": ["wiki-igf1lr3"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "igf1lr3-02",
+          "field": "mechanism",
+          "value": "83-residue recombinant IGF-1 analog (13-aa N-terminal extension + Glu3\u2192Arg) that retains full IGF-1R agonism while binding IGFBPs weakly; ~3\u00d7 more potent than native IGF-1 with ~20-30 h half-life vs ~10-20 min",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "in vitro receptor and cell assays; rodent PK studies",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.9,
+          "citationIds": ["wiki-igf1lr3", "peptideuniversity-igf1lr3"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "igf1lr3-03",
+          "field": "anabolicSignaling",
+          "value": "IGF-1R activation \u2192 PI3K/AKT/mTORC1 (protein synthesis, anti-proteolysis) and MAPK/ERK (satellite cell proliferation, myoblast differentiation)",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "myoblast cell lines, rodent muscle",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A"],
+          "confidence": 0.9,
+          "citationIds": ["peptideuniversity-igf1lr3", "hubmed-igf1lr3"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "wiki-igf1lr3",
+          "sourceType": "tertiary",
+          "title": "IGF-1 LR3 \u2014 Wikipedia",
+          "authors": [],
+          "year": 2023,
+          "url": "https://en.wikipedia.org/wiki/IGF-1_LR3",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["igf1lr3-01", "igf1lr3-02"],
+          "notes": "Defines 83-aa analog, Glu3\u2192Arg, 13-aa N-terminal extension MFPAMPLLSLFVN, 20-30 h half-life, and reduced IGFBP affinity."
+        },
+        {
+          "id": "peptideuniversity-igf1lr3",
+          "sourceType": "secondary_review",
+          "title": "IGF-1 LR3: Properties, Mechanisms, and Applications in Muscle Physiology \u2014 The Peptide University",
+          "authors": [],
+          "year": 2026,
+          "url": "https://thepeptideuniversity.com/blogs/articles/igf-1-lr3-properties-mechanisms-and-applications-in-muscle-physiology",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["igf1lr3-02", "igf1lr3-03"],
+          "notes": "Summarizes PI3K/AKT/mTOR and MAPK/ERK cascade details."
+        },
+        {
+          "id": "chemicalbook-igf1lr3",
+          "sourceType": "secondary_review",
+          "title": "Mechanism and Side Effects of IGF-1 LR3 \u2014 ChemicalBook",
+          "authors": [],
+          "year": 2022,
+          "url": "https://www.chemicalbook.com/article/mechanism-and-side-effects-of-igf-1-lr3.htm",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["igf1lr3-02"],
+          "notes": "Secondary summary of MFPAMPLLSLFVN extension, 83-aa length, ~20-30 h life, and reported side effects."
+        },
+        {
+          "id": "hubmed-igf1lr3",
+          "sourceType": "secondary_review",
+          "title": "IGF-1 LR3 in Aesthetic and Anti-Aging Medicine: Benefits and Risks \u2014 HubMedEd",
+          "authors": [],
+          "year": 2026,
+          "url": "https://www.hubmeded.com/blog/igf-1-lr3-in-aesthetic-anti-aging-medicine-benefits-and-risks",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["igf1lr3-03"],
+          "notes": "Discusses glucose, oncologic and WADA considerations."
+        }
+      ]
+    },
+
+    {
+      "id": "follistatin-344",
+      "names": {
+        "primary": "Follistatin 344",
+        "aliases": ["FS-344", "FST-344", "Follistatin-344", "FST344"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": 37000,
+        "cas": null,
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": 344,
+        "modifications": [
+          "344-residue precursor isoform of follistatin generated by alternative splicing of the FST gene; post-translationally processed to the mature ~315-residue serum form (FS-315)",
+          "Three cysteine-rich follistatin domains (FSD1, FSD2, FSD3) each stabilized by 10 conserved disulfide bonds",
+          "N-terminal domain mediates type I TGF-\u03b2-family ligand binding (myostatin, activin, GDF-11, select BMPs)",
+          "Alternative splice isoforms: FS-288 (membrane/heparan-sulfate-binding, 288-aa), FS-315 (serum, 315-aa); FS-344 is the 344-aa precursor that is cleaved to FS-315"
+        ],
+        "structureClass": "glycoprotein of the follistatin family; TGF-\u03b2 superfamily ligand trap (activin / myostatin / GDF-11 inhibitor)"
+      },
+      "classification": {
+        "peptideClass": "follistatin glycoprotein (TGF-\u03b2 superfamily ligand trap)",
+        "mechanismFamily": "extracellular antagonist of myostatin (GDF-8), activins A/B, GDF-11, and select BMPs \u2014 prevents ligand binding to ActRIIB / ALK receptors",
+        "regulatoryStatus": "investigational"
+      },
+      "tile": {
+        "mechanismSummary": "Secreted glycoprotein that binds and neutralizes multiple TGF-\u03b2 superfamily ligands (most notably myostatin/GDF-8 and activin A/B), preventing their engagement of ActRIIB / ALK4/5 and thereby lifting the SMAD2/3-mediated brake on skeletal muscle growth.",
+        "localization": "Extracellular space of skeletal muscle and most tissues; FS-315 circulates in serum, FS-288 binds heparan sulfate proteoglycans on cell surfaces.",
+        "clinicalUses": [
+          "No approved clinical uses",
+          "Investigated as AAV1-delivered FS344 gene therapy for Becker muscular dystrophy (Mendell/Al-Zaidy et al., phase 1/2a); not approved",
+          "Preclinical investigation in Duchenne muscular dystrophy, sarcopenia, inclusion body myositis, and cachexia models"
+        ],
+        "sideEffects": [
+          "Case report of central serous chorioretinopathy with high-dose off-label injectable follistatin",
+          "Theoretical reproductive endocrine effects via activin binding \u2192 altered FSH",
+          "Off-target effects on BMP signaling (bone remodeling, vasculature) with systemic exposure",
+          "Immunogenicity concerns with repeated exogenous protein administration",
+          "AAV gene therapy carries vector-specific risks (immune response, liver enzyme elevation)",
+          "Prohibited in sport by WADA (Section S4.4, myostatin modulators)"
+        ],
+        "dosing": {
+          "quick": "Investigational. Human exposure is essentially limited to the AAV1-FS344 gene therapy phase 1/2a trial in Becker muscular dystrophy, which used intramuscular AAV1 injection to specific muscles; there is no validated injectable-peptide dosing protocol in humans.",
+          "adminRoute": "intramuscular AAV gene therapy (trial); exogenous protein injection has no validated human dosing",
+          "publicDisplayAllowed": false,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["FST (follistatin gene)", "MSTN (myostatin)", "INHBA (activin A \u03b2A subunit)", "INHBB (activin B \u03b2B subunit)", "GDF11", "ACVR2A", "ACVR2B", "SMAD2", "SMAD3"],
+        "proteins": ["Follistatin (isoforms FS-288, FS-315, FS-344)", "Myostatin / GDF-8", "Activin A and Activin B", "GDF-11", "ActRIIB (type II receptor)", "ALK4/ALK5 (type I receptors)", "SMAD2/3"],
+        "receptors": [
+          "Follistatin has no intrinsic receptor; it sequesters ligands that otherwise bind ActRIIB-ALK4/5 complexes on muscle cells"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "TGF-\u03b2 superfamily: myostatin (GDF-8)",
+            "effect": "follistatin binds and neutralizes myostatin",
+            "context": "prevents SMAD2/3-driven catabolic gene expression in muscle",
+            "symbols": ["A"],
+            "citationIds": ["al-zaidy-follistatin-review-2015"]
+          },
+          {
+            "name": "Activin A / Activin B",
+            "effect": "high-affinity sequestration by follistatin (K_d ~50-100 pM for activin A)",
+            "context": "activin binding is essentially irreversible; complex cleared via receptor-mediated endocytosis",
+            "symbols": ["A"],
+            "citationIds": ["peptideinsight-fst344"]
+          },
+          {
+            "name": "GDF-11 and select BMPs (BMP-2, -4, -6, -7)",
+            "effect": "bound with lower affinity than activin/myostatin",
+            "context": "affects bone remodeling and neural development \u2014 basis for BMP-related safety considerations",
+            "symbols": ["A", "?"],
+            "citationIds": ["cenexalabs-fst344"]
+          }
+        ],
+        "cascades": [
+          {
+            "category": "myostatin pathway inhibition",
+            "steps": [
+              "Normally: myostatin (GDF-8) binds ActRIIB on skeletal muscle, recruits ALK4/5, phosphorylates SMAD2/3, promotes atrophic gene programs and suppresses protein synthesis",
+              "Follistatin binds myostatin extracellularly and blocks ActRIIB engagement",
+              "SMAD2/3 signaling is silenced; satellite cell proliferation and muscle fiber hypertrophy proceed without the usual myostatin brake"
+            ],
+            "symbols": ["A", "H"],
+            "claimRef": "kota-sciencetranslational-2009"
+          },
+          {
+            "category": "multi-ligand trap",
+            "steps": [
+              "Follistatin also sequesters activin A/B and GDF-11, removing additional TGF-\u03b2 family negative regulators of muscle and tissue growth",
+              "Transgenic overexpression of follistatin produces 194-327% increase in mouse muscle mass \u2014 larger than the myostatin-KO phenotype \u2014 because follistatin neutralizes multiple ligands, not myostatin alone"
+            ],
+            "symbols": ["A"],
+            "claimRef": "haidet-pnas-2008"
+          },
+          {
+            "category": "reproductive endocrine axis",
+            "steps": [
+              "Activin B stimulates pituitary FSH secretion",
+              "Follistatin isoforms bind activin and reduce pituitary activin availability",
+              "FS-344/FS-315 has ~10-fold lower affinity for activin than FS-288, which is why FS-344 was selected for gene therapy \u2014 to minimize systemic FSH suppression and reproductive side effects"
+            ],
+            "symbols": ["A", "?"],
+            "claimRef": "al-zaidy-follistatin-review-2015"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Limited. The best-documented human exposure is a phase 1/2a trial of intramuscular AAV1-FS344 gene therapy in Becker muscular dystrophy (Mendell, Al-Zaidy et al.), which reported improvements in 6-minute walk distance and quadriceps strength and was generally well tolerated. Systemic follistatin levels remained below thresholds that alter FSH or activin signaling, consistent with primarily local muscle expression. No randomized, placebo-controlled trials of exogenous follistatin-344 protein injection exist in humans; almost all 'peptide' injection data are uncontrolled, anecdotal, or extrapolated from gene therapy.",
+        "animalEvidence": "Transgenic mice expressing high follistatin show 194-327% muscle mass increases (Lee & McPherron 2001) \u2014 greater than myostatin-KO \u2014 reflecting multi-ligand neutralization. Single intramuscular AAV1-FS344 injection in mdx mice produced muscle hypertrophy and improved strength sustained for >2 years (Haidet et al., PNAS 2008). Nonhuman primate (cynomolgus macaque) studies demonstrated ~15-20% increases in muscle size from AAV-delivered follistatin, validating the gene therapy approach for translation.",
+        "mechanismDetail": "The FST gene produces two primary splice isoforms: FS-344, which is post-translationally processed into the mature 315-residue circulating form (FS-315), and FS-317, which yields the membrane-associated 288-residue form (FS-288). FS-288 has ~10-fold higher affinity for activin and binds heparan sulfate proteoglycans strongly, localizing to ovarian follicles and the pituitary \u2014 where it potently suppresses FSH. FS-344/FS-315 circulates in serum, has lower activin affinity, and is the preferred isoform for therapeutic development because it produces muscle-directed effects with substantially less pituitary-FSH suppression. All isoforms share three cysteine-rich follistatin domains and act extracellularly as high-affinity traps for myostatin, activin A/B, GDF-11, and (with lower affinity) several BMPs. The follistatin-activin complex is essentially irreversible (K_d ~50-100 pM) and is cleared via receptor-mediated endocytosis. By sequestering these ligands, follistatin prevents engagement of ActRIIB-ALK4/5 receptor complexes and silences SMAD2/3-driven atrophic gene programs in muscle, releasing satellite cell proliferation and myofiber hypertrophy.",
+        "safetyDetail": "Gene therapy (AAV1-FS344) was generally well tolerated in the Becker muscular dystrophy phase 1/2a, with no significant reproductive endocrine changes detected. Safety of exogenous protein injection in healthy adults is essentially uncharacterized. Theoretical concerns: (1) reproductive endocrine effects (activin binding \u2192 reduced FSH, potential menstrual or spermatogenic changes) \u2014 mitigated but not eliminated by the FS-344/FS-315 isoform's lower activin affinity; (2) off-target BMP antagonism (bone remodeling, angiogenesis); (3) immunogenicity with repeated dosing of exogenous protein; (4) rapid serum clearance of injected follistatin (half-life ~90 minutes) means subcutaneous injections likely produce much weaker sustained effects than gene-therapy expression. A case report describes central serous chorioretinopathy in an individual using a high-dose injectable follistatin. Follistatin is prohibited in sport by WADA.",
+        "safetyRisks": [
+          {
+            "system": "reproductive / endocrine",
+            "label": "Activin binding \u2192 FSH suppression",
+            "color": "orange",
+            "helpSummary": "FS-344/FS-315 has lower activin affinity than FS-288; gene therapy data show minimal systemic FSH change",
+            "harmSummary": "Systemic high-dose exposure could still suppress FSH and disrupt fertility; reproductive endpoints are not systematically monitored in off-label use",
+            "citationIds": ["al-zaidy-follistatin-review-2015", "haidet-pnas-2008"]
+          },
+          {
+            "system": "bone / vascular",
+            "label": "BMP antagonism",
+            "color": "yellow",
+            "helpSummary": "Clinically silent in short-term gene therapy trials",
+            "harmSummary": "Follistatin also binds BMPs that regulate osteogenesis and vascular integrity; chronic systemic use could plausibly affect bone or vessel biology",
+            "citationIds": ["cenexalabs-fst344", "newtropin-fst344"]
+          },
+          {
+            "system": "ophthalmologic",
+            "label": "Central serous chorioretinopathy (case report)",
+            "color": "yellow",
+            "helpSummary": "Not reported in gene-therapy trials",
+            "harmSummary": "A case report describes CSC with high-dose (~1 mg) single injection of follistatin peptide, 10\u00d7 typical community protocol",
+            "citationIds": ["pep-pedia-fst344"]
+          },
+          {
+            "system": "pharmacokinetic / quality",
+            "label": "Short peptide half-life, unregulated supply",
+            "color": "orange",
+            "helpSummary": "Gene therapy provides sustained local expression",
+            "harmSummary": "Injected follistatin protein has ~90-minute half-life, so daily injections are unlikely to reproduce gene-therapy effects; 'research-use-only' products lack quality control; WADA-banned",
+            "citationIds": ["pep-pedia-fst344", "cenexalabs-fst344"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Strong myostatin biology and compelling gene-therapy data in animals and in one BMD trial. Evidence for exogenous follistatin-344 peptide injection producing meaningful muscle gains in healthy humans is essentially absent.",
+          "caveat": "Gene therapy (sustained, local expression) is fundamentally different pharmacology from a transient subcutaneous peptide injection. Extrapolating gene-therapy muscle effects to 'research peptide' injections in healthy adults is not supported.",
+          "citationIds": ["al-zaidy-follistatin-review-2015", "peptideinsight-fst344"]
+        },
+        "missingEvidence": [
+          "Randomized controlled human trials of exogenous follistatin-344 protein injection",
+          "Dose-response data in healthy adults",
+          "Long-term reproductive, bone, and vascular safety outcomes",
+          "Pharmacokinetic characterization of subcutaneous follistatin in humans"
+        ],
+        "anecdotalUse": [
+          "Used off-label in bodybuilding / 'research peptide' circles at 100-200 \u00b5g/day SC for muscle hypertrophy \u2014 not supported by controlled human data",
+          "AAV-FS344 remains an active research program for muscular dystrophy and sarcopenia"
+        ]
+      },
+      "claims": [
+        {
+          "id": "fst344-01",
+          "field": "regulatoryStatus",
+          "value": "Investigational. One completed phase 1/2a AAV1-FS344 gene therapy trial in Becker muscular dystrophy; no approved therapeutic use anywhere; prohibited in competitive sport under WADA S4.4",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "Becker muscular dystrophy patients",
+          "route": "intramuscular AAV1 injection",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "Rx"],
+          "confidence": 0.9,
+          "citationIds": ["al-zaidy-follistatin-review-2015", "cenexalabs-fst344"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "fst344-02",
+          "field": "mechanism",
+          "value": "344-aa precursor isoform processed to serum FS-315; selected over FS-288 because of ~10-fold lower activin affinity; sequesters myostatin (GDF-8), activins A/B, GDF-11, and certain BMPs to block ActRIIB-SMAD2/3 signaling in muscle",
+          "species": "mixed",
+          "context": "preclinical",
+          "population": "transgenic mice, mdx mice, nonhuman primates, in vitro receptor assays",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.92,
+          "citationIds": ["haidet-pnas-2008", "al-zaidy-follistatin-review-2015"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "fst344-03",
+          "field": "preclinicalEfficacy",
+          "value": "Transgenic follistatin mice develop 194-327% muscle mass increases via combined hyperplasia and hypertrophy; single AAV1-FS344 IM injection sustains muscle hypertrophy and improved function in mdx mice for >2 years; nonhuman primate studies show ~15-20% muscle size increases",
+          "species": "animal",
+          "context": "preclinical",
+          "population": "transgenic mice, mdx mice, cynomolgus macaques",
+          "route": "transgenic / AAV1 IM",
+          "sampleSize": null,
+          "duration": ">2 years in mouse models",
+          "symbols": ["A"],
+          "confidence": 0.95,
+          "citationIds": ["haidet-pnas-2008", "kota-sciencetranslational-2009"],
+          "needsModeratorReview": false
+        }
+      ],
+      "citations": [
+        {
+          "id": "al-zaidy-follistatin-review-2015",
+          "sourceType": "primary_literature",
+          "title": "Follistatin Gene Therapy Improves Ambulation in Becker Muscular Dystrophy (Al-Zaidy SA, Sahenk Z, Rodino-Klapac LR, Kaspar B, Mendell JR; J Neuromuscul Dis 2015)",
+          "authors": ["Al-Zaidy SA", "Sahenk Z", "Rodino-Klapac LR", "Kaspar B", "Mendell JR"],
+          "year": 2015,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5240576/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["fst344-01", "fst344-02"],
+          "notes": "Reviews FS344/FS315 rationale and the first AAV1-FS344 human gene therapy trial in BMD."
+        },
+        {
+          "id": "haidet-pnas-2008",
+          "sourceType": "primary_literature",
+          "title": "Long-term enhancement of skeletal muscle mass and strength by single gene administration of myostatin inhibitors (Haidet AM et al., PNAS 2008)",
+          "authors": ["Haidet AM", "Rizo L", "Handy C", "et al."],
+          "year": 2008,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2393740/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["fst344-02", "fst344-03"],
+          "notes": "Demonstrates superiority of FS-344 AAV delivery over GASP-1/FLRG in wild-type and mdx mice; 2+ year durability and preserved cardiac/reproductive function."
+        },
+        {
+          "id": "kota-sciencetranslational-2009",
+          "sourceType": "primary_literature",
+          "title": "Follistatin gene delivery enhances muscle growth and strength in nonhuman primates (Kota J et al., Sci Transl Med 2009)",
+          "authors": ["Kota J", "Handy CR", "Haidet AM", "Rodino-Klapac LR", "Kaspar BK", "Mendell JR"],
+          "year": 2009,
+          "url": "https://doi.org/10.1126/scitranslmed.3000112",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["fst344-03"],
+          "notes": "Cynomolgus macaque AAV-follistatin study \u2014 key translational primate data."
+        },
+        {
+          "id": "peptideinsight-fst344",
+          "sourceType": "secondary_review",
+          "title": "Follistatin-344 (FST-344): Research Evidence & Safety Profile \u2014 PeptideInsight",
+          "authors": [],
+          "year": 2026,
+          "url": "https://peptideinsight.com/en/peptides/follistatin-344",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["fst344-02"],
+          "notes": "Summarizes activin/myostatin binding affinities and clearance kinetics."
+        },
+        {
+          "id": "cenexalabs-fst344",
+          "sourceType": "secondary_review",
+          "title": "Follistatin-344 Peptide Research Guide \u2014 Cenexa Labs",
+          "authors": [],
+          "year": 2026,
+          "url": "https://cenexalabs.com/follistatin-344-research-overview/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["fst344-01"],
+          "notes": "Describes WADA Section S4.4 prohibition and research-only classification."
+        },
+        {
+          "id": "newtropin-fst344",
+          "sourceType": "secondary_review",
+          "title": "Follistatin-344: Myostatin Regulation & Muscle Signaling",
+          "authors": [],
+          "year": 2026,
+          "url": "https://newtropin.com/peptides/follistatin-344/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["fst344-02"],
+          "notes": "Discusses BMP binding affinity range and multi-ligand profile."
+        },
+        {
+          "id": "pep-pedia-fst344",
+          "sourceType": "secondary_review",
+          "title": "Pep-pedia \u2014 Follistatin-344 profile (half-life, case reports)",
+          "authors": [],
+          "year": 2026,
+          "url": "https://pep-pedia.org/peptides/follistatin-344",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["fst344-01"],
+          "notes": "~90-minute injectable half-life; CSC case report; WADA status."
+        }
+      ]
+    },
+
+    {
+      "id": "kisspeptin",
+      "names": {
+        "primary": "Kisspeptin",
+        "aliases": ["Kisspeptin-54 (KP54, metastin)", "Kisspeptin-14 (KP14)", "Kisspeptin-13 (KP13)", "Kisspeptin-10 (KP10)", "KISS1 peptide"],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": null,
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": "Kisspeptin-10 (human): H-Tyr-Asn-Trp-Asn-Ser-Phe-Gly-Leu-Arg-Phe-NH2 (YNWNSFGLRF-NH2)",
+        "length": 54,
+        "modifications": [
+          "Encoded by KISS1 (chromosome 1q32) as a 145-residue prepro-kisspeptin",
+          "Proteolytic processing generates KP54 (the principal circulating form) and the shorter KP14, KP13, and KP10",
+          "All active kisspeptins share an amidated C-terminal Arg-Phe-NH2 (RF-NH2) motif essential for KISS1R binding",
+          "Short plasma half-life in humans (~4 minutes for KP10; tens of minutes for KP54)"
+        ],
+        "structureClass": "RFamide neuropeptide family (KP54 main product; KP10 minimal receptor-active fragment)"
+      },
+      "classification": {
+        "peptideClass": "RFamide neuropeptide (KISS1 gene product)",
+        "mechanismFamily": "KISS1R (GPR54) agonist \u2014 Gq/11 \u2192 PLC \u2192 IP3/Ca2+/DAG-PKC \u2192 ERK1/2, p38",
+        "regulatoryStatus": "investigational"
+      },
+      "tile": {
+        "mechanismSummary": "Endogenous hypothalamic neuropeptide family encoded by KISS1 that acts on the GPCR KISS1R (GPR54) on GnRH neurons to trigger pulsatile GnRH release \u2014 the master upstream switch of puberty, the reproductive axis, and the mid-cycle LH surge.",
+        "localization": "Hypothalamic KNDy neurons (arcuate nucleus, AVPV/preoptic area) \u2192 GnRH neuron cell bodies and terminals in the median eminence \u2192 anterior pituitary gonadotrophs.",
+        "clinicalUses": [
+          "No approved therapeutic indications",
+          "Investigational for IVF oocyte maturation / ovulation trigger (KP54, reduced OHSS risk)",
+          "Investigational for hypothalamic amenorrhea and PCOS reproductive dysfunction",
+          "Diagnostic probe of GnRH neuron function (kisspeptin challenge test)",
+          "Investigational for hypoactive sexual desire disorder (HSDD) based on Imperial College London trials"
+        ],
+        "sideEffects": [
+          "Transient headache",
+          "Mild nausea (at higher infusion rates)",
+          "Injection-site discomfort",
+          "Theoretical reproductive/endocrine effects of chronic administration (tachyphylaxis with sustained high exposure)",
+          "Overall safety profile in completed human trials has been favorable"
+        ],
+        "dosing": {
+          "quick": "Investigational only. Published human regimens include: IVF trigger (KP54) single SC injection ~3.2-12.8 nmol/kg; hypothalamic amenorrhea (KP54) 0.01-1.00 nmol/kg/hr IV infusion; HSDD studies (KP54) 1 nmol/kg/hr IV for ~75 min; KP10 ~1 \u00b5g/kg IV bolus for physiological probing.",
+          "adminRoute": "intravenous infusion or subcutaneous injection (research)",
+          "publicDisplayAllowed": true,
+          "context": "clinical_trial"
+        }
+      },
+      "biology": {
+        "genes": ["KISS1", "KISS1R (GPR54)", "GNRH1", "LHB", "FSHB", "TAC3 (neurokinin B)", "PDYN (dynorphin)"],
+        "proteins": ["Kisspeptin isoforms (KP54, KP14, KP13, KP10)", "KISS1R / GPR54 (class A Gq/11-coupled GPCR)", "GnRH", "Luteinizing hormone (LH)", "Follicle-stimulating hormone (FSH)", "Neurokinin B, Dynorphin (co-expressed by KNDy neurons)"],
+        "receptors": [
+          "KISS1R / GPR54 (7-transmembrane Gq/11-coupled GPCR expressed on GnRH neurons and in peripheral tissues)"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "HPG axis activation",
+            "steps": [
+              "Hypothalamic KNDy neurons (arcuate nucleus) release kisspeptin onto GnRH neurons",
+              "Kisspeptin binds KISS1R on GnRH neurons \u2192 Gq/11 \u2192 PLC\u03b2 \u2192 PIP2 \u2192 IP3 + DAG",
+              "IP3 releases intracellular Ca2+; DAG activates PKC; downstream MAPK (ERK1/2) and p38 phosphorylation sustain depolarization",
+              "GnRH neuron firing increases \u2192 pulsatile GnRH release into hypophyseal portal circulation",
+              "Anterior pituitary gonadotrophs release LH and FSH \u2192 gonadal sex steroid production and gametogenesis"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "seminara-nejm-2003"
+          },
+          {
+            "category": "sex steroid feedback",
+            "steps": [
+              "Arcuate KNDy neurons mediate sex-steroid negative feedback on GnRH pulsatility",
+              "AVPV / preoptic kisspeptin neurons mediate positive feedback driving the preovulatory LH surge in females",
+              "Dysregulation of this system underlies hypogonadotropic hypogonadism (KISS1 / KISS1R loss-of-function) and central precocious puberty (gain-of-function)"
+            ],
+            "symbols": ["H"],
+            "claimRef": "seminara-nejm-2003"
+          },
+          {
+            "category": "limbic/sexual brain circuits",
+            "steps": [
+              "Kisspeptin signaling extends beyond the hypothalamus into limbic structures implicated in sexual arousal and bonding",
+              "Imperial College studies (Thurston/Mills/Dhillo) show KP54 infusion enhances sexual brain processing and penile tumescence/subjective desire in HSDD"
+            ],
+            "symbols": ["H", "?"],
+            "claimRef": "thurston-jama-2022"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Extensive human physiological and phase 1/2 trial data. (1) Pediatric and adult genetic studies: loss-of-function KISS1R mutations cause congenital GnRH deficiency and failure to enter puberty; gain-of-function mutations cause central precocious puberty (Seminara et al., de Roux et al., NEJM/PNAS 2003). (2) Reproductive endocrinology: KP54 and KP10 infusion robustly raise LH/FSH in healthy adults; KP54 has been used successfully as an IVF oocyte-maturation trigger with a favorable ovarian hyperstimulation syndrome (OHSS) profile. (3) Hypothalamic amenorrhea and PCOS: KP54 partially restores pulsatile LH in hypothalamic amenorrhea; analogs like TAK-448 and MVT-602 have shown agonist activity in healthy women and women with PCOS/HA. (4) Sexual desire disorders: two double-blind crossover trials at Imperial College London (Thurston et al., JAMA Network Open 2022, n=32 women with HSDD; Mills et al., JAMA Network Open 2023, n=32 men with HSDD) showed KP54 infusion modulated sexual brain processing (fMRI) and \u2014 in men \u2014 increased penile tumescence by up to 56% vs placebo.",
+        "animalEvidence": "Foundational rodent, sheep, and primate studies established kisspeptin/KISS1R as the upstream trigger of GnRH pulsatility and puberty. KISS1 or KISS1R knockout in mice and rats recapitulates the human iHH phenotype (infertility, pubertal failure). Kisspeptin-induced puberty acceleration in rats and monkeys confirms causal hierarchy.",
+        "mechanismDetail": "Kisspeptin is encoded by the KISS1 gene as a 145-residue prepro-kisspeptin, which is proteolytically processed to KP54 (the main circulating form; sometimes called metastin for its original identification as a melanoma metastasis suppressor) and the shorter KP14, KP13, and KP10 fragments. All four share the amidated C-terminal Arg-Phe-NH2 (RF-NH2) motif required for high-affinity KISS1R binding; KP10 is the minimal active sequence. KISS1R is a class A Gq/11-coupled GPCR on chromosome 19p13.3 expressed on hypothalamic GnRH neurons and in several peripheral tissues. Activation drives PLC\u03b2 \u2192 PIP2 hydrolysis \u2192 IP3-triggered Ca2+ release and DAG/PKC activation, with downstream ERK1/2 and p38 MAPK phosphorylation. Kisspeptin neurons of the arcuate nucleus co-express neurokinin B and dynorphin (KNDy neurons), and these three peptides together shape pulsatile GnRH output; AVPV/preoptic kisspeptin neurons drive the positive-feedback LH surge. Circulating kisspeptin half-life is short (~4 min for KP10, longer for KP54), motivating longer-acting agonist analogs like MVT-602, TAK-448, TAK-683, and FTM080.",
+        "safetyDetail": "Across published human studies (IVF trigger, hypothalamic amenorrhea, HSDD, healthy volunteers), kisspeptin and its agonists have been well tolerated with no serious drug-related adverse events reported. Transient headache, mild nausea, and injection-site discomfort are the most common events. As an IVF trigger, KP54 appears to reduce OHSS risk relative to hCG. Long-term safety data and effects of chronic receptor activation are limited. Tachyphylaxis can develop with sustained high-rate infusion. MVT-602 is a longer-acting KISS1R agonist with more prolonged LH/FSH elevation; it has been studied in PCOS and hypothalamic amenorrhea by Abbara, Dhillo and colleagues. No approved therapeutic indication in any jurisdiction as of April 2026.",
+        "safetyRisks": [
+          {
+            "system": "endocrine / reproductive",
+            "label": "Altered gonadotropin dynamics",
+            "color": "yellow",
+            "helpSummary": "Pulsatile, context-appropriate kisspeptin signaling is physiological",
+            "harmSummary": "Chronic or supraphysiologic KISS1R agonism could drive tachyphylaxis and unwanted menstrual/endocrine changes; uncharacterized long-term data",
+            "citationIds": ["advances-kisspeptin-gnrh-2022"]
+          },
+          {
+            "system": "general",
+            "label": "Transient headache, nausea, flushing",
+            "color": "green",
+            "helpSummary": "Typically mild and self-limited at trial doses",
+            "harmSummary": "Minor adverse events reported in several infusion studies",
+            "citationIds": ["thurston-jama-2022", "mills-jama-2023"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Directly relevant to low-libido (HSDD) and fertility-support applications, with promising early clinical signals. Not studied for generic sexual or endocrine 'enhancement' in healthy adults.",
+          "caveat": "Published benefits in HSDD and IVF are from supervised infusions of pharmaceutical-grade KP54 under IRB-approved protocols \u2014 not subcutaneous self-administration of research-chemical kisspeptin, which has no human dose-response data.",
+          "citationIds": ["thurston-jama-2022", "mills-jama-2023", "abbara-mvt602-jci-2020"]
+        },
+        "missingEvidence": [
+          "Phase 3 trials for any reproductive or sexual indication",
+          "Chronic/long-term safety of KISS1R agonists",
+          "Data in post-menopausal populations",
+          "Head-to-head comparisons of KP10, KP54, TAK-448, and MVT-602"
+        ],
+        "anecdotalUse": [
+          "Sold in gray-market 'research peptide' channels with marketing around libido and testosterone; clinical-grade evidence supporting self-administration is absent"
+        ]
+      },
+      "claims": [
+        {
+          "id": "kiss-01",
+          "field": "biology",
+          "value": "Encoded by KISS1; the 145-aa prepro-kisspeptin is processed to KP54 (main form), KP14, KP13, and KP10, all sharing the amidated RF-NH2 C-terminal motif required for KISS1R binding",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.95,
+          "citationIds": ["advances-kisspeptin-gnrh-2022", "wiki-kisspeptin"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "kiss-02",
+          "field": "mechanism",
+          "value": "Kisspeptin binds KISS1R/GPR54 (Gq/11-coupled) on hypothalamic GnRH neurons, activating PLC\u03b2 \u2192 IP3/Ca2+/DAG-PKC \u2192 ERK1/2, p38 MAPK; drives pulsatile GnRH release and downstream LH/FSH secretion",
+          "species": "mixed",
+          "context": "review",
+          "population": "mouse/rat/human/macaque",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.95,
+          "citationIds": ["advances-kisspeptin-gnrh-2022", "frontiers-kisspeptin-hpg-2022"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "kiss-03",
+          "field": "geneticEvidence",
+          "value": "Human loss-of-function mutations in KISS1 or KISS1R cause congenital GnRH deficiency and failure of pubertal initiation; gain-of-function mutations cause central precocious puberty",
+          "species": "human",
+          "context": "observational",
+          "population": "consanguineous families and index cases with iHH or CPP",
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["H"],
+          "confidence": 0.98,
+          "citationIds": ["seminara-nejm-2003"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "kiss-04",
+          "field": "clinicalEfficacy_HSDD",
+          "value": "In two double-blind crossover RCTs (Imperial College London), KP54 IV infusion modulated sexual brain processing vs placebo in HSDD populations; in men, KP54 increased penile tumescence by up to 56% vs placebo and improved behavioral measures of sexual desire",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": "premenopausal women (n=32) and heterosexual men (n=32) with HSDD",
+          "route": "IV infusion (1 nmol/kg/hr for 75 min)",
+          "sampleSize": 64,
+          "duration": "75-minute infusion, crossover design",
+          "symbols": ["Rx", "H"],
+          "confidence": 0.85,
+          "citationIds": ["thurston-jama-2022", "mills-jama-2023"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "advances-kisspeptin-gnrh-2022",
+          "sourceType": "secondary_review",
+          "title": "Advances in clinical applications of kisspeptin-GnRH pathway in female reproduction (Reproductive Biology and Endocrinology, 2022)",
+          "authors": [],
+          "year": 2022,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9125910/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["kiss-01", "kiss-02"],
+          "notes": "Summarizes KISS1 gene product processing, KISS1R signaling (Gq/11, PLC, ERK/p38), and clinical applications."
+        },
+        {
+          "id": "frontiers-kisspeptin-hpg-2022",
+          "sourceType": "secondary_review",
+          "title": "The Role of Kisspeptin in the Control of the Hypothalamic-Pituitary-Gonadal Axis and Reproduction (Frontiers in Endocrinology 2022)",
+          "authors": [],
+          "year": 2022,
+          "url": "https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2022.925206/full",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["kiss-02"],
+          "notes": "Detailed review of KNDy neuron biology, KISS1R chromosomal location, and reproductive axis function."
+        },
+        {
+          "id": "seminara-nejm-2003",
+          "sourceType": "primary_literature",
+          "title": "Inactivating mutations of GPR54 and idiopathic hypogonadotropic hypogonadism (Seminara SB et al., NEJM 2003; de Roux N et al., PNAS 2003)",
+          "authors": ["Seminara SB", "Messager S", "Chatzidaki EE", "et al.", "de Roux N", "Genin E", "Carel J-C"],
+          "year": 2003,
+          "url": "https://doi.org/10.1056/NEJMoa035322",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["kiss-03"],
+          "notes": "Parallel 2003 reports establishing KISS1R loss of function as a cause of congenital GnRH deficiency in humans."
+        },
+        {
+          "id": "thurston-jama-2022",
+          "sourceType": "primary_literature",
+          "title": "Effects of Kisspeptin Administration in Women With Hypoactive Sexual Desire Disorder: A Randomized Clinical Trial (Thurston L et al., JAMA Network Open 2022)",
+          "authors": ["Thurston L", "Hunjan T", "Ertl N", "Wall MB", "Mills EG", "Suladze S", "Patel B", "Alexander EC", "Muzi B", "Bassett PA", "Rabiner EA", "Bech P", "Goldmeier D", "Abbara A", "Comninos AN", "Dhillo WS"],
+          "year": 2022,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9606846/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["kiss-04"],
+          "notes": "Double-blind crossover placebo-controlled trial of KP54 in 32 premenopausal women with HSDD."
+        },
+        {
+          "id": "mills-jama-2023",
+          "sourceType": "primary_literature",
+          "title": "Effects of Kisspeptin on Sexual Brain Processing and Penile Tumescence in Men With Hypoactive Sexual Desire Disorder: A Randomized Clinical Trial (Mills EG et al., JAMA Network Open 2023)",
+          "authors": ["Mills EG", "Ertl N", "Wall MB", "Thurston L", "Yang L", "Suladze S", "Hunjan T", "Phylactou M", "Patel B", "Muzi B", "Ettehad D", "Bassett PA", "Howard J", "Rabiner EA", "Bech P", "Abbara A", "Goldmeier D", "Comninos AN", "Dhillo WS"],
+          "year": 2023,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36735255/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["kiss-04"],
+          "notes": "Men with HSDD; KP54 increased penile tumescence up to 56% vs placebo and modulated sexual brain processing on fMRI."
+        },
+        {
+          "id": "abbara-mvt602-jci-2020",
+          "sourceType": "primary_literature",
+          "title": "Kisspeptin receptor agonist has therapeutic potential for female reproductive disorders (Abbara A et al., J Clin Invest 2020)",
+          "authors": ["Abbara A", "et al."],
+          "year": 2020,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33196464/",
+          "accessedAt": "2026-04-21",
+          "quality": "primary",
+          "supportsClaimIds": ["kiss-04"],
+          "notes": "MVT-602 KISS1R agonist trial in healthy women, PCOS, and hypothalamic amenorrhea \u2014 longer LH response than KP54."
+        },
+        {
+          "id": "wiki-kisspeptin",
+          "sourceType": "tertiary",
+          "title": "Kisspeptin \u2014 Wikipedia",
+          "authors": [],
+          "year": 2025,
+          "url": "https://en.wikipedia.org/wiki/Kisspeptin",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["kiss-01"],
+          "notes": "Summary of KISS1 gene, KP54/14/13/10 isoforms, and RF-NH2 motif."
+        }
+      ]
+    },
+
+    {
+      "id": "oxytocin",
+      "names": {
+        "primary": "Oxytocin",
+        "aliases": ["OT", "OXT", "\u03b1-hypophamine", "oxytocic hormone"],
+        "tradeNames": ["Pitocin (IV/IM synthetic oxytocin)", "Syntocinon (IV/IM and historically intranasal)"]
+      },
+      "identity": {
+        "formula": "C43H66N12O12S2",
+        "molecularWeight": 1007.19,
+        "cas": "50-56-6",
+        "sequenceOneLetter": "CYIQNCPLG (Gly-NH2)",
+        "sequenceThreeLetter": "H-Cys-Tyr-Ile-Gln-Asn-Cys-Pro-Leu-Gly-NH2 (disulfide bridge between Cys1 and Cys6)",
+        "length": 9,
+        "modifications": [
+          "Cyclic nonapeptide stabilized by a single intramolecular disulfide bond between Cys1 and Cys6 (forms a 6-residue ring with a 3-residue tail)",
+          "C-terminal glycine amidation (Gly-NH2), catalyzed in vivo by peptidylglycine \u03b1-amidating monooxygenase (PAM; ascorbate-dependent)",
+          "Differs from vasopressin by only two residues (Ile\u2192Phe at position 3 and Leu\u2192Arg at position 8)"
+        ],
+        "structureClass": "cyclic (disulfide-bridged) nonapeptide hormone; neurohypophysial hormone family"
+      },
+      "classification": {
+        "peptideClass": "neurohypophysial nonapeptide",
+        "mechanismFamily": "oxytocin receptor (OXTR) agonist \u2014 Gq-coupled GPCR \u2192 PLC \u2192 IP3/Ca2+/DAG; uterotonic and neuromodulatory",
+        "regulatoryStatus": "fda_approved"
+      },
+      "tile": {
+        "mechanismSummary": "Endogenous nonapeptide hormone/neurotransmitter synthesized in hypothalamic paraventricular and supraoptic nuclei and released from the posterior pituitary. Binds the Gq-coupled OXTR to trigger PLC/IP3/Ca2+ signaling \u2014 peripherally driving uterine contraction and milk letdown, and centrally modulating social bonding, trust, anxiety, and stress circuits.",
+        "localization": "Uterine myometrium, mammary myoepithelium (peripheral); amygdala, hypothalamus, nucleus accumbens, prefrontal cortex, brainstem (central).",
+        "clinicalUses": [
+          "FDA-approved (Pitocin) for induction of labor when medically indicated",
+          "FDA-approved for augmentation of dysfunctional labor",
+          "FDA-approved for control of postpartum hemorrhage / uterine atony after placental delivery",
+          "Historically used intranasally (Syntocinon) to support milk letdown (now discontinued in the US)",
+          "Off-label / investigational: autism spectrum disorder social cognition, PTSD, social anxiety, schizophrenia negative symptoms, frontotemporal dementia (phase 2), couple therapy adjunct \u2014 none FDA-approved"
+        ],
+        "sideEffects": [
+          "IV/IM Pitocin: uterine hyperstimulation (tachysystole), fetal distress, postpartum hemorrhage if misused, water intoxication / hyponatremia (antidiuretic effect at high doses), nausea, vomiting, hypertension or hypotension, arrhythmias",
+          "Intranasal (off-label): nasal irritation, mild drowsiness, headache",
+          "Potential receptor desensitization with frequent dosing",
+          "Contraindications for IV/IM use: fetal distress, cephalopelvic disproportion, prior uterine surgery in some scenarios, placenta previa"
+        ],
+        "dosing": {
+          "quick": "FDA-approved labor induction: IV infusion starting at 0.5-1 mU/min, titrated to uterine response (typical max 20 mU/min). Postpartum hemorrhage: 10-40 units in 1 L crystalloid IV, or 10 units IM after placental delivery. Intranasal 'social / wellness' oxytocin is NOT FDA-approved; research protocols commonly use 24 IU intranasal.",
+          "adminRoute": "intravenous infusion, intramuscular injection (approved); intranasal (off-label/research)",
+          "publicDisplayAllowed": true,
+          "context": "fda_label"
+        }
+      },
+      "biology": {
+        "genes": ["OXT (oxytocin/neurophysin I precursor)", "OXTR (oxytocin receptor)", "AVPR1A", "AVPR1B", "AVPR2"],
+        "proteins": ["Oxytocin receptor (OXTR, 389-aa class A GPCR on chromosome 3p25-26)", "Neurophysin I (carrier protein)", "Vasopressin receptors (V1a/V1b/V2 \u2014 low-affinity oxytocin cross-reactivity at supraphysiological concentrations)"],
+        "receptors": [
+          "OXTR \u2014 Gq/11-coupled class A GPCR; nanomolar affinity for oxytocin",
+          "V1a / V1b / V2 vasopressin receptors \u2014 low-affinity oxytocin binding at high concentrations"
+        ],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [],
+        "cascades": [
+          {
+            "category": "uterotonic action",
+            "steps": [
+              "Estrogen upregulates OXTR in myometrium ~200-300-fold by term",
+              "Oxytocin binds myometrial OXTR \u2192 Gq \u2192 PLC\u03b2 \u2192 IP3 / Ca2+ release + DAG / PKC",
+              "Elevated cytosolic Ca2+ drives MLCK-mediated myosin light chain phosphorylation and uterine smooth muscle contraction",
+              "Cervical stretch during labor triggers Ferguson reflex: additional hypothalamic oxytocin release in a positive feedback loop"
+            ],
+            "symbols": ["Rx", "H"],
+            "claimRef": "fda-pitocin-label"
+          },
+          {
+            "category": "milk ejection reflex",
+            "steps": [
+              "Suckling stimulus activates hypothalamic oxytocin neurons",
+              "Oxytocin binds OXTR on mammary myoepithelial cells",
+              "Myoepithelial contraction forces milk from alveoli into ducts (milk let-down)"
+            ],
+            "symbols": ["H"],
+            "claimRef": "statpearls-oxytocin"
+          },
+          {
+            "category": "central / social behavior",
+            "steps": [
+              "Central oxytocin release (PVN \u2192 limbic projections) and peripheral OXTR activation in the brain",
+              "Reduced amygdala reactivity to social threat; enhanced prefrontal-amygdala connectivity",
+              "Downstream effects on trust, in-group bonding, stress buffering \u2014 context-dependent and not uniformly 'prosocial'"
+            ],
+            "symbols": ["?", "H"],
+            "claimRef": "empower-oxytocin"
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "Synthetic oxytocin (Pitocin) is one of the most widely used medications in obstetrics, with FDA approval for labor induction, labor augmentation, and prevention/treatment of postpartum hemorrhage supported by decades of randomized trials and observational data. It is on the WHO Essential Medicines List. Intranasal oxytocin has been studied extensively in behavioral neuroscience, autism spectrum disorder, PTSD, depression, schizophrenia, and relationship research; findings have been inconsistent and the early 'social panacea' narrative has not replicated in large trials. Intranasal oxytocin is not FDA-approved for any behavioral or psychiatric indication. A commercial Syntocinon nasal spray for lactation support was previously available in the US but has been discontinued. Compounded intranasal oxytocin is available off-label.",
+        "animalEvidence": "Foundational animal work established oxytocin's role in parturition (Dale 1906), milk ejection (Ott and Scott), pair bonding (prairie voles), and maternal behavior. Rodent and primate studies elucidated central OXTR distribution and social-behavior effects; zebrafish work (2023) supports a conserved role in social fear responsiveness.",
+        "mechanismDetail": "Oxytocin is a cyclic nonapeptide (Cys-Tyr-Ile-Gln-Asn-Cys-Pro-Leu-Gly-NH2; MW 1007; C43H66N12O12S2; CAS 50-56-6) stabilized by a disulfide bridge between Cys1 and Cys6 that forms a 6-residue ring plus a 3-residue tail, with C-terminal amidation catalyzed by PAM (an ascorbate-dependent enzyme). It is synthesized as a pre-prohormone with neurophysin I in hypothalamic magnocellular PVN and SON neurons, cleaved during axonal transport, and released from the posterior pituitary. Signaling is mediated primarily by the 389-residue class A Gq-coupled oxytocin receptor (OXTR; chromosome 3p25-26) \u2192 PLC\u03b2 \u2192 IP3/DAG \u2192 intracellular Ca2+ rise \u2192 MLCK-driven smooth muscle contraction in uterine and mammary tissue; downstream MAPK and PI3K cascades are also engaged. Myometrial OXTR density rises ~200-300-fold at term under estrogen drive, explaining the increased uterotonic efficacy of Pitocin near labor. Structural similarity to vasopressin (2 amino acid differences) allows cross-reactivity: at high doses oxytocin acts at V2 receptors, producing antidiuretic effects that can cause water intoxication. Plasma half-life is ~1-6 minutes. The blood-brain barrier limits peripheral-to-central transfer; intranasal administration is thought to access the CNS via olfactory/trigeminal pathways, with peak central effects at ~30-45 minutes.",
+        "safetyDetail": "IV/IM oxytocin has a well-characterized obstetric safety profile; key risks are uterine tachysystole/hyperstimulation and fetal distress, water intoxication from the antidiuretic effect at high cumulative doses, hypotension with rapid IV boluses, and postpartum hemorrhage if misused. Appropriate monitoring (continuous electronic fetal monitoring, titration protocols) mitigates most of these. Intranasal oxytocin in research and compounded-prescription contexts has a favorable short-term safety profile \u2014 mainly nasal irritation, mild drowsiness, and occasional headache \u2014 but long-term safety of chronic intranasal use is not established, and chronic administration may affect endogenous vasopressin responsiveness. SSRIs may blunt OXTR sensitivity; chronic alcohol use reduces OXTR expression. Do not combine with other uterotonics without obstetric oversight.",
+        "safetyRisks": [
+          {
+            "system": "obstetric",
+            "label": "Uterine tachysystole / fetal distress",
+            "color": "red",
+            "helpSummary": "Well-titrated IV dosing under monitoring is safe and highly effective",
+            "harmSummary": "Excessive doses can cause uterine hyperstimulation, placental abruption, and fetal hypoxia; requires continuous fetal/uterine monitoring",
+            "citationIds": ["fda-pitocin-label", "statpearls-oxytocin"]
+          },
+          {
+            "system": "fluid/electrolyte",
+            "label": "Water intoxication / hyponatremia",
+            "color": "orange",
+            "helpSummary": "Rare at standard obstetric doses",
+            "harmSummary": "High cumulative IV doses engage V2 receptors and cause antidiuretic effects \u2192 dilutional hyponatremia, seizures",
+            "citationIds": ["fda-pitocin-label"]
+          },
+          {
+            "system": "neuropsychiatric (context-dependent)",
+            "label": "Non-uniform 'prosocial' effects",
+            "color": "yellow",
+            "helpSummary": "Intranasal dosing is generally well tolerated short-term",
+            "harmSummary": "Oxytocin's central effects are context-dependent: it can enhance in-group bonding while amplifying out-group wariness or jealousy, and psychiatric trial results have been inconsistent",
+            "citationIds": ["glpbase-oxytocin", "alzforum-oxytocin"]
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "Effective and approved for obstetric indications. For claimed 'social / bonding / libido' enhancement in healthy adults, clinical evidence is mixed; early optimistic findings have not robustly replicated and the effects appear context-dependent.",
+          "caveat": "Intranasal oxytocin is not FDA-approved for any behavioral or psychiatric use. Compounded formulations are available by prescription but their purity, dose delivery, and nasal absorption vary.",
+          "citationIds": ["glpbase-oxytocin", "empower-oxytocin"]
+        },
+        "missingEvidence": [
+          "Replicated large-scale phase 3 data for autism spectrum disorder, PTSD, and social anxiety",
+          "Long-term safety of chronic intranasal use",
+          "Pharmacokinetic consensus on intranasal \u2192 CNS bioavailability",
+          "Head-to-head comparisons with longer-acting OXTR agonists (e.g., carbetocin)"
+        ],
+        "anecdotalUse": [
+          "Intranasal oxytocin marketed in 'wellness' channels for bonding, sexual intimacy, stress reduction \u2014 off-label",
+          "Compounded intranasal oxytocin for ASD social-cognition support"
+        ]
+      },
+      "claims": [
+        {
+          "id": "oxt-01",
+          "field": "regulatoryStatus",
+          "value": "FDA-approved (Pitocin IV/IM) for labor induction, labor augmentation, and control of postpartum hemorrhage / uterine atony; intranasal oxytocin for behavioral or psychiatric indications is NOT FDA-approved",
+          "species": "human",
+          "context": "fda_label",
+          "population": "pregnant and postpartum adults",
+          "route": "IV infusion or IM injection",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["Rx", "H"],
+          "confidence": 0.99,
+          "citationIds": ["fda-pitocin-label", "statpearls-oxytocin"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "oxt-02",
+          "field": "identity",
+          "value": "Cyclic nonapeptide, Cys-Tyr-Ile-Gln-Asn-Cys-Pro-Leu-Gly-NH2, disulfide between Cys1 and Cys6; MW 1007.19; formula C43H66N12O12S2; CAS 50-56-6; C-terminal amidation catalyzed by PAM",
+          "species": "human",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.99,
+          "citationIds": ["wiki-oxytocin", "pubchem-oxytocin"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "oxt-03",
+          "field": "mechanism",
+          "value": "Oxytocin receptor (OXTR) is a 389-aa Gq-coupled class A GPCR; activation drives PLC\u03b2 \u2192 IP3/Ca2+ and DAG/PKC; myometrial OXTR density rises ~200-300-fold at term under estrogen drive. Structural similarity to vasopressin yields low-affinity V1a/V1b/V2 cross-reactivity, including antidiuretic effects at high doses",
+          "species": "mixed",
+          "context": "review",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["A", "H"],
+          "confidence": 0.95,
+          "citationIds": ["empower-oxytocin", "peptideinsight-oxytocin"],
+          "needsModeratorReview": false
+        },
+        {
+          "id": "oxt-04",
+          "field": "clinicalEfficacy_behavioral",
+          "value": "Intranasal oxytocin has been studied in autism, PTSD, social anxiety, schizophrenia, FTD, and couple therapy; results have been mixed, often null in large trials, and there is no FDA approval for any behavioral or psychiatric use",
+          "species": "human",
+          "context": "review",
+          "population": "various psychiatric and neurological populations",
+          "route": "intranasal",
+          "sampleSize": null,
+          "duration": null,
+          "symbols": ["?", "H"],
+          "confidence": 0.85,
+          "citationIds": ["glpbase-oxytocin", "alzforum-oxytocin"],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "fda-pitocin-label",
+          "sourceType": "regulator_label",
+          "title": "Oxytocin \u2014 StatPearls / FDA Pitocin label summary",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK507848/",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["oxt-01"],
+          "notes": "StatPearls chapter summarizing FDA-approved indications for IV/IM oxytocin (labor induction/augmentation, postpartum hemorrhage)."
+        },
+        {
+          "id": "statpearls-oxytocin",
+          "sourceType": "secondary_review",
+          "title": "Oxytocin \u2014 StatPearls / NCBI Bookshelf",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK507848/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["oxt-01"],
+          "notes": "Clinical summary including uterotonic and milk-ejection mechanisms and historical intranasal labeling."
+        },
+        {
+          "id": "wiki-oxytocin",
+          "sourceType": "tertiary",
+          "title": "Oxytocin \u2014 Wikipedia",
+          "authors": [],
+          "year": 2025,
+          "url": "https://en.wikipedia.org/wiki/Oxytocin",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["oxt-02"],
+          "notes": "Sequence, disulfide structure, PAM-mediated amidation, vasopressin similarity, du Vigneaud history."
+        },
+        {
+          "id": "pubchem-oxytocin",
+          "sourceType": "regulatory",
+          "title": "Oxytocin | C43H66N12O12S2 | CID 439302 \u2014 PubChem",
+          "authors": ["NIH PubChem"],
+          "year": 2025,
+          "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Oxytocin",
+          "accessedAt": "2026-04-21",
+          "quality": "regulatory",
+          "supportsClaimIds": ["oxt-02"],
+          "notes": "Primary chemical database reference for formula and CID; CAS 50-56-6."
+        },
+        {
+          "id": "empower-oxytocin",
+          "sourceType": "vendor",
+          "title": "Compounded Oxytocin Nasal Spray \u2014 Empower Pharmacy (mechanism summary)",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.empowerpharmacy.com/compounding-pharmacy/oxytocin-nasal-spray/",
+          "accessedAt": "2026-04-21",
+          "quality": "vendor",
+          "supportsClaimIds": ["oxt-03"],
+          "notes": "Mechanism summary (OXTR Gq/PLC/Ca2+/MAPK/PI3K); acknowledges limited chronic CNS pharmacodynamic data."
+        },
+        {
+          "id": "peptideinsight-oxytocin",
+          "sourceType": "secondary_review",
+          "title": "Oxytocin: Research Evidence & Safety Profile \u2014 PeptideInsight",
+          "authors": [],
+          "year": 2026,
+          "url": "https://peptideinsight.com/en/peptides/oxytocin",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["oxt-03"],
+          "notes": "Receptor architecture, OXTR chromosomal location (3p25-26), cross-reactivity with V1a/V1b/V2, and estrogen-driven receptor upregulation."
+        },
+        {
+          "id": "glpbase-oxytocin",
+          "sourceType": "secondary_review",
+          "title": "Oxytocin: The Complete Guide \u2014 GLPbase",
+          "authors": [],
+          "year": 2026,
+          "url": "https://glpbase.com/peptides/oxytocin/",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["oxt-04"],
+          "notes": "Reviews mixed behavioral/psychiatric trial results; notes Syntocinon US discontinuation."
+        },
+        {
+          "id": "alzforum-oxytocin",
+          "sourceType": "secondary_review",
+          "title": "Intranasal oxytocin \u2014 ALZFORUM therapeutics database",
+          "authors": [],
+          "year": 2025,
+          "url": "https://www.alzforum.org/therapeutics/intranasal-oxytocin",
+          "accessedAt": "2026-04-21",
+          "quality": "secondary",
+          "supportsClaimIds": ["oxt-04"],
+          "notes": "Phase 2 FTD trial status and summary of non-obstetric investigation."
+        }
+      ]
+    }
+  ]
+}

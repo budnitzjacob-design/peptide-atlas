@@ -144,7 +144,7 @@ h4 {
   position: relative;
   display: inline-block;
   font-family: "Apple Garamond", "Cormorant Garamond", "EB Garamond", Georgia, serif;
-  font-size: clamp(46px, 8vw, 102px);
+  font-size: clamp(38px, 6.8vw, 82px);
   line-height: 0.9;
   font-style: italic;
   margin-top: 0;
@@ -152,6 +152,7 @@ h4 {
   filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.44));
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
   cursor: default;
+  animation: brand-majestic 5.8s ease-out both;
 }
 
 h2 {
@@ -377,6 +378,46 @@ textarea {
   padding-top: 40px;
 }
 
+.side-rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.96) 15%, rgba(0, 0, 0, 0.96) 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.96) 15%, rgba(0, 0, 0, 0.96) 85%, transparent 100%);
+}
+
+.side-rail-left {
+  left: clamp(8px, calc((100vw - 1200px) / 4), 58px);
+}
+
+.side-rail-right {
+  right: clamp(8px, calc((100vw - 1200px) / 4), 58px);
+}
+
+.side-rail-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-family: "Golden Girdle", "Apple Garamond", Georgia, serif;
+  color: rgba(244, 239, 228, 0.86);
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 0;
+  user-select: none;
+}
+
+.side-rail-left .side-rail-track {
+  animation: rail-rise 20s linear infinite;
+}
+
+.side-rail-right .side-rail-track {
+  animation: rail-fall 20s linear infinite;
+}
+
 .atlas-path {
   position: absolute;
   inset: 0 0 auto;
@@ -391,6 +432,43 @@ textarea {
   font-family: "Apple Garamond", "Cormorant Garamond", "EB Garamond", Georgia, serif;
   font-style: italic;
   font-size: 26px;
+}
+
+@keyframes brand-majestic {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(1.12);
+  }
+  26% {
+    opacity: 1;
+    transform: translateY(0) scale(1.02);
+  }
+  68% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes rail-rise {
+  0% {
+    transform: translateY(16%);
+  }
+  100% {
+    transform: translateY(-44%);
+  }
+}
+
+@keyframes rail-fall {
+  0% {
+    transform: translateY(-44%);
+  }
+  100% {
+    transform: translateY(16%);
+  }
 }
 
 .bibliography-button {
@@ -1224,6 +1302,7 @@ tbody tr:nth-child(odd) td {
     padding-top: 0;
   }
 
+  .side-rail,
   .atlas-path {
     display: none;
   }
@@ -1269,5 +1348,9 @@ tbody tr:nth-child(odd) td {
 
   .atlas-path-text {
     font-size: 22px;
+  }
+
+  .side-rail {
+    display: none;
   }
 }

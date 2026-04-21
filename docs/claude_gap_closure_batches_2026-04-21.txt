@@ -1,0 +1,299 @@
+Peptocopeia Claude Gap-Closure Batch Prompts
+Generated: 2026-04-21
+
+Why fewer than 10:
+The full roster has already been covered across batches 01-10. The remaining work is not raw roster generation; it is gap-closing, stronger primary-source support, tighter human/animal separation, and evidence-tier upgrades. So 8 targeted cleanup batches are more efficient than another full 10-batch sweep.
+
+Use one batch prompt per Claude turn.
+Return only valid JSON. No markdown. No prose before or after the JSON.
+
+Global instructions for every batch
+
+You are helping populate Peptocopeia, a peptide reference site for biologists and physicians.
+
+Be conservative, literal, and citation-driven.
+Do not infer healthy-human enhancement from diseased-population trials.
+Do not infer clinical efficacy from cell, animal, or review evidence.
+Do not invent missing fields. Use null, [], or "" where appropriate.
+Prefer primary sources first:
+1. FDA / EMA / official regulator pages
+2. drug labels / prescribing information
+3. peer-reviewed human trials
+4. registered clinical trials
+5. peer-reviewed animal studies
+6. peer-reviewed cell studies
+7. reviews only when they materially improve mechanism framing or source discovery
+
+Gap-closure priorities
+- Upgrade weak / secondary-only peptides with primary citations where possible.
+- Tighten human vs animal vs cell separation.
+- Improve mechanism directionality in cascades with concrete upstream -> downstream nodes.
+- Add or refine:
+  - identity fields
+  - trade names / aliases
+  - dosing context
+  - safety risks
+  - enhancement caveats
+  - cytokines / interleukins
+  - receptors / channels / transporters
+- If a peptide still truly lacks strong evidence, say so plainly instead of padding.
+
+Citation rules
+- Every factual claim should map to one or more citation IDs.
+- Every citation object must be unique within the batch.
+- Include accessedAt as YYYY-MM-DD.
+- Always include a working url.
+- quality must be one of: primary, regulatory, secondary, vendor
+- sourceType should be one of: pubmed, pmc, fda_label, clinicaltrials, official_regulator, other
+
+Required JSON shape
+{
+  "batch_id": "batch-11",
+  "generated_at": "2026-04-21",
+  "batch_notes": "",
+  "peptides": [
+    {
+      "id": "site-slug-here",
+      "names": {
+        "primary": "",
+        "aliases": [],
+        "tradeNames": []
+      },
+      "identity": {
+        "formula": null,
+        "molecularWeight": null,
+        "cas": null,
+        "sequenceOneLetter": null,
+        "sequenceThreeLetter": null,
+        "length": null,
+        "modifications": [],
+        "structureClass": null
+      },
+      "classification": {
+        "peptideClass": "",
+        "mechanismFamily": "",
+        "regulatoryStatus": "unknown"
+      },
+      "tile": {
+        "mechanismSummary": "",
+        "localization": "",
+        "clinicalUses": [],
+        "sideEffects": [],
+        "dosing": {
+          "quick": "",
+          "adminRoute": "",
+          "publicDisplayAllowed": false,
+          "context": "unknown"
+        }
+      },
+      "biology": {
+        "genes": [],
+        "proteins": [],
+        "receptors": [],
+        "channelsTransporters": [],
+        "cytokinesInterleukins": [
+          {
+            "name": "",
+            "effect": "",
+            "context": "",
+            "symbols": [],
+            "citationIds": []
+          }
+        ],
+        "cascades": [
+          {
+            "category": "",
+            "steps": [],
+            "symbols": [],
+            "claimRef": ""
+          }
+        ]
+      },
+      "expanded": {
+        "humanEvidence": "",
+        "animalEvidence": "",
+        "mechanismDetail": "",
+        "safetyDetail": "",
+        "safetyRisks": [
+          {
+            "system": "",
+            "label": "",
+            "color": "",
+            "helpSummary": "",
+            "harmSummary": "",
+            "citationIds": []
+          }
+        ],
+        "enhancementPotential": {
+          "summary": "",
+          "caveat": "",
+          "citationIds": []
+        },
+        "missingEvidence": [],
+        "anecdotalUse": []
+      },
+      "claims": [
+        {
+          "id": "",
+          "field": "",
+          "value": "",
+          "species": "human",
+          "context": "clinical_trial",
+          "population": null,
+          "route": null,
+          "sampleSize": null,
+          "duration": null,
+          "symbols": [],
+          "confidence": 0.0,
+          "citationIds": [],
+          "needsModeratorReview": true
+        }
+      ],
+      "citations": [
+        {
+          "id": "",
+          "sourceType": "",
+          "title": "",
+          "authors": [],
+          "year": null,
+          "url": "",
+          "accessedAt": "2026-04-21",
+          "quality": "",
+          "supportsClaimIds": [],
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}
+
+Allowed values
+- regulatoryStatus: fda_approved, non_us_approved, investigational, research_only, not_approved, unknown
+- species: human, animal, mixed
+- context: fda_label, regulatory, clinical_trial, observational, preclinical, cell, review, anecdotal_common_use, vendor
+- symbols: Rx, H, A, C, R, V, ?, N
+
+Important merge instruction
+Treat your output as the new truth version for the listed peptides. If a peptide already appeared in an earlier batch, your new entry should supersede the earlier batch for fields you populate.
+
+Batch 11 prompt
+Target peptides:
+- cjc-1295
+- ipamorelin
+- ghrp-2
+- ghrp-6
+
+Focus:
+- GHRH / GHSR pathway specificity
+- GH / IGF-1 axis signaling directionality
+- human dosing context if any real trial literature exists
+- prolactin / cortisol specificity caveats
+- enhancement-use caveats vs evidence
+
+Batch 12 prompt
+Target peptides:
+- hexarelin
+- igf-1-lr3
+- follistatin-344
+- kisspeptin
+
+Focus:
+- receptor specificity and downstream signaling
+- real human or animal evidence hierarchy
+- endocrine / reproductive / anabolic safety framing
+- explicit caveats where evidence is mostly preclinical or analog-based
+
+Batch 13 prompt
+Target peptides:
+- cerebrolysin
+- dsip
+- dihexa
+- humanin
+
+Focus:
+- strongest primary mechanistic sources
+- human vs animal separation
+- neuroprotection / cognition / mitochondrial signaling
+- avoid overclaiming cognition or enhancement
+
+Batch 14 prompt
+Target peptides:
+- semax
+- selank
+- pinealon
+- oxytocin
+
+Focus:
+- CNS and neuroendocrine mechanisms
+- human evidence vs Russian/local/non-US evidence context
+- receptor/target detail
+- safety and psychiatric / behavioral caveats
+
+Batch 15 prompt
+Target peptides:
+- epithalon
+- foxo4-dri
+- snap-8
+- kpv
+
+Focus:
+- senolytic / anti-aging / cosmetic / melanocortin / inflammatory framing
+- evidence hierarchy
+- whether mechanism is true primary-source supported or mainly review/marketing synthesis
+- explicit research-only language when appropriate
+
+Batch 16 prompt
+Target peptides:
+- thymulin
+- vip
+- tb4-frag
+- aod-9604
+
+Focus:
+- immune / anti-inflammatory / thymic signaling
+- repair / anti-fibrotic mechanism detail
+- obesity / lipolysis evidence quality
+- receptor / cytokine / interleukin detail
+
+Batch 17 prompt
+Target peptides:
+- cagrilintide
+- mazdutide
+- survodutide
+- orforglipron
+
+Focus:
+- incretin / glucagon / amylin receptor pharmacology
+- phase 2/3 trial outcomes
+- GI adverse events and discontinuation context
+- approved vs investigational framing
+
+Batch 18 prompt
+Target peptides:
+- pramlintide
+- pt-141
+- melanotan-ii
+- teduglutide
+
+Focus:
+- real approved-use context where applicable
+- human safety and dosing context
+- melanocortin vs amylin vs GLP-2 mechanistic specificity
+- off-label / enhancement / abuse caveats
+
+Supplemental cleanup batch (optional, use only if needed)
+Batch 19 prompt
+Target peptides:
+- all peptides still lacking strong identity or physicochemical detail
+
+Focus:
+- formula
+- molecular weight
+- CAS
+- one-letter sequence
+- three-letter sequence
+- major modifications
+- structure class
+- trade names / aliases
+
+Do not fabricate pKa, logP, or solubility if they are not clearly supported by a source.
