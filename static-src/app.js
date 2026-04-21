@@ -19,7 +19,7 @@ function makeDefaultState() {
     studyFilter: "all",
     bibliographyOpen: false,
     lineFeature: !mobile,
-    scrollersOn: false,
+    scrollersOn: !mobile,
     mobileWarningOpen: mobile,
     brandAlt: false,
     notice: ""
