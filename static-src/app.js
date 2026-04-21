@@ -828,6 +828,12 @@ function relatedPanel() {
   </section>`;
 }
 
+function structurePanel(p) {
+  return `<div class="structure-panel">
+    <img src="/structures/${esc(p.id)}.png" alt="${esc(p.names.primary)} structure" loading="lazy" onerror="this.parentElement.remove()">
+  </div>`;
+}
+
 function detail(p) {
   if (!p) return "";
   return `<section class="detail-backdrop" data-close-detail>
@@ -848,6 +854,7 @@ function detail(p) {
             <p><span class="label-mono">CLINICAL CONTEXT:</span> ${esc(p.tile.clinicalUses.join(" "))}</p>
           </div>
           <aside>
+            ${structurePanel(p)}
             <span class="evidence-badge ${evidenceClass(p.classification.evidenceTier)}">${esc(DATA.evidenceTierLabel[p.classification.evidenceTier])}</span>
             <span class="status-pill">${esc(p.classification.regulatoryStatus.replaceAll("_", " "))}</span>
             <span class="status-pill">dosing: ${esc(p.tile.dosing.context.replaceAll("_", " "))}</span>

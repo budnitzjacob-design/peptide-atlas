@@ -1,0 +1,304 @@
+{
+  "generatedAt": "2026-04-21T08:33:25.709719+00:00",
+  "items": [
+    {
+      "id": "aod-9604",
+      "cid": "71300630",
+      "query": "AOD-9604",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/71300630",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/71300630/PNG?image_size=large"
+    },
+    {
+      "id": "bpc-157",
+      "cid": "9941957",
+      "query": "BPC-157",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/9941957",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/9941957/PNG?image_size=large"
+    },
+    {
+      "id": "cagrilintide",
+      "cid": "171397054",
+      "query": "Cagrilintide",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/171397054",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/171397054/PNG?image_size=large"
+    },
+    {
+      "id": "cjc-1295",
+      "cid": "91971820",
+      "query": "CJC-1295",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/91971820",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/91971820/PNG?image_size=large"
+    },
+    {
+      "id": "dihexa",
+      "cid": "129010512",
+      "query": "Dihexa",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/129010512",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/129010512/PNG?image_size=large"
+    },
+    {
+      "id": "dsip",
+      "cid": "68816",
+      "query": "DSIP",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/68816",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/68816/PNG?image_size=large"
+    },
+    {
+      "id": "epithalon",
+      "cid": "219042",
+      "query": "Epithalon",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/219042",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/219042/PNG?image_size=large"
+    },
+    {
+      "id": "foxo4-dri",
+      "cid": "167312269",
+      "query": "FOXO4-DRI",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/167312269",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/167312269/PNG?image_size=large"
+    },
+    {
+      "id": "ghk-cu",
+      "cid": "139035031",
+      "query": "GHK-Cu",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/139035031",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/139035031/PNG?image_size=large"
+    },
+    {
+      "id": "ghrp-2",
+      "cid": "6918245",
+      "query": "GHRP-2",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/6918245",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/6918245/PNG?image_size=large"
+    },
+    {
+      "id": "ghrp-6",
+      "cid": "4345065",
+      "query": "GHRP-6",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/4345065",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/4345065/PNG?image_size=large"
+    },
+    {
+      "id": "hexarelin",
+      "cid": "6918297",
+      "query": "Hexarelin",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/6918297",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/6918297/PNG?image_size=large"
+    },
+    {
+      "id": "humanin",
+      "cid": "16131438",
+      "query": "Humanin",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/16131438",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/16131438/PNG?image_size=large"
+    },
+    {
+      "id": "ipamorelin",
+      "cid": "9831659",
+      "query": "Ipamorelin",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/9831659",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/9831659/PNG?image_size=large"
+    },
+    {
+      "id": "kisspeptin",
+      "cid": "71306396",
+      "query": "Kisspeptin",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/71306396",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/71306396/PNG?image_size=large"
+    },
+    {
+      "id": "kpv",
+      "cid": "13294447",
+      "query": "KPV",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/13294447",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/13294447/PNG?image_size=large"
+    },
+    {
+      "id": "liraglutide",
+      "cid": "16134956",
+      "query": "Liraglutide",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/16134956",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/16134956/PNG?image_size=large"
+    },
+    {
+      "id": "ll-37",
+      "cid": "16198951",
+      "query": "LL-37",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/16198951",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/16198951/PNG?image_size=large"
+    },
+    {
+      "id": "mazdutide",
+      "cid": "167312357",
+      "query": "Mazdutide",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/167312357",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/167312357/PNG?image_size=large"
+    },
+    {
+      "id": "melanotan-ii",
+      "cid": "92432",
+      "query": "Melanotan II",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/92432",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/92432/PNG?image_size=large"
+    },
+    {
+      "id": "mots-c",
+      "cid": "146675088",
+      "query": "MOTS-c",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/146675088",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/146675088/PNG?image_size=large"
+    },
+    {
+      "id": "orforglipron",
+      "cid": "137319706",
+      "query": "LY3502970",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/137319706",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137319706/PNG?image_size=large"
+    },
+    {
+      "id": "oxytocin",
+      "cid": "439302",
+      "query": "Oxytocin",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/439302",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/439302/PNG?image_size=large"
+    },
+    {
+      "id": "pinealon",
+      "cid": "10273502",
+      "query": "Pinealon",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/10273502",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10273502/PNG?image_size=large"
+    },
+    {
+      "id": "pramlintide",
+      "cid": "70691388",
+      "query": "Pramlintide",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/70691388",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/70691388/PNG?image_size=large"
+    },
+    {
+      "id": "pt-141",
+      "cid": "9941379",
+      "query": "PT-141",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/9941379",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/9941379/PNG?image_size=large"
+    },
+    {
+      "id": "retatrutide",
+      "cid": "171390338",
+      "query": "Retatrutide",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/171390338",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/171390338/PNG?image_size=large"
+    },
+    {
+      "id": "selank",
+      "cid": "11765600",
+      "query": "Selank",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/11765600",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11765600/PNG?image_size=large"
+    },
+    {
+      "id": "semaglutide",
+      "cid": "56843331",
+      "query": "Semaglutide",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/56843331",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/56843331/PNG?image_size=large"
+    },
+    {
+      "id": "semax",
+      "cid": "9811102",
+      "query": "Semax",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/9811102",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/9811102/PNG?image_size=large"
+    },
+    {
+      "id": "sermorelin",
+      "cid": "16132413",
+      "query": "Sermorelin",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/16132413",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/16132413/PNG?image_size=large"
+    },
+    {
+      "id": "snap-8",
+      "cid": "71587832",
+      "query": "SNAP-8",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/71587832",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/71587832/PNG?image_size=large"
+    },
+    {
+      "id": "ss-31",
+      "cid": "11764719",
+      "query": "SS-31",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/11764719",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11764719/PNG?image_size=large"
+    },
+    {
+      "id": "survodutide",
+      "cid": "171378821",
+      "query": "Survodutide",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/171378821",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/171378821/PNG?image_size=large"
+    },
+    {
+      "id": "tb-500",
+      "cid": "62707662",
+      "query": "TB-500",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/62707662",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/62707662/PNG?image_size=large"
+    },
+    {
+      "id": "tb4-frag",
+      "cid": "65938",
+      "query": "Ac-SDKP",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/65938",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/65938/PNG?image_size=large"
+    },
+    {
+      "id": "teduglutide",
+      "cid": "16139605",
+      "query": "Teduglutide",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/16139605",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/16139605/PNG?image_size=large"
+    },
+    {
+      "id": "tesamorelin",
+      "cid": "16137828",
+      "query": "Egrifta",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/16137828",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/16137828/PNG?image_size=large"
+    },
+    {
+      "id": "thymosin-alpha-1",
+      "cid": "16130571",
+      "query": "Thymalfasin",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/16130571",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/16130571/PNG?image_size=large"
+    },
+    {
+      "id": "thymulin",
+      "cid": "71300623",
+      "query": "Thymulin",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/71300623",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/71300623/PNG?image_size=large"
+    },
+    {
+      "id": "tirzepatide",
+      "cid": "166567236",
+      "query": "Tirzepatide",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/166567236",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/166567236/PNG?image_size=large"
+    },
+    {
+      "id": "vip",
+      "cid": "53314964",
+      "query": "Vasoactive intestinal peptide",
+      "sourceUrl": "https://pubchem.ncbi.nlm.nih.gov/compound/53314964",
+      "imageUrl": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/53314964/PNG?image_size=large"
+    }
+  ],
+  "missing": [
+    "cerebrolysin",
+    "follistatin-344",
+    "igf-1-lr3"
+  ]
+}

@@ -1,4 +1,4 @@
-import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { peptideRecords, sourceRegistry } from "../src/data/peptide-records";
 import { evidenceLegend, evidenceTierLabel } from "../src/lib/evidence";
 
@@ -13,6 +13,9 @@ copyFileSync("public/fonts/audio-nugget.ttf", `${staticDir}/fonts/audio-nugget.t
 copyFileSync("public/fonts/toxigenesis.rg-bold.otf", `${staticDir}/fonts/toxigenesis.rg-bold.otf`);
 copyFileSync("public/fonts/golden-girdle.otf", `${staticDir}/fonts/golden-girdle.otf`);
 copyFileSync("public/favicon.png", `${staticDir}/favicon.png`);
+if (existsSync("public/structures")) {
+  cpSync("public/structures", `${staticDir}/structures`, { recursive: true });
+}
 copyFileSync("static-src/styles.css", `${staticDir}/styles.css`);
 copyFileSync("static-src/app.js", `${staticDir}/app.js`);
 

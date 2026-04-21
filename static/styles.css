@@ -872,6 +872,22 @@ tbody tr:nth-child(odd) td {
   align-items: flex-start;
 }
 
+.structure-panel {
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0 12px;
+}
+
+.structure-panel img {
+  width: min(100%, 240px);
+  max-height: 180px;
+  object-fit: contain;
+  display: block;
+}
+
 .signal-grid {
   display: grid;
   gap: 14px;
