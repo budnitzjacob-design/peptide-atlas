@@ -1,0 +1,250 @@
+{
+  "scope": "All rendered expanded-record text, all sections open; includes unchanged labels, study tables and reference titles; excludes citation hover-popover duplicates.",
+  "records": 48,
+  "beforeWords": 172012,
+  "afterWords": 133328,
+  "reductionPercent": 22.48912866544195,
+  "markupAndAttributes": "Identical for every expanded record",
+  "perRecord": [
+    {
+      "id": "aod-9604",
+      "beforeWords": 2294,
+      "afterWords": 1668
+    },
+    {
+      "id": "bpc-157",
+      "beforeWords": 7912,
+      "afterWords": 6252
+    },
+    {
+      "id": "cagrilintide",
+      "beforeWords": 3228,
+      "afterWords": 2417
+    },
+    {
+      "id": "cerebrolysin",
+      "beforeWords": 2830,
+      "afterWords": 2203
+    },
+    {
+      "id": "cjc-1295",
+      "beforeWords": 4717,
+      "afterWords": 3368
+    },
+    {
+      "id": "dihexa",
+      "beforeWords": 2174,
+      "afterWords": 1692
+    },
+    {
+      "id": "dsip",
+      "beforeWords": 1873,
+      "afterWords": 1455
+    },
+    {
+      "id": "epithalon",
+      "beforeWords": 3071,
+      "afterWords": 2513
+    },
+    {
+      "id": "follistatin-344",
+      "beforeWords": 3957,
+      "afterWords": 3037
+    },
+    {
+      "id": "foxo4-dri",
+      "beforeWords": 2115,
+      "afterWords": 1607
+    },
+    {
+      "id": "ghk-cu",
+      "beforeWords": 6002,
+      "afterWords": 4557
+    },
+    {
+      "id": "ghrp-2",
+      "beforeWords": 2222,
+      "afterWords": 1761
+    },
+    {
+      "id": "ghrp-6",
+      "beforeWords": 2768,
+      "afterWords": 2121
+    },
+    {
+      "id": "hexarelin",
+      "beforeWords": 2566,
+      "afterWords": 2052
+    },
+    {
+      "id": "humanin",
+      "beforeWords": 2631,
+      "afterWords": 1992
+    },
+    {
+      "id": "igf-1-lr3",
+      "beforeWords": 3370,
+      "afterWords": 2523
+    },
+    {
+      "id": "ipamorelin",
+      "beforeWords": 4316,
+      "afterWords": 3115
+    },
+    {
+      "id": "kisspeptin",
+      "beforeWords": 3923,
+      "afterWords": 3021
+    },
+    {
+      "id": "kpv",
+      "beforeWords": 2955,
+      "afterWords": 2413
+    },
+    {
+      "id": "liraglutide",
+      "beforeWords": 3483,
+      "afterWords": 2815
+    },
+    {
+      "id": "ll-37",
+      "beforeWords": 3010,
+      "afterWords": 2379
+    },
+    {
+      "id": "mazdutide",
+      "beforeWords": 3208,
+      "afterWords": 2536
+    },
+    {
+      "id": "melanotan-ii",
+      "beforeWords": 3934,
+      "afterWords": 2781
+    },
+    {
+      "id": "mots-c",
+      "beforeWords": 4190,
+      "afterWords": 3466
+    },
+    {
+      "id": "orforglipron",
+      "beforeWords": 2037,
+      "afterWords": 1766
+    },
+    {
+      "id": "oxytocin",
+      "beforeWords": 2835,
+      "afterWords": 2211
+    },
+    {
+      "id": "pinealon",
+      "beforeWords": 2207,
+      "afterWords": 1786
+    },
+    {
+      "id": "pramlintide",
+      "beforeWords": 2949,
+      "afterWords": 2224
+    },
+    {
+      "id": "pt-141",
+      "beforeWords": 3855,
+      "afterWords": 2795
+    },
+    {
+      "id": "retatrutide",
+      "beforeWords": 10437,
+      "afterWords": 7575
+    },
+    {
+      "id": "selank",
+      "beforeWords": 2031,
+      "afterWords": 1606
+    },
+    {
+      "id": "semaglutide",
+      "beforeWords": 5908,
+      "afterWords": 4600
+    },
+    {
+      "id": "semax",
+      "beforeWords": 2527,
+      "afterWords": 1998
+    },
+    {
+      "id": "sermorelin",
+      "beforeWords": 3727,
+      "afterWords": 3091
+    },
+    {
+      "id": "snap-8",
+      "beforeWords": 2039,
+      "afterWords": 1564
+    },
+    {
+      "id": "ss-31",
+      "beforeWords": 5409,
+      "afterWords": 4603
+    },
+    {
+      "id": "survodutide",
+      "beforeWords": 2578,
+      "afterWords": 2136
+    },
+    {
+      "id": "tb-500",
+      "beforeWords": 3606,
+      "afterWords": 2972
+    },
+    {
+      "id": "tb4-frag",
+      "beforeWords": 2924,
+      "afterWords": 2229
+    },
+    {
+      "id": "teduglutide",
+      "beforeWords": 3088,
+      "afterWords": 2442
+    },
+    {
+      "id": "tesamorelin",
+      "beforeWords": 4630,
+      "afterWords": 3597
+    },
+    {
+      "id": "thymosin-alpha-1",
+      "beforeWords": 3564,
+      "afterWords": 2845
+    },
+    {
+      "id": "thymulin",
+      "beforeWords": 2279,
+      "afterWords": 1785
+    },
+    {
+      "id": "tirzepatide",
+      "beforeWords": 9156,
+      "afterWords": 6689
+    },
+    {
+      "id": "vip",
+      "beforeWords": 2492,
+      "afterWords": 1945
+    },
+    {
+      "id": "hcg",
+      "beforeWords": 2994,
+      "afterWords": 2417
+    },
+    {
+      "id": "mk-677",
+      "beforeWords": 3363,
+      "afterWords": 2611
+    },
+    {
+      "id": "5-amino-1mq",
+      "beforeWords": 2628,
+      "afterWords": 2097
+    }
+  ]
+}

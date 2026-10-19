@@ -1,0 +1,735 @@
+[
+  {
+    "peptide_a": "hcg",
+    "peptide_b": "mk-677",
+    "primary_name_a": "Human chorionic gonadotropin",
+    "primary_name_b": "Ibutamoren",
+    "shared_risk_count": 9,
+    "shared_risks": [
+      {
+        "system": "candidate_review",
+        "label_a": "Headache, irritability, fatigue, edema",
+        "label_b": "Tile-level safety warning"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Headache, irritability, fatigue, edema",
+        "label_b": "Fluid retention and peripheral edema (likely mechanism for t"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Headache, irritability, fatigue, edema",
+        "label_b": "Increased appetite"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Ovarian hyperstimulation syndrome in women (potentially seve",
+        "label_b": "Tile-level safety warning"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Ovarian hyperstimulation syndrome in women (potentially seve",
+        "label_b": "Fluid retention and peripheral edema (likely mechanism for t"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Ovarian hyperstimulation syndrome in women (potentially seve",
+        "label_b": "Increased appetite"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Thromboembolic events including stroke, MI, VTE",
+        "label_b": "Tile-level safety warning"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Thromboembolic events including stroke, MI, VTE",
+        "label_b": "Fluid retention and peripheral edema (likely mechanism for t"
+      }
+    ]
+  },
+  {
+    "peptide_a": "hcg",
+    "peptide_b": "5-amino-1mq",
+    "primary_name_a": "Human chorionic gonadotropin",
+    "primary_name_b": "5-Amino-1-methylquinolinium",
+    "shared_risk_count": 9,
+    "shared_risks": [
+      {
+        "system": "candidate_review",
+        "label_a": "Headache, irritability, fatigue, edema",
+        "label_b": "No human safety data"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Headache, irritability, fatigue, edema",
+        "label_b": "Quaternary ammonium structure raises theoretical mitochondri"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Headache, irritability, fatigue, edema",
+        "label_b": "Long-term toxicology unknown"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Ovarian hyperstimulation syndrome in women (potentially seve",
+        "label_b": "No human safety data"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Ovarian hyperstimulation syndrome in women (potentially seve",
+        "label_b": "Quaternary ammonium structure raises theoretical mitochondri"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Ovarian hyperstimulation syndrome in women (potentially seve",
+        "label_b": "Long-term toxicology unknown"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Thromboembolic events including stroke, MI, VTE",
+        "label_b": "No human safety data"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Thromboembolic events including stroke, MI, VTE",
+        "label_b": "Quaternary ammonium structure raises theoretical mitochondri"
+      }
+    ]
+  },
+  {
+    "peptide_a": "mk-677",
+    "peptide_b": "5-amino-1mq",
+    "primary_name_a": "Ibutamoren",
+    "primary_name_b": "5-Amino-1-methylquinolinium",
+    "shared_risk_count": 9,
+    "shared_risks": [
+      {
+        "system": "candidate_review",
+        "label_a": "Tile-level safety warning",
+        "label_b": "No human safety data"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Tile-level safety warning",
+        "label_b": "Quaternary ammonium structure raises theoretical mitochondri"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Tile-level safety warning",
+        "label_b": "Long-term toxicology unknown"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Fluid retention and peripheral edema (likely mechanism for t",
+        "label_b": "No human safety data"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Fluid retention and peripheral edema (likely mechanism for t",
+        "label_b": "Quaternary ammonium structure raises theoretical mitochondri"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Fluid retention and peripheral edema (likely mechanism for t",
+        "label_b": "Long-term toxicology unknown"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Increased appetite",
+        "label_b": "No human safety data"
+      },
+      {
+        "system": "candidate_review",
+        "label_a": "Increased appetite",
+        "label_b": "Quaternary ammonium structure raises theoretical mitochondri"
+      }
+    ]
+  },
+  {
+    "peptide_a": "semaglutide",
+    "peptide_b": "liraglutide",
+    "primary_name_a": "Semaglutide",
+    "primary_name_b": "Liraglutide",
+    "shared_risk_count": 7,
+    "shared_risks": [
+      {
+        "system": "oncologic",
+        "label_a": "Thyroid C-cell tumors (rodent; boxed warning)",
+        "label_b": "Thyroid C-cell tumors (rodent; boxed warning)"
+      },
+      {
+        "system": "oncologic",
+        "label_a": "Thyroid C-cell tumors (rodent; boxed warning)",
+        "label_b": "Breast cancer imbalance signal in SAXENDA adult trials"
+      },
+      {
+        "system": "gastrointestinal",
+        "label_a": "Pancreatitis",
+        "label_b": "Pancreatitis"
+      },
+      {
+        "system": "hepatobiliary",
+        "label_a": "Gallbladder disease / cholelithiasis",
+        "label_b": "Gallbladder disease"
+      },
+      {
+        "system": "renal",
+        "label_a": "Acute kidney injury",
+        "label_b": "Acute kidney injury"
+      },
+      {
+        "system": "metabolic",
+        "label_a": "Hypoglycemia with insulin/secretagogues",
+        "label_b": "Hypoglycemia with insulin/secretagogues"
+      },
+      {
+        "system": "immune",
+        "label_a": "Hypersensitivity (anaphylaxis, angioedema)",
+        "label_b": "Hypersensitivity (anaphylaxis, angioedema); anti-drug antibodies"
+      }
+    ]
+  },
+  {
+    "peptide_a": "tirzepatide",
+    "peptide_b": "liraglutide",
+    "primary_name_a": "Tirzepatide",
+    "primary_name_b": "Liraglutide",
+    "shared_risk_count": 7,
+    "shared_risks": [
+      {
+        "system": "oncologic",
+        "label_a": "Thyroid C-cell tumors (rodent; boxed warning)",
+        "label_b": "Thyroid C-cell tumors (rodent; boxed warning)"
+      },
+      {
+        "system": "oncologic",
+        "label_a": "Thyroid C-cell tumors (rodent; boxed warning)",
+        "label_b": "Breast cancer imbalance signal in SAXENDA adult trials"
+      },
+      {
+        "system": "gastrointestinal",
+        "label_a": "Pancreatitis",
+        "label_b": "Pancreatitis"
+      },
+      {
+        "system": "hepatobiliary",
+        "label_a": "Gallbladder disease",
+        "label_b": "Gallbladder disease"
+      },
+      {
+        "system": "metabolic",
+        "label_a": "Hypoglycemia with insulin/secretagogues",
+        "label_b": "Hypoglycemia with insulin/secretagogues"
+      },
+      {
+        "system": "renal",
+        "label_a": "Acute kidney injury",
+        "label_b": "Acute kidney injury"
+      },
+      {
+        "system": "immune",
+        "label_a": "Hypersensitivity reactions",
+        "label_b": "Hypersensitivity (anaphylaxis, angioedema); anti-drug antibodies"
+      }
+    ]
+  },
+  {
+    "peptide_a": "tirzepatide",
+    "peptide_b": "semaglutide",
+    "primary_name_a": "Tirzepatide",
+    "primary_name_b": "Semaglutide",
+    "shared_risk_count": 6,
+    "shared_risks": [
+      {
+        "system": "oncologic",
+        "label_a": "Thyroid C-cell tumors (rodent; boxed warning)",
+        "label_b": "Thyroid C-cell tumors (rodent; boxed warning)"
+      },
+      {
+        "system": "gastrointestinal",
+        "label_a": "Pancreatitis",
+        "label_b": "Pancreatitis"
+      },
+      {
+        "system": "hepatobiliary",
+        "label_a": "Gallbladder disease",
+        "label_b": "Gallbladder disease / cholelithiasis"
+      },
+      {
+        "system": "metabolic",
+        "label_a": "Hypoglycemia with insulin/secretagogues",
+        "label_b": "Hypoglycemia with insulin/secretagogues"
+      },
+      {
+        "system": "renal",
+        "label_a": "Acute kidney injury",
+        "label_b": "Acute kidney injury"
+      },
+      {
+        "system": "immune",
+        "label_a": "Hypersensitivity reactions",
+        "label_b": "Hypersensitivity (anaphylaxis, angioedema)"
+      }
+    ]
+  },
+  {
+    "peptide_a": "liraglutide",
+    "peptide_b": "tesamorelin",
+    "primary_name_a": "Liraglutide",
+    "primary_name_b": "Tesamorelin",
+    "shared_risk_count": 3,
+    "shared_risks": [
+      {
+        "system": "oncologic",
+        "label_a": "Thyroid C-cell tumors (rodent; boxed warning)",
+        "label_b": "Use in active malignancy is contraindicated"
+      },
+      {
+        "system": "oncologic",
+        "label_a": "Breast cancer imbalance signal in SAXENDA adult trials",
+        "label_b": "Use in active malignancy is contraindicated"
+      },
+      {
+        "system": "immune",
+        "label_a": "Hypersensitivity (anaphylaxis, angioedema); anti-drug antibodies",
+        "label_b": "Hypersensitivity / injection site reactions"
+      }
+    ]
+  },
+  {
+    "peptide_a": "semaglutide",
+    "peptide_b": "tesamorelin",
+    "primary_name_a": "Semaglutide",
+    "primary_name_b": "Tesamorelin",
+    "shared_risk_count": 3,
+    "shared_risks": [
+      {
+        "system": "oncologic",
+        "label_a": "Thyroid C-cell tumors (rodent; boxed warning)",
+        "label_b": "Use in active malignancy is contraindicated"
+      },
+      {
+        "system": "immune",
+        "label_a": "Hypersensitivity (anaphylaxis, angioedema)",
+        "label_b": "Hypersensitivity / injection site reactions"
+      },
+      {
+        "system": "musculoskeletal",
+        "label_a": "Hip/pelvic fractures in >=75 y (SELECT signal)",
+        "label_b": "Arthralgia / fluid retention / carpal tunnel"
+      }
+    ]
+  },
+  {
+    "peptide_a": "tirzepatide",
+    "peptide_b": "tesamorelin",
+    "primary_name_a": "Tirzepatide",
+    "primary_name_b": "Tesamorelin",
+    "shared_risk_count": 2,
+    "shared_risks": [
+      {
+        "system": "oncologic",
+        "label_a": "Thyroid C-cell tumors (rodent; boxed warning)",
+        "label_b": "Use in active malignancy is contraindicated"
+      },
+      {
+        "system": "immune",
+        "label_a": "Hypersensitivity reactions",
+        "label_b": "Hypersensitivity / injection site reactions"
+      }
+    ]
+  },
+  {
+    "peptide_a": "liraglutide",
+    "peptide_b": "retatrutide",
+    "primary_name_a": "Liraglutide",
+    "primary_name_b": "Retatrutide",
+    "shared_risk_count": 1,
+    "shared_risks": [
+      {
+        "system": "gastrointestinal",
+        "label_a": "Pancreatitis",
+        "label_b": "Class GI adverse events"
+      }
+    ]
+  },
+  {
+    "peptide_a": "retatrutide",
+    "peptide_b": "cerebrolysin",
+    "primary_name_a": "Retatrutide",
+    "primary_name_b": "Cerebrolysin",
+    "shared_risk_count": 1,
+    "shared_risks": [
+      {
+        "system": "regulatory",
+        "label_a": "Not FDA-approved; investigational only",
+        "label_b": "US unapproved"
+      }
+    ]
+  },
+  {
+    "peptide_a": "semaglutide",
+    "peptide_b": "retatrutide",
+    "primary_name_a": "Semaglutide",
+    "primary_name_b": "Retatrutide",
+    "shared_risk_count": 1,
+    "shared_risks": [
+      {
+        "system": "gastrointestinal",
+        "label_a": "Pancreatitis",
+        "label_b": "Class GI adverse events"
+      }
+    ]
+  },
+  {
+    "peptide_a": "tirzepatide",
+    "peptide_b": "retatrutide",
+    "primary_name_a": "Tirzepatide",
+    "primary_name_b": "Retatrutide",
+    "shared_risk_count": 1,
+    "shared_risks": [
+      {
+        "system": "gastrointestinal",
+        "label_a": "Pancreatitis",
+        "label_b": "Class GI adverse events"
+      }
+    ]
+  },
+  {
+    "peptide_a": "bpc-157",
+    "peptide_b": "retatrutide",
+    "primary_name_a": "BPC-157",
+    "primary_name_b": "Retatrutide",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "bpc-157",
+    "peptide_b": "cerebrolysin",
+    "primary_name_a": "BPC-157",
+    "primary_name_b": "Cerebrolysin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "bpc-157",
+    "peptide_b": "hcg",
+    "primary_name_a": "BPC-157",
+    "primary_name_b": "Human chorionic gonadotropin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "bpc-157",
+    "peptide_b": "mk-677",
+    "primary_name_a": "BPC-157",
+    "primary_name_b": "Ibutamoren",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "bpc-157",
+    "peptide_b": "5-amino-1mq",
+    "primary_name_a": "BPC-157",
+    "primary_name_b": "5-Amino-1-methylquinolinium",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "cerebrolysin",
+    "peptide_b": "hcg",
+    "primary_name_a": "Cerebrolysin",
+    "primary_name_b": "Human chorionic gonadotropin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "cerebrolysin",
+    "peptide_b": "mk-677",
+    "primary_name_a": "Cerebrolysin",
+    "primary_name_b": "Ibutamoren",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "cerebrolysin",
+    "peptide_b": "5-amino-1mq",
+    "primary_name_a": "Cerebrolysin",
+    "primary_name_b": "5-Amino-1-methylquinolinium",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "liraglutide",
+    "peptide_b": "teduglutide",
+    "primary_name_a": "Liraglutide",
+    "primary_name_b": "Teduglutide",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "liraglutide",
+    "peptide_b": "bpc-157",
+    "primary_name_a": "Liraglutide",
+    "primary_name_b": "BPC-157",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "liraglutide",
+    "peptide_b": "cerebrolysin",
+    "primary_name_a": "Liraglutide",
+    "primary_name_b": "Cerebrolysin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "liraglutide",
+    "peptide_b": "hcg",
+    "primary_name_a": "Liraglutide",
+    "primary_name_b": "Human chorionic gonadotropin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "liraglutide",
+    "peptide_b": "mk-677",
+    "primary_name_a": "Liraglutide",
+    "primary_name_b": "Ibutamoren",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "liraglutide",
+    "peptide_b": "5-amino-1mq",
+    "primary_name_a": "Liraglutide",
+    "primary_name_b": "5-Amino-1-methylquinolinium",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "retatrutide",
+    "peptide_b": "hcg",
+    "primary_name_a": "Retatrutide",
+    "primary_name_b": "Human chorionic gonadotropin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "retatrutide",
+    "peptide_b": "mk-677",
+    "primary_name_a": "Retatrutide",
+    "primary_name_b": "Ibutamoren",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "retatrutide",
+    "peptide_b": "5-amino-1mq",
+    "primary_name_a": "Retatrutide",
+    "primary_name_b": "5-Amino-1-methylquinolinium",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "semaglutide",
+    "peptide_b": "teduglutide",
+    "primary_name_a": "Semaglutide",
+    "primary_name_b": "Teduglutide",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "semaglutide",
+    "peptide_b": "bpc-157",
+    "primary_name_a": "Semaglutide",
+    "primary_name_b": "BPC-157",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "semaglutide",
+    "peptide_b": "cerebrolysin",
+    "primary_name_a": "Semaglutide",
+    "primary_name_b": "Cerebrolysin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "semaglutide",
+    "peptide_b": "hcg",
+    "primary_name_a": "Semaglutide",
+    "primary_name_b": "Human chorionic gonadotropin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "semaglutide",
+    "peptide_b": "mk-677",
+    "primary_name_a": "Semaglutide",
+    "primary_name_b": "Ibutamoren",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "semaglutide",
+    "peptide_b": "5-amino-1mq",
+    "primary_name_a": "Semaglutide",
+    "primary_name_b": "5-Amino-1-methylquinolinium",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "teduglutide",
+    "peptide_b": "bpc-157",
+    "primary_name_a": "Teduglutide",
+    "primary_name_b": "BPC-157",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "teduglutide",
+    "peptide_b": "retatrutide",
+    "primary_name_a": "Teduglutide",
+    "primary_name_b": "Retatrutide",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "teduglutide",
+    "peptide_b": "cerebrolysin",
+    "primary_name_a": "Teduglutide",
+    "primary_name_b": "Cerebrolysin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "teduglutide",
+    "peptide_b": "hcg",
+    "primary_name_a": "Teduglutide",
+    "primary_name_b": "Human chorionic gonadotropin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "teduglutide",
+    "peptide_b": "mk-677",
+    "primary_name_a": "Teduglutide",
+    "primary_name_b": "Ibutamoren",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "teduglutide",
+    "peptide_b": "5-amino-1mq",
+    "primary_name_a": "Teduglutide",
+    "primary_name_b": "5-Amino-1-methylquinolinium",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tesamorelin",
+    "peptide_b": "teduglutide",
+    "primary_name_a": "Tesamorelin",
+    "primary_name_b": "Teduglutide",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tesamorelin",
+    "peptide_b": "bpc-157",
+    "primary_name_a": "Tesamorelin",
+    "primary_name_b": "BPC-157",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tesamorelin",
+    "peptide_b": "retatrutide",
+    "primary_name_a": "Tesamorelin",
+    "primary_name_b": "Retatrutide",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tesamorelin",
+    "peptide_b": "cerebrolysin",
+    "primary_name_a": "Tesamorelin",
+    "primary_name_b": "Cerebrolysin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tesamorelin",
+    "peptide_b": "hcg",
+    "primary_name_a": "Tesamorelin",
+    "primary_name_b": "Human chorionic gonadotropin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tesamorelin",
+    "peptide_b": "mk-677",
+    "primary_name_a": "Tesamorelin",
+    "primary_name_b": "Ibutamoren",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tesamorelin",
+    "peptide_b": "5-amino-1mq",
+    "primary_name_a": "Tesamorelin",
+    "primary_name_b": "5-Amino-1-methylquinolinium",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tirzepatide",
+    "peptide_b": "teduglutide",
+    "primary_name_a": "Tirzepatide",
+    "primary_name_b": "Teduglutide",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tirzepatide",
+    "peptide_b": "bpc-157",
+    "primary_name_a": "Tirzepatide",
+    "primary_name_b": "BPC-157",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tirzepatide",
+    "peptide_b": "cerebrolysin",
+    "primary_name_a": "Tirzepatide",
+    "primary_name_b": "Cerebrolysin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tirzepatide",
+    "peptide_b": "hcg",
+    "primary_name_a": "Tirzepatide",
+    "primary_name_b": "Human chorionic gonadotropin",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tirzepatide",
+    "peptide_b": "mk-677",
+    "primary_name_a": "Tirzepatide",
+    "primary_name_b": "Ibutamoren",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  },
+  {
+    "peptide_a": "tirzepatide",
+    "peptide_b": "5-amino-1mq",
+    "primary_name_a": "Tirzepatide",
+    "primary_name_b": "5-Amino-1-methylquinolinium",
+    "shared_risk_count": 0,
+    "shared_risks": []
+  }
+]

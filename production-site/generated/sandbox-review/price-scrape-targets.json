@@ -1,0 +1,412 @@
+[
+  {
+    "peptide_id": "bpc-157",
+    "primary_name": "BPC-157",
+    "tracked_priority": true,
+    "target_type": "priority_price_source",
+    "vendor": "Peptide Partners",
+    "source_platform": "peptide_partners_or_finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/bpc-157/peptide-partners",
+    "rationale": "Collect direct product pricing here first; fall back to Finnrick-derived quality context if direct product pricing is unavailable."
+  },
+  {
+    "peptide_id": "bpc-157",
+    "primary_name": "BPC-157",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Precision Peptide Co",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/bpc-157/precision-peptide-co",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "bpc-157",
+    "primary_name": "BPC-157",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Yabang Peptide",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/bpc-157/yabang-peptide",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "bpc-157",
+    "primary_name": "BPC-157",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Bulk Peptide Wholesale",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/bpc-157/bulk-peptide-wholesale",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "bpc-157",
+    "primary_name": "BPC-157",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Peptide Sciences",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/bpc-157/peptide-sciences",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "bpc-157",
+    "primary_name": "BPC-157",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Peptide Technologies",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/bpc-157/peptide-technologies",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "cerebrolysin",
+    "primary_name": "Cerebrolysin",
+    "tracked_priority": true,
+    "target_type": "manual_source_needed",
+    "vendor": null,
+    "source_platform": null,
+    "url": null,
+    "rationale": "No vendor-quality rows embedded for this tracked peptide; manual product-source discovery required."
+  },
+  {
+    "peptide_id": "liraglutide",
+    "primary_name": "Liraglutide",
+    "tracked_priority": true,
+    "target_type": "manual_source_needed",
+    "vendor": null,
+    "source_platform": null,
+    "url": null,
+    "rationale": "No vendor-quality rows embedded for this tracked peptide; manual product-source discovery required."
+  },
+  {
+    "peptide_id": "retatrutide",
+    "primary_name": "Retatrutide",
+    "tracked_priority": true,
+    "target_type": "priority_price_source",
+    "vendor": "Peptide Partners",
+    "source_platform": "peptide_partners_or_finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/retatrutide/peptide-partners",
+    "rationale": "Collect direct product pricing here first; fall back to Finnrick-derived quality context if direct product pricing is unavailable."
+  },
+  {
+    "peptide_id": "retatrutide",
+    "primary_name": "Retatrutide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Bulk Peptide Wholesale",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/retatrutide/bulk-peptide-wholesale",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "retatrutide",
+    "primary_name": "Retatrutide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Regenerative Research",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/retatrutide/regenerative-research",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "retatrutide",
+    "primary_name": "Retatrutide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Paradigm Peptide",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/retatrutide/paradigm-peptide",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "retatrutide",
+    "primary_name": "Retatrutide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "NUPEPS Peptides",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/retatrutide/nupeps-peptides",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "retatrutide",
+    "primary_name": "Retatrutide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Orbitrex Peptides",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/retatrutide/orbitrex-peptides",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "semaglutide",
+    "primary_name": "Semaglutide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Bulk Peptide Wholesale",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/semaglutide/bulk-peptide-wholesale",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "semaglutide",
+    "primary_name": "Semaglutide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Injectify",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/semaglutide/injectify",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "semaglutide",
+    "primary_name": "Semaglutide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "NextechLabs",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/semaglutide/nextechlabs",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "semaglutide",
+    "primary_name": "Semaglutide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Peptide Technologies",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/semaglutide/peptide-technologies",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "semaglutide",
+    "primary_name": "Semaglutide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Yiwu Aozuo Trading Co",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/semaglutide/yiwu-aozuo-trading-co",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "semaglutide",
+    "primary_name": "Semaglutide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Bulk Peptide Supply",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/semaglutide/bulk-peptide-supply",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "teduglutide",
+    "primary_name": "Teduglutide",
+    "tracked_priority": true,
+    "target_type": "manual_source_needed",
+    "vendor": null,
+    "source_platform": null,
+    "url": null,
+    "rationale": "No vendor-quality rows embedded for this tracked peptide; manual product-source discovery required."
+  },
+  {
+    "peptide_id": "tesamorelin",
+    "primary_name": "Tesamorelin",
+    "tracked_priority": true,
+    "target_type": "priority_price_source",
+    "vendor": "Peptide Partners",
+    "source_platform": "peptide_partners_or_finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/tesamorelin/peptide-partners",
+    "rationale": "Collect direct product pricing here first; fall back to Finnrick-derived quality context if direct product pricing is unavailable."
+  },
+  {
+    "peptide_id": "tesamorelin",
+    "primary_name": "Tesamorelin",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Pure Tested Peptides",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/tesamorelin/pure-tested-peptides",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "tesamorelin",
+    "primary_name": "Tesamorelin",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Yiwu Aozuo Trading Co",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/tesamorelin/yiwu-aozuo-trading-co",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "tesamorelin",
+    "primary_name": "Tesamorelin",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "HkRoids",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/tesamorelin/hkroids",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "tesamorelin",
+    "primary_name": "Tesamorelin",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Xingtai Jiachuang Technology",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/tesamorelin/xingtai-jiachuang-technology",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "tesamorelin",
+    "primary_name": "Tesamorelin",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Nexaph",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/tesamorelin/nexaph",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "tirzepatide",
+    "primary_name": "Tirzepatide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Trusted Peptide",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/tirzepatide/trusted-peptide",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "tirzepatide",
+    "primary_name": "Tirzepatide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Risynth Bio",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/tirzepatide/risynth-bio",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "tirzepatide",
+    "primary_name": "Tirzepatide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Polaris Peptides",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/tirzepatide/polaris-peptides",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "tirzepatide",
+    "primary_name": "Tirzepatide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "P3 Labz",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/tirzepatide/p3-labz",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "tirzepatide",
+    "primary_name": "Tirzepatide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Orbitrex Peptides",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/tirzepatide/orbitrex-peptides",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "tirzepatide",
+    "primary_name": "Tirzepatide",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "PeptiAtlas",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://www.finnrick.com/products/tirzepatide/peptiatlas",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "hcg",
+    "primary_name": "Human chorionic gonadotropin",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Ascension Peptides",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://ascensionpeptides.com/product/hcg-5000iu/",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "hcg",
+    "primary_name": "Human chorionic gonadotropin",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Ascension Peptides",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://ascensionpeptides.com/product/hcg/",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "mk-677",
+    "primary_name": "Ibutamoren",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Limitless Life Nootropics",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://limitlesslifenootropics.com/product/mk-677-12-5mg-60-capsules/",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "mk-677",
+    "primary_name": "Ibutamoren",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Pure Rawz",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://purerawz.co/product/ibutamoren-mk-677/",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "5-amino-1mq",
+    "primary_name": "5-Amino-1-methylquinolinium",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Ascension Peptides",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://ascensionpeptides.com/product/5-amino-1mq-10-mg/",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "5-amino-1mq",
+    "primary_name": "5-Amino-1-methylquinolinium",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Limitless Life Nootropics",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://limitlesslifenootropics.com/product/5-amino-1mq/",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "5-amino-1mq",
+    "primary_name": "5-Amino-1-methylquinolinium",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Limitless Life Nootropics",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://limitlesslifenootropics.com/product/5-amino-1mq-50mg-capsules-60/",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  },
+  {
+    "peptide_id": "5-amino-1mq",
+    "primary_name": "5-Amino-1-methylquinolinium",
+    "tracked_priority": true,
+    "target_type": "secondary_quality_source",
+    "vendor": "Pure Rawz",
+    "source_platform": "finnrick_vendor_page",
+    "url": "https://purerawz.co/product/5-amino-1mq/",
+    "rationale": "Useful vendor-quality page to pair with future direct price captures."
+  }
+]

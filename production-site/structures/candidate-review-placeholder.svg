@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Candidate Structure Placeholder</title>
+  <desc id="desc">Representative placeholder art for sandbox candidate records pending dedicated structure curation.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="32%" r="72%">
+      <stop offset="0%" stop-color="#172333"/>
+      <stop offset="55%" stop-color="#0b1119"/>
+      <stop offset="100%" stop-color="#040607"/>
+    </radialGradient>
+    <radialGradient id="cyan" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#c8fbff"/>
+      <stop offset="40%" stop-color="#87e8ff"/>
+      <stop offset="100%" stop-color="#2f9fc4"/>
+    </radialGradient>
+    <radialGradient id="rose" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#ffe4ec"/>
+      <stop offset="40%" stop-color="#ff98b3"/>
+      <stop offset="100%" stop-color="#b64667"/>
+    </radialGradient>
+    <radialGradient id="gold" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#fff3cc"/>
+      <stop offset="40%" stop-color="#f2c057"/>
+      <stop offset="100%" stop-color="#8f6513"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#d8eef7" stroke-width="18" fill="none">
+    <path d="M138 630c92-192 192-292 296-300 108-8 198 66 328 188"/>
+    <path d="M218 214c88 42 152 102 196 174"/>
+  </g>
+  <g stroke="#dce6ef" stroke-linecap="round" stroke-width="24" opacity="0.86">
+    <line x1="212" y1="610" x2="332" y2="494"/>
+    <line x1="332" y1="494" x2="470" y2="532"/>
+    <line x1="470" y1="532" x2="614" y2="420"/>
+    <line x1="470" y1="532" x2="586" y2="644"/>
+    <line x1="614" y1="420" x2="720" y2="520"/>
+  </g>
+  <g>
+    <circle cx="212" cy="610" r="58" fill="url(#cyan)"/>
+    <circle cx="332" cy="494" r="54" fill="url(#rose)"/>
+    <circle cx="470" cy="532" r="70" fill="url(#gold)"/>
+    <circle cx="614" cy="420" r="64" fill="url(#cyan)"/>
+    <circle cx="586" cy="644" r="52" fill="url(#rose)"/>
+    <circle cx="720" cy="520" r="48" fill="url(#gold)"/>
+  </g>
+  <g fill="#edf5fb" font-family="'JetBrains Mono', Menlo, monospace" text-anchor="middle">
+    <text x="450" y="770" font-size="28" letter-spacing="4">SANDBOX CANDIDATE</text>
+    <text x="450" y="812" font-size="18" opacity="0.72">structure asset pending dedicated curation</text>
+  </g>
+</svg>

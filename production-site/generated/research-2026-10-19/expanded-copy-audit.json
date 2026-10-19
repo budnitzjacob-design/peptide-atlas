@@ -1,0 +1,25 @@
+{
+  "records": 48,
+  "narratives": {
+    "beforeWords": 17381,
+    "afterWords": 2840,
+    "reductionPercent": 83.66031873885277
+  },
+  "enhancementNotes": {
+    "beforeWords": 2472,
+    "afterWords": 739,
+    "reductionPercent": 70.10517799352752
+  },
+  "combinedNarrative": {
+    "beforeWords": 19853,
+    "afterWords": 3579,
+    "reductionPercent": 81.9724978592656
+  },
+  "vendorNotes": {
+    "rows": 708,
+    "beforeWords": 12036,
+    "afterWords": 2124,
+    "reductionPercent": 82.35294117647058
+  },
+  "scope": "Expanded narrative fields and repetitive vendor notes; structured study results, risk rows, pathways, chemical identity, doses and citations retained. Generic pathway explanation strings shortened separately."
+}

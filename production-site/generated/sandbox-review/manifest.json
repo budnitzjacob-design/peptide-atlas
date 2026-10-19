@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-04-27T07:58:15.465Z",
+  "files": {
+    "reviewRecords": "review-records.json",
+    "regulatoryAudit": "regulatory-audit.json",
+    "regulatoryAuditCsv": "regulatory-audit.csv",
+    "regulatorySourceTargets": "regulatory-source-targets.json",
+    "regulatorySourceTargetsCsv": "regulatory-source-targets.csv",
+    "pkAuditTargets": "pk-audit-targets.json",
+    "pkAuditTargetsCsv": "pk-audit-targets.csv",
+    "trackedReviewStatus": "tracked-review-status.json",
+    "trackedReviewStatusCsv": "tracked-review-status.csv",
+    "reviewQueue": "review-queue.json",
+    "reviewQueueCsv": "review-queue.csv",
+    "reviewQueueMarkdown": "review-queue.md",
+    "qualityObservations": "quality-observations.json",
+    "qualityObservationsCsv": "quality-observations.csv",
+    "priceObservationStubs": "price-observation-stubs.json",
+    "priceObservationStubsCsv": "price-observation-stubs.csv",
+    "priceScrapeTargets": "price-scrape-targets.json",
+    "priceScrapeTargetsCsv": "price-scrape-targets.csv",
+    "collectedPriceObservations": "collected-price-observations.json",
+    "collectedPriceObservationsCsv": "collected-price-observations.csv",
+    "stackRiskRows": "stack-risk-rows.json",
+    "stackRiskRowsCsv": "stack-risk-rows.csv",
+    "trackedOverlapPreview": "tracked-stack-overlap-preview.json"
+  },
+  "counts": {
+    "regulatoryRows": 48,
+    "regulatorySourceTargets": 86,
+    "pkAuditTargets": 11,
+    "trackedReviewStatus": 11,
+    "reviewQueue": 18,
+    "qualityRows": 146,
+    "priceStubRows": 48,
+    "priceScrapeTargets": 41,
+    "collectedPriceObservations": 186,
+    "stackRows": 147,
+    "trackedOverlapRows": 55
+  }
+}

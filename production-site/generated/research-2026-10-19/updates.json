@@ -1,0 +1,118 @@
+{
+  "checkedAt": "2026-10-19",
+  "updates": [
+    {
+      "id": "orforglipron",
+      "summary": "Foundayo approved April 1, 2026; current label includes oral PK and CYP3A4 interactions.",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=8ac446c5-feba-474f-a103-23facb9b5c62",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "sermorelin",
+      "summary": "Historical Geref approval does not establish approval of current compounded sermorelin. FDA found discontinuation was not for safety or effectiveness.",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2013-03-04/html/2013-04827.htm",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "teduglutide",
+      "summary": "Confirmed label Vd 103 mL/kg; half-life approximately 2 hours in healthy adults and 1.3 hours in SBS.",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=66b69c1e-b25c-44d3-b5ff-1c1de9a516fa",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "liraglutide",
+      "summary": "Label supports proteolytic metabolism; absence of a conventional phase-II value is not missing measured PK.",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0ba917f7-b974-4364-a745-7494ecae3e73",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "retatrutide",
+      "summary": "FDA states retatrutide is unapproved and cannot be used in compounding under federal law.",
+      "url": "https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "ss-31",
+      "summary": "Forzinity accelerated approval is specific to Barth syndrome, weight ≥30 kg; confirmatory clinical benefit is required.",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-grants-accelerated-approval-first-treatment-barth-syndrome",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "bpc-157",
+      "summary": "July 2026 FDA compounding review documented. Advisory review does not establish drug approval or clinical efficacy.",
+      "url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "kpv",
+      "summary": "July 2026 FDA compounding review documented. Advisory review does not establish drug approval or clinical efficacy.",
+      "url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "tb-500",
+      "summary": "July 2026 FDA compounding review documented. Advisory review does not establish drug approval or clinical efficacy.",
+      "url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "mots-c",
+      "summary": "July 2026 FDA compounding review documented. Advisory review does not establish drug approval or clinical efficacy.",
+      "url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "dsip",
+      "summary": "July 2026 FDA compounding review documented. Advisory review does not establish drug approval or clinical efficacy.",
+      "url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "semax",
+      "summary": "July 2026 FDA compounding review documented. Advisory review does not establish drug approval or clinical efficacy.",
+      "url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "epithalon",
+      "summary": "July 2026 FDA compounding review documented. Advisory review does not establish drug approval or clinical efficacy.",
+      "url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "5-amino-1mq",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34304009/",
+      "summary": "Source reports rat PK. Rat half-life and oral bioavailability must not be presented as human estimates.",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "mk-677",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7624358/",
+      "summary": "This foundational report studies cells and animals; it does not supply a human volume-of-distribution estimate.",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "hcg",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/017692s028s036s043lbl.pdf",
+      "summary": "Urinary hCG label reviewed; no human Vd value assigned. Do not substitute recombinant choriogonadotropin-alfa PK.",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "semaglutide",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2026/215256Orig1s031.pdf",
+      "summary": "Wegovy injection includes an adult noncirrhotic MASH indication with F2–F3 fibrosis; indications and PK differ by product and route.",
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "cerebrolysin",
+      "url": "https://www.everpharma.com/products/cerebrolysin/",
+      "summary": "Manufacturer product page checked. It does not provide a normalized single-molecule volume of distribution; mixture-specific PK remains required.",
+      "checkedAt": "2026-10-19"
+    }
+  ],
+  "remaining": [
+    "Historical vendor prices need new dated observations; old quotes are not current prices.",
+    "Some PK fields are unpublished, unstudied, or mixture-inapplicable; they remain explicitly unknown.",
+    "Full independent verification of all imported claims remains open; no moderator verification was fabricated."
+  ]
+}

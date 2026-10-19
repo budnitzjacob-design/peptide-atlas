@@ -22,3 +22,7 @@ The repo also includes the scalable backend track:
 - Dosing is displayed only as context: FDA-label, clinical-trial, or anecdotal/common-use context.
 - Vendor data is public for now but never used as efficacy/safety evidence.
 - High-risk fields are marked for moderator review.
+
+## Current production copy revision
+
+The current live-source copy revision is preserved in [production-site/](production-site/README.md). It is independent of this root implementation and includes its own verification and deployment instructions.

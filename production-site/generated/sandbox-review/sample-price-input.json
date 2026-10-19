@@ -1,0 +1,14 @@
+[
+  {
+    "peptide_id": "bpc-157",
+    "vendor": "Peptide Partners",
+    "source_platform": "manual_fixture",
+    "source_url": "https://example.com/bpc-157",
+    "observed_at": "2026-04-26",
+    "price_usd": 89,
+    "package_mg": 10,
+    "vial_count": 1,
+    "availability": "in_stock",
+    "notes": "fixture row for sandbox ingestion validation"
+  }
+]

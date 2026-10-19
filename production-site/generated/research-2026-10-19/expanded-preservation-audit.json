@@ -1,0 +1,11 @@
+{
+  "records": 48,
+  "unchangedClaims": 246,
+  "unchangedCitations": 310,
+  "unchangedRiskEntries": 149,
+  "unchanged": "Doses, chemical identity, PK, pathways, biology, labels, catalog copy, study rows, citation links, structures and 3D configuration",
+  "vendorRowsDeduplicated": 708,
+  "code": "Only explanatory TemplateElement text changed in describeStep/pathwayNarrative; parsed runtime logic and markup unchanged",
+  "HTMLandCSS": "byte-identical",
+  "narrativeReduction": 83.66031873885277
+}

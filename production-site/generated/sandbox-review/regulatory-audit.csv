@@ -1,0 +1,49 @@
+peptide_id,primary_name,tracked_priority,atlas_regulatory_status,atlas_evidence_tier,official_source_count,review_state,regulatory_note
+aod-9604,AOD-9604,false,discontinued_phase2b_failed,secondary_only,3,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+bpc-157,BPC-157,true,investigational,preclinical,7,seeded_priority_record,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+cagrilintide,Cagrilintide,false,investigational (Phase 3 / under regulatory review),secondary_only,5,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+cerebrolysin,Cerebrolysin,true,approved (non-US),secondary_only,5,seeded_priority_record,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+cjc-1295,CJC-1295,false,not_approved (development discontinued),secondary_only,3,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+dihexa,Dihexa,false,research_only,secondary_only,2,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+dsip,Delta sleep-inducing peptide,false,research_only,secondary_only,2,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+epithalon,Epithalon,false,research_only,secondary_only,3,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+follistatin-344,Follistatin 344,false,investigational (gene therapy),secondary_only,2,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+foxo4-dri,FOXO4-DRI,false,research_only,secondary_only,1,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+ghk-cu,GHK-Cu,false,research_only (cosmetic ingredient; not an approved drug),preclinical,3,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+ghrp-2,GHRP-2,false,approved_diagnostic,secondary_only,2,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+ghrp-6,GHRP-6,false,research_only,secondary_only,2,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+hexarelin,Hexarelin,false,research_only,secondary_only,2,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+humanin,Humanin,false,research_only,secondary_only,3,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+igf-1-lr3,IGF-1 LR3,false,not_approved,secondary_only,2,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+ipamorelin,Ipamorelin,false,not_approved (development discontinued),secondary_only,3,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+kisspeptin,Kisspeptin,false,investigational,secondary_only,3,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+kpv,KPV,false,research_only,secondary_only,2,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+liraglutide,Liraglutide,true,approved,fda_phase3,14,seeded_priority_record,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+ll-37,LL-37,false,research_only,translational,2,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+mazdutide,Mazdutide,false,approved (non-US),secondary_only,7,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+melanotan-ii,Melanotan-II,false,not_approved,secondary_only,4,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+mots-c,MOTS-c,false,research_only,preclinical,1,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+orforglipron,Orforglipron,false,investigational (Phase 3 / under regulatory review),secondary_only,4,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+oxytocin,Oxytocin,false,approved,secondary_only,4,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+pinealon,Pinealon,false,research_only,secondary_only,1,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+pramlintide,Pramlintide,false,approved,secondary_only,3,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+pt-141,Bremelanotide,false,fda_approved,secondary_only,1,derived_from_embedded_atlas,"Atlas status is present, but normalized jurisdiction/approval-date fields still need source-locked extraction."
+retatrutide,Retatrutide,true,investigational,human_clinical_development,7,seeded_priority_record,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+selank,Selank,false,approved (non-US),secondary_only,3,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+semaglutide,Semaglutide,true,fda_approved,fda_phase3,13,seeded_priority_record,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+semax,Semax,false,approved (non-US),secondary_only,3,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+sermorelin,Sermorelin,false,discontinued (FDA approval withdrawn 2009),human_pk_pd,5,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+snap-8,SNAP-8,false,cosmetic_ingredient,secondary_only,2,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+ss-31,Elamipretide,false,fda_approved,fda_phase3,2,derived_from_embedded_atlas,"Atlas status is present, but normalized jurisdiction/approval-date fields still need source-locked extraction."
+survodutide,Survodutide,false,investigational (Phase 3; FDA Breakthrough Therapy),secondary_only,6,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+tb-500,TB-500,false,research_only,preclinical,2,derived_from_embedded_atlas,"Atlas status is present, but normalized jurisdiction/approval-date fields still need source-locked extraction."
+tb4-frag,Thymosin beta-4 (and active fragments),false,research_only,secondary_only,4,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+teduglutide,Teduglutide,true,approved,secondary_only,7,seeded_priority_record,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+tesamorelin,Tesamorelin,true,fda_approved,fda_phase3,8,seeded_priority_record,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+thymosin-alpha-1,Thymosin Alpha-1,false,approved (non-US),human_clinical_development,4,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+thymulin,Thymulin,false,research_only,secondary_only,2,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+tirzepatide,Tirzepatide,true,fda_approved,fda_phase3,8,seeded_priority_record,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+vip,Vasoactive intestinal peptide,false,investigational (FDA EUA twice declined for COVID-19),secondary_only,5,derived_from_embedded_atlas,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+hcg,Human chorionic gonadotropin,true,approved,fda_phase3,7,seeded_priority_record,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+mk-677,Ibutamoren,true,not_approved,human_clinical_development,6,seeded_priority_record,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.
+5-amino-1mq,5-Amino-1-methylquinolinium,true,not_approved,human_clinical_development,4,seeded_priority_record,Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches.

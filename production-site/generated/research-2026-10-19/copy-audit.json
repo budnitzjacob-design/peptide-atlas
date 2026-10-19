@@ -1,0 +1,8 @@
+{
+  "scope": "Four editable catalog descriptions per compound; excludes fixed UI labels, scientific-tag controls, and citation metadata.",
+  "records": 48,
+  "beforeWords": 3340,
+  "afterWords": 513,
+  "reductionPercent": 84.64071856287426,
+  "retention": "Original descriptive facts remain in existing human/mechanism/safety/anecdotal article sections; scientific tags, evidence claims, citations and structures unchanged."
+}

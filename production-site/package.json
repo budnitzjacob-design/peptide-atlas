@@ -1,0 +1,13 @@
+{
+  "name": "peptocopeia-production-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --check app.js && node scripts/validate-copy.mjs && node scripts/validate-reference.mjs",
+    "serve": "python3 -m http.server 8793 --bind 127.0.0.1"
+  },
+  "devDependencies": {
+    "acorn": "^8.15.0"
+  }
+}

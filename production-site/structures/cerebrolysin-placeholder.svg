@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Cerebrolysin mixture placeholder</title>
+  <desc id="desc">Placeholder graphic indicating Cerebrolysin is a peptide mixture without a single defined molecular structure.</desc>
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07131f"/>
+      <stop offset="100%" stop-color="#041018"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.32" cy="0.28" r="0.9">
+      <stop offset="0%" stop-color="#54d2ff" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#54d2ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.75" cy="0.72" r="0.85">
+      <stop offset="0%" stop-color="#ffc53d" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffc53d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#wash)"/>
+  <rect width="900" height="1200" fill="url(#glowA)"/>
+  <rect width="900" height="1200" fill="url(#glowB)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M167 275c84-49 180-33 237 34 44 52 55 131 24 195-23 47-58 75-115 108-63 37-96 64-122 102-33 49-37 104-11 165" stroke="#66e0ff" stroke-opacity=".72" stroke-width="9"/>
+    <path d="M678 248c-54 15-95 46-128 95-28 42-36 102-18 151 23 65 74 98 131 136 53 35 90 66 113 113 23 47 21 101-4 164" stroke="#ffd166" stroke-opacity=".72" stroke-width="9"/>
+    <path d="M232 779c47-55 104-86 171-93 75-8 145 17 203 74 68 66 137 96 208 89" stroke="#9af0bf" stroke-opacity=".64" stroke-width="8"/>
+    <path d="M267 398c58 67 145 109 220 107 69-2 127-31 176-90" stroke="#f68a6a" stroke-opacity=".58" stroke-width="7"/>
+  </g>
+  <g fill="#f4efe4" font-family="'JetBrains Mono', monospace" text-anchor="middle">
+    <text x="450" y="162" font-size="36" letter-spacing="8" opacity=".88">PEPTIDE MIXTURE</text>
+    <text x="450" y="580" font-size="88" font-style="italic" font-family="'Apple Garamond', 'Cormorant Garamond', serif">Cerebrolysin</text>
+    <text x="450" y="648" font-size="28" letter-spacing="3" opacity=".82">NO SINGLE DEFINED 3D STRUCTURE</text>
+    <text x="450" y="864" font-size="24" opacity=".64">Porcine brain-derived hydrolysate</text>
+    <text x="450" y="906" font-size="24" opacity=".64">heterogeneous short peptides + amino acids</text>
+  </g>
+  <g transform="translate(450 420)">
+    <circle r="116" fill="none" stroke="#273449" stroke-width="2"/>
+    <circle r="84" fill="none" stroke="#273449" stroke-width="2"/>
+    <circle r="52" fill="none" stroke="#273449" stroke-width="2"/>
+    <circle r="8" fill="#66e0ff"/>
+    <circle cx="-106" cy="-24" r="10" fill="#ffd166"/>
+    <circle cx="-62" cy="88" r="10" fill="#f68a6a"/>
+    <circle cx="94" cy="-56" r="10" fill="#9af0bf"/>
+    <circle cx="75" cy="72" r="10" fill="#66e0ff"/>
+    <circle cx="-14" cy="-84" r="10" fill="#ffd166"/>
+    <circle cx="18" cy="113" r="10" fill="#f68a6a"/>
+    <circle cx="-88" cy="14" r="10" fill="#9af0bf"/>
+    <circle cx="113" cy="8" r="10" fill="#66e0ff"/>
+  </g>
+</svg>

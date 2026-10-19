@@ -1,0 +1,4 @@
+node_modules/
+*.log
+__pycache__/
+generated/research-2026-10-19/rendered-*.json

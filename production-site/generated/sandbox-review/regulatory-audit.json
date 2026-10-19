@@ -1,0 +1,482 @@
+[
+  {
+    "peptide_id": "aod-9604",
+    "primary_name": "AOD-9604",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "discontinued_phase2b_failed",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 3,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "bpc-157",
+    "primary_name": "BPC-157",
+    "tracked_priority": true,
+    "atlas_regulatory_status": "investigational",
+    "atlas_evidence_tier": "preclinical",
+    "official_source_count": 7,
+    "review_state": "seeded_priority_record",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "cagrilintide",
+    "primary_name": "Cagrilintide",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "investigational (Phase 3 / under regulatory review)",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 5,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "cerebrolysin",
+    "primary_name": "Cerebrolysin",
+    "tracked_priority": true,
+    "atlas_regulatory_status": "approved (non-US)",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 5,
+    "review_state": "seeded_priority_record",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "cjc-1295",
+    "primary_name": "CJC-1295",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "not_approved (development discontinued)",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 3,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "dihexa",
+    "primary_name": "Dihexa",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "dsip",
+    "primary_name": "Delta sleep-inducing peptide",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "epithalon",
+    "primary_name": "Epithalon",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 3,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "follistatin-344",
+    "primary_name": "Follistatin 344",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "investigational (gene therapy)",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "foxo4-dri",
+    "primary_name": "FOXO4-DRI",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 1,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "ghk-cu",
+    "primary_name": "GHK-Cu",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only (cosmetic ingredient; not an approved drug)",
+    "atlas_evidence_tier": "preclinical",
+    "official_source_count": 3,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "ghrp-2",
+    "primary_name": "GHRP-2",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "approved_diagnostic",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "ghrp-6",
+    "primary_name": "GHRP-6",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "hexarelin",
+    "primary_name": "Hexarelin",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "humanin",
+    "primary_name": "Humanin",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 3,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "igf-1-lr3",
+    "primary_name": "IGF-1 LR3",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "not_approved",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "ipamorelin",
+    "primary_name": "Ipamorelin",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "not_approved (development discontinued)",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 3,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "kisspeptin",
+    "primary_name": "Kisspeptin",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "investigational",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 3,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "kpv",
+    "primary_name": "KPV",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "liraglutide",
+    "primary_name": "Liraglutide",
+    "tracked_priority": true,
+    "atlas_regulatory_status": "approved",
+    "atlas_evidence_tier": "fda_phase3",
+    "official_source_count": 14,
+    "review_state": "seeded_priority_record",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "ll-37",
+    "primary_name": "LL-37",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "translational",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "mazdutide",
+    "primary_name": "Mazdutide",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "approved (non-US)",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 7,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "melanotan-ii",
+    "primary_name": "Melanotan-II",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "not_approved",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 4,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "mots-c",
+    "primary_name": "MOTS-c",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "preclinical",
+    "official_source_count": 1,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "orforglipron",
+    "primary_name": "Orforglipron",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "investigational (Phase 3 / under regulatory review)",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 4,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "oxytocin",
+    "primary_name": "Oxytocin",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "approved",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 4,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "pinealon",
+    "primary_name": "Pinealon",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 1,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "pramlintide",
+    "primary_name": "Pramlintide",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "approved",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 3,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "pt-141",
+    "primary_name": "Bremelanotide",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "fda_approved",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 1,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Atlas status is present, but normalized jurisdiction/approval-date fields still need source-locked extraction."
+  },
+  {
+    "peptide_id": "retatrutide",
+    "primary_name": "Retatrutide",
+    "tracked_priority": true,
+    "atlas_regulatory_status": "investigational",
+    "atlas_evidence_tier": "human_clinical_development",
+    "official_source_count": 7,
+    "review_state": "seeded_priority_record",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "selank",
+    "primary_name": "Selank",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "approved (non-US)",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 3,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "semaglutide",
+    "primary_name": "Semaglutide",
+    "tracked_priority": true,
+    "atlas_regulatory_status": "fda_approved",
+    "atlas_evidence_tier": "fda_phase3",
+    "official_source_count": 13,
+    "review_state": "seeded_priority_record",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "semax",
+    "primary_name": "Semax",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "approved (non-US)",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 3,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "sermorelin",
+    "primary_name": "Sermorelin",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "discontinued (FDA approval withdrawn 2009)",
+    "atlas_evidence_tier": "human_pk_pd",
+    "official_source_count": 5,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "snap-8",
+    "primary_name": "SNAP-8",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "cosmetic_ingredient",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "ss-31",
+    "primary_name": "Elamipretide",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "fda_approved",
+    "atlas_evidence_tier": "fda_phase3",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Atlas status is present, but normalized jurisdiction/approval-date fields still need source-locked extraction."
+  },
+  {
+    "peptide_id": "survodutide",
+    "primary_name": "Survodutide",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "investigational (Phase 3; FDA Breakthrough Therapy)",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 6,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "tb-500",
+    "primary_name": "TB-500",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "preclinical",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Atlas status is present, but normalized jurisdiction/approval-date fields still need source-locked extraction."
+  },
+  {
+    "peptide_id": "tb4-frag",
+    "primary_name": "Thymosin beta-4 (and active fragments)",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 4,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "teduglutide",
+    "primary_name": "Teduglutide",
+    "tracked_priority": true,
+    "atlas_regulatory_status": "approved",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 7,
+    "review_state": "seeded_priority_record",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "tesamorelin",
+    "primary_name": "Tesamorelin",
+    "tracked_priority": true,
+    "atlas_regulatory_status": "fda_approved",
+    "atlas_evidence_tier": "fda_phase3",
+    "official_source_count": 8,
+    "review_state": "seeded_priority_record",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "thymosin-alpha-1",
+    "primary_name": "Thymosin Alpha-1",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "approved (non-US)",
+    "atlas_evidence_tier": "human_clinical_development",
+    "official_source_count": 4,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "thymulin",
+    "primary_name": "Thymulin",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "research_only",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 2,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "tirzepatide",
+    "primary_name": "Tirzepatide",
+    "tracked_priority": true,
+    "atlas_regulatory_status": "fda_approved",
+    "atlas_evidence_tier": "fda_phase3",
+    "official_source_count": 8,
+    "review_state": "seeded_priority_record",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "vip",
+    "primary_name": "Vasoactive intestinal peptide",
+    "tracked_priority": false,
+    "atlas_regulatory_status": "investigational (FDA EUA twice declined for COVID-19)",
+    "atlas_evidence_tier": "secondary_only",
+    "official_source_count": 5,
+    "review_state": "derived_from_embedded_atlas",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "hcg",
+    "primary_name": "Human chorionic gonadotropin",
+    "tracked_priority": true,
+    "atlas_regulatory_status": "approved",
+    "atlas_evidence_tier": "fda_phase3",
+    "official_source_count": 7,
+    "review_state": "seeded_priority_record",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "mk-677",
+    "primary_name": "Ibutamoren",
+    "tracked_priority": true,
+    "atlas_regulatory_status": "not_approved",
+    "atlas_evidence_tier": "human_clinical_development",
+    "official_source_count": 6,
+    "review_state": "seeded_priority_record",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  },
+  {
+    "peptide_id": "5-amino-1mq",
+    "primary_name": "5-Amino-1-methylquinolinium",
+    "tracked_priority": true,
+    "atlas_regulatory_status": "not_approved",
+    "atlas_evidence_tier": "human_clinical_development",
+    "official_source_count": 4,
+    "review_state": "seeded_priority_record",
+    "regulatory_note": "Peptocopeia merged imported regulatory and PK normalization rows from attached intake batches."
+  }
+]

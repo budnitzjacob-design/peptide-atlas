@@ -1,0 +1,290 @@
+{
+  "aod-9604": [
+    "Oral Phase 2b obesity RCT: no weight-loss benefit; development discontinued. Early metabolic signals did not translate.",
+    "Rodents: lipolysis↑, lipogenesis/weight gain↓; no IGF-1 or long-bone growth effect.",
+    "hGH(177–191)-derived analog; no classical GHR binding. Receptor unidentified; hormone-sensitive-lipase involvement unconfirmed.",
+    "Oral-trial tolerability resembled placebo. Food-ingredient GRAS status ≠ drug approval. Injectable purity/safety uncertain; WADA-prohibited."
+  ],
+  "bpc-157": [
+    "No adequately powered human RCT or Phase 3 support for musculoskeletal/GI claims. Early IBD work used related PL14736.",
+    "Broad rodent injury/healing results; single-lineage evidence and publication bias limit confidence.",
+    "Proposed NO/NOS, VEGFR2/angiogenesis and GHR effects; direct receptor binding unconfirmed.",
+    "Rodent tolerability cannot establish human safety. Long-term, immunogenic and oncologic risks unknown. FDA compounding concerns; WADA-prohibited since 2022."
+  ],
+  "cagrilintide": [
+    "REDEFINE-1: n=3,417, 68wk; CagriSema 2.4/2.4mg weight loss 22.7% vs 3.0% placebo; cagrilintide-alone 11.8% vs 2.3%. REDEFINE-2: n=1,206, T2D; 15.7% vs 3.1%. REIMAGINE-2: weight loss 14.2% vs semaglutide 10.2%; HbA1c reduction 1.91% vs 1.76%. CagriSema NDA: 2025-12-18; RENEW monotherapy Phase 3 began Q4-2025.",
+    "Rodents support CALCR/RAMP-mediated satiety.",
+    "Aggregation-resistant, albumin-binding amylin analog; ~weekly half-life. Gastric emptying/glucagon↓; satiety↑. GLP-1 combination engages complementary circuits.",
+    "Mainly GI events. AE discontinuation: REDEFINE-1 6% vs 3.7%; REDEFINE-2 8.4% vs 3.0%. Two deaths adjudicated unrelated; <⅔ reached maximum dose at 68wk."
+  ],
+  "cerebrolysin": [
+    "CARS stroke recovery positive; CASTA primary endpoint negative; CAPTAIN-II TBI signals. Dementia/stroke/TBI evidence heterogeneous, often industry-sponsored; Cochrane conclusions cautious.",
+    "Rodent ischemia/TBI/AD: injury, apoptosis and amyloid↓; neurogenesis/neurite growth↑.",
+    "Porcine amino-acid/peptide mixture; no isolated active entity. Proposed neurotrophin-like Akt/ERK effects, reduced excitotoxicity/caspase-3 and microglial modulation; single-molecule PK inappropriate.",
+    "Injection reactions, dizziness/headache/sweating; hypersensitivity contraindication. Renal/epilepsy precautions; contamination concerns. No FDA approval."
+  ],
+  "cjc-1295": [
+    "Teichman 2006: two short RCTs, ages 21–61; GH 2–10× for ≥6d, IGF-1 1.5–3× for 9–11d; repeated-dose elevation ≤28d. Half-life 5.8–8.1d; 30–60mcg/kg best tolerated.",
+    "GHRH-knockout mice: growth/GH restored; dose-frequency dependence. Rat albumin conjugation within 15min.",
+    "DAC maleimide binds albumin Cys34; D-Ala2 resists DPP-4. GHRHR→cAMP complements GHSR→PLC/IP3; DAC/non-DAC differ.",
+    "Injection reactions/flushing/headache. Phase 2 stopped after death judged unrelated coronary disease; full adjudication unavailable. Long-term safety and IGF-1-associated cancer risk unresolved."
+  ],
+  "dihexa": [
+    "No controlled human trials or approval; human efficacy/safety unsupported.",
+    "Harding-group rat memory and hippocampal-spine findings; independent replication limited.",
+    "Stabilized angiotensin-IV peptidomimetic; proposed HGF/c-Met potentiation, not direct c-Met agonism.",
+    "Human toxicology/long-term safety unknown; theoretical c-Met-related malignancy risk. Research-product identity/purity uncertain."
+  ],
+  "dsip": [
+    "Small older insomnia/pain/withdrawal/depression studies: weak methods, no modern replication or approval.",
+    "Rabbit/rat delta-EEG findings inconsistent; pain/seizure/stress effects reported.",
+    "Reliable sleep induction and a high-affinity receptor remain unconfirmed; GABA/opioid/HPA mechanisms speculative.",
+    "Sparse adverse-event collection; no modern pharmacovigilance. Unregulated-product identity, endotoxin and contamination risks."
+  ],
+  "epithalon": [
+    "Small Russian cohorts reported melatonin, retinal and survival signals; limited blinding and independent replication; no modern pivotal RCT.",
+    "Originating-group lifespan/tumor/circadian findings; cellular telomerase/telomere effects, little independent replication.",
+    "AEDG tetrapeptide; proposed DNA/epigenetic/telomerase actions lack confirmed receptor or independent structural validation.",
+    "Reported short-term tolerability does not establish long-term, oncologic or interaction safety; injectable quality uncertain."
+  ],
+  "follistatin-344": [
+    "AAV1-FS344 Phase 1/2a Becker-muscular-dystrophy trial improved walking/strength without significant endocrine changes. Gene therapy ≠ injected protein; no controlled protein-injection efficacy evidence.",
+    "Transgenic mice: muscle mass +194–327%; mdx AAV effects >2yr; macaque muscle size +15–20%.",
+    "FS344→FS315 circulates; FS317→FS288 binds activin/heparan sulfate more strongly. Extracellular myostatin/activin/GDF11 trapping blocks ActRIIB–SMAD2/3; some BMP antagonism. FS288 activin affinity ~10× higher; binding Kd ~50–100pM.",
+    "Protein safety unknown: reproductive/FSH effects, BMP-related bone changes, immunogenicity; chorioretinopathy case report. Injected half-life ~90min; WADA-prohibited."
+  ],
+  "foxo4-dri": [
+    "No human PK, efficacy or safety trials.",
+    "Baar 2017: selective senescent-cell killing; aged-mouse renal, fur and running improvements. Replication/therapeutic-window evidence limited.",
+    "Protease-resistant retro-inverso D-peptide displaces p53 from FOXO4, enabling apoptosis; cell-penetrating conjugate delivers intracellularly.",
+    "No comprehensive public toxicology package. Off-target p53 activation, immunogenicity, PK and research-product quality remain concerns."
+  ],
+  "ghk-cu": [
+    "Small, often sponsored topical studies (n=20–100): skin/wound signals; no large systemic RCT. Historical prezatide approvals do not establish current injectable approval.",
+    "Rodent repair/hair and cellular transcription findings; much evidence from Pickart lineage.",
+    "GHK shuttles Cu(II), supporting lysyl oxidase, SOD and cytochrome-c oxidase; ECM remodeling better supported than broad transcriptomic claims.",
+    "Topical tolerability generally favorable; uncommon dermatitis. Injected safety unknown; copper-overload concern, especially Wilson/copper-handling disorders."
+  ],
+  "ghrp-2": [
+    "Human GH responses plus ACTH/cortisol/prolactin rises. Japan approved pralmorelin diagnostic use in October 2004; no FDA therapeutic approval.",
+    "Rodent/primate GH/appetite increases; some GH-independent muscle-protection findings.",
+    "Potent GHSR agonist; transient HPA/lactotroph activation (~2–3h). Half-life ~15–60min; complements GHRH signaling.",
+    "Single-dose diagnostic experience does not establish chronic safety. Appetite/weight gain, cortisol/prolactin and IGF-1 concerns; WADA-prohibited."
+  ],
+  "ghrp-6": [
+    "Pandya: nine men, 1mcg/kg IV; GHRH blockade reduced GH AUC 1701→376mcg·min/L (~80%; p<0.001). Other studies confirm hunger/endocrine responses; no pivotal therapeutic trial.",
+    "Rodent cardiac, wound and appetite effects; peripheral GH-independent mechanisms proposed.",
+    "GHSR→Gq/PLC/IP3/Ca²⁺ releases GH; hypothalamic GHRH/somatostatin and NPY/AgRP regulate pulses/appetite. CD36 contribution proposed.",
+    "Acute tolerability does not establish chronic safety: hunger/weight gain, cortisol/prolactin, fluid retention/paresthesias and desensitization. FDA-unapproved; WADA-prohibited."
+  ],
+  "hexarelin": [
+    "Strong acute GH release, including older adults; daily dosing produces tachyphylaxis within weeks. Cardiac human studies small; no pivotal efficacy trial.",
+    "Independent rodent studies support CD36-associated cardioprotection; largely preclinical.",
+    "2-methyl-D-Trp substitution increases potency/persistence versus GHRP-6; cardiac CD36 effects differ from GHSR-mediated GH release.",
+    "Short-term tolerability favorable; chronic cardiac safety uncertain. Tachyphylaxis and unregulated-product quality limit extrapolation."
+  ],
+  "humanin": [
+    "Human cohorts show age/disease associations only; no published exogenous-humanin intervention trial.",
+    "HNG/S14G improves rodent AD, vascular, cardiac and metabolic phenotypes; analog potency differs from native humanin.",
+    "MT-RNR2 mitochondrial peptide; BAX/Bim/tBid inhibition and FPR2 or CNTFR/WSX-1/gp130→STAT3 signaling; IGFBP3 binding reported.",
+    "Endogenous exposure does not establish pharmacological-dose safety. Human intervention safety and research-product purity/endotoxin control unknown."
+  ],
+  "igf-1-lr3": [
+    "No controlled LR3 human trials; mecasermin approval does not extend to LR3. Native-IGF-1 hypoglycemia/GH suppression cannot establish LR3 efficacy/safety.",
+    "Muscle/cell assays report ~3× potency; anabolic/satellite-cell findings are preclinical.",
+    "83-residue analog: 13-residue extension plus Glu3→Arg; reduced IGFBP binding. IGF1R→PI3K/AKT/mTOR and MAPK; ~20–30h reported half-life; high-concentration hybrid-receptor effects. Reported IR cross-reactivity ~10× lower; hybrid-receptor effects become significant >~500nM.",
+    "Hypoglycemia, injection reactions, pain/headache; theoretical proliferation/cancer risk and chorioretinopathy reports. Chronic safety/purity/sterility unestablished; WADA-prohibited."
+  ],
+  "ipamorelin": [
+    "Bowel-resection Phase 2: 0.03mg/kg IV twice daily ≤7d; solid-meal tolerance 25.3h vs 32.6h placebo, HR~1.33, p=0.16. No controlled enhancement trials.",
+    "GH-release EC50 1.3nM; rat ED50 80nmol/kg. Swine HPA activation remained low at >200× GH-release ED50.",
+    "GHSR→Gq/PLC/IP3/Ca²⁺; relatively selective GH release versus other GHRPs; ~2h half-life.",
+    "Short trial tolerability cannot establish chronic safety. GH/IGF-1-related edema, paresthesias, insulin resistance and proliferation concerns remain."
+  ],
+  "kisspeptin": [
+    "KISS1R genetics establish puberty/GnRH causality. KP54 IVF, amenorrhea/PCOS and HSDD trials show physiological signals; HSDD crossover studies: n=32 women and n=32 men; male tumescence increased ≤56% versus placebo.",
+    "Rodent/primate KISS1/KISS1R disruption causes pubertal failure/infertility.",
+    "KP54/14/13/10 share amidated RF motif; KP10 minimal. KISS1R→Gq/PLC/Ca²⁺/PKC/ERK. KNDy regulates GnRH pulses; preoptic neurons drive LH surge; KP10 half-life ~4min.",
+    "Headache/nausea/injection discomfort; low OHSS signal versus hCG. Chronic safety limited; sustained infusion can desensitize. Analog/formulation results not interchangeable."
+  ],
+  "kpv": [
+    "Small topical-dermatology studies suggest benefit; no large RCT or established systemic efficacy. IBD translation remains chiefly preclinical.",
+    "Rodent colitis/dermatitis: TNF/IL1β/IL6 and infiltration↓; nanoparticle delivery targets inflamed mucosa.",
+    "α-MSH(11–13) tripeptide; proposed intracellular NF-κB modulation, not conventional melanocortin agonism. PepT1/SLC15A1-mediated gut uptake proposed.",
+    "Limited short-term tolerability cannot establish systemic/chronic safety. Small size does not prove low clinical immunogenicity; unregulated injection quality remains uncertain."
+  ],
+  "liraglutide": [
+    "LEAD/2010: Victoza T2D; SCALE/2014: Saxenda obesity; LEADER: MACE reduction in T2D+CVD. Pediatric T2D ≥10y approved 2019; generics followed in 2024/2025.",
+    "Rodent C-cell tumors; human relevance uncertain. Rat fertility unaffected ≤0.6mg/kg.",
+    "31-residue GLP-1 analog; Lys26-C16 acylation and Lys34→Arg enable albumin binding, ~13h persistence. GLP1R→cAMP increases glucose-dependent insulin; glucagon/appetite↓.",
+    "MTC/MEN2 contraindication; GI, pancreatitis, gallbladder, hypoglycemia, dehydration/renal and allergy risks. Saxenda breast-cancer imbalance (17/2379 vs 3/1300): causality unclear. Antibodies: adults 2.8% (neutralizing 1.2%); pediatric 12% (~1% cross-reactivity)."
+  ],
+  "ll-37": [
+    "Small topical-wound studies only; no large therapeutic RCT. Endogenous dysregulation contributes to psoriasis/rosacea; deficiency correlates with infection susceptibility.",
+    "Rodents: antimicrobial/wound/endotoxin effects; reduced sepsis mortality in some models.",
+    "Membrane-disrupting amphipathic helix; context-dependent FPR2 signaling. Self-DNA complexes activate TLR9→IFNα; vitamin-D/VDR induces CAMP.",
+    "Small topical studies generally tolerated. Systemic safety unestablished; inflammatory pathophysiology argues against assuming universal benefit."
+  ],
+  "mazdutide": [
+    "GLORY-1: n=731, 6mg, 12.55% weight loss; GLORY-2: 9mg, ≤20.1%. DREAMS-3 (n=349): combined HbA1c<7%/weight-loss≥10% endpoint 48% vs semaglutide 21%; HbA1c −2.03% vs −1.84%; weight −10.29% vs −6%. Phase 2 48wk weight losses: 6/10/16mg, 10.5/19.2/22.3% vs placebo 2.2%.",
+    "OXM-analog rodent data support insulinotropic/thermogenic effects.",
+    "Lipidated weekly GLP1R/GCGR agonist; appetite suppression plus hepatic oxidation/energy expenditure; liver-fat/metabolic improvements reported.",
+    "GI effects and dose-related heart-rate increases (<10bpm). Phase 2 treatment-related AEs: 78.1/76.6/82.4% vs placebo 53.2%; worse GI tolerability at 16mg."
+  ],
+  "melanotan-ii": [
+    "Small early studies demonstrated pigmentation/erectile effects; no pivotal approval program. MHRA/TGA warn against use; melanoma, altered nevi, priapism and rhabdomyolysis case reports are associations, not proven causation.",
+    "Melanocortin animal pharmacology led to bremelanotide development.",
+    "Cyclic amidated heptapeptide; MC1/3/4/5R agonist. MC1R drives pigmentation; MC4R mediates central effects; bremelanotide instead has free carboxylate.",
+    "Nausea, hypertension, priapism and pigment/oncologic concerns; identity, sterility and endotoxin uncertain. Unapproved medicine."
+  ],
+  "mots-c": [
+    "Human circulating-level studies are observational; they do not establish efficacy of exogenous dosing. No published randomized efficacy trial in the reviewed record.",
+    "Rodent metabolic/exercise benefits; much evidence from originating group, independent replication incomplete.",
+    "Proposed folate/methionine-cycle interference→AICAR→AMPK; stress-related nuclear NRF2 activity. Receptor and exogenous-to-endogenous equivalence unconfirmed.",
+    "Human immunogenicity, long-term and off-target safety unknown; rodent tolerability does not establish tissue-specific human AMPK safety."
+  ],
+  "orforglipron": [
+    "Foundayo FDA-approved April 1, 2026 for eligible adult weight management; current label and original trial rows retained below. Investigational and marketed tablet doses differ.",
+    "Preclinical GLP1R pharmacology supported oral development.",
+    "Non-peptide GLP1R agonist; oral only. Label: half-life 29–49h, Vd ~285L after IV research dosing, mainly CYP3A4 metabolism.",
+    "GI effects; MTC/MEN2 contraindication; pancreatitis, gallbladder, dehydration/renal and allergy warnings. CYP3A4 interactions; oral-contraceptive backup for 30d after initiation/escalation."
+  ],
+  "oxytocin": [
+    "Pitocin: labor induction/augmentation and postpartum hemorrhage. Intranasal trust/social studies do not establish psychiatric efficacy; autism/psychiatric RCT results mixed.",
+    "Rodent/primate social recognition, maternal behavior, bonding and HPA findings.",
+    "Cyclic nonapeptide; OXTR→Gq, with vasopressin-receptor cross-activity. Myometrial OXTR rises near term; central effects depend on context, including in-group bias.",
+    "IV: uterine hyperstimulation/rupture, fetal compromise, water intoxication, cardiovascular effects and coagulopathy-related hemorrhage. Intranasal 20–40IU acute research tolerability ≠ chronic safety. Archived-label cumulative limit: 30units/12h."
+  ],
+  "pinealon": [
+    "Small Russian observations, not pivotal controlled evidence; no Phase 3 data.",
+    "Cultures/rat models: ROS reduction and cognitive signals; independent replication limited.",
+    "Proposed nuclear/DNA interaction of a charged tripeptide; uptake and sequence specificity remain unvalidated.",
+    "Adverse-event data insufficient to quantify safety at any dose, duration or population."
+  ],
+  "pramlintide": [
+    "FDA 2005: insulin-treated T1D/T2D; 52wk RCTs showed additional HbA1c reduction ~0.3–0.6% and weight-neutral to 1–2kg loss.",
+    "Rodent amylin findings support glucagon/gastric-emptying suppression and satiety.",
+    "CTR+RAMP1/2/3 agonist; A25P/S28P/S29P reduce aggregation. Complements insulin; does not replace it or activate insulin/GLP1 receptors.",
+    "Boxed severe-hypoglycemia risk with insulin, especially ≤3h. Label reduces initial mealtime insulin 50%. Nausea common; gastroparesis/hypoglycemia-unawareness/monitoring limitations preclude use."
+  ],
+  "pt-141": [
+    "RECONNECT: two 24wk Phase 3 RCTs supported 2019 approval for acquired, generalized HSDD in premenopausal women; desire/distress benefits modest but significant.",
+    "Rodent/primate central sexual effects depend on MC4R.",
+    "On-demand SC melanocortin agonist; free-carboxylate melanotan-II analog. MC4R mediates desire; peripheral MC1R drives pigmentation.",
+    "Contraindicated: uncontrolled hypertension/CVD. BP ~+6mmHg; HR −2–3bpm, usually resolves ≤12h. Nausea ~40%; pigmentation may persist. Label caps: 1dose/24h, 8doses/month."
+  ],
+  "retatrutide": [
+    "Investigational; FDA-unapproved. TRIUMPH-4: n=445, 68wk, obesity/knee-OA; 12mg topline weight loss ~28.7% with pain improvement. Phase 2: ~24% at 48wk; outcome trials ongoing.",
+    "Triple-receptor animal pharmacology supports development; less published evidence than approved incretins.",
+    "Weekly lipidated GIPR/GLP1R/GCGR agonist; insulin/satiety plus glucagon-driven hepatic metabolism. Exact activity ratio proprietary.",
+    "GI effects; dose-dependent dysesthesia (~20.9% at 12mg in secondary reporting). Long-term cancer/CV outcomes unresolved; non-trial supply quality unestablished."
+  ],
+  "selank": [
+    "Russian anxiety/neurasthenia studies suggest benzodiazepine-comparable effects; no large independent replication or FDA/EMA registration.",
+    "Rodent anxiety/withdrawal and IMR-32 GABA-expression findings; splenic immune-transcription effects.",
+    "Tuftsin+PGP resists degradation; proposed GABAergic transcription modulation, not direct benzodiazepine-like GABA-A agonism. Enkephalinase/serotonin/BDNF effects reported.",
+    "Short-term Russian reports: little cognitive impairment/dependence/withdrawal; independent chronic-safety and pharmacovigilance data absent."
+  ],
+  "semaglutide": [
+    "SUSTAIN/PIONEER: T2D; STEP: obesity; SELECT (>17,600): MACE 6.5% vs 8% placebo. ESSENCE: noncirrhotic MASH F2–F3 accelerated approval in 2025; formulations/indications differ.",
+    "Rodent thyroid C-cell tumors; human relevance uncertain.",
+    "Aib8 and Lys26-C18 modifications support DPP-4 resistance/albumin binding; ~weekly injectable persistence. GLP1R→cAMP; insulin↑, glucagon/appetite/gastric emptying↓.",
+    "MTC/MEN2 contraindication; GI, pancreatic/gallbladder, hypoglycemia, dehydration/renal, allergy, retinopathy and heart-rate warnings; SELECT fracture imbalance in ≥75y. Consult current product label."
+  ],
+  "semax": [
+    "Russian stroke/vascular registration and clinical experience; independent pivotal replication and healthy-adult cognitive evidence lacking. No FDA/EMA approval.",
+    "Rat ischemia: BDNF/NGF/TrkB and phospho-CREB↑; inflammatory genes/MMP9/c-Fos/JNK↓.",
+    "ACTH(4–7)+PGP resists degradation; no classical MC2R steroidogenic action. Brain melanocortin/transcriptional and TrkB/Akt effects reported.",
+    "Local acute events generally mild; chronic non-Russian safety and sustained neurotrophin/autonomic effects uncertain."
+  ],
+  "sermorelin": [
+    "Geref pediatric approval 1997; discontinued 2008, not for safety/efficacy. Diagnostic GH-reserve use established; adult anti-aging/body-composition RCT evidence limited. Compounded products do not inherit Geref approval.",
+    "Rodent/primate GHRHR→pulsatile GH/IGF-1 with feedback preserved.",
+    "GHRH(1–29); short ~10–15min plasma half-life. Somatostatin/IGF-1 feedback remains; no GHSR appetite/HPA action.",
+    "Mainly injection reactions. Chronic IGF-1 elevation raises theoretical malignancy concerns; preserved feedback does not prove chronic enhancement safety."
+  ],
+  "snap-8": [
+    "Mostly manufacturer-sponsored topical wrinkle studies; independent controlled evidence and effective neuromuscular penetration unestablished.",
+    "In-vitro SNARE inhibition; limited intact-skin/animal translation.",
+    "SNAP25-mimetic octapeptide proposed to inhibit SNARE assembly/acetylcholine release. Poor skin penetration leaves hydration/excipient explanations possible.",
+    "Topical irritation possible; low absorption limits systemic exposure. Injectable use unrecognized and safety unknown."
+  ],
+  "ss-31": [
+    "Forzinity: accelerated FDA approval for Barth syndrome, ≥30kg. MMPOWER-3 and randomized TAZPOWER primary endpoints were negative; extension signals supported development. Confirmatory benefit required; ophthalmic studies mixed.",
+    "Independently replicated mitochondrial/cardiac/renal/neural benefits in animals.",
+    "Cardiolipin-binding aromatic-cationic tetrapeptide; stabilizes cristae/cytochrome-c/ETC organization. ROS↓ and ATP efficiency↑; not stoichiometric ROS scavenging. Reported inner-membrane enrichment: 1000–5000×.",
+    "Injection reactions common (>30% in some studies); headache/nausea/dizziness and hypersensitivity possible. Long-term healthy-adult safety unestablished."
+  ],
+  "survodutide": [
+    "Phase 2 obesity: n~387, 46wk completers, ~18.7–19% weight loss. MASH resolution without fibrosis worsening: ≤62% vs ~14% placebo. T2D 16wk HbA1c response; Phase 3 obesity/MASH/CV programs ongoing.",
+    "Rodents: weight and hepatic-fat reductions.",
+    "GLP1R-biased GLP1R/GCGR agonist combines glycemic/appetite effects with hepatic oxidation; avoids excessive glucagon-driven hyperglycemia at studied doses.",
+    "Mainly GI events; definitive Phase 3 outcome safety pending."
+  ],
+  "tb-500": [
+    "Mixed local Tβ4 eye/wound trials; no FDA approval or large systemic musculoskeletal/athletic-recovery RCT.",
+    "Broad preclinical cardiac/corneal/skin/neural repair and fibrosis evidence; independently replicated mechanisms.",
+    "LKKTETQ binds G-actin 1:1; supports migration/angiogenesis. Ac-SDKP cleavage may mediate antifibrosis; marketed TB-500 identity varies.",
+    "Local trial tolerability cannot establish systemic safety. Theoretical occult-cancer/angiogenesis risk; purity/endotoxin/identity concerns. WADA-prohibited."
+  ],
+  "tb4-frag": [
+    "RGN-259 eye and RGN-137 skin trials mixed; small IV cardiac/stroke and Ac-SDKP studies exploratory. No approved product.",
+    "Rodent/porcine cardiac, corneal/dermal, neural and antifibrotic findings.",
+    "Intact Tβ4 sequesters actin 1:1; Ac-SDKP has distinct antifibrotic biology. No single validated cell-surface receptor; fragments cannot inherit parent evidence.",
+    "Early local/IV tolerability data limited; systemic/chronic pharmacovigilance insufficient. Research-product purity/endotoxin/identity unknown; WADA-prohibited."
+  ],
+  "teduglutide": [
+    "STEPS programs: ≥20% parenteral-support reduction at 24wk favored treatment; extensions showed durability. FDA adult approval 2012; pediatric ≥1y approval 2019.",
+    "Rodent GLP2R trophic studies support villus/crypt growth.",
+    "A2G resists DPP-4. GLP2R→Gs acts through enteric/stromal paracrine IGF1/EGF signaling; distinct from GLP1 incretins.",
+    "Neoplasia/polyps require endoscopic surveillance; obstruction, biliary/pancreatic disease and fluid overload risks. Abdominal/injection reactions common; benefit-risk applies to parenteral-dependent SBS."
+  ],
+  "tesamorelin": [
+    "Two 26wk Phase 3 HIV-lipohypertrophy RCTs: 2mg SC/day reduced VAT; IGF-1 steady state ~2wk. Weight neutral, not general weight-loss therapy.",
+    "Rat offspring hydrocephaly at ~2–4× human exposure during organogenesis/lactation.",
+    "44-residue modified GHRH; GHRHR→cAMP/PKA→GH→hepatic JAK2/STAT5/IGF1 and adipose lipolysis; feedback largely preserved.",
+    "Edema, arthralgia/injection reactions, carpal-tunnel symptoms and glucose intolerance. Contraindications: malignancy, disrupted pituitary axis, pregnancy, hypersensitivity; long-term CV safety unestablished."
+  ],
+  "thymosin-alpha-1": [
+    "Regional hepatitis/oncology adjunct use; no FDA approval. US HCV Phase 3 endpoint missed. COVID associations observational; sepsis evidence suggestive, not definitive.",
+    "Rodent infection/tumor/immunosuppression studies support dendritic/T/NK recovery and vaccine responses.",
+    "PTMA-derived 28-mer; proposed TLR9→MyD88/IRAK→IRF7/IFN or NF-κB; Th1/CD8/NK modulation. TLR2/4 and exhausted-T-cell restoration less established.",
+    "Mostly injection reactions in labeled-use experience; autoimmune exacerbation plausible. Favorable regional experience does not establish safety for every immune condition."
+  ],
+  "thymulin": [
+    "Small, dated immunodeficiency/arthritis/pediatric-infection pilots; no modern RCT or approval. Circulating activity used as zinc/thymus biomarker.",
+    "Rodents: zinc-dependent anti-inflammatory, antipyretic and thymic-restoration signals.",
+    "Zinc-dependent pyroglutamyl nonapeptide; chelation abolishes activity. Specific receptor unidentified; T-cell/cytokine mechanisms inferred.",
+    "Human pharmacological-dose safety unstudied. Endogenous picomolar exposure cannot establish exogenous safety; zinc saturation/purity uncertain."
+  ],
+  "tirzepatide": [
+    "SURPASS: T2D; SURMOUNT: obesity/OSA. OSA AHI reductions: PAP users ~29 vs ~6events/h placebo; nonusers ~25 vs ~5. Weight loss ~45–50 vs ~4–6lb.",
+    "Rodent C-cell tumors underlie boxed warning.",
+    "Modified 39-mer GIP backbone, Aib2/13 and Lys20-C20 acylation; ~5d half-life. GIPR/GLP1R→cAMP; insulin↑, appetite/glucagon/gastric emptying↓; OSA improvement accompanies weight loss.",
+    "MTC/MEN2 and serious-allergy contraindications; GI, pancreatic/gallbladder, hypoglycemia, dehydration/renal and retinopathy risks. Product-specific current labeling governs use."
+  ],
+  "vip": [
+    "Regional Invicorp (aviptadil+phentolamine) ED evidence; COVID-ARDS Phase 3 failed its primary endpoint. Pulmonary/sarcoidosis studies mixed; no FDA indication.",
+    "Vasodilatory/bronchodilatory/immune effects in sepsis, autoimmunity, asthma and ischemia models.",
+    "VPAC1/2→Gs/cAMP/PKA; tissue-dependent Gq cross-talk, NF-κB suppression/IL10 modulation and smooth-muscle relaxation; shares PACAP pathways.",
+    "Flushing, hypotension/tachycardia; intracavernosal priapism/bruising/fibrosis risks. Systemic/ICU exposure requires blood-pressure monitoring."
+  ],
+  "hcg": [
+    "Product-specific ovulation/ART, male hypogonadotropic hypogonadism and pediatric cryptorchidism indications; testosterone/spermatogenesis may improve. Descent often incomplete, requiring surgery. Urinary and recombinant products differ.",
+    "Established LH-like Leydig/corpus-luteum activity.",
+    "Glycosylated hCG→LHCGR→Gs/cAMP/PKA→StAR/CYP11A1/CYP17A1/HSD3B2→gonadal steroids; ERK effects. β-subunit glycosylation prolongs exposure versus LH.",
+    "OHSS, thrombosis/multiple gestation, anaphylaxis; estradiol/gynecomastia and precocious puberty risks. No weight-loss approval."
+  ],
+  "mk-677": [
+    "Nass: n=65, age60–81, 25mg/day for12mo; fat-free mass +~1.6kg, no strength/function benefit. Alzheimer RCT n=563: IGF-1 +60–73%, no cognitive benefit. Hip-fracture RCT n=123 stopped for CHF imbalance.",
+    "Rat/dog GH/IGF-1 and appetite effects; ACTH/cortisol responses reported.",
+    "Non-peptide GHSR→Gq/PLC/IP3/Ca²⁺/PKC→GH→hepatic JAK2/STAT5/IGF1; NPY/AgRP drives hunger.",
+    "CHF 4/62 vs 1/61 in frail elderly (~80y); younger-population risk unknown. Edema, hyperglycemia/insulin resistance, appetite/cortisol increases. FDA-unapproved; WADA-prohibited."
+  ],
+  "5-amino-1mq": [
+    "No published completed human Phase 1/2 efficacy/safety evidence in reviewed sources; community use is anecdotal.",
+    "Mice: 20mg/kg/day reversed diet-induced obesity without lower food intake. Aged-female 10mg/kg/day, 8wk: grip +~25% alone, ~60% with exercise; cancer-model work exploratory.",
+    "NNMT inhibition preserves nicotinamide/NAMPT salvage, NAD⁺ and SAM; MNA/lipogenesis↓. Human PK cannot be inferred from rat results.",
+    "Rodent 5–20mg/kg tolerability does not establish human chronic, reproductive or genotoxic safety. Human distribution/elimination and vendor purity uncertain."
+  ]
+}
